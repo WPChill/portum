@@ -1,0 +1,76 @@
+<?php
+/**
+ * Template part for displaying a frontpage section
+ *
+ * @link    https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Portum
+ */
+
+$frontpage = Portum_Frontpage::get_instance( 'portum_frontpage_sections' );
+$fields    = $frontpage->sections[ $section_id ];
+
+$args  = array(
+	'posts_per_page' => $fields['blog_post_count'],
+	'meta_query'     => array( array( 'key' => '_thumbnail_id' ) )
+);
+$query = new WP_Query( $args );
+
+if ( ! $query->have_posts() ) {
+	return;
+}
+?>
+
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<div class="section-blog section section-grey">
+		<div class="container">
+			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+
+			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'] ) ); ?>
+
+			<?php while ( $query->have_posts() ) { ?>
+
+				<?php $query->the_post(); ?>
+
+				<div class="blog-news-item">
+					<div class="row">
+						<div class="col-md-8 col-sm-7 col-sx-12">
+							<div class="post-details">
+								<h4>
+									<a href="<?php echo esc_url( get_permalink() ); ?>">
+										<?php echo the_title(); ?>
+									</a>
+								</h4>
+
+								<?php echo wpautop( wp_kses_post( wp_trim_words( get_the_content(), 40 ) ) ); ?>
+
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-5 col-sx-12">
+							<div class="featured">
+								<?php
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail( 'portum-blog-section-image' );
+								}
+								?>
+								<div class="overlay"></div>
+
+								<div class="news-category">
+									<strong>
+										<?php $categories = get_the_category(); ?>
+										<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo esc_html( $categories[0]->name ) ?></a>
+									</strong>
+								</div>
+
+								<div class="news-date">
+									<strong><a href="#"><?php echo esc_html( get_the_date() ); ?></a></strong>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+			<?php wp_reset_postdata(); ?>
+		</div>
+	</div>
+</section>

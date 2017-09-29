@@ -1,0 +1,340 @@
+
+/* ==========================================================================
+   =Menu
+   ========================================================================== */
+
+
+/* =Menu Basics
+   ========================================================================== */
+
+.sf-menu, .sf-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sf-menu>li {
+    float: left;
+}
+
+.sf-menu>li:hover {
+    background: url("../images/back-border-nav.png") repeat-x left top;
+}
+
+.sf-menu>li.current {
+    background: url("../images/back-border-nav.png") repeat-x left top;
+}
+
+.sf-menu>li>a {
+    position: relative;
+    display: block;
+    padding: 27px 25px !important;
+}
+
+
+/**
+ 	 * 1. z-index is 1025 because the sticky menu is 1020
+ 	 */
+
+.sf-menu .sf-mega, .sf-menu li.dropdown ul {
+    position: absolute;
+    z-index: 1025;
+    /* 1 */
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+.sf-menu li.dropdown ul {
+    left: 15px;
+}
+
+.sf-menu li.dropdown {
+    position: relative;
+}
+
+.sf-menu li.dropdown ul ul {
+    top: -1px;
+    left: 100%;
+    margin-top: -14px;
+}
+
+.sf-menu li:hover>.sf-mega, .sf-menu li.sfHover>.sf-mega, .sf-menu li.dropdown:hover>ul, .sf-menu li.dropdown.sfHover>ul {
+    display: block;
+}
+
+
+/* =Menu Skin
+   ========================================================================== */
+
+.sf-menu {
+    float: right;
+}
+
+.sf-menu a {
+    display: block;
+    padding: 15px 0;
+    font-family: 'Hind', sans-serif;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.sf-menu li.dropdown a {
+    padding: 8px 25px 8px 35px;
+}
+
+.sf-menu li:last-child>a {
+    border-bottom: none;
+}
+
+.sf-menu>li>a, .sf-menu>li.dropdown>a {
+    padding: 35px 15px;
+    border: none;
+    color: #e3e3e3;
+    font-size: 16px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.sf-menu>li a i {
+    margin-right: 5px;
+}
+
+.sf-menu>li.current>a, .sf-menu li.sfHover>a, .sf-menu a:hover, .sf-menu li.sfHover a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown li:hover {
+    background: #A1083A;
+}
+
+.dropdown li a {
+    font-size: 14px;
+}
+
+
+/* =DropDown
+   ========================================================================== */
+
+
+/**
+ 	 * 1. allow long menu items to determine submenu width
+ 	 */
+
+.sf-menu li.dropdown ul {
+    min-width: 250px;
+    background-color: rgba(53, 68, 78, 0.90);
+    -webkit-box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
+    -moz-box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
+    box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
+    box-shadow: none;
+}
+
+
+/* =Menu Arrows
+   ========================================================================== */
+
+.sf-menu>li.arrow:before {
+    content: "\f107";
+    height: 12px;
+    width: 12px;
+    background: #\f107;
+    position: absolute;
+    top: 34px;
+    right: 8px;
+    font-family: fontawesome;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    transition: 180ms all;
+    line-height: 12px;
+}
+
+.sf-menu>li.arrow:hover::before {
+    content: "\f106";
+    transform: rotate(360deg);
+}
+
+.small-arrow>a:before {
+    content: "\f105";
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    font-family: fontawesome;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.small-arrow>a:hover::before {
+    content: "\f104";
+}
+
+@media (min-width: 1200px) {
+    .sf-menu li.dropdown ul {
+        left: 25px;
+    }
+    .sf-menu>li>a, .sf-menu>li.dropdown>a {
+        padding: 35px 25px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #menu {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #menu {
+        display: none;
+    }
+}
+
+
+/* =Menu Arrows
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+    .sf-menu li.dropdown ul {
+        left: 25px;
+    }
+    .sf-menu>li>a, .sf-menu>li.dropdown>a {
+        padding: 35px 25px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #menu {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #menu {
+        display: none;
+    }
+}
+
+
+/* ==========================================================================
+   =Mobile Menu
+   ========================================================================== */
+
+#mobile-menu {
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 0;
+    background-color: rgba(53, 68, 78, 0.9);
+}
+
+#mobile-menu li {
+    display: block;
+    margin: 0;
+}
+
+#mobile-menu>li>ul, #mobile-menu>li>ul>li>ul {
+    display: none;
+    margin-left: 0;
+}
+
+#mobile-menu .sf-mega {
+    display: none;
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+#mobile-menu .sf-mega-section {
+    float: none;
+    width: 100%;
+    padding: 0;
+    border: none;
+}
+
+#mobile-menu .sf-mega-section ul {
+    margin-left: 0;
+}
+
+#mobile-menu li a {
+    position: relative;
+    display: block;
+    padding: 15px 25px;
+    border-top: 1px solid #e1e1e1;
+    color: #fff;
+    font-size: 13px;
+    text-align: left;
+    text-decoration: none;
+}
+
+#mobile-menu li a i {
+    margin-right: 5px;
+}
+
+#mobile-menu ul a {
+    padding-left: 45px;
+}
+
+#mobile-menu ul li ul a {
+    padding-left: 65px;
+}
+
+#mobile-menu .mobile-menu-submenu-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    border-left: 1px solid #e1e1e1;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#mobile-menu .mobile-menu-submenu-arrow:hover {
+    background-color: #979797;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+
+/* ==========================================================================
+   =Mobile menu trigger
+   ========================================================================== */
+
+#mobile-menu-trigger {
+    display: none;
+    font-size: 32px;
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    #header .sf-menu>li>a {
+        padding: 27px 20px !important
+    }
+    .sf-menu>li.arrow::before {
+        right: 2px;
+    }
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #mobile-menu-trigger {
+        display: block;
+        margin-right: 0;
+    }
+}
+
+
+/* ==========================================================================
+*/

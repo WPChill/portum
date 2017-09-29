@@ -1,0 +1,155 @@
+ 
+/* ==========================================================================
+   =Header
+   ========================================================================== */
+
+
+/**
+ 	 * 1. z-index is 105 because the tp arrows 100
+ 	 */
+
+.header-overlay {
+    background: url("../images/back-shadow-nav.png") repeat-x left top;
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 105;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #header {
+        position: relative;
+        padding-bottom: 45px;
+        background-color: #0b0b0b;
+    }
+}
+
+@media (max-width: 767px) {
+    #header {
+        position: relative;
+        padding-bottom: 45px;
+        background-color: #0b0b0b;
+    }
+}
+
+
+/* ==========================================================================
+   =Logo
+   ========================================================================== */
+
+#logo {
+    line-height: 80px;
+}
+
+
+/**
+	 * 1. displaying the <a> inline-block makes it depends on the size of it's children
+	 *    we add max-width:100% to tell it not that it shouldn't extend beyond the size of it's
+	 *    parent if it's child is very large eg a 1000x1000 logo img
+	 */
+
+#logo a {
+    display: inline-block;
+    max-width: 100%;
+    /* 1 */
+}
+
+#logo img {
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+@media (max-width: 767px) {
+    /**
+		 * 1. on mobile devices logo padding right needs to be the width of the
+		 *	  mobile menu trigger + some spacing so as to not let the logo <a>
+		 *    overlap the mobile menu trigger
+		 */
+    #logo {
+        padding-right: 50px;
+        /* 1 */
+    }
+}
+
+/* ==========================================================================
+   =Sticky Header
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+    /**
+		 * 1. The z-index has to be 1020 so it is bigger than the back to top buttons z-index that is 1010
+		 */
+    #header.stuck {
+        position: fixed;
+        z-index: 1020;
+        /* 1 */
+        top: 0;
+        width: 100%;
+        padding: 10px 0 0 0;
+        margin: 0 auto;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        background-color: #0b0b0b;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    #header.stuck #logo img {
+        width: 80%;
+    }
+    #header.stuck .sf-menu>li>a, #header.stuck .sf-menu>li.dropdown>a {
+        padding: 26px 15px 36px;
+    }
+    #header.stuck .sf-arrows .sf-with-ul:after {
+        margin-top: -1px;
+    }
+    #header.stuck #custom-search-button {
+        top: 23px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #header.stuck .sf-menu>li>a, #header.stuck .sf-menu>li.dropdown>a {
+        padding: 26px 25px 36px;
+    }
+}
+
+
+@media (max-width: 991px) {
+	
+    #header {
+        padding: 0;
+    }
+    #mobile-menu-trigger {
+        top: -66px;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        display: block;
+        padding: 10px;
+    }
+    .small-arrow>a::before {
+        display: none;
+    }
+    #header {
+        background-color: rgba(53, 68, 78, 0.9);
+    }
+    #mobile-menu {
+        padding: 0;
+    }
+    #mobile-menu li>a:hover {
+        background-color: #A1083A;
+    }
+	
+}

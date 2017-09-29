@@ -1,0 +1,7 @@
+@mixin font-size( $sizeValue: 14, $onlyREM: false) {
+  @if $onlyREM {
+    font-size: ($sizeValue * 0.1) + rem;
+  } @else {
+    font-size: $sizeValue + px;
+  }
+}

@@ -1,0 +1,64 @@
+<?php
+/**
+ * Portum Theme Autoloader
+ *
+ * @package Portum
+ * @since   1.0
+ */
+
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Class Portum_Autoloader
+ */
+class Portum_Autoloader {
+	/**
+	 * Portum_Autoloader constructor.
+	 */
+	public function __construct() {
+		spl_autoload_register( array( $this, 'load' ) );
+	}
+
+	/**
+	 * This function loads the necessary files
+	 *
+	 * @param string $class CLASS NAME.
+	 */
+	public function load( $class = '' ) {
+		/**
+		 * All classes are prefixed with Portum_
+		 */
+		$parts = explode( '_', $class );
+		$bind  = implode( '-', $parts );
+
+		/**
+		 * We provide working directories
+		 */
+		$directories = array(
+			get_template_directory() . '/inc/',
+			get_template_directory() . '/inc/libraries/',
+			get_template_directory() . '/inc/libraries/widgets/',
+			get_template_directory() . '/inc/libraries/epsilon-framework/',
+			get_template_directory() . '/inc/libraries/welcome-screen/',
+			get_template_directory() . '/inc/libraries/welcome-screen/inc/',
+			get_template_directory() . '/inc/helpers/',
+			get_template_directory() . '/inc/customizer/',
+			get_template_directory() . '/inc/libraries/widgets',
+		);
+
+		/**
+		 * Loop through them, if we find the class .. we load it !
+		 */
+		foreach ( $directories as $directory ) {
+			if ( file_exists( $directory . 'class-' . strtolower( $bind ) . '.php' ) ) {
+				require_once $directory . 'class-' . strtolower( $bind ) . '.php';
+
+				return;
+			}
+		}
+	}
+}
+
+new Portum_Autoloader();

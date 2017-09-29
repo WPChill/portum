@@ -1,0 +1,8 @@
+@mixin line-height( $sizeValue: 14, $heightValue: 25, $onlyUnitless: false){
+  @if $onlyUnitless {
+    line-height: ($heightValue / $sizeValue);
+  } @else {
+    line-height: $heightValue + px;
+    line-height: ($heightValue / $sizeValue);
+  }
+}
