@@ -488,7 +488,7 @@ class Portum_Repeatable_Sections {
 			'title'       => esc_html__( 'Video Section', 'portum' ),
 			'description' => esc_html__( 'Video Section.', 'portum' ),
 			'fields'      => array(
-				'video_type' => array(
+				'video_type'    => array(
 					'label'   => esc_html__( 'Video Type', 'portum' ),
 					'type'    => 'select',
 					'choices' => array(
@@ -497,15 +497,22 @@ class Portum_Repeatable_Sections {
 					),
 					'default' => 'youtube',
 				),
-				'video_id'   => array(
+				'video_id'      => array(
 					'label'   => esc_html__( 'Video Id', 'portum' ),
 					'type'    => 'text',
 					'default' => 'iNJdPyoqt8U',
 				),
-				'video_cta'  => array(
+				'video_cta'     => array(
 					'label'   => esc_html__( 'Call To Action', 'portum' ),
 					'type'    => 'epsilon-text-editor',
 					'default' => '<p>Find out the hottest news in <strong>your industry</strong></p>',
+				),
+				'mailchimp_url' => array(
+					'label'             => esc_html__( 'Mailchimp Action URL', 'portum' ),
+					'description'       => esc_html__( 'For more information, follow this link', 'portum' ),
+					'type'              => 'text',
+					'default'           => '',
+					'sanitize_callback' => 'esc_url_raw',
 				),
 			)
 		);

@@ -25,8 +25,7 @@
       }
     },
     "plugins": {
-      "contact-form-7": "Contact Form 7",
-      "mailchimp": "MailChimp"
+      "contact-form-7": "Contact Form 7"
     },
     "content": {
       "contact": {
@@ -377,6 +376,7 @@
           "video_type": "youtube",
           "video_id": "iNJdPyoqt8U",
           "video_cta": "<p>Find out the hottest news in <strong>your industry</strong></p>",
+          "mailchimp_url": "",
           "type": "video"
         }
       },

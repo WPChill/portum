@@ -19,20 +19,19 @@ $fields    = $frontpage->sections[ $section_id ];
 		<div class="info-area">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="<?php echo ! empty( $fields['mailchimp_url'] ) ? ' col-md-6' : 'col-md-12'; ?>">
 						<?php echo wpautop( wp_kses_post( $fields['video_cta'] ) ); ?>
 					</div>
-					<div class="col-md-6">
-						<div class="newsletter">
-							<?php
-							if ( function_exists( 'mailchimpSF_signup_form' ) ) {
-								$api = mailchimpSF_get_api();
-								if ( $api ) {
-									mailchimpSF_signup_form();
-								}
-							}; ?>
+					<?php if ( ! empty( $fields['mailchimp_url'] ) ) { ?>
+						<div class="col-md-6">
+							<div class="newsletter">
+								<form novalidate="" target="_blank" class="" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" method="post" action="<?php echo esc_url( $fields['mailchimp_url'] ); ?>">
+									<input type="text" placeholder="<?php esc_attr_e( 'Enter your e-mail address', 'portum' ); ?>" id="mce-EMAIL" class="subs_input" name="EMAIL" value="">
+									<input type="submit" class="subs-button" value="<?php esc_attr_e( 'Subscribe', 'portum' ); ?>" name="subscribe">
+								</form>
+							</div>
 						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

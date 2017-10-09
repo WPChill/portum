@@ -211,13 +211,6 @@ class Portum {
 					'check'       => Portum_Notify_System::check_installed_data(),
 				),
 				array(
-					'id'          => 'portum-check-mailchimp-plugin',
-					'title'       => Portum_Notify_System::plugin_verifier( 'mailchimp', 'title', 'Mailchimp' ),
-					'description' => Portum_Notify_System::plugin_verifier( 'mailchimp', 'description', 'Mailchimp' ),
-					'plugin_slug' => 'mailchimp',
-					'check'       => defined( 'MCSF_VER' ),
-				),
-				array(
 					'id'          => 'portum-check-cf7',
 					'title'       => Portum_Notify_System::plugin_verifier( 'contact-form-7', 'title', 'Contact Form 7', 'verify_cf7' ),
 					'description' => Portum_Notify_System::plugin_verifier( 'contact-form-7', 'description', 'Contact Form 7', 'verify_cf7' ),
