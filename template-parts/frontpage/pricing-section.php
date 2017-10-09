@@ -25,18 +25,6 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 			<div class="row">
 				<?php foreach ( $fields['pricing_boxes'] as $pricing_box ) { ?>
 
-					<?php
-					$arr = array(
-						$pricing_box['price_box_feature_1'],
-						$pricing_box['price_box_feature_2'],
-						$pricing_box['price_box_feature_3'],
-						$pricing_box['price_box_feature_4'],
-						$pricing_box['price_box_feature_5'],
-						$pricing_box['price_box_feature_6'],
-					);
-
-					$arr = array_filter( $arr );
-					?>
 					<div class="col-md-4">
 						<div class="pricing-item">
 							<div class="plan">
@@ -50,12 +38,10 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 								<p><?php echo wp_kses_post( $pricing_box['price_box_text'] ); ?></p>
 							</div>
 
-							<?php if ( ! empty( $arr ) ) { ?>
-								<ul>
-									<?php foreach ( $arr as $item ) { ?>
-										<li><?php echo wp_kses_post( $item ); ?></li>
-									<?php } ?>
-								</ul>
+							<?php if ( ! empty( $pricing_box['price_box_features'] ) ) { ?>
+
+								<?php echo wp_kses_post( $pricing_box['price_box_features'] ); ?>
+
 							<?php } ?>
 
 							<?php if ( ! empty( $pricing_box['price_box_url'] ) ) { ?>

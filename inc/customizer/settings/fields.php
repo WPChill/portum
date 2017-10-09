@@ -251,6 +251,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'              => 'text',
 		'section'           => 'portum_footer_section',
+		'default'           => 'Centrul Vechi, Brasov',
 		'sanitize_callback' => 'sanitize_text_field',
 		'label'             => esc_html__( 'Google Address', 'portum' ),
 	)
@@ -331,6 +332,7 @@ Epsilon_Customizer::add_field(
 	'portum_copyright_contents',
 	array(
 		'type'    => 'epsilon-text-editor',
+		'default' => 'Macho Themes © 2017. All rights reserved.',
 		'label'   => esc_html__( 'Copyright Text', 'portum' ),
 		'section' => 'portum_footer_section',
 	)
@@ -590,64 +592,34 @@ Epsilon_Customizer::add_field(
 			'field' => 'member_title',
 		),
 		'fields'       => array(
-			'price_box_title'     => array(
+			'price_box_title'    => array(
 				'label'             => esc_html__( 'Name', 'portum' ),
 				'type'              => 'text',
 				'default'           => '',
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'price_box_text'      => array(
+			'price_box_text'     => array(
 				'label'             => esc_html__( 'Text', 'portum' ),
 				'type'              => 'text',
 				'default'           => '',
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'price_box_price'     => array(
+			'price_box_price'    => array(
 				'label'             => esc_html__( 'Price', 'portum' ),
 				'type'              => 'text',
 				'default'           => '',
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'price_box_url'       => array(
+			'price_box_url'      => array(
 				'label'             => esc_html__( 'Button URL', 'portum' ),
 				'type'              => 'text',
 				'default'           => '',
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'price_box_feature_1' => array(
-				'label'             => esc_html__( 'Feature #1', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'price_box_feature_2' => array(
-				'label'             => esc_html__( 'Feature #2', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'price_box_feature_3' => array(
-				'label'             => esc_html__( 'Feature #3', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'price_box_feature_4' => array(
-				'label'             => esc_html__( 'Feature #4', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'price_box_feature_5' => array(
-				'label'             => esc_html__( 'Feature #5', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'price_box_feature_6' => array(
-				'label'             => esc_html__( 'Feature #6', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
+			'price_box_features' => array(
+				'label'             => esc_html__( 'Features', 'portum' ),
+				'type'              => 'epsilon-text-editor',
+				'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',
 				'sanitize_callback' => 'wp_kses_post',
 			),
 		),
@@ -691,6 +663,8 @@ Epsilon_Customizer::add_field(
 					'epsilon_text_color'          => '#777777',
 					'epsilon_title_color'         => '#1a171c',
 					'epsilon_link_color'          => '#d1d5de',
+					'epsilon_footer_background'   => '#18304c',
+					'epsilon_footer_text_color'   => '#13b0a5',
 				),
 			),
 			array(
@@ -702,6 +676,8 @@ Epsilon_Customizer::add_field(
 					'epsilon_text_color'          => '#777777',
 					'epsilon_title_color'         => '#1a171c',
 					'epsilon_link_color'          => '#d1d5de',
+					'epsilon_footer_background'   => '#18304c',
+					'epsilon_footer_text_color'   => '#13b0a5',
 				),
 			),
 			array(
@@ -713,6 +689,8 @@ Epsilon_Customizer::add_field(
 					'epsilon_text_color'          => '#777777',
 					'epsilon_title_color'         => '#1a171c',
 					'epsilon_link_color'          => '#d1d5de',
+					'epsilon_footer_background'   => '#18304c',
+					'epsilon_footer_text_color'   => '#13b0a5',
 				),
 			),
 			array(
@@ -724,6 +702,8 @@ Epsilon_Customizer::add_field(
 					'epsilon_text_color'          => '#777777',
 					'epsilon_title_color'         => '#1a171c',
 					'epsilon_link_color'          => '#d1d5de',
+					'epsilon_footer_background'   => '#18304c',
+					'epsilon_footer_text_color'   => '#13b0a5',
 				),
 			),
 			array(
@@ -735,6 +715,8 @@ Epsilon_Customizer::add_field(
 					'epsilon_text_color'          => '#777777',
 					'epsilon_title_color'         => '#1a171c',
 					'epsilon_link_color'          => '#d1d5de',
+					'epsilon_footer_background'   => '#18304c',
+					'epsilon_footer_text_color'   => '#13b0a5',
 				),
 			),
 		),

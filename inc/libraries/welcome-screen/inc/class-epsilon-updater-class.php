@@ -102,7 +102,7 @@ class Epsilon_Updater_Class {
 		add_filter( 'site_transient_update_themes', array( $this, 'product_update_transient' ) );
 		add_filter( 'delete_site_transient_update_themes', array( $this, 'delete_product_update_transient' ) );
 		add_action( 'load-update-core.php', array( $this, 'delete_product_update_transient' ) );
-		add_action( 'load-themes.php', array( $this, 'delete_theme_update_transient' ) );
+		add_action( 'load-themes.php', array( $this, 'delete_product_update_transient' ) );
 		add_action( 'load-themes.php', array( $this, 'load_themes_screen' ) );
 	}
 

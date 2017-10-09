@@ -151,6 +151,22 @@ class Portum {
 					'hover-state' => true,
 				),
 
+				'epsilon_footer_background' => array(
+					'label'       => esc_html__( 'Footer Background Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer background.', 'portum' ),
+					'default'     => '#18304c',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_footer_text_color' => array(
+					'label'       => esc_html__( 'Footer Text Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
+					'default'     => '#13b0a5',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
 			),
 
 			'css' => Epsilon_Color_Scheme::load_css_overrides( get_template_directory() . '/assets/css/style-overrides.css' ),

@@ -4,7 +4,9 @@
  * 3. Text Color
  * 4. Header Text Color
  * 5. Link Color
- * 6.Hover Link Color
+ * 6. Footer Background Color
+ * 7. Footer Text Color
+ * 8. Hover Link Color
  */
 
 .text-accent-color {
@@ -68,8 +70,8 @@ a{
     color: %5$s;
 }
 
-a:focus { color: %6$s; }
-a:hover { color: %6$s; }
+a:focus { color: %8$s; }
+a:hover { color: %8$s; }
 
 .widget_tag_cloud a,
 .tags-links a,
@@ -82,8 +84,8 @@ a.btn {
 .tags-links a:hover,
 a.btn:focus,
 a.btn:hover {
-    border-color: %6$s;
-    background-color: %6$s;
+    border-color: %8$s;
+    background-color: %8$s;
 }
 
 .post-format{
@@ -103,8 +105,8 @@ a.btn:hover {
 input[type="reset"],
 input[type="submit"],
 input[type="button"]{
-    border-color: %5$s;
-    background-color: %5$s;
+    border-color: %1$s;
+    background-color: %1$s;
 }
 
 input[type="reset"]:hover,
@@ -113,8 +115,8 @@ input[type="button"]:hover,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 input[type="button"]:focus {
-    border-color: %6$s;
-    background-color: %6$s;
+    border-color: %2$s;
+    background-color: %2$s;
 }
 
 #wp-calendar th,
@@ -127,7 +129,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar  tbody td a:hover{
-    background-color: %6$s;
+    background-color: %8$s;
 }
 
 #wp-calendar #prev a:before {
@@ -135,7 +137,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar #prev a:hover:before {
-    color: %6$s;
+    color: %8$s;
 }
 
 #wp-calendar #next a:before {
@@ -143,7 +145,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar #next a:hover:before {
-    color: %6$s;
+    color: %8$s;
 }
 
 .widget_rss .rss-date,
@@ -157,7 +159,7 @@ input[type="button"]:focus {
 
 .widget_search .search-submit:hover,
 .widget_search .search-submit:focus {
-    color: %6$s;
+    color: %8$s;
 }
 
 .widget_search .search-submit:active {
@@ -173,9 +175,76 @@ input[type="button"]:focus {
 }
 
 .post-slider .slick-dots li a:hover {
-    color: %6$s;
+    color: %8$s;
 }
 
 .post-slider .slick-dots li.slick-active a:before {
     border-top-color: %2$s;
+}
+
+.pager-slider li:last-child::before,
+.portfolio-grid-item .action .zoom,
+.portfolio-grid-item .action .link,
+.pager-slider h6 {
+    background: %1$s;
+}
+.pager-slider li:last-child:hover::before,
+.pager-slider li.active:before{
+    background: %2$s !important;
+}
+.testimonial:hover,
+.portfolio-grid-item .action .zoom:hover,
+.portfolio-grid-item .action .link:hover,
+.pager-slider li:hover h6, .pager-slider li.active h6:hover, .pager-slider li.active h6{
+    background: %2$s;
+}
+
+.services-item a:hover::before{
+    background: %2$s;
+}
+
+.services-item a:hover span, .services-item a:hover i{
+    color: %2$s;
+}
+
+.section-video .info-area p strong{
+    color: %2$s;
+}
+
+.team-members-item:hover .overlay:hover{
+    background: %2$s;
+    opacity:.65;
+}
+
+.pricing-item .plan sup,
+.pricing-item .plan sub,
+.pricing-item .plan strong{
+    color: %1$s;
+}
+
+.pricing-item .details{
+    background: %2$s;
+}
+
+.pricing-item:hover .details{
+    background-color: %1$s;
+}
+
+.btn-contrast,
+a.btn-contrast{
+    background-color: %2$s;
+}
+
+.btn-contrast:hover,
+a.btn-contrast:hover{
+    background-color: %1$s;
+}
+
+.contact-details-item h5{
+    color: %1$s;
+}
+
+#footer{
+    background-color: %6$s;
+    color : %7$s;
 }
