@@ -66,3 +66,9 @@ if ( get_theme_mod( 'portum_enable_author_box', true ) ) {
 ?>
 
 <?php the_post_navigation(); ?>
+
+<?php
+if ( comments_open( get_the_ID() ) || get_comments_number( get_the_ID() ) ) :
+	comments_template();
+endif;
+?>
