@@ -300,7 +300,7 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_portfolio',
 				),
-			)
+			),
 		);
 	}
 
@@ -349,7 +349,7 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_expertise',
 				),
-			)
+			),
 		);
 	}
 
@@ -385,7 +385,7 @@ class Portum_Repeatable_Sections {
 						'max' => 10,
 					),
 				),
-			)
+			),
 		);
 	}
 
@@ -429,7 +429,7 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_team_members',
 				),
-			)
+			),
 		);
 	}
 
@@ -514,7 +514,7 @@ class Portum_Repeatable_Sections {
 					'default'           => '',
 					'sanitize_callback' => 'esc_url_raw',
 				),
-			)
+			),
 		);
 	}
 }

@@ -13,6 +13,11 @@ $fields    = $frontpage->sections[ $section_id ];
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-video section">
+		<?php if ( is_customize_preview() ) { ?>
+			<div class="container">
+				<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+			</div>
+		<?php } ?>
 		<div class="video-area auto-resizable-iframe">
 			<div data-type="<?php echo esc_attr( $fields['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $fields['video_id'] ); ?>"></div>
 		</div>

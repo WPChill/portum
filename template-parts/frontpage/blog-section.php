@@ -12,7 +12,11 @@ $fields    = $frontpage->sections[ $section_id ];
 
 $args  = array(
 	'posts_per_page' => $fields['blog_post_count'],
-	'meta_query'     => array( array( 'key' => '_thumbnail_id' ) )
+	'meta_query'     => array(
+		array(
+			'key' => '_thumbnail_id',
+		),
+	),
 );
 $query = new WP_Query( $args );
 
@@ -69,7 +73,8 @@ if ( ! $query->have_posts() ) {
 						</div>
 					</div>
 				</div>
-			<?php } ?>
+			<?php }// End while().
+	?>
 			<?php wp_reset_postdata(); ?>
 		</div>
 	</div>

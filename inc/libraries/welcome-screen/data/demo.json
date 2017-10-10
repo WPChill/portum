@@ -179,32 +179,38 @@
           "0": {
             "portfolio_title": "PROJECT TITLE",
             "portfolio_description": "<p>Nullam nec metus ullamcorper, scelerisque null</p>",
-            "portfolio_image": "/assets/images/portfolio-img-01.jpg"
+            "portfolio_image": "/assets/images/portfolio-img-01.jpg",
+            "portfolio_image_url": "#"
           },
           "1": {
             "portfolio_title": "PROJECT TITLE",
             "portfolio_description": "<p>Nullam nec metus ullamcorper, scelerisque null</p>",
-            "portfolio_image": "/assets/images/portfolio-img-02.jpg"
+            "portfolio_image": "/assets/images/portfolio-img-02.jpg",
+            "portfolio_image_url": "#"
           },
           "2": {
             "portfolio_title": "PROJECT TITLE",
             "portfolio_description": "<p>Nullam nec metus ullamcorper, scelerisque null</p>",
-            "portfolio_image": "/assets/images/portfolio-img-03.jpg"
+            "portfolio_image": "/assets/images/portfolio-img-03.jpg",
+            "portfolio_image_url": "#"
           },
           "3": {
             "portfolio_title": "PROJECT TITLE",
             "portfolio_description": "<p>Nullam nec metus ullamcorper, scelerisque null</p>",
-            "portfolio_image": "/assets/images/portfolio-img-04.jpg"
+            "portfolio_image": "/assets/images/portfolio-img-04.jpg",
+            "portfolio_image_url": "#"
           },
           "4": {
             "portfolio_title": "PROJECT TITLE",
             "portfolio_description": "<p>Nullam nec metus ullamcorper, scelerisque null</p>",
-            "portfolio_image": "/assets/images/portfolio-img-05.jpg"
+            "portfolio_image": "/assets/images/portfolio-img-05.jpg",
+            "portfolio_image_url": "#"
           },
           "5": {
             "portfolio_title": "PROJECT TITLE",
             "portfolio_description": "<p>Nullam nec metus ullamcorper, scelerisque null</p>",
-            "portfolio_image": "/assets/images/portfolio-img-06.jpg"
+            "portfolio_image": "/assets/images/portfolio-img-06.jpg",
+            "portfolio_image_url": "#"
           }
         }
       },

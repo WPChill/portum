@@ -150,7 +150,7 @@ class Portum_Frontpage {
 	 *
 	 * @param  string $template   Identifier for the template section.
 	 * @param  array  $args       Template settings.
-	 * @param string  $section_id Id of the section we need to render in the frontend.
+	 * @param string $section_id Id of the section we need to render in the frontend.
 	 */
 	public function section_template( $template = '', $args = array(), $section_id = '' ) {
 		$template_part = $args['type'] . '-section';

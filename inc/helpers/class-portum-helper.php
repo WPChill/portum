@@ -171,9 +171,9 @@ class Portum_Helper {
 	 */
 	public static function generate_section_title(
 		$subtitle = '', $title = '', $args = array(
-		'doubled' => false,
-		'center'  => true,
-	)
+			'doubled' => false,
+			'center'  => true,
+		)
 	) {
 		$class = 'headline';
 		if ( $args['center'] ) {

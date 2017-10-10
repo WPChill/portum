@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * General section options
- ***************************************************************************************/
+ */
 Epsilon_Customizer::add_field(
 	'portum_enable_go_top',
 	array(
@@ -293,6 +293,36 @@ Epsilon_Customizer::add_field(
 	)
 );
 
+$forms[] = __( '-- Select a Contact Form --', 'portum' );
+if ( defined( 'WPCF7_VERSION' ) ) {
+	$args = array(
+		'post_type' => 'wpcf7_contact_form',
+	);
+
+	$posts = new WP_Query( $args );
+	wp_reset_postdata();
+	if ( $posts->have_posts() ) {
+		while ( $posts->have_posts() ) {
+			$posts->the_post();
+
+			$forms[ get_the_ID() ] = get_the_title();
+		}
+	}
+}
+
+/**
+ * Contact Form
+ */
+Epsilon_Customizer::add_field(
+	'portum_contact_form',
+	array(
+		'type'    => 'select',
+		'section' => 'portum_footer_section',
+		'label'   => 'Contact Form',
+		'default' => '0',
+		'choices' => $forms,
+	)
+);
 /**
  * Contact boxes
  */
@@ -486,6 +516,12 @@ Epsilon_Customizer::add_field(
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-portfolio-image',
 				'default' => '',
+			),
+			'portfolio_image_url'   => array(
+				'label'             => esc_html__( 'Image URL', 'portum' ),
+				'type'              => 'url',
+				'sanitize_callback' => 'esc_url_raw',
+				'default'           => '',
 			),
 		),
 	)

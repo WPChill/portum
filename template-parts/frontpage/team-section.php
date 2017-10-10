@@ -78,9 +78,11 @@ $i = 0;
 								<?php } ?>
 							</ul>
 						</div>
-					<?php } ?>
+					<?php }// End foreach().
+	?>
 				</div>
-			<?php } ?>
+			<?php }// End if().
+	?>
 		</div>
 	</div>
 </section>

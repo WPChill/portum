@@ -216,7 +216,6 @@ class Portum {
 			 * description
 			 * check - check for plugins (if installed)
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 *
 			 */
 			$actions = array(
 				array(
@@ -282,7 +281,7 @@ class Portum {
 			$string = '?key=' . $api;
 		}
 
-		wp_register_script( 'googlemaps', "//maps.googleapis.com/maps/api/js" . $string, array(), $theme['Version'], true );
+		wp_register_script( 'googlemaps', '//maps.googleapis.com/maps/api/js' . $string, array(), $theme['Version'], true );
 
 		/**
 		 * Google fonts

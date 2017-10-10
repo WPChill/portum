@@ -237,7 +237,7 @@ class Epsilon_Import_Data {
 				$html .= '</div>';
 			}
 			$html .= '</div>';
-		}
+		}// End foreach().
 
 		$html .= '</div>';
 
@@ -434,7 +434,7 @@ class Epsilon_Import_Data {
 			$sidebars_widgets[ $prop['sidebar_id'] ][] = $new_instance_id;
 			// Save the amended data.
 			update_option( 'sidebars_widgets', $sidebars_widgets );
-		}
+		}// End foreach().
 
 		return 'ok';
 	}

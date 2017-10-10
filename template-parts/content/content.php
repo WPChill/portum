@@ -12,19 +12,19 @@
 	<div class="row">
 		<div class="<?php echo has_post_thumbnail() && ! is_sticky() ? 'col-md-7' : '' ?> col-sm-12">
 
-			<?php if ( is_sticky() ){ ?>
+			<?php if ( is_sticky() ) { ?>
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail( 'portum-blog-post-sticky' ); ?>
 				<?php } ?>
 				<div class="post-header">
 					<h4 class="post-title">
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
-						<?php if ( is_sticky() ){ ?>
+						<?php if ( is_sticky() ) { ?>
 						<a class="more-link" href="<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 						<?php } ?>
 					</h4><!-- end .post-title -->
 				</div><!-- .post-header -->
-				<?php if ( is_sticky() ){ ?>
+				<?php if ( is_sticky() ) { ?>
 			</div>
 		<?php } ?>
 

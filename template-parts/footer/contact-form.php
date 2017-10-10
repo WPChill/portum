@@ -9,13 +9,23 @@
 ?>
 
 <div class="contact-form">
-
-	<div class="contact-info fixed">
-		<h4>Learn more about us</h4>
-		<button class="btn-contrast btn contact-action contact-submit" type="button">Contact us</button>
-	</div>
-
-	<div class="contact-form-content">
-		<?php echo do_shortcode( '[contact-form-7 id="89" title="Contact form 1"]' ); ?>
-	</div>
+	<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?><?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>
+		<div class="contact-info fixed">
+			<h4>
+				<?php
+				// Translators: Contact Form Header
+				echo esc_html__( 'Learn more about us', 'portum' );
+				?>
+			</h4>
+			<button class="btn-contrast btn contact-action contact-submit" type="button">
+				<?php
+				// Translators: Contact button label
+				echo esc_html__( 'Contact us', 'portum' );
+				?>
+			</button>
+		</div>
+		<div class="contact-form-content">
+			<?php echo do_shortcode( '[contact-form-7 id="' . absint( $cform ) . '" title="Contact Form"]' ); ?>
+		</div>
+	<?php } ?>
 </div>
