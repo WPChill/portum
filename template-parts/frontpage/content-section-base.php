@@ -61,8 +61,8 @@ $layout = Portum_Helper::get_layout( 'portum_page_layout' );
 
 				the_posts_pagination(
 					array(
-						'prev_text' => '<span class="fa fa-angle-left"></span><span class="screen-reader-text">' . esc_html__( 'Previous', 'medzone' ) . '</span>',
-						'next_text' => '<span class="fa fa-angle-right"></span><span class="screen-reader-text">' . esc_html__( 'Next', 'medzone' ) . '</span>',
+						'prev_text' => '<span class="fa fa-angle-left"></span> ' . esc_html__( 'Previous', 'portum' ),
+						'next_text' => esc_html__( 'Next', 'portum' ) . ' <span class="fa fa-angle-right"></span>',
 					)
 				);
 				?>

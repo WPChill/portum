@@ -264,6 +264,7 @@ class Portum {
 		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.css' );
 		wp_register_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 		wp_register_style( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.css' );
+		wp_register_style( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/magnific-popup.css' );
 		wp_register_script( 'waypoints', get_template_directory_uri() . '/assets/vendors/waypoints/waypoints.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'viewport', get_template_directory_uri() . '/assets/vendors/viewport/viewport.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'superfish-hoverIntent', get_template_directory_uri() . '/assets/vendors/superfish/hoverIntent.min.js', array(), $theme['Version'], true );
@@ -273,8 +274,8 @@ class Portum {
 		wp_register_script( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.js', array(), $theme['Version'], true );
 		wp_register_script( 'stickem', get_template_directory_uri() . '/assets/vendors/stickem/jquery.stickem.js', array(), $theme['Version'], true );
 		wp_register_script( 'offscreen', get_template_directory_uri() . '/assets/vendors/offscreen/offscreen.min.js', array(), $theme['Version'], true );
+		wp_register_script( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/jquery.magnific-popup.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'portum-object', get_template_directory_uri() . '/assets/js/portum.js', array(), $theme['Version'], true );
-
 		$string = '';
 		$api    = get_theme_mod( 'portum_google_api_key', false );
 		if ( ! empty( $api ) ) {
@@ -300,6 +301,7 @@ class Portum {
 				'owl-carousel',
 				'plyr',
 				'slick',
+				'magnificPopup',
 				'portum',
 			),
 			$theme['Version']
@@ -326,6 +328,7 @@ class Portum {
 				'plyr',
 				'viewport',
 				'googlemaps',
+				'magnificPopup',
 				'portum-object',
 			),
 			$theme['Version'],
@@ -392,6 +395,7 @@ class Portum {
 			'custom-header',
 			array(
 				'width'              => 1920,
+				'default-image'      => get_template_directory_uri() . '/assets/images/blog-main-img-01.jpg',
 				'height'             => 855,
 				'flex-height'        => true,
 				'flex-width'         => true,

@@ -42,10 +42,12 @@ if ( ! is_array( $footer_layout ) ) {
 ?>
 <div id="footer">
 	<div class="container">
-		<?php $front = get_option( 'show_on_front' );
-		if ( 'page' === $front ) {
+		<?php
+		$front = get_option( 'show_on_front' );
+		if ( 'page' === $front && is_front_page() ) {
 			get_template_part( 'template-parts/footer/contact-form' );
-		} ?>
+		}
+		?>
 
 		<?php if ( ! empty( $sidebars ) ) { ?>
 			<div class="row">

@@ -6,7 +6,7 @@
  */
 
 $front = get_option( 'show_on_front' );
-if ( 'page' === $front ) {
+if ( 'page' === $front && is_front_page() ) {
 	get_template_part( 'template-parts/footer/contact-section' );
 }
 

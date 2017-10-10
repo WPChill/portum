@@ -23,6 +23,7 @@
      */
     Portum.Plugins.owlSlider();
     Portum.Plugins.video();
+    Portum.Plugins.magnificPopup();
 
     /**
      * Initiate Theme related functions

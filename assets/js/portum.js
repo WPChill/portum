@@ -172,6 +172,12 @@ var Portum = {
    */
   Plugins: {
     /**
+     * Initiate the magnific Popup
+     */
+    magnificPopup: function() {
+      jQuery( '.magnific-link' ).magnificPopup( { type: 'image' } );
+    },
+    /**
      * Initiate owl slider
      * @todo won't work if there are more than 1 sliders on page
      */
@@ -336,6 +342,10 @@ var Portum = {
 
           $image.addClass( 'animate' );
         } );
+
+        if ( 'undefined' === typeof $image[ 0 ] ) {
+          return;
+        }
 
         if ( $image[ 0 ].complete ) {
           $image.load();

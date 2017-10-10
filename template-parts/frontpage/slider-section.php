@@ -13,11 +13,6 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-slider">
-		<?php if ( is_customize_preview() ) { ?>
-			<div class="container">
-				<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
-			</div>
-		<?php } ?>
 		<div id="main-slider" class="main-slider owl-carousel owl-theme">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
@@ -31,6 +26,11 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 				</div>
 			<?php } ?>
 		</div>
+		<?php if ( is_customize_preview() ) { ?>
+			<div class="container">
+				<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+			</div>
+		<?php } ?>
 		<ul class="pager-slider clearfix pager-items-0<?php echo count( $fields['slides'] ) ?>">
 			<?php $i = 1; ?>
 			<?php foreach ( $fields['slides'] as $slide ) { ?>

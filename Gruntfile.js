@@ -198,7 +198,7 @@ module.exports = function( grunt ) {
           {
             expand: true,
             cwd: 'assets/css',
-            src: [ '*.css', '!*.min.css', '!custom-editor-style.css' ],
+            src: [ '*.css', '!*.min.css', '!style-overrides.css', '!overrides.css' ],
             dest: 'assets/css',
             ext: '.min.css'
           } ]
@@ -221,7 +221,7 @@ module.exports = function( grunt ) {
     },
     postcss: {
       options: {
-        map: true, // inline sourcemaps
+        map: false, // inline sourcemaps
 
         processors: [
           require( 'autoprefixer' )( { browsers: 'last 3 versions' } )
@@ -235,7 +235,7 @@ module.exports = function( grunt ) {
       dynamic_mappings: {
         expand: true,
         cwd: 'assets/css',
-        src: [ '*.css', '!*.min.css' ],
+        src: [ '*.css', '!*.min.css', '!style-overrides.css', '!overrides.css' ],
         dest: 'assets/css/',
         ext: '.css'
       }

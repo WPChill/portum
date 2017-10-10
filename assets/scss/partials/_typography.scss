@@ -513,3 +513,80 @@ td {
   padding: 12px;
 }
 
+/* ==========================================================================
+   =Misc
+   ========================================================================== */
+pre {
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 28px;
+  white-space: pre-wrap;
+  background-color: #f9f9fa;
+  padding: 14px;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 90%;
+}
+
+big {
+  font-size: 125%;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted #777777;
+  cursor: help;
+}
+
+address {
+  display: block;
+  margin-bottom: 28px;
+}
+
+q {
+  color: #1a171c;
+  font-family: 'Georgia', 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 30px;
+  quotes: "\201C" "\201D" "\201C" "\201D";
+}
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+kbd,
+tt,
+var,
+samp,
+code,
+pre {
+  font-family: monospace;
+}
+
+code {
+}
+
+mark,
+ins {
+  text-decoration: none;
+}
+
+s,
+del {
+  text-decoration: line-through;
+}

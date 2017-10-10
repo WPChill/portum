@@ -1114,6 +1114,11 @@
   max-width: 100%;
 }
 
+.post-content img {
+  width: initial;
+  max-width: 100%;
+}
+
 /* =Post Thumbnail
    ========================================================================== */
 .post-thumbnail {
@@ -1397,6 +1402,7 @@
   -ms-transform: skewX(15deg);
   -webkit-transform: skewX(15deg);
   transform: skewX(15deg);
+  color: #fff;
 }
 
 @media (max-width: 425px) {
@@ -2623,4 +2629,110 @@
 
 .widget_nav_menu li a {
   display: inline-block;
+}
+
+/* =Captions
+========================================================================== */
+
+.wp-caption {
+  margin-bottom: 28px;
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-caption .wp-caption-text {
+  padding: 14px 0;
+}
+
+/* =Galleries
+   ========================================================================== */
+
+.gallery {
+  margin-bottom: 28px;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1.79104477%;
+  text-align: center;
+  vertical-align: top;
+}
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+.gallery-icon img {
+  margin: 0 auto;
+}
+
+.gallery-caption {
+  display: block;
+  padding: 10px 0;
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+  display: none;
+}
+
+/* ==========================================================================
+   =Alignments
+   ========================================================================== */
+
+.alignleft {
+  float: left;
+  display: inline;
+  margin: 0 1.5em 1.5em 0;
+}
+
+.alignright {
+  float: right;
+  display: inline;
+  margin: 0 0 1.5em 1.5em;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
 }

@@ -45,8 +45,12 @@ $fields['portfolio_items'] = $frontpage->get_repeater_field( $fields['portfolio_
 								<?php echo wpautop( wp_kses_post( $item['portfolio_description'] ) ); ?>
 
 								<div class="action fixed">
-									<a href="#" class="zoom"> <i class="fa fa-search" aria-hidden="true"></i> </a>
-									<a href="#" class="link"> <i class="fa fa-chain" aria-hidden="true"></i> </a>
+									<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</a>
+									<a href="#" class="link">
+										<i class="fa fa-chain" aria-hidden="true"></i>
+									</a>
 								</div>
 
 							</div>
