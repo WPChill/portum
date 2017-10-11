@@ -179,16 +179,16 @@ var Portum = {
     },
     /**
      * Initiate owl slider
-     * @todo won't work if there are more than 1 sliders on page
      */
     owlSlider: function() {
       var owl = jQuery( '.main-slider' );
-      if ( owl.length ) {
-        owl.on( 'initialized.owl.carousel', function() {
-          jQuery( '.pager-slider' ).addClass( 'active' );
+      jQuery.each( owl, function() {
+        var self = this;
+        this.on( 'initialized.owl.carousel', function() {
+          this.parent().find( '.pager-slider' ).addClass( 'active' );
         } );
 
-        owl.owlCarousel( {
+        this.owlCarousel( {
           items: 1,
           dots: true,
           mouseDrag: true,
@@ -213,16 +213,16 @@ var Portum = {
             }
           }
         } ).on( 'translated.owl.carousel', function( event ) {
-          jQuery( '.pager-slider li.active' ).removeClass( 'active' );
-          jQuery( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
+          this.parent().find( '.pager-slider li.active' ).removeClass( 'active' );
+          this.parent().find( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
         } );
 
-        jQuery( '.pager-slider li' ).click( function() {
+        jQuery.parent().find( '.pager-slider li' ).click( function() {
           var slide_index = jQuery( this ).index();
-          owl.trigger( 'to.owl.carousel', [ slide_index, 300 ] );
+          self.trigger( 'to.owl.carousel', [ slide_index, 300 ] );
           return false;
         } );
-      }
+      } );
     },
     /**
      * Initiate Plyr library on video elements
