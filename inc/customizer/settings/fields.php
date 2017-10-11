@@ -293,7 +293,8 @@ Epsilon_Customizer::add_field(
 	)
 );
 
-$forms[] = __( '-- Select a Contact Form --', 'portum' );
+//Translators: Contact forms not found label
+$forms[0] = esc_html__( '-- No Contact Forms --', 'portum' );
 if ( defined( 'WPCF7_VERSION' ) ) {
 	$args = array(
 		'post_type' => 'wpcf7_contact_form',
@@ -302,6 +303,9 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 	$posts = new WP_Query( $args );
 	wp_reset_postdata();
 	if ( $posts->have_posts() ) {
+		//Translators: Select contact form label
+		$forms[0] = esc_html__( '-- Select a Contact Form --', 'portum' );
+
 		while ( $posts->have_posts() ) {
 			$posts->the_post();
 
@@ -316,11 +320,12 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 Epsilon_Customizer::add_field(
 	'portum_contact_form',
 	array(
-		'type'    => 'select',
-		'section' => 'portum_footer_section',
-		'label'   => 'Contact Form',
-		'default' => '0',
-		'choices' => $forms,
+		'type'        => 'select',
+		'section'     => 'portum_footer_section',
+		'label'       => 'Contact Form',
+		'description' => 1 === count( $forms ) ? __( 'To use this section you need to create a contact form with CF7', 'portum' ) : null,
+		'default'     => 'no-forms',
+		'choices'     => $forms,
 	)
 );
 /**

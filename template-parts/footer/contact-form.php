@@ -9,7 +9,9 @@
 ?>
 
 <div class="contact-form">
-	<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?><?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>
+	<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
+
+	<?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>
 		<div class="contact-info fixed">
 			<h4>
 				<?php

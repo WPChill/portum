@@ -551,7 +551,6 @@ a.social-icon:active
     line-height: 26px;
 
     position: relative;
-    z-index: 99999;
 
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -7193,7 +7192,7 @@ input[type='button']:active
     background: transparent;
 }
 
-.section-services .row .col-md-3:nth-child(-n+4)
+.section-services .row .col-md-4:nth-child(-n+3)
 {
     margin-bottom: 50px;
 }
@@ -7210,7 +7209,7 @@ input[type='button']:active
         padding: 0 0 70px 0;
     }
 
-    .section-services .row .col-md-3:nth-child(-n+4)
+    .section-services .row .col-md-4:nth-child(-n+3)
     {
         margin: 0;
     }

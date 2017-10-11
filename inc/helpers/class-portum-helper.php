@@ -139,7 +139,7 @@ class Portum_Helper {
 				echo wp_kses_post( $html );
 				break;
 			case 'category':
-				$html = '<div class="cat-links">';
+				$html = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
 				$html .= get_the_category_list( ' ' );
 				$html .= '</div><!-- .cat-links -->';
 
@@ -171,9 +171,9 @@ class Portum_Helper {
 	 */
 	public static function generate_section_title(
 		$subtitle = '', $title = '', $args = array(
-			'doubled' => false,
-			'center'  => true,
-		)
+		'doubled' => false,
+		'center'  => true,
+	)
 	) {
 		$class = 'headline';
 		if ( $args['center'] ) {

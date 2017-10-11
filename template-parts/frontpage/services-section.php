@@ -31,28 +31,29 @@ if ( ! empty( $fields['services_image'] ) ) {
 				<div class="col-md-3">
 					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
 				</div>
+
 				<?php if ( ! empty( $fields['services'] ) ) { ?>
+					<div class="col-md-9">
+						<?php foreach ( $fields['services'] as $service ) { ?>
+							<div class="col-md-4 col-xs-6">
+								<div class="services-item">
+									<a href="#">
+										<?php if ( ! empty( $service['service_icon'] ) ) { ?>
+											<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
+										<?php } ?>
 
-					<?php foreach ( $fields['services'] as $service ) { ?>
-						<div class="col-md-3 col-xs-6">
-							<div class="services-item">
-								<a href="#">
-									<?php if ( ! empty( $service['service_icon'] ) ) { ?>
-										<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
-									<?php } ?>
+										<?php if ( ! empty( $service['service_title'] ) ) { ?>
+											<span><?php echo esc_html( $service['service_title'] ); ?></span>
+										<?php } ?>
 
-									<?php if ( ! empty( $service['service_title'] ) ) { ?>
-										<span><?php echo esc_html( $service['service_title'] ); ?></span>
-									<?php } ?>
-
-									<?php if ( ! empty( $service['service_description'] ) ) { ?>
-										<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
-									<?php } ?>
-								</a>
+										<?php if ( ! empty( $service['service_description'] ) ) { ?>
+											<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
+										<?php } ?>
+									</a>
+								</div>
 							</div>
-						</div>
-					<?php } ?>
-
+						<?php } ?>
+					</div>
 				<?php } ?>
 			</div>
 		</div>

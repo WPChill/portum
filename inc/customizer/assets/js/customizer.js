@@ -49,6 +49,22 @@ Portum.Customizer = {
   },
 
   /**
+   * Disable a select if it does not have values
+   * @param id
+   */
+  checkValuesAndDisable: function( id ) {
+    var select = jQuery( id ).find( 'select' ),
+        options;
+    if ( select.length ) {
+      options = select.find( 'option' );
+    }
+
+    if ( 1 === options.length ) {
+      select.prop( 'disabled', true );
+    }
+  },
+
+  /**
    * Populates selects based on another option
    *
    * @param object
@@ -99,7 +115,8 @@ Portum.Customizer = {
       select[ 0 ].selectize.addOption( { value: 'all', text: 'All' } );
       _.each( options, function( v ) {
         select[ 0 ].selectize.addOption( { value: v[ key ], text: v[ key ] } );
-        select[ 0 ].selectize.refreshOptions();
+        select[ 0 ].selectize.refreshOptions( false );
+        select[ 0 ].selectize.setValue( 'all', false );
       } );
     } else {
       select.append( jQuery( '<option></option>' ).attr( 'value', 'all' ).text( 'All' ) );
@@ -205,7 +222,8 @@ wp.customize.bind( 'ready', function() {
 
   /**
    *
-   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string}, portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
+   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string},
+   *     portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
    */
   var obj = {
     'portum_expertise': {
@@ -242,6 +260,8 @@ wp.customize.bind( 'ready', function() {
       fields: [ 'accordion-section-portum_repeatable_section' ]
     }
   };
+
+  Portum.Customizer.checkValuesAndDisable( '#customize-control-portum_contact_form' );
 
   Portum.Customizer.handleActiveCallback( activeCallbacked );
   Portum.Customizer.handleAwfulSorting();

@@ -55,6 +55,8 @@ if ( ! $query->have_posts() ) {
 								<?php
 								if ( has_post_thumbnail() ) {
 									the_post_thumbnail( 'portum-blog-section-image' );
+								} else {
+									echo '<img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/picture_placeholder.jpg"/>';
 								}
 								?>
 								<div class="overlay"></div>
@@ -74,7 +76,7 @@ if ( ! $query->have_posts() ) {
 					</div>
 				</div>
 			<?php }// End while().
-	?>
+			?>
 			<?php wp_reset_postdata(); ?>
 		</div>
 	</div>
