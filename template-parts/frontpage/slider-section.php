@@ -13,7 +13,7 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-slider">
-		<div id="main-slider" class="main-slider owl-carousel owl-theme">
+		<div class="main-slider owl-carousel owl-theme">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
 					<div class="item-overlay"></div>

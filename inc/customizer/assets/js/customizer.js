@@ -56,6 +56,7 @@ Portum.Customizer = {
     var select = jQuery( id ).find( 'select' ),
         options;
     if ( select.length ) {
+      select.val( 0 );
       options = select.find( 'option' );
     }
 

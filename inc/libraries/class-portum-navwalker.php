@@ -73,7 +73,7 @@ class Portum_Navwalker extends Walker_Nav_Menu {
 			$classes[]   = 'menu-item-' . $item->ID;
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 			if ( $args->has_children ) {
-				$class_names .= ' dropdown arrow';
+				$class_names .= ' dropdown arrow small-arrow';
 			}
 
 			if ( in_array( 'current-menu-item', $classes, true ) ) {

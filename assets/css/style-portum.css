@@ -2849,6 +2849,10 @@ input[type='button']:active
 {
     float: left;
 }
+.sf-menu > li.small-arrow > a:before
+{
+    content: none;
+}
 
 .sf-menu > li:hover
 {
@@ -3356,7 +3360,7 @@ input[type='button']:active
         display: none;
     }
 
-    #main-slider.owl-blog
+    .main-slider.owl-blog
     {
         margin-bottom: 40px;
     }
@@ -6891,7 +6895,7 @@ input[type='button']:active
     color: #fff;
 }
 
-#main-slider .slider-details
+.main-slider .slider-details
 {
     line-height: 50px;
 
@@ -6905,7 +6909,7 @@ input[type='button']:active
     text-align: right;
 }
 
-#main-slider .slider-details h1
+.main-slider .slider-details h1
 {
     font-family: 'Poppins', sans-serif;
     font-size: 74px;
@@ -6921,7 +6925,7 @@ input[type='button']:active
     text-shadow: 0 2px 6px rgba(35, 31, 32, .41);
 }
 
-#main-slider .slider-details span
+.main-slider .slider-details span
 {
     font-family: 'Hind', sans-serif;
     font-size: 15px;
@@ -6965,7 +6969,7 @@ input[type='button']:active
 
 @media (max-width: 1024px)
 {
-    #main-slider .slider-details h1
+    .main-slider .slider-details h1
     {
         font-size: 48px;
         line-height: 48px;
@@ -6973,12 +6977,12 @@ input[type='button']:active
 }
 @media (max-width: 768px)
 {
-    #main-slider .item-overlay
+    .main-slider .item-overlay
     {
         opacity: .5;
     }
 
-    #main-slider .slider-details
+    .main-slider .slider-details
     {
         top: 20%;
         left: 10%;
@@ -6987,18 +6991,18 @@ input[type='button']:active
 @media (max-width: 991px)
 {
     /*
-      #main-slider .slider-details {
+      .main-slider .slider-details {
           left: initial;
           width: 100%;
   
       }
   	*/
-    #main-slider .slider-details h1
+    .main-slider .slider-details h1
     {
         text-align: center;
     }
 
-    #main-slider .slider-details span
+    .main-slider .slider-details span
     {
         font-size: 14px;
         line-height: 37px;
@@ -7008,7 +7012,7 @@ input[type='button']:active
 }
 @media (max-width: 500px)
 {
-    #main-slider
+    .main-slider
     {
         display: none;
     }
@@ -7519,6 +7523,7 @@ input[type='button']:active
 {
     position: Relative;
 
+    min-height: 150px;
     margin-bottom: 75px;
 
     -webkit-transition: 280ms all;

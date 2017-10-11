@@ -182,13 +182,13 @@ var Portum = {
      */
     owlSlider: function() {
       var owl = jQuery( '.main-slider' );
-      jQuery.each( owl, function() {
-        var self = this;
-        this.on( 'initialized.owl.carousel', function() {
-          this.parent().find( '.pager-slider' ).addClass( 'active' );
+      jQuery.each( owl, function( index, element ) {
+        var self = jQuery( element );
+        self.on( 'initialized.owl.carousel', function() {
+          self.parent().find( '.pager-slider' ).addClass( 'active' );
         } );
 
-        this.owlCarousel( {
+        self.owlCarousel( {
           items: 1,
           dots: true,
           mouseDrag: true,
@@ -213,11 +213,11 @@ var Portum = {
             }
           }
         } ).on( 'translated.owl.carousel', function( event ) {
-          this.parent().find( '.pager-slider li.active' ).removeClass( 'active' );
-          this.parent().find( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
+          self.parent().find( '.pager-slider li.active' ).removeClass( 'active' );
+          self.parent().find( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
         } );
 
-        jQuery.parent().find( '.pager-slider li' ).click( function() {
+        self.parent().find( '.pager-slider li' ).click( function() {
           var slide_index = jQuery( this ).index();
           self.trigger( 'to.owl.carousel', [ slide_index, 300 ] );
           return false;
