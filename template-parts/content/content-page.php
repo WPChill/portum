@@ -41,6 +41,7 @@
 					<?php
 					Portum_Helper::posted_on( 'author' );
 					Portum_Helper::posted_on( 'comments' );
+					Portum_Helper::posted_on( 'category' );
 					if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
 						Portum_Helper::posted_on( 'tags' );
 					}
