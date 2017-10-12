@@ -32,7 +32,7 @@ $fields['portfolio_items'] = $frontpage->get_repeater_field( $fields['portfolio_
 				<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
 					<div class="portfolio-grid-item small-column">
 						<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
-							<img src="<?php echo esc_url( $item['portfolio_image'] ) ?>" alt=""/>
+							<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt=""/>
 						<?php } ?>
 
 						<div class="overlay">

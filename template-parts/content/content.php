@@ -14,7 +14,7 @@ if ( is_sticky() ) {
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
 	<div class="row">
-		<div class=" <?php echo has_post_thumbnail() && ! is_sticky() ? 'col-md-7' : '' ?> col-sm-12 ">
+		<div class=" <?php echo has_post_thumbnail() && ! is_sticky() ? 'col-md-7' : ''; ?> col-sm-12 ">
 			<?php if ( is_sticky() ) { ?>
 			<div class="post-thumbnail">
 				<?php

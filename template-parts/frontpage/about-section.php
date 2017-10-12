@@ -23,10 +23,18 @@ $fields    = $frontpage->sections[ $section_id ];
 				<?php } ?>
 
 				<div class="col-md-7">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array(
-						'doubled' => true,
-						'center'  => false
-					) ) ); ?>
+					<?php
+					echo wp_kses_post(
+						Portum_Helper::generate_section_title(
+							$fields['about_subtitle'],
+							$fields['about_title'],
+							array(
+								'doubled' => true,
+								'center'  => false,
+							)
+						)
+					);
+					?>
 
 					<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 				</div>

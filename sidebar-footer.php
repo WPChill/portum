@@ -51,7 +51,9 @@ if ( ! is_array( $footer_layout ) ) {
 
 		<?php if ( ! empty( $sidebars ) ) { ?>
 			<div class="row">
-				<?php foreach ( $footer_layout['columns'] as $sidebar ) : ?><?php if ( is_active_sidebar( 'footer-sidebar-' . $sidebar['index'] ) ) { ?>
+				<?php foreach ( $footer_layout['columns'] as $sidebar ) : ?>
+
+					<?php if ( is_active_sidebar( 'footer-sidebar-' . $sidebar['index'] ) ) { ?>
 					<div id="footer-widget-area-<?php echo esc_attr( $sidebar['index'] ); ?>" class="col-sm-<?php echo esc_attr( $sidebar['span'] ); ?>">
 						<?php dynamic_sidebar( 'footer-sidebar-' . $sidebar['index'] ); ?>
 					</div>

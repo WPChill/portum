@@ -32,7 +32,7 @@ $i = 0;
 
 						<?php $i ++; ?>
 						<div class="col-md-6">
-							<div class="testimonial <?php echo (int) fmod( $i, $max_row ) === 0 ? 'hidden-testimonial right' : 'left' ?>">
+							<div class="testimonial <?php echo 0 === (int) fmod( $i, $max_row ) ? 'hidden-testimonial right' : 'left'; ?>">
 								<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
 									<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">
 								<?php } ?>
@@ -44,13 +44,13 @@ $i = 0;
 								<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
 
 								<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
-									<a href="#"><?php echo esc_html( $v['testimonial_subtitle'] ) ?></a>
+									<a href="#"><?php echo esc_html( $v['testimonial_subtitle'] ); ?></a>
 								<?php } ?>
 								<span></span>
 							</div>
 						</div>
 						<?php
-						if ( (int) fmod( $i, $max_row ) === 0 && count( $fields['testimonials'] ) !== (int) $i ) {
+						if ( 0 === (int) fmod( $i, $max_row ) && count( $fields['testimonials'] ) !== (int) $i ) {
 							echo '</div><div class="row">';
 						} elseif ( count( $fields['testimonials'] ) === (int) $i ) {
 							continue;

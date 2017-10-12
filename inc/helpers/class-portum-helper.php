@@ -170,10 +170,12 @@ class Portum_Helper {
 	 * @return string;
 	 */
 	public static function generate_section_title(
-		$subtitle = '', $title = '', $args = array(
-		'doubled' => false,
-		'center'  => true,
-	)
+		$subtitle = '',
+		$title = '',
+		$args = array(
+			'doubled' => false,
+			'center'  => true,
+		)
 	) {
 		$class = 'headline';
 		if ( $args['center'] ) {

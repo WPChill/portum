@@ -64,7 +64,7 @@ if ( ! $query->have_posts() ) {
 								<div class="news-category">
 									<strong>
 										<?php $categories = get_the_category(); ?>
-										<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo esc_html( $categories[0]->name ) ?></a>
+										<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a>
 									</strong>
 								</div>
 
@@ -75,8 +75,7 @@ if ( ! $query->have_posts() ) {
 						</div>
 					</div>
 				</div>
-			<?php }// End while().
-			?>
+			<?php }// End while(). ?>
 			<?php wp_reset_postdata(); ?>
 		</div>
 	</div>

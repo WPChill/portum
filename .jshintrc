@@ -23,6 +23,8 @@
     "ajaxurl": false,
     "_": false,
     "Portum": false,
+    "google": false,
+    "plyr": false,
     "EpsilonFramework": false
   }
 }

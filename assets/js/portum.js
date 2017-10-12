@@ -1,4 +1,5 @@
-'use strict';
+/*jshint strict:false */
+/* jshint -W079 */
 var Portum = {
   /**
    * Mobile Break Point
@@ -218,8 +219,8 @@ var Portum = {
         } );
 
         self.parent().find( '.pager-slider li' ).click( function() {
-          var slide_index = jQuery( this ).index();
-          self.trigger( 'to.owl.carousel', [ slide_index, 300 ] );
+          var slideIndex = jQuery( this ).index();
+          self.trigger( 'to.owl.carousel', [ slideIndex, 300 ] );
           return false;
         } );
       } );
@@ -325,7 +326,7 @@ var Portum = {
       } );
 
       totalHeight = jQuery( '.section-contact' ).height();
-      map.panBy( 0, (totalHeight - 200) - (totalHeight / 2) );
+      map.panBy( 0, ( totalHeight - 200 ) - ( totalHeight / 2 ) );
     },
 
     /**
@@ -373,7 +374,7 @@ var Portum = {
      * Dropdown menu
      */
     menu: function() {
-      if ( typeof jQuery.fn.superfish !== 'undefined' ) {
+      if ( 'undefined' !== typeof jQuery.fn.superfish ) {
         jQuery( '#menu' ).superfish( {
           delay: 500,
           animation: { opacity: 'show', height: 'show' },

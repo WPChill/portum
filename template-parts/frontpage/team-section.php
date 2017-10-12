@@ -47,14 +47,18 @@ $i = 0;
 								<div class="details">
 									<?php if ( ! empty( $member['member_title'] ) ) { ?>
 										<h6><?php echo wp_kses_post( $member['member_title'] ); ?></h6>
-										<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?><?php } ?>
+										<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+
+									<?php } ?>
 								</div>
 								<?php if ( ! empty( $member['member_image'] ) ) { ?>
 									<div class="portrait">
 										<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
 										<div class="overlay"></div>
 									</div>
-								<?php } ?><?php } else { ?><?php if ( ! empty( $member['member_image'] ) ) { ?>
+								<?php } ?><?php } else { ?>
+
+								<?php if ( ! empty( $member['member_image'] ) ) { ?>
 								<div class="portrait">
 									<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
 									<div class="overlay"></div>
@@ -64,25 +68,28 @@ $i = 0;
 								<div class="details">
 									<?php if ( ! empty( $member['member_title'] ) ) { ?>
 										<h6><?php echo wp_kses_post( $member['member_title'] ); ?></h6>
-										<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?><?php } ?>
+										<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+
+									<?php } ?>
 								</div>
 							<?php } ?>
 
 
-							<ul class="social-team <?php echo $i > 2 ? '' : 'right' ?>">
+							<ul class="social-team <?php echo 2 < $i ? '' : 'right'; ?>">
 								<?php foreach ( $arr as $k => $v ) { ?>
 									<li>
 										<a href="<?php echo esc_url( $v ); ?>">
-											<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i> </a>
+											<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
+										</a>
 									</li>
 								<?php } ?>
 							</ul>
 						</div>
 					<?php }// End foreach().
-	?>
+					?>
 				</div>
 			<?php }// End if().
-	?>
+			?>
 		</div>
 	</div>
 </section>

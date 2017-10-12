@@ -17,7 +17,7 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
 					<div class="item-overlay"></div>
-					<img src="<?php echo esc_url( $slide['slides_image'] ) ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : '' ?>"/>
+					<img src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
 
 					<div class="slider-details">
 						<h1><?php echo wp_kses_post( $slide['slides_title'] ); ?></h1>
@@ -35,9 +35,9 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 			<?php $i = 1; ?>
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 
-				<li class="pager-item-0<?php echo absint( $i ); ?> <?php echo $i === 1 ? 'active' : '' ?>">
+				<li class="pager-item-0<?php echo absint( $i ); ?> <?php echo 1 === $i ? 'active' : ''; ?>">
 					<h6>
-						<a href="#"><strong>0<?php echo absint( $i ); ?></strong> <?php echo esc_html( $slide['slides_title'] ) ?>
+						<a href="#"><strong>0<?php echo absint( $i ); ?></strong> <?php echo esc_html( $slide['slides_title'] ); ?>
 						</a>
 					</h6>
 				</li>
