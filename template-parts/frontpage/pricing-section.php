@@ -33,9 +33,11 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 										<sup><?php echo esc_html( $pricing_box['price_box_currency'] ); ?></sup>
 									<?php } ?>
 
-									<?php if ( ! empty( $pricing_box['price_box_price'] ) ) {
+									<?php
+									if ( ! empty( $pricing_box['price_box_price'] ) ) {
 										echo esc_html( $pricing_box['price_box_price'] );
-									} ?>
+									}
+									?>
 
 									<?php if ( ! empty( $pricing_box['price_box_period'] ) ) { ?>
 										<sub>/<?php echo esc_html( $pricing_box['price_box_period'] ); ?></sub>

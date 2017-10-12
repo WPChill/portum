@@ -53,7 +53,6 @@ Epsilon_Customizer::add_field(
 			),
 		),
 		'min_span' => 4,
-		'fixed'    => true,
 		'label'    => esc_html__( 'Blog Layout', 'portum' ),
 	)
 );
@@ -80,7 +79,6 @@ Epsilon_Customizer::add_field(
 			),
 		),
 		'min_span' => 4,
-		'fixed'    => true,
 		'label'    => esc_html__( 'Page Layout', 'portum' ),
 	)
 );
@@ -100,6 +98,7 @@ Epsilon_Customizer::add_field(
 			'font-family',
 			'font-weight',
 			'font-style',
+			'letter-spacing',
 		),
 		'selectors'     => array(
 			'.post-title',
@@ -111,9 +110,10 @@ Epsilon_Customizer::add_field(
 			'.post-content h6',
 		),
 		'font_defaults' => array(
-			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
+			'letter-spacing' => '0',
+			'font-family'    => '',
+			'font-weight'    => '',
+			'font-style'     => '',
 		),
 	)
 );
@@ -130,14 +130,20 @@ Epsilon_Customizer::add_field(
 			'font-family',
 			'font-weight',
 			'font-style',
+			'font-size',
+			'line-height',
+			'letter-spacing',
 		),
 		'selectors'     => array(
 			'.post-content p',
 		),
 		'font_defaults' => array(
-			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
+			'letter-spacing' => '0',
+			'font-family'    => '',
+			'font-weight'    => '',
+			'font-style'     => '',
+			'font-size'      => '16',
+			'line-height'    => '26',
 		),
 	)
 );
