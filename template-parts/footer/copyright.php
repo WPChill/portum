@@ -7,7 +7,7 @@
  * @package Portum
  */
 
-if ( get_theme_mod( 'medzone_enable_copyright', true ) || has_nav_menu( 'copyright' ) ) : ?>
+if ( get_theme_mod( 'portum_enable_copyright', true ) || has_nav_menu( 'copyright' ) ) : ?>
 	<div id="footer-bottom" class="row footer-sub">
 		<!-- /// FOOTER-BOTTOM  ////////////////////////////////////////////////////////////////////////////////////////////// -->
 		<div class="container">

@@ -595,22 +595,22 @@ Epsilon_Customizer::add_field(
 				'default' => '',
 			),
 			'member_social_facebook'  => array(
-				'label'   => esc_html__( 'Facebook', 'medzone' ),
+				'label'   => esc_html__( 'Facebook', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://facebook.com',
 			),
 			'member_social_twitter'   => array(
-				'label'   => esc_html__( 'Twitter', 'medzone' ),
+				'label'   => esc_html__( 'Twitter', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://twitter.com',
 			),
 			'member_social_pinterest' => array(
-				'label'   => esc_html__( 'Pinterest', 'medzone' ),
+				'label'   => esc_html__( 'Pinterest', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://pinterest.com',
 			),
 			'member_social_linkedin'  => array(
-				'label'   => esc_html__( 'LinkedIn', 'medzone' ),
+				'label'   => esc_html__( 'LinkedIn', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://linkedin.com',
 			),
