@@ -72,7 +72,6 @@ class Portum {
 		new Epsilon_Framework();
 
 		$this->start_typography_controls();
-		$this->start_color_schemes();
 	}
 
 	/**
@@ -101,78 +100,6 @@ class Portum {
 	 */
 	public function customize_register_init() {
 		new Portum_Customizer();
-	}
-
-	/**
-	 * Load color scheme controls
-	 */
-	private function start_color_schemes() {
-		$handler = 'portum-style-overrides';
-
-		$args = array(
-			'fields' => array(
-				'epsilon_accent_color' => array(
-					'label'       => esc_html__( 'Accent Color #1', 'portum' ),
-					'description' => esc_html__( 'Theme main color.', 'portum' ),
-					'default'     => '#cc263d',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-				'epsilon_accent_color_second' => array(
-					'label'       => esc_html__( 'Accent Color #2', 'portum' ),
-					'description' => esc_html__( 'The second main color.', 'portum' ),
-					'default'     => '#364d7c',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-				'epsilon_text_color' => array(
-					'label'       => esc_html__( 'Text Color', 'portum' ),
-					'description' => esc_html__( 'The color used for paragraphs.', 'portum' ),
-					'default'     => '#777777',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-				'epsilon_title_color' => array(
-					'label'       => esc_html__( 'Title Color', 'portum' ),
-					'description' => esc_html__( 'The color used for titles.', 'portum' ),
-					'default'     => '#1a171c',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-				'epsilon_link_color' => array(
-					'label'       => esc_html__( 'Link Color', 'portum' ),
-					'description' => esc_html__( 'The color used for links.', 'portum' ),
-					'default'     => '#1a171c',
-					'section'     => 'colors',
-					'hover-state' => true,
-				),
-
-				'epsilon_footer_background' => array(
-					'label'       => esc_html__( 'Footer Background Color', 'portum' ),
-					'description' => esc_html__( 'The color used for the footer background.', 'portum' ),
-					'default'     => '#18304c',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-				'epsilon_footer_text_color' => array(
-					'label'       => esc_html__( 'Footer Text Color', 'portum' ),
-					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
-					'default'     => '#13b0a5',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-			),
-
-			'css' => Epsilon_Color_Scheme::load_css_overrides( get_template_directory() . '/assets/css/style-overrides.css' ),
-		);
-
-		Epsilon_Color_Scheme::get_instance( $handler, $args );
 	}
 
 	/**
