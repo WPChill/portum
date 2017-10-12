@@ -240,8 +240,6 @@ class Portum {
 					'theme-slug'  => 'portum',
 					'actions'     => $actions,
 					'plugins'     => $plugins,
-					'edd'         => true,
-					'download_id' => '212499',
 				)
 			);
 
