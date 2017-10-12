@@ -59,11 +59,11 @@ $i = 0;
 								<?php } ?><?php } else { ?>
 
 								<?php if ( ! empty( $member['member_image'] ) ) { ?>
-								<div class="portrait">
-									<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
-									<div class="overlay"></div>
-								</div>
-							<?php } ?>
+									<div class="portrait">
+										<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+										<div class="overlay"></div>
+									</div>
+								<?php } ?>
 
 								<div class="details">
 									<?php if ( ! empty( $member['member_title'] ) ) { ?>
@@ -79,17 +79,14 @@ $i = 0;
 								<?php foreach ( $arr as $k => $v ) { ?>
 									<li>
 										<a href="<?php echo esc_url( $v ); ?>">
-											<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
-										</a>
+											<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i> </a>
 									</li>
 								<?php } ?>
 							</ul>
 						</div>
-					<?php }// End foreach().
-					?>
+					<?php }// End foreach(). ?>
 				</div>
-			<?php }// End if().
-			?>
+			<?php }// End if(). ?>
 		</div>
 	</div>
 </section>

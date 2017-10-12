@@ -31,7 +31,7 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 				<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 			</div>
 		<?php } ?>
-		<ul class="pager-slider clearfix pager-items-0<?php echo count( $fields['slides'] ) ?>">
+		<ul class="pager-slider clearfix pager-items-0<?php echo count( $fields['slides'] ); ?>">
 			<?php $i = 1; ?>
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 
