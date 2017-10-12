@@ -244,40 +244,6 @@
             "testimonial_image": "/assets/images/testimonial-img-04.jpg"
           }
         }
-      },
-      "pricing": {
-        "id": "pricing",
-        "setting": "portum_price_boxes",
-        "label": "Pricing Boxes",
-        "content": {
-          "0": {
-            "price_box_title": "STARTUP",
-            "price_box_text": "Get started Now! You have the base",
-            "price_box_currency": "$",
-            "price_box_price": "75",
-            "price_box_period": "mo",
-            "price_box_url": "#",
-            "price_box_features": "<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>"
-          },
-          "1": {
-            "price_box_title": "GROWTH",
-            "price_box_text": "Take your business to the next level",
-            "price_box_currency": "$",
-            "price_box_price": "95",
-            "price_box_period": "mo",
-            "price_box_url": "#",
-            "price_box_features": "<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li><li>Managed Hosting</li><li>Managed Hosting</li></ul>"
-          },
-          "2": {
-            "price_box_title": "PREMIUM",
-            "price_box_text": "Get started Now! You have the base ",
-            "price_box_currency": "$",
-            "price_box_price": "125",
-            "price_box_period": "mo",
-            "price_box_url": "#",
-            "price_box_features": "<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li><li>Managed Hosting</li></ul>"
-          }
-        }
       }
     },
     "sections": {
@@ -365,18 +331,6 @@
           "type": "expertise"
         }
       },
-      "video": {
-        "id": "video",
-        "label": "Video",
-        "setting": "portum_frontpage_sections",
-        "content": {
-          "video_type": "youtube",
-          "video_id": "iNJdPyoqt8U",
-          "video_cta": "<p>Find out the hottest news in <strong>your industry</strong></p>",
-          "mailchimp_url": "",
-          "type": "video"
-        }
-      },
       "team": {
         "id": "Team",
         "label": "Team Members",
@@ -390,21 +344,6 @@
           "team_navigation": "",
           "team_repeater_field": "portum_team_members",
           "type": "team"
-        }
-      },
-      "pricing": {
-        "id": "pricing",
-        "label": "Pricing",
-        "setting": "portum_frontpage_sections",
-        "content": {
-          "pricing_title": "See what packege suits best for you",
-          "pricing_subtitle": "PRICING",
-          "pricing_grouping": [
-            "all"
-          ],
-          "pricing_navigation": "",
-          "pricing_repeater_field": "portum_price_boxes",
-          "type": "pricing"
         }
       },
       "blog": {
