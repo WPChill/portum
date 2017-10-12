@@ -253,21 +253,27 @@
           "0": {
             "price_box_title": "STARTUP",
             "price_box_text": "Get started Now! You have the base",
-            "price_box_price": "<strong><sup>$</sup>75<sub>/mo</sub></strong>",
+            "price_box_currency": "$",
+            "price_box_price": "75",
+            "price_box_period": "mo",
             "price_box_url": "#",
             "price_box_features": "<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>"
           },
           "1": {
             "price_box_title": "GROWTH",
             "price_box_text": "Take your business to the next level",
-            "price_box_price": "<strong><sup>$</sup>95<sub>/mo</sub></strong>",
+            "price_box_currency": "$",
+            "price_box_price": "95",
+            "price_box_period": "mo",
             "price_box_url": "#",
             "price_box_features": "<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li><li>Managed Hosting</li><li>Managed Hosting</li></ul>"
           },
           "2": {
             "price_box_title": "PREMIUM",
             "price_box_text": "Get started Now! You have the base ",
-            "price_box_price": "<strong><sup>$</sup>125<sub>/mo</sub></strong>",
+            "price_box_currency": "$",
+            "price_box_price": "125",
+            "price_box_period": "mo",
             "price_box_url": "#",
             "price_box_features": "<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li><li>Managed Hosting</li></ul>"
           }

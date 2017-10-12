@@ -1,4 +1,4 @@
-var welcomeScreenFunctions = {
+var epsilonWelcomeScreenFunctions = {
   /**
    * Import demo content
    */
@@ -51,7 +51,7 @@ var welcomeScreenFunctions = {
   _importContent: function( $import, action, container ) {
     var args = {
       action: [ 'Epsilon_Import_Data', action ],
-      nonce: welcomeScreen.ajax_nonce,
+      nonce: epsilonWelcomeScreen.ajax_nonce,
       args: $import
     };
 
@@ -125,7 +125,7 @@ var welcomeScreenFunctions = {
     jQuery( '.required-action-button' ).click( function() {
       args = {
         action: [ 'Epsilon_Welcome_Screen', 'handle_required_action' ],
-        nonce: welcomeScreen.ajax_nonce,
+        nonce: epsilonWelcomeScreen.ajax_nonce,
         args: {
           'do': jQuery( this ).attr( 'data-action' ),
           'id': jQuery( this ).attr( 'id' )
@@ -226,7 +226,7 @@ var welcomeScreenFunctions = {
 
       jQuery.ajax( {
         beforeSend: function() {
-          self.replaceWith( '<a class="button updating-message">' + welcomeScreen.activating_string + '...</a>' );
+          self.replaceWith( '<a class="button updating-message">' + epsilonWelcomeScreen.activating_string + '...</a>' );
         },
         async: true,
         type: 'GET',
@@ -245,7 +245,7 @@ var welcomeScreenFunctions = {
           jQuery( '.import-content-container' ).find( 'input[data-slug="' + self.attr( 'data-slug' ) + '"]' ).parent().remove();
 
           if ( ! actions.length ) {
-            jQuery( '#plugin-filter' ).append( '<span class"hooray">' + welcomeScreen.no_actions + '</span>' );
+            jQuery( '#plugin-filter' ).append( '<span class"hooray">' + epsilonWelcomeScreen.no_actions + '</span>' );
           }
 
           jQuery( document ).trigger( 'epsilon-plugin-activated', dataToSend );
@@ -256,11 +256,11 @@ var welcomeScreenFunctions = {
     jQuery( document ).on( 'wp-plugin-install-success', function( response, data ) {
       var activateButton = jQuery( 'a[data-slug="' + data.slug + '"]' ),
           dataToSend = { plugin: data.slug };
-      if ( activateButton.length && ( jQuery( 'body' ).hasClass( welcomeScreen.body_class ) || jQuery( 'body' ).hasClass( 'wp-customizer' ) ) ) {
+      if ( activateButton.length && ( jQuery( 'body' ).hasClass( epsilonWelcomeScreen.body_class ) || jQuery( 'body' ).hasClass( 'wp-customizer' ) ) ) {
 
         jQuery.ajax( {
           beforeSend: function() {
-            activateButton.replaceWith( '<a class="button updating-message">' + welcomeScreen.activating_string + '...</a>' );
+            activateButton.replaceWith( '<a class="button updating-message">' + epsilonWelcomeScreen.activating_string + '...</a>' );
           },
           async: true,
           type: 'GET',
@@ -283,13 +283,13 @@ var welcomeScreenFunctions = {
 };
 
 jQuery( document ).ready( function() {
-  welcomeScreenFunctions.rangeSliders( jQuery( '#wpbody-content .widget-content' ) );
-  welcomeScreenFunctions.dismissAction();
-  welcomeScreenFunctions.importDemoContent();
-  welcomeScreenFunctions.showHiddenContent();
-  welcomeScreenFunctions.activatePlugin();
+  epsilonWelcomeScreenFunctions.rangeSliders( jQuery( '#wpbody-content .widget-content' ) );
+  epsilonWelcomeScreenFunctions.dismissAction();
+  epsilonWelcomeScreenFunctions.importDemoContent();
+  epsilonWelcomeScreenFunctions.showHiddenContent();
+  epsilonWelcomeScreenFunctions.activatePlugin();
 } );
 
 jQuery( document ).ajaxStop( function() {
-  welcomeScreenFunctions.rangeSliders( jQuery( '#wpbody-content .widget-content' ) );
+  epsilonWelcomeScreenFunctions.rangeSliders( jQuery( '#wpbody-content .widget-content' ) );
 } );

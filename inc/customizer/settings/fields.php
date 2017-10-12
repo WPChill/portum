@@ -645,11 +645,20 @@ Epsilon_Customizer::add_field(
 				'default'           => '',
 				'sanitize_callback' => 'wp_kses_post',
 			),
+			'price_box_currency' => array(
+				'label'   => esc_html__( 'Currency', 'portum' ),
+				'type'    => 'text',
+				'default' => '$',
+			),
 			'price_box_price'    => array(
-				'label'             => esc_html__( 'Price', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
+				'label'   => esc_html__( 'Price', 'portum' ),
+				'type'    => 'text',
+				'default' => '59',
+			),
+			'price_box_period'   => array(
+				'label'   => esc_html__( 'Period', 'portum' ),
+				'type'    => 'text',
+				'default' => 'mo',
 			),
 			'price_box_url'      => array(
 				'label'             => esc_html__( 'Button URL', 'portum' ),

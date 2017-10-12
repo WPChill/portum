@@ -105,7 +105,19 @@ class Portum_Customizer {
 	 * Dependencies: Customizer Controls script (core)
 	 */
 	public function customizer_enqueue_scripts() {
-		wp_enqueue_script( 'customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'portum-customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-controls' ) );
+
+		wp_localize_script(
+			'portum-customizer-scripts',
+			'portumCustomizer',
+			array(
+				'templateDirectory' => esc_url( get_template_directory_uri() ),
+				'ajaxNonce'         => wp_create_nonce( 'portum_nonce' ),
+				'siteUrl'           => esc_url( get_site_url() ),
+				'blogPage'          => esc_url( get_permalink( get_option( 'page_for_posts', false ) ) ),
+				'frontPage'         => esc_url( get_permalink( get_option( 'page_on_front', false ) ) ),
+			)
+		);
 	}
 
 	/**

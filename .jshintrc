@@ -19,7 +19,7 @@
     "wp": false,
     "PortumWPUrls": false,
     "console": false,
-    "welcomeScreen": false,
+    "epsilonWelcomeScreen": false,
     "ajaxurl": false,
     "_": false,
     "Portum": false,
