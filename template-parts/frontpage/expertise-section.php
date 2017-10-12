@@ -42,7 +42,7 @@ $fields['expertise'] = $frontpage->get_repeater_field( $fields['expertise_repeat
 							<div class="expertise-item">
 								<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
 									<h4>
-										<a href="#"><?php echo esc_html( $expertise['expertise_title'] ) ?></a> <strong>0<?php echo absint( $index + 1 ); ?></strong>
+										<a href="#"><?php echo esc_html( $expertise['expertise_title'] ); ?></a> <strong>0<?php echo absint( $index + 1 ); ?></strong>
 									</h4>
 								<?php } ?>
 
