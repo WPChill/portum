@@ -234,6 +234,11 @@ class Portum {
 				),
 			);
 
+			if ( is_customize_preview() ) {
+				$url                = 'themes.php?page=%1$s-welcome&tab=%2$s';
+				$actions[0]['help'] = '<a class="button button-primary" id="" href="' . esc_url( admin_url( sprintf( $url, 'portum', 'recommended-actions' ) ) ) . '">' . __( 'Import Demo Content', 'portum' ) . '</a>';
+			}
+
 			Epsilon_Welcome_Screen::get_instance(
 				$config = array(
 					'theme-name'  => 'Portum',

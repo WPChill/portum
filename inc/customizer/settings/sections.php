@@ -73,6 +73,26 @@ $panels = array(
  */
 $sections = array(
 	/**
+	 * Recommended actions
+	 */
+	array(
+		'id'   => 'portum_recomended_section',
+		'args' => array(
+			'type'                         => 'epsilon-section-recommended-actions',
+			'title'                        => esc_html__( 'Recomended Actions', 'portum' ),
+			'social_text'                  => esc_html__( 'MachoThemes is also social', 'portum' ),
+			'plugin_text'                  => esc_html__( 'Recomended Plugins', 'portum' ),
+			'actions'                      => Epsilon_Welcome_Screen::get_instance()->actions,
+			'plugins'                      => Epsilon_Welcome_Screen::get_instance()->plugins,
+			'theme_specific_option'        => Epsilon_Welcome_Screen::get_instance()->theme_slug . '_actions_left',
+			'theme_specific_plugin_option' => Epsilon_Welcome_Screen::get_instance()->theme_slug . '_plugins_left',
+			'facebook'                     => 'https://www.facebook.com/machothemes',
+			'twitter'                      => 'https://twitter.com/MachoThemez',
+			'wp_review'                    => false,
+			'priority'                     => 0,
+		),
+	),
+	/**
 	 * General section
 	 */
 	array(
