@@ -200,7 +200,7 @@ class Portum {
 		if ( is_admin() ) {
 			$plugins = array(
 				'kiwi-social-share'        => array(
-					'recommended' => false,
+					'recommended' => true,
 				),
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
