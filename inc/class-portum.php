@@ -127,7 +127,7 @@ class Portum {
 		if ( is_admin() ) {
 			$plugins = array(
 				'kiwi-social-share'        => array(
-					'recommended' => false,
+					'recommended' => true,
 				),
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
@@ -163,10 +163,10 @@ class Portum {
 
 			Epsilon_Welcome_Screen::get_instance(
 				$config = array(
-					'theme-name'  => 'Portum',
-					'theme-slug'  => 'portum',
-					'actions'     => $actions,
-					'plugins'     => $plugins,
+					'theme-name' => 'Portum',
+					'theme-slug' => 'portum',
+					'actions'    => $actions,
+					'plugins'    => $plugins,
 				)
 			);
 
