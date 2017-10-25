@@ -36,7 +36,7 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Front page', 'portum' ),
+			'title'          => esc_html__( 'Page Builder', 'portum' ),
 		),
 	),
 	/**
@@ -125,8 +125,8 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'       => esc_html__( 'Front Page Sections', 'portum' ),
-			'description' => esc_html__( 'Portum theme frontpage is rendered through the use of these sections.', 'portum' ),
+			'title'       => esc_html__( 'Page Sections', 'portum' ),
+			'description' => esc_html__( 'Portum theme pages are rendered through the use of these sections.', 'portum' ),
 			'priority'    => 0,
 			'panel'       => 'portum_panel_content',
 		),
@@ -206,4 +206,3 @@ $collection = array(
 );
 
 Epsilon_Customizer::add_multiple( $collection );
-

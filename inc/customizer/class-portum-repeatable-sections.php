@@ -112,10 +112,26 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_testimonials() {
 		return array(
-			'id'          => 'testimonials',
-			'title'       => esc_html__( 'Testimonials Section', 'portum' ),
-			'description' => esc_html__( 'A testimonial section. It retrieves content from Theme Content / Testimonials.', 'portum' ),
-			'fields'      => array(
+			'id'            => 'testimonials',
+			'title'         => esc_html__( 'Testimonials Section', 'portum' ),
+			'description'   => esc_html__( 'A testimonial section. It retrieves content from Theme Content / Testimonials.', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'styling' => array(
+					'background-color',
+					'background-image',
+					'background-position',
+					'background-size',
+				),
+				'layout'  => array(
+					'column-group',
+					'column-spacing',
+					'column-alignment',
+					'column-vertical-alignment',
+					'column-stretch',
+				),
+			),
+			'fields'        => array(
 				'testimonials_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'epsilon-text-editor',

@@ -147,7 +147,6 @@ class Portum_Post_Parser {
 
 		return $content;
 	}
-
 	/**
 	 * @param $control
 	 * @param $value

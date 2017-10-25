@@ -7,7 +7,7 @@
  * @package Portum
  */
 
-$frontpage = Portum_Frontpage::get_instance( 'portum_frontpage_sections' );
+$frontpage = Portum_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 $grouping  = array(
 	'values'   => $fields['expertise_grouping'],
@@ -42,7 +42,8 @@ $fields['expertise'] = $frontpage->get_repeater_field( $fields['expertise_repeat
 							<div class="expertise-item">
 								<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
 									<h4>
-										<a href="#"><?php echo esc_html( $expertise['expertise_title'] ); ?></a> <strong>0<?php echo absint( $index + 1 ); ?></strong>
+										<a href="#"><?php echo esc_html( $expertise['expertise_title'] ); ?></a>
+										<strong>0<?php echo absint( $index + 1 ); ?></strong>
 									</h4>
 								<?php } ?>
 

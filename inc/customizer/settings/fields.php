@@ -100,6 +100,7 @@ Epsilon_Customizer::add_field(
 			'font-family',
 			'font-weight',
 			'font-style',
+			'letter-spacing',
 		),
 		'selectors'     => array(
 			'.post-title',
@@ -111,9 +112,10 @@ Epsilon_Customizer::add_field(
 			'.post-content h6',
 		),
 		'font_defaults' => array(
-			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
+			'letter-spacing' => '0',
+			'font-family'    => '',
+			'font-weight'    => '',
+			'font-style'     => '',
 		),
 	)
 );
@@ -372,7 +374,6 @@ Epsilon_Customizer::add_field(
 		'section' => 'portum_footer_section',
 	)
 );
-
 /**
  * Theme Content
  */
@@ -685,11 +686,10 @@ Epsilon_Customizer::add_field(
 		'type'                => 'epsilon-section-repeater',
 		'label'               => esc_html__( 'Sections', 'portum' ),
 		'section'             => 'portum_repeatable_section',
-		'save_as_meta'        => Epsilon_Content_Backup::get_instance()->setting_page,
+		'page_builder'        => true,
 		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
 	)
 );
-
 /**
  * Color Schemes
  */

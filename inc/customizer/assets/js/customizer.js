@@ -255,15 +255,15 @@ wp.customize.bind( 'ready', function() {
 
   Portum.Customizer.pairedSettings( obj, wp.customize );
 
-  var activeCallbacked = {
-    'show_on_front': {
-      value: 'page',
-      fields: [ 'accordion-section-portum_repeatable_section' ]
-    }
-  };
+  // var activeCallbacked = {
+  //   'show_on_front': {
+  //     value: 'page',
+  //     fields: [ 'accordion-section-portum_repeatable_section' ]
+  //   }
+  // };
 
   Portum.Customizer.checkValuesAndDisable( '#customize-control-portum_contact_form' );
 
-  Portum.Customizer.handleActiveCallback( activeCallbacked );
+  //Portum.Customizer.handleActiveCallback( activeCallbacked );
   Portum.Customizer.handleAwfulSorting();
 } );

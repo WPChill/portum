@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Portum_Frontpage
+ * Class Portum_Page_Generator
  */
-class Portum_Frontpage {
+class Portum_Page_Generator {
 
 	/**
 	 * Holds the active sections
@@ -29,12 +29,18 @@ class Portum_Frontpage {
 	public $option = '';
 
 	/**
+	 * @var string
+	 */
+	public $post_id = '';
+
+	/**
 	 * Construct the frontpage class
 	 *
-	 * Portum_Frontpage constructor.
+	 * Portum_Page_Generator constructor.
 	 */
-	public function __construct( $option = '' ) {
-		$this->option = $option;
+	public function __construct( $option = '', $id = '' ) {
+		$this->option  = $option;
+		$this->post_id = $id;
 		$this->set_sections();
 	}
 
@@ -45,7 +51,7 @@ class Portum_Frontpage {
 		if ( is_customize_preview() ) {
 			$this->sections = $this->get_customizer_sections();
 		} else {
-			$this->sections = get_post_meta( Epsilon_Content_Backup::get_instance()->setting_page, $this->option, true );
+			$this->sections = get_post_meta( $this->post_id, $this->option, true );
 			$this->sections = isset( $this->sections[ $this->option ] ) ? $this->sections[ $this->option ] : array();
 		}
 	}
@@ -53,10 +59,10 @@ class Portum_Frontpage {
 	/**
 	 * Get an instance of the frontpage renderer
 	 */
-	public static function get_instance( $option = '' ) {
+	public static function get_instance( $option = '', $id = '' ) {
 		static $inst;
 		if ( ! $inst ) {
-			$inst = new Portum_Frontpage( $option );
+			$inst = new Portum_Page_Generator( $option, $id );
 		}
 
 		return $inst;
@@ -79,7 +85,7 @@ class Portum_Frontpage {
 		}
 
 		if ( empty( $customizer_setting ) ) {
-			$customizer_setting = get_post_meta( Epsilon_Content_Backup::get_instance()->setting_page, $this->option, true );
+			$customizer_setting = get_post_meta( $this->post_id, $this->option, true );
 			$customizer_setting = isset( $customizer_setting[ $this->option ] ) ? $customizer_setting[ $this->option ] : array();
 		}
 
@@ -150,7 +156,7 @@ class Portum_Frontpage {
 	 *
 	 * @param  string $template   Identifier for the template section.
 	 * @param  array  $args       Template settings.
-	 * @param string $section_id Id of the section we need to render in the frontend.
+	 * @param string  $section_id Id of the section we need to render in the frontend.
 	 */
 	public function section_template( $template = '', $args = array(), $section_id = '' ) {
 		$template_part = $args['type'] . '-section';
