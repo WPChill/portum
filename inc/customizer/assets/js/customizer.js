@@ -35,16 +35,6 @@ Portum.Customizer = {
         }
       }
       return newArray;
-    },
-
-    /**
-     * Grabs value from repeater field
-     *
-     * @param instance
-     * @returns {*}
-     */
-    getValueFromRepeater: function( instance ) {
-      return EpsilonFramework.repeater.base.getValue( instance );
     }
   },
 
@@ -78,7 +68,7 @@ Portum.Customizer = {
        * Handle updates ( basically, when the user types in the doctors field -> an option is being created in the select )
        */
       api.control( k ).container.on( 'row:update', _.debounce( function() {
-        var val = self.helpers.getValueFromRepeater( api.control( k ) ),
+        var val = api.control( k ).setting.get(),
             selects = jQuery( '.repeater-sections' ).find( '[data-field=\'' + v.field + '\']' );
 
         _.each( selects, function( k ) {
@@ -92,7 +82,7 @@ Portum.Customizer = {
        * When you remove a row, the value gets cleaned ( array could contain undefined elements, we need to get RID of them )
        */
       api.control( k ).container.on( 'row:remove', function() {
-        var val = self.helpers.getValueFromRepeater( api.control( k ) ),
+        var val = api.control( k ).setting.get(),
             selects = jQuery( '.repeater-sections' ).find( '[data-field=\'' + v.field + '\']' );
         val = self.helpers.cleanArray( val );
         _.each( selects, function( k ) {
@@ -117,7 +107,7 @@ Portum.Customizer = {
       _.each( options, function( v ) {
         select[ 0 ].selectize.addOption( { value: v[ key ], text: v[ key ] } );
         select[ 0 ].selectize.refreshOptions( false );
-        select[ 0 ].selectize.setValue( 'all', false );
+        //select[ 0 ].selectize.setValue( 'all', false );
       } );
     } else {
       select.append( jQuery( '<option></option>' ).attr( 'value', 'all' ).text( 'All' ) );
@@ -255,12 +245,12 @@ wp.customize.bind( 'ready', function() {
 
   Portum.Customizer.pairedSettings( obj, wp.customize );
 
-  // var activeCallbacked = {
-  //   'show_on_front': {
-  //     value: 'page',
-  //     fields: [ 'accordion-section-portum_repeatable_section' ]
-  //   }
-  // };
+  var activeCallbacked = {
+    'show_on_front': {
+      value: 'page',
+      fields: [ 'accordion-section-portum_repeatable_section' ]
+    }
+  };
 
   Portum.Customizer.checkValuesAndDisable( '#customize-control-portum_contact_form' );
 

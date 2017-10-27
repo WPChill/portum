@@ -64,6 +64,13 @@ class Epsilon_Import_Data {
 	public $all_slugs = array();
 
 	/**
+	 * Newly created page
+	 *
+	 * @var null
+	 */
+	public $front_page = null;
+
+	/**
 	 * Epsilon_Import_Data constructor.
 	 *
 	 * @param array $args
@@ -276,6 +283,8 @@ class Epsilon_Import_Data {
 			update_option( 'page_on_front', $id );
 		}
 
+		$this->front_page = get_option( 'page_on_front' );
+
 		return 'ok';
 	}
 
@@ -334,9 +343,9 @@ class Epsilon_Import_Data {
 	 * @todo receive "argument" with demo slug and import accordingly
 	 */
 	public static function add_default_sections( $args = '' ) {
-		$arr      = array();
-		$instance = self::get_instance();
-
+		$arr                  = array();
+		$instance             = self::get_instance();
+		$instance->front_page = get_option( 'page_on_front' );
 		foreach ( $args as $type => $what ) {
 			switch ( $type ) {
 				case 'sections':
@@ -428,7 +437,7 @@ class Epsilon_Import_Data {
 				$sidebars_widgets = array();
 			}
 
-			$new_instance_id   = $widget_type . '-' . $new_id;
+			$new_instance_id = $widget_type . '-' . $new_id;
 
 			// Add new instance to sidebar.
 			$sidebars_widgets[ $prop['sidebar_id'] ][] = $new_instance_id;
@@ -500,9 +509,9 @@ class Epsilon_Import_Data {
 		 */
 		if ( 'post_meta' === $this->mode ) {
 			update_post_meta(
-				Epsilon_Content_Backup::get_instance()->setting_page,
-				$setting, array(
-					$setting => $import,
+				null === $this->front_page ? Epsilon_Content_Backup::get_instance()->setting_page : $this->front_page,
+				$setting . '_' . $this->front_page, array(
+					$setting . '_' . $this->front_page => $import,
 				)
 			);
 

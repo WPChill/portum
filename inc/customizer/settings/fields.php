@@ -686,8 +686,10 @@ Epsilon_Customizer::add_field(
 		'type'                => 'epsilon-section-repeater',
 		'label'               => esc_html__( 'Sections', 'portum' ),
 		'section'             => 'portum_repeatable_section',
+		'selective_refresh'   => true,
 		'page_builder'        => true,
 		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
+		'transport'           => 'postMessage',
 	)
 );
 /**

@@ -7,13 +7,12 @@
  * @package Portum
  */
 
-$frontpage = Portum_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
-$fields    = $frontpage->sections[ $section_id ];
-$grouping  = array(
+$frontpage          = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields             = $frontpage->sections[ $section_id ];
+$grouping           = array(
 	'values'   => $fields['services_grouping'],
 	'group_by' => 'service_title',
 );
-
 $fields['services'] = $frontpage->get_repeater_field( $fields['services_repeater_field'], array(), $grouping );
 
 $attr = '';

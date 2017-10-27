@@ -94,7 +94,7 @@ if ( 'posts' === $show_on_front ) :
 	</div>
 	<?php
 else :
-	$portum_fp = Portum_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+	$portum_fp = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 	$portum_fp->generate_output();
 endif;
 

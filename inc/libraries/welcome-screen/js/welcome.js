@@ -9,11 +9,11 @@ var epsilonWelcomeScreenFunctions = {
           container = jQuery( this ).parents( '.action-required-box' ),
           checkboxes = container.find( ':checkbox' ),
           importThis = {
+            'options': [],
             'plugins': [],
             'content': [],
             'sections': [],
-            'widgets': [],
-            'options': []
+            'widgets': []
           };
 
       e.preventDefault();
