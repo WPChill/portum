@@ -77,20 +77,6 @@ class Epsilon_Welcome_Screen {
 	public $strings = array();
 
 	/**
-	 * EDD load
-	 *
-	 * @var bool
-	 */
-	public $edd = false;
-
-	/**
-	 * If we have an EDD product, we need to add an ID
-	 *
-	 * @var string
-	 */
-	public $download_id = '';
-
-	/**
 	 * Epsilon_Welcome_Screen constructor.
 	 *
 	 * @param array $config Configuration array.
@@ -122,12 +108,6 @@ class Epsilon_Welcome_Screen {
 		$this->plugins       = $config['plugins'];
 		$this->notice        = $config['notice'];
 		$this->sections      = $config['sections'];
-		$this->edd           = $config['edd'];
-		$this->download_id   = $config['download_id'];
-
-		if ( $this->edd ) {
-			$this->strings = EDD_Theme_Helper::get_strings();
-		}
 
 		if ( empty( $config['sections'] ) ) {
 			$this->sections = $this->set_default_sections( $config );
@@ -159,24 +139,6 @@ class Epsilon_Welcome_Screen {
 			$this,
 			'welcome_screen_ajax_callback',
 		) );
-
-		if ( $this->edd ) {
-			/**
-			 * Initiate EDD Stuff
-			 */
-			add_action( 'admin_init', array( 'EDD_Theme_Helper', 'init' ) );
-			add_filter( 'http_request_args', array( 'EDD_Theme_Helper', 'disable_wporg_request' ), 5, 2 );
-
-			add_action(
-				'update_option_' . $this->theme_slug . '_license_key',
-				array(
-					'EDD_Theme_Helper',
-					'license_activator_deactivator',
-				),
-				10,
-				2
-			);
-		}
 	}
 
 	/**
