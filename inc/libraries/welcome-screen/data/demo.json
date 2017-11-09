@@ -4,6 +4,54 @@
       "footer-sidebar-1": {
       }
     },
+    "menus": {
+      "primary": {
+        "id": "primary",
+        "label": "Primary Menu",
+        "menu": [
+          {
+            "href": "#",
+            "label": "Lorem"
+          },
+          {
+            "href": "#",
+            "label": "Ipsum"
+          },
+          {
+            "href": "#",
+            "label": "Dolor",
+            "submenus": [
+              {
+                "href": "#",
+                "label": "Page 1a"
+              },
+              {
+                "href": "#",
+                "label": "Page 1b",
+                "submenus": [
+                  {
+                    "href": "#",
+                    "label": "Page 2a"
+                  },
+                  {
+                    "href": "#",
+                    "label": "Page 2b"
+                  }
+                ]
+              },
+              {
+                "href": "#",
+                "label": "Page 1c"
+              }
+            ]
+          },
+          {
+            "href": "#",
+            "label": "Sit Amet"
+          }
+        ]
+      }
+    },
     "options": {
       "logo": {
         "id": "logo",
@@ -310,7 +358,7 @@
         "content": {
           "services_title": "We offer:",
           "services_subtitle": "SERVICES",
-          "services_image": "/assets/images/back-services-area.png",
+          "services_background_image": "/assets/images/back-services-area.png",
           "services_grouping": [
             "all"
           ],

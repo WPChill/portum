@@ -45,4 +45,20 @@ $count          = $this->count_actions();
 			<a target="_blank" href="<?php echo esc_url( $customizer_url ); ?>" class="button button-primary"><?php esc_html_e( 'Go to Customizer', 'epsilon-framework' ); ?></a>
 		</p>
 	</div><!--/.col-->
+
+	<div class="col-fulwidth">
+		<h3><?php esc_html_e( 'Give us your feedback', 'epsilon-framework' ); ?></h3>
+		<p><?php
+			/* Translators: Feedback */
+			echo __(
+				sprintf(
+					wp_kses_post( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s. <br/> <br/> <strong>Note: A 10%% discount coupon will be emailed to you after form submission. Please use a valid email address.</strong>' ),
+					'Portum',
+					'<a target="_blank" href="https://bit.ly/portum-feedback">',
+					'</a>' ),
+				'epsilon-framework'
+			);
+			?>
+		</p>
+	</div>
 </div><!--/.feature-section-->

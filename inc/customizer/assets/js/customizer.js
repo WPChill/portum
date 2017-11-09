@@ -213,8 +213,7 @@ wp.customize.bind( 'ready', function() {
 
   /**
    *
-   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string},
-   *     portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
+   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string}, portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
    */
   var obj = {
     'portum_expertise': {
