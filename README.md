@@ -1,13 +1,5 @@
-# Repository clone/download :fire: :fire: :fire:
-
-This repository contains a git sub-module and as such, can not be completely downloaded using the web-interface of GitHub. This is a known limitation of GitHub's own tools. However, cloning this repository via CLI works absolutely fine and will pull all sub-modules as long as you use the proper commands. 
-
-Here's a short tutorial on how to achieve this as well as a better explanation of what Git sub-modules are and how they're useful: https://gist.github.com/gitaarik/8735255
-
-Easiest way to go about cloning a repository recursively is to use (Windows only) TortoiseGIT: https://tortoisegit.org/.
-
 # Portum
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, sticky-posts, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready
 
 Requires at least:	4.0
 Tested up to:		4.8
