@@ -109,8 +109,15 @@ class Portum {
 		}
 		$html = '<p>';
 		$html .=
-			/* Translators: Notice */
-			__( wp_kses_post( sprintf( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s. <br/> <br/> <strong>Note: A 10%% discount coupon will be emailed to you after form submission. Please use a valid email address.</strong>', 'Portum', '<a target="_blank" href="https://bit.ly/portum-feedback">', '</a>' ) ), 'portum' );
+			vsprintf(
+			// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
+				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s. <br/> <br/> <strong>Note: A 10%% discount coupon will be emailed to you after form submission. Please use a valid email address.</strong>', 'portum' ),
+				array(
+					'Portum',
+					'<a target="_blank" href="https://bit.ly/portum-feedback">',
+					'</a>',
+				)
+			);
 
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice(
