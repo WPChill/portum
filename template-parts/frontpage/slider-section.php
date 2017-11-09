@@ -7,7 +7,7 @@
  * @package Portum
  */
 
-$frontpage        = Portum_Frontpage::get_instance( 'portum_frontpage_sections' );
+$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields           = $frontpage->sections[ $section_id ];
 $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array() );
 ?>

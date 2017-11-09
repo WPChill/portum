@@ -7,7 +7,7 @@
  * @package Portum
  */
 
-$frontpage = Portum_Frontpage::get_instance();
+$frontpage = Epsilon_Page_Generator::get_instance();
 
 ?>
 

@@ -5,10 +5,11 @@
 /* New Logo */
 .wp-badge.epsilon-welcome-logo {
     color: #fff;
-    background-image: url(../img/macho-themes-logo.svg);
+    background-image: url(../img/macho-themes-logo.png);
     background-position: center center;
     background-size: 70%;
     background-repeat: no-repeat;
+    background-color: #191E23;
 }
 
 /* proper positioning of the icons */

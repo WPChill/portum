@@ -45,4 +45,13 @@
     Portum.Mobile.menu();
   } );
 
+  $( document ).on( 'epsilon-selective-refresh-ready', function() {
+    /**
+     * Initiate plugins
+     */
+    Portum.Plugins.owlSlider();
+    Portum.Plugins.video();
+    Portum.Plugins.magnificPopup();
+  } );
+
 })( jQuery );

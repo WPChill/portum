@@ -4,11 +4,11 @@
  *
  * @link    https://codex.wordpress.org/Template_Hierarchy
  *
- * @package MedZone
+ * @package Portum
  */
 
 $layout    = Portum_Helper::get_layout( 'portum_page_layout' );
-$frontpage = Portum_Frontpage::get_instance( 'portum_frontpage_sections' );
+$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 
 $id = get_the_ID();

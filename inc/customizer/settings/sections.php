@@ -36,7 +36,7 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Front page', 'portum' ),
+			'title'          => esc_html__( 'Page Builder', 'portum' ),
 		),
 	),
 	/**
@@ -73,6 +73,26 @@ $panels = array(
  */
 $sections = array(
 	/**
+	 * Recommended actions
+	 */
+	array(
+		'id'   => 'portum_recomended_section',
+		'args' => array(
+			'type'                         => 'epsilon-section-recommended-actions',
+			'title'                        => esc_html__( 'Recomended Actions', 'portum' ),
+			'social_text'                  => esc_html__( 'MachoThemes is also social', 'portum' ),
+			'plugin_text'                  => esc_html__( 'Recomended Plugins', 'portum' ),
+			'actions'                      => Epsilon_Welcome_Screen::get_instance()->actions,
+			'plugins'                      => Epsilon_Welcome_Screen::get_instance()->plugins,
+			'theme_specific_option'        => Epsilon_Welcome_Screen::get_instance()->theme_slug . '_actions_left',
+			'theme_specific_plugin_option' => Epsilon_Welcome_Screen::get_instance()->theme_slug . '_plugins_left',
+			'facebook'                     => 'https://www.facebook.com/machothemes',
+			'twitter'                      => 'https://twitter.com/MachoThemez',
+			'wp_review'                    => false,
+			'priority'                     => 0,
+		),
+	),
+	/**
 	 * General section
 	 */
 	array(
@@ -105,8 +125,8 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'       => esc_html__( 'Front Page Sections', 'portum' ),
-			'description' => esc_html__( 'Portum theme frontpage is rendered through the use of these sections.', 'portum' ),
+			'title'       => esc_html__( 'Page Sections', 'portum' ),
+			'description' => esc_html__( 'Portum theme pages are rendered through the use of these sections.', 'portum' ),
 			'priority'    => 0,
 			'panel'       => 'portum_panel_content',
 		),
@@ -186,4 +206,3 @@ $collection = array(
 );
 
 Epsilon_Customizer::add_multiple( $collection );
-

@@ -35,16 +35,6 @@ Portum.Customizer = {
         }
       }
       return newArray;
-    },
-
-    /**
-     * Grabs value from repeater field
-     *
-     * @param instance
-     * @returns {*}
-     */
-    getValueFromRepeater: function( instance ) {
-      return EpsilonFramework.repeater.base.getValue( instance );
     }
   },
 
@@ -78,7 +68,7 @@ Portum.Customizer = {
        * Handle updates ( basically, when the user types in the doctors field -> an option is being created in the select )
        */
       api.control( k ).container.on( 'row:update', _.debounce( function() {
-        var val = self.helpers.getValueFromRepeater( api.control( k ) ),
+        var val = api.control( k ).setting.get(),
             selects = jQuery( '.repeater-sections' ).find( '[data-field=\'' + v.field + '\']' );
 
         _.each( selects, function( k ) {
@@ -92,7 +82,7 @@ Portum.Customizer = {
        * When you remove a row, the value gets cleaned ( array could contain undefined elements, we need to get RID of them )
        */
       api.control( k ).container.on( 'row:remove', function() {
-        var val = self.helpers.getValueFromRepeater( api.control( k ) ),
+        var val = api.control( k ).setting.get(),
             selects = jQuery( '.repeater-sections' ).find( '[data-field=\'' + v.field + '\']' );
         val = self.helpers.cleanArray( val );
         _.each( selects, function( k ) {
@@ -117,7 +107,7 @@ Portum.Customizer = {
       _.each( options, function( v ) {
         select[ 0 ].selectize.addOption( { value: v[ key ], text: v[ key ] } );
         select[ 0 ].selectize.refreshOptions( false );
-        select[ 0 ].selectize.setValue( 'all', false );
+        //select[ 0 ].selectize.setValue( 'all', false );
       } );
     } else {
       select.append( jQuery( '<option></option>' ).attr( 'value', 'all' ).text( 'All' ) );
@@ -223,8 +213,7 @@ wp.customize.bind( 'ready', function() {
 
   /**
    *
-   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string},
-   *     portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
+   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string}, portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
    */
   var obj = {
     'portum_expertise': {
@@ -264,6 +253,6 @@ wp.customize.bind( 'ready', function() {
 
   Portum.Customizer.checkValuesAndDisable( '#customize-control-portum_contact_form' );
 
-  Portum.Customizer.handleActiveCallback( activeCallbacked );
+  //Portum.Customizer.handleActiveCallback( activeCallbacked );
   Portum.Customizer.handleAwfulSorting();
 } );

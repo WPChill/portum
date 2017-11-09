@@ -39,6 +39,12 @@ class Epsilon_Import_Data {
 	 */
 	public $options = array();
 	/**
+	 * Array of menus
+	 *
+	 * @var array
+	 */
+	public $menus = array();
+	/**
 	 * Array of widgets
 	 *
 	 * @var array
@@ -62,6 +68,13 @@ class Epsilon_Import_Data {
 	 * @var array
 	 */
 	public $all_slugs = array();
+
+	/**
+	 * Newly created page
+	 *
+	 * @var null
+	 */
+	public $front_page = null;
 
 	/**
 	 * Epsilon_Import_Data constructor.
@@ -217,6 +230,15 @@ class Epsilon_Import_Data {
 				$html .= '</div>';
 			}
 
+			if ( ! empty( $this->menus[ $demo_slug ] ) ) {
+				$html .= '<div class="checkbox-group">';
+				$html .= '<h4>' . __( 'Menus', 'portum' ) . '</h4>';
+				foreach ( $this->menus[ $demo_slug ] as $k => $v ) {
+					$html .= $this->generate_checkbox( $k, 'menus', $v['label'] );
+				}
+				$html .= '</div>';
+			}
+
 			if ( ! empty( $this->widgets[ $demo_slug ] ) ) {
 				$html .= '<div class="checkbox-group">';
 				$html .= '<h4>' . __( 'Widgets', 'portum' ) . '</h4>';
@@ -276,6 +298,8 @@ class Epsilon_Import_Data {
 			update_option( 'page_on_front', $id );
 		}
 
+		$this->front_page = get_option( 'page_on_front' );
+
 		return 'ok';
 	}
 
@@ -334,9 +358,9 @@ class Epsilon_Import_Data {
 	 * @todo receive "argument" with demo slug and import accordingly
 	 */
 	public static function add_default_sections( $args = '' ) {
-		$arr      = array();
-		$instance = self::get_instance();
-
+		$arr                  = array();
+		$instance             = self::get_instance();
+		$instance->front_page = get_option( 'page_on_front' );
 		foreach ( $args as $type => $what ) {
 			switch ( $type ) {
 				case 'sections':
@@ -351,6 +375,9 @@ class Epsilon_Import_Data {
 				case 'widgets':
 					$temp = $instance->add_theme_widgets( $what );
 					break;
+				case 'menus':
+					$temp = $instance->add_theme_menus( $what );
+					break;
 				default:
 					$temp = null;
 					break;
@@ -358,7 +385,74 @@ class Epsilon_Import_Data {
 			$arr[ $type ] = $temp;
 		}
 
+		set_theme_mod( 'portum_content_imported', true );
+
 		return 'ok';
+	}
+
+	/**
+	 * Add default Menus
+	 *
+	 * @param $what
+	 *
+	 * @return string
+	 */
+	public function add_theme_menus( $what ) {
+		foreach ( $what as $menu ) {
+			$ref         = $this->menus[ $this->slug ][ $menu ];
+			$menu_exists = wp_get_nav_menu_object( $ref['label'] );
+
+			if ( ! $menu_exists ) {
+				$menu_id = wp_create_nav_menu( $ref['label'] );
+
+				if ( 'primary' === $ref['id'] ) {
+					wp_update_nav_menu_item( $menu_id, 0, array(
+						'menu-item-title'   => esc_html__( 'Home', 'epsilon-framework' ),
+						'menu-item-classes' => 'home',
+						'menu-item-url'     => home_url( '/' ),
+						'menu-item-status'  => 'publish',
+					) );
+				}
+
+				$arr = $ref['menu'];
+
+				foreach ( $arr as $item ) {
+					$this->_add_menu_items( $menu_id, $item );
+				}
+
+				$menus = get_theme_mod( 'nav_menu_locations', array() );
+
+				$menus[ $ref['id'] ] = $menu_id;
+
+				set_theme_mod( 'nav_menu_locations', $menus );
+
+			}
+		}
+
+		return 'ok';
+	}
+
+	/**
+	 * Adds menu item
+	 *
+	 * @param $id
+	 * @param $item
+	 * @param $parent
+	 */
+	private function _add_menu_items( $id, $item, $parent = false ) {
+		$item_id = wp_update_nav_menu_item( $id, 0, array(
+			'menu-item-title'     => $item['label'],
+			'menu-item-classes'   => $item['label'],
+			'menu-item-url'       => $item['href'],
+			'menu-item-status'    => 'publish',
+			'menu-item-parent-id' => $parent ? $parent : 0,
+		) );
+
+		if ( isset( $item['submenus'] ) ) {
+			foreach ( $item['submenus'] as $child ) {
+				$this->_add_menu_items( $id, $child, $item_id );
+			}
+		}
 	}
 
 	/**
@@ -428,7 +522,7 @@ class Epsilon_Import_Data {
 				$sidebars_widgets = array();
 			}
 
-			$new_instance_id   = $widget_type . '-' . $new_id;
+			$new_instance_id = $widget_type . '-' . $new_id;
 
 			// Add new instance to sidebar.
 			$sidebars_widgets[ $prop['sidebar_id'] ][] = $new_instance_id;
@@ -500,9 +594,9 @@ class Epsilon_Import_Data {
 		 */
 		if ( 'post_meta' === $this->mode ) {
 			update_post_meta(
-				Epsilon_Content_Backup::get_instance()->setting_page,
-				$setting, array(
-					$setting => $import,
+				null === $this->front_page ? Epsilon_Content_Backup::get_instance()->setting_page : $this->front_page,
+				$setting . '_' . $this->front_page, array(
+					$setting . '_' . $this->front_page => $import,
 				)
 			);
 

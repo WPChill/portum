@@ -28,16 +28,16 @@ if ( post_password_required() ) {
 					if ( have_comments() ) :
 						?>
 						<h3 class="comments-title">
-							<span> <?php echo esc_html__( 'Comments', 'medzone' ); ?></span>
+							<span> <?php echo esc_html__( 'Comments', 'portum' ); ?></span>
 						</h3>
 
 						<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 							<nav id="comment-nav-above" class="navigation comment-navigation">
-								<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'medzone' ); ?></h2>
+								<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'portum' ); ?></h2>
 								<div class="nav-links">
 
-									<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'medzone' ) ); ?></div>
-									<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'medzone' ) ); ?></div>
+									<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'portum' ) ); ?></div>
+									<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'portum' ) ); ?></div>
 
 								</div><!-- .nav-links -->
 							</nav><!-- #comment-nav-above -->
@@ -57,11 +57,11 @@ if ( post_password_required() ) {
 
 						<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 							<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-								<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'medzone' ); ?></h2>
+								<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'portum' ); ?></h2>
 								<div class="nav-links">
 
-									<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'medzone' ) ); ?></div>
-									<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'medzone' ) ); ?></div>
+									<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'portum' ) ); ?></div>
+									<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'portum' ) ); ?></div>
 
 								</div><!-- .nav-links -->
 							</nav><!-- #comment-nav-below -->
@@ -72,7 +72,7 @@ if ( post_password_required() ) {
 
 					if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 						?>
-						<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'medzone' ); ?></p>
+						<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'portum' ); ?></p>
 						<?php
 					endif;
 

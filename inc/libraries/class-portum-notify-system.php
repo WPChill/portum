@@ -11,12 +11,9 @@ class Portum_Notify_System extends Epsilon_Notify_System {
 	 * Check installed data
 	 */
 	public static function check_installed_data() {
-		$sections = get_post_meta( Epsilon_Content_Backup::get_instance()->setting_page, 'portum_frontpage_sections', true );
-		if ( ! empty( $sections['portum_frontpage_sections'] ) ) {
-			$sections = $sections['portum_frontpage_sections'];
-		}
+		$imported = get_theme_mod( 'portum_content_imported', false );
 
-		return ! empty( $sections );
+		return $imported;
 	}
 
 	/**

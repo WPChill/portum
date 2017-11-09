@@ -100,6 +100,7 @@ Epsilon_Customizer::add_field(
 			'font-family',
 			'font-weight',
 			'font-style',
+			'letter-spacing',
 		),
 		'selectors'     => array(
 			'.post-title',
@@ -111,9 +112,10 @@ Epsilon_Customizer::add_field(
 			'.post-content h6',
 		),
 		'font_defaults' => array(
-			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
+			'letter-spacing' => '0',
+			'font-family'    => '',
+			'font-weight'    => '',
+			'font-style'     => '',
 		),
 	)
 );
@@ -372,7 +374,6 @@ Epsilon_Customizer::add_field(
 		'section' => 'portum_footer_section',
 	)
 );
-
 /**
  * Theme Content
  */
@@ -595,22 +596,22 @@ Epsilon_Customizer::add_field(
 				'default' => '',
 			),
 			'member_social_facebook'  => array(
-				'label'   => esc_html__( 'Facebook', 'medzone' ),
+				'label'   => esc_html__( 'Facebook', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://facebook.com',
 			),
 			'member_social_twitter'   => array(
-				'label'   => esc_html__( 'Twitter', 'medzone' ),
+				'label'   => esc_html__( 'Twitter', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://twitter.com',
 			),
 			'member_social_pinterest' => array(
-				'label'   => esc_html__( 'Pinterest', 'medzone' ),
+				'label'   => esc_html__( 'Pinterest', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://pinterest.com',
 			),
 			'member_social_linkedin'  => array(
-				'label'   => esc_html__( 'LinkedIn', 'medzone' ),
+				'label'   => esc_html__( 'LinkedIn', 'portum' ),
 				'type'    => 'url',
 				'default' => 'https://linkedin.com',
 			),
@@ -685,11 +686,12 @@ Epsilon_Customizer::add_field(
 		'type'                => 'epsilon-section-repeater',
 		'label'               => esc_html__( 'Sections', 'portum' ),
 		'section'             => 'portum_repeatable_section',
-		'save_as_meta'        => Epsilon_Content_Backup::get_instance()->setting_page,
+		'selective_refresh'   => true,
+		'page_builder'        => true,
 		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
+		'transport'           => 'postMessage',
 	)
 );
-
 /**
  * Color Schemes
  */
