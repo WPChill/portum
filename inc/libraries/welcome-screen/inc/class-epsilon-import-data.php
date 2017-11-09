@@ -2,7 +2,7 @@
 /**
  * Epsilon Import Data Class
  *
- * @package MedZone
+ * @package Portum
  * @since   1.0
  */
 
@@ -214,7 +214,7 @@ class Epsilon_Import_Data {
 
 			if ( ! empty( $this->content[ $demo_slug ] ) ) {
 				$html .= '<div class="checkbox-group">';
-				$html .= '<h4>' . __( 'Content', 'medzone' ) . '</h4>';
+				$html .= '<h4>' . __( 'Content', 'portum' ) . '</h4>';
 				foreach ( $this->content[ $demo_slug ] as $k => $v ) {
 					$html .= $this->generate_checkbox( $k, 'content', $v['label'] );
 				}
@@ -223,7 +223,7 @@ class Epsilon_Import_Data {
 
 			if ( ! empty( $this->sections[ $demo_slug ] ) ) {
 				$html .= '<div class="checkbox-group">';
-				$html .= '<h4>' . __( 'Sections', 'medzone' ) . '</h4>';
+				$html .= '<h4>' . __( 'Sections', 'portum' ) . '</h4>';
 				foreach ( $this->sections[ $demo_slug ] as $k => $v ) {
 					$html .= $this->generate_checkbox( $k, 'sections', $v['label'] );
 				}
@@ -232,7 +232,7 @@ class Epsilon_Import_Data {
 
 			if ( ! empty( $this->menus[ $demo_slug ] ) ) {
 				$html .= '<div class="checkbox-group">';
-				$html .= '<h4>' . __( 'Menus', 'medzone' ) . '</h4>';
+				$html .= '<h4>' . __( 'Menus', 'portum' ) . '</h4>';
 				foreach ( $this->menus[ $demo_slug ] as $k => $v ) {
 					$html .= $this->generate_checkbox( $k, 'menus', $v['label'] );
 				}
@@ -241,7 +241,7 @@ class Epsilon_Import_Data {
 
 			if ( ! empty( $this->widgets[ $demo_slug ] ) ) {
 				$html .= '<div class="checkbox-group">';
-				$html .= '<h4>' . __( 'Widgets', 'medzone' ) . '</h4>';
+				$html .= '<h4>' . __( 'Widgets', 'portum' ) . '</h4>';
 				foreach ( $this->widgets[ $demo_slug ] as $k => $v ) {
 					foreach ( $v as $id => $props ) {
 						$html .= $this->generate_checkbox( $k . '|' . $id, 'widgets', $props['title'] );
@@ -252,7 +252,7 @@ class Epsilon_Import_Data {
 
 			if ( ! empty( $this->options[ $demo_slug ] ) ) {
 				$html .= '<div class="checkbox-group">';
-				$html .= '<h4>' . __( 'Frontpage settings', 'medzone' ) . '</h4>';
+				$html .= '<h4>' . __( 'Frontpage settings', 'portum' ) . '</h4>';
 				foreach ( $this->options[ $demo_slug ] as $k => $v ) {
 					$html .= $this->generate_checkbox( $k, 'options', $v['label'] );
 				}

@@ -129,7 +129,7 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'testimonials_grouping'       => array(
-					'label'    => esc_html__( 'Testimonials to show', 'medzone' ),
+					'label'    => esc_html__( 'Testimonials to show', 'portum' ),
 					'type'     => 'selectize',
 					'multiple' => true,
 					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),

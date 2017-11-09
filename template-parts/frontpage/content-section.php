@@ -4,7 +4,7 @@
  *
  * @link    https://codex.wordpress.org/Template_Hierarchy
  *
- * @package MedZone
+ * @package Portum
  */
 
 $layout    = Portum_Helper::get_layout( 'portum_page_layout' );
