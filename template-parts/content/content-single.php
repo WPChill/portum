@@ -34,8 +34,8 @@
 						'after'            => '</nav>',
 						'separator'        => '<span class="sep"></span>',
 						'next_or_number'   => 'next',
-						'nextpagelink'     => __( 'Next page', 'medzone' ),
-						'previouspagelink' => __( 'Previous page', 'medzone' ),
+						'nextpagelink'     => __( 'Next page', 'portum' ),
+						'previouspagelink' => __( 'Previous page', 'portum' ),
 					)
 				);
 				?>

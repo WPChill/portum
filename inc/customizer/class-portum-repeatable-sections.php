@@ -129,7 +129,7 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'testimonials_grouping'       => array(
-					'label'    => esc_html__( 'Testimonials to show', 'medzone' ),
+					'label'    => esc_html__( 'Testimonials to show', 'portum' ),
 					'type'     => 'selectize',
 					'multiple' => true,
 					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),
@@ -181,10 +181,18 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_services() {
 		return array(
-			'id'          => 'services',
-			'title'       => esc_html__( 'Services Section', 'portum' ),
-			'description' => esc_html__( 'Services section. It retrieves content from Theme Content / Services', 'portum' ),
-			'fields'      => array(
+			'id'            => 'services',
+			'title'         => esc_html__( 'Services Section', 'portum' ),
+			'description'   => esc_html__( 'Services section. It retrieves content from Theme Content / Services', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'styling' => array(
+					'background-image',
+					'background-position',
+					'background-size',
+				),
+			),
+			'fields'        => array(
 				'services_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -196,10 +204,6 @@ class Portum_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'SERVICES' ),
 					'sanitize_callback' => 'wp_kses_post',
-				),
-				'services_image'          => array(
-					'label' => esc_html__( 'Background Image', 'portum' ),
-					'type'  => 'epsilon-image',
 				),
 				'services_grouping'       => array(
 					'label'    => esc_html__( 'Services Item To Show', 'portum' ),

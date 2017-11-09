@@ -10,10 +10,11 @@ var epsilonWelcomeScreenFunctions = {
           checkboxes = container.find( ':checkbox' ),
           importThis = {
             'plugins': [],
+            'options': [],
             'content': [],
             'sections': [],
             'widgets': [],
-            'options': []
+            'menus': []
           };
 
       e.preventDefault();

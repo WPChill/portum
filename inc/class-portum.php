@@ -30,6 +30,10 @@ class Portum {
 		 */
 		add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
 		/**
+		 * Add a notice for the MachoThemes feedback
+		 */
+		add_action( 'admin_init', array( $this, 'add_feedback_notice' ) );
+		/**
 		 * Enqueue styles and scripts
 		 */
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueues' ) );
@@ -63,6 +67,66 @@ class Portum {
 		switch_theme( WP_DEFAULT_THEME );
 
 		return false;
+	}
+
+	/**
+	 * Adds a feedback notice if conditions are met
+	 */
+	public function add_feedback_notice() {
+		if ( get_user_meta( get_current_user_id(), 'notification_feedback', true ) ) {
+			return;
+		}
+
+		$page_on_front = 'page' == get_option( 'show_on_front' ) ? true : false;
+		$id            = absint( get_option( 'page_on_front', 0 ) );
+
+		if ( $page_on_front && 0 !== $id ) {
+			$revisions = wp_get_post_revisions( $id );
+
+			if ( count( $revisions ) > 3 ) {
+				/**
+				 * Revision keys are ID's, and it's not incremental
+				 */
+				$first = end( $revisions );
+
+				$revision_time = new DateTime( $first->post_modified );
+				$today         = new DateTime( 'today' );
+				$interval      = $today->diff( $revision_time )->format( '%d' );
+
+				if ( 2 <= absint( $interval ) ) {
+					$this->_notify_feedback();
+				}
+			}
+		}
+	}
+
+	/**
+	 * Notify of feedback
+	 */
+	private function _notify_feedback() {
+		if ( ! class_exists( 'Epsilon_Notifications' ) ) {
+			return;
+		}
+		$html = '<p>';
+		$html .=
+			/* Translators: Notice */
+			__(
+				sprintf(
+					wp_kses_post( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s. <br/> <br/> <strong>Note: A 10%% discount coupon will be emailed to you after form submission. Please use a valid email address.</strong>' ),
+					'Portum',
+					'<a target="_blank" href="https://bit.ly/portum-feedback">',
+					'</a>' ),
+				'portum'
+			);
+
+		$notifications = Epsilon_Notifications::get_instance();
+		$notifications->add_notice(
+			array(
+				'id'      => 'notification_feedback',
+				'type'    => 'notice epsilon-big',
+				'message' => $html,
+			)
+		);
 	}
 
 	/**
@@ -233,6 +297,11 @@ class Portum {
 					'check'       => defined( 'WPCF7_VERSION' ),
 				),
 			);
+
+			if ( is_customize_preview() ) {
+				$url                = 'themes.php?page=%1$s-welcome&tab=%2$s';
+				$actions[0]['help'] = '<a class="button button-primary" id="" href="' . esc_url( admin_url( sprintf( $url, 'portum', 'recommended-actions' ) ) ) . '">' . __( 'Import Demo Content', 'portum' ) . '</a>';
+			}
 
 			Epsilon_Welcome_Screen::get_instance(
 				$config = array(

@@ -7,24 +7,30 @@
  * @package Portum
  */
 
-
-$frontpage = Portum_Frontpage::get_instance( 'portum_frontpage_sections' );
-$fields    = $frontpage->sections[ $section_id ];
-$grouping  = array(
+$frontpage          = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields             = $frontpage->sections[ $section_id ];
+$grouping           = array(
 	'values'   => $fields['services_grouping'],
 	'group_by' => 'service_title',
 );
-
 $fields['services'] = $frontpage->get_repeater_field( $fields['services_repeater_field'], array(), $grouping );
 
-$attr = '';
-if ( ! empty( $fields['services_image'] ) ) {
-	$attr .= 'style="background-image:url(' . esc_url( $fields['services_image'] ) . ')"';
+
+$css = Epsilon_Helper::get_css_string(
+	array(
+		'background-image'    => isset( $fields['services_background_image'] ) ? $fields['services_background_image'] : '',
+		'background-position' => isset( $fields['services_background_position'] ) ? $fields['services_background_position'] : '',
+		'background-size'     => isset( $fields['services_background_size'] ) ? $fields['services_background_size'] : '',
+	)
+);
+
+if ( ! empty( $css ) ) {
+	$css = 'style="' . $css . '"';
 }
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-services section contrast" <?php echo $attr; ?>>
+	<div class="section-services section contrast" <?php echo $css; ?>>
 		<div class="container">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 			<div class="row">
