@@ -356,7 +356,7 @@ Epsilon_Customizer::add_field(
 			'contact_icon'  => array(
 				'label'   => esc_html__( 'Icon', 'portum' ),
 				'type'    => 'epsilon-icon-picker',
-				'default' => 'fa fa-map'
+				'default' => 'fa fa-map',
 			),
 			'contact_text'  => array(
 				'label'   => esc_html__( 'Text', 'portum' ),
