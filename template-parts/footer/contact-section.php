@@ -12,7 +12,7 @@ $frontpage = Epsilon_Page_Generator::get_instance();
 
 <?php $api = get_theme_mod( 'portum_google_api_key', '' ); ?>
 
-<section class="section-contact section <?php echo empty( $api ) ? 'no-map' : '' ?>">
+<section class="section-contact section <?php echo empty( $api ) ? 'no-map' : ''; ?>">
 	<?php if ( ! empty( $api ) ) : ?>
 		<div class="contact-overlay"></div>
 		<div class="contact-map" id="contact-map" data-zoom="<?php echo esc_attr( get_theme_mod( 'portum_google_map_zoom', 17 ) ); ?>" data-address="<?php echo esc_attr( get_theme_mod( 'portum_google_map_address', 'Centrul Vechi, Brasov' ) ); ?>"></div>
