@@ -8,12 +8,16 @@
  */
 
 $frontpage = Epsilon_Page_Generator::get_instance();
-
 ?>
 
-<section class="section-contact section">
-	<div class="contact-overlay"></div>
-	<div class="contact-map" id="contact-map" data-zoom="<?php echo esc_attr( get_theme_mod( 'portum_google_map_zoom', 17 ) ); ?>" data-address="<?php echo esc_attr( get_theme_mod( 'portum_google_map_address', 'Centrul Vechi, Brasov' ) ); ?>"></div>
+<?php $api = get_theme_mod( 'portum_google_api_key', '' ); ?>
+
+<section class="section-contact section <?php echo empty( $api ) ? 'no-map' : '' ?>">
+	<?php if ( ! empty( $api ) ) : ?>
+		<div class="contact-overlay"></div>
+		<div class="contact-map" id="contact-map" data-zoom="<?php echo esc_attr( get_theme_mod( 'portum_google_map_zoom', 17 ) ); ?>" data-address="<?php echo esc_attr( get_theme_mod( 'portum_google_map_address', 'Centrul Vechi, Brasov' ) ); ?>"></div>
+	<?php endif; ?>
+
 	<div class="container">
 		<div class="contact-details">
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( get_theme_mod( 'portum_contact_subtitle', esc_html__( 'CONTACT', 'portum' ) ), get_theme_mod( 'portum_contact_title', esc_html__( 'How can we help you?', 'portum' ) ) ) ); ?>

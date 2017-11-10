@@ -282,6 +282,7 @@ Epsilon_Customizer::add_field(
 		'type'              => 'text',
 		'section'           => 'portum_footer_section',
 		'sanitize_callback' => 'sanitize_text_field',
+		'default'           => esc_html__( 'How can we help you?', 'portum' ),
 		'label'             => esc_html__( 'Contact section title', 'portum' ),
 	)
 );
@@ -291,6 +292,7 @@ Epsilon_Customizer::add_field(
 		'type'              => 'text',
 		'section'           => 'portum_footer_section',
 		'sanitize_callback' => 'sanitize_text_field',
+		'default'           => esc_html__( 'Contact', 'portum' ),
 		'label'             => esc_html__( 'Contact section subtitle', 'portum' ),
 	)
 );
@@ -347,16 +349,19 @@ Epsilon_Customizer::add_field(
 		),
 		'fields'       => array(
 			'contact_title' => array(
-				'label' => esc_html__( 'Title', 'portum' ),
-				'type'  => 'text',
+				'label'   => esc_html__( 'Title', 'portum' ),
+				'type'    => 'text',
+				'default' => esc_html__( 'Headquarters', 'portum' ),
 			),
 			'contact_icon'  => array(
-				'label' => esc_html__( 'Icon', 'portum' ),
-				'type'  => 'epsilon-icon-picker',
+				'label'   => esc_html__( 'Icon', 'portum' ),
+				'type'    => 'epsilon-icon-picker',
+				'default' => 'fa fa-map'
 			),
 			'contact_text'  => array(
-				'label' => esc_html__( 'Text', 'portum' ),
-				'type'  => 'epsilon-text-editor',
+				'label'   => esc_html__( 'Text', 'portum' ),
+				'type'    => 'epsilon-text-editor',
+				'default' => esc_html__( '176 Westmore Mondaile Street Victorian 887 NYC', 'portum' ),
 			),
 		),
 	)
@@ -397,23 +402,23 @@ Epsilon_Customizer::add_field(
 			'testimonial_title'    => array(
 				'label'   => esc_html__( 'Title', 'portum' ),
 				'type'    => 'text',
-				'default' => '',
+				'default' => 'Michael Cross',
 			),
 			'testimonial_subtitle' => array(
 				'label'   => esc_html__( 'Position', 'portum' ),
 				'type'    => 'text',
-				'default' => '',
+				'default' => 'CEO @ Hampybrewry',
 			),
 			'testimonial_text'     => array(
 				'label'   => esc_html__( 'Text', 'portum' ),
 				'type'    => 'epsilon-text-editor',
-				'default' => '',
+				'default' => '"Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula"',
 			),
 			'testimonial_image'    => array(
 				'label'   => esc_html__( 'Portrait', 'portum' ),
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-testimonial-portrait',
-				'default' => '',
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/testimonial-img-01.jpg' ),
 			),
 		),
 	)
@@ -438,18 +443,18 @@ Epsilon_Customizer::add_field(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'wp_kses_post',
-				'default'           => '',
+				'default'           => 'Growing your business',
 			),
 			'slides_description' => array(
 				'label'   => esc_html__( 'Description', 'portum' ),
 				'type'    => 'epsilon-text-editor',
-				'default' => '',
+				'default' => 'FROM ZERO TO HERO ALONG WITH YOU',
 			),
 			'slides_image'       => array(
 				'label'   => esc_html__( 'Portrait', 'portum' ),
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-main-slider',
-				'default' => '',
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/slider-img-01.jpg' ),
 			),
 		),
 	)
@@ -474,13 +479,13 @@ Epsilon_Customizer::add_field(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'wp_kses_post',
-				'default'           => '',
+				'default'           => 'Business',
 			),
 			'service_description' => array(
 				'label'             => esc_html__( 'Description', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'wp_kses_post',
-				'default'           => '',
+				'default'           => 'Consultance',
 			),
 			'service_icon'        => array(
 				'label'   => esc_html__( 'Icon', 'portum' ),
@@ -510,24 +515,24 @@ Epsilon_Customizer::add_field(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'wp_kses_post',
-				'default'           => '',
+				'default'           => esc_html__( 'Project Title', 'portum' ),
 			),
 			'portfolio_description' => array(
 				'label'   => esc_html__( 'Description', 'portum' ),
 				'type'    => 'epsilon-text-editor',
-				'default' => '',
+				'default' => esc_html__( 'Nullam nec metus ullamcorper, scelerisque null', 'portum' ),
 			),
 			'portfolio_image'       => array(
 				'label'   => esc_html__( 'Image', 'portum' ),
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-portfolio-image',
-				'default' => '',
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/portfolio-img-01.jpg' ),
 			),
 			'portfolio_image_url'   => array(
 				'label'             => esc_html__( 'Image URL', 'portum' ),
 				'type'              => 'url',
 				'sanitize_callback' => 'esc_url_raw',
-				'default'           => '',
+				'default'           => '#',
 			),
 		),
 	)
@@ -552,12 +557,12 @@ Epsilon_Customizer::add_field(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'wp_kses_post',
-				'default'           => '',
+				'default'           => esc_html__( 'We can improve your business', 'portum' ),
 			),
 			'expertise_description' => array(
 				'label'   => esc_html__( 'Description', 'portum' ),
 				'type'    => 'epsilon-text-editor',
-				'default' => '',
+				'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta.', 'portum' ),
 			),
 		),
 	)
@@ -581,19 +586,19 @@ Epsilon_Customizer::add_field(
 			'member_title'            => array(
 				'label'             => esc_html__( 'Name', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => __( 'James Austin', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'member_text'             => array(
 				'label'   => esc_html__( 'Text', 'portum' ),
 				'type'    => 'epsilon-text-editor',
-				'default' => '',
+				'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta.', 'portum' ),
 			),
 			'member_image'            => array(
 				'label'   => esc_html__( 'Portrait', 'portum' ),
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-team-image',
-				'default' => '',
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/team-img-01.jpg' ),
 			),
 			'member_social_facebook'  => array(
 				'label'   => esc_html__( 'Facebook', 'portum' ),
@@ -637,13 +642,13 @@ Epsilon_Customizer::add_field(
 			'price_box_title'    => array(
 				'label'             => esc_html__( 'Name', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => esc_html__( 'Standard', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'price_box_text'     => array(
 				'label'             => esc_html__( 'Text', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => esc_html__( 'Get started now! You have the base!', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'price_box_currency' => array(
@@ -664,7 +669,7 @@ Epsilon_Customizer::add_field(
 			'price_box_url'      => array(
 				'label'             => esc_html__( 'Button URL', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => '#',
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'price_box_features' => array(
