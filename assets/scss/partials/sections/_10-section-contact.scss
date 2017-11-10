@@ -10,6 +10,12 @@
 	padding-top:400px;
 }
 
+.section-contact.no-map{
+	.container{
+		padding-top:60px;
+	}
+}
+
 .contact-overlay {
     width: 100%;
     height: 50px;
@@ -21,12 +27,12 @@
 }
 
 .contact-map {
-	background:#F5F5F5; 
+	background:#F5F5F5;
 	position:absolute;
 	top:0;
 	left:0;
 	bottom:0;
-	right:0;	
+	right:0;
 }
 
 .contact-details {
@@ -54,11 +60,11 @@
 
 .contact-details-item {
 	padding:0 20px 20px 20px;
-	
+
 	h5 {
 		color: $accent-1-color;
 		margin-bottom: 15px;
-		
+
 		i {
 			margin-right: 10px;
 		}
@@ -97,12 +103,12 @@
 		transition:none;
 		min-width:150px;
 	}
-	
+
 }
 
 .input-item {
 	position:relative;
-	
+
 	span.input-icon {
 		position:absolute;
 		top:8px;
@@ -116,11 +122,11 @@
 	.contact-details {
 		padding: 75px 35px;
 	}
-	
+
 	.contact-details-item {
 		text-align:center;
 	}
-	
+
 }
 
 

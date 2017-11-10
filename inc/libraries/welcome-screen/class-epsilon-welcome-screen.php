@@ -382,7 +382,7 @@ class Epsilon_Welcome_Screen {
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice(
 			array(
-				'id'      => 'notification_testing',
+				'id'      => $this->theme_slug . '_installation_notice',
 				'type'    => 'notice epsilon-big',
 				'message' => $this->notice,
 			)

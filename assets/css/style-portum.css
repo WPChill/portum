@@ -539,9 +539,15 @@ a.social-icon:active
     top: -65px;
     left: -185px;
 
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     text-transform: uppercase;
 
     color: #f9f9f9;
+
+    -webkit-touch-callout: none;
 }
 .headline span
 {
@@ -8683,6 +8689,11 @@ input[type='button']:active
 .section-contact .container
 {
     padding-top: 400px;
+}
+
+.section-contact.no-map .container
+{
+    padding-top: 60px;
 }
 
 .contact-overlay

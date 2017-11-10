@@ -240,7 +240,7 @@ class Portum_Repeatable_Sections {
 				'about_title'    => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Learn more about us and how can we help you:' ),
+					'default'           => esc_html__( 'Learn more about us and how can we help you:', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'about_subtitle' => array(
@@ -252,13 +252,14 @@ class Portum_Repeatable_Sections {
 				'about_text'     => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
-					'default'           => '',
+					'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'about_image'    => array(
-					'label' => esc_html__( 'Image', 'portum' ),
-					'type'  => 'epsilon-image',
-					'size'  => 'portum-about-image',
+					'label'   => esc_html__( 'Image', 'portum' ),
+					'type'    => 'epsilon-image',
+					'size'    => 'portum-about-image',
+					'default' => esc_url( get_template_directory_uri() . '/assets/images/about-img-01.jpg' ),
 				),
 			),
 		);
@@ -278,13 +279,13 @@ class Portum_Repeatable_Sections {
 				'portfolio_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Check out our latest projects' ),
+					'default'           => esc_html__( 'Check out our latest projects', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'portfolio_subtitle'       => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'PORTFOLIO' ),
+					'default'           => esc_html__( 'PORTFOLIO', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'portfolio_grouping'       => array(
@@ -322,19 +323,20 @@ class Portum_Repeatable_Sections {
 				'expertise_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'We can take your business to the next level' ),
+					'default'           => esc_html__( 'We can take your business to the next level', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'expertise_subtitle'       => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'OUR EXPERTISE' ),
+					'default'           => esc_html__( 'OUR EXPERTISE', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'expertise_image'          => array(
-					'label' => esc_html__( 'Section Image', 'portum' ),
-					'type'  => 'epsilon-image',
-					'size'  => 'portum-expertise-image',
+					'label'   => esc_html__( 'Section Image', 'portum' ),
+					'type'    => 'epsilon-image',
+					'size'    => 'portum-expertise-image',
+					'default' => esc_url( get_template_directory_uri() . '/assets/images/expertise-img-01.jpg' ),
 				),
 				'expertise_grouping'       => array(
 					'label'    => esc_html__( 'Expertise to show', 'portum' ),
@@ -371,13 +373,13 @@ class Portum_Repeatable_Sections {
 				'blog_title'      => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Find out the latest news?' ),
+					'default'           => esc_html__( 'Find out the latest news?', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'blog_subtitle'   => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'BLOG' ),
+					'default'           => esc_html__( 'BLOG', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'blog_post_count' => array(
@@ -407,13 +409,13 @@ class Portum_Repeatable_Sections {
 				'team_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Meet the people behind the scene' ),
+					'default'           => esc_html__( 'Meet the people behind the scene', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'team_subtitle'       => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'TEAM' ),
+					'default'           => esc_html__( 'TEAM', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'team_grouping'       => array(
@@ -451,13 +453,13 @@ class Portum_Repeatable_Sections {
 				'pricing_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'See what packege suits best for you' ),
+					'default'           => esc_html__( 'See what packege suits best for you', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'pricing_subtitle'       => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'PRICING' ),
+					'default'           => esc_html__( 'PRICING', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'pricing_grouping'       => array(
@@ -509,7 +511,7 @@ class Portum_Repeatable_Sections {
 				'video_cta'     => array(
 					'label'   => esc_html__( 'Call To Action', 'portum' ),
 					'type'    => 'epsilon-text-editor',
-					'default' => '<p>Find out the hottest news in <strong>your industry</strong></p>',
+					'default' => wp_kses_post( __( '<p>Find out the hottest news in <strong>your industry</strong></p>', 'portum' ) ),
 				),
 				'mailchimp_url' => array(
 					'label'             => esc_html__( 'Mailchimp Action URL', 'portum' ),

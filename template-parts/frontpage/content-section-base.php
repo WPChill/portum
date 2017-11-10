@@ -14,33 +14,18 @@ $layout = Portum_Helper::get_layout( 'portum_page_layout' );
 ?>
 
 <div id="content">
-	<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-	<div id="page-header" <?php echo ( ! empty( $img ) ) ? 'style="background-image:url(' . esc_url( $img ) . '"' : ''; ?>>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h2><?php echo esc_html( get_the_title( absint( get_the_ID() ) ) ); ?></h2>
-					<?php
-					$display = get_bloginfo( 'description', 'display' );
-					if ( ! empty( $display ) ) :
-						?>
-						<p>
-							<span class="text-accent-color"><?php echo wp_kses_post( $display ); /* WPCS: xss ok. */ ?></span>
-						</p>
-						<?php
-					endif;
-					?>
-				</div><!-- end .col -->
-			</div><!-- end .row -->
-		</div><!-- end .container -->
-	</div><!-- end #page-header -->
+	<div class="custom-header">
+		<div class="item-overlay"></div>
+		<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+	</div>
+
 
 	<div class="container">
 		<div class="row">
 			<?php
 			if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
 				?>
-				<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
+				<div class="col-sm-<?php echo esc_attr( $layout['columns']['content']['span'] ); ?>">
 					<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
 					<?php dynamic_sidebar( 'sidebar' ); ?>
 					<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -55,8 +40,10 @@ $layout = Portum_Helper::get_layout( 'portum_page_layout' );
 				if ( have_posts() ) :
 					while ( have_posts() ) :
 						the_post();
-						get_template_part( 'template-parts/content/content', 'page' );
+						get_template_part( 'template-parts/content/content', 'single' );
 					endwhile;
+				else :
+					get_template_part( 'template-parts/content/content', 'none' );
 				endif;
 
 				the_posts_pagination(
@@ -82,10 +69,4 @@ $layout = Portum_Helper::get_layout( 'portum_page_layout' );
 			?>
 		</div>
 	</div>
-
-	<?php
-	if ( comments_open( get_the_ID() ) || get_comments_number( get_the_ID() ) ) :
-		comments_template();
-	endif;
-	?>
 </div>
