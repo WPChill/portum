@@ -91,6 +91,13 @@ class Epsilon_Welcome_Screen {
 	public $download_id = '';
 
 	/**
+	 * Backend privacy options
+	 *
+	 * @var array
+	 */
+	public $privacy_options = array();
+
+	/**
 	 * Epsilon_Welcome_Screen constructor.
 	 *
 	 * @param array $config Configuration array.
@@ -160,6 +167,8 @@ class Epsilon_Welcome_Screen {
 			'welcome_screen_ajax_callback',
 		) );
 
+		add_action( 'admin_init', array( $this, 'add_privacy_options' ) );
+
 		if ( $this->edd ) {
 			/**
 			 * Initiate EDD Stuff
@@ -176,6 +185,20 @@ class Epsilon_Welcome_Screen {
 				10,
 				2
 			);
+		}
+
+		$upsells   = get_option( 'portum_theme_upsells', false );
+		$litevspro = get_option( 'portum_lite_vs_pro', false );
+		if ( $upsells ) {
+			add_filter( 'epsilon_upsell_control_display', function () {
+				return false;
+			} );
+		}
+
+		if ( $litevspro ) {
+			add_filter( 'epsilon_upsell_section_display', function () {
+				return false;
+			} );
 		}
 	}
 
@@ -268,6 +291,47 @@ class Epsilon_Welcome_Screen {
 		}
 
 		return $inst;
+	}
+
+
+	/**
+	 * Adds privacy options
+	 */
+	public function add_privacy_options() {
+		$options = array(
+			'portum_recommended_actions' => array(
+				'id'      => 'portum_recommended_actions',
+				'value'   => true,
+				'label'   => __( 'Customizer Recommended Actions', 'epsilon-framework' ),
+				'checked' => get_option( 'portum_recommended_actions', false ),
+			),
+		);
+
+		if ( ! $this->edd ) {
+			$options['portum_theme_upsells'] = array(
+				'id'      => 'portum_theme_upsells',
+				'value'   => true,
+				'label'   => __( 'Theme Upsells', 'epsilon-framework' ),
+				'checked' => get_option( 'portum_theme_upsells', false ),
+			);
+
+			$options['portum_lite_vs_pro'] = array(
+				'id'      => 'portum_lite_vs_pro',
+				'value'   => true,
+				'label'   => __( 'Lite VS Pro Table', 'epsilon-framework' ),
+				'checked' => get_option( 'portum_lite_vs_pro', false ),
+			);
+		}
+
+		$this->privacy_options = $options;
+
+		foreach ( $options as $option ) {
+			register_setting(
+				'portum-privacy',
+				$option['id'],
+				'sanitize_key'
+			);
+		}
 	}
 
 	/**
@@ -530,6 +594,12 @@ class Epsilon_Welcome_Screen {
 				'label' => __( 'Registration', 'epsilon-framework' ),
 				'path'  => get_template_directory() . '/inc/libraries/welcome-screen/sections/registration.php',
 			),
+			'privacy'             => array(
+				'id'    => 'privacy',
+				'url'   => $this->generate_admin_url( 'privacy' ),
+				'label' => __( 'Privacy', 'epsilon-framework' ),
+				'path'  => get_template_directory() . '/inc/libraries/welcome-screen/sections/privacy.php',
+			),
 		);
 
 		if ( 0 === count( $this->plugins ) ) {
@@ -554,6 +624,11 @@ class Epsilon_Welcome_Screen {
 			foreach ( $config['sections_include'] as $id => $props ) {
 				$arr[ $id ] = $props;
 			}
+		}
+
+		$removed_table = get_option( 'portum_lite_vs_pro', false );
+		if ( $removed_table ) {
+			unset( $arr['features'] );
 		}
 
 		return $arr;

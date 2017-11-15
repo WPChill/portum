@@ -122,7 +122,7 @@ class Portum {
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice(
 			array(
-				'id'      => 'notification_feedback',
+				'id'      => 'portum_notification_feedback',
 				'type'    => 'notice epsilon-big',
 				'message' => $html,
 			)

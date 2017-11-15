@@ -8,9 +8,6 @@
  * @since   1.0
  */
 
-?>
-
-<?php
 /**
  * Load Autoloader
  */
