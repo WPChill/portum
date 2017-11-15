@@ -305,6 +305,12 @@ class Epsilon_Welcome_Screen {
 				'label'   => __( 'Customizer Recommended Actions', 'epsilon-framework' ),
 				'checked' => get_option( 'portum_recommended_actions', false ),
 			),
+			'portum_recommended_plugins' => array(
+				'id'      => 'portum_recommended_plugins',
+				'value'   => true,
+				'label'   => __( 'Recommended Plugins', 'epsilon-framework' ),
+				'checked' => get_option( 'portum_recommended_plugins', false ),
+			),
 		);
 
 		if ( ! $this->edd ) {
@@ -486,6 +492,9 @@ class Epsilon_Welcome_Screen {
 
 		$theme = wp_get_theme();
 		$tab   = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'getting-started';
+		if ( ! isset( $this->sections[ $tab ] ) ) {
+			$tab = 'getting-started';
+		}
 
 		?>
 		<div class="wrap about-wrap epsilon-wrap">
@@ -608,6 +617,8 @@ class Epsilon_Welcome_Screen {
 
 		if ( 0 < $this->actions_count ) {
 			$arr['recommended-actions']['label'] .= '<span class="badge-action-count">' . $this->actions_count . '</span>';
+		} else {
+			unset( $arr['recommended-actions'] );
 		}
 
 		if ( ! $this->edd ) {
@@ -629,6 +640,11 @@ class Epsilon_Welcome_Screen {
 		$removed_table = get_option( 'portum_lite_vs_pro', false );
 		if ( $removed_table ) {
 			unset( $arr['features'] );
+		}
+
+		$removed_plugins = get_option( 'portum_recommended_plugins', false );
+		if ( $removed_plugins ) {
+			unset( $arr['recommended-plugins'] );
 		}
 
 		return $arr;
