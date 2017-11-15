@@ -200,6 +200,11 @@ $sections = array(
 	),
 );
 
+$visible_recommended = get_option( 'portum_recommended_actions', false );
+if ( $visible_recommended ) {
+	unset( $sections[0] );
+}
+
 $collection = array(
 	'panel'   => $panels,
 	'section' => $sections,
