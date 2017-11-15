@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 				<i><?php esc_html_e( 'We offer excellent support through our advanced ticketing system. Make sure to register your purchase before contacting support!', 'epsilon-framework' ); ?></i>
 			</p>
 			<p><a target="_blank" class="button button-primary"
-				  href="<?php echo esc_url( 'https://www.machothemes.com/support/' ); ?>"><?php esc_html_e( 'Contact Support', 'epsilon-framework' ); ?></a>
+				  href="<?php echo esc_url( 'https://www.machothemes.com/support/?utm_source=' . $this->theme_slug . '&utm_medium=customizer' ); ?>"><?php esc_html_e( 'Contact Support', 'epsilon-framework' ); ?></a>
 			</p>
 		</div><!--/.col-->
 
