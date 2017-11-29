@@ -612,7 +612,7 @@ class Epsilon_Welcome_Screen {
 		);
 
 		$removed_plugins = get_option( 'portum_recommended_plugins', false );
-		if ( 0 === count( $this->plugins ) || $removed_plugins) {
+		if ( 0 === count( $this->plugins ) || $removed_plugins ) {
 			unset( $arr['recommended-plugins'] );
 		}
 
