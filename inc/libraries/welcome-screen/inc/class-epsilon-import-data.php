@@ -194,7 +194,7 @@ class Epsilon_Import_Data {
 	 * Build the HTML Container
 	 */
 	public function generate_import_data_container() {
-		$html = '<p><a class="button button-primary epsilon-ajax-button" id="add_default_sections" href="#">' . __( 'Import Demo Content', 'epsilon-framework' ) . '</a>';
+		$html = '<p><a class="button button-primary epsilon-ajax-button" id="add_default_sections" style="margin-right:10px;" href="#">' . __( 'Import Demo Content', 'epsilon-framework' ) . '</a>';
 		$html .= '<a class="button epsilon-hidden-content-toggler" href="#" data-toggle="welcome-hidden-content">' . __( 'Advanced', 'epsilon-framework' ) . '</a></p>';
 		$html .= '<div class="import-content-container" id="welcome-hidden-content">';
 

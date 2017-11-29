@@ -611,7 +611,8 @@ class Epsilon_Welcome_Screen {
 			),
 		);
 
-		if ( 0 === count( $this->plugins ) ) {
+		$removed_plugins = get_option( 'portum_recommended_plugins', false );
+		if ( 0 === count( $this->plugins ) || $removed_plugins) {
 			unset( $arr['recommended-plugins'] );
 		}
 
@@ -640,11 +641,6 @@ class Epsilon_Welcome_Screen {
 		$removed_table = get_option( 'portum_lite_vs_pro', false );
 		if ( $removed_table ) {
 			unset( $arr['features'] );
-		}
-
-		$removed_plugins = get_option( 'portum_recommended_plugins', false );
-		if ( $removed_plugins ) {
-			unset( $arr['recommended-plugins'] );
 		}
 
 		return $arr;

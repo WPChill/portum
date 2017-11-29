@@ -115,6 +115,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'testimonials',
 			'title'       => esc_html__( 'Testimonials Section', 'portum' ),
 			'description' => esc_html__( 'A testimonial section. It retrieves content from Theme Content / Testimonials.', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-testimonials-pt.png' ),
 			'fields'      => array(
 				'testimonials_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -159,6 +160,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'slider',
 			'title'       => esc_html__( 'Slider Section', 'portum' ),
 			'description' => esc_html__( 'A slider section. It retrieves content from Theme Content / Slides.', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-hero-pt.png' ),
 			'fields'      => array(
 				'slider_navigation'     => array(
 					'type'            => 'epsilon-customizer-navigation',
@@ -184,6 +186,7 @@ class Portum_Repeatable_Sections {
 			'id'            => 'services',
 			'title'         => esc_html__( 'Services Section', 'portum' ),
 			'description'   => esc_html__( 'Services section. It retrieves content from Theme Content / Services', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-services-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
 				'styling' => array(
@@ -236,6 +239,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'about',
 			'title'       => esc_html__( 'About Section', 'portum' ),
 			'description' => esc_html__( 'About section. It retrieves content from Theme Content / Services', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
 			'fields'      => array(
 				'about_title'    => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -275,6 +279,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'portfolio',
 			'title'       => esc_html__( 'Portfolio Section', 'portum' ),
 			'description' => esc_html__( 'Portfolio section. It retrieves content from Theme Content / Portfolio', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-portfolio-pt.png' ),
 			'fields'      => array(
 				'portfolio_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -319,6 +324,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'expertise',
 			'title'       => esc_html__( 'Expertise Section', 'portum' ),
 			'description' => esc_html__( 'Expertise section. It retrieves content from Theme Content / Portfolio', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-expertise-pt.png' ),
 			'fields'      => array(
 				'expertise_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -369,6 +375,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'blog',
 			'title'       => esc_html__( 'Blog Area', 'portum' ),
 			'description' => esc_html__( 'Blog Area Section', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-blog-pt.png' ),
 			'fields'      => array(
 				'blog_title'      => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -405,6 +412,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'team',
 			'title'       => esc_html__( 'Team Section', 'portum' ),
 			'description' => esc_html__( 'Team members section. It retrieves content from Theme Content / Portfolio', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-team-pt.png' ),
 			'fields'      => array(
 				'team_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -449,6 +457,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'pricing',
 			'title'       => esc_html__( 'Pricing Section', 'portum' ),
 			'description' => esc_html__( 'Pricing section. It retrieves content from Theme Content / Pricing', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-pricing-pt.png' ),
 			'fields'      => array(
 				'pricing_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
@@ -493,6 +502,7 @@ class Portum_Repeatable_Sections {
 			'id'          => 'video',
 			'title'       => esc_html__( 'Video Section', 'portum' ),
 			'description' => esc_html__( 'Video Section.', 'portum' ),
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' ),
 			'fields'      => array(
 				'video_type'    => array(
 					'label'   => esc_html__( 'Video Type', 'portum' ),

@@ -636,7 +636,7 @@ Epsilon_Customizer::add_field(
 		'button_label' => esc_html__( 'Add new price box', 'portum' ),
 		'row_label'    => array(
 			'type'  => 'field',
-			'field' => 'member_title',
+			'field' => 'price_box_title',
 		),
 		'fields'       => array(
 			'price_box_title'    => array(
