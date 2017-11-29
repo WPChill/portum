@@ -1,112 +1,110 @@
-
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
 .section-services {
-    background: url('../images/back-services-area.png') no-repeat center center;
-    background-size: 100% 100%;
-    padding: 75px 0;
-    transition: 3s;
+  background-color: rgba(0, 0, 0, .8);
+  background-size: 100% 100%;
+  padding: 75px 0;
+  transition: 3s;
 }
 
 .section-services .row.space {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .section-services .headline h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .section-services .headline {
-    padding: 90px 0 0 0;
+  padding: 90px 0 0 0;
 }
 
 .section-services .headline span {
-    margin: 0 0 15px 0;
+  margin: 0 0 15px 0;
 }
 
 .services-item {
-    padding: 0 0 0 5px;
+  padding: 0 0 0 5px;
 }
 
 .services-item a {
-    display: block;
-    transition: 180ms all;
+  display: block;
+  transition: 180ms all;
 }
 
 .services-item a::before {
-    content: "";
-    height: 35px;
-    width: 1px;
-    background: #38393C;
-    position: Absolute;
-    left: 0;
-    top: 0;
+  content: "";
+  height: 35px;
+  width: 1px;
+  background: #38393C;
+  position: Absolute;
+  left: 0;
+  top: 0;
 }
 
 .services-item a:hover span,
 .services-item a:hover i {
-    color: $accent-2-color;
+  color: $accent-2-color;
 }
 
 .services-item a:hover::before {
-    background: $accent-2-color;
+  background: $accent-2-color;
 }
 
 .services-item i {
-    color: #fff;
-    font-size: 30px;
+  color: #fff;
+  font-size: 30px;
 }
 
 .services-item span {
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: $accent-1-color;
-    text-transform: uppercase;
-    margin-top: 25px;
-    letter-spacing: 1.2px;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: $accent-1-color;
+  text-transform: uppercase;
+  margin-top: 25px;
+  letter-spacing: 1.2px;
 }
 
 .services-item strong {
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 
 .section-services.animate-- {
-    background: transparent;
+  background: transparent;
 }
 
 .section-services .row .col-md-4:nth-child(-n+3) {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
-
 
 @media (max-width: 991px) {
 
-	.section-services {
-        margin-top: 50px;
-    }
-	
-    .section-services .headline {
-        padding: 0 0 70px 0;
-    }
-	
-    .section-services .row .col-md-4:nth-child(-n+3) {
-        margin: 0;
-    }
-	
-    .section-services .services-item {
-        margin-bottom: 50px;
-    }
-	
-    .section-services {
-        padding-bottom: 25px;
-    }
+  .section-services {
+    margin-top: 50px;
+  }
+
+  .section-services .headline {
+    padding: 0 0 70px 0;
+  }
+
+  .section-services .row .col-md-4:nth-child(-n+3) {
+    margin: 0;
+  }
+
+  .section-services .services-item {
+    margin-bottom: 50px;
+  }
+
+  .section-services {
+    padding-bottom: 25px;
+  }
 
 }
 

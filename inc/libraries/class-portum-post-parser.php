@@ -59,10 +59,10 @@ class Portum_Post_Parser {
 			}
 
 			$socials = array(
-				'Facebook'  => $item['member_social_facebook'],
-				'Twitter'   => $item['member_social_twitter'],
-				'Pinterest' => $item['member_social_google'],
-				'LinkedIn'  => $item['member_social_linked'],
+				'Facebook'  => ! empty( $item['member_social_facebook'] ) ? $item['member_social_facebook'] : '',
+				'Twitter'   => ! empty( $item['member_social_twitter'] ) ? $item['member_social_twitter'] : '',
+				'Pinterest' => ! empty( $item['member_social_google'] ) ? $item['member_social_google'] : '',
+				'LinkedIn'  => ! empty( $item['member_social_linked'] ) ? $item['member_social_linked'] : '',
 			);
 			$socials = array_filter( $socials );
 			if ( ! empty( $socials ) ) {
@@ -147,6 +147,7 @@ class Portum_Post_Parser {
 
 		return $content;
 	}
+
 	/**
 	 * @param $control
 	 * @param $value
@@ -239,7 +240,7 @@ class Portum_Post_Parser {
 			$content .= '<!-- epsilon/' . $control->label . '-->' . "\n";
 
 			if ( ! empty( $item['price_box_title'] ) ) {
-				$content .= '<h4 class="portfolio-title">' . $item['portfolio_title'] . '</h4>' . "\n";
+				$content .= '<h4 class="price-title">' . $item['price_box_title'] . '</h4>' . "\n";
 			}
 
 			if ( ! empty( $item['price_box_price'] ) ) {

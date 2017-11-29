@@ -7098,7 +7098,7 @@ input[type='button']:active
          -o-transition: 3s;
             transition: 3s;
 
-    background: url('../images/back-services-area.png') no-repeat center center;
+    background-color: rgba(0, 0, 0, .8);
     background-size: 100% 100%;
 }
 
