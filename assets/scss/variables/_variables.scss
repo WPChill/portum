@@ -4,19 +4,19 @@ $accent-1-color: #0385D0 !default; /* #F7670E */
 // Color 1 - blue
 $accent-1-color-rgba: rgba(109, 109, 109, 0.65);
 
-$accent-2-color: #96588A !default; /*	*/
+$accent-2-color: #A1083A !default; /*	*/
 // Color 2 - red
 $accent-2-color-rgba: rgba(150, 88, 138, 0.65);
 
-$accent-3-color: #151C1F !default; /* #151C1F	*/
+$accent-3-color: #172128 !default; /* #151C1F	*/
 // Color 3 - black
 $accent-3-color-rgba: rgba(21, 28, 31, 0.65);
 
-$contact-ribbon-1-color: #6D6D6D !default; /* */
-$contact-ribbon-2-color: #96588A !default; /* */
+$contact-ribbon-1-color: #A41342 !default; /* */
+$contact-ribbon-2-color: #232D33 !default; /* */
 $contact-ribbon-3-color: #DFDFDF !default; /* */
 
-$footer-contact-color: #257954;
+$footer-contact-color: #0385D0;
 $footer-background-color: #18304C; /* #232d33 */
 
 $accent-1-font: 'Hind', sans-serif;
@@ -41,13 +41,13 @@ $link-active-color: #151C1F !default; // Link :active color
 
 //Footer colors
 //
-$footer-link-color: #13B0A5 !default; // Link color
+$footer-link-color: #a9afb1 !default; // Link color
 $footer-link-hover-color: darken($footer-link-color, 5%) !default; // Link :hover / :focus Color
 $footer-link-active-color: darken($footer-link-color, 15%) !default; // Link :active color
 
-$footer-text-color: #13B0A5; //
-
+$footer-text-color: #a9afb1;
 $footer-widgets-title-color: #fff;
+
 
 $menu-item-color: #ffffff !default; // Menu item color
 $menu-item-hover-color: #ffffff !default; // Menu item hover color
@@ -66,7 +66,6 @@ $background-color: #fbfcfe !default; // frontpage sections backgrounds
 // Colors Contrast
 
 $contrast-text-color: #ffffff !default; // Text color
-
 $contrast-header-color: #ffffff !default; // Headers
 
 $contrast-link-color: #ffffff !default; // Link color

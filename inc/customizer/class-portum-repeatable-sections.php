@@ -627,7 +627,7 @@ class Portum_Repeatable_Sections {
 				),
 				'google_map_api_key'        => array(
 					'type'            => 'epsilon-customizer-navigation',
-					'navigateToId'    => 'portum_footer_section',
+					'navigateToId'    => 'portum_misc_section',
 					'navigateToLabel' => esc_html__( 'Add Your API Key &rarr;', 'portum' ),
 				),
 				'google_map_navigation'     => array(
