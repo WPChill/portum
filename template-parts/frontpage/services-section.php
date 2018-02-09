@@ -33,7 +33,7 @@ if ( ! empty( $css ) ) {
 	<div class="section-services section contrast" <?php echo $css; ?>>
 		<div class="container">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
-			<div class="row">
+			<div class="row row-vcenter">
 				<div class="col-md-3">
 					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
 				</div>

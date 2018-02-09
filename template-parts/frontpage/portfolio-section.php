@@ -46,11 +46,9 @@ $fields['portfolio_items'] = $frontpage->get_repeater_field( $fields['portfolio_
 
 								<div class="action fixed">
 									<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom">
-										<i class="fa fa-search" aria-hidden="true"></i>
-									</a>
-									<a href="#" class="link">
-										<i class="fa fa-chain" aria-hidden="true"></i>
-									</a>
+										<i class="fa fa-search" aria-hidden="true"></i> </a>
+									<a href="<?php echo esc_url( $item['portfolio_link'] ) ?>" class="link">
+										<i class="fa fa-chain" aria-hidden="true"></i> </a>
 								</div>
 
 							</div>

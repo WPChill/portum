@@ -11,7 +11,16 @@ class Portum_Notify_System extends Epsilon_Notify_System {
 	 * Check installed data
 	 */
 	public static function check_installed_data() {
-		$imported = get_theme_mod( 'portum_content_imported', false );
+		$stylesheet = get_stylesheet();
+		$imported   = get_theme_mod( $stylesheet . '_content_imported', false );
+
+		if ( in_array( $imported, array( true, 1, '1' ) ) ) {
+			return true;
+		}
+
+		if ( in_array( $imported, array( false, 0, '0' ) ) ) {
+			return false;
+		}
 
 		return $imported;
 	}

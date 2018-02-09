@@ -71,8 +71,8 @@ class Portum_Customizer {
 		$wp_customize->get_control( 'blogname' )->priority          = 2;
 		$wp_customize->get_section( 'header_image' )->priority      = 4;
 		$wp_customize->get_control( 'blogdescription' )->priority   = 17;
+		$wp_customize->get_control( 'header_textcolor' )->priority  = 15;
 		$wp_customize->get_section( 'static_front_page' )->priority = 0;
-
 		/**
 		 * Change labels
 		 */

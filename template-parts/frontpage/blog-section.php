@@ -20,9 +20,6 @@ $args  = array(
 );
 $query = new WP_Query( $args );
 
-if ( ! $query->have_posts() ) {
-	return;
-}
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
