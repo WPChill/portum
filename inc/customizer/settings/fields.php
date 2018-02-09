@@ -474,7 +474,7 @@ Epsilon_Customizer::add_field(
 				'label'   => esc_html__( 'Image', 'portum' ),
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-portfolio-image',
-				'default' => esc_url( get_template_directory_uri() . '/assets/images/portfolio-img-01.jpg' ),
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/03_projects_01.jpg' ),
 			),
 			'portfolio_link'        => array(
 				'label'             => esc_html__( 'Portfolio Item URL', 'portum' ),
