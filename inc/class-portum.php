@@ -19,8 +19,20 @@ class Portum {
 	 * Portum constructor.
 	 *
 	 * Theme specific actions and filters
+	 *
+	 * @param array $theme
 	 */
-	public function __construct() {
+	public function __construct( $theme = array() ) {
+		$this->theme = $theme;
+
+		$theme = wp_get_theme();
+		$arr   = array(
+			'theme-name'    => $theme->get( 'Name' ),
+			'theme-slug'    => $theme->get( 'TextDomain' ),
+			'theme-version' => $theme->get( 'Version' ),
+		);
+
+		$this->theme = wp_parse_args( $this->theme, $arr );
 		/**
 		 * If PHP Version is older than 5.3, we switch back to default theme
 		 */
@@ -45,6 +57,11 @@ class Portum {
 		 * Declare content width
 		 */
 		add_action( 'after_setup_theme', array( $this, 'content_width' ), 10 );
+		/**
+		 * Init epsilon dashboard
+		 */
+		add_filter( 'epsilon-dashboard-setup', array( $this, 'epsilon_dashboard' ) );
+		add_filter( 'epsilon-onboarding-setup', array( $this, 'epsilon_onboarding' ) );
 		/**
 		 * Grab all class methods and initiate automatically
 		 */
@@ -110,7 +127,7 @@ class Portum {
 		$html = '<p>';
 		$html .=
 			vsprintf(
-				// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
+			// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
 				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s. <br/> <br/> <strong>Note: A 10%% discount coupon will be emailed to you after form submission. Please use a valid email address.</strong>', 'portum' ),
 				array(
 					'Portum',
@@ -231,6 +248,13 @@ class Portum {
 					'hover-state' => false,
 				),
 
+				'epsilon_footer_link_color' => array(
+					'label'       => esc_html__( 'Footer Link Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
+					'default'     => '#13b0a5',
+					'section'     => 'colors',
+					'hover-state' => true,
+				),
 			),
 
 			'css' => Epsilon_Color_Scheme::load_css_overrides( get_template_directory() . '/assets/css/style-overrides.css' ),
@@ -255,70 +279,67 @@ class Portum {
 		Epsilon_Typography::get_instance( $options, $handler );
 	}
 
-
 	/**
 	 * Initiate the welcome screen
 	 */
-	public function init_welcome_screen() {
-		// Welcome screen.
-		if ( is_admin() ) {
-			$plugins = array(
-				'kiwi-social-share'        => array(
-					'recommended' => false,
+	public function init_dashboard() {
+		Epsilon_Dashboard::get_instance(
+			array(
+				'theme'    => array(
+					'download-id' => '212499'
 				),
-				'modula-best-grid-gallery' => array(
-					'recommended' => true,
-				),
-			);
+				'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
+			)
+		);
 
-			$importer = Epsilon_Import_Data::get_instance();
+		$dashboard = Portum_Dashboard_Setup::get_instance();
+		$dashboard->add_admin_notice();
 
-			/**
-			 *
-			 * id - unique id; required
-			 * title
-			 * description
-			 * check - check for plugins (if installed)
-			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 */
-			$actions = array(
-				array(
-					'id'          => 'portum-import-data',
-					'title'       => esc_html__( 'Add sample content', 'portum' ),
-					'description' => esc_html__( 'Clicking the button below will add content/sections/settings and recommended plugins to your WordPress installation. Click advanced to customize the import process.', 'portum' ),
-					'help'        => array( Epsilon_Import_Data::get_instance(), 'generate_import_data_container' ),
-					'check'       => Portum_Notify_System::check_installed_data(),
-				),
-				array(
-					'id'          => 'portum-check-cf7',
-					'title'       => Portum_Notify_System::plugin_verifier( 'contact-form-7', 'title', 'Contact Form 7', 'verify_cf7' ),
-					'description' => Portum_Notify_System::plugin_verifier( 'contact-form-7', 'description', 'Contact Form 7', 'verify_cf7' ),
-					'plugin_slug' => 'contact-form-7',
-					'check'       => defined( 'WPCF7_VERSION' ),
-				),
-			);
+		$upsells = get_option( $this->theme['theme-slug'] . '_theme_upsells', false );
+		if ( $upsells ) {
+			add_filter( 'epsilon_upsell_control_display', '__return_false' );
+		}
+	}
 
-			if ( is_customize_preview() ) {
-				$url                = 'themes.php?page=%1$s-welcome&tab=%2$s';
-				$actions[0]['help'] = '<a class="button button-primary" id="" href="' . esc_url( admin_url( sprintf( $url, 'portum', 'recommended-actions' ) ) ) . '">' . __( 'Import Demo Content', 'portum' ) . '</a>';
-			}
+	/**
+	 * Separate setup from init
+	 *
+	 * @param array $setup
+	 *
+	 * @return array
+	 */
+	public function epsilon_dashboard( $setup = array() ) {
+		$dashboard = new Portum_Dashboard_Setup();
 
-			Epsilon_Welcome_Screen::get_instance(
-				$config = array(
-					'theme-name'  => 'Portum',
-					'theme-slug'  => 'portum',
-					'actions'     => $actions,
-					'plugins'     => $plugins,
-					'edd'         => true,
-					'download_id' => '212499',
-				)
-			);
+		$setup['actions'] = $dashboard->get_actions();
+		$setup['tabs']    = $dashboard->get_tabs( $setup );
+		$setup['plugins'] = $dashboard->get_plugins();
+		$setup['privacy'] = $dashboard->get_privacy_options();
 
-			$config['sections_exclude'] = array( 'features' );
+		$setup['edd'] = $dashboard->get_edd( $setup );
 
-			Epsilon_Welcome_Screen::get_instance( $config );
+		$tab = get_user_meta( get_current_user_id(), 'epsilon_active_tab', true );
 
-		}// End if().
+		$setup['activeTab'] = ! empty( $tab ) ? absint( $tab ) : 0;
+
+		return $setup;
+	}
+
+	/**
+	 * Add steps to onboarding
+	 *
+	 * @param array $setup
+	 *
+	 * @return array
+	 */
+	public function epsilon_onboarding( $setup = array() ) {
+		$dashboard = new Portum_Dashboard_Setup();
+
+		$setup['steps']   = $dashboard->get_steps();
+		$setup['plugins'] = $dashboard->get_plugins( true );
+		$setup['privacy'] = $dashboard->get_privacy_options();
+
+		return $setup;
 	}
 
 	/**
@@ -341,6 +362,8 @@ class Portum {
 		wp_register_script( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.min.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.js', array(), $theme['Version'], true );
+		wp_register_script( 'odometer', get_template_directory_uri() . '/assets/vendors/odometer/odometer.min.js', array(), $theme['Version'], true );
+		wp_register_script( 'easypiechart', get_template_directory_uri() . '/assets/vendors/easypiechart/jquery.easypiechart.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'stickem', get_template_directory_uri() . '/assets/vendors/stickem/jquery.stickem.js', array(), $theme['Version'], true );
 		wp_register_script( 'offscreen', get_template_directory_uri() . '/assets/vendors/offscreen/offscreen.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/jquery.magnific-popup.min.js', array(), $theme['Version'], true );
@@ -397,7 +420,9 @@ class Portum {
 				'plyr',
 				'viewport',
 				'googlemaps',
+				'odometer',
 				'magnificPopup',
+				'easypiechart',
 				'portum-object',
 			),
 			$theme['Version'],
@@ -464,12 +489,12 @@ class Portum {
 			'custom-header',
 			array(
 				'width'              => 1920,
-				'default-image'      => get_template_directory_uri() . '/assets/images/blog-main-img-01.jpg',
+				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpeg',
 				'height'             => 855,
 				'flex-height'        => true,
 				'flex-width'         => true,
 				'default-text-color' => '#232323',
-				'header-text'        => true,
+				'header-text'        => false,
 				'uploads'            => true,
 				'video'              => false,
 			)

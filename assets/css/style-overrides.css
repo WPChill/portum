@@ -6,8 +6,14 @@
  * 5. Link Color
  * 6. Footer Background Color
  * 7. Footer Text Color
- * 8. Hover Link Color
+ * 8. Footer Link Color
+ * 9. Hover Link Color
+ * 10. Footer Hoover link Color
  */
+
+.dropdown li:hover {
+    background: %2$s;
+}
 
 .text-accent-color {
     color: %1$s;
@@ -70,8 +76,8 @@ a{
     color: %5$s;
 }
 
-a:focus { color: %8$s; }
-a:hover { color: %8$s; }
+a:focus { color: %9$s; }
+a:hover { color: %9$s; }
 
 .widget_tag_cloud a,
 .tags-links a,
@@ -84,8 +90,8 @@ a.btn {
 .tags-links a:hover,
 a.btn:focus,
 a.btn:hover {
-    border-color: %8$s;
-    background-color: %8$s;
+    border-color: %9$s;
+    background-color: %9$s;
 }
 
 .post-format{
@@ -129,7 +135,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar  tbody td a:hover{
-    background-color: %8$s;
+    background-color: %9$s;
 }
 
 #wp-calendar #prev a:before {
@@ -137,7 +143,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar #prev a:hover:before {
-    color: %8$s;
+    color: %9$s;
 }
 
 #wp-calendar #next a:before {
@@ -145,7 +151,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar #next a:hover:before {
-    color: %8$s;
+    color: %9$s;
 }
 
 .widget_rss .rss-date,
@@ -159,7 +165,7 @@ input[type="button"]:focus {
 
 .widget_search .search-submit:hover,
 .widget_search .search-submit:focus {
-    color: %8$s;
+    color: %9$s;
 }
 
 .widget_search .search-submit:active {
@@ -175,19 +181,21 @@ input[type="button"]:focus {
 }
 
 .post-slider .slick-dots li a:hover {
-    color: %8$s;
+    color: %9$s;
 }
 
 .post-slider .slick-dots li.slick-active a:before {
     border-top-color: %2$s;
 }
 
+.pager-slider li:first-child::before,
 .pager-slider li:last-child::before,
 .portfolio-grid-item .action .zoom,
 .portfolio-grid-item .action .link,
 .pager-slider h6 {
     background: %1$s;
 }
+.pager-slider li:first-child:hover::before,
 .pager-slider li:last-child:hover::before,
 .pager-slider li.active:before{
     background: %2$s !important;
@@ -211,14 +219,15 @@ input[type="button"]:focus {
     color: %2$s;
 }
 
-.team-members-item:hover .overlay:hover{
+.team-members-item:hover .overlay{
     background: %2$s;
     opacity:.65;
 }
 
 .pricing-item .plan sup,
 .pricing-item .plan sub,
-.pricing-item .plan strong{
+.pricing-item .plan strong,
+.pricing-item:hover ul span{
     color: %1$s;
 }
 
@@ -247,4 +256,47 @@ a.btn-contrast:hover{
 #footer{
     background-color: %6$s;
     color : %7$s;
+}
+
+#footer a{
+    color: %8$s
+}
+
+#footer a:hover{
+    color: %10$s
+}
+
+.ewf-counter__icon i {
+    color: %2$s;
+}
+
+.ewf-counter__standard,
+.ewf-counter__odometer,
+.ewf-counter__symbol {
+    color: %3$s;
+}
+
+.ewf-counter__title {
+    color: %4$s;
+}
+
+.ewf-progress__bar-liniar-wrap {
+    background-color: %1$s;
+}
+
+.ewf-progress__bar-liniar {
+    background-color: %2$s;
+}
+
+.ewf-progress--alternative-modern .ewf-progress__bar-liniar-wrap:after {
+    background: %2$s;
+}
+
+.ewf-pie__icon,
+.ewf-pie__percent {
+    color: %1$s;
+}
+
+.ewf-partner-slider__pager .slick-dots li.slick-active button {
+    background-color: %1$s;
 }

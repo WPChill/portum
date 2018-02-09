@@ -73,26 +73,6 @@ $panels = array(
  */
 $sections = array(
 	/**
-	 * Recommended actions
-	 */
-	array(
-		'id'   => 'portum_recomended_section',
-		'args' => array(
-			'type'                         => 'epsilon-section-recommended-actions',
-			'title'                        => esc_html__( 'Recomended Actions', 'portum' ),
-			'social_text'                  => esc_html__( 'MachoThemes is also social', 'portum' ),
-			'plugin_text'                  => esc_html__( 'Recomended Plugins', 'portum' ),
-			'actions'                      => Epsilon_Welcome_Screen::get_instance()->actions,
-			'plugins'                      => Epsilon_Welcome_Screen::get_instance()->plugins,
-			'theme_specific_option'        => Epsilon_Welcome_Screen::get_instance()->theme_slug . '_actions_left',
-			'theme_specific_plugin_option' => Epsilon_Welcome_Screen::get_instance()->theme_slug . '_plugins_left',
-			'facebook'                     => 'https://www.facebook.com/machothemes',
-			'twitter'                      => 'https://twitter.com/MachoThemez',
-			'wp_review'                    => false,
-			'priority'                     => 0,
-		),
-	),
-	/**
 	 * General section
 	 */
 	array(
@@ -119,6 +99,14 @@ $sections = array(
 			'priority' => 50,
 		),
 	),
+	array(
+		'id'   => 'portum_misc_section',
+		'args' => array(
+			'title'    => esc_html__( 'Misc', 'portum' ),
+			'panel'    => 'portum_panel_general',
+			'priority' => 60,
+		),
+	),
 	/**
 	 * Repeatable sections container
 	 */
@@ -136,11 +124,29 @@ $sections = array(
 	 * Theme Content Sections
 	 */
 	array(
+		'id'   => 'portum_contact_section',
+		'args' => array(
+			'title'    => esc_html__( 'Contact Information', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 0,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
+		'id'   => 'portum_counters_section',
+		'args' => array(
+			'title'    => esc_html__( 'Counter Section', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 1,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
 		'id'   => 'portum_testimonials_section',
 		'args' => array(
 			'title'    => esc_html__( 'Testimonials', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 1,
+			'priority' => 2,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -149,7 +155,7 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Slides', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 2,
+			'priority' => 3,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -158,7 +164,7 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Services', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 3,
+			'priority' => 4,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -167,7 +173,7 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Portfolio', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 4,
+			'priority' => 5,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -176,7 +182,7 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Expertise', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 5,
+			'priority' => 6,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -185,7 +191,7 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Team Members', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 5,
+			'priority' => 7,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
@@ -194,7 +200,34 @@ $sections = array(
 		'args' => array(
 			'title'    => esc_html__( 'Price Boxes', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 6,
+			'priority' => 8,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
+		'id'   => 'portum_progress_bars_section',
+		'args' => array(
+			'title'    => esc_html__( 'Progress Bars Section', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 9,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
+		'id'   => 'portum_piecharts_section',
+		'args' => array(
+			'title'    => esc_html__( 'Pie Charts Section', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 10,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
+		'id'   => 'portum_clientlists_section',
+		'args' => array(
+			'title'    => esc_html__( 'Client Logos Section', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 11,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),

@@ -39,11 +39,20 @@ if ( ! is_array( $footer_layout ) ) {
 /**
  * In case all the sidebars have widgets attached, we slice the array.
  */
+$front = get_option( 'show_on_front' );
+if ( 'page' === $front && is_front_page() ) {
+	?>
+	<section class="section-contact section">
+		<div class="container">
+			<div class="contact-decoration"></div>
+		</div>
+	</section>
+	<?php
+}
 ?>
 <div id="footer">
 	<div class="container">
 		<?php
-		$front = get_option( 'show_on_front' );
 		if ( 'page' === $front && is_front_page() ) {
 			get_template_part( 'template-parts/footer/contact-form' );
 		}

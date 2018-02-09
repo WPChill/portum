@@ -172,6 +172,156 @@ var Portum = {
    * Plugin related functions
    */
   Plugins: {
+    clientList: function() {
+      if ( typeof jQuery.fn.slick !== 'undefined' ) {
+        jQuery( '.ewf-partner-slider .ewf-partner-slider__slides' ).each( function() {
+          var $t = jQuery( this );
+          $t.slick( {
+            variableWidth: true,
+            autoplay: false,
+            infinite: true,
+            slidesToShow: 6,
+            slidesToScroll: 2,
+            speed: 500,
+            fade: false,
+            cssEase: 'linear',
+            arrows: false,
+            dots: true,
+            appendDots: $t.next()
+          } );
+        } );
+      }
+    },
+    setDimensionsPieCharts: function() {
+      jQuery( '.ewf-pie__chart' ).each( function() {
+
+        var $t = jQuery( this ),
+            n = $t.parent().width(),
+            r = $t.attr( 'data-barSize' );
+
+        if ( n < r ) {
+          r = n;
+        }
+
+        $t.css( {
+          'height': r,
+          'width': r,
+          'line-height': r + 'px'
+        } );
+
+        $t.find( '.ewf-pie__icon i' ).css( {
+          'line-height': r + 'px',
+          'font-size': r / 3
+        } );
+
+      } );
+    },
+    animatePieCharts: function() {
+      if ( typeof jQuery.fn.easyPieChart !== 'undefined' ) {
+
+        jQuery( '.ewf-pie__chart:in-viewport' ).each( function() {
+
+          var $t = jQuery( this ),
+              n = $t.parent().width(),
+              r = $t.attr( 'data-barSize' ),
+              l = 'square';
+
+          if ( $t.attr( 'data-lineCap' ) !== undefined ) {
+            l = $t.attr( 'data-lineCap' );
+          }
+
+          if ( n < r ) {
+            r = n;
+          }
+
+          $t.easyPieChart( {
+            animate: 1300,
+            lineCap: l,
+            lineWidth: $t.attr( 'data-lineWidth' ),
+            size: r,
+            barColor: $t.attr( 'data-barColor' ),
+            trackColor: $t.attr( 'data-trackColor' ),
+            scaleColor: 'transparent',
+            onStep: function( from, to, percent ) {
+              jQuery( this.el ).find( '.ewf-pie__percent span' ).text( Math.round( percent ) );
+            }
+
+          } );
+
+        } );
+
+      }
+    },
+    animateProgress: function() {
+      jQuery( '.ewf-progress__bar-liniar:in-viewport' ).each( function() {
+
+        var $t = jQuery( this );
+
+        if ( ! $t.hasClass( 'already-animated' ) ) {
+          $t.addClass( 'already-animated' );
+
+          $t.animate( {
+            width: $t.attr( 'data-value' ) + '%'
+          }, 2000 );
+        }
+
+      } );
+    },
+    /**
+     * Animate counters on page scroll
+     */
+    animateCounters: function() {
+      jQuery( '.ewf-counter__standard:in-viewport' ).each( function() {
+
+        var $t = jQuery( this ),
+            n = $t.attr( 'data-value' ),
+            r = parseInt( $t.attr( 'data-speed' ), 10 );
+
+        if ( ! $t.hasClass( 'already-animated' ) ) {
+          $t.addClass( 'already-animated' );
+          jQuery( {
+            countNum: $t.text()
+          } ).animate( {
+            countNum: n
+          }, {
+            duration: r,
+            easing: 'linear',
+            step: function() {
+              $t.text( Math.floor( this.countNum ) );
+            },
+            complete: function() {
+              $t.text( this.countNum );
+            }
+          } );
+        }
+
+      } );
+
+      if ( typeof window.Odometer !== 'undefined' ) {
+
+        jQuery( '.ewf-counter__odometer:in-viewport' ).each( function( index ) {
+
+          var newID = 'ewf-counter__odometer-' + index;
+
+          this.id = newID;
+
+          var value = jQuery( this ).attr( 'data-value' );
+
+          if ( ! jQuery( this ).hasClass( 'already-animated' ) ) {
+
+            jQuery( this ).addClass( 'already-animated' );
+
+            setTimeout( function() {
+              document.getElementById( newID ).innerHTML = value;
+            } );
+
+          }
+
+        } );
+
+      }
+
+    },
     /**
      * Initiate the magnific Popup
      */
@@ -326,7 +476,7 @@ var Portum = {
       } );
 
       totalHeight = jQuery( '.section-contact' ).height();
-      map.panBy( 0, ( totalHeight - 200 ) - ( totalHeight / 2 ) );
+      map.panBy( 0, (totalHeight + 200) - (totalHeight / 2) );
     },
 
     /**

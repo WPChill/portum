@@ -5,6 +5,9 @@
    */
   $( window ).scroll( function() {
     Portum.Theme.animations();
+    Portum.Plugins.animateCounters();
+    Portum.Plugins.animateProgress();
+    Portum.Plugins.animatePieCharts();
   } );
 
   /**
@@ -12,6 +15,8 @@
    */
   $( window ).resize( function() {
     Portum.Mobile.menu();
+    Portum.Plugins.animatePieCharts();
+    Portum.Plugins.setDimensionsPieCharts();
   } );
 
   /**
@@ -22,9 +27,13 @@
      * Initiate plugins
      */
     Portum.Plugins.owlSlider();
+    Portum.Plugins.clientList();
     Portum.Plugins.video();
     Portum.Plugins.magnificPopup();
-
+    Portum.Plugins.animateCounters();
+    Portum.Plugins.animateProgress();
+    Portum.Plugins.animatePieCharts();
+    Portum.Plugins.setDimensionsPieCharts();
     /**
      * Initiate Theme related functions
      */
@@ -50,8 +59,17 @@
      * Initiate plugins
      */
     Portum.Plugins.owlSlider();
+    // Portum.Plugins.clientList();
     Portum.Plugins.video();
     Portum.Plugins.magnificPopup();
+    Portum.Plugins.animateCounters();
+    Portum.Plugins.animateProgress();
+    Portum.Plugins.animatePieCharts();
+    Portum.Plugins.setDimensionsPieCharts();
+    /**
+     * Initiate theme scripts
+     */
+    Portum.Theme.map();
   } );
 
 })( jQuery );

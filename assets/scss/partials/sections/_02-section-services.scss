@@ -3,7 +3,7 @@
 .section-services {
   background-color: rgba(0, 0, 0, .8);
   background-size: 100% 100%;
-  padding: 75px 0;
+  padding: 75px 0 20px;
   transition: 3s;
 }
 
@@ -13,10 +13,6 @@
 
 .section-services .headline h3 {
   margin: 0;
-}
-
-.section-services .headline {
-  padding: 90px 0 0 0;
 }
 
 .section-services .headline span {
@@ -79,8 +75,7 @@
 .section-services.animate-- {
   background: transparent;
 }
-
-.section-services .row .col-md-4:nth-child(-n+3) {
+.section-services .row .col-md-4 {
   margin-bottom: 50px;
 }
 

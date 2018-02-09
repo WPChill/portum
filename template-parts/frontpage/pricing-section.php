@@ -13,6 +13,7 @@ $grouping  = array(
 	'values'   => $fields['pricing_grouping'],
 	'group_by' => 'price_box_title',
 );
+$span      = 12 / absint( $fields['pricing_column_group'] );
 
 $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repeater_field'], array(), $grouping );
 ?>
@@ -25,7 +26,7 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 			<div class="row">
 				<?php foreach ( $fields['pricing_boxes'] as $pricing_box ) { ?>
 
-					<div class="col-md-4">
+					<div class="col-md-<?php echo absint( $span ); ?>">
 						<div class="pricing-item">
 							<div class="plan">
 								<strong>

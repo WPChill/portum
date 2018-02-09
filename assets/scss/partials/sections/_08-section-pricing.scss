@@ -24,17 +24,17 @@
 	-webkit-box-shadow: 0 0 20px rgba(35,31,32,.1);
 	-moz-box-shadow: 0 0 20px rgba(35,31,32,.1);
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
-	
-	
+	margin-bottom:30px;
+
 	.details {
-		
+
 		background-color: $accent-2-color;
 		font-family: $accent-1-font;
 		color: #fff;
 		margin: 5px -2px 25px -2px;
 		padding: 15px 0;
-	
-	
+
+
 		h4 {
 			font-family: $accent-1-font;
 			color: #fff;
@@ -43,29 +43,29 @@
 			letter-spacing: 1.5px;
 			margin: 0;
 		}
-	
+
 		p {
 			color: #fff;
 			margin: -5px 0 0 0;
 		}
 	}
-	
+
 	ul {
 		text-align: Center;
 		padding: 0;
 		display: inline-block;
-		
+
 		li {
 			list-style-type: none;
 			text-align: left;
 			margin: 0 0 5px 0;
 		}
-		
-		span { 
-			color: #333; 
+
+		span {
+			color: #333;
 		}
 	}
-	
+
 	.btn {
 		min-width:120px;
 	}
@@ -87,7 +87,7 @@
 
 .pricing-item .plan {
 	font-family: $accent-2-font;
-		
+
 	strong {
 		font-size: 60px;
 		line-height:40px;
@@ -95,7 +95,7 @@
 		display:inline-block;
 		padding:25px 0 20px 0;
 	}
-	
+
 	sup {
 		height:20px;
 		line-height:28px;
@@ -105,7 +105,7 @@
 		font-weight: bold;
 		top: -0.7em;
 	}
-	
+
 	sub {
 		vertical-align: sub;
 		color: $accent-1-color;
@@ -130,7 +130,7 @@
 
 
 @media (max-width: 991px) {
-	
+
     .pricing-item {
         background: gold;
         margin-bottom: 0;
@@ -141,14 +141,14 @@
         min-height: 170px !important;
         padding: 0;
 		z-index: 999;
-		
-		
+
+
 		ul {
 			display: block;
 			padding: 30px 0 20px 205px;
 			margin: 0
 		}
-		
+
 		.wrapper {
 			position: initial;
 			transform: none;
@@ -158,19 +158,19 @@
 			left: initial;
 			bottom: 0;
 		}
-		
+
 		.plan {
 			position: Absolute;
 			left: 0;
 			top: 65px;
 			z-index: 99;
 			width: 190px;
-			
-			strong 	{ 
-				padding-top:0; 
+
+			strong 	{
+				padding-top:0;
 			}
 		}
-		
+
 		.details {
 			background: $accent-2-color;
 			position: absolute;
@@ -182,30 +182,30 @@
 			width: 190px;
 			z-index: 9;
 			height: 100%;
-			
-			h4 { 
-				padding-top: 30px; 
+
+			h4 {
+				padding-top: 30px;
 			}
-			
-			p 				{ 
-				display: none; 
+
+			p 				{
+				display: none;
 			}
 		}
     }
-	
-	
+
+
     .pricing-item:hover {
         transform: none;
     }
-		
-		
-    .pricing-item .plan strong, 
-	.pricing-item .plan sub, 
+
+
+    .pricing-item .plan strong,
+	.pricing-item .plan sub,
 	.pricing-item .plan sup {
         color: #fff;
     }
 
-	
+
     .pricing-item:hover .plan strong,
     .pricing-item:hover .plan sub,
     .pricing-item:hover .plan sup {
@@ -214,7 +214,7 @@
 }
 
 @media (max-width: 768px) {
-	
+
 	.pricing-item {
 		.wrapper {
 			position:relative;
@@ -224,11 +224,11 @@
 			left:auto;
 			padding-left:205px;
 		}
-		
-		ul li { 
-			text-align:center; 
+
+		ul li {
+			text-align:center;
 		}
-	}	
+	}
 }
 
 
