@@ -36,7 +36,7 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Page Builder', 'portum' ),
+			'title'          => esc_html__( 'Homepage Content', 'portum' ),
 		),
 	),
 	/**
