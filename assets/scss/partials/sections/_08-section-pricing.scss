@@ -28,7 +28,7 @@
 
 	.details {
 
-		background-color: $accent-2-color;
+		background-color: $accent-1-color;
 		font-family: $accent-1-font;
 		color: #fff;
 		margin: 5px -2px 25px -2px;
@@ -117,7 +117,7 @@
 
 
 .pricing-item:hover .details {
-    background-color: $accent-1-color;
+    background-color: $accent-2-color;
 }
 
 
@@ -125,7 +125,7 @@
 .pricing-item:hover sup,
 .pricing-item:hover ul span,
 .pricing-item:hover strong {
-    color: $accent-1-color;
+    color: $accent-2-color;
 }
 
 
@@ -172,7 +172,7 @@
 		}
 
 		.details {
-			background: $accent-2-color;
+			background: $accent-1-color;
 			position: absolute;
 			left: 0;
 			top: 0;
