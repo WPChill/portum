@@ -55,7 +55,7 @@ $bg = $fields['counters_background_color'];
 									<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ) ?></span>
 								<?php } ?>
 								<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-									<div class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ) ?></div>
+									<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ) ?></h6>
 								<?php } ?>
 							</div>
 
