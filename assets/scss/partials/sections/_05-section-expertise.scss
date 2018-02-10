@@ -12,11 +12,10 @@
 .expertise-item {
 	padding: 0 0 35px 0;
 		
-	a 	{ position:relative;z-index:10; }    
+	a 	{  }    
 	h4 	{  
 		position: relative; 
-		margin-bottom:25px;
-		
+		margin-bottom:25px;		
 		strong {
 			color: #f7f7f7;
 			font-size: 68px;
@@ -26,9 +25,8 @@
 			position: absolute;
 			left: -25px;
 			top: -28px;
-			z-index: 1;
-			display: block;
-			
+			z-index: -1;
+			display: block;			
 		}
 	}	
 }
