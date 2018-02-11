@@ -382,7 +382,7 @@ class Portum_Dashboard_Setup {
 								$theme->get( 'Name' ),
 							)
 						),
-						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/portum-feedback">Have your say</a><br/> <br/> <em>Note: A 10% discount coupon will be emailed to you after form submission. Please use a valid email address.</em>',
+						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/portum-feedback">Have your say</a><br/>',
 						'type'      => 'standout',
 					),
 				),
