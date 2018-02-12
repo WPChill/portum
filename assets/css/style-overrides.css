@@ -200,11 +200,36 @@ input[type="button"]:focus {
 .pager-slider li.active:before{
     background: %2$s !important;
 }
-.testimonial:hover,
+
 .portfolio-grid-item .action .zoom:hover,
 .portfolio-grid-item .action .link:hover,
 .pager-slider li:hover h6, .pager-slider li.active h6:hover, .pager-slider li.active h6{
     background: %2$s;
+}
+
+/* 
+	Testimonials
+*/
+
+.testimonial:hover {
+	background: %2$s;
+}
+
+.testimonial a {
+	color: %1$s;
+}
+
+
+/* 
+	Blog
+*/
+
+.blog-news-item .news-category a {
+	background: %1$s;
+}
+
+.blog-news-item .news-category a:hover {
+	background: %2$s;
 }
 
 /* 
