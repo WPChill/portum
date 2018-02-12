@@ -82,16 +82,16 @@ a:hover { color: %9$s; }
 .widget_tag_cloud a,
 .tags-links a,
 a.btn {
-    border-color: %5$s;
-    background-color: %5$s;
+    border-color: %1$s;
+    background-color: %1$s;
 }
 
 .widget_tag_cloud a:hover,
 .tags-links a:hover,
 a.btn:focus,
 a.btn:hover {
-    border-color: %9$s;
-    background-color: %9$s;
+    border-color: %2$s;
+    background-color: %2$s;
 }
 
 .post-format{
@@ -247,6 +247,42 @@ input[type="button"]:focus {
     color: %2$s;
 }
 
+/* 
+	Pricing
+*/
+
+.pricing-item .plan sup,
+.pricing-item .plan sub,
+.pricing-item .plan strong{
+    color: %1$s;
+}
+
+.pricing-item .details {
+	background-color: %1$s;
+}
+
+.pricing-item:hover .plan sup,
+.pricing-item:hover .plan sub,
+.pricing-item:hover .plan strong,
+.pricing-item:hover ul span {
+	color: %2$s;
+}
+
+.pricing-item:hover .details{
+    background-color: %2$s;
+}
+
+/*
+.pricing-item:hover .btn {
+	background-color: %2$s;
+	border-color: %2$s;
+}
+
+.pricing-item:hover .btn:hover {
+	background-color: %1$s;
+	border-color: %1$s;
+}
+*/
 
 
 .section-video .info-area p strong{
@@ -256,21 +292,6 @@ input[type="button"]:focus {
 .team-members-item:hover .overlay{
     background: %2$s;
     opacity:.65;
-}
-
-.pricing-item .plan sup,
-.pricing-item .plan sub,
-.pricing-item .plan strong,
-.pricing-item:hover ul span{
-    color: %1$s;
-}
-
-.pricing-item .details{
-    background: %2$s;
-}
-
-.pricing-item:hover .details{
-    background-color: %1$s;
 }
 
 .btn-contrast,
@@ -301,7 +322,7 @@ a.btn-contrast:hover{
 }
 
 .ewf-counter__icon i {
-    color: %2$s;
+    color: %1$s;
 }
 
 .ewf-counter__standard,
