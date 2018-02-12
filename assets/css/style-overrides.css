@@ -224,11 +224,11 @@ input[type="button"]:focus {
 	Blog
 */
 
-.blog-news-item .news-category a {
+.blog-news-item .news-category strong {
 	background: %1$s;
 }
 
-.blog-news-item .news-category a:hover {
+.blog-news-item .news-category strong:hover {
 	background: %2$s;
 }
 
