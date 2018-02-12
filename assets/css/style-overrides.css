@@ -207,13 +207,22 @@ input[type="button"]:focus {
     background: %2$s;
 }
 
-.services-item a:hover::before{
+/* 
+	Services
+*/
+.services-item:hover::before{
     background: %2$s;
 }
 
-.services-item a:hover span, .services-item a:hover i{
+.services-item span {
+	color: %1$s;
+}
+
+.services-item:hover span, .services-item:hover i{
     color: %2$s;
 }
+
+
 
 .section-video .info-area p strong{
     color: %2$s;

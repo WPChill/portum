@@ -3,10 +3,11 @@
 .section-services {
   background-color: rgba(0, 0, 0, .8);
   background-size: 100% 100%;
-  padding: 75px 0 20px;
+  padding: 70px 0 20px;
   transition: 3s;
 }
 
+/*
 .section-services .row.space {
   margin-bottom: 50px;
 }
@@ -18,17 +19,16 @@
 .section-services .headline span {
   margin: 0 0 15px 0;
 }
+*/
 
 .services-item {
   padding: 0 0 0 5px;
-}
-
-.services-item a {
-  display: block;
   transition: 180ms all;
 }
 
-.services-item a::before {
+
+
+.services-item::before {
   content: "";
   height: 35px;
   width: 1px;
@@ -38,12 +38,12 @@
   top: 0;
 }
 
-.services-item a:hover span,
-.services-item a:hover i {
+.services-item:hover span,
+.services-item:hover i {
   color: $accent-2-color;
 }
 
-.services-item a:hover::before {
+.services-item:hover::before {
   background: $accent-2-color;
 }
 
