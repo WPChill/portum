@@ -18,7 +18,7 @@ $fields    = $frontpage->sections[ $section_id ];
 			<div class="row">
 				<?php if ( ! empty( $fields['about_image'] ) ) { ?>
 					<div class="col-md-5">
-						<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" class="about-image"/>
+						<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
 					</div>
 				<?php } ?>
 

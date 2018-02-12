@@ -453,8 +453,9 @@ a.social-icon:active {
 @media (max-width: 991px) {
 
   .headline strong {
-    left: initial;
+    display:none;	
   }
+  
 }
 
 /* ------------------------------ HEADLINE section - END --------------------*/
