@@ -11,43 +11,43 @@
           "menu": [
             {
               "href": "#",
-              "label": "Lorem"
+              "label": "Home"
             },
             {
               "href": "#",
-              "label": "Ipsum"
+              "label": "Blog"
             },
             {
               "href": "#",
-              "label": "Dolor",
+              "label": "Services",
               "submenus": [
                 {
                   "href": "#",
-                  "label": "Page 1a"
+                  "label": "Web Design"
                 },
                 {
                   "href": "#",
-                  "label": "Page 1b",
+                  "label": "Web Optimisations",
                   "submenus": [
                     {
                       "href": "#",
-                      "label": "Page 2a"
+                      "label": "Google SEO"
                     },
                     {
                       "href": "#",
-                      "label": "Page 2b"
+                      "label": "Amazon SEO"
                     }
                   ]
                 },
                 {
                   "href": "#",
-                  "label": "Page 1c"
+                  "label": "Print"
                 }
               ]
             },
             {
               "href": "#",
-              "label": "Sit Amet"
+              "label": "Contact"
             }
           ]
         }
