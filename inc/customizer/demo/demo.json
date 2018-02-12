@@ -182,32 +182,32 @@
           "label": "Services",
           "content": {
             "0": {
-              "service_title": "business",
+              "service_title": "BUSINESS",
               "service_icon": "fa fa-briefcase",
               "service_description": "Consultance"
             },
             "1": {
-              "service_title": "Competition",
+              "service_title": "COMPETITION",
               "service_icon": "fa fa-archive",
-              "service_description": "analysis"
+              "service_description": "Analysis"
             },
             "2": {
-              "service_title": "Development",
+              "service_title": "DEVELOPMENT",
               "service_icon": "fa fa-cogs",
-              "service_description": "plan"
+              "service_description": "Plan"
             },
             "3": {
-              "service_title": "General Fonds",
+              "service_title": "GENERAL FONDS",
               "service_icon": "fa fa-cube",
               "service_description": "Expertise"
             },
             "4": {
-              "service_title": "Specialised",
+              "service_title": "SPECIALISED",
               "service_icon": "fa fa-users",
               "service_description": "Recruitment"
             },
             "5": {
-              "service_title": "Personalized",
+              "service_title": "PERSONALIZED",
               "service_icon": "fa fa-lock",
               "service_description": "Security"
             }
@@ -476,7 +476,7 @@
           "label": "Pricing",
           "setting": "portum_frontpage_sections",
           "content": {
-            "pricing_title": "See what packege suits best for you",
+            "pricing_title": "See what package suits best for you",
             "pricing_subtitle": "PRICING",
             "pricing_grouping": [
               "all"
