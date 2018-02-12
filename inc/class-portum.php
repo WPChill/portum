@@ -489,7 +489,7 @@ class Portum {
 			'custom-header',
 			array(
 				'width'              => 1920,
-				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpeg',
+				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
 				'height'             => 855,
 				'flex-height'        => true,
 				'flex-width'         => true,
