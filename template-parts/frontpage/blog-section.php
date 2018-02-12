@@ -66,7 +66,7 @@ $query = new WP_Query( $args );
 								</div>
 
 								<div class="news-date">
-									<strong><a href="#"><?php echo esc_html( get_the_date() ); ?></a></strong>
+									<strong><span><?php echo esc_html( get_the_date() ); ?></span></strong>
 								</div>
 							</div>
 						</div>
