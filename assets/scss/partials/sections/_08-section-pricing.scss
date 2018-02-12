@@ -26,6 +26,21 @@
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
 	margin-bottom:30px;
 
+	&:hover {
+		transform: scale(1.05);
+	}
+	
+	&:hover .details {
+		background-color: $accent-2-color;
+	}
+
+	&:hover sub,
+	&:hover sup,
+	&:hover ul span,
+	&:hover strong {
+		color: $accent-2-color;
+	}
+	
 	.details {
 
 		background-color: $accent-1-color;
@@ -80,9 +95,6 @@
 }
 
 
-.pricing-item:hover {
-    transform: scale(1.05);
-}
 
 
 .pricing-item .plan {
@@ -111,22 +123,12 @@
 		color: $accent-1-color;
 		font-size: 15px;
 		font-weight: bold;
-		bottom: 1em;
+		bottom: 1em; 
 	}
 }
 
 
-.pricing-item:hover .details {
-    background-color: $accent-2-color;
-}
 
-
-.pricing-item:hover sub,
-.pricing-item:hover sup,
-.pricing-item:hover ul span,
-.pricing-item:hover strong {
-    color: $accent-2-color;
-}
 
 
 @media (max-width: 991px) {

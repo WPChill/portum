@@ -59,7 +59,7 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 
 							<?php if ( ! empty( $pricing_box['price_box_url'] ) ) { ?>
 								<div class="wrapper">
-									<a href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>" class="btn btn-contrast">
+									<a href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>" class="btn">
 										<?php echo empty( $pricing_box['price_box_url_label'] ) ? esc_html__( 'Purchase', 'portum' ) : esc_html( $pricing_box['price_box_url_label'] ); ?>
 									</a>
 								</div>
