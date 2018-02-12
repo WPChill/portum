@@ -4,17 +4,13 @@
   padding: 70px 0 25px 0;
 }
 
-.section-testimonials button {
-  display: none;
-}
-
 .section-testimonials.animate-- {
   background: transparent;
 }
 
 .testimonial {
   background: #fff;
-  position: Relative;
+  position: relative;
   margin-bottom: 75px;
   transition: 280ms all;
   min-height: 150px;
@@ -72,7 +68,6 @@
 .testimonial span {
   background: url("../images/back-quote.png") no-repeat center center;
   x-index: 9;
-
 }
 
 .testimonial img {
@@ -95,7 +90,6 @@
 }
 
 .testimonial:hover {
-  cursor: pointer;
   background-color: $accent-2-color;
 }
 
