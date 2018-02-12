@@ -221,17 +221,17 @@
             "0": {
               "slides_title": "Growing your business",
               "slides_description": "From <strong>ZERO</strong> to <strong>HERO</strong> along with you",
-              "slides_image": "/assets/images/slider-image.png"
+              "slides_image": "/assets/images/slider-img-01.jpg"
             },
             "1": {
               "slides_title": "Maintainang the business",
               "slides_description": "Take your<strong>TIME</strong> and <strong>grow and grow</strong> your business",
-              "slides_image": "/assets/images/slider-img-01.jpg"
+              "slides_image": "/assets/images/slider-img-02.jpg"
             },
             "2": {
               "slides_title": "Apogee of the business",
               "slides_description": "From <strong>ZERO</strong> to <strong>HERO</strong> along with you",
-              "slides_image": "/assets/images/slider-img-02.png"
+              "slides_image": "/assets/images/slider-img-03.jpg"
             }
           }
         },
@@ -389,7 +389,7 @@
           "content": {
             "services_title": "We offer:",
             "services_subtitle": "SERVICES",
-            "services_background_image": "/assets/images/02_services.png",
+            "services_background_image": "/assets/images/02_services.jpg",
             "services_grouping": [
               "all"
             ],
