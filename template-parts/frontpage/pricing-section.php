@@ -25,9 +25,8 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['pricing_subtitle'], $fields['pricing_title'] ) ); ?>
 			<div class="row">
 				<?php foreach ( $fields['pricing_boxes'] as $pricing_box ) { ?>
-
 					<div class="col-md-<?php echo absint( $span ); ?>">
-						<div class="pricing-item">
+						<div class="pricing-item <?php echo $pricing_box['price_box_featured'] ? 'featured' : ''; ?>">
 							<div class="plan">
 								<strong>
 									<?php if ( ! empty( $pricing_box['price_box_currency'] ) ) { ?>

@@ -52,7 +52,40 @@ class Portum_Sidebars {
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 			),
+			array(
+				'id'            => 'header-sidebar-1',
+				'name'          => __( '[Header] Sidebar #1', 'portum' ),
+				'before_title'  => '<h6 class="widget-title">',
+				'after_title'   => '</h5>',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			),
 
+			array(
+				'id'            => 'header-sidebar-2',
+				'name'          => __( '[Header] Sidebar #2', 'portum' ),
+				'before_title'  => '<h6 class="widget-title">',
+				'after_title'   => '</h5>',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			),
+
+			array(
+				'id'            => 'header-sidebar-3',
+				'name'          => __( '[Header] Sidebar #3', 'portum' ),
+				'before_title'  => '<h6 class="widget-title">',
+				'after_title'   => '</h5>',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			),
+			array(
+				'id'            => 'header-sidebar-4',
+				'name'          => __( '[Header] Sidebar #4', 'portum' ),
+				'before_title'  => '<h6 class="widget-title">',
+				'after_title'   => '</h5>',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			),
 			array(
 				'id'            => 'footer-sidebar-1',
 				'name'          => __( '[Footer] Sidebar #1', 'portum' ),

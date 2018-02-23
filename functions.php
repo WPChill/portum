@@ -15,4 +15,4 @@ require_once 'inc/class-portum-autoloader.php';
 /**
  * Instantiate it
  */
-$portum = new Portum();
+$portum = Portum::get_instance();

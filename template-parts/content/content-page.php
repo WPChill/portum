@@ -7,6 +7,11 @@
  * @package Portum
  */
 
+if ( isset( $section_id ) ) {
+	$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+	$fields    = $frontpage->sections[ $section_id ];
+}
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
@@ -36,17 +41,40 @@
 
 			<div class="post-footer">
 				<div class="post-meta">
-					<a class="posted-on" href="#"><?php echo get_the_date(); ?></a>
+					<?php if ( isset( $section_id ) ) { ?>
 
-					<?php
-					Portum_Helper::posted_on( 'author' );
-					Portum_Helper::posted_on( 'comments' );
-					Portum_Helper::posted_on( 'category' );
-					if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
-						Portum_Helper::posted_on( 'tags' );
-					}
-					?>
+						<?php if ( $fields['content_page_date'] ) { ?>
+							<a class="posted-on" href="#"><?php echo get_the_date(); ?></a>
+						<?php } ?>
 
+						<?php
+						if ( $fields['content_page_author'] ) {
+							Portum_Helper::posted_on( 'author' );
+						}
+						if ( $fields['content_page_comments'] ) {
+							Portum_Helper::posted_on( 'comments' );
+						}
+						if ( $fields['content_page_categories'] ) {
+							Portum_Helper::posted_on( 'category' );
+						}
+						if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
+							Portum_Helper::posted_on( 'tags' );
+						}
+						?>
+
+					<?php } else { ?>
+						<a class="posted-on" href="#"><?php echo get_the_date(); ?></a>
+
+						<?php
+						Portum_Helper::posted_on( 'author' );
+						Portum_Helper::posted_on( 'comments' );
+						Portum_Helper::posted_on( 'category' );
+						if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
+							Portum_Helper::posted_on( 'tags' );
+						}
+						?>
+
+					<?php } ?>
 				</div><!-- .post-meta -->
 			</div><!-- .post-footer -->
 		</div>

@@ -193,6 +193,51 @@ Epsilon_Customizer::add_field(
 );
 
 /**
+ * Header section options
+ */
+Epsilon_Customizer::add_field(
+	'portum_header_columns',
+	array(
+		'type'            => 'epsilon-layouts',
+		'section'         => 'portum_header_section',
+		'priority'        => 1,
+		'layouts'         => array(
+			1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
+			2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
+			3 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/three-column.png',
+			4 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/four-column.png',
+		),
+		'default'         => array(
+			'columnsCount' => 2,
+			'columns'      => array(
+				array(
+					'index' => 1,
+					'span'  => 6,
+				),
+				array(
+					'index' => 2,
+					'span'  => 6,
+				),
+			),
+		),
+		'min_span'        => 2,
+		'label'           => esc_html__( 'Top Bar Columns', 'portum' ),
+		'active_callback' => array( 'Portum_Customizer', 'header_top_bar_enabled_callback' ),
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'portum_header_top_bar',
+	array(
+		'type'     => 'epsilon-toggle',
+		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
+		'section'  => 'portum_header_section',
+		'priority' => 0,
+		'default'  => true,
+	)
+);
+
+/**
  * Footer section options
  */
 Epsilon_Customizer::add_field(
@@ -633,24 +678,24 @@ Epsilon_Customizer::add_field(
 			'field' => 'piechart_title',
 		),
 		'fields'       => array(
-			'piechart_title' => array(
+			'piechart_title'     => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 				'default'           => 'Satisfaction',
 			),
-			'piechart_text'  => array(
+			'piechart_text'      => array(
 				'label'   => esc_html__( 'Text', 'portum' ),
 				'type'    => 'epsilon-text-editor',
 				'default' => esc_html__( 'Nullam nec metus ullamcorper, scelerisque null', 'portum' ),
 			),
-			'piechart_value' => array(
+			'piechart_value'     => array(
 				'label'             => esc_html__( 'Value', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'absint',
 				'default'           => 55,
 			),
-			'piechart_size'  => array(
+			'piechart_size'      => array(
 				'label'       => esc_html__( 'Size', 'portum' ),
 				'description' => esc_html__( 'In pixels', 'portum' ),
 				'type'        => 'epsilon-slider',
@@ -661,7 +706,7 @@ Epsilon_Customizer::add_field(
 					'step' => 10,
 				),
 			),
-			'piechart_bar_width'  => array(
+			'piechart_bar_width' => array(
 				'label'       => esc_html__( 'Width', 'portum' ),
 				'description' => esc_html__( 'In pixels', 'portum' ),
 				'type'        => 'epsilon-slider',
@@ -672,7 +717,7 @@ Epsilon_Customizer::add_field(
 					'step' => 5,
 				),
 			),
-			'piechart_type'  => array(
+			'piechart_type'      => array(
 				'label'   => esc_html__( 'Type', 'portum' ),
 				'type'    => 'select',
 				'default' => 'percentage',
@@ -681,7 +726,7 @@ Epsilon_Customizer::add_field(
 					'icon'       => esc_html__( 'icon', 'portum' ),
 				),
 			),
-			'piechart_icon'  => array(
+			'piechart_icon'      => array(
 				'label'   => esc_html__( 'Icon', 'portum' ),
 				'type'    => 'epsilon-icon-picker',
 				'default' => 'fa fa-hdd-o',
@@ -756,7 +801,7 @@ Epsilon_Customizer::add_field(
 				'label'   => esc_html__( 'Portrait', 'portum' ),
 				'type'    => 'epsilon-image',
 				'size'    => 'portum-team-image',
-				'default' => esc_url( get_template_directory_uri() . '/assets/images/team-img-01.jpg' ),
+				'default' => esc_url( get_template_directory_uri() . '/assets/images/07_team_01.jpg' ),
 			),
 			'member_social_facebook'  => array(
 				'label'   => esc_html__( 'Facebook', 'portum' ),
@@ -782,7 +827,7 @@ Epsilon_Customizer::add_field(
 	)
 );
 /**
- * Team Members
+ * Price boxes
  */
 Epsilon_Customizer::add_field(
 	'portum_price_boxes',
@@ -836,6 +881,11 @@ Epsilon_Customizer::add_field(
 				'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',
 				'sanitize_callback' => 'wp_kses_post',
 			),
+			'price_box_featured' => array(
+				'type'    => 'epsilon-toggle',
+				'label'   => esc_html__( 'Featured state', 'portum' ),
+				'default' => false,
+			),
 		),
 	)
 );
@@ -871,70 +921,105 @@ Epsilon_Customizer::add_field(
 				'id'     => 'primary',
 				'name'   => 'Primary',
 				'colors' => array(
-					'epsilon_accent_color'        => '#cc263d',
-					'epsilon_accent_color_second' => '#364d7c',
-					'epsilon_text_color'          => '#777777',
-					'epsilon_title_color'         => '#1a171c',
-					'epsilon_link_color'          => '#d1d5de',
-					'epsilon_footer_background'   => '#18304c',
-					'epsilon_footer_text_color'   => '#13b0a5',
-					'epsilon_footer_link_color'   => '#13b0a5'
+					'epsilon_accent_color'              => '#cc263d',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1'
 				),
 			),
 			array(
 				'id'     => 'yellow',
 				'name'   => 'Yellow',
 				'colors' => array(
-					'epsilon_accent_color'        => '#f3950f',
-					'epsilon_accent_color_second' => '#364d7c',
-					'epsilon_text_color'          => '#777777',
-					'epsilon_title_color'         => '#1a171c',
-					'epsilon_link_color'          => '#d1d5de',
-					'epsilon_footer_background'   => '#18304c',
-					'epsilon_footer_text_color'   => '#13b0a5',
-					'epsilon_footer_link_color'   => '#13b0a5'
+					'epsilon_accent_color'              => '#f3950f',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1'
 				),
 			),
 			array(
 				'id'     => 'green',
 				'name'   => 'Green',
 				'colors' => array(
-					'epsilon_accent_color'        => '#097d3d',
-					'epsilon_accent_color_second' => '#364d7c',
-					'epsilon_text_color'          => '#777777',
-					'epsilon_title_color'         => '#1a171c',
-					'epsilon_link_color'          => '#d1d5de',
-					'epsilon_footer_background'   => '#18304c',
-					'epsilon_footer_text_color'   => '#13b0a5',
-					'epsilon_footer_link_color'   => '#13b0a5'
+					'epsilon_accent_color'              => '#097d3d',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1'
 				),
 			),
 			array(
 				'id'     => 'blue',
 				'name'   => 'Blue',
 				'colors' => array(
-					'epsilon_accent_color'        => '#298dd2',
-					'epsilon_accent_color_second' => '#364d7c',
-					'epsilon_text_color'          => '#777777',
-					'epsilon_title_color'         => '#1a171c',
-					'epsilon_link_color'          => '#d1d5de',
-					'epsilon_footer_background'   => '#18304c',
-					'epsilon_footer_text_color'   => '#13b0a5',
-					'epsilon_footer_link_color'   => '#13b0a5'
+					'epsilon_accent_color'              => '#298dd2',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1',
 				),
 			),
 			array(
 				'id'     => 'magenta',
 				'name'   => 'Magenta',
 				'colors' => array(
-					'epsilon_accent_color'        => '#ae1062',
-					'epsilon_accent_color_second' => '#364d7c',
-					'epsilon_text_color'          => '#777777',
-					'epsilon_title_color'         => '#1a171c',
-					'epsilon_link_color'          => '#d1d5de',
-					'epsilon_footer_background'   => '#18304c',
-					'epsilon_footer_text_color'   => '#13b0a5',
-					'epsilon_footer_link_color'   => '#13b0a5'
+					'epsilon_accent_color'              => '#ae1062',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1'
 				),
 			),
 		),

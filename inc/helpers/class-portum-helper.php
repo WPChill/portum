@@ -15,6 +15,27 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Portum_Helper {
 	/**
+	 * Create a "default" value for the header layout
+	 */
+	public static function get_header_default() {
+		return wp_json_encode(
+			array(
+				'columnsCount' => 2,
+				'columns'      => array(
+					array(
+						'index' => 1,
+						'span'  => 6,
+					),
+					array(
+						'index' => 2,
+						'span'  => 6,
+					),
+				),
+			)
+		);
+	}
+
+	/**
 	 * Create a "default" value for the footer layout
 	 */
 	public static function get_footer_default() {
@@ -292,5 +313,42 @@ class Portum_Helper {
 		}
 
 		return '';
+	}
+
+	/**
+	 * @param $url
+	 *
+	 * @return array
+	 */
+	public static function video_type( $url ) {
+		$youtube = preg_match(
+			'/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/',
+			$url,
+			$yt_matches
+		);
+
+		$vimeo = preg_match(
+			'/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([‌​0-9]{6,11})[?]?.*/',
+			$url,
+			$vm_matches
+		);
+
+		$video_id = 0;
+		$type     = 'none';
+
+		if ( $youtube ) {
+			$video_id = $yt_matches[5];
+			$type     = 'youtube';
+		} elseif ( $vimeo ) {
+			$video_id = $vm_matches[5];
+			$type     = 'vimeo';
+		}
+
+
+		return array(
+			'video_id'   => $video_id,
+			'video_type' => $type,
+		);
+
 	}
 }
