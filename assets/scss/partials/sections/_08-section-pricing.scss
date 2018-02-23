@@ -26,21 +26,27 @@
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
 	margin-bottom:30px;
 
+	&.featured,
 	&:hover {
 		transform: scale(1.05);
 	}
-	
+
+	&.featured .details,
 	&:hover .details {
 		background-color: $accent-2-color;
 	}
 
+	&.featured sub,
+	&.featured sup,
+	&.featured ul span,
+	&.featured strong,
 	&:hover sub,
 	&:hover sup,
 	&:hover ul span,
 	&:hover strong {
 		color: $accent-2-color;
 	}
-	
+
 	.details {
 
 		background-color: $accent-1-color;
@@ -95,8 +101,6 @@
 }
 
 
-
-
 .pricing-item .plan {
 	font-family: $accent-2-font;
 
@@ -123,13 +127,9 @@
 		color: $accent-1-color;
 		font-size: 15px;
 		font-weight: bold;
-		bottom: 1em; 
+		bottom: 1em;
 	}
 }
-
-
-
-
 
 @media (max-width: 991px) {
 

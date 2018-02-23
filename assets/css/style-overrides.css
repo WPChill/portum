@@ -4,17 +4,42 @@
  * 3. Text Color
  * 4. Header Text Color
  * 5. Link Color
- * 6. Footer Background Color
- * 7. Footer Text Color
- * 8. Footer Link Color
- * 9. Hover Link Color
- * 10. Footer Hoover link Color
+ * 6. Link Hover Color
+ * 7. Link Active Color
+ * 8. Menu Background Color
+ * 9. Menu Item Color
+ * 10. Menu Item Hover Color
+ * 11. Menu Item Active Color
+ * 12. Footer Background Color
+ * 13. Footer Contact Background
+ * 14. Footer Text Color
+ * 15. Footer Link Color
+ * 16. Footer Link Hover Color
+ * 17. Footer Link Active Color
  */
 
-.dropdown li:hover {
-    background: %2$s;
+.contact-form{
+    background-image:none;
+    background-color: %13$s;
 }
 
+
+.sf-menu li.dropdown ul{
+    background: %8$s;
+    opacity: .9;
+}
+.dropdown li:hover {
+    background: %1$s;
+}
+.sf-menu > li.current > a {
+    color: %9$s
+}
+.sf-menu li.sfHover > a, .sf-menu a:hover, .sf-menu li.sfHover a:hover{
+    color: %10$s;
+}
+.sf-menu a:focus, .sf-menu li.sfHover a:focus{
+    color: %11$s;
+}
 .text-accent-color {
     color: %1$s;
 }
@@ -76,8 +101,8 @@ a{
     color: %5$s;
 }
 
-a:focus { color: %9$s; }
-a:hover { color: %9$s; }
+a:focus { color: %7$s; }
+a:hover { color: %6$s; }
 
 .widget_tag_cloud a,
 .tags-links a,
@@ -90,8 +115,13 @@ a.btn {
 .tags-links a:hover,
 a.btn:focus,
 a.btn:hover {
-    border-color: %2$s;
-    background-color: %2$s;
+    border-color: %6$s;
+    background-color: %6$s;
+}
+
+a.btn:focus{
+    border-color: %7$s;
+    background-color: %7$s;
 }
 
 .post-format{
@@ -117,12 +147,15 @@ input[type="button"]{
 
 input[type="reset"]:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover,
+input[type="button"]:hover{
+    border-color: %6$s;
+    background-color: %6$s;
+}
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 input[type="button"]:focus {
-    border-color: %2$s;
-    background-color: %2$s;
+    border-color: %7$s;
+    background-color: %7$s;
 }
 
 #wp-calendar th,
@@ -135,7 +168,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar  tbody td a:hover{
-    background-color: %9$s;
+    background-color: %6$s;
 }
 
 #wp-calendar #prev a:before {
@@ -143,7 +176,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar #prev a:hover:before {
-    color: %9$s;
+    color: %6$s;
 }
 
 #wp-calendar #next a:before {
@@ -151,7 +184,7 @@ input[type="button"]:focus {
 }
 
 #wp-calendar #next a:hover:before {
-    color: %9$s;
+    color: %6$s;
 }
 
 .widget_rss .rss-date,
@@ -163,9 +196,11 @@ input[type="button"]:focus {
     color: %1$s;
 }
 
-.widget_search .search-submit:hover,
+.widget_search .search-submit:hover{
+    color: %6$s;
+}
 .widget_search .search-submit:focus {
-    color: %9$s;
+    color: %7$s;
 }
 
 .widget_search .search-submit:active {
@@ -181,7 +216,7 @@ input[type="button"]:focus {
 }
 
 .post-slider .slick-dots li a:hover {
-    color: %9$s;
+    color: %6$s;
 }
 
 .post-slider .slick-dots li.slick-active a:before {
@@ -207,7 +242,7 @@ input[type="button"]:focus {
     background: %2$s;
 }
 
-/* 
+/*
 	Testimonials
 */
 
@@ -220,7 +255,7 @@ input[type="button"]:focus {
 }
 
 
-/* 
+/*
 	Blog
 */
 
@@ -232,7 +267,7 @@ input[type="button"]:focus {
 	background: %2$s;
 }
 
-/* 
+/*
 	Services
 */
 .services-item:hover::before{
@@ -247,7 +282,7 @@ input[type="button"]:focus {
     color: %2$s;
 }
 
-/* 
+/*
 	Pricing
 */
 
@@ -272,19 +307,6 @@ input[type="button"]:focus {
     background-color: %2$s;
 }
 
-/*
-.pricing-item:hover .btn {
-	background-color: %2$s;
-	border-color: %2$s;
-}
-
-.pricing-item:hover .btn:hover {
-	background-color: %1$s;
-	border-color: %1$s;
-}
-*/
-
-
 .section-video .info-area p strong{
     color: %2$s;
 }
@@ -301,7 +323,7 @@ a.btn-contrast{
 
 .btn-contrast:hover,
 a.btn-contrast:hover{
-    background-color: %1$s;
+    background-color: %6$s;
 }
 
 .contact-details-item h5{
@@ -309,18 +331,20 @@ a.btn-contrast:hover{
 }
 
 #footer{
-    background-color: %6$s;
-    color : %7$s;
+    background-color: %12$s;
+    color : %14$s;
 }
 
 #footer a{
-    color: %8$s
+    color: %15$s
 }
 
 #footer a:hover{
-    color: %10$s
+    color: %16$s
 }
-
+#footer a:focus{
+    color: %17$s
+}
 .ewf-counter__icon i {
     color: %1$s;
 }

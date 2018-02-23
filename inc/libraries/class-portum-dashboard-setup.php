@@ -382,7 +382,7 @@ class Portum_Dashboard_Setup {
 								$theme->get( 'Name' ),
 							)
 						),
-						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/portum-feedback">Have your say</a><br/>',
+						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/feedback-portum">Have your say</a><br/>',
 						'type'      => 'standout',
 					),
 				),

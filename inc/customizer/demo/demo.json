@@ -2,6 +2,23 @@
   "standard": {
     "label": "Standard",
     "thumb": "/inc/customizer/demo/mt-onb-preivew-portum-01.png",
+    "posts": {
+      "label": "Posts",
+      "content": {
+        "importer": {
+          "class": "Epsilon_Post_Generator",
+          "method": "add_posts"
+        },
+        "post_count": "4",
+        "image_size": [
+          "520",
+          "345"
+        ],
+        "image_category": [
+          "business"
+        ]
+      }
+    },
     "menus": {
       "label": "Menus",
       "content": {
@@ -329,6 +346,7 @@
             "0": {
               "price_box_title": "STARTUP",
               "price_box_text": "Get started Now! You have the base",
+              "price_box_featured": "0",
               "price_box_currency": "$",
               "price_box_price": "75",
               "price_box_period": "mo",
@@ -339,6 +357,7 @@
               "price_box_title": "GROWTH",
               "price_box_text": "Take your business to the next level",
               "price_box_currency": "$",
+              "price_box_featured": "true",
               "price_box_price": "95",
               "price_box_period": "mo",
               "price_box_url": "#",
@@ -348,6 +367,7 @@
               "price_box_title": "PREMIUM",
               "price_box_text": "Get started Now! You have the base ",
               "price_box_currency": "$",
+              "price_box_featured": "0",
               "price_box_price": "125",
               "price_box_period": "mo",
               "price_box_url": "#",
@@ -483,8 +503,19 @@
             ],
             "pricing_navigation": "",
             "pricing_repeater_field": "portum_price_boxes",
-            "pricing_column_group" : "3",
+            "pricing_column_group": "3",
             "type": "pricing"
+          }
+        },
+        "blog": {
+          "id": "blog",
+          "label": "Blog",
+          "setting": "portum_frontpage_sections",
+          "content": {
+            "blog_title": "Find out the latest news?",
+            "blog_subtitle": "BLOG",
+            "blog_post_count": "3",
+            "type": "blog"
           }
         }
       }

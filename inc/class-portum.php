@@ -14,6 +14,10 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Portum
  */
 class Portum {
+	/**
+	 * @var bool
+	 */
+	public $top_bar = false;
 
 	/**
 	 * Portum constructor.
@@ -74,6 +78,22 @@ class Portum {
 	}
 
 	/**
+	 * Portum instance
+	 *
+	 * @param array $theme
+	 *
+	 * @return Portum
+	 */
+	public static function get_instance( $theme = array() ) {
+		static $inst;
+		if ( ! $inst ) {
+			$inst = new Portum( $theme );
+		}
+
+		return $inst;
+	}
+
+	/**
 	 * Check PHP Version and switch theme
 	 */
 	public function php_version_check() {
@@ -131,7 +151,7 @@ class Portum {
 				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s. <br/> <br/> <strong>Note: A 10%% discount coupon will be emailed to you after form submission. Please use a valid email address.</strong>', 'portum' ),
 				array(
 					'Portum',
-					'<a target="_blank" href="https://bit.ly/portum-feedback">',
+					'<a target="_blank" href="https://bit.ly/feedback-portum">',
 					'</a>',
 				)
 			);
@@ -192,7 +212,13 @@ class Portum {
 
 		$args = array(
 			'fields' => array(
-				'epsilon_accent_color' => array(
+				'epsilon_general_separator' => array(
+					'label'     => esc_html__( 'General Colors', 'portum' ),
+					'section'   => 'colors',
+					'separator' => true,
+				),
+
+				'epsilon_accent_color'      => array(
 					'label'       => esc_html__( 'Accent Color #1', 'portum' ),
 					'description' => esc_html__( 'Theme main color.', 'portum' ),
 					'default'     => '#cc263d',
@@ -206,6 +232,12 @@ class Portum {
 					'default'     => '#364d7c',
 					'section'     => 'colors',
 					'hover-state' => false,
+				),
+
+				'epsilon_text_separator' => array(
+					'label'     => esc_html__( 'Text Colors', 'portum' ),
+					'section'   => 'colors',
+					'separator' => true,
 				),
 
 				'epsilon_text_color' => array(
@@ -229,7 +261,75 @@ class Portum {
 					'description' => esc_html__( 'The color used for links.', 'portum' ),
 					'default'     => '#1a171c',
 					'section'     => 'colors',
-					'hover-state' => true,
+					'hover-state' => false,
+				),
+
+				'epsilon_link_hover_color' => array(
+					'label'       => esc_html__( 'Link Hover Color', 'portum' ),
+					'description' => esc_html__( 'The color used for hovered links.', 'portum' ),
+					'default'     => '#A1083A',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_link_active_color' => array(
+					'label'       => esc_html__( 'Link Active Color', 'portum' ),
+					'description' => esc_html__( 'The color used for active links.', 'portum' ),
+					'default'     => '#172128',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_menu_separator' => array(
+					'label'     => esc_html__( 'Menu Colors', 'portum' ),
+					'section'   => 'colors',
+					'separator' => true,
+				),
+
+				'epsilon_menu_background' => array(
+					'label'       => esc_html__( 'Menu background color', 'portum' ),
+					'description' => esc_html__( 'The color used for the menu background.', 'portum' ),
+					'default'     => '#aacfdf',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_menu_item_color' => array(
+					'label'       => esc_html__( 'Menu item color', 'portum' ),
+					'description' => esc_html__( 'The color used for the menu item color.', 'portum' ),
+					'default'     => '#ffffff',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_menu_item_hover_color' => array(
+					'label'       => esc_html__( 'Menu item hover color', 'portum' ),
+					'description' => esc_html__( 'The color used for the menu item hover color.', 'portum' ),
+					'default'     => '#ffffff',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_menu_item_active_color'    => array(
+					'label'       => esc_html__( 'Menu item active color', 'portum' ),
+					'description' => esc_html__( 'The color used for the menu item active color.', 'portum' ),
+					'default'     => '#ffffff',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_footer_separator' => array(
+					'label'     => esc_html__( 'Footer Colors', 'portum' ),
+					'section'   => 'colors',
+					'separator' => true,
+				),
+
+				'epsilon_footer_contact_background' => array(
+					'label'       => esc_html__( 'Footer Contact Background Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer contact background.', 'portum' ),
+					'default'     => '#ffffff',
+					'section'     => 'colors',
+					'hover-state' => false,
 				),
 
 				'epsilon_footer_background' => array(
@@ -243,7 +343,7 @@ class Portum {
 				'epsilon_footer_text_color' => array(
 					'label'       => esc_html__( 'Footer Text Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
-					'default'     => '#13b0a5',
+					'default'     => '#a9afb1',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -251,9 +351,25 @@ class Portum {
 				'epsilon_footer_link_color' => array(
 					'label'       => esc_html__( 'Footer Link Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
-					'default'     => '#13b0a5',
+					'default'     => '#a9afb1',
 					'section'     => 'colors',
-					'hover-state' => true,
+					'hover-state' => false,
+				),
+
+				'epsilon_footer_link_hover_color' => array(
+					'label'       => esc_html__( 'Footer Link Hover Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
+					'default'     => '#a9afb1',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+
+				'epsilon_footer_link_active_color' => array(
+					'label'       => esc_html__( 'Footer Link Active Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
+					'default'     => '#a9afb1',
+					'section'     => 'colors',
+					'hover-state' => false,
 				),
 			),
 

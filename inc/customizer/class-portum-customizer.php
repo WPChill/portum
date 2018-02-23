@@ -137,4 +137,15 @@ class Portum_Customizer {
 
 		return false;
 	}
+
+	/**
+	 * Active callback for portum_header_top_bar
+	 */
+	public static function header_top_bar_enabled_callback( $control ) {
+		if ( $control->manager->get_setting( 'portum_header_top_bar' )->value() == true ) {
+			return true;
+		}
+
+		return false;
+	}
 }

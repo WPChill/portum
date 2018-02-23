@@ -16,7 +16,8 @@
 </head>
 <body <?php body_class( 'sticky-header' ); ?>>
 <div id="wrap">
-	<div id="header">
+	<?php get_template_part( 'template-parts/header/topbar' ); ?>
+	<div id="header" <?php echo Portum::get_instance()->top_bar ? 'class="has-top-bar"' : ''; ?>>
 		<!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 		<div class="container">
 			<div class="row">

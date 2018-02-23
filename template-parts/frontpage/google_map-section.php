@@ -27,6 +27,7 @@ $api                     = get_theme_mod( 'portum_google_api_key', '' );
 		<div class="contact-map" id="contact-map" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
 	<?php endif; ?>
 	<div class="container">
+		<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 		<div class="contact-details">
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'] ) ); ?>
 			<div class="wrapper fixed">

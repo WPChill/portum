@@ -45,6 +45,7 @@ class Portum_Autoloader {
 			get_template_directory() . '/inc/libraries/epsilon-theme-dashboard/inc/',
 			get_template_directory() . '/inc/libraries/epsilon-theme-dashboard/inc/helpers/',
 			get_template_directory() . '/inc/libraries/epsilon-theme-dashboard/inc/misc/',
+			get_template_directory() . '/inc/libraries/epsilon-theme-dashboard/inc/misc/demo-generators/',
 			get_template_directory() . '/inc/libraries/epsilon-theme-dashboard/inc/misc/epsilon-tracking/',
 			get_template_directory() . '/inc/libraries/epsilon-theme-dashboard/inc/misc/epsilon-tracking/trackers/',
 			get_template_directory() . '/inc/helpers/',
