@@ -36,7 +36,7 @@ if ( 'posts' === $show_on_front ) :
 					<div class="intro-item">
 
 						<h4><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4>
-						<span><?php echo esc_html__( 'Welcome', 'portum' ); ?></span>
+						<span><?php echo esc_html( get_bloginfo( 'name') ); ?></span>
 
 					</div>
 
