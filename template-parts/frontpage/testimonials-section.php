@@ -16,12 +16,22 @@ $grouping  = array(
 
 $fields['testimonials'] = $frontpage->get_repeater_field( $fields['testimonials_repeater_field'], array(), $grouping );
 
+$attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'testimonials', Portum_Repeatable_Sections::get_instance() );
+$parent_attr = array(
+	'class' => array( 'section-testimonials', 'section', 'ewf-section', 'dashed' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
+
 $i = 0;
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-testimonials section dashed">
-		<div class="container">
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'testimonials', $fields ) ); ?>">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'] ) ); ?>
 

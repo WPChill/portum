@@ -18,6 +18,7 @@
 @import "partials/back-top";
 /*
 */
+@import "partials/sections/base";
 @import "partials/sections/00-header-bar";
 @import "partials/sections/00-section-hero";
 @import "partials/sections/01-section-about";
@@ -36,7 +37,6 @@
 @import "partials/sections/14-section-piecharts";
 @import "partials/sections/15-section-clients";
 @import "partials/sections/16-section-map";
-@import "partials/sections/base";
 
 .page {
   .widget {
@@ -82,4 +82,10 @@
 
 .bypostauthor {
   font-size: initial;
+}
+
+.container.container-boxedcenter {
+  @media (min-width: 992px) {
+    width: 970px;
+  }
 }

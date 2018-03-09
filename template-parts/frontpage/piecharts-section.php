@@ -15,22 +15,32 @@ $grouping  = array(
 );
 
 $fields['piecharts'] = $frontpage->get_repeater_field( $fields['piecharts_repeater_field'], array(), $grouping );
+
 $span                = 12 / absint( $fields['piecharts_column_group'] );
 
 $color = get_theme_mod( 'epsilon_accent_color', '#cc263d' );
 
-$bg = $fields['piecharts_background_color'];
+$attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'piecharts', Portum_Repeatable_Sections::get_instance() );
+$parent_attr       = array(
+	'class' => array( 'section-piecharts', 'section', 'ewf-section' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
+
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-piecharts section" <?php echo ! empty( $bg ) ? 'style="background-color:' . esc_attr( $bg ) . '"' : ''; ?>>
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
 		<div class="container">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 		</div>
 
 		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'] ) ); ?>
 
-		<div class="container">
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'piecharts', $fields ) ); ?>">
 			<div class="row">
 				<?php foreach ( $fields['piecharts'] as $piechart ) { ?>
 					<div class="col-md-<?php echo absint( $span ); ?>">

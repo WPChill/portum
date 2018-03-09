@@ -16,20 +16,28 @@ $grouping  = array(
 
 $fields['counters'] = $frontpage->get_repeater_field( $fields['counters_repeater_field'], array(), $grouping );
 
-$span = 12 / absint( $fields['counters_column_group'] );
+$span        = 12 / absint( $fields['counters_column_group'] );
+$attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'counters', Portum_Repeatable_Sections::get_instance() );
+$parent_attr = array(
+	'class' => array( 'section-counters', 'section', 'ewf-section' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
 
-$bg = $fields['counters_background_color'];
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-counters section" <?php echo ! empty( $bg ) ? 'style="background-color:' . esc_attr( $bg ) . '"' : ''; ?>>
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
 		<div class="container">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 		</div>
 
 		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
 
-		<div class="container">
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'counters', $fields ) ); ?>">
 			<div class="row">
 				<?php foreach ( $fields['counters'] as $counter ) { ?>
 

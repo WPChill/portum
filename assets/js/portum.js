@@ -172,6 +172,28 @@ var Portum = {
    * Plugin related functions
    */
   Plugins: {
+    videoSections: function($){
+      if (typeof $.fn.YTPlayer !== 'undefined') {
+
+        $(".ewf-section__video-background-yt-source").each(function(index) {
+
+          var $t = $(this),
+              $parent = $t.parent(),
+              newID = 'ewf-section__video-background-yt-' + index,
+              videoSource = $(this).attr("data-source");
+
+          $parent.attr("id",newID);
+
+          var videoBackgroundConfig = "{videoURL:'"+ videoSource +"',containment:'#"+ newID +"',showControls:false,autoPlay:true, mute:true, startAt:0, opacity:1}";
+
+          $t.attr( "data-property", videoBackgroundConfig );
+
+        });
+
+        $(".ewf-section__video-background-yt-source").YTPlayer({playOnlyIfVisible: true});
+
+      }
+    },
     clientList: function() {
       if ( typeof jQuery.fn.slick !== 'undefined' ) {
         jQuery( '.ewf-partner-slider .ewf-partner-slider__slides' ).each( function() {

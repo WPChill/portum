@@ -86,6 +86,106 @@ class Portum_Helper {
 	}
 
 	/**
+	 * Generate a set of classes to be applied on a section
+	 *
+	 * @param $key
+	 * @param $fields
+	 *
+	 */
+	public static function generate_section_class( $key, $fields ) {
+		$additional = '';
+		if ( ! empty( $fields[ $key . '_row_spacing_top' ] ) ) {
+			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_top' ] . '-top';
+		}
+		if ( ! empty( $fields[ $key . '_row_spacing_bottom' ] ) ) {
+			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_bottom' ] . '-bottom';
+		}
+		if ( ! empty( $fields[ $key . '_background_parallax' ] ) ) {
+			$additional .= ' ewf-section--parallax';
+		}
+
+		echo esc_attr( $additional );
+	}
+
+	/**
+	 * Generate section attrbiutes
+	 *
+	 * @param $key
+	 * @param $fields
+	 *
+	 * @return bool | string | echo
+	 */
+	public static function generate_section_attr( $key, $fields ) {
+		if ( empty( $fields[ $key . '_background_image' ] ) ) {
+			return false;
+		}
+		$arr = array(
+			'background-image'    => 'url(' . esc_url( $fields[ $key . '_background_image' ] ) . ')',
+			'background-position' => esc_attr( $fields[ $key . '_background_position' ] ),
+			'background-size'     => esc_attr( $fields[ $key . '_background_size' ] ),
+		);
+
+		$style = 'style="';
+		foreach ( $arr as $k => $v ) {
+			$style .= $k . ':' . $v . ';';
+		}
+		$style .= '"';
+
+		echo $style;
+	}
+
+	/**
+	 * Generates the video overlay
+	 *
+	 * @param $key
+	 * @param $fields
+	 *
+	 * @return string
+	 */
+	public static function generate_video_overlay( $key, $fields ) {
+		if ( ! empty( $fields[ $key . '_background_video' ] ) ) {
+			echo '<div class="ewf-section__video-background-yt"> <a class="ewf-section__video-background-yt-source" data-property="" data-source="' . $fields[ $key . '_background_video' ] . '"></a> </div>';
+		}
+	}
+
+	/**
+	 * Generates overlay attr
+	 *
+	 * @param $key
+	 * @param $fields
+	 */
+	public static function generate_color_overlay( $key, $fields ) {
+		if ( ! empty( $fields[ $key . '_background_color' ] ) ) {
+			echo '<div class="ewf-section__overlay-color" style="background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . '; opacity: ' . esc_attr( $fields[ $key . '_background_color_opacity' ] ) . '"></div>';
+		}
+
+		echo '';
+
+	}
+
+	/**
+	 * Returns the class of the container
+	 *
+	 * @param $key
+	 *
+	 * @return string
+	 */
+	public static function container_class( $key, $fields ) {
+		$class = array(
+			'boxedin'     => 'container',
+			'boxedcenter' => 'container container-boxedcenter',
+			'fullwidth'   => 'container-fluid',
+		);
+
+		if ( ! empty( $fields[ $key . '_column_stretch' ] ) ) {
+			return isset( $class[ $fields[ $key . '_column_stretch' ] ] ) ? $class[ $fields[ $key . '_column_stretch' ] ] : 'container';
+		}
+
+		return 'container';
+	}
+
+
+	/**
 	 * Get blog layout
 	 *
 	 * @param string $option Option to retrieve in the backend

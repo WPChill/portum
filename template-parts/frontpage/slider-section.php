@@ -7,7 +7,7 @@
  * @package Portum
  */
 
-$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$frontpage        = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields           = $frontpage->sections[ $section_id ];
 $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array() );
 ?>
@@ -17,11 +17,16 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
 					<div class="item-overlay"></div>
-					<img src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
-
+					<?php if ( ! empty( $slide['slides_image'] ) ) { ?>
+						<img src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
+					<?php } ?>
 					<div class="slider-details">
-						<h1><?php echo wp_kses_post( $slide['slides_title'] ); ?></h1>
-						<span><?php echo wp_kses_post( $slide['slides_description'] ); ?></span>
+						<?php if ( ! empty( $slide['slides_title'] ) ) { ?>
+							<h1><?php echo wp_kses_post( $slide['slides_title'] ); ?></h1>
+						<?php } ?>
+						<?php if ( ! empty( $slide['slides_description'] ) ) { ?>
+							<span><?php echo wp_kses_post( $slide['slides_description'] ); ?></span>
+						<?php } ?>
 					</div>
 				</div>
 			<?php } ?>
@@ -48,4 +53,3 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 		</ul>
 	</div>
 </section>
-

@@ -22,13 +22,14 @@
   /**
    * Document ready event
    */
-  $( document ).ready( function() {
+  $( document ).ready( function($) {
     /**
      * Initiate plugins
      */
     Portum.Plugins.owlSlider();
     Portum.Plugins.clientList();
     Portum.Plugins.video();
+    Portum.Plugins.videoSections($);
     Portum.Plugins.magnificPopup();
     Portum.Plugins.animateCounters();
     Portum.Plugins.animateProgress();
