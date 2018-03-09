@@ -16,18 +16,26 @@ $grouping  = array(
 $span      = 12 / absint( $fields['progress_column_group'] );
 
 $fields['progress_bars'] = $frontpage->get_repeater_field( $fields['progress_bars_repeater_field'], array(), $grouping );
-$bg = $fields['progress_background_color'];
+$attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'progress', Portum_Repeatable_Sections::get_instance() );
+$parent_attr       = array(
+	'class' => array( 'section-progress', 'section', 'ewf-section' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-progress section" <?php echo ! empty( $bg ) ? 'style="background-color:' . esc_attr( $bg ) . '"' : ''; ?>>
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
 		<div class="container">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 		</div>
 
 		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
 
-		<div class="container">
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'progress', $fields ) ); ?>">
 			<div class="row">
 				<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
 					<div class="col-md-<?php echo absint( $span ); ?>">

@@ -67,10 +67,71 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_content() {
 		$arr = array(
-			'id'          => 'content',
-			'title'       => esc_html__( 'Page Content Section', 'portum' ),
-			'description' => esc_html__( 'Section that outputs page content.', 'portum' ),
-			'fields'      => array(
+			'id'            => 'content',
+			'title'         => esc_html__( 'Page Content Section', 'portum' ),
+			'description'   => esc_html__( 'Section that outputs page content.', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'content_page_id'         => array(
 					'label'   => esc_html__( 'Page Id', 'portum' ),
 					'type'    => 'select',
@@ -132,11 +193,64 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_testimonials() {
 		return array(
-			'id'          => 'testimonials',
-			'title'       => esc_html__( 'Testimonials Section', 'portum' ),
-			'description' => esc_html__( 'A testimonial section. It retrieves content from Theme Content / Testimonials.', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-testimonials-pt.png' ),
-			'fields'      => array(
+			'id'            => 'testimonials',
+			'title'         => esc_html__( 'Testimonials Section', 'portum' ),
+			'description'   => esc_html__( 'A testimonial section. It retrieves content from Theme Content / Testimonials.', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-testimonials-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'testimonials_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'epsilon-text-editor',
@@ -209,10 +323,71 @@ class Portum_Repeatable_Sections {
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-services-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
+				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'top', 'right', ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'              => array(
+						'default' => 3,
+						'choices' => array( 2, 3, 4, ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
+				),
 				'styling' => array(
-					'background-image',
-					'background-position',
-					'background-size',
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
@@ -256,11 +431,72 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_about() {
 		return array(
-			'id'          => 'about',
-			'title'       => esc_html__( 'About Section', 'portum' ),
-			'description' => esc_html__( 'About section. It retrieves content from Theme Content / Services', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
-			'fields'      => array(
+			'id'            => 'about',
+			'title'         => esc_html__( 'About Section', 'portum' ),
+			'description'   => esc_html__( 'About section. It retrieves content from Theme Content / Services', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'about_title'    => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -296,11 +532,68 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_portfolio() {
 		return array(
-			'id'          => 'portfolio',
-			'title'       => esc_html__( 'Portfolio Section', 'portum' ),
-			'description' => esc_html__( 'Portfolio section. It retrieves content from Theme Content / Portfolio', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-portfolio-pt.png' ),
-			'fields'      => array(
+			'id'            => 'portfolio',
+			'title'         => esc_html__( 'Portfolio Section', 'portum' ),
+			'description'   => esc_html__( 'Portfolio section. It retrieves content from Theme Content / Portfolio', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-portfolio-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'     => array(
+						'default' => 'fullwidth',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4, ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'portfolio_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -341,11 +634,72 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_expertise() {
 		return array(
-			'id'          => 'expertise',
-			'title'       => esc_html__( 'Expertise Section', 'portum' ),
-			'description' => esc_html__( 'Expertise section. It retrieves content from Theme Content / Portfolio', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-expertise-pt.png' ),
-			'fields'      => array(
+			'id'            => 'expertise',
+			'title'         => esc_html__( 'Expertise Section', 'portum' ),
+			'description'   => esc_html__( 'Expertise section. It retrieves content from Theme Content / Portfolio', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-expertise-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'expertise_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -392,11 +746,60 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_blog() {
 		return array(
-			'id'          => 'blog',
-			'title'       => esc_html__( 'Blog Area', 'portum' ),
-			'description' => esc_html__( 'Blog Area Section', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-blog-pt.png' ),
-			'fields'      => array(
+			'id'            => 'blog',
+			'title'         => esc_html__( 'Blog Area', 'portum' ),
+			'description'   => esc_html__( 'Blog Area Section', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-blog-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'blog_title'      => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -430,11 +833,60 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_team() {
 		return array(
-			'id'          => 'team',
-			'title'       => esc_html__( 'Team Section', 'portum' ),
-			'description' => esc_html__( 'Team members section. It retrieves content from Theme Content / Portfolio', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-team-pt.png' ),
-			'fields'      => array(
+			'id'            => 'team',
+			'title'         => esc_html__( 'Team Section', 'portum' ),
+			'description'   => esc_html__( 'Team members section. It retrieves content from Theme Content / Portfolio', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-team-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'team_title'          => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -482,7 +934,58 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-group',
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 3,
+						'choices' => array( 2, 3, 4, ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
@@ -531,23 +1034,11 @@ class Portum_Repeatable_Sections {
 			'description' => esc_html__( 'Video Section.', 'portum' ),
 			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' ),
 			'fields'      => array(
-				'video_id'      => array(
+				'video_id' => array(
 					'label'             => esc_html__( 'Video URL', 'portum' ),
 					'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
 					'type'              => 'text',
 					'default'           => 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
-					'sanitize_callback' => 'esc_url_raw',
-				),
-				'video_cta'     => array(
-					'label'   => esc_html__( 'Call To Action', 'portum' ),
-					'type'    => 'epsilon-text-editor',
-					'default' => wp_kses_post( __( '<p>Find out the hottest news in <strong>your industry</strong></p>', 'portum' ) ),
-				),
-				'mailchimp_url' => array(
-					'label'             => esc_html__( 'Mailchimp Action URL', 'portum' ),
-					'description'       => esc_html__( 'For more information, follow this link', 'portum' ),
-					'type'              => 'text',
-					'default'           => '',
 					'sanitize_callback' => 'esc_url_raw',
 				),
 			),
@@ -566,16 +1057,72 @@ class Portum_Repeatable_Sections {
 			'description'   => esc_html__( 'A section in which you can add your own shortcodes to display in the frontend.', 'portum' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-shortcode-pt.png' ),
 			'customization' => array(
-				'enabled'       => true,
-				'customization' => array(
-					'background-color'
+				'enabled' => true,
+				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'top',
+						'choices' => array( 'left', 'top', 'right', ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
 				),
-				'layout'        => array(
-					'column-stretch',
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
-				'shortcode_field' => array(
+				'shortcode_field'        => array(
 					'label'             => esc_html__( 'Shortcode', 'portum' ),
 					'type'              => 'textarea',
 					'default'           => '',
@@ -599,7 +1146,37 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-group',
+					'row-spacing-top'    => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 3,
+						'choices' => array( 1, 2, 3, 4, ),
+					),
+					'column-alignment'   => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+				),
+				'styling' => array(
+					'background-color' => array(
+						'default' => false,
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
@@ -670,11 +1247,59 @@ class Portum_Repeatable_Sections {
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-counter-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
-				'styling' => array(
-					'background-color'
-				),
 				'layout'  => array(
-					'column-group',
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4, ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
@@ -724,11 +1349,59 @@ class Portum_Repeatable_Sections {
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-progress-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
-				'styling' => array(
-					'background-color'
-				),
 				'layout'  => array(
-					'column-group',
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4, ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
@@ -778,11 +1451,59 @@ class Portum_Repeatable_Sections {
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-piechart-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
-				'styling' => array(
-					'background-color'
-				),
 				'layout'  => array(
-					'column-group',
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 3,
+						'choices' => array( 2, 3, 4, ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(
@@ -832,8 +1553,59 @@ class Portum_Repeatable_Sections {
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-clients.png' ),
 			'customization' => array(
 				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-group'       => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4, ),
+					),
+				),
 				'styling' => array(
-					'background-color'
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
 				),
 			),
 			'fields'        => array(

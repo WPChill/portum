@@ -16,24 +16,25 @@ $class = array(
 	'fullwidth'   => 'container-fluid',
 );
 
-$bg = $fields['shortcodes_background_color'];
+$attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'shortcodes', Portum_Repeatable_Sections::get_instance() );
+$parent_attr       = array(
+	'class' => array( 'section-shortcodes', 'section', 'ewf-section' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
+
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="shortcodes-section" <?php echo ! empty( $bg ) ? 'style="background-color:' . esc_attr( $bg ) . '"' : ''; ?>>
-		<div class="<?php echo esc_attr( $class[ $fields['shortcodes_column_stretch'] ] ); ?>">
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'shortcodes', $fields ) ); ?>">
 			<div class="row">
-				<?php if ( 'boxedcenter' === $fields['shortcodes_column_stretch'] ): ?>
-					<div class="col-sm-1"></div>
-				<?php endif; ?>
-
-				<div class="<?php echo 'boxedcenter' === $fields['shortcodes_column_stretch'] ? 'col-sm-10' : 'col-sm-12'; ?>">
+				<div class="col-sm-12">
 					<?php echo do_shortcode( $fields['shortcode_field'] ); ?>
 				</div>
-
-				<?php if ( 'boxedcenter' === $fields['shortcodes_column_stretch'] ): ?>
-					<div class="col-sm-1"></div>
-				<?php endif; ?>
 			</div>
 		</div>
 	</div>

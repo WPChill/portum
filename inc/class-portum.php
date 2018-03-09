@@ -66,6 +66,8 @@ class Portum {
 		 */
 		add_filter( 'epsilon-dashboard-setup', array( $this, 'epsilon_dashboard' ) );
 		add_filter( 'epsilon-onboarding-setup', array( $this, 'epsilon_onboarding' ) );
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_styles' ), 99 );
 		/**
 		 * Grab all class methods and initiate automatically
 		 */
@@ -205,6 +207,13 @@ class Portum {
 	}
 
 	/**
+	 * Customizer styles ( from repeater )
+	 */
+	public function customizer_styles() {
+		new Epsilon_Section_Styling( 'portum-main', 'portum_frontpage_sections_' ,Portum_Repeatable_Sections::get_instance() );
+	}
+
+	/**
 	 * Load color scheme controls
 	 */
 	private function start_color_schemes() {
@@ -218,7 +227,7 @@ class Portum {
 					'separator' => true,
 				),
 
-				'epsilon_accent_color'      => array(
+				'epsilon_accent_color' => array(
 					'label'       => esc_html__( 'Accent Color #1', 'portum' ),
 					'description' => esc_html__( 'Theme main color.', 'portum' ),
 					'default'     => '#cc263d',
@@ -310,7 +319,7 @@ class Portum {
 					'hover-state' => false,
 				),
 
-				'epsilon_menu_item_active_color'    => array(
+				'epsilon_menu_item_active_color' => array(
 					'label'       => esc_html__( 'Menu item active color', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu item active color.', 'portum' ),
 					'default'     => '#ffffff',
@@ -470,6 +479,7 @@ class Portum {
 		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.css' );
 		wp_register_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 		wp_register_style( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.css' );
+		wp_register_style( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.css' );
 		wp_register_style( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/magnific-popup.css' );
 		wp_register_script( 'waypoints', get_template_directory_uri() . '/assets/vendors/waypoints/waypoints.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'viewport', get_template_directory_uri() . '/assets/vendors/viewport/viewport.js', array( 'jquery' ), $theme['Version'], true );
@@ -483,7 +493,8 @@ class Portum {
 		wp_register_script( 'stickem', get_template_directory_uri() . '/assets/vendors/stickem/jquery.stickem.js', array(), $theme['Version'], true );
 		wp_register_script( 'offscreen', get_template_directory_uri() . '/assets/vendors/offscreen/offscreen.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/jquery.magnific-popup.min.js', array(), $theme['Version'], true );
-		wp_register_script( 'portum-object', get_template_directory_uri() . '/assets/js/portum.js', array(), $theme['Version'], true );
+		wp_register_script( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.js', array( 'jquery' ), $theme['Version'], true );
+		wp_register_script( 'portum-object', get_template_directory_uri() . '/assets/js/portum.js', array( 'jquery' ), $theme['Version'], true );
 		$string = '';
 		$api    = get_theme_mod( 'portum_google_api_key', false );
 		if ( ! empty( $api ) ) {
@@ -510,6 +521,7 @@ class Portum {
 				'plyr',
 				'slick',
 				'magnificPopup',
+				'ytplayer',
 				'portum',
 			),
 			$theme['Version']
@@ -539,6 +551,7 @@ class Portum {
 				'odometer',
 				'magnificPopup',
 				'easypiechart',
+				'ytplayer',
 				'portum-object',
 			),
 			$theme['Version'],
@@ -606,7 +619,7 @@ class Portum {
 			array(
 				'width'              => 1920,
 				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
-				'height'             => 855,
+				'height'             => 600,
 				'flex-height'        => true,
 				'flex-width'         => true,
 				'default-text-color' => '#232323',

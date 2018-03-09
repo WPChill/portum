@@ -16,10 +16,20 @@ $grouping  = array(
 $span      = 12 / absint( $fields['pricing_column_group'] );
 
 $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repeater_field'], array(), $grouping );
+$attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'pricing', Portum_Repeatable_Sections::get_instance() );
+$parent_attr       = array(
+	'class' => array( 'section-pricing', 'section', 'ewf-section' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
+
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-pricing section">
-		<div class="container">
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'pricing', $fields ) ); ?>">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['pricing_subtitle'], $fields['pricing_title'] ) ); ?>

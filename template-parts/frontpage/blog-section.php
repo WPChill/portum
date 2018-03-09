@@ -20,11 +20,22 @@ $args  = array(
 );
 $query = new WP_Query( $args );
 
+$attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'blog', Portum_Repeatable_Sections::get_instance() );
+
+$parent_attr = array(
+	'class' => array( 'section-blog', 'section', 'section-grey', 'ewf-section' ),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-blog section section-grey">
-		<div class="container">
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
+
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'blog', $fields ) ); ?>">
 			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
 
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'] ) ); ?>
