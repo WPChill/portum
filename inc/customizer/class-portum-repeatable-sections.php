@@ -132,7 +132,7 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'content_page_id'         => array(
+				'content_page_id'           => array(
 					'label'   => esc_html__( 'Page Id', 'portum' ),
 					'type'    => 'select',
 					'choices' => array(
@@ -140,25 +140,30 @@ class Portum_Repeatable_Sections {
 					),
 					'default' => '',
 				),
-				'content_page_date'       => array(
+				'content_page_date'         => array(
 					'label'   => esc_html__( 'Enable date', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
 				),
-				'content_page_author'     => array(
+				'content_page_author'       => array(
 					'label'   => esc_html__( 'Enable author', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
 				),
-				'content_page_comments'   => array(
+				'content_page_comments'     => array(
 					'label'   => esc_html__( 'Enable comments', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
 				),
-				'content_page_categories' => array(
+				'content_page_categories'   => array(
 					'label'   => esc_html__( 'Enable categories', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
+				),
+				'content_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -251,34 +256,39 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'testimonials_title'          => array(
+				'testimonials_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => wp_kses_post( 'Why Choose us?' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'testimonials_subtitle'       => array(
+				'testimonials_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'testimonials' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'testimonials_grouping'       => array(
+				'testimonials_grouping'          => array(
 					'label'    => esc_html__( 'Testimonials to show', 'portum' ),
 					'type'     => 'selectize',
 					'multiple' => true,
 					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),
 					'default'  => array( 'all' ),
 				),
-				'testimonials_navigation'     => array(
+				'testimonials_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_testimonials_section',
 					'navigateToLabel' => esc_html__( 'Add Testimonials &rarr;', 'portum' ),
 				),
-				'testimonials_repeater_field' => array(
+				'testimonials_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_testimonials',
+				),
+				'testimonials_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -296,15 +306,20 @@ class Portum_Repeatable_Sections {
 			'description' => esc_html__( 'A slider section. It retrieves content from Theme Content / Slides.', 'portum' ),
 			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-hero-pt.png' ),
 			'fields'      => array(
-				'slider_navigation'     => array(
+				'slider_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_slides_section',
 					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
 				),
-				'slider_repeater_field' => array(
+				'slider_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_slides',
+				),
+				'slider_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -391,34 +406,39 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'services_title'          => array(
+				'services_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'We offer:' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_subtitle'       => array(
+				'services_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'SERVICES' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_grouping'       => array(
+				'services_grouping'          => array(
 					'label'    => esc_html__( 'Services Item To Show', 'portum' ),
 					'type'     => 'selectize',
 					'multiple' => true,
 					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_services', 'service_title' ),
 					'default'  => array( 'all' ),
 				),
-				'services_navigation'     => array(
+				'services_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_services_section',
 					'navigateToLabel' => esc_html__( 'Add Services &rarr;', 'portum' ),
 				),
-				'services_repeater_field' => array(
+				'services_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_services',
+				),
+				'services_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -497,29 +517,34 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'about_title'    => array(
+				'about_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Learn more about us and how can we help you:', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'about_subtitle' => array(
+				'about_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'ABOUT' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'about_text'     => array(
+				'about_text'              => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'about_image'    => array(
+				'about_image'             => array(
 					'label'   => esc_html__( 'Image', 'portum' ),
 					'type'    => 'epsilon-image',
 					'size'    => 'portum-about-image',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/01_about.png' ),
+				),
+				'about_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -622,6 +647,11 @@ class Portum_Repeatable_Sections {
 				'portfolio_repeater_field' => array(
 					'type'    => 'hidden',
 					'default' => 'portum_portfolio',
+				),
+				'portfolio_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -735,6 +765,11 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_expertise',
 				),
+				'expertise_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
 			),
 		);
 	}
@@ -821,6 +856,11 @@ class Portum_Repeatable_Sections {
 						'min' => 1,
 						'max' => 10,
 					),
+				),
+				'blog_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -915,6 +955,11 @@ class Portum_Repeatable_Sections {
 				'team_repeater_field' => array(
 					'type'    => 'hidden',
 					'default' => 'portum_team_members',
+				),
+				'team_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -1018,6 +1063,11 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_price_boxes',
 				),
+				'pricing_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
 			),
 		);
 	}
@@ -1040,6 +1090,11 @@ class Portum_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
 					'sanitize_callback' => 'esc_url_raw',
+				),
+				'video_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -1122,11 +1177,16 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'shortcode_field'        => array(
+				'shortcode_field'             => array(
 					'label'             => esc_html__( 'Shortcode', 'portum' ),
 					'type'              => 'textarea',
 					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
+				),
+				'shortcode_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -1230,6 +1290,11 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_contact_section',
 				),
+				'google_map_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
 			)
 		);
 	}
@@ -1331,6 +1396,11 @@ class Portum_Repeatable_Sections {
 				'counters_repeater_field' => array(
 					'type'    => 'hidden',
 					'default' => 'portum_counter_boxes',
+				),
+				'counters_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -1434,6 +1504,11 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_progress_bars',
 				),
+				'progress_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
 			),
 		);
 	}
@@ -1535,6 +1610,11 @@ class Portum_Repeatable_Sections {
 				'piecharts_repeater_field' => array(
 					'type'    => 'hidden',
 					'default' => 'portum_pie_charts',
+				),
+				'piecharts_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -1642,6 +1722,11 @@ class Portum_Repeatable_Sections {
 				'clientlist_repeater_field' => array(
 					'type'    => 'hidden',
 					'default' => 'portum_clients',
+				),
+				'clientlist_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);

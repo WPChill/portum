@@ -32,7 +32,7 @@ $parent_attr = array(
 		$attr_helper->generate_color_overlay();
 		?>
 		<div class="container">
-			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 		</div>
 
 		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>

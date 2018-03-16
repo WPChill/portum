@@ -23,7 +23,7 @@ $i = 0;
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-team section dashed">
 		<div class="container">
-			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'team' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
 
 			<?php if ( $fields['members'] ) { ?>

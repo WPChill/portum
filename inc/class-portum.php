@@ -200,6 +200,13 @@ class Portum {
 	}
 
 	/**
+	 *
+	 */
+	public function init_nav_menus() {
+		new Epsilon_Section_Navigation_Menu( 'portum_frontpage_sections_' );
+	}
+
+	/**
 	 * Initiate the setting helper
 	 */
 	public function customize_register_init() {
@@ -210,7 +217,7 @@ class Portum {
 	 * Customizer styles ( from repeater )
 	 */
 	public function customizer_styles() {
-		new Epsilon_Section_Styling( 'portum-main', 'portum_frontpage_sections_' ,Portum_Repeatable_Sections::get_instance() );
+		new Epsilon_Section_Styling( 'portum-main', 'portum_frontpage_sections_', Portum_Repeatable_Sections::get_instance() );
 	}
 
 	/**
