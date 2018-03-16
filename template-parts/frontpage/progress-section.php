@@ -30,7 +30,7 @@ $parent_attr       = array(
 		$attr_helper->generate_color_overlay();
 		?>
 		<div class="container">
-			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'progress' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 		</div>
 
 		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>

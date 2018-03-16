@@ -32,7 +32,7 @@ if ( ! empty( $css ) ) {
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-services section contrast" <?php echo $css; ?>>
 		<div class="container">
-			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'services' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 			<div class="row row-vcenter">
 				<div class="col-md-3 col-xs-4">
 					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>

@@ -406,13 +406,12 @@ class Portum_Helper {
 
 	/**
 	 * Generate an edit shortcut for the frontend sections
+	 *
+	 * @deprecated
+	 *
 	 */
-	public static function generate_pencil() {
-		if ( is_customize_preview() ) {
-			return '<a href="#" class="epsilon-section-editor"><span class="dashicons dashicons-edit"></span></a>';
-		}
-
-		return '';
+	public static function generate_pencil( $class_name = '', $section_type = '' ) {
+		return Epsilon_Helper::generate_pencil( $class_name, $section_type );
 	}
 
 	/**

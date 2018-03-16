@@ -33,7 +33,7 @@ $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_fie
 		</div>
 		<?php if ( is_customize_preview() ) { ?>
 			<div class="container">
-				<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 			</div>
 		<?php } ?>
 		<ul class="pager-slider clearfix pager-items-0<?php echo count( $fields['slides'] ); ?>">

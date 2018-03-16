@@ -16,7 +16,7 @@ $video     = Portum_Helper::video_type( $fields['video_id'] );
 	<div class="section-video section">
 		<?php if ( is_customize_preview() ) { ?>
 			<div class="container">
-				<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 			</div>
 		<?php } ?>
 		<?php if ( 'none' !== $video['video_type'] ) { ?>
