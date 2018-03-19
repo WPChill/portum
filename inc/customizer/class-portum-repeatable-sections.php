@@ -306,6 +306,13 @@ class Portum_Repeatable_Sections {
 			'description' => esc_html__( 'A slider section. It retrieves content from Theme Content / Slides.', 'portum' ),
 			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-hero-pt.png' ),
 			'fields'      => array(
+				'slider_grouping' => array(
+					'label'    => esc_html__( 'Testimonials to show', 'portum' ),
+					'type'     => 'selectize',
+					'multiple' => true,
+					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_slides', 'slides_title' ),
+					'default'  => array( 'all' ),
+				),
 				'slider_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
