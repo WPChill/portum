@@ -6987,7 +6987,10 @@ input[type='button']:active
 {
     background: #a1083a !important;
 }
-
+.pager-items-01 li
+{
+    width: 100%;
+}
 .pager-items-02 li
 {
     width: 50%;
@@ -7093,6 +7096,12 @@ input[type='button']:active
 
     color: #fff;
     background: #0385d0;
+}
+
+.pager-slider.pager-items-01 li h6 {
+    -webkit-transform: skewX(0);
+        -ms-transform: skewX(0);
+            transform: skewX(0);
 }
 
 .pager-slider a
