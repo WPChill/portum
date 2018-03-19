@@ -10,6 +10,10 @@
 $frontpage        = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields           = $frontpage->sections[ $section_id ];
 
+if ( !isset( $fields['slider_grouping'] ) ) {
+	$fields['slider_grouping'] = array( 'all' );
+}
+
 $grouping  = array(
 	'values'   => $fields['slider_grouping'],
 	'group_by' => 'slides_title',
