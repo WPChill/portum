@@ -9,7 +9,18 @@
 
 $frontpage        = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields           = $frontpage->sections[ $section_id ];
-$fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array() );
+
+if ( !isset( $fields['slider_grouping'] ) ) {
+	$fields['slider_grouping'] = array( 'all' );
+}
+
+$grouping  = array(
+	'values'   => $fields['slider_grouping'],
+	'group_by' => 'slides_title',
+);
+
+$fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array(), $grouping );
+
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-slider">

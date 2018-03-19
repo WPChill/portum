@@ -236,6 +236,10 @@ wp.customize.bind( 'ready', function() {
       field: 'testimonials_grouping',
       filter: 'testimonial_title'
     },
+    'portum_slides': {
+      field: 'slider_grouping',
+      filter: 'slides_title'
+    },
     'portum_contact_section': {
       field: 'google_map_grouping',
       filter: 'contact_title'
