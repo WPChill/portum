@@ -10,6 +10,9 @@
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 $video     = Portum_Helper::video_type( $fields['video_id'] );
+
+wp_enqueue_style( 'plyr' );
+wp_enqueue_script( 'plyr' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
