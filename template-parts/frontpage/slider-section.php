@@ -7,9 +7,20 @@
  * @package Portum
  */
 
-$frontpage        = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
-$fields           = $frontpage->sections[ $section_id ];
-$fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array() );
+$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields    = $frontpage->sections[ $section_id ];
+
+$grouping = array(
+	'values'   => empty( $fields['slider_grouping'] ) ? array( 'all' ) : $fields['slider_grouping'],
+	'group_by' => 'slides_title',
+);
+
+$fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array(), $grouping );
+
+wp_enqueue_script( 'owl-carousel' );
+wp_enqueue_script( 'slick' );
+wp_enqueue_style( 'owl-carousel' );
+wp_enqueue_style( 'slick' );
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div class="section-slider">

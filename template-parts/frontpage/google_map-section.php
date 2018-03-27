@@ -19,6 +19,7 @@ $fields['contact_boxes'] = $frontpage->get_repeater_field( $fields['google_map_r
 $span                    = 12 / absint( $fields['google_map_column_group'] );
 $api                     = get_theme_mod( 'portum_google_api_key', '' );
 
+wp_enqueue_script( 'googlemaps' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" class="google-map-section">

@@ -22,7 +22,7 @@ $parent_attr = array(
 	'class' => array( 'section-counters', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
+wp_enqueue_script( 'odometer' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">

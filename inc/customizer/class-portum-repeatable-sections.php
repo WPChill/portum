@@ -269,11 +269,12 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'testimonials_grouping'          => array(
-					'label'    => esc_html__( 'Testimonials to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),
-					'default'  => array( 'all' ),
+					'label'       => esc_html__( 'Testimonials to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),
+					'default'     => array( 'all' ),
 				),
 				'testimonials_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
@@ -311,6 +312,14 @@ class Portum_Repeatable_Sections {
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_slides_section',
 					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
+				),
+				'slider_grouping'          => array(
+					'label'       => esc_html__( 'Slides to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_slides', 'slides_title' ),
+					'default'     => array( 'all' ),
 				),
 				'slider_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -419,11 +428,12 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'services_grouping'          => array(
-					'label'    => esc_html__( 'Services Item To Show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_services', 'service_title' ),
-					'default'  => array( 'all' ),
+					'label'       => esc_html__( 'Services Item To Show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_services', 'service_title' ),
+					'default'     => array( 'all' ),
 				),
 				'services_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
@@ -619,32 +629,33 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'portfolio_title'          => array(
+				'portfolio_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Check out our latest projects', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'portfolio_subtitle'       => array(
+				'portfolio_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'PORTFOLIO', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'portfolio_grouping'       => array(
-					'label'    => esc_html__( 'Portfolio Items to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_portfolio', 'portfolio_title' ),
-					'default'  => array( 'all' ),
+				'portfolio_grouping'          => array(
+					'label'       => esc_html__( 'Portfolio Items to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_portfolio', 'portfolio_title' ),
+					'default'     => array( 'all' ),
 				),
-				'portfolio_navigation'     => array(
+				'portfolio_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_portfolio_section',
 					'navigateToLabel' => esc_html__( 'Add Portfolio Item &rarr;', 'portum' ),
 				),
-				'portfolio_repeater_field' => array(
+				'portfolio_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_portfolio',
 				),
@@ -730,38 +741,39 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'expertise_title'          => array(
+				'expertise_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'We can take your business to the next level', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'expertise_subtitle'       => array(
+				'expertise_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'OUR EXPERTISE', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'expertise_image'          => array(
+				'expertise_image'             => array(
 					'label'   => esc_html__( 'Section Image', 'portum' ),
 					'type'    => 'epsilon-image',
 					'size'    => 'portum-expertise-image',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/expertise-img-01.jpg' ),
 				),
-				'expertise_grouping'       => array(
-					'label'    => esc_html__( 'Expertise to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_expertise', 'expertise_title' ),
-					'default'  => array( 'all' ),
+				'expertise_grouping'          => array(
+					'label'       => esc_html__( 'Expertise to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_expertise', 'expertise_title' ),
+					'default'     => array( 'all' ),
 				),
-				'expertise_navigation'     => array(
+				'expertise_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_expertise_section',
 					'navigateToLabel' => esc_html__( 'Add Expertise &rarr;', 'portum' ),
 				),
-				'expertise_repeater_field' => array(
+				'expertise_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_expertise',
 				),
@@ -835,19 +847,19 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'blog_title'      => array(
+				'blog_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Find out the latest news?', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'blog_subtitle'   => array(
+				'blog_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'BLOG', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'blog_post_count' => array(
+				'blog_post_count'        => array(
 					'label'       => esc_html__( 'Post Count', 'portum' ),
 					'description' => esc_html__( 'Only posts with featured image are loaded', 'portum' ),
 					'type'        => 'epsilon-slider',
@@ -927,32 +939,33 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'team_title'          => array(
+				'team_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Meet the people behind the scene', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'team_subtitle'       => array(
+				'team_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'TEAM', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'team_grouping'       => array(
-					'label'    => esc_html__( 'Members to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_team_members', 'member_title' ),
-					'default'  => array( 'all' ),
+				'team_grouping'          => array(
+					'label'       => esc_html__( 'Members to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_team_members', 'member_title' ),
+					'default'     => array( 'all' ),
 				),
-				'team_navigation'     => array(
+				'team_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_team_members_section',
 					'navigateToLabel' => esc_html__( 'Add Members &rarr;', 'portum' ),
 				),
-				'team_repeater_field' => array(
+				'team_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_team_members',
 				),
@@ -1034,32 +1047,33 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'pricing_title'          => array(
+				'pricing_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'See what packege suits best for you', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'pricing_subtitle'       => array(
+				'pricing_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'PRICING', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'pricing_grouping'       => array(
-					'label'    => esc_html__( 'Price boxes to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_price_boxes', 'price_box_title' ),
-					'default'  => array( 'all' ),
+				'pricing_grouping'          => array(
+					'label'       => esc_html__( 'Price boxes to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_price_boxes', 'price_box_title' ),
+					'default'     => array( 'all' ),
 				),
-				'pricing_navigation'     => array(
+				'pricing_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_pricing_section',
 					'navigateToLabel' => esc_html__( 'Add Price Boxes &rarr;', 'portum' ),
 				),
-				'pricing_repeater_field' => array(
+				'pricing_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_price_boxes',
 				),
@@ -1084,7 +1098,7 @@ class Portum_Repeatable_Sections {
 			'description' => esc_html__( 'Video Section.', 'portum' ),
 			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' ),
 			'fields'      => array(
-				'video_id' => array(
+				'video_id'                => array(
 					'label'             => esc_html__( 'Video URL', 'portum' ),
 					'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
 					'type'              => 'text',
@@ -1240,32 +1254,33 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'google_map_title'          => array(
+				'google_map_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'How can we help you?', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'google_map_subtitle'       => array(
+				'google_map_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'CONTACT', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'google_map_grouping'       => array(
-					'label'    => esc_html__( 'Contact boxes to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_contact_section', 'contact_title' ),
-					'default'  => array( 'all' ),
+				'google_map_grouping'          => array(
+					'label'       => esc_html__( 'Contact boxes to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_contact_section', 'contact_title' ),
+					'default'     => array( 'all' ),
 				),
-				'google_map_address'        => array(
+				'google_map_address'           => array(
 					'label'             => esc_html__( 'Google Address', 'portum' ),
 					'type'              => 'text',
 					'default'           => 'Centrul Vechi, Brasov',
 					'sanitize_callback' => 'sanitize_text_field',
 				),
-				'google_map_zoom'           => array(
+				'google_map_zoom'              => array(
 					'type'    => 'epsilon-slider',
 					'label'   => esc_html__( 'Google Map Zoom', 'portum' ),
 					'default' => 17,
@@ -1275,18 +1290,18 @@ class Portum_Repeatable_Sections {
 						'step' => 1,
 					),
 				),
-				'google_map_api_key'        => array(
+				'google_map_api_key'           => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'navigateToId'    => 'portum_misc_section',
 					'navigateToLabel' => esc_html__( 'Add Your API Key &rarr;', 'portum' ),
 				),
-				'google_map_navigation'     => array(
+				'google_map_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_contact_section',
 					'navigateToLabel' => esc_html__( 'Add Contact Boxes &rarr;', 'portum' ),
 				),
-				'google_map_repeater_field' => array(
+				'google_map_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_contact_section',
 				),
@@ -1368,32 +1383,33 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'counters_title'          => array(
+				'counters_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Check out our counters!', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'counters_subtitle'       => array(
+				'counters_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'COUNTERS', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'counters_grouping'       => array(
-					'label'    => esc_html__( 'Contact boxes to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_counter_boxes', 'counter_title' ),
-					'default'  => array( 'all' ),
+				'counters_grouping'          => array(
+					'label'       => esc_html__( 'Contact boxes to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_counter_boxes', 'counter_title' ),
+					'default'     => array( 'all' ),
 				),
-				'counters_navigation'     => array(
+				'counters_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_counters_section',
 					'navigateToLabel' => esc_html__( 'Add Counter Boxes &rarr;', 'portum' ),
 				),
-				'counters_repeater_field' => array(
+				'counters_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_counter_boxes',
 				),
@@ -1488,11 +1504,12 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'progress_bars_grouping'       => array(
-					'label'    => esc_html__( 'Progress bars to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_progress_bars', 'progress_bar_title' ),
-					'default'  => array( 'all' ),
+					'label'       => esc_html__( 'Progress bars to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_progress_bars', 'progress_bar_title' ),
+					'default'     => array( 'all' ),
 				),
 				'progress_bars_navigation'     => array(
 					'type'            => 'epsilon-customizer-navigation',
@@ -1504,7 +1521,7 @@ class Portum_Repeatable_Sections {
 					'type'    => 'hidden',
 					'default' => 'portum_progress_bars',
 				),
-				'progress_section_unique_id' => array(
+				'progress_section_unique_id'   => array(
 					'label'             => esc_html__( 'Unique ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
@@ -1582,32 +1599,33 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'piecharts_title'          => array(
+				'piecharts_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'See our charts', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'piecharts_subtitle'       => array(
+				'piecharts_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'PIECHARTS', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'piecharts_grouping'       => array(
-					'label'    => esc_html__( 'Piecharts to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_pie_charts', 'piechart_title' ),
-					'default'  => array( 'all' ),
+				'piecharts_grouping'          => array(
+					'label'       => esc_html__( 'Piecharts to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_pie_charts', 'piechart_title' ),
+					'default'     => array( 'all' ),
 				),
-				'piecharts_navigation'     => array(
+				'piecharts_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_piecharts_section',
 					'navigateToLabel' => esc_html__( 'Add Piecharts Boxes &rarr;', 'portum' ),
 				),
-				'piecharts_repeater_field' => array(
+				'piecharts_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_pie_charts',
 				),
@@ -1689,37 +1707,38 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'clientlist_title'          => array(
+				'clientlist_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'See our clients', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'clientlist_subtitle'       => array(
+				'clientlist_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'CLIENTS', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'clientlist_grouping'       => array(
-					'label'    => esc_html__( 'Clients to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_clients', 'client_title' ),
-					'default'  => array( 'all' ),
+				'clientlist_grouping'          => array(
+					'label'       => esc_html__( 'Clients to show', 'portum' ),
+					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_clients', 'client_title' ),
+					'default'     => array( 'all' ),
 				),
-				'clientlist_slider'         => array(
+				'clientlist_slider'            => array(
 					'label'   => esc_html__( 'Enable slider', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
 				),
-				'clientlist_navigation'     => array(
+				'clientlist_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_clientlists_section',
 					'navigateToLabel' => esc_html__( 'Add Client Logos &rarr;', 'portum' ),
 				),
-				'clientlist_repeater_field' => array(
+				'clientlist_repeater_field'    => array(
 					'type'    => 'hidden',
 					'default' => 'portum_clients',
 				),
@@ -1729,6 +1748,112 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'sanitize_key',
 				),
 			),
+		);
+	}
+
+
+	/**
+	 * Repeatable client list
+	 *
+	 * @return array
+	 */
+	private function repeatable_cta() {
+		return array(
+			'id'            => 'cta',
+			'title'         => esc_html__( 'Call To Action Section', 'portum' ),
+			'description'   => esc_html__( 'A simple call to action section', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
+				'cta_title'            => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Call to action title', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'cta_description'      => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'type'              => 'epsilon-text-editor',
+					'default'           => esc_html__( 'Call to action text', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'cta_button_one_label' => array(
+					'label'             => esc_html__( 'Button one label', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Button One', 'portum' ),
+					'sanitize_callback' => 'sanitize_textfield',
+				),
+				'cta_button_one_url'   => array(
+					'label'             => esc_html__( 'Button one URL', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_url( 'https://google.com' ),
+					'sanitize_callback' => 'esc_url_raw',
+				),
+				'cta_button_two_label' => array(
+					'label'             => esc_html__( 'Button two label', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Button Two', 'portum' ),
+					'sanitize_callback' => 'sanitize_textfield',
+				),
+				'cta_button_two_url'   => array(
+					'label'             => esc_html__( 'Button two URL', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_url( 'https://google.com' ),
+					'sanitize_callback' => 'esc_url_raw',
+				),
+				'cta_section_unique_id' => array(
+					'label'             => esc_html__( 'Unique ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
+			)
 		);
 	}
 }

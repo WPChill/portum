@@ -4,10 +4,17 @@
    * Window scroll events
    */
   $( window ).scroll( function() {
-    Portum.Theme.animations();
-    Portum.Plugins.animateCounters();
-    Portum.Plugins.animateProgress();
-    Portum.Plugins.animatePieCharts();
+    /**
+     * Initiate plugins
+     */
+    try {
+      Portum.Theme.animations();
+      Portum.Plugins.animateCounters();
+      Portum.Plugins.animateProgress();
+      Portum.Plugins.animatePieCharts();
+    } catch ( error ) {
+
+    }
   } );
 
   /**
@@ -22,37 +29,42 @@
   /**
    * Document ready event
    */
-  $( document ).ready( function($) {
+  $( document ).ready( function( $ ) {
     /**
      * Initiate plugins
      */
-    Portum.Plugins.owlSlider();
-    Portum.Plugins.clientList();
-    Portum.Plugins.video();
-    Portum.Plugins.videoSections($);
-    Portum.Plugins.magnificPopup();
-    Portum.Plugins.animateCounters();
-    Portum.Plugins.animateProgress();
-    Portum.Plugins.animatePieCharts();
-    Portum.Plugins.setDimensionsPieCharts();
-    /**
-     * Initiate Theme related functions
-     */
-    Portum.Theme.map();
-    Portum.Theme.blog();
-    Portum.Theme.menu();
-    Portum.Theme.animations();
-    Portum.Theme.contact();
-    Portum.Theme.newsletter();
-    Portum.Theme.backTop();
-    Portum.Theme.footerLogo();
+    try {
+      Portum.Plugins.owlSlider();
+      Portum.Plugins.clientList();
+      Portum.Plugins.video();
+      Portum.Plugins.videoSections( $ );
+      Portum.Plugins.magnificPopup();
+      Portum.Plugins.animateCounters();
+      Portum.Plugins.animateProgress();
+      Portum.Plugins.animatePieCharts();
+      Portum.Plugins.setDimensionsPieCharts();
 
-    /**
-     * Mobile functions
-     */
-    Portum.Mobile.testimonials();
-    Portum.Mobile.blog();
-    Portum.Mobile.menu();
+      /**
+       * Initiate Theme related functions
+       */
+      Portum.Theme.map();
+      Portum.Theme.blog();
+      Portum.Theme.menu();
+      Portum.Theme.animations();
+      Portum.Theme.contact();
+      Portum.Theme.newsletter();
+      Portum.Theme.backTop();
+      Portum.Theme.footerLogo();
+
+      /**
+       * Mobile functions
+       */
+      Portum.Mobile.testimonials();
+      Portum.Mobile.blog();
+      Portum.Mobile.menu();
+    } catch ( error ) {
+
+    }
   } );
 
   $( document ).on( 'epsilon-selective-refresh-ready', function() {
