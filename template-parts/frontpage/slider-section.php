@@ -23,7 +23,7 @@ wp_enqueue_style( 'owl-carousel' );
 wp_enqueue_style( 'slick' );
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-slider">
+	<div class="section-slider" <?php echo ! empty( $fields['slider_section_unique_id'] ) ? 'id="' . $fields['slider_section_unique_id'] . '"' : ''; ?>>
 		<div class="main-slider owl-carousel owl-theme">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">

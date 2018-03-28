@@ -15,8 +15,9 @@ $grouping  = array(
 );
 
 $fields['expertise'] = $frontpage->get_repeater_field( $fields['expertise_repeater_field'], array(), $grouping );
-$attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'expertise', Portum_Repeatable_Sections::get_instance() );
-$parent_attr       = array(
+$attr_helper         = new Epsilon_Section_Attr_Helper( $fields, 'expertise', Portum_Repeatable_Sections::get_instance() );
+$parent_attr         = array(
+	'id'    => $fields['expertise_section_unique_id'] ? array( $fields['expertise_section_unique_id'] ) : array(),
 	'class' => array( 'section-expertise', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
