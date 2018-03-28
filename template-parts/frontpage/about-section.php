@@ -12,6 +12,7 @@ $fields    = $frontpage->sections[ $section_id ];
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'about', Portum_Repeatable_Sections::get_instance() );
 
 $parent_attr = array(
+	'id'    => $fields['about_section_unique_id'] ? array( $fields['about_section_unique_id'] ) : array(),
 	'class' => array( 'section-about', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );

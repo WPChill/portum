@@ -16,7 +16,7 @@ wp_enqueue_script( 'plyr' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-video section">
+	<div class="section-video section" <?php echo ! empty( $fields['video_section_unique_id'] ) ? 'id="' . $fields['video_section_unique_id'] . '"' : ''; ?>>
 		<?php if ( is_customize_preview() ) { ?>
 			<div class="container">
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>

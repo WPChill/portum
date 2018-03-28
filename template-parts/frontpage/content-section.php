@@ -26,6 +26,7 @@ $pages = new WP_Query(
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'content', Portum_Repeatable_Sections::get_instance() );
 
 $parent_attr = array(
+	'id'    => $fields['content_section_unique_id'] ? array( $fields['content_section_unique_id'] ) : array(),
 	'class' => array( 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );

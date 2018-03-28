@@ -22,7 +22,7 @@ $api                     = get_theme_mod( 'portum_google_api_key', '' );
 wp_enqueue_script( 'googlemaps' );
 ?>
 
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" class="google-map-section">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" class="google-map-section" <?php echo ! empty( $fields['google_map_section_unique_id'] ) ? 'id="' . $fields['google_map_section_unique_id'] . '"' : ''; ?>>
 	<?php if ( ! empty( $api ) ) : ?>
 		<div class="contact-overlay"></div>
 		<div class="contact-map" id="contact-map" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>

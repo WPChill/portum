@@ -16,8 +16,9 @@ $grouping  = array(
 $span      = 12 / absint( $fields['pricing_column_group'] );
 
 $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repeater_field'], array(), $grouping );
-$attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'pricing', Portum_Repeatable_Sections::get_instance() );
-$parent_attr       = array(
+$attr_helper             = new Epsilon_Section_Attr_Helper( $fields, 'pricing', Portum_Repeatable_Sections::get_instance() );
+$parent_attr             = array(
+	'id'    => $fields['pricing_section_unique_id'] ? array( $fields['pricing_section_unique_id'] ) : array(),
 	'class' => array( 'section-pricing', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );

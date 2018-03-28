@@ -212,10 +212,10 @@ wp.customize.bind( 'ready', function() {
    */
 
   var obj = {
-    'portum_slider': {
-      field: 'slider_grouping',
-      filter: 'slides_title'
-    },
+    // 'portum_slider': {
+    //   field: 'slider_grouping',
+    //   filter: 'slides_title'
+    // },
     'portum_expertise': {
       field: 'expertise_grouping',
       filter: 'expertise_title'

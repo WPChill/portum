@@ -891,6 +891,19 @@ Epsilon_Customizer::add_field(
 );
 
 /**
+ * Section builder page changer ( acts as a menu )
+ */
+Epsilon_Customizer::add_field(
+	'portum_page_changer',
+	array(
+		'type'     => 'epsilon-page-changer',
+		'label'    => esc_html__( 'Available pages', 'portum' ),
+		'section'  => 'portum_repeatable_section',
+		'priority' => 0,
+	)
+);
+
+/**
  * Repeatable sections
  */
 Epsilon_Customizer::add_field(
@@ -903,6 +916,7 @@ Epsilon_Customizer::add_field(
 		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
 	)
 );
+
 /**
  * Color Schemes
  */
