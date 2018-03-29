@@ -468,6 +468,10 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'right',
+						'choices' => array( 'left', 'right', ),
+					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),

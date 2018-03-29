@@ -31,10 +31,12 @@
 .ewf-section--spacing-sm-top { padding-top: $spacing-section-small; }
 .ewf-section--spacing-md-top { padding-top: $spacing-section-medium; }
 .ewf-section--spacing-lg-top { padding-top: $spacing-section-large; }
+.ewf-section--spacing-none-top { padding-top: 0; }
 
 .ewf-section--spacing-sm-bottom { padding-bottom: $spacing-section-small; }
 .ewf-section--spacing-md-bottom { padding-bottom: $spacing-section-medium; }
 .ewf-section--spacing-lg-bottom { padding-bottom: $spacing-section-large; }
+.ewf-section--spacing-none-bottom { padding-bottom: 0; } 
 
 .ewf-section--parallax {
   background-attachment: fixed;
@@ -80,8 +82,9 @@
 }
 
 .ewf-section__content {
-  position: relative;
+  position: relative; 
   z-index: 3;
+  width:100%;
 }
 
 .ewf-text-align--left {
@@ -99,17 +102,17 @@
 
 @media (min-width: 768px) {
 
-  .ewf-valign--top {
+  .ewf-valign--top .row {
     display: flex;
     align-items: flex-start;
   }
 
-  .ewf-valign--middle {
+  .ewf-valign--middle .row {
     display: flex;
     align-items: center;
   }
 
-  .ewf-valign--bottom {
+  .ewf-valign--bottom .row {
     display: flex;
     align-items: flex-end;
   }
