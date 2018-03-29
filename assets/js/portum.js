@@ -172,25 +172,25 @@ var Portum = {
    * Plugin related functions
    */
   Plugins: {
-    videoSections: function($){
-      if (typeof $.fn.YTPlayer !== 'undefined') {
+    videoSections: function( $ ) {
+      if ( typeof $.fn.YTPlayer !== 'undefined' ) {
 
-        $(".ewf-section__video-background-yt-source").each(function(index) {
+        $( '.ewf-section__video-background-yt-source' ).each( function( index ) {
 
-          var $t = $(this),
+          var $t = $( this ),
               $parent = $t.parent(),
               newID = 'ewf-section__video-background-yt-' + index,
-              videoSource = $(this).attr("data-source");
+              videoSource = $( this ).attr( 'data-source' );
 
-          $parent.attr("id",newID);
+          $parent.attr( 'id', newID );
 
-          var videoBackgroundConfig = "{videoURL:'"+ videoSource +"',containment:'#"+ newID +"',showControls:false,autoPlay:true, mute:true, startAt:0, opacity:1}";
+          var videoBackgroundConfig = '{videoURL:\'' + videoSource + '\',containment:\'#' + newID + '\',showControls:false,autoPlay:true, mute:true, startAt:0, opacity:1}';
 
-          $t.attr( "data-property", videoBackgroundConfig );
+          $t.attr( 'data-property', videoBackgroundConfig );
 
-        });
+        } );
 
-        $(".ewf-section__video-background-yt-source").YTPlayer({playOnlyIfVisible: true});
+        $( '.ewf-section__video-background-yt-source' ).YTPlayer( { playOnlyIfVisible: true } );
 
       }
     },
@@ -412,6 +412,50 @@ var Portum = {
    */
   Theme: {
     /**
+     * Initiate smooth scroll
+     */
+    smoothScroll: function() {
+      // Select all links with hashes
+      jQuery( 'a[href*="#"]' )
+
+      // Remove links that don't actually link to anything
+          .not( '[href="#"]' ).not( '[href="#mt-popup-modal"]' ).not( '[href="#0"]' ).click( function( event ) {
+
+        // On-page links
+        if (
+            location.pathname.replace( /^\//, '' ) === this.pathname.replace( /^\//, '' ) &&
+            location.hostname === this.hostname
+        ) {
+
+          // Figure out element to scroll to
+          var target = jQuery( this.hash );
+          target = target.length ? target : jQuery( '[name=' + this.hash.slice( 1 ) + ']' );
+
+          // Does a scroll target exist?
+          if ( target.length ) {
+
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            jQuery( 'html, body' ).animate( {
+              scrollTop: target.offset().top
+            }, 1000, function() {
+
+              // Callback after animation
+              // Must change focus!
+              var $target = jQuery( target );
+              $target.focus();
+              if ( $target.is( ':focus' ) ) { // Checking if the target was focused
+                return false;
+              } else {
+                $target.attr( 'tabindex', '-1' ); // Adding tabindex for elements not focusable
+                $target.focus(); // Set focus again
+              }
+            } );
+          }
+        }
+      } );
+    },
+    /**
      * Footer logo resizing ( applies a class if some conditions are met )
      */
     footerLogo: function() {
@@ -458,6 +502,9 @@ var Portum = {
      * Generate the contact map based on an address
      */
     map: function() {
+      if ( typeof google === 'undefined' ) {
+        return;
+      }
       var geocoder = new google.maps.Geocoder(),
           self = this,
           address = jQuery( '#contact-map' );

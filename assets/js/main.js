@@ -51,10 +51,11 @@
       Portum.Theme.blog();
       Portum.Theme.menu();
       Portum.Theme.animations();
-      Portum.Theme.contact();
       Portum.Theme.newsletter();
       Portum.Theme.backTop();
       Portum.Theme.footerLogo();
+      Portum.Theme.smoothScroll();
+      Portum.Theme.contact();
 
       /**
        * Mobile functions
@@ -63,7 +64,7 @@
       Portum.Mobile.blog();
       Portum.Mobile.menu();
     } catch ( error ) {
-
+      console.log( error );
     }
   } );
 

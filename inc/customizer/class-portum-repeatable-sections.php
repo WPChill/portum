@@ -1856,4 +1856,93 @@ class Portum_Repeatable_Sections {
 			)
 		);
 	}
+
+	private function repeatable_section_demo() {
+		return array(
+			'id'            => 'demo',
+			'title'         => esc_html__( 'Demo Section', 'portum' ),
+			'description'   => esc_html__( 'Section showcase', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-alignment'          => array(
+						'default' => 'center',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
+					'column-spacing'            => array(
+						'default' => 'spaced',
+						'choices' => array( 'spaced', 'colfit' ),
+					),
+					'column-group'              => array(
+						'default' => 4,
+						'choices' => array( 1, 2, 3, 4, ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'none',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-title-align'           => array(
+						'default' => 'none',
+						'choices' => array( 'left', 'top', 'right', ),
+					),
+				),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'default'   => '#000000',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p', ),
+						'default'   => '#0f0f0f',
+					),
+				),
+			),
+			'fields'        => array(
+				'demo_field' => array(
+					'label'             => esc_html__( 'Demo field', 'portum' ),
+					'type'              => 'textarea',
+					'default'           => '',
+					'sanitize_callback' => 'wp_kses_post',
+				),
+			),
+		);
+	}
 }
