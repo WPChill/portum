@@ -24,34 +24,76 @@ $parent_attr = array(
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
-
+		
+		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'about', $fields ) ); ?>">
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 			<div class="row">
-				<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-					<div class="col-md-5">
-						<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
-					</div>
-				<?php } ?>
+				<?php if ($fields['about_row_title_align'] == 'right'){ ?>
+					
+					<?php if ( ! empty( $fields['about_image'] ) ) { ?>
+						<div class="col-md-6">
+							<?php 
+								//about_row_title_align
+								//echo '<pre>';
+								//	print_r($fields);
+								//echo '</pre>';
+								
+							?>
+								
+							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
+						</div>
+					<?php } ?>
 
-				<div class="col-md-7">
-					<?php
-					echo wp_kses_post(
-						Portum_Helper::generate_section_title(
-							$fields['about_subtitle'],
-							$fields['about_title'],
-							array(
-								'doubled' => true,
-								'center'  => false,
+					<div class="col-md-6">
+						<?php
+						echo wp_kses_post(
+							Portum_Helper::generate_section_title(
+								$fields['about_subtitle'],
+								$fields['about_title'],
+								array(
+									'doubled' => false,
+									'center'  => false,
+								)
 							)
-						)
-					);
-					?>
+						);
+						?>
 
-					<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-				</div>
+						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+					</div>
+					
+					
+				<?php }else { ?>
+					
+					<div class="col-md-6">
+						<?php
+						echo wp_kses_post(
+							Portum_Helper::generate_section_title(
+								$fields['about_subtitle'],
+								$fields['about_title'],
+								array(
+									'doubled' => false,
+									'center'  => false,
+								)
+							)
+						);
+						?>
+
+						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+					</div>
+					
+					<?php if ( ! empty( $fields['about_image'] ) ) { ?>
+						<div class="col-md-6">								
+							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
+						</div>
+					<?php } ?>
+					
+				<?php }?>
+					
+
 			</div>
+		</div>
 		</div>
 	</div>
 </section>
