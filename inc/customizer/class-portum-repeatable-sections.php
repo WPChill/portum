@@ -468,6 +468,10 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'right',
+						'choices' => array( 'left', 'right', ),
+					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
@@ -1765,6 +1769,14 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'top', 'right', ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
 					'row-spacing-top'    => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
@@ -1772,6 +1784,14 @@ class Portum_Repeatable_Sections {
 					'row-spacing-bottom' => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling' => array(
@@ -1824,26 +1844,26 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'Call to action text', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'cta_button_one_label' => array(
-					'label'             => esc_html__( 'Button one label', 'portum' ),
+				'cta_button_primary_label' => array(
+					'label'             => esc_html__( 'Primary button label', 'portum' ),
 					'type'              => 'text',
-					'default'           => esc_html__( 'Button One', 'portum' ),
+					'default'           => esc_html__( 'Primary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
 				),
-				'cta_button_one_url'   => array(
-					'label'             => esc_html__( 'Button one URL', 'portum' ),
+				'cta_button_primary_url'   => array(
+					'label'             => esc_html__( 'Primary button URL', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_url( 'https://google.com' ),
 					'sanitize_callback' => 'esc_url_raw',
 				),
-				'cta_button_two_label' => array(
-					'label'             => esc_html__( 'Button two label', 'portum' ),
+				'cta_button_secondary_label' => array(
+					'label'             => esc_html__( 'Secondary button label', 'portum' ),
 					'type'              => 'text',
-					'default'           => esc_html__( 'Button Two', 'portum' ),
+					'default'           => esc_html__( 'Secondary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
 				),
-				'cta_button_two_url'   => array(
-					'label'             => esc_html__( 'Button two URL', 'portum' ),
+				'cta_button_secondary_url'   => array(
+					'label'             => esc_html__( 'Secondary button URL', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_url( 'https://google.com' ),
 					'sanitize_callback' => 'esc_url_raw',
