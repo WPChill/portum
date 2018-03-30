@@ -18,7 +18,7 @@ $fields['testimonials'] = $frontpage->get_repeater_field( $fields['testimonials_
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'testimonials', Portum_Repeatable_Sections::get_instance() );
 $parent_attr = array(
-	'id'    => $fields['testimonials_section_unique_id'] ? array( $fields['testimonials_section_unique_id'] ) : array(),
+	'id'    => ! empty( $fields['testimonials_section_unique_id'] ) ? array( $fields['testimonials_section_unique_id'] ) : array(),
 	'class' => array( 'section-testimonials', 'section', 'ewf-section', 'dashed' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );

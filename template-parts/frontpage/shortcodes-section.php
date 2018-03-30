@@ -18,7 +18,7 @@ $class = array(
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'shortcodes', Portum_Repeatable_Sections::get_instance() );
 $parent_attr = array(
-	'id'    => $fields['shortcodes_section_unique_id'] ? array( $fields['shortcodes_section_unique_id'] ) : array(),
+	'id'    => ! empty( $fields['shortcodes_section_unique_id'] ) ? array( $fields['shortcodes_section_unique_id'] ) : array(),
 	'class' => array( 'section-shortcodes', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
