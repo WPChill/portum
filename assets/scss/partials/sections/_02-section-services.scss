@@ -1,31 +1,17 @@
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
-/*
+
 .section-services {
   background-color: rgba(0, 0, 0, .8);
-  background-size: 100% 100%;
 }
-*/
 
 .services-item {
   margin-top:30px;
   transition: 180ms all;
-  background:red;
   
   &.services-item-first {
 	  margin-top:0;
   }
-  /*
-  &:before {
-	  content: "";
-	  height: 35px;
-	  width: 1px;
-	  background: #38393C;
-	  position: Absolute;
-	  left: 0;
-	  top: 0;
-  }
-  */
   
   i {
 	  color: #fff;
