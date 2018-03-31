@@ -903,6 +903,17 @@ Epsilon_Customizer::add_field(
 	)
 );
 
+Epsilon_Customizer::add_field(
+	'portum_logo_dimensions',
+	array(
+		'type'           => 'epsilon-image-dimensions',
+		'label'          => esc_html__( 'Logo Dimensions', 'portum' ),
+		'linked_control' => 'custom_logo',
+		'section'        => 'title_tagline',
+		'priority'       => 1,
+	)
+);
+
 /**
  * Repeatable sections
  */

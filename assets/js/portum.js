@@ -348,6 +348,9 @@ var Portum = {
      * Initiate the magnific Popup
      */
     magnificPopup: function() {
+      if ( typeof jQuery().magnificPopup === 'undefined' ) {
+        return;
+      }
       jQuery( '.magnific-link' ).magnificPopup( { type: 'image' } );
     },
     /**
@@ -401,6 +404,9 @@ var Portum = {
      * Initiate Plyr library on video elements
      */
     video: function() {
+      if ( typeof plyr === 'undefined' ) {
+        return;
+      }
       var instances = plyr.setup( {
         debug: false,
         controls: []
