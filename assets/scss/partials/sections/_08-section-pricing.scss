@@ -1,17 +1,7 @@
 
 /* ----------------------------------- #08 - PRICING section --------------------------------*/
 
-.section-pricing {
-    background: #fff;
-    padding: 70px 0 75px 0;
-}
 
-
-/*
-.section-pricing.animate-- {
-    background: transparent;
-}
-*/
 
 
 .pricing-item {
@@ -25,6 +15,8 @@
 	-moz-box-shadow: 0 0 20px rgba(35,31,32,.1);
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
 	margin-bottom:30px;
+	background:#fff;
+	overflow:hidden;
 
 	&.featured,
 	&:hover {
@@ -131,10 +123,16 @@
 	}
 }
 
+
+@media (min-width: 991px) {
+
+.section-pricing.ewf-section--spacing-none-bottom .pricing-item { margin-bottom:0; }
+
+}
+
 @media (max-width: 991px) {
 
     .pricing-item {
-        background: gold;
         margin-bottom: 0;
         background-color: #fff;
         -webkit-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
