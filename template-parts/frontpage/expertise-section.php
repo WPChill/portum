@@ -28,47 +28,108 @@ $parent_attr         = array(
 		<?php
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		
+		$section_content_cols = ($fields['expertise_image'] ? '7' : '12');
+		
+		// echo '<pre>';
+			// print_r($fields);
+		// echo '</pre>';
+		
 		?>
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'expertise', $fields ) ); ?>">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'expertise' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-			<div class="row">
-				<div class="col-md-7">
-					<?php
-					echo wp_kses_post(
-						Portum_Helper::generate_section_title(
-							$fields['expertise_subtitle'],
-							$fields['expertise_title'],
-							array(
-								'doubled' => false,
-								'center'  => false,
+		
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'expertise', $fields ) ); ?>">
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'expertise' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<div class="row">
+				
+					<?php if ($fields['expertise_row_title_align'] == 'left'){ ?>
+					
+					<div class="col-md-<?php echo $section_content_cols; ?>">
+						<?php
+						echo wp_kses_post(
+							Portum_Helper::generate_section_title(
+								$fields['expertise_subtitle'],
+								$fields['expertise_title'],
+								array(
+									'doubled' => false,
+									'center'  => false,
+								)
 							)
-						)
-					);
-					?>
+						);
+						?>
 
-					<?php if ( ! empty( $fields['expertise'] ) ) { ?>
+						<?php if ( ! empty( $fields['expertise'] ) ) { ?>
 
-						<?php foreach ( $fields['expertise'] as $index => $expertise ) { ?>
-							<div class="expertise-item">
-								<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
-									<h4>
-										<!--<a href="#"></a>-->
-										<?php echo esc_html( $expertise['expertise_title'] ); ?>
-										<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong>
-									</h4>
-								<?php } ?>
+							<?php foreach ( $fields['expertise'] as $index => $expertise ) { ?>
+								<div class="expertise-item">
+									<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
+										<h4>
+											<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
+											<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong> 
+											<?php } ?>
+											
+											<?php echo esc_html( $expertise['expertise_title'] ); ?>
+											
+										</h4>
+									<?php } ?>
 
-								<?php echo wp_kses_post( wpautop( $expertise['expertise_description'] ) ); ?>
-							</div>
+									<?php echo wp_kses_post( wpautop( $expertise['expertise_description'] ) ); ?>
+								</div>
+							<?php } ?>
+
 						<?php } ?>
-
-					<?php } ?>
-				</div>
-				<?php if ( ! empty( $fields['expertise_image'] ) ) { ?>
-					<div class="col-md-5">
-						<img class="expertise-image-block" src="<?php echo esc_url( $fields['expertise_image'] ); ?>" alt=""/>
 					</div>
+					<?php if ( ! empty( $fields['expertise_image'] ) ) { ?>
+						<div class="col-md-5">
+							<img src="<?php echo esc_url( $fields['expertise_image'] ); ?>" alt=""/>
+						</div>
+					<?php } ?>
+				
+				<?php }else{ ?>
+					<?php if ( ! empty( $fields['expertise_image'] ) ) { ?>
+						<div class="col-md-5">
+							<img src="<?php echo esc_url( $fields['expertise_image'] ); ?>" alt=""/>
+						</div>
+					<?php } ?>
+					<div class="col-md-<?php echo $section_content_cols; ?>">
+						<?php
+						echo wp_kses_post(
+							Portum_Helper::generate_section_title(
+								$fields['expertise_subtitle'],
+								$fields['expertise_title'],
+								array(
+									'doubled' => false,
+									'center'  => false,
+								)
+							)
+						);
+						?>
+
+						<?php if ( ! empty( $fields['expertise'] ) ) { ?>
+
+							<?php foreach ( $fields['expertise'] as $index => $expertise ) { ?>
+								<div class="expertise-item">
+									<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
+										<h4>
+											<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
+											<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong> 
+											<?php } ?>
+											
+											<?php echo esc_html( $expertise['expertise_title'] ); ?>
+											
+										</h4>
+									<?php } ?>
+
+									<?php echo wp_kses_post( wpautop( $expertise['expertise_description'] ) ); ?>
+								</div>
+							<?php } ?>
+
+						<?php } ?>
+					</div>
+				
 				<?php } ?>
+				
+				</div>
 			</div>
 		</div>
 	</div>
