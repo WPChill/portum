@@ -23,7 +23,7 @@ $query = new WP_Query( $args );
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'blog', Portum_Repeatable_Sections::get_instance() );
 
 $parent_attr = array(
-	'id'    => $fields['blog_section_unique_id'] ? array( $fields['blog_section_unique_id'] ) : array(),
+	'id'    => ! empty( $fields['blog_section_unique_id'] ) ? array( $fields['blog_section_unique_id'] ) : array(),
 	'class' => array( 'section-blog', 'section', 'section-grey', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );

@@ -18,7 +18,7 @@ $fields['clients'] = $frontpage->get_repeater_field( $fields['clientlist_repeate
 $attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'clientlist', Portum_Repeatable_Sections::get_instance() );
 
 $parent_attr = array(
-	'id'    => $fields['clientlist_section_unique_id'] ? array( $fields['clientlist_section_unique_id'] ) : array(),
+	'id'    => ! empty( $fields['clientlist_section_unique_id'] ) ? array( $fields['clientlist_section_unique_id'] ) : array(),
 	'class' => array( 'section-clientlist', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );

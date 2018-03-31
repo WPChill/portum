@@ -591,9 +591,8 @@ class Portum {
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'     => 35,
-				'width'      => 130,
-				'flex-width' => true,
+				'flex-width'  => true,
+				'flex-height' => true,
 			)
 		);
 		add_theme_support(

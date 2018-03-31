@@ -14,7 +14,7 @@
 		<?php
 		if ( function_exists( 'the_custom_logo' ) ) {
 			if ( has_custom_logo() ) {
-				the_custom_logo();
+				Epsilon_Helper::get_image_with_custom_dimensions( 'portum_logo_dimensions' );
 			}
 		}
 		?>
