@@ -1,84 +1,61 @@
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
+/*
 .section-services {
   background-color: rgba(0, 0, 0, .8);
   background-size: 100% 100%;
-  padding: 70px 0 20px;
-  transition: 3s;
-}
-
-/*
-.section-services .row.space {
-  margin-bottom: 50px;
-}
-
-.section-services .headline h3 {
-  margin: 0;
-}
-
-.section-services .headline span {
-  margin: 0 0 15px 0;
 }
 */
 
 .services-item {
-  padding: 0 0 0 5px;
+  margin-top:30px;
   transition: 180ms all;
+  background:red;
+  
+  &.services-item-first {
+	  margin-top:0;
+  }
+  /*
+  &:before {
+	  content: "";
+	  height: 35px;
+	  width: 1px;
+	  background: #38393C;
+	  position: Absolute;
+	  left: 0;
+	  top: 0;
+  }
+  */
+  
+  i {
+	  color: #fff;
+	  font-size: 30px;
+  }
+  	
+  span {
+
+	  color: $accent-1-color;
+	  margin-top: 25px;
+  }
+  
+  strong {
+	  font-weight: 500;
+	  color: #fff;
+  }
+  
+  span,
+strong {  
+	  display: block;
+	  font-family: 'Poppins', sans-serif;
+	  font-size: 14px;
+	  letter-spacing: 1.2px;
+   }
+  
 }
 
-
-
-.services-item::before {
-  content: "";
-  height: 35px;
-  width: 1px;
-  background: #38393C;
-  position: Absolute;
-  left: 0;
-  top: 0;
-}
-
-.services-item:hover span,
-.services-item:hover i {
-  color: $accent-2-color;
-}
-
-.services-item:hover::before {
-  background: $accent-2-color;
-}
-
-.services-item i {
-  color: #fff;
-  font-size: 30px;
-}
-
-.services-item span {
-  display: block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: $accent-1-color;
-  margin-top: 25px;
-  letter-spacing: 1.2px;
-}
-
-.services-item strong {
-  display: block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 1.2px;
-}
-
-.section-services.animate-- {
-  background: transparent;
-}
-.section-services .row .col-md-4 {
-  margin-bottom: 50px;
-}
 
 @media (max-width: 991px) {
-
+/*
   .section-services {
     margin-top: 50px;
   }
@@ -98,7 +75,7 @@
   .section-services {
     padding-bottom: 25px;
   }
-
+*/
 }
 
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/
