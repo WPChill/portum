@@ -561,7 +561,8 @@ a.social-icon:active
     letter-spacing: 2px;
     text-transform: uppercase;
 
-    color: #a9afb1;
+    opacity: .2;
+    color: #000;
 }
 
 .contrast h3
@@ -7948,25 +7949,15 @@ input[type='button']:active
 }
 /* ----------------------------------- #04 - TESTIMONIALS section - END -------------------*/
 /* ----------------------------------- #05 - EXPERTISE section ----------------------------*/
-.section-expertise
-{
-    padding: 70px 0 10px 0;
-}
-
-.section-expertise.animate--
-{
-    background: transparent;
-}
-
 .expertise-item
 {
-    padding: 0 0 35px 0;
+    overflow: hidden;
+
+    padding: 0 0 25px 0;
 }
 .expertise-item h4
 {
     position: relative;
-
-    margin-bottom: 25px;
 }
 .expertise-item h4 strong
 {
@@ -7974,29 +7965,18 @@ input[type='button']:active
     font-size: 68px;
     font-weight: 400;
 
-    position: absolute;
     z-index: -1;
-    top: -28px;
-    left: -25px;
 
     display: block;
 
+    height: 0;
+    margin-bottom: 25px;
+
     letter-spacing: -2px;
 
-    color: #f7f7f7;
+    color: rgba(0, 0, 0, .1);
 }
 
-@media (max-width: 767px)
-{
-    .expertise-item h4 a
-    {
-        padding-left: 10px;
-    }
-    .expertise-item h4 strong
-    {
-        left: -10px;
-    }
-}
 @media (max-width: 500px)
 {
     .expertise-image-block
@@ -8345,21 +8325,11 @@ input[type='button']:active
 }
 /* ----------------------------------- #07 - TEAM section - END -------------------------*/
 /* ----------------------------------- #08 - PRICING section --------------------------------*/
-.section-pricing
-{
-    padding: 70px 0 75px 0;
-
-    background: #fff;
-}
-
-/*
-.section-pricing.animate-- {
-    background: transparent;
-}
-*/
 .pricing-item
 {
     position: relative;
+
+    overflow: hidden;
 
     min-height: 530px;
     margin-bottom: 30px;
@@ -8373,6 +8343,7 @@ input[type='button']:active
             transition: all 100ms ease-in-out;
     text-align: center;
 
+    background: #fff;
     -webkit-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
             box-shadow: 0 0 20px rgba(35, 31, 32, .1);
 }
@@ -8503,6 +8474,13 @@ input[type='button']:active
     color: #0385d0;
 }
 
+@media (min-width: 991px)
+{
+    .section-pricing.ewf-section--spacing-none-bottom .pricing-item
+    {
+        margin-bottom: 0;
+    }
+}
 @media (max-width: 991px)
 {
     .pricing-item
@@ -8513,7 +8491,6 @@ input[type='button']:active
         margin-bottom: 0;
         padding: 0;
 
-        background: gold;
         background-color: #fff;
         -webkit-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
                 box-shadow: 0 0 20px rgba(35, 31, 32, .1);

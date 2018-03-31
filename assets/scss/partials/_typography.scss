@@ -436,13 +436,14 @@ a.social-icon:active {
 
   span {
     font-size: 14px;
-    color: $text-color;
+    color:#000;
     line-height: 26px;
     font-weight: 400;
     text-transform: uppercase;
     position: relative;
     font-family: $accent-1-font;
     letter-spacing: 2px;
+	opacity:.2;
   }
 }
 
