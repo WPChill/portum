@@ -686,6 +686,10 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'right' ),
+					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
@@ -760,7 +764,7 @@ class Portum_Repeatable_Sections {
 				'expertise_image'             => array(
 					'label'   => esc_html__( 'Section Image', 'portum' ),
 					'type'    => 'epsilon-image',
-					'size'    => 'portum-expertise-image',
+					'size'    => 'original',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/expertise-img-01.jpg' ),
 				),
 				'expertise_grouping'          => array(
