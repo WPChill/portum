@@ -31,53 +31,59 @@ wp_enqueue_script( 'magnificPopup' );
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
-		<?php if ( is_customize_preview() ) { ?>
-			<div class="container">
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-			</div>
-		<?php } ?>
-		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
+		
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
+		
+		<div class="ewf-section__content">
+			<div class="row">
+			
+			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
 
-		<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
-			<div class="portfolio-grid fixed">
-				<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
-					<div class="portfolio-grid-item small-column">
-						<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
-							<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt=""/>
-						<?php } ?>
+			<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
+			
+				<div class="portfolio-grid fixed">
+					<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
+						<div class="portfolio-grid-item small-column">
+							<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
+								<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt=""/>
+							<?php } ?>
 
-						<div class="overlay">
+							<div class="overlay">
 
-							<div class="wrapper">
-								<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
-									<h5><?php echo esc_html( $item['portfolio_title'] ); ?></h5>
-								<?php } ?>
-
-								<?php echo wpautop( wp_kses_post( $item['portfolio_description'] ) ); ?>
-								
-								<?php 
-									$is_single_button = null;
-									
-									if ( empty( $item['portfolio_link'] ) ) {
-										$is_single_button = ' zoom-single';
-									}
-								?>
-								
-								<div class="action fixed">
-									<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom<?php echo $is_single_button; ?>">
-										<i class="fa fa-search" aria-hidden="true"></i> </a>
-									<?php if ( ! empty( $item['portfolio_link'] ) ) { ?>
-										<a href="<?php echo esc_url( $item['portfolio_link'] ) ?>" class="link">
-											<i class="fa fa-chain" aria-hidden="true"></i> </a>
+								<div class="wrapper">
+									<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
+										<h5><?php echo esc_html( $item['portfolio_title'] ); ?></h5>
 									<?php } ?>
+
+									<?php echo wpautop( wp_kses_post( $item['portfolio_description'] ) ); ?>
+									
+									<?php 
+										$is_single_button = null;
+										
+										if ( empty( $item['portfolio_link'] ) ) {
+											$is_single_button = ' zoom-single';
+										}
+									?>
+									
+									<div class="action fixed">
+										<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom<?php echo $is_single_button; ?>">
+											<i class="fa fa-search" aria-hidden="true"></i> </a>
+										<?php if ( ! empty( $item['portfolio_link'] ) ) { ?>
+											<a href="<?php echo esc_url( $item['portfolio_link'] ) ?>" class="link">
+												<i class="fa fa-chain" aria-hidden="true"></i> </a>
+										<?php } ?>
+									</div>
+
 								</div>
 
 							</div>
-
 						</div>
-					</div>
-				<?php } ?>
+					<?php } ?>
+				</div>
+			<?php } ?>
 			</div>
-		<?php } ?>
+		</div>
+		</div>
 	</div>
 </section>
