@@ -351,7 +351,14 @@ var Portum = {
       if ( typeof jQuery().magnificPopup === 'undefined' ) {
         return;
       }
-      jQuery( '.magnific-link' ).magnificPopup( { type: 'image' } );
+      jQuery( '.magnific-link' ).magnificPopup({ 
+			type: 'image',
+			gallery: {
+						enabled: true,
+						navigateByImgClick: true,
+						preload: [0,1]
+					},
+		});
     },
     /**
      * Initiate owl slider

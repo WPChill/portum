@@ -54,12 +54,22 @@ wp_enqueue_script( 'magnificPopup' );
 								<?php } ?>
 
 								<?php echo wpautop( wp_kses_post( $item['portfolio_description'] ) ); ?>
-
+								
+								<?php 
+									$is_single_button = null;
+									
+									if ( empty( $item['portfolio_link'] ) ) {
+										$is_single_button = ' zoom-single';
+									}
+								?>
+								
 								<div class="action fixed">
-									<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom">
+									<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom<?php echo $is_single_button; ?>">
 										<i class="fa fa-search" aria-hidden="true"></i> </a>
-									<a href="<?php echo esc_url( $item['portfolio_link'] ) ?>" class="link">
-										<i class="fa fa-chain" aria-hidden="true"></i> </a>
+									<?php if ( ! empty( $item['portfolio_link'] ) ) { ?>
+										<a href="<?php echo esc_url( $item['portfolio_link'] ) ?>" class="link">
+											<i class="fa fa-chain" aria-hidden="true"></i> </a>
+									<?php } ?>
 								</div>
 
 							</div>
