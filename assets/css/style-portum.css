@@ -7416,29 +7416,6 @@ input[type='button']:active
 }
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/
 /* ----------------------------------- #03 - PORTFOLIO section --------------------------------*/
-.section-portfolio
-{
-    padding: 70px 0 0 0;
-
-    background: #fff;
-}
-
-.section-portfolio.animate--
-{
-    background: transparent;
-}
-
-.portfolio-grid-item
-{
-    position: relative;
-
-    margin: 0;
-
-    cursor: pointer;
-
-    background: gold;
-}
-
 .portfolio-grid
 {
     margin: 0 -1px;
@@ -7449,14 +7426,32 @@ input[type='button']:active
     display: block;
 }
 
+.portfolio-grid-item
+{
+    position: relative;
+
+    margin: 0;
+
+    cursor: pointer;
+}
+.portfolio-grid-item .overlay
+{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+
+    display: none;
+
+    background: rgba(0, 0, 0, .8);
+}
 .portfolio-grid-item img
 {
     display: block;
-    /*border: 1px solid #fff;*/
 
     width: 100%;
 }
-
 .portfolio-grid-item h5
 {
     font-family: 'Lato', sans-serif;
@@ -7469,7 +7464,6 @@ input[type='button']:active
 
     color: #fff;
 }
-
 .portfolio-grid-item p
 {
     font-size: 15px;
@@ -7492,19 +7486,6 @@ input[type='button']:active
     float: left;
 
     width: 50%;
-}
-
-.portfolio-grid-item .overlay
-{
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    left: 1px;
-
-    display: none;
-
-    background: rgba(0, 0, 0, .8);
 }
 
 .portfolio-grid-item .overlay .wrapper
@@ -9715,4 +9696,9 @@ input[type='button']:active
     {
         width: 970px;
     }
+}
+
+.epsilon-pencil-button-group a
+{
+    color: #fff !important;
 }
