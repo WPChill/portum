@@ -7704,16 +7704,6 @@ input[type='button']:active
 /* p test 2 */
 /* ----------------------------------- #03 - PORTFOLIO section - END --------------------------*/
 /* ----------------------------------- #04 - TESTIMONIALS section ------------------------*/
-.section-testimonials
-{
-    padding: 70px 0 25px 0;
-}
-
-.section-testimonials.animate--
-{
-    background: transparent;
-}
-
 .testimonial
 {
     position: relative;
@@ -7721,98 +7711,48 @@ input[type='button']:active
     min-height: 150px;
     margin-bottom: 75px;
 
-    -webkit-transition: 280ms all;
-         -o-transition: 280ms all;
-            transition: 280ms all;
-
     background: #fff;
+    /*transition: 280ms all;*/
+    /*
+  	&:hover {
+  		background-color: $accent-2-color;
+  	}
+  
+  	&:hover h6,
+  	&:hover p,
+  	&:hover a {
+  		color: #fff;
+  	}
+  	*/
 }
-
-.testimonial a
-{
-    color: #0385d0;
-}
-
 .testimonial.left
 {
     padding: 25px 0 35px 95px;
 }
-
+.testimonial.left img
+{
+    bottom: -25px;
+    left: -95px;
+}
+.testimonial.left span
+{
+    left: 25px;
+}
 .testimonial.right
 {
     padding: 30px 95px 40px 0;
 
     text-align: right;
 }
-
-.testimonial.left img
-{
-    position: absolute;
-    bottom: -25px;
-    left: -95px;
-
-    display: block;
-
-    width: 160px;
-    height: 160px;
-}
-
 .testimonial.right img
 {
-    position: absolute;
     right: -95px;
     bottom: -25px;
-
-    display: block;
-
-    width: 160px;
-    height: 160px;
 }
-
 .testimonial.right span
 {
-    position: absolute;
-    top: 25px;
     right: 25px;
-
-    display: block;
-
-    width: 35px;
-    height: 25px;
 }
-
-.testimonial.left span
-{
-    position: absolute;
-    top: 25px;
-    left: 25px;
-
-    display: block;
-
-    width: 35px;
-    height: 25px;
-}
-
-.testimonial span
-{
-    background: url('../images/back-quote.png') no-repeat center center;
-
-    x-index: 9;
-}
-
-.testimonial img
-{
-    -webkit-box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
-            box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
-}
-
-.testimonial p
-{
-    font-style: italic;
-
-    margin-bottom: 25px;
-}
-
 .testimonial h6
 {
     font-weight: 500;
@@ -7824,17 +7764,42 @@ input[type='button']:active
 
     letter-spacing: 1.5px;
 }
-
-.testimonial:hover
+.testimonial img
 {
-    background-color: #a1083a;
-}
+    position: absolute;
 
-.testimonial:hover h6,
-.testimonial:hover p,
+    display: block;
+
+    width: 160px;
+    height: 160px;
+
+    -webkit-box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
+            box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
+}
+.testimonial p
+{
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+.testimonial a
+{
+    color: #0385d0;
+}
+.testimonial span
+{
+    position: absolute;
+    z-index: 9;
+    top: 25px;
+
+    width: 35px;
+    height: 25px;
+
+    background: url('../images/back-quote.png') no-repeat center center;
+}
 .testimonial:hover a
 {
-    color: #fff;
+    color: #a1083a;
 }
 
 @media (max-width: 768px)
@@ -7848,55 +7813,47 @@ input[type='button']:active
         border-radius: 0 0 20px 20px;
     }
 
-    .testimonial
-    {
-        margin-bottom: 35px;
-    }
-
     .hidden-testimonial
     {
         display: none;
     }
 
+    .testimonial
+    {
+        margin-bottom: 35px;
+    }
     .testimonial.left
     {
         padding: 15px 0 25px 35px;
     }
-
     .testimonial.left span
     {
         top: 20px;
         left: 15px;
     }
-
+    .testimonial.left img
+    {
+        right: 20px;
+        left: initial;
+    }
     .testimonial.right
     {
         padding: 15px 35px 25px 0;
     }
-
     .testimonial.right span
     {
         top: 20px;
         right: 15px;
     }
-
     .testimonial.right img
     {
-        top: -20px;
         right: initial;
-        bottom: initial;
         left: 20px;
-
-        width: 65px;
-        height: 65px;
     }
-
-    .testimonial.left img
+    .testimonial img
     {
         top: -20px;
-        right: 20px;
         bottom: initial;
-        left: initial;
 
         width: 65px;
         height: 65px;
