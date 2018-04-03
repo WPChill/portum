@@ -1323,14 +1323,6 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'row-spacing-top'    => array(
-						'default' => 'none',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
-					'row-spacing-bottom' => array(
-						'default' => 'none',
-						'choices' => array( 'lg', 'md', 'sm', 'none', ),
-					),
 					'column-group'       => array(
 						'default' => 3,
 						'choices' => array( 1, 2, 3, 4, ),
