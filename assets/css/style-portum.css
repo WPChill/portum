@@ -2744,7 +2744,8 @@ input[type='button']:active
 
 #logo img
 {
-    width: 100%;
+    width: auto;
+    max-width: nonew;
 
     -webkit-transition: all .3s;
          -o-transition: all .3s;
@@ -7522,6 +7523,8 @@ input[type='button']:active
 {
     width: 150px;
     margin: auto;
+
+    text-align: center;
 }
 
 .portfolio-grid-item .action i
@@ -7550,6 +7553,18 @@ input[type='button']:active
     height: 45px;
 
     border-radius: 50px 0 0 50px;
+    background: #0385d0;
+}
+
+.portfolio-grid-item .action .zoom.zoom-single
+{
+    float: none;
+
+    width: 75px;
+    height: 45px;
+    margin: auto;
+
+    border-radius: 50px;
     background: #0385d0;
 }
 

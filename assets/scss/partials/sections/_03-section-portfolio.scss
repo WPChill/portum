@@ -80,6 +80,7 @@
 .portfolio-grid-item .action {
     margin: auto;
     width: 150px;
+	text-align:center;
 }
 
 .portfolio-grid-item .action i {
@@ -100,6 +101,15 @@
     width: 75px;
     background: $accent-1-color;
     border-radius: 50px 0 0 50px;
+}
+
+.portfolio-grid-item .action .zoom.zoom-single {
+    height: 45px;
+    width: 75px;
+    background: $accent-1-color;
+    border-radius: 50px;
+	float:none;
+	margin:auto
 }
 
 .portfolio-grid-item .action .link {
