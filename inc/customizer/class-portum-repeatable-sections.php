@@ -1282,13 +1282,25 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'shortcode_field'             => array(
+				'shortcodes_title'             => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Section title', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'shortcodes_subtitle'          => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Section description', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'shortcodes_field'             => array(
 					'label'             => esc_html__( 'Shortcode', 'portum' ),
 					'type'              => 'textarea',
 					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'shortcode_section_unique_id' => array(
+				'shortcodes_section_unique_id' => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
