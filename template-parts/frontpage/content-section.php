@@ -38,46 +38,48 @@ $parent_attr = array(
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'content', $fields ) ); ?>">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'content' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-			<div class="row">
-				<?php
-				if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'content', $fields ) ); ?>">
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'content' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<div class="row">
+					<?php
+					if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
+						?>
+						<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
+							<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
+							<?php dynamic_sidebar( 'sidebar' ); ?>
+							<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+						</div>
+						<?php
+					}
 					?>
-					<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
-						<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
-						<?php dynamic_sidebar( 'sidebar' ); ?>
+
+					<div class="<?php echo ( 1 === $layout['columnsCount'] && ! is_active_sidebar( 'sidebar' ) ) ? 'col-sm-12' : 'col-sm-' . esc_attr( $layout['columns']['content']['span'] ); ?>">
+						<!-- /// MAIN CONTENT  ////////////////////////////////////////////////////////////////////////////////////// -->
+						<?php
+						if ( $pages->have_posts() ) :
+							while ( $pages->have_posts() ) :
+								$pages->the_post();
+								get_template_part( 'template-parts/content/content', 'page' );
+							endwhile;
+						endif;
+						wp_reset_postdata();
+						?>
 						<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 					</div>
-					<?php
-				}
-				?>
 
-				<div class="<?php echo ( 1 === $layout['columnsCount'] && ! is_active_sidebar( 'sidebar' ) ) ? 'col-sm-12' : 'col-sm-' . esc_attr( $layout['columns']['content']['span'] ); ?>">
-					<!-- /// MAIN CONTENT  ////////////////////////////////////////////////////////////////////////////////////// -->
 					<?php
-					if ( $pages->have_posts() ) :
-						while ( $pages->have_posts() ) :
-							$pages->the_post();
-							get_template_part( 'template-parts/content/content', 'page' );
-						endwhile;
-					endif;
-					wp_reset_postdata();
+					if ( 'right-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
+						?>
+						<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
+							<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
+							<?php dynamic_sidebar( 'sidebar' ); ?>
+							<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+						</div>
+						<?php
+					}
 					?>
-					<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				</div>
-
-				<?php
-				if ( 'right-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
-					?>
-					<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
-						<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
-						<?php dynamic_sidebar( 'sidebar' ); ?>
-						<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-					</div>
-					<?php
-				}
-				?>
 			</div>
 		</div>
 	</div>
