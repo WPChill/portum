@@ -205,10 +205,6 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-stretch'     => array(
-						'default' => 'boxedin',
-						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
-					),
 					'row-spacing-top'    => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
