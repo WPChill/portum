@@ -196,11 +196,33 @@ Epsilon_Customizer::add_field(
  * Header section options
  */
 Epsilon_Customizer::add_field(
+	'portum_header_top_bar',
+	array(
+		'type'     => 'epsilon-toggle',
+		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
+		'section'  => 'portum_header_section',
+		'priority' => 0,
+		'default'  => true,
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'portum_header_background',
+	array(
+		'type'        => 'epsilon-color-picker',
+		'description' => esc_html__( 'Header navigation background', 'portum' ),
+		'label'       => esc_html__( 'Navigation background', 'portum' ),
+		'section'     => 'portum_header_section',
+		'priority' => 1,
+	)
+);
+
+Epsilon_Customizer::add_field(
 	'portum_header_columns',
 	array(
 		'type'            => 'epsilon-layouts',
 		'section'         => 'portum_header_section',
-		'priority'        => 1,
+		'priority'        => 2,
 		'layouts'         => array(
 			1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
 			2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
@@ -225,18 +247,6 @@ Epsilon_Customizer::add_field(
 		'active_callback' => array( 'Portum_Customizer', 'header_top_bar_enabled_callback' ),
 	)
 );
-
-Epsilon_Customizer::add_field(
-	'portum_header_top_bar',
-	array(
-		'type'     => 'epsilon-toggle',
-		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
-		'section'  => 'portum_header_section',
-		'priority' => 0,
-		'default'  => true,
-	)
-);
-
 /**
  * Footer section options
  */
