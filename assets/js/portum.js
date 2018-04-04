@@ -194,6 +194,47 @@ var Portum = {
 
       }
     },
+    advancedSlider: function() {
+      jQuery( '.portum-advanced-slider' ).each( function() {
+
+        var $t = jQuery( this );
+
+        var $slider = $t.find( '.slides' );
+
+        var $sliderConfig = {
+          fade: 'true' === $t.attr( 'data-portum-slider-mode-fade' ),
+          speed: $t.attr( 'data-portum-slider-speed' ) ? parseInt( $t.attr( 'data-portum-slider-speed' ), 10 ) : 500,
+          autoplay: 'true' === $t.attr( 'data-portum-slider-autoplay' ),
+          infinite: 'true' === $t.attr( 'data-portum-slider-loop' ),
+          pager: 'true' === $t.attr( 'data-portum-slider-enable-pager' ),
+          controls: 'true' === $t.attr( 'data-portum-slider-enable-controls' )
+        };
+
+        $slider.slick( {
+
+          adaptiveHeight: true,
+
+          fade: $sliderConfig.fade,
+          cssEase: 'linear',
+
+          speed: $sliderConfig.speed,
+
+          autoplay: $sliderConfig.autoplay,
+
+          infinite: $sliderConfig.infinite,
+
+          arrows: $sliderConfig.controls,
+          appendArrows: $t.find( '.portum-slider-arrows' ),
+          prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
+          nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
+
+          dots: $sliderConfig.pager,
+          appendDots: $t.find( '.portum-slider-dots' )
+
+        } );
+
+      } );
+    },
     clientList: function() {
       if ( typeof jQuery.fn.slick !== 'undefined' ) {
         jQuery( '.ewf-partner-slider .ewf-partner-slider__slides' ).each( function() {
@@ -351,14 +392,14 @@ var Portum = {
       if ( typeof jQuery().magnificPopup === 'undefined' ) {
         return;
       }
-      jQuery( '.magnific-link' ).magnificPopup({ 
-			type: 'image',
-			gallery: {
-						enabled: true,
-						navigateByImgClick: true,
-						preload: [0,1]
-					},
-		});
+      jQuery( '.magnific-link' ).magnificPopup( {
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [ 0, 1 ]
+        },
+      } );
     },
     /**
      * Initiate owl slider

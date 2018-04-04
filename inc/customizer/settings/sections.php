@@ -160,6 +160,15 @@ $sections = array(
 		),
 	),
 	array(
+		'id'   => 'portum_advanced_slides_section',
+		'args' => array(
+			'title'    => esc_html__( 'Slides', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 7,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
 		'id'   => 'portum_services_section',
 		'args' => array(
 			'title'    => esc_html__( 'Services', 'portum' ),
