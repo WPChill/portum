@@ -1097,10 +1097,10 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_video() {
 		return array(
-			'id'          => 'video',
-			'title'       => esc_html__( 'Video Section', 'portum' ),
-			'description' => esc_html__( 'A section witch allows you to add a video', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' ),
+			'id'            => 'video',
+			'title'         => esc_html__( 'Video Section', 'portum' ),
+			'description'   => esc_html__( 'A section witch allows you to add a video', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
@@ -1108,15 +1108,15 @@ class Portum_Repeatable_Sections {
 						'default' => 'top',
 						'choices' => array( 'left', 'top', 'right', ),
 					),
-					'column-stretch'     => array(
+					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
-					'row-spacing-top'    => array(
+					'row-spacing-top'           => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
-					'row-spacing-bottom' => array(
+					'row-spacing-bottom'        => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
@@ -1166,7 +1166,7 @@ class Portum_Repeatable_Sections {
 					),
 				),
 			),
-			'fields'      => array(
+			'fields'        => array(
 				'video_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
@@ -1319,11 +1319,11 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-group'       => array(
+					'column-group'     => array(
 						'default' => 3,
 						'choices' => array( 1, 2, 3, 4, ),
 					),
-					'column-alignment'   => array(
+					'column-alignment' => array(
 						'default' => 'left',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
@@ -1864,11 +1864,11 @@ class Portum_Repeatable_Sections {
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
 					),
-					'row-spacing-top'    => array(
+					'row-spacing-top'           => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
-					'row-spacing-bottom' => array(
+					'row-spacing-bottom'        => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
@@ -1919,25 +1919,25 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'cta_title'            => array(
+				'cta_title'                  => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Call to action title', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'cta_description'      => array(
+				'cta_description'            => array(
 					'label'             => esc_html__( 'Description', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => esc_html__( 'Call to action text', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'cta_button_primary_label' => array(
+				'cta_button_primary_label'   => array(
 					'label'             => esc_html__( 'Primary button label', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Primary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
 				),
-				'cta_button_primary_url'   => array(
+				'cta_button_primary_url'     => array(
 					'label'             => esc_html__( 'Primary button URL', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_url( 'https://google.com' ),
@@ -1955,7 +1955,7 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_url( 'https://google.com' ),
 					'sanitize_callback' => 'esc_url_raw',
 				),
-				'cta_section_unique_id' => array(
+				'cta_section_unique_id'      => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
@@ -2051,5 +2051,78 @@ class Portum_Repeatable_Sections {
 				),
 			),
 		);
+	}
+
+	/**
+	 * Repeatable slider section
+	 *
+	 * @return array
+	 */
+	private function repeatable_advanced_slider() {
+		$slider = array(
+			'id'          => 'advanced-slider',
+			'title'       => esc_html__( 'Advanced Slider Section', 'portum' ),
+			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
+			'fields'      => array(
+				'slider_transition'     => array(
+					'label'   => esc_html__( 'Transition', 'portum' ),
+					'type'    => 'select',
+					'default' => 'slide',
+					'choices' => array(
+						'fade'  => esc_html__( 'Fade', 'portum' ),
+						'slide' => esc_html__( 'Slide', 'portum' ),
+					),
+				),
+				'slider_speed'          => array(
+					'label'   => esc_html__( 'Speed', 'portum' ),
+					'type'    => 'epsilon-slider',
+					'default' => 500,
+					'choices' => array(
+						'min'  => 0,
+						'max'  => 2000,
+						'step' => 100,
+					),
+				),
+				'slider_autostart'      => array(
+					'label'   => esc_html__( 'Autostart', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_infinite'       => array(
+					'label'   => esc_html__( 'Infinite slides', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_pager'          => array(
+					'label'   => esc_html__( 'Pager', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_controls'       => array(
+					'label'   => esc_html__( 'Controls', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_advanced_grouping'       => array(
+					'label'    => esc_html__( 'Slides to show', 'portum' ),
+					'type'     => 'selectize',
+					'multiple' => true,
+					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_cta' ),
+					'default'  => array( 'all' ),
+				),
+				'slider_navigation'     => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'portum_advanced_slides_section',
+					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
+				),
+				'slider_repeater_field' => array(
+					'type'    => 'hidden',
+					'default' => 'portum_advanced_slides',
+				),
+			),
+		);
+
+		return $slider;
 	}
 }

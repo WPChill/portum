@@ -900,6 +900,87 @@ Epsilon_Customizer::add_field(
 	)
 );
 
+Epsilon_Customizer::add_field(
+	'portum_advanced_slides',
+	array(
+		'type'         => 'epsilon-repeater',
+		'section'      => 'portum_advanced_slides_section',
+		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+		'label'        => esc_html__( 'Slides', 'portum' ),
+		'button_label' => esc_html__( 'Add new slides', 'portum' ),
+		'row_label'    => array(
+			'type'  => 'field',
+			'field' => 'slide_cta',
+		),
+		'fields'       => array(
+			'slide_cta'                => array(
+				'label'             => esc_html__( 'Call to action', 'portum' ),
+				'type'              => 'epsilon-text-editor',
+				'sanitize_callback' => 'wp_kses_post',
+				'default'           => esc_html__( 'Best Medical Care you can get for you and your family.', 'portum' ),
+			),
+			'slide_small'              => array(
+				'label'             => esc_html__( 'Call to action subtext', 'portum' ),
+				'type'              => 'epsilon-text-editor',
+				'sanitize_callback' => 'wp_kses_post',
+				'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
+			),
+			'slide_background_color' => array(
+				'label'      => esc_html__( 'Background color', 'portum' ),
+				'type'       => 'epsilon-color-picker',
+				'defaultVal' => '#f9f9fa',
+				'default'    => '#f9f9fa',
+			),
+			'slide_background'         => array(
+				'label' => esc_html__( 'Background image', 'portum' ),
+				'type'  => 'epsilon-image',
+			),
+			'slide_alignment'          => array(
+				'type'      => 'epsilon-button-group',
+				'label'     => __( 'Alignment', 'epsilon-framework' ),
+				'group'     => 'layout',
+				'groupType' => 'three',
+				'choices'   => array(
+					'left'   => array(
+						'icon'  => 'dashicons-editor-alignleft',
+						'value' => 'left',
+					),
+					'center' => array(
+						'icon'  => 'dashicons-editor-aligncenter',
+						'value' => 'center',
+					),
+					'right'  => array(
+						'icon'  => 'dashicons-editor-alignright',
+						'value' => 'right',
+					),
+				),
+				'default'   => 'center',
+			),
+			'slide_vertical_alignment' => array(
+				'type'      => 'epsilon-button-group',
+				'label'     => __( 'Vertical Alignment', 'epsilon-framework' ),
+				'group'     => 'layout',
+				'groupType' => 'three',
+				'choices'   => array(
+					'top'    => array(
+						'value' => 'alignbottom',
+						'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-alignbottom.png',
+					),
+					'middle' => array(
+						'value' => 'alignmiddle',
+						'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-alignmiddle.png',
+					),
+					'bottom' => array(
+						'value' => 'aligntop',
+						'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-aligntop.png',
+					),
+				),
+				'default'   => 'alignmiddle',
+			),
+		),
+	)
+);
+
 /**
  * Section builder page changer ( acts as a menu )
  */
