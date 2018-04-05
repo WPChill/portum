@@ -29,17 +29,21 @@ $parent_attr = array(
 		<?php
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
-		?>
-		<div class="container">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-		</div>
-
-		<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>
-
+		?>	
+		
+		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'clientlist', $fields ) ); ?>">
+		
+			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+			
+			<div class="row">
+				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>			
+			</div>
+			
 			<div class="row">
 				<div class="col-sm-12">
 					<?php if ( $fields['clientlist_slider'] ) { ?>
+					
 					<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
 						<ul class="ewf-partner-slider__slides" data-slick='{ "slidesToShow": 6, "slidesToScroll": 2, "autoplay": true, "infinite": true, "speed": 500, "dots": true }'>
 							<?php } else { ?>
@@ -67,6 +71,7 @@ $parent_attr = array(
 					<?php } ?>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 </section>

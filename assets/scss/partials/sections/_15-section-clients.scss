@@ -1,8 +1,3 @@
-.section-clientlist {
-  padding: 70px 0 75px 0;
-  background: #fff;
-}
-
 /* =Partner/Client
    ========================================================================== */
 
@@ -12,22 +7,24 @@
    ========================================================================== */
 
 .ewf-partners-list {
-  list-style: none;
+	list-style: none;
+	
+	&:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		font-size: 0;
+		content: " ";
+		clear: both;
+	}
+	
+	li {
+	  margin-bottom: 14px;
+	  position: relative;
+	}
+	
 }
 
-.ewf-partners-list:after {
-  visibility: hidden;
-  display: block;
-  height: 0;
-  font-size: 0;
-  content: " ";
-  clear: both;
-}
-
-.ewf-partners-list li {
-  margin-bottom: 14px;
-  position: relative;
-}
 
 @media (min-width: 768px) {
 
@@ -36,8 +33,8 @@
     text-align:center;
   }
 
-  .ewf-partners-list--spacing-none 	{ margin: $spacing-partner-none; }
-  .ewf-partners-list--spacing-line 	{ margin: 0 -$spacing-partner-line; }
+  .ewf-partners-list--spacing-none 		{ margin: $spacing-partner-none; }
+  .ewf-partners-list--spacing-line 		{ margin: 0 -$spacing-partner-line; }
   .ewf-partners-list--spacing-small 	{ margin: 0 -($spacing-partner-small/2); }
   .ewf-partners-list--spacing-medium 	{ margin: 0 -($spacing-partner-medium/2); }
   .ewf-partners-list--spacing-large 	{ margin: 0 -($spacing-partner-large/2); }
@@ -78,12 +75,12 @@
 .ewf-partner-slider--spacing-large 	{ margin: 0 -($spacing-partner-large/2); }
 
 .ewf-partner-slider__slides {
-  margin-bottom: 0;
-  list-style: none;
-}
-
-.ewf-partner-slider__slides li {
-  box-sizing: border-box;
+	margin-bottom: 0;
+	list-style: none;
+	
+	li {
+		box-sizing: border-box;
+	}
 }
 
 .ewf-partner-slider--spacing-none .ewf-partner-slider__slides li 	{ padding: 0 $spacing-partner-none; }
@@ -105,7 +102,7 @@
 .ewf-partner-slider--pager-right .ewf-partner-slider__pager .slick-dots { text-align: right; }
 
 .ewf-partner-slider__pager .slick-dots li {
-  position: relative;
+  position: relative; 
   z-index: 2;
   display: inline-block;
   padding: 3px;
