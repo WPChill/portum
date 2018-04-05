@@ -9275,13 +9275,6 @@ input[type='button']:active
     text-align: center;
 }
 
-.section-clientlist
-{
-    padding: 70px 0 75px 0;
-
-    background: #fff;
-}
-
 /* =Partner/Client
    ========================================================================== */
 /* =Partner/Client List
@@ -9290,7 +9283,6 @@ input[type='button']:active
 {
     list-style: none;
 }
-
 .ewf-partners-list:after
 {
     font-size: 0;
@@ -9303,7 +9295,6 @@ input[type='button']:active
 
     content: ' ';
 }
-
 .ewf-partners-list li
 {
     position: relative;
@@ -9444,7 +9435,6 @@ input[type='button']:active
 
     list-style: none;
 }
-
 .ewf-partner-slider__slides li
 {
     -webkit-box-sizing: border-box;
