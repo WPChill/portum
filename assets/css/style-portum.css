@@ -8941,12 +8941,6 @@ input[type='button']:active
 /* ----------------------------------- #11 - FOOTER section - END ------------------------------------- */
 /* =Counter
    ========================================================================== */
-.section-counters
-{
-    padding: 70px 0 75px 0;
-
-    background: #fff;
-}
 .section-counters .col-md-6,
 .section-counters .col-md-4,
 .section-counters .col-md-3
@@ -8962,7 +8956,6 @@ input[type='button']:active
 
     text-align: center;
 }
-
 .ewf-counter:after
 {
     font-size: 0;
