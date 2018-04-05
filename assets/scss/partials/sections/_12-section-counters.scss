@@ -2,27 +2,26 @@
    ========================================================================== */
 
 .section-counters {
-  padding: 70px 0 75px 0;
-  background: #fff;
-
+	
   .col-md-6, .col-md-4, .col-md-3 {
     margin-bottom: 30px;
   }
+  
 }
 
 .ewf-counter {
-  position: relative;
-  margin-bottom: 28px;
-  text-align: center;
-}
+	position: relative;
+	margin-bottom: 28px;
+	text-align: center;
 
-.ewf-counter:after {
-  visibility: hidden;
-  display: block;
-  height: 0;
-  font-size: 0;
-  content: " ";
-  clear: both;
+	&:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		font-size: 0;
+		content: " ";
+		clear: both;
+	}
 }
 
 .ewf-counter__icon i {
