@@ -59,7 +59,6 @@ $i = 0;
 								<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
 									<a href="#"><?php echo esc_html( $v['testimonial_subtitle'] ); ?></a>
 								<?php } ?>
-								<span></span>
 							</div>
 						</div>
 						<?php

@@ -27,6 +27,7 @@ $parent_attr = array(
 
 		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'about', $fields ) ); ?>">
+		
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 			<div class="row">

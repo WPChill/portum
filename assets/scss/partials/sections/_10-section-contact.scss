@@ -1,8 +1,30 @@
 /* ----------------------------------- #10 - CONTACT section --------------------------------*/
 
-.google-map-section {
-  position: relative;
-  padding-top: 450px;
+.section-map {
+	position: relative;
+	
+	.map-overlay {
+	  width: 100%;
+	  height: 50px;
+	  background: url("../images/back-section-shadow.png") repeat-x left top;
+	  position: Absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 999;
+	}
+	
+	.map-canvas {
+	  background: #F5F5F5;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	}
+}
+
+.section-map.ewf-section {
+	padding: 450px 0 0 0;	
 }
 
 .section-contact {
@@ -12,25 +34,6 @@
   .container {
     position: relative;
   }
-}
-
-.contact-overlay {
-  width: 100%;
-  height: 50px;
-  background: url("../images/back-section-shadow.png") repeat-x left top;
-  position: Absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
-.contact-map {
-  background: #F5F5F5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .contact-details {

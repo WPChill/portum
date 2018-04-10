@@ -1329,9 +1329,9 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color' => array(
-						'default' => false,
-					),
+					//'background-color' => array(
+					//	'default' => false,
+					//),
 				),
 				'colors'  => array(
 					'heading-color' => array(
