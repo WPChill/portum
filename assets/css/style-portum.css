@@ -9101,13 +9101,6 @@ input[type='button']:active
 
 /* =Progress Bar
    ========================================================================== */
-.section-progress
-{
-    padding: 70px 0 75px 0;
-
-    background: #fff;
-}
-
 .ewf-progress:after
 {
     font-size: 0;
@@ -9129,8 +9122,9 @@ input[type='button']:active
     display: block;
 
     margin-bottom: 14px;
-}
 
+    text-align: left;
+}
 .ewf-progress__title span
 {
     float: right;
@@ -9166,7 +9160,6 @@ input[type='button']:active
 
     background-color: transparent;
 }
-
 .ewf-progress--alternative-modern .ewf-progress__bar-liniar-wrap:after
 {
     position: absolute;
