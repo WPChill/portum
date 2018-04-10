@@ -1,39 +1,31 @@
 /* ----------------------------------- #04 - TESTIMONIALS section ------------------------*/
 
 .testimonial {
-	background: #fff;
+	background: #fff url("../images/back-quote.png") no-repeat;
 	position: relative;
 	margin-bottom: 75px;
 	min-height: 150px;
-	/*transition: 280ms all;*/
+	padding: 30px 0 40px 0;
 
 	&.left {
-		padding: 25px 0 35px 95px;
+		padding-left:95px;
+		padding-right:30px;
+		text-align: left;
+		background-position:top left;
 		
-		img {
-			left: -95px;
-			bottom: -25px;
-		}
-		
-		span { left: 25px; }
+		img { left: -95px; }
 	}
 
 	&.right {
-		padding: 30px 95px 40px 0;
+		padding-right:95px;
+		padding-left:30px;
 		text-align: right;
+		background-position:top right;
 		
-		img {
-			right: -95px;
-			bottom: -25px;
-		}
-		
-		span { right: 25px; }
+		img { right: -95px; }
 	}
 	
 	h6 {
-		margin-bottom: 10px;
-		font-weight: 500;
-		letter-spacing: 1.5px;
 		position: relative;
 		z-index: 999;
 	}
@@ -42,45 +34,14 @@
 	  display: block;
 	  position: absolute;
 	  width: 160px;
-	  height: 160px;		
+	  height: auto;		
+	  bottom: -25px;
 	  box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
 	}
 	
-	p {
-		font-style: italic;
-		margin-bottom: 25px;
-	}
-	
-	a {
-		color: $accent-1-color;
-	}
-	
-	span {
-		position: absolute;
-		top: 25px;
-		width: 35px;
-		height: 25px;
-		background: url("../images/back-quote.png") no-repeat center center;
-		z-index: 9;
-	}
-	
-	/*
-	&:hover {
-		background-color: $accent-2-color;
-	}
-
-	&:hover h6,
-	&:hover p,
-	&:hover a {
-		color: #fff;
-	}
-	*/
-	
-	&:hover a {
-		color: $accent-2-color;
-	}
+	p {	font-style: italic;	}
+		
 }
-
 
 
 @media (max-width: 768px) {
@@ -101,12 +62,7 @@
 		margin-bottom: 35px;
 		
 		&.left {
-			padding: 15px 0 25px 35px;
-
-			span {
-				left: 15px;
-				top: 20px;
-			}
+			padding: 25px 0 25px 35px;
 			
 			img {
 				right: 20px;
@@ -115,12 +71,7 @@
 		}
 
 		&.right {
-			padding: 15px 35px 25px 0;
-
-			span {
-				right: 15px;
-				top: 20px;
-			}
+			padding: 25px 35px 25px 0;
 			
 			img {
 				left: 20px;
@@ -129,7 +80,6 @@
 		}
 		
 		img {
-			height: 65px;
 			width: 65px;
 			top: -20px;
 			bottom: initial;
