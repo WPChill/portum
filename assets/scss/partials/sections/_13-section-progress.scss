@@ -1,66 +1,65 @@
 /* =Progress Bar
    ========================================================================== */
-.section-progress {
-  padding: 70px 0 75px 0;
-  background: #fff;
-}
 
-.ewf-progress {}
+.ewf-progress {
 
-.ewf-progress:after {
-  visibility: hidden;
-  display: block;
-  height: 0;
-  font-size: 0;
-  content: " ";
-  clear: both;
+	&:after {
+	  visibility: hidden;
+	  display: block;
+	  height: 0;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	}
 }
 
 .ewf-progress__title {
-  display: block;
-  margin-bottom: 14px;
-  font-weight: 600;
-  line-height: 14px;
-}
+	display: block;
+	margin-bottom: 14px;
+	font-weight: 600;
+	line-height: 14px;
+	text-align:left;
 
-.ewf-progress__title span {
-  float: right;
+	span {
+		float: right;
+	}
 }
 
 .ewf-progress__bar {
-  position: relative;
-  margin-bottom: 28px;
+	position: relative;
+	margin-bottom: 28px;
 }
 
 .ewf-progress__bar-liniar-wrap {
-  position: relative;
-  padding: 4px;
-  background-color: $accent-1-color;
+	position: relative;
+	padding: 4px;
+	background-color: $accent-1-color;
 }
 
 .ewf-progress__bar-liniar {
-  background-color: $accent-2-color;
-  height: 10px;
-  width: 0;
+	background-color: $accent-2-color;
+	height: 10px;
+	width: 0;
 }
 
-.ewf-progress--alternative-modern .ewf-progress__bar {
-}
-
-.ewf-progress--alternative-modern .ewf-progress__bar-liniar-wrap {
-  padding: 0;
-  background-color: transparent;
-}
-
-.ewf-progress--alternative-modern .ewf-progress__bar-liniar-wrap:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: $accent-2-color;
-}
-
-.ewf-progress--alternative-modern .ewf-progress__bar-liniar {
+.ewf-progress--alternative-modern {
+	
+	.ewf-progress__bar {}
+	
+	.ewf-progress__bar-liniar { }
+	
+	.ewf-progress__bar-liniar-wrap {
+		padding: 0;
+		background-color: transparent;
+		
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: $accent-2-color;
+		}
+	}
 }
