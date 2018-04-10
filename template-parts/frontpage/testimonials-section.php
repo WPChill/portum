@@ -45,7 +45,7 @@ $i = 0;
 
 						<?php $i ++; ?>
 						<div class="col-md-6">
-							<div class="testimonial <?php echo 0 === (int) fmod( $i, $max_row ) ? 'hidden-testimonial right' : 'left'; ?>">
+							<div class="testimonial <?php echo 0 === (int) fmod( $i, $max_row ) ? 'right' : 'left'; ?>">
 								<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
 									<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">
 								<?php } ?>
