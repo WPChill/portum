@@ -553,35 +553,45 @@ var Portum = {
       } );
     },
     /**
-     * Generate the contact map based on an address
+     * Generate the map based on an address
      */
     map: function() {
       if ( typeof google === 'undefined' ) {
         return;
       }
-      var geocoder = new google.maps.Geocoder(),
-          self = this,
-          address = jQuery( '#contact-map' );
-      if ( ! address.length ) {
-        return;
-      }
+	  
+	self = this;
+	
+	jQuery('.map-canvas').each(function(){
+		var map_element = this;
+		var geocoder = new google.maps.Geocoder(),
+		address = jQuery(this);
 
-      geocoder.geocode( {
-        'address': address.attr( 'data-address' )
-      }, function( results, status ) {
-        if ( status === google.maps.GeocoderStatus.OK ) {
-          self._mapCallback( results, address.attr( 'data-zoom' ) );
-        }
-      } );
-    },
+		if ( ! address.length ) {
+			return;
+		}		  
+
+		geocoder.geocode( {
+			'address': address.attr( 'data-address' )
+		}, function( results, status ) {
+			if ( status === google.maps.GeocoderStatus.OK ) {
+				self._mapCallback( results, address.attr( 'data-zoom' ), map_element);
+			}
+		} );
+		
+	});
+	
+   },
+	
     /**
      * After we "find" out the center, initiate the map & marker
      * @param results
      * @param zoom
+     * @param map_element
      * @private
      */
-    _mapCallback: function( results, zoom ) {
-
+    _mapCallback: function( results, zoom, map_element ) {
+	
       var map, marker, totalHeight,
           config = {
             zoom: parseFloat( zoom ),
@@ -592,13 +602,13 @@ var Portum = {
             styles: Portum.mapStyle
           };
 
-      map = new google.maps.Map( document.getElementById( 'contact-map' ), config );
+      map = new google.maps.Map( map_element, config );
       marker = new google.maps.Marker( {
         map: map,
         position: results[ 0 ].geometry.location
       } );
 
-      totalHeight = jQuery( '.section-contact' ).height();
+      totalHeight = jQuery(map_element).closest('.section').height();
       map.panBy( 0, (totalHeight + 200) - (totalHeight / 2) );
     },
 

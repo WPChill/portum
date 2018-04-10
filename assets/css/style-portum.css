@@ -8520,24 +8520,11 @@ input[type='button']:active
 }
 /* ----------------------------------- #09 - BLOG section - END --------------------------------*/
 /* ----------------------------------- #10 - CONTACT section --------------------------------*/
-.google-map-section
-{
-    position: relative;
-
-    padding-top: 450px;
-}
-
-.section-contact
-{
-    position: relative;
-    z-index: 9;
-}
-.section-contact .container
+.section-map
 {
     position: relative;
 }
-
-.contact-overlay
+.section-map .map-overlay
 {
     position: Absolute;
     z-index: 999;
@@ -8549,8 +8536,7 @@ input[type='button']:active
 
     background: url('../images/back-section-shadow.png') repeat-x left top;
 }
-
-.contact-map
+.section-map .map-canvas
 {
     position: absolute;
     top: 0;
@@ -8559,6 +8545,21 @@ input[type='button']:active
     left: 0;
 
     background: #f5f5f5;
+}
+
+.section-map.ewf-section
+{
+    padding: 450px 0 0 0;
+}
+
+.section-contact
+{
+    position: relative;
+    z-index: 9;
+}
+.section-contact .container
+{
+    position: relative;
 }
 
 .contact-details
