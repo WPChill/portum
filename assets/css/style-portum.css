@@ -552,17 +552,17 @@ a.social-icon:active
 .headline span
 {
     font-family: 'Hind', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    /*
     line-height: 26px;
-
     position: relative;
+	*/
+    font-size: 14px;
 
     letter-spacing: 2px;
     text-transform: uppercase;
 
-    opacity: .2;
-    color: #000;
+    opacity: .45;
+    color: #232323;
 }
 
 .contrast h3
