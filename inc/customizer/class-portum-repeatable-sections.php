@@ -122,7 +122,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -242,7 +242,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -401,7 +401,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -517,7 +517,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -619,7 +619,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -735,7 +735,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -841,7 +841,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -933,7 +933,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1041,7 +1041,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1157,7 +1157,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1268,7 +1268,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1319,6 +1319,10 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'top',
+						'choices' => array( 'left', 'top', 'right', ),
+					),
 					'column-group'     => array(
 						'default' => 3,
 						'choices' => array( 1, 2, 3, 4, ),
@@ -1328,14 +1332,14 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'left', 'center', 'right', ),
 					),
 				),
-				'styling' => array(
+				//'styling' => array(
 					//'background-color' => array(
 					//	'default' => false,
 					//),
-				),
+				//),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1472,7 +1476,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1592,7 +1596,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1700,7 +1704,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1804,7 +1808,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1925,7 +1929,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -2049,7 +2053,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
 						'default'   => '#000000',
 					),
 					'text-color'    => array(

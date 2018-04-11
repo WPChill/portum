@@ -2,7 +2,7 @@
  * 1. Accent Color
  * 2. Secondary Accent Color
  * 3. Text Color
- * 4. Header Text Color
+ * 4. Heading Text Color
  * 5. Link Color
  * 6. Link Hover Color
  * 7. Link Active Color
@@ -76,6 +76,10 @@ h6,
 q,
 blockquote{
     color: %4$s;
+}
+
+.headline span{
+	color: %4$s;
 }
 
 input[type="text"],
