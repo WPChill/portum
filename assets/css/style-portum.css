@@ -8520,38 +8520,6 @@ input[type='button']:active
 }
 /* ----------------------------------- #09 - BLOG section - END --------------------------------*/
 /* ----------------------------------- #10 - CONTACT section --------------------------------*/
-.section-map
-{
-    position: relative;
-}
-.section-map .map-overlay
-{
-    position: Absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 50px;
-
-    background: url('../images/back-section-shadow.png') repeat-x left top;
-}
-.section-map .map-canvas
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background: #f5f5f5;
-}
-
-.section-map.ewf-section
-{
-    padding: 450px 0 0 0;
-}
-
 .section-contact
 {
     position: relative;
@@ -8560,19 +8528,6 @@ input[type='button']:active
 .section-contact .container
 {
     position: relative;
-}
-
-.contact-details
-{
-    position: relative;
-
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 75px;
-
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-            box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
 }
 
 .contact-decoration
@@ -8591,21 +8546,6 @@ input[type='button']:active
     background-color: #dfdfdf;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
             box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-}
-
-.contact-details-item
-{
-    padding: 0 20px 20px 20px;
-}
-.contact-details-item h5
-{
-    margin-bottom: 15px;
-
-    color: #0385d0;
-}
-.contact-details-item h5 i
-{
-    margin-right: 10px;
 }
 
 .contact-form-content
@@ -8660,18 +8600,6 @@ input[type='button']:active
     opacity: .3;
 }
 
-@media (max-width: 425px)
-{
-    .contact-details
-    {
-        padding: 75px 35px;
-    }
-
-    .contact-details-item
-    {
-        text-align: center;
-    }
-}
 /* ----------------------------------- #10 - CONTACT section - END --------------------------------*/
 /* ----------------------------------- #11 - FOOTER section --------------------------------------------- */
 .section-contact + #footer
@@ -9457,6 +9385,110 @@ input[type='button']:active
 }
 
 /* ----------------------------------- #16 - Google Map section --------------------------------------------- */
+.section-map
+{
+    position: relative;
+}
+.section-map.ewf-section.ewf-section--title-top
+{
+    padding: 450px 0 0 0;
+}
+.section-map.ewf-section.ewf-section--title-top .map-canvas
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: #f5f5f5;
+}
+.section-map.ewf-section.ewf-section--title-left .map-canvas,
+.section-map.ewf-section.ewf-section--title-right .map-canvas
+{
+    height: 550px;
+}
+.section-map .map-overlay
+{
+    position: Absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50px;
+
+    background: url('../images/back-section-shadow.png') repeat-x left top;
+}
+
+.ewf-section--spacing-sm-top .map-info-wrapper
+{
+    padding-top: 35px;
+}
+
+.ewf-section--spacing-md-top .map-info-wrapper
+{
+    padding-top: 70px;
+}
+
+.ewf-section--spacing-lg-top .map-info-wrapper
+{
+    padding-top: 105px;
+}
+
+.ewf-section--spacing-none-top .map-info-wrapper
+{
+    padding-top: 0;
+}
+
+.ewf-section--spacing-sm-bottom .map-info-wrapper
+{
+    padding-bottom: 35px;
+}
+
+.ewf-section--spacing-md-bottom .map-info-wrapper
+{
+    padding-bottom: 70px;
+}
+
+.ewf-section--spacing-lg-bottom .map-info-wrapper
+{
+    padding-bottom: 105px;
+}
+
+.ewf-section--spacing-none-bottom .map-info-wrapper
+{
+    padding-bottom: 0;
+}
+
+.map-info-wrapper
+{
+    position: relative;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 75px;
+
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+            box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+}
+
+.map-info-item
+{
+    padding: 0 20px 20px 20px;
+}
+.map-info-item h5
+{
+    margin-bottom: 15px;
+
+    color: #0385d0;
+}
+.map-info-item h5 i
+{
+    margin-right: 10px;
+}
+
 /* ----------------------------------- #11 - Google Map section - END ------------------------------------- */
 .page .widget:first-of-type
 {

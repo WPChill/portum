@@ -592,7 +592,7 @@ var Portum = {
      */
     _mapCallback: function( results, zoom, map_element ) {
 	
-      var map, marker, totalHeight,
+      var map, marker, totalHeight, mapHeight, section,
           config = {
             zoom: parseFloat( zoom ),
             center: results[ 0 ].geometry.location,
@@ -601,15 +601,23 @@ var Portum = {
             disableDefaultUI: true,
             styles: Portum.mapStyle
           };
-
+	
+	  section = jQuery(map_element).closest('.ewf-section');
+	  mapHeight =  parseInt(jQuery(map_element).attr('data-mapheight'));
       map = new google.maps.Map( map_element, config );
       marker = new google.maps.Marker( {
         map: map,
         position: results[ 0 ].geometry.location
       } );
-
-      totalHeight = jQuery(map_element).closest('.section').height();
-      map.panBy( 0, (totalHeight + 200) - (totalHeight / 2) );
+	
+	  if (jQuery(section).hasClass('ewf-section--title-top')){		  
+		  jQuery(section).css('padding-top', mapHeight + 'px');	  
+		  totalHeight = jQuery(section).height();
+		  panValue = (totalHeight - ((totalHeight + mapHeight) / 2)) +  (mapHeight/2);
+		  map.panBy( 0, panValue );
+	  }else{
+		  
+	  }
     },
 
     /**
