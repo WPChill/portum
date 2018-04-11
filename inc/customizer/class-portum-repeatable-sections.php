@@ -1323,20 +1323,57 @@ class Portum_Repeatable_Sections {
 						'default' => 'top',
 						'choices' => array( 'left', 'top', 'right', ),
 					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth', ),
+					),
 					'column-group'     => array(
 						'default' => 3,
 						'choices' => array( 1, 2, 3, 4, ),
 					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
 					'column-alignment' => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
+					),
 				),
-				//'styling' => array(
-					//'background-color' => array(
-					//	'default' => false,
-					//),
-				//),
+				'styling' => array(
+					'background-color'         => array(
+						'default' => false,
+					),
+					'background-color-opacity' => array(
+						'default' => 1,
+					),
+					'background-image'         => array(
+						'default' => false,
+					),
+					'background-position'      => array(
+						'default' => 'center',
+					),
+					'background-size'          => array(
+						'default' => 'cover',
+					),
+					'background-repeat'        => array(
+						'default' => 'no-repeat'
+					),
+					'background-parallax'      => array(
+						'default' => false,
+					),
+					'background-video'         => array(
+						'default' => '',
+					),
+				),
 				'colors'  => array(
 					'heading-color' => array(
 						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', ),
@@ -1378,11 +1415,21 @@ class Portum_Repeatable_Sections {
 				'google_map_zoom'              => array(
 					'type'    => 'epsilon-slider',
 					'label'   => esc_html__( 'Google Map Zoom', 'portum' ),
-					'default' => 17,
+					'default' => 13,
 					'choices' => array(
 						'min'  => 1,
 						'max'  => 20,
 						'step' => 1,
+					),
+				),
+				'google_map_height'              => array(
+					'type'    => 'epsilon-slider',
+					'label'   => esc_html__( 'Google Map Height', 'portum' ),
+					'default' => 450,
+					'choices' => array(
+						'min'  => 120,
+						'max'  => 850,
+						'step' => 10,
 					),
 				),
 				'google_map_api_key'           => array(
