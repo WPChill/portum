@@ -1,11 +1,6 @@
 /* ----------------------- SECTIONS ------------------------ */
 
-.dashed {
-  background: url("../images/back-section-shadow.png") repeat-x left top;
-  background-image: url("../images/back-section-shadow.png"), url("../images/back-dashed.jpg");
-  background-repeat: repeat-x, repeat;
-  background-position: left top, all;
-}
+
 
 .section-grey {
   background-color: #F5F5F5;
@@ -22,6 +17,13 @@
   margin-bottom: 0;
   background: no-repeat center center;
   background-size: cover;
+}
+
+.ewf-section.dashed {
+  background: url("../images/back-section-shadow.png") repeat-x left top;
+  background-image: url("../images/back-section-shadow.png"), url("../images/back-dashed.jpg");
+  background-repeat: repeat-x, repeat;
+  background-position: left top, all;
 }
 
 .ewf-section--spacing-small 	{ padding: $spacing-section-small 0; }

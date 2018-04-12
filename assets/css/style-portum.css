@@ -6722,14 +6722,6 @@ input[type='button']:active
 /*
 */
 /* ----------------------- SECTIONS ------------------------ */
-.dashed
-{
-    background: url('../images/back-section-shadow.png') repeat-x left top;
-    background-image: url('../images/back-section-shadow.png'), url('../images/back-dashed.jpg');
-    background-repeat: repeat-x, repeat;
-    background-position: left top, all;
-}
-
 .section-grey
 {
     background-color: #f5f5f5;
@@ -6747,6 +6739,14 @@ input[type='button']:active
 
     background: no-repeat center center;
     background-size: cover;
+}
+
+.ewf-section.dashed
+{
+    background: url('../images/back-section-shadow.png') repeat-x left top;
+    background-image: url('../images/back-section-shadow.png'), url('../images/back-dashed.jpg');
+    background-repeat: repeat-x, repeat;
+    background-position: left top, all;
 }
 
 .ewf-section--spacing-small
@@ -7819,16 +7819,6 @@ input[type='button']:active
 */
 /* ----------------------------------- #06 - VIDEO section - END --------------------------------------- */
 /* ----------------------------------- #07 - TEAM section --------------------------------*/
-.section-team
-{
-    padding: 70px 0 75px 0;
-}
-
-.section-team.animate--
-{
-    background: transparent;
-}
-
 .team-members-item,
 .team-members-item .portrait,
 .team-members-item .details
@@ -7849,6 +7839,10 @@ input[type='button']:active
             transition: 180ms all;
 
     background: #fff;
+}
+.team-members-item.team-members-item--full
+{
+    width: 100%;
 }
 .team-members-item .portrait .overlay
 {
@@ -7885,11 +7879,9 @@ input[type='button']:active
     width: 100%;
     height: auto;
 }
-.team-members-item h5
+.team-members-item.right .social-team
 {
-    letter-spacing: 1.5px;
-
-    color: #0385d0;
+    left: 0;
 }
 
 .team-members-item:hover .overlay
@@ -7900,12 +7892,15 @@ input[type='button']:active
 .social-team
 {
     position: absolute;
+    right: 0;
     bottom: 0;
-    left: 20px;
 
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    width: 50%;
+    height: 26px;
     padding: 0;
+    padding-left: 20px;
 }
 .social-team li
 {
@@ -7931,88 +7926,49 @@ input[type='button']:active
     color: #cbcbcb;
 }
 
-.team-members-item > .social-team
-{
-    left: 0;
-
-    width: 50%;
-    height: 26px;
-    padding-left: 20px;
-}
-
-.team-members-item > .social-team.right
-{
-    right: 0;
-    left: auto;
-}
-
 @media (max-width: 1024px)
 {
     .team-members-item
     {
         width: 100%;
+        margin-bottom: 30px;
     }
     .team-members-item img
     {
         -o-object-fit: fill;
            object-fit: fill;
     }
-
-    .details.item-rsp-right + .portrait + .social-team
+    .team-members-item .social-team
     {
-        right: 0;
-        left: auto;
-    }
+        position: relative;
 
-    .portrait.item-rsp-right + .details + .social-team.right
-    {
-        right: auto;
-        left: 0;
+        float: right;
     }
-
-    .team-members-item .item-rsp-right
+    .team-members-item.right .details
     {
         float: right;
     }
 }
 @media (max-width: 425px)
 {
+    .team-members-item .social-team,
+    .team-members-item .details
+    {
+        float: right;
+
+        width: 70%;
+    }
+    .team-members-item.right .portrait
+    {
+        float: left;
+    }
     .team-members-item .portrait
     {
         width: 30%;
-        padding: 30px 10px 10px 10px;
     }
     .team-members-item .details
     {
-        width: 70%;
-    }
-    .team-members-item .details p
-    {
-        overflow: hidden;
-
-        max-height: 105px;
-    }
-    .team-members-item .overlay
-    {
-        display: none;
-    }
-    .team-members-item .social-team
-    {
-        position: relative;
-        right: auto;
-        left: auto;
-
-        display: block;
-        float: left;
-
-        width: 70%;
-        height: 30px;
-        padding: 0 0 0 20px;
-        padding-left: 20px;
-    }
-    .team-members-item .social-team li
-    {
-        margin: 0 10px 0 0;
+        padding: 0 0 0 15px;
     }
 }
 /* ----------------------------------- #07 - TEAM section - END -------------------------*/
