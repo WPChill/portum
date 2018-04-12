@@ -9055,13 +9055,6 @@ input[type='button']:active
 
 /* =Pie Chart
    ========================================================================== */
-.section-piecharts
-{
-    padding: 70px 0 75px 0;
-
-    background: #fff;
-}
-
 .ewf-pie
 {
     position: relative;
@@ -9070,7 +9063,6 @@ input[type='button']:active
 
     text-align: center;
 }
-
 .ewf-pie:after
 {
     font-size: 0;
@@ -9092,7 +9084,6 @@ input[type='button']:active
 
     text-align: center;
 }
-
 .ewf-pie__chart canvas
 {
     position: absolute;
@@ -9103,6 +9094,12 @@ input[type='button']:active
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+}
+
+.ewf-pie__percent
+{
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .ewf-pie__icon,
@@ -9120,12 +9117,6 @@ input[type='button']:active
     text-align: center;
 
     color: #0385d0;
-}
-
-.ewf-pie__chart .ewf-pie__percent
-{
-    font-size: 30px;
-    font-weight: 700;
 }
 
 .ewf-pie__title
