@@ -896,6 +896,10 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'top',
+						'choices' => array( 'left', 'top', 'right', ),
+					),
 					'row-spacing-top'    => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
@@ -903,6 +907,14 @@ class Portum_Repeatable_Sections {
 					'row-spacing-bottom' => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom', ),
 					),
 				),
 				'styling' => array(
