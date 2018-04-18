@@ -22,12 +22,9 @@
   }
 }
 
-.sf-menu > li:hover {
-  background: url("../images/back-border-nav.png") repeat-x left top;
-}
-
+.sf-menu > li:hover,
 .sf-menu > li.current {
-  background: url("../images/back-border-nav.png") repeat-x left top;
+  box-shadow: inset 0px 3px 0px 0px $accent-2-color;
 }
 
 .sf-menu > li > a {

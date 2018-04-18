@@ -302,14 +302,30 @@ class Portum {
 					'separator' => true,
 				),
 
-				'epsilon_menu_background' => array(
-					'label'       => esc_html__( 'Menu background color', 'portum' ),
+				'epsilon_header_background' => array(
+					'label'       => esc_html__( 'Header background color', 'portum' ),
+					'description' => esc_html__( 'The color used for the header background.', 'portum' ),
+					'default'     => '#172128',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+				
+				'epsilon_dropdown_menu_background' => array(
+					'label'       => esc_html__( 'Dropdown background', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu background.', 'portum' ),
 					'default'     => '#aacfdf',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
 
+				'epsilon_dropdown_menu_hover_background' => array(
+					'label'       => esc_html__( 'Dropdown Hover background', 'portum' ),
+					'description' => esc_html__( 'The color used for the menu hover background.', 'portum' ),
+					'default'     => '#aacfdf',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
+				
 				'epsilon_menu_item_color' => array(
 					'label'       => esc_html__( 'Menu item color', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu item color.', 'portum' ),
