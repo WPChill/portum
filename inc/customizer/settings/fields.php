@@ -207,17 +207,6 @@ Epsilon_Customizer::add_field(
 );
 
 Epsilon_Customizer::add_field(
-	'portum_header_background',
-	array(
-		'type'        => 'epsilon-color-picker',
-		'description' => esc_html__( 'Header navigation background', 'portum' ),
-		'label'       => esc_html__( 'Navigation background', 'portum' ),
-		'section'     => 'portum_header_section',
-		'priority' => 1,
-	)
-);
-
-Epsilon_Customizer::add_field(
 	'portum_header_columns',
 	array(
 		'type'            => 'epsilon-layouts',

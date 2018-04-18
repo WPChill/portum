@@ -2884,14 +2884,11 @@ input[type='button']:active
     content: none;
 }
 
-.sf-menu > li:hover
-{
-    background: url('../images/back-border-nav.png') repeat-x left top;
-}
-
+.sf-menu > li:hover,
 .sf-menu > li.current
 {
-    background: url('../images/back-border-nav.png') repeat-x left top;
+    -webkit-box-shadow: inset 0 3px 0 0 #a1083a;
+            box-shadow: inset 0 3px 0 0 #a1083a;
 }
 
 .sf-menu > li > a
