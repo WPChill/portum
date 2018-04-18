@@ -8,11 +8,6 @@
   color: $footer-text-color;
   background-color: $footer-background-color;
   padding: 35px 0;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
 }
 
 .footer-sub p {

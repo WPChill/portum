@@ -8,10 +8,16 @@
  */
 ?>
 
-<div class="contact-form">
-	<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
+<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
+<?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>
 
-	<?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>
+<section class="section-contact section">
+	<div class="container">
+		<div class="contact-decoration"></div>
+	</div>
+</section>
+	
+<div class="contact-form">
 		<div class="contact-info fixed">
 			<h4>
 				<?php
@@ -29,5 +35,6 @@
 		<div class="contact-form-content">
 			<?php echo do_shortcode( '[contact-form-7 id="' . absint( $cform ) . '" title="Contact Form"]' ); ?>
 		</div>
-	<?php } ?>
 </div>
+
+<?php } ?>

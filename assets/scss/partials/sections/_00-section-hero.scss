@@ -41,13 +41,12 @@
     padding: 0 1px;
 }
 
-.pager-slider li:hover h6, .pager-slider li.active h6 {
+.pager-slider li:hover strong, .pager-slider li.active strong {
     background: $accent-2-color;
-    transition: all 180ms;
 }
 
 .pager-slider li.active:before {
-    background: $accent-2-color !important;
+    background: $accent-2-color;
 }
 
 .pager-items-02 li {
@@ -113,7 +112,7 @@
     background: $accent-2-color;
 }
 
-.pager-slider h6 {
+.pager-slider strong {
     background: $accent-1-color;
     font-family: 'Hind', sans-serif;
     font-size: 13px;
@@ -140,7 +139,7 @@
     color: #fff;
 }
 
-.pager-slider a strong {
+.pager-slider a span {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
     display: block;
@@ -227,13 +226,7 @@
 
 
 @media (max-width: 991px) {
-	/*
-    .main-slider .slider-details {
-        left: initial;
-        width: 100%;
-
-    }
-	*/
+	
     .main-slider .slider-details h1 {
         text-align: center;
     }

@@ -37,7 +37,7 @@ wp_enqueue_script( 'plyr' );
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 			
 			<div class="row">
-			<?php if ($fields['video_row_title_align'] == 'right'){ ?>
+			<?php if ($fields['video_row_title_align'] == 'left'){ ?>
 				<div class="col-md-6">
 					<?php
 					echo wp_kses_post(
@@ -61,7 +61,7 @@ wp_enqueue_script( 'plyr' );
 					</div>
 				</div>
 				
-			<?php }elseif($fields['video_row_title_align'] == 'left') { ?>
+			<?php }elseif($fields['video_row_title_align'] == 'right') { ?>
 			
 				<div class="col-md-6">
 					<div class="video-area auto-resizable-iframe">
