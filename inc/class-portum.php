@@ -229,7 +229,7 @@ class Portum {
 		$args = array(
 			'fields' => array(
 				'epsilon_general_separator' => array(
-					'label'     => esc_html__( 'General Colors', 'portum' ),
+					'label'     => esc_html__( 'Accent Colors', 'portum' ),
 					'section'   => 'colors',
 					'separator' => true,
 				),
@@ -251,23 +251,23 @@ class Portum {
 				),
 
 				'epsilon_text_separator' => array(
-					'label'     => esc_html__( 'Text Colors', 'portum' ),
+					'label'     => esc_html__( 'Typography Colors', 'portum' ),
 					'section'   => 'colors',
 					'separator' => true,
+				),
+				
+				'epsilon_title_color' => array(
+					'label'       => esc_html__( 'Title Color', 'portum' ),
+					'description' => esc_html__( 'The color used for titles.', 'portum' ),
+					'default'     => '#1a171c',
+					'section'     => 'colors',
+					'hover-state' => false,
 				),
 
 				'epsilon_text_color' => array(
 					'label'       => esc_html__( 'Text Color', 'portum' ),
 					'description' => esc_html__( 'The color used for paragraphs.', 'portum' ),
 					'default'     => '#777777',
-					'section'     => 'colors',
-					'hover-state' => false,
-				),
-
-				'epsilon_title_color' => array(
-					'label'       => esc_html__( 'Title Color', 'portum' ),
-					'description' => esc_html__( 'The color used for titles.', 'portum' ),
-					'default'     => '#1a171c',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -297,7 +297,7 @@ class Portum {
 				),
 
 				'epsilon_menu_separator' => array(
-					'label'     => esc_html__( 'Menu Colors', 'portum' ),
+					'label'     => esc_html__( 'Navigation Colors', 'portum' ),
 					'section'   => 'colors',
 					'separator' => true,
 				),
@@ -341,7 +341,7 @@ class Portum {
 				),
 
 				'epsilon_footer_contact_background' => array(
-					'label'       => esc_html__( 'Footer Contact Background Color', 'portum' ),
+					'label'       => esc_html__( 'Contact Background Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer contact background.', 'portum' ),
 					'default'     => '#ffffff',
 					'section'     => 'colors',
@@ -349,15 +349,23 @@ class Portum {
 				),
 
 				'epsilon_footer_background' => array(
-					'label'       => esc_html__( 'Footer Background Color', 'portum' ),
+					'label'       => esc_html__( 'Background Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer background.', 'portum' ),
 					'default'     => '#18304c',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
+				
+				'epsilon_footer_title_color' => array(
+					'label'       => esc_html__( 'Title Color', 'portum' ),
+					'description' => esc_html__( 'The color used for the footer title color.', 'portum' ),
+					'default'     => '#ffffff',
+					'section'     => 'colors',
+					'hover-state' => false,
+				),
 
 				'epsilon_footer_text_color' => array(
-					'label'       => esc_html__( 'Footer Text Color', 'portum' ),
+					'label'       => esc_html__( 'Text Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 					'default'     => '#a9afb1',
 					'section'     => 'colors',
@@ -365,7 +373,7 @@ class Portum {
 				),
 
 				'epsilon_footer_link_color' => array(
-					'label'       => esc_html__( 'Footer Link Color', 'portum' ),
+					'label'       => esc_html__( 'Link Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 					'default'     => '#a9afb1',
 					'section'     => 'colors',
@@ -373,7 +381,7 @@ class Portum {
 				),
 
 				'epsilon_footer_link_hover_color' => array(
-					'label'       => esc_html__( 'Footer Link Hover Color', 'portum' ),
+					'label'       => esc_html__( 'Link Hover Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 					'default'     => '#a9afb1',
 					'section'     => 'colors',
@@ -381,7 +389,7 @@ class Portum {
 				),
 
 				'epsilon_footer_link_active_color' => array(
-					'label'       => esc_html__( 'Footer Link Active Color', 'portum' ),
+					'label'       => esc_html__( 'Link Active Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 					'default'     => '#a9afb1',
 					'section'     => 'colors',

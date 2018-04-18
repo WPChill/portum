@@ -7,7 +7,6 @@
 
 .services-item {
   margin-top:30px;
-  transition: 180ms all;
   
   &.services-item-first {
 	  margin-top:0;
@@ -25,43 +24,18 @@
   }
   
   strong {
-	  font-weight: 500;
 	  color: #fff;
   }
   
   span,
 strong {  
 	  display: block;
-	  font-family: 'Poppins', sans-serif;
+	  /*font-family: 'Poppins', sans-serif;
 	  font-size: 14px;
 	  letter-spacing: 1.2px;
+	  */
    }
   
-}
-
-
-@media (max-width: 991px) {
-/*
-  .section-services {
-    margin-top: 50px;
-  }
-
-  .section-services .headline {
-    padding: 0 0 70px 0;
-  }
-
-  .section-services .row .col-md-4:nth-child(-n+3) {
-    margin: 0;
-  }
-
-  .section-services .services-item {
-    margin-bottom: 50px;
-  }
-
-  .section-services {
-    padding-bottom: 25px;
-  }
-*/
 }
 
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/

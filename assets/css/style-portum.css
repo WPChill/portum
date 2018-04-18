@@ -5897,23 +5897,17 @@ input[type='button']:active
     margin-bottom: 50px;
 }
 
-.widget ul li:before
-{
-    font-family: 'FontAwesome';
-
-    display: inline-block;
-
-    width: 15px;
-    margin-left: 0;
-
-    content: '\f0da';
-    -webkit-transition: padding 250ms cubic-bezier(.075, .82, .165, 1) 0s;
-         -o-transition: padding 250ms cubic-bezier(.075, .82, .165, 1) 0s;
-            transition: padding 250ms cubic-bezier(.075, .82, .165, 1) 0s;
-
-    color: inherit;
+/*
+.widget ul li:before {
+  color: inherit;
+  content: "\f0da";
+  display: inline-block;
+  font-family: "FontAwesome";
+  margin-left: 0;
+  transition: padding 250ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  width: 15px;
 }
-
+*/
 .widget.widget_rss ul li:before,
 .widget.widget_recent_entries ul li:before
 {
@@ -6918,6 +6912,11 @@ input[type='button']:active
     }
 }
 /* ----------------------- SECTIONS ----- end ------------------------ */
+.footer-sub
+{
+    padding-top: 25px;
+}
+
 /* =Button
    ========================================================================== */
 .ewf-btn
@@ -7062,19 +7061,15 @@ input[type='button']:active
     background: transparent;
 }
 
-.pager-slider li:hover h6,
-.pager-slider li.active h6
+.pager-slider li:hover strong,
+.pager-slider li.active strong
 {
-    -webkit-transition: all 180ms;
-         -o-transition: all 180ms;
-            transition: all 180ms;
-
     background: #a1083a;
 }
 
 .pager-slider li.active:before
 {
-    background: #a1083a !important;
+    background: #a1083a;
 }
 
 .pager-items-02 li
@@ -7163,7 +7158,7 @@ input[type='button']:active
     background: #a1083a;
 }
 
-.pager-slider h6
+.pager-slider strong
 {
     font-family: 'Hind', sans-serif;
     font-size: 13px;
@@ -7200,7 +7195,7 @@ input[type='button']:active
     color: #fff;
 }
 
-.pager-slider a strong
+.pager-slider a span
 {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
@@ -7310,13 +7305,6 @@ input[type='button']:active
 }
 @media (max-width: 991px)
 {
-    /*
-      .main-slider .slider-details {
-          left: initial;
-          width: 100%;
-  
-      }
-  	*/
     .main-slider .slider-details h1
     {
         text-align: center;
@@ -7352,10 +7340,6 @@ input[type='button']:active
 .services-item
 {
     margin-top: 30px;
-
-    -webkit-transition: 180ms all;
-         -o-transition: 180ms all;
-            transition: 180ms all;
 }
 .services-item.services-item-first
 {
@@ -7375,45 +7359,18 @@ input[type='button']:active
 }
 .services-item strong
 {
-    font-weight: 500;
-
     color: #fff;
 }
 .services-item span,
 .services-item strong
 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-
     display: block;
-
-    letter-spacing: 1.2px;
-}
-
-@media (max-width: 991px)
-{
-    /*
-    .section-services {
-      margin-top: 50px;
-    }
-  
-    .section-services .headline {
-      padding: 0 0 70px 0;
-    }
-  
-    .section-services .row .col-md-4:nth-child(-n+3) {
-      margin: 0;
-    }
-  
-    .section-services .services-item {
-      margin-bottom: 50px;
-    }
-  
-    .section-services {
-      padding-bottom: 25px;
-    }
+    /*font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.2px;
   */
 }
+
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/
 /* ----------------------------------- #03 - PORTFOLIO section --------------------------------*/
 .portfolio-grid
@@ -7713,7 +7670,7 @@ input[type='button']:active
 
     letter-spacing: -2px;
 
-    color: rgba(0, 0, 0, .1);
+    color: rgba(0, 0, 0, .03);
 }
 
 /* ----------------------------------- #05 - EXPERTISE section - END --------------------*/
@@ -7882,11 +7839,6 @@ input[type='button']:active
 .team-members-item.right .social-team
 {
     left: 0;
-}
-
-.team-members-item:hover .overlay
-{
-    background: rgba(150, 88, 138, .65);
 }
 
 .social-team
@@ -8570,9 +8522,6 @@ input[type='button']:active
 
     color: #a9afb1;
     background-color: #18304c;
-    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, 0)));
-    background-image:    linear-gradient(to top, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
 }
 
 .footer-sub p

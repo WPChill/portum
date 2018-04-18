@@ -52,10 +52,10 @@ wp_enqueue_style( 'slick' );
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 
 				<li class="pager-item-0<?php echo absint( $i ); ?> <?php echo 1 === $i ? 'active' : ''; ?>">
-					<h6>
-						<a href="#"><strong>0<?php echo absint( $i ); ?></strong> <?php echo esc_html( $slide['slides_title'] ); ?>
+					<strong>
+						<a href="#"><span>0<?php echo absint( $i ); ?></span> <?php echo esc_html( $slide['slides_title'] ); ?>
 						</a>
-					</h6>
+					</strong>
 				</li>
 
 				<?php $i ++; ?>
