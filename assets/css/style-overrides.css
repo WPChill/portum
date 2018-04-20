@@ -230,7 +230,8 @@
 	
 	.sf-menu > li:hover,
 	.sf-menu > li.current {
-		box-shadow: inset 0px 3px 0px 0px %15$s;		/* epsilon_menu_item_hover_color */
+		-webkit-box-shadow: inset 0px 3px 0px 0px %15$s;
+		        box-shadow: inset 0px 3px 0px 0px %15$s;		/* epsilon_menu_item_hover_color */
 	}
 	
 	.sf-menu a {

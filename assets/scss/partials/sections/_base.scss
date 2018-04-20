@@ -104,17 +104,17 @@
 
 @media (min-width: 768px) {
 
-  .ewf-valign--top .row {
+  .ewf-valign--top .row .col-* {
     display: flex;
     align-items: flex-start;
   }
 
-  .ewf-valign--middle .row {
+  .ewf-valign--middle .row .col-* {
     display: flex;
     align-items: center;
   }
 
-  .ewf-valign--bottom .row {
+  .ewf-valign--bottom .row .col-* {
     display: flex;
     align-items: flex-end;
   }

@@ -192,6 +192,17 @@ Epsilon_Customizer::add_field(
 	)
 );
 
+Epsilon_Customizer::add_field(
+	'portum_show_blog_wellcome',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Blog wellcome message', 'portum' ),
+		'description' => esc_html__( 'This will disable the wellcome section from blog header', 'portum' ),
+		'section'     => 'header_image',
+		'default'     => true,
+	)
+);
+
 /**
  * Header section options
  */
@@ -409,7 +420,7 @@ Epsilon_Customizer::add_field(
 			'testimonial_image'    => array(
 				'label'   => esc_html__( 'Portrait', 'portum' ),
 				'type'    => 'epsilon-image',
-				'size'    => 'portum-testimonial-portrait',
+				'size'    => 'medium',
 				'default' => esc_url( get_template_directory_uri() . '/assets/images/testimonial-img-01.jpg' ),
 			),
 		),

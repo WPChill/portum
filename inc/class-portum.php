@@ -655,11 +655,11 @@ class Portum {
 		add_image_size( 'portum-blog-post-image', 520, 345, true );
 		add_image_size( 'portum-blog-post-sticky', 850, 460, true );
 		add_image_size( 'portum-main-slider', 1600, 600, true );
-		add_image_size( 'portum-testimonial-portrait', 160, 160, true );
-		add_image_size( 'portum-expertise-image', 650, 420, true );
-		add_image_size( 'portum-about-image', 750, 460, true );
 		add_image_size( 'portum-portfolio-image', 400, 450, true );
 		add_image_size( 'portum-team-image', 275, 275, true );
+		// add_image_size( 'portum-about-image', 750, 460, true );
+		//add_image_size( 'portum-expertise-image', 650, 420, true );
+		//add_image_size( 'portum-testimonial-portrait', 160, 160, true );
 	}
 
 	/**

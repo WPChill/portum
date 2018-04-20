@@ -14,6 +14,8 @@ $img = get_custom_header();
 $img = $img->url;
 
 $layout = Portum_Helper::get_layout();
+$show_wellcome = get_theme_mod( 'portum_show_blog_wellcome', true );
+
 ?>
 <div id="content">
 	<div class="custom-header">
@@ -23,20 +25,15 @@ $layout = Portum_Helper::get_layout();
 
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-1"></div>
-
-			<div class="col-md-10">
-				<div class="intro-item">
-
-					<h4><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4>
-					<span><?php echo esc_html__( 'Welcome', 'portum' ); ?></span>
-
-				</div>
-
-			</div>
-			<div class="col-md-1"></div>
-		</div>
+	
+		<?php
+		
+		if ( $show_wellcome ) {
+			get_template_part( 'template-parts/blog/wellcome' );
+		} 
+		
+		?>
+			
 		<div class="row">
 			<?php
 			if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
