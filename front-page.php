@@ -15,6 +15,8 @@
 get_header();
 
 $show_on_front = get_option( 'show_on_front' );
+$show_wellcome = get_theme_mod( 'portum_show_blog_wellcome', true );
+
 if ( 'posts' === $show_on_front ) :
 
 	$img = get_custom_header();
@@ -27,22 +29,18 @@ if ( 'posts' === $show_on_front ) :
 			<div class="item-overlay"></div>
 			<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 		</div>
-
+		
+		
 		<div class="container">
-			<div class="row">
-				<div class="col-md-1"></div>
-
-				<div class="col-md-10">
-					<div class="intro-item">
-
-						<h4><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4>
-						<span><?php echo esc_html( get_bloginfo( 'name') ); ?></span>
-
-					</div>
-
-				</div>
-				<div class="col-md-1"></div>
-			</div>
+			
+			<?php
+			
+			if ( $show_wellcome ) {
+				get_template_part( 'template-parts/blog/wellcome' );
+			} 
+			
+			?>
+			
 			<div class="row">
 				<?php
 				if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {

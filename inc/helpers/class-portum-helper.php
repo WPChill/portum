@@ -174,7 +174,7 @@ class Portum_Helper {
 		$class = array(
 			'boxedin'     => 'container',
 			'boxedcenter' => 'container container-boxedcenter',
-			'fullwidth'   => 'container-fluid',
+			'fullwidth'   => '', // container-fluid
 		);
 
 		if ( ! empty( $fields[ $key . '_column_stretch' ] ) ) {

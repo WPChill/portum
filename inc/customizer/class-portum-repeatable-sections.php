@@ -548,7 +548,7 @@ class Portum_Repeatable_Sections {
 				'about_image'             => array(
 					'label'   => esc_html__( 'Image', 'portum' ),
 					'type'    => 'epsilon-image',
-					'size'    => 'portum-about-image',
+					'size'    => 'large',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/01_about.png' ),
 				),
 				'about_section_unique_id' => array(
