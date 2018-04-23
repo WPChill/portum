@@ -14,7 +14,7 @@ $img = get_custom_header();
 $img = $img->url;
 
 $layout = Portum_Helper::get_layout();
-$show_wellcome = get_theme_mod( 'portum_show_blog_wellcome', true );
+$show_welcome = get_theme_mod( 'portum_show_blog_welcome', true );
 
 ?>
 <div id="content">
@@ -28,8 +28,8 @@ $show_wellcome = get_theme_mod( 'portum_show_blog_wellcome', true );
 	
 		<?php
 		
-		if ( $show_wellcome ) {
-			get_template_part( 'template-parts/blog/wellcome' );
+		if ( $show_welcome ) {
+			get_template_part( 'template-parts/blog/welcome' );
 		} 
 		
 		?>
