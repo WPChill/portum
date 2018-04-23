@@ -193,11 +193,11 @@ Epsilon_Customizer::add_field(
 );
 
 Epsilon_Customizer::add_field(
-	'portum_show_blog_wellcome',
+	'portum_show_blog_welcome',
 	array(
 		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Blog wellcome message', 'portum' ),
-		'description' => esc_html__( 'This will disable the wellcome section from blog header', 'portum' ),
+		'label'       => esc_html__( 'Blog welcome message', 'portum' ),
+		'description' => esc_html__( 'This will disable the welcome section from blog header', 'portum' ),
 		'section'     => 'header_image',
 		'default'     => true,
 	)

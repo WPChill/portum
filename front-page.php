@@ -15,7 +15,7 @@
 get_header();
 
 $show_on_front = get_option( 'show_on_front' );
-$show_wellcome = get_theme_mod( 'portum_show_blog_wellcome', true );
+$show_welcome = get_theme_mod( 'portum_show_blog_welcome', true );
 
 if ( 'posts' === $show_on_front ) :
 
@@ -35,8 +35,8 @@ if ( 'posts' === $show_on_front ) :
 			
 			<?php
 			
-			if ( $show_wellcome ) {
-				get_template_part( 'template-parts/blog/wellcome' );
+			if ( $show_welcome ) {
+				get_template_part( 'template-parts/blog/welcome' );
 			} 
 			
 			?>
