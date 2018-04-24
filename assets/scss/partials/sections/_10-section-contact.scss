@@ -13,9 +13,10 @@
   height: 8px;
   overflow: hidden;
   position: absolute;
-  bottom: -8px;
-  left: 15px;
-  right: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width:100%;
   background-color: $contact-ribbon-3-color;
   background: repeating-linear-gradient(135deg, $contact-ribbon-1-color, $contact-ribbon-1-color 3.030%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 6.060%, $contact-ribbon-2-color 0, $contact-ribbon-2-color 9.090%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 12.12%);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);

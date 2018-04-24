@@ -335,6 +335,21 @@ Epsilon_Customizer::add_field(
 		'choices'     => $forms,
 	)
 );
+
+/**
+ * Contact form title
+ */
+Epsilon_Customizer::add_field(
+	'portum_footer_contact_title',
+	array(
+		'type'              => 'text',
+		'section'           => 'portum_footer_section',
+		'sanitize_callback' => 'sanitize_text_field',
+		'default'    		=> __( 'Learn more about us', 'portum' ),
+		'label'             => esc_html__( 'Contact form CTA', 'portum' ),
+	)
+);
+
 /**
  * Contact boxes
  */

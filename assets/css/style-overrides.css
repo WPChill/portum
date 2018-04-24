@@ -286,7 +286,8 @@
 	
 	.sf-menu > li:hover,
 	.sf-menu > li.current {
-	  box-shadow: inset 0px 3px 0px 0px %12$s;
+	  -webkit-box-shadow: inset 0px 3px 0px 0px %12$s;
+	          box-shadow: inset 0px 3px 0px 0px %12$s;
 	}
 
 	.sf-menu > li.current > a {
@@ -455,7 +456,7 @@
 		
 	#footer p { color: %21$s; }				/* epsilon_footer_text_color */
 	
-	.contact-form{
+	.contact-form {
 		background-color: %18$s;			/* epsilon_footer_contact_background */
 	}
 	
