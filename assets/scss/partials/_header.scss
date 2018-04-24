@@ -2,28 +2,9 @@
    =Header
    ========================================================================== */
 
-/**
- 	 * 1. z-index is 105 because the tp arrows 100
- 	 */
-
-.header-overlay {
-  background: url("../images/back-shadow-nav.png") repeat-x left top;
-  height: 40%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 99;
-}
-
 #header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  z-index: 105;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 40.5px 4.5px rgba(35, 31, 32, .07);
+
   &.has-top-bar {
     top: 40px;
   }
