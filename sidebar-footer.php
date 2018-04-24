@@ -37,10 +37,10 @@ if ( ! is_array( $footer_layout ) ) {
 }
 
 $front = get_option( 'show_on_front' );
-
+$cform = absint( get_theme_mod( 'portum_contact_form', 0 ) );
 ?>
 
-<div id="footer">
+<div id="footer"<?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { echo ' class="has-contact-form"'; } ?> >
 	<div class="container">
 		<?php
 		if ( 'page' === $front && is_front_page() ) {

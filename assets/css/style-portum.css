@@ -8415,9 +8415,9 @@ input[type='button']:active
 .contact-decoration
 {
     position: absolute;
-    right: 15px;
-    bottom: -8px;
-    left: 15px;
+    top: 0;
+    right: 0;
+    left: 0;
 
     overflow: hidden;
 
@@ -8484,17 +8484,17 @@ input[type='button']:active
 
 /* ----------------------------------- #10 - CONTACT section - END --------------------------------*/
 /* ----------------------------------- #11 - FOOTER section --------------------------------------------- */
-.section-contact + #footer
-{
-    padding: 0 0 25px 0;
-}
-
 #footer
 {
     padding: 35px 0;
 
     color: #a9afb1;
     background-color: #18304c;
+}
+
+#footer.has-contact-form
+{
+    padding-top: 0;
 }
 
 .footer-sub p

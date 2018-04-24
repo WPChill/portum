@@ -359,7 +359,7 @@ class Portum {
 				'epsilon_footer_contact_background' => array(
 					'label'       => esc_html__( 'Contact Background Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer contact background.', 'portum' ),
-					'default'     => '#ffffff',
+					'default'     => '#0377bb',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
