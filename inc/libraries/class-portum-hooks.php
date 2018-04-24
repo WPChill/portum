@@ -30,8 +30,8 @@ class Portum_Hooks {
 		/**
 		 * Add a <span> html tag to the category item
 		 */
-		add_filter( 'wp_list_categories', array( $this, 'add_span_to_count' ) );
-		add_filter( 'get_archives_link', array( $this, 'add_span_to_count' ) );
+		// add_filter( 'wp_list_categories', array( $this, 'add_span_to_count' ) );
+		// add_filter( 'get_archives_link', array( $this, 'add_span_to_count' ) );
 		/**
 		 * Fix responsive videos
 		 */

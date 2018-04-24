@@ -1058,26 +1058,19 @@
   margin-top: 55px;
 }
 
+@media (max-width: 991px) {
+	.post {
+		box-shadow:0 0 20px 3px rgba(35, 31, 32, .05);
+	}
+}
+
 /* =Post Header
 ========================================================================== */
 
-.post-header {
-  padding: 45px 0 0 40px;
-}
+.post-header { padding:30px 40px 10px 40px; }
+.post.sticky .post-header { padding-top:10px; }
+.post-content.has-post-thumbnail .post-header { }
 
-.post.sticky .post-header {
-  position: absolute;
-  display: block;
-  z-index: 10;
-  padding: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.post-content.has-post-thumbnail .post-header {
-
-}
 
 /* =Post Content
 ========================================================================== */
@@ -1346,10 +1339,7 @@
 .post.sticky .post-title a {
   color: #fff;
   vertical-align: bottom;
-  line-height: 30px;
-  -ms-transform: skewX(-15deg);
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
+  line-height: 30px; 
 }
 
 .post-title a:focus,
@@ -1358,21 +1348,15 @@
 }
 
 .post.sticky .post-header {
-  overflow: hidden;
+	background: rgba(0, 0, 0, 0.6);
+	overflow: hidden;
 }
 
 .post.sticky .post-title {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px 60px 10px 60px;
   display: block;
-  width: 75%;
-  margin-left: -20px;
-  line-height: 30px;
-  -ms-transform: skewX(-15deg);
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
 }
 
+/*
 .more-link {
   height: auto;
   width: 50px;
@@ -1404,6 +1388,7 @@
   transform: skewX(15deg);
   color: #fff;
 }
+*/
 
 @media (max-width: 425px) {
 
@@ -1449,10 +1434,6 @@
   letter-spacing: 1px;
   font-size: 12px;
   color: $heading-color;
-}
-
-.post-meta a:hover {
-  color: $accent-2-color;
 }
 
 .post-meta:last-child {
@@ -1572,7 +1553,6 @@
 	 * 1. Clearfix hack 
 	 */
 .pagination:after {
-  /* 1 */
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -1614,7 +1594,7 @@
 }
 
 .pagination .page-numbers:active {
-  color: $accent-3-color;
+  color: $accent-1-color;
 }
 
 .pagination .prev.page-numbers:focus,
@@ -1623,16 +1603,13 @@
 .pagination .next.page-numbers:hover {
   border: 1px solid $accent-2-color;
   background: $accent-2-color;
-
-  color: $accent-2-color;
   color: #fff;
 }
 
 .pagination .prev.page-numbers:active,
 .pagination .next.page-numbers:active {
-  border: 1px solid $accent-3-color;
-  background: $accent-3-color;
-
+  border: 1px solid $accent-1-color;
+  background: $accent-1-color;
   color: #fff;
 }
 
