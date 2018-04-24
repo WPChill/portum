@@ -1944,6 +1944,7 @@ class Portum_Repeatable_Sections {
 			'id'            => 'cta',
 			'title'         => esc_html__( 'Call To Action Section', 'portum' ),
 			'description'   => esc_html__( 'A simple call to action section', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-cta.png' ),
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
