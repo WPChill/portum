@@ -12,7 +12,6 @@ $img       = $img->url;
 ?>
 	<div id="content">
 		<div class="custom-header">
-			<div class="item-overlay"></div>
 			<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 		</div>
 

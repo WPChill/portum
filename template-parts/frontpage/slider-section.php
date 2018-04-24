@@ -27,7 +27,6 @@ wp_enqueue_style( 'slick' );
 		<div class="main-slider owl-carousel owl-theme">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
-					<div class="item-overlay"></div>
 					<?php if ( ! empty( $slide['slides_image'] ) ) { ?>
 						<img src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
 					<?php } ?>

@@ -19,7 +19,6 @@ $show_welcome = get_theme_mod( 'portum_show_blog_welcome', true );
 ?>
 <div id="content">
 	<div class="custom-header">
-		<div class="item-overlay"></div>
 		<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 	</div>
 
