@@ -237,7 +237,7 @@ class Portum {
 				'epsilon_accent_color' => array(
 					'label'       => esc_html__( 'Accent Color #1', 'portum' ),
 					'description' => esc_html__( 'Theme main color.', 'portum' ),
-					'default'     => '#cc263d',
+					'default'     => '#0385D0',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -245,7 +245,7 @@ class Portum {
 				'epsilon_accent_color_second' => array(
 					'label'       => esc_html__( 'Accent Color #2', 'portum' ),
 					'description' => esc_html__( 'The second main color.', 'portum' ),
-					'default'     => '#364d7c',
+					'default'     => '#A1083A',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -305,7 +305,7 @@ class Portum {
 				'epsilon_header_background' => array(
 					'label'       => esc_html__( 'Header background color', 'portum' ),
 					'description' => esc_html__( 'The color used for the header background.', 'portum' ),
-					'default'     => '#172128',
+					'default'     => '#151C1F',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -313,7 +313,7 @@ class Portum {
 				'epsilon_dropdown_menu_background' => array(
 					'label'       => esc_html__( 'Dropdown background', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu background.', 'portum' ),
-					'default'     => '#aacfdf',
+					'default'     => '#A1083A',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -321,7 +321,7 @@ class Portum {
 				'epsilon_dropdown_menu_hover_background' => array(
 					'label'       => esc_html__( 'Dropdown Hover background', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu hover background.', 'portum' ),
-					'default'     => '#aacfdf',
+					'default'     => '#940534',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -329,7 +329,7 @@ class Portum {
 				'epsilon_menu_item_color' => array(
 					'label'       => esc_html__( 'Menu item color', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu item color.', 'portum' ),
-					'default'     => '#ffffff',
+					'default'     => '#ebebeb',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -345,7 +345,7 @@ class Portum {
 				'epsilon_menu_item_active_color' => array(
 					'label'       => esc_html__( 'Menu item active color', 'portum' ),
 					'description' => esc_html__( 'The color used for the menu item active color.', 'portum' ),
-					'default'     => '#ffffff',
+					'default'     => '#0385D0',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -367,7 +367,7 @@ class Portum {
 				'epsilon_footer_background' => array(
 					'label'       => esc_html__( 'Background Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer background.', 'portum' ),
-					'default'     => '#18304c',
+					'default'     => '#192229',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -399,7 +399,7 @@ class Portum {
 				'epsilon_footer_link_hover_color' => array(
 					'label'       => esc_html__( 'Link Hover Color', 'portum' ),
 					'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
-					'default'     => '#a9afb1',
+					'default'     => '#ffffff',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),

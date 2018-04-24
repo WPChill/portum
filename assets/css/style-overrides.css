@@ -77,7 +77,16 @@
 	.blog-news-item .news-category strong:hover {
 		background: %3$s;				/*	epsilon_accent_color */
 	}
+	
+	.blog-news-item h4 a:hover,
+	.blog-news-item h4 a:focus {
+		color:%8$s;
+	}
 
+	.blog-news-item h4 a:active {
+		color:%9$s;
+	}
+	
 	
 	/* Pricing */
 	.section-pricing .pricing-item .plan sup,
@@ -134,12 +143,14 @@
 	
 	
 	/* Progress */
+	/*
 	.ewf-progress__bar-liniar-wrap {
-		background-color: %2$s;					/*	epsilon_accent_color */
+		background-color: %2$s;					
 	}
+	*/
 
 	.ewf-progress__bar-liniar {
-		background-color: %3$s;					/* epsilon_accent_color_second */
+		background-color: %2$s;					/* epsilon_accent_color_second */
 	}
 
 	.ewf-progress--alternative-modern .ewf-progress__bar-liniar-wrap:after {
@@ -272,6 +283,11 @@
 	.sf-menu > li a i { 
 		color: %14$s;									/* epsilon_menu_item_color */
 	}
+	
+	.sf-menu > li:hover,
+	.sf-menu > li.current {
+	  box-shadow: inset 0px 3px 0px 0px %12$s;
+	}
 
 	.sf-menu > li.current > a {
 		color: %14$s;									/* epsilon_menu_item_color */
@@ -285,6 +301,8 @@
 	.sf-menu li.dropdown ul {
 		background-color: %12$s; 						/* epsilon_menu_background */
 	}
+	
+	
 
 	.sf-mega {
 		background-color: %12$s; 						/* epsilon_menu_background */

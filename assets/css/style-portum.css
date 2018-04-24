@@ -8901,7 +8901,7 @@ input[type='button']:active
 
     padding: 4px;
 
-    background-color: #0385d0;
+    background-color: #ebebeb;
 }
 
 .ewf-progress__bar-liniar
@@ -8909,7 +8909,7 @@ input[type='button']:active
     width: 0;
     height: 10px;
 
-    background-color: #a1083a;
+    background-color: #0385d0;
 }
 
 .ewf-progress--alternative-modern .ewf-progress__bar-liniar-wrap
