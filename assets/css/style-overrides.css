@@ -211,6 +211,17 @@
 		color: #ffffff;
 	}
 	
+	.ewf-btn.ewf-btn--huge:focus,
+	.ewf-btn.ewf-btn--huge:hover {
+		background-color: %3$s;							/* epsilon_accent_color_second */
+		color:  #fff;									
+	}
+	
+	.ewf-btn.ewf-btn--huge:active {
+		background-color: %2$s;							/* epsilon_accent_color_second */
+		color: #ffffff;
+	}
+	
 	.ewf-btn.ewf-btn--secondary {
 		-webkit-box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
 		        box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
@@ -223,12 +234,14 @@
 		-webkit-box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
 		        box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
 		color: %3$s;									/* epsilon_accent_color_second */
+		background:transparent;
 	}
 	
 	.ewf-btn.ewf-btn--secondary:active {
 		-webkit-box-shadow:inset 0 0 0 2px %2$s;
 		        box-shadow:inset 0 0 0 2px %2$s;		/* epsilon_accent_color_second */
 		color: %2$s;									/*	epsilon_accent_color */
+		background:transparent;
 	}
 	
 	
