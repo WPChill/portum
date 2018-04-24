@@ -275,7 +275,7 @@ class Portum {
 				'epsilon_link_color' => array(
 					'label'       => esc_html__( 'Link Color', 'portum' ),
 					'description' => esc_html__( 'The color used for links.', 'portum' ),
-					'default'     => '#1a171c',
+					'default'     => '#0385d0',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -283,7 +283,7 @@ class Portum {
 				'epsilon_link_hover_color' => array(
 					'label'       => esc_html__( 'Link Hover Color', 'portum' ),
 					'description' => esc_html__( 'The color used for hovered links.', 'portum' ),
-					'default'     => '#A1083A',
+					'default'     => '#a1083a',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
@@ -291,7 +291,7 @@ class Portum {
 				'epsilon_link_active_color' => array(
 					'label'       => esc_html__( 'Link Active Color', 'portum' ),
 					'description' => esc_html__( 'The color used for active links.', 'portum' ),
-					'default'     => '#172128',
+					'default'     => '#333333',
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
