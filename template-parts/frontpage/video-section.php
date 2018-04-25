@@ -25,10 +25,7 @@ wp_enqueue_script( 'plyr' );
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-	<!-- <div class="section-video section" <?php echo ! empty( $fields['video_section_unique_id'] ) ? 'id="' . $fields['video_section_unique_id'] . '"' : ''; ?>> -->
-	
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
 		
