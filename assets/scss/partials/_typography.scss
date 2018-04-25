@@ -417,47 +417,18 @@ a.social-icon:active {
     font-weight: 300;
   }
 
-  strong {
-    font-size: 160px;
-    color: #f9f9f9;
-    font-family: $accent-2-font;
-    text-transform: uppercase;
-    position: absolute;
-    top: -65px;
-    left: -185px;
-    z-index: 9;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
   span {
-    /*
-    line-height: 26px;
-    position: relative;
-	*/
 	font-size: 14px;
     color:$heading-color;
     text-transform: uppercase;
     font-family: $accent-1-font;
     letter-spacing: 2px;
-	opacity:.45;
+	opacity:.65;
   }
 }
 
 .contrast h3 {
   color: #fff;
-}
-
-@media (max-width: 991px) {
-
-  .headline strong {
-    display:none;	
-  }
-  
 }
 
 /* ------------------------------ HEADLINE section - END --------------------*/
