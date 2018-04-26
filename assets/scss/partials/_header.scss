@@ -3,7 +3,9 @@
    ========================================================================== */
 
 #header {
-	box-shadow: 0 0 40.5px 4.5px rgba(35, 31, 32, .07);
+	box-shadow: 0 0 15px 1px rgba(0,0,0,.07);
+	position:relative;
+	z-index:50;
 
   &.has-top-bar {
     top: 40px;
