@@ -118,7 +118,7 @@
 
 .pager-slider strong {
     background: $accent-1-color;
-    font-family: 'Hind', sans-serif;
+    font-family: $accent-1-font;
     font-size: 13px;
     color: #fff;
     text-transform: uppercase;
@@ -144,7 +144,7 @@
 }
 
 .pager-slider a span {
-    font-family: 'Poppins', sans-serif;
+    font-family: $accent-2-font;
     font-size: 32px;
     display: block;
     color: #fff;
@@ -164,7 +164,7 @@
 }
 
 .main-slider .slider-details h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: $accent-2-font;
     font-size: 74px;
     color: #fff;
     text-shadow: 0 2px 6px rgba(35, 31, 32, .41);
@@ -180,7 +180,7 @@
 
 .main-slider .slider-details span {
     display: inline-block;
-    font-family: 'Hind', sans-serif;
+    font-family: $accent-1-font;
     font-size: 15px;
     color: #fff;
     text-transform: uppercase;
