@@ -2633,8 +2633,11 @@ input[type='button']:active
    ========================================================================== */
 #header
 {
-    -webkit-box-shadow: 0 0 40.5px 4.5px rgba(35, 31, 32, .07);
-            box-shadow: 0 0 40.5px 4.5px rgba(35, 31, 32, .07);
+    position: relative;
+    z-index: 50;
+
+    -webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, .07);
+            box-shadow: 0 0 15px 1px rgba(0, 0, 0, .07);
 }
 #header.has-top-bar
 {
