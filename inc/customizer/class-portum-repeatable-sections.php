@@ -28,7 +28,7 @@ class Portum_Repeatable_Sections {
 		$this->collect_sections();
 	}
 
-	/**
+	/** 
 	 * Grab an instance of the sections
 	 *
 	 * @return Portum_Repeatable_Sections
@@ -586,10 +586,6 @@ class Portum_Repeatable_Sections {
 						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
-					'column-group'       => array(
-						'default' => 4,
-						'choices' => array( 2, 3, 4, ),
-					),
 				),
 				'styling' => array(
 					'background-color'         => array(
@@ -612,9 +608,6 @@ class Portum_Repeatable_Sections {
 					),
 					'background-parallax'      => array(
 						'default' => false,
-					),
-					'background-video'         => array(
-						'default' => '',
 					),
 				),
 				'colors'  => array(
