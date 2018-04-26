@@ -14,7 +14,7 @@ $img = get_custom_header();
 $img = $img->url;
 
 $layout = Portum_Helper::get_layout();
-$show_welcome = get_theme_mod( 'portum_show_blog_welcome', true );
+$show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
 
 ?>
 <div id="content">

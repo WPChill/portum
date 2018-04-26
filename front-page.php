@@ -15,7 +15,7 @@
 get_header();
 
 $show_on_front = get_option( 'show_on_front' );
-$show_welcome = get_theme_mod( 'portum_show_blog_welcome', true );
+$show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
 
 if ( 'posts' === $show_on_front ) :
 
@@ -24,9 +24,10 @@ if ( 'posts' === $show_on_front ) :
 
 	$layout = Portum_Helper::get_layout();
 	?>
-	<div id="content">
-			<div class="item-overlay"></div>
-			<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+		<div id="content">
+			<div class="custom-header">
+				<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+			</div>
 		</div>
 		
 		
