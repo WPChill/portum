@@ -199,7 +199,7 @@ Epsilon_Customizer::add_field(
 		'label'       => esc_html__( 'Blog welcome message', 'portum' ),
 		'description' => esc_html__( 'This will disable the welcome section from blog header', 'portum' ),
 		'section'     => 'header_image',
-		'default'     => true,
+		'default'     => false,
 	)
 );
 

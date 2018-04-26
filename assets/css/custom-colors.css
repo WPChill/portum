@@ -325,6 +325,15 @@ a.social-icon:active
 {
     color: #fff;
 }
+.sf-menu a:hover,
+.sf-menu a:focus
+{
+    color: #fff;
+}
+.sf-menu a:active
+{
+    color: #fff;
+}
 
 .sf-menu a:hover
 {
@@ -360,6 +369,8 @@ a.social-icon:active
 }
 
 .sf-menu > li.sfHover > a:hover,
+.sf-menu > li.sfHover > a:focus,
+.sf-menu > li > a:focus,
 .sf-menu > li > a:hover
 {
     color: #fff;

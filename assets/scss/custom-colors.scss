@@ -308,9 +308,14 @@ a.social-icon:active { color: $link-active-color; }
 	background-color: $accent-1-color;
 }
 
-.sf-menu a {
-	color: $menu-item-color;
+.sf-menu {
+	a { color: $menu-item-color; }
+	a:hover,
+	a:focus { color: $menu-item-hover-color; }
+	a:active { color: $menu-item-hover-color; }
 }
+
+
 
 .sf-menu a:hover {
 	color: $menu-item-hover-color;
@@ -340,6 +345,8 @@ a.social-icon:active { color: $link-active-color; }
 } 
 
 .sf-menu > li.sfHover > a:hover,
+.sf-menu > li.sfHover > a:focus,
+.sf-menu > li > a:focus,
 .sf-menu > li > a:hover {
 	color: $menu-item-hover-color; 
 }	
