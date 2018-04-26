@@ -22,14 +22,6 @@ $parent_attr = array(
 
 ?>
 
-<?php 
-
-	// echo '<pre>';
-		// print_r($fields);
-	// echo '</pre>';
-		
-?>
-
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -44,9 +36,6 @@ $parent_attr = array(
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'services', $fields ) ); ?>">
 			
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'services' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-			
-			
-			 
 			
 			<?php if ($fields['services_row_title_align'] == 'left'){ ?>
 				<div class="row">
