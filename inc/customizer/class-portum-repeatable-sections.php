@@ -2045,7 +2045,8 @@ class Portum_Repeatable_Sections {
 			)
 		);
 	}
-
+	
+	/*
 	private function repeatable_section_demo() {
 		return array(
 			'id'            => 'demo',
@@ -2134,12 +2135,14 @@ class Portum_Repeatable_Sections {
 			),
 		);
 	}
-
+	*/
+	
 	/**
 	 * Repeatable slider section
 	 *
 	 * @return array
 	 */
+	/*
 	private function repeatable_advanced_slider() {
 		$slider = array(
 			'id'          => 'advanced-slider',
@@ -2207,4 +2210,5 @@ class Portum_Repeatable_Sections {
 
 		return $slider;
 	}
+	*/
 }
