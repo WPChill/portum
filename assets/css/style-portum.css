@@ -2174,24 +2174,6 @@ del
     height: 0;
 }
 
-.row-vcenter
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px)
-{
-    .row-vcenter
-    {
-        display: block;
-    }
-}
-
 /* ==========================================================================
    =Forms
    ========================================================================== */
@@ -5752,7 +5734,7 @@ input[type='button']:active
             flex-wrap: wrap;
     }
 
-    .ewf-valign--bottom .row
+    .ewf-valign--bottom .container > .row
     {
         display: -webkit-box;
         display: -ms-flexbox;
