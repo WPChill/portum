@@ -104,19 +104,22 @@
 
 @media (min-width: 768px) {
 
-  .ewf-valign--top .row .col-* {
+  .ewf-valign--top .container > .row {
     display: flex;
     align-items: flex-start;
+	flex-wrap: wrap;
   }
 
-  .ewf-valign--middle .row .col-* {
+  .ewf-valign--middle .container > .row {
     display: flex;
-    align-items: center;
+    align-items: center; 
+	flex-wrap: wrap;
   }
 
-  .ewf-valign--bottom .row .col-* {
+  .ewf-valign--bottom .container > .row {
     display: flex;
     align-items: flex-end;
+	flex-wrap: wrap;
   }
 
 }
