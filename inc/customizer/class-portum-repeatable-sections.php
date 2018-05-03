@@ -213,6 +213,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
+					'column-group'       => array(
+						'default' => 2,
+						'choices' => array( 1, 2, ),
+					),
 				),
 				'styling' => array(
 					'background-color'         => array(
