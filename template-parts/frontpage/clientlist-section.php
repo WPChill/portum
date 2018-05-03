@@ -41,7 +41,8 @@ $parent_attr = array(
 			</div>
 			
 			<div class="row">
-				<div class="col-sm-12">
+				<!--suppress Annotator -->
+                <div class="col-sm-12">
 					<?php if ( $fields['clientlist_slider'] ) { ?>
 					
 					<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
@@ -62,12 +63,13 @@ $parent_attr = array(
 
 								<?php if ( $fields['clientlist_slider'] ) { ?>
 							</ul>
+							
 							<div class="ewf-partner-slider__pager">
 								<!-- dots will be added here -->
 							</div>
 					</div>
 					<?php } else { ?>
-					</ul>
+						</ul>
 					<?php } ?>
 				</div>
 			</div>
