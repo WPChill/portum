@@ -1840,6 +1840,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
+					'column-alignment'          => array(
+						'default' => 'center',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
 				),
 				'styling' => array(
 					'background-color'         => array(
@@ -1902,7 +1906,7 @@ class Portum_Repeatable_Sections {
 				'clientlist_slider'            => array(
 					'label'   => esc_html__( 'Enable slider', 'portum' ),
 					'type'    => 'epsilon-toggle',
-					'default' => true,
+					'default' => false,
 				),
 				'clientlist_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
