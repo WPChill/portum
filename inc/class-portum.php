@@ -221,13 +221,12 @@ class Portum {
 	}
 
 	/**
-	 * Load color scheme controls
+	 * Set color scheme controls
 	 */
-	private function start_color_schemes() {
-		$handler = 'portum-style-overrides';
-
-		$args = array(
-			'fields' => array(
+	 
+	public function get_color_scheme() {
+		
+		return 	array(
 				'epsilon_general_separator' => array(
 					'label'     => esc_html__( 'Accent Colors', 'portum' ),
 					'section'   => 'colors',
@@ -411,8 +410,17 @@ class Portum {
 					'section'     => 'colors',
 					'hover-state' => false,
 				),
-			),
+			);
+	}
+	
+	/**
+	 * Load color scheme controls
+	 */
+	private function start_color_schemes() {
+		$handler = 'portum-style-overrides';
 
+		$args = array(
+			'fields' => $this->get_color_scheme(),
 			'css' => Epsilon_Color_Scheme::load_css_overrides( get_template_directory() . '/assets/css/style-overrides.css' ),
 		);
 
