@@ -17,7 +17,7 @@ $fields['members'] = $frontpage->get_repeater_field( $fields['team_repeater_fiel
 
 $parent_attr             = array(
 	'id'    => ! empty( $fields['team_section_unique_id'] ) ? array( $fields['team_section_unique_id'] ) : array(),
-	'class' => array( 'section-team', 'ewf-section', 'dashed' ),
+	'class' => array( 'section-team', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
