@@ -6092,7 +6092,6 @@ input[type='button']:active
 
     height: 45px;
     margin: 0 50px 0 0;
-    padding: 0;
     padding: 0 20px;
 
     text-align: right;
@@ -7808,8 +7807,6 @@ input[type='button']:active
     .ewf-partners-list
     {
         margin: 0 -15px;
-
-        text-align: center;
     }
 
     .ewf-partners-list--spacing-none
