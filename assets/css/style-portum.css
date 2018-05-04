@@ -5708,7 +5708,7 @@ input[type='button']:active
 
 @media (min-width: 768px)
 {
-    .ewf-valign--top .container > .row
+    .ewf-valign--top .ewf-section__content > div > .row
     {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -5721,7 +5721,7 @@ input[type='button']:active
             flex-wrap: wrap;
     }
 
-    .ewf-valign--middle .container > .row
+    .ewf-valign--middle .ewf-section__content > div > .row
     {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -5734,7 +5734,7 @@ input[type='button']:active
             flex-wrap: wrap;
     }
 
-    .ewf-valign--bottom .container > .row
+    .ewf-valign--bottom .ewf-section__content > div > .row
     {
         display: -webkit-box;
         display: -ms-flexbox;
