@@ -24,14 +24,21 @@
 		}
 	}
 	
+	 
+	 
+	.map-canvas-side {
+		box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045); 
+		border:1px solid #eee;
+	}
+	
 	.map-overlay {
-	  width: 100%;
-	  height: 50px;
-	  background: url("../images/back-section-shadow.png") repeat-x left top;
-	  position: Absolute;
-	  top: 0;
-	  left: 0;
-	  z-index: 999;
+		width: 100%;
+		height: 50px;
+		background: url("../images/back-section-shadow.png") repeat-x left top;
+		position: Absolute;
+		top: 0;
+		left: 0;
+		z-index: 999;
 	}
 	
 

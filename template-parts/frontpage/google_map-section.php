@@ -48,7 +48,7 @@ wp_enqueue_script( 'googlemaps' );
 				<div class="row">
 					<div class="col-md-6">
 						<?php if ( ! empty( $api ) ) : ?>
-							<div class="map-canvas" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
+							<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
 						<?php endif; ?>
 					</div>
 					
@@ -62,7 +62,7 @@ wp_enqueue_script( 'googlemaps' );
 								?>
 									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo $section_item_columns; ?>">
-											<div class="contact-details-item">
+											<div class="map-info-item">
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 													<?php echo esc_html( $field['contact_title'] ); ?>
@@ -102,7 +102,7 @@ wp_enqueue_script( 'googlemaps' );
 								?>
 									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo $section_item_columns; ?>">
-											<div class="contact-details-item">
+											<div class="map-info-item">
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 													<?php echo esc_html( $field['contact_title'] ); ?>
@@ -116,7 +116,7 @@ wp_enqueue_script( 'googlemaps' );
 					</div>
 					<div class="col-md-6">
 						<?php if ( ! empty( $api ) ) : ?>
-							<div class="map-canvas" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
+							<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
 						<?php endif; ?>
 					</div>
 				</div>
