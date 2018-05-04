@@ -8043,6 +8043,12 @@ input[type='button']:active
 {
     height: 550px;
 }
+.section-map .map-canvas-side
+{
+    border: 1px solid #eee;
+    -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045);
+            box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045);
+}
 .section-map .map-overlay
 {
     position: Absolute;
