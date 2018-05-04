@@ -405,7 +405,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.services-item span', ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span', ),
 						'default'   => '',
 					),
 					'text-color'    => array(
