@@ -32,12 +32,12 @@ wp_enqueue_script( 'magnificPopup' );
 		$attr_helper->generate_color_overlay();
 		?>
 		
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
+		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">		
+		<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 		
 		<div class="ewf-section__content">
+
 			<div class="row">
-			
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
 
 			<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>

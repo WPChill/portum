@@ -108,10 +108,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -232,10 +232,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -391,10 +391,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -507,10 +507,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -605,10 +605,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -718,10 +718,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -824,10 +824,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -928,10 +928,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1036,10 +1036,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1152,10 +1152,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1260,10 +1260,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1368,10 +1368,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1515,10 +1515,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1635,10 +1635,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1755,10 +1755,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1863,10 +1863,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -1985,10 +1985,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,
@@ -2110,10 +2110,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'          => array(
-						'default' => 'cover',
+						'default' => 'initial',
 					),
 					'background-repeat'        => array(
-						'default' => 'no-repeat'
+						'default' => 'repeat'
 					),
 					'background-parallax'      => array(
 						'default' => false,

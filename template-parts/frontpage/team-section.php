@@ -34,8 +34,9 @@ $items_class = null;
 		
 		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'team', $fields ) ); ?>">
-			<div class="row">
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'team' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				
+			<div class="row">
 				
 				<?php if ($fields['team_row_title_align'] == 'left'){ ?>
 
