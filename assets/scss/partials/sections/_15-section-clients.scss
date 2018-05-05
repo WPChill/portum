@@ -60,6 +60,13 @@
 
 }
 
+@media (max-width: 768px) {
+  .ewf-partners-list li {
+    display:inline-block;
+    width: 50%; 
+  }
+}
+
 /* =Partner/Client Slider
    ========================================================================== */
 
