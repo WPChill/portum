@@ -294,13 +294,17 @@ class Portum_Helper {
 		$subtitle = '',
 		$title = '',
 		$args = array(
-			'doubled' => false,
-			'center'  => true,
+			'doubled' 		=> false,
+			'center'  		=> false,
+			'no-margins'  	=> false,
 		)
 	) {
 		$class = 'headline';
 		if ( $args['center'] ) {
 			$class .= ' text-center';
+		}
+		if ( $args['no-margins'] ) {
+			$class .= ' no-margins';
 		}
 		$html = '<div class="' . $class . '">';
 
