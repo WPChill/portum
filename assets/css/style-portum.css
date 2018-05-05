@@ -527,6 +527,12 @@ a.social-icon:active
     color: #fff;
 }
 
+.ewf-section--title-right .headline h3,
+.ewf-section--title-left .headline h3
+{
+    margin-bottom: 0;
+}
+
 /* ------------------------------ HEADLINE section - END --------------------*/
 /* ==========================================================================
    =Images
