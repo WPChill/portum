@@ -906,7 +906,7 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-alignment'          => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
 					'column-vertical-alignment' => array(
@@ -1496,6 +1496,10 @@ class Portum_Repeatable_Sections {
 						'default' => 4,
 						'choices' => array( 2, 3, 4, ),
 					),
+					'column-alignment'          => array(
+						'default' => 'center',
+						'choices' => array( 'left', 'center', 'right', ),
+					),
 					'column-vertical-alignment' => array(
 						'default' => 'middle',
 						'choices' => array( 'top', 'middle', 'bottom', ),
@@ -1613,7 +1617,7 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
 					'column-vertical-alignment' => array(
@@ -1733,7 +1737,7 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 2, 3, 4, ),
 					),
 					'column-alignment'          => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
 					'column-vertical-alignment' => array(
