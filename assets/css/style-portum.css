@@ -527,12 +527,21 @@ a.social-icon:active
     color: #fff;
 }
 
-.ewf-section--title-right .headline h3,
-.ewf-section--title-left .headline h3
+@media (min-width: 768px)
 {
-    margin-bottom: 0;
+    .ewf-section--title-right .headline:last-child h3,
+    .ewf-section--title-left .headline:last-child h3
+    {
+        margin-bottom: 0;
+    }
 }
-
+@media (max-width: 768px)
+{
+    .headline
+    {
+        text-align: center;
+    }
+}
 /* ------------------------------ HEADLINE section - END --------------------*/
 /* ==========================================================================
    =Images
@@ -6519,6 +6528,13 @@ input[type='button']:active
 
 /* ----------------------------------- #05 - EXPERTISE section - END --------------------*/
 /* ----------------------------------- #06 - VIDEO section --------------------------------------------- */
+@media (max-width: 768px)
+{
+    .video-area
+    {
+        margin-bottom: 60px;
+    }
+}
 /* ----------------------------------- #06 - VIDEO section - END --------------------------------------- */
 /* ----------------------------------- #07 - TEAM section --------------------------------*/
 .team-members-item,
@@ -7903,6 +7919,15 @@ input[type='button']:active
         padding: 15px;
     }
 }
+@media (max-width: 768px)
+{
+    .ewf-partners-list li
+    {
+        display: inline-block;
+
+        width: 50%;
+    }
+}
 /* =Partner/Client Slider
    ========================================================================== */
 .ewf-partner-slider
@@ -8136,6 +8161,13 @@ input[type='button']:active
     margin-right: 10px;
 }
 
+@media (max-width: 768px)
+{
+    .map-info-wrapper
+    {
+        padding: 0 35px;
+    }
+}
 /* ----------------------------------- #11 - Google Map section - END ------------------------------------- */
 .page .widget:first-of-type
 {

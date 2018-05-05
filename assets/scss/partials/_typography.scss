@@ -428,11 +428,21 @@ a.social-icon:active {
 	}	
 }
 
-.ewf-section--title-right .headline h3,
-.ewf-section--title-left .headline h3 {
-	margin-bottom:0;
+@media (min-width: 768px) {
+
+	.ewf-section--title-right .headline:last-child h3,
+	.ewf-section--title-left .headline:last-child h3 {
+		margin-bottom:0;
+	}
+	
 }
 
+@media (max-width: 768px) {
+	
+	.headline {
+		text-align:center;
+	}
+}
 
 /* ------------------------------ HEADLINE section - END --------------------*/
 
