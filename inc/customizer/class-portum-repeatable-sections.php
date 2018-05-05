@@ -1238,7 +1238,7 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'lg', 'md', 'sm', 'none', ),
 					),
 					'column-alignment'          => array(
-						'default' => 'left',
+						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right', ),
 					),
 					'column-vertical-alignment' => array(
