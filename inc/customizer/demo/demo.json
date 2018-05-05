@@ -513,6 +513,7 @@
                   "counters_row_spacing_top":"md",
                   "counters_row_spacing_bottom":"md",
                   "counters_column_group":4,
+				  "counters_column_alignment":"center",
                   "counters_column_vertical_alignment":"middle",
                   "counters_heading_color":"",
                   "counters_text_color":"",
