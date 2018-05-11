@@ -1030,6 +1030,8 @@ Epsilon_Customizer::add_field(
 		'label'               => esc_html__( 'Sections', 'portum' ),
 		'section'             => 'portum_repeatable_section',
 		'page_builder'        => true,
+		'selective_refresh'   => true,
+        'transport'           => 'postMessage',
 		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
 	)
 );
