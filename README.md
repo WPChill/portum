@@ -8,7 +8,6 @@ Tested up to:		4.8
 
 Portum
 
-
 ### License
 
 Portum WordPress theme, Copyright (C) 2017 https://www.machothemes.com/ 
