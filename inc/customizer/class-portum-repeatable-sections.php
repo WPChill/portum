@@ -2154,7 +2154,7 @@ class Portum_Repeatable_Sections {
 	 *
 	 * @return array
 	 */
-	/*
+
 	private function repeatable_advanced_slider() {
 		$slider = array(
 			'id'          => 'advanced-slider',
@@ -2222,5 +2222,5 @@ class Portum_Repeatable_Sections {
 
 		return $slider;
 	}
-	*/
+	
 }

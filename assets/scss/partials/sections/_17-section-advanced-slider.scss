@@ -1,0 +1,281 @@
+
+/* ----------------------------------- #17 - Section Advanced Slider --------------------------------------------- */
+
+
+/* =MedZone Slider
+   ========================================================================== */
+	
+	.advanced-slider { 
+		position: relative;
+		overflow: hidden;	
+		margin: 0 auto 75px;	
+	}
+
+	.advanced-slider .slides {
+		margin-bottom: 0; 
+		list-style: none;
+	}
+
+	.advanced-slider .slides li {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		padding: 50px 15px;
+		min-height: 250px;
+	}	
+
+	@media (min-width: 768px) {
+		
+		.advanced-slider .slides li {
+			padding: 75px 15px;
+		}	
+		
+	}
+
+	@media (min-width: 992px) {
+		
+		.advanced-slider .slides li {
+			padding: 75px 20px;
+		}	
+		
+	}	
+	
+	@media (min-width: 1200px) {
+		
+		.advanced-slider .slides li {
+			padding: 100px 30px;
+		}
+		
+	}	
+
+/* =MedZone Slider Content
+   ========================================================================== */
+		
+	.advanced-slider .slides li .advanced-slider-slide-content {
+		position: relative;
+	}
+
+	@media (min-width: 768px) {
+
+		.advanced-slider .slides li .advanced-slider-slide-content {
+			width: 730px;
+			min-height: 350px;
+			margin: 0 auto;
+		}	
+
+	}
+
+	@media (min-width: 992px) {
+
+		.advanced-slider .slides li .advanced-slider-slide-content {
+			width: 940px;
+			min-height: 400px;
+		}	
+
+	}
+	
+	@media (min-width: 1200px) {
+
+		.advanced-slider .slides li .advanced-slider-slide-content {
+			width: 1140px;
+			min-height: 500px;
+		}	
+
+	}
+	
+	@media (min-width: 768px) {
+		
+		.advanced-slider-slide-content-align-left { }
+		.advanced-slider-slide-content-align-center { text-align: center; }
+		.advanced-slider-slide-content-align-right { text-align: right; }
+	
+	}
+	
+	.advanced-slider .advanced-slider-slide-content-wrap {}
+	
+	.advanced-slider .advanced-slider-slide-content-wrap *:last-child {
+		margin-bottom: 0;
+	}
+	
+	@media (min-width: 768px) {
+	
+		.advanced-slider-slide-content-valign-top  .advanced-slider-slide-content-wrap {}
+		
+		.advanced-slider-slide-content-valign-middle .advanced-slider-slide-content-wrap { 
+			position: absolute; 
+			top: 50%;
+			width: 100%;
+			transform: translateY(-50%);
+		}
+		
+		.advanced-slider-slide-content-valign-bottom .advanced-slider-slide-content-wrap {
+			position: absolute; 
+			bottom: 0;
+			width: 100%;
+		}
+	
+	}
+
+
+/* =MedZone Slider pager
+   ========================================================================== */
+		
+	.advanced-slider .advanced-slider-dots {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+
+	@media (min-width: 768px) {
+
+		.advanced-slider .advanced-slider-dots {
+			left: 50%;
+			bottom: 10px;
+			padding: 15px 0;
+			width: 730px;
+			transform: translateX(-50%);
+		}
+
+	}	
+
+	@media (min-width: 992px) {
+
+		.advanced-slider .advanced-slider-dots {
+			width: 940px;
+			bottom: 15px;
+		}
+
+	}
+
+	@media (min-width: 1200px) {
+
+		.advanced-slider .advanced-slider-dots {
+			width: 1140px;
+		}
+
+	}	
+	
+	@media (min-width: 1400px) {
+
+		.advanced-slider .advanced-slider-dots {
+			bottom: 25px;
+		}
+
+	}	
+	
+	.advanced-slider .advanced-slider-dots .slick-dots {
+		list-style: none;
+		margin-bottom: 0;
+	}
+	
+	.advanced-slider .advanced-slider-dots .slick-dots:after {
+		display: block;
+		visibility: hidden;
+		height: 0;
+		font-size: 0;
+		content: " ";
+		clear: both;
+	}
+	
+	.advanced-slider .advanced-slider-dots.advanced-slider-dots-align-left .slick-dots { text-align: left; }
+	.advanced-slider .advanced-slider-dots.advanced-slider-dots-align-center .slick-dots { text-align: center; }
+	.advanced-slider .advanced-slider-dots.advanced-slider-dots-align-right .slick-dots { text-align: right; }
+	
+	.advanced-slider .advanced-slider-dots .slick-dots li {
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		border-radius: 50%;
+		padding: 5px;
+		margin-right: 4px;
+	}	
+
+	.advanced-slider .advanced-slider-dots .slick-dots li:last-child {
+		margin-right: 0;
+	}
+	
+	.advanced-slider .advanced-slider-dots .slick-dots li.slick-active {
+		border: 1px solid #ffffff;
+		background-color: rgba(255,255,255,0.3);
+	}
+
+	.advanced-slider .advanced-slider-dots .slick-dots li button{
+		display: block;
+		padding: 0;
+		width: 10px;
+		height: 10px;
+		border: 0;
+		border-radius: 50%;
+		cursor: pointer;
+		outline: none;
+		color: transparent;
+		background-color: #ffffff;
+		font-size: 0;
+		line-height: 0;
+	}
+
+	.advanced-slider .advanced-slider-dots .slick-dots li.slick-active button {
+		background-color: $accent-1-color;
+	}
+	
+/* =MedZone Slider Controls
+   ========================================================================== */
+		
+	.advanced-slider .advanced-slider-arrows a {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #ffffff;
+		font-size: 18px; 
+	}
+
+	.advanced-slider .advanced-slider-arrows a:hover { 
+		color: $accent-1-color; 
+	}
+	
+	.advanced-slider .advanced-slider-arrows .slick-prev {
+		left: 5px;
+	}
+	
+	.advanced-slider .advanced-slider-arrows .slick-next {
+		right: 5px;
+	}
+	
+	
+	@media (min-width: 767px) {
+		
+		.advanced-slider .advanced-slider-arrows a {
+			font-size: 30px;
+		}	
+		
+	}	
+
+	@media (min-width: 992px) {
+	
+		.advanced-slider .advanced-slider-arrows .slick-prev {
+		left: 15px;
+	}
+	
+		.advanced-slider .advanced-slider-arrows .slick-next {
+			right: 15px;
+		}
+	
+	}
+
+	@media (min-width: 1200px) {
+	
+		.advanced-slider .advanced-slider-arrows .slick-prev {
+			left: 25px;
+		}
+		
+		.advanced-slider .advanced-slider-arrows .slick-next {
+			right: 25px;
+		}
+	
+	}	
+
+
+/* ----------------------------------- #17 - Section Advanced Slider - END --------------------------------------- */
