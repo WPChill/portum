@@ -195,19 +195,19 @@ var Portum = {
       }
     },
     advancedSlider: function() {
-      jQuery( '.portum-advanced-slider' ).each( function() {
+      jQuery( '.advanced-slider' ).each( function() {
 
         var $t = jQuery( this );
 
         var $slider = $t.find( '.slides' );
 
         var $sliderConfig = {
-          fade: 'true' === $t.attr( 'data-portum-slider-mode-fade' ),
-          speed: $t.attr( 'data-portum-slider-speed' ) ? parseInt( $t.attr( 'data-portum-slider-speed' ), 10 ) : 500,
-          autoplay: 'true' === $t.attr( 'data-portum-slider-autoplay' ),
-          infinite: 'true' === $t.attr( 'data-portum-slider-loop' ),
-          pager: 'true' === $t.attr( 'data-portum-slider-enable-pager' ),
-          controls: 'true' === $t.attr( 'data-portum-slider-enable-controls' )
+          fade: 'true' === $t.attr( 'data-advanced-slider-mode-fade' ),
+          speed: $t.attr( 'data-advanced-slider-speed' ) ? parseInt( $t.attr( 'data-advanced-slider-speed' ), 10 ) : 500,
+          autoplay: 'true' === $t.attr( 'data-advanced-slider-autoplay' ),
+          infinite: 'true' === $t.attr( 'data-advanced-slider-loop' ),
+          pager: 'true' === $t.attr( 'data-advanced-slider-enable-pager' ),
+          controls: 'true' === $t.attr( 'data-advanced-slider-enable-controls' )
         };
 
         $slider.slick( {
@@ -224,12 +224,12 @@ var Portum = {
           infinite: $sliderConfig.infinite,
 
           arrows: $sliderConfig.controls,
-          appendArrows: $t.find( '.portum-slider-arrows' ),
+          appendArrows: $t.find( '.advanced-slider-arrows' ),
           prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
           nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
 
           dots: $sliderConfig.pager,
-          appendDots: $t.find( '.portum-slider-dots' )
+          appendDots: $t.find( '.advanced-slider-dots' )
 
         } );
 
