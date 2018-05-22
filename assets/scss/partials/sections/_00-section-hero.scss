@@ -32,17 +32,17 @@
     position: relative;
     z-index: 10;
     overflow: hidden;
-}
-
-.pager-slider li {
-    width: 25%;
-    height: 45px;
-    float: left;
-    position: relative;
-    display: block;
-    background: transparent;
-    box-sizing: border-box;
-    padding: 0 1px;
+	
+	li {
+		width: 25%;
+		height: 45px;
+		float: left;
+		position: relative;
+		display: block;
+		background: transparent;
+		box-sizing: border-box;
+		padding: 0 1px;
+	}
 }
 
 .pager-slider li:hover strong, .pager-slider li.active strong {
@@ -116,139 +116,177 @@
     background: $accent-2-color;
 }
 
-.pager-slider strong {
-    background: $accent-1-color;
-    font-family: $accent-1-font;
-    font-size: 13px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: left;
-    line-height: 45px;
-    display: block;
-    margin: 0;
-    -ms-transform: skewX(-15deg);
-    -webkit-transform: skewX(-15deg);
-    transform: skewX(-15deg);
+.pager-slider {
+	
+	strong {
+		background: $accent-1-color;
+		font-family: $accent-1-font;
+		font-size: 13px;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		text-align: left;
+		line-height: 45px;
+		display: block;
+		margin: 0;
+		-ms-transform: skewX(-15deg);
+		-webkit-transform: skewX(-15deg);
+		transform: skewX(-15deg);
+	}
+	
+	a {
+		-ms-transform: skewX(15deg);
+		-webkit-transform: skewX(15deg);
+		transform: skewX(15deg);
+		display: block;
+		height: 45px;
+		line-height: 45px;
+		padding: 0 0 0 70px;
+		color: #fff;
+		
+		span {
+			font-family: $accent-2-font;
+			font-size: 32px;
+			display: block;
+			color: #fff;
+			font-weight: 700;
+			position: Absolute;
+			left: 15px;
+			top: 1px;			
+		}
+	}
 }
 
-.pager-slider a {
-    -ms-transform: skewX(15deg);
-    -webkit-transform: skewX(15deg);
-    transform: skewX(15deg);
-    display: block;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 0 0 70px;
-    color: #fff;
+.main-slider {
+	
+	.slider-details {
+		position: absolute;
+		top: 45%;
+		left: 20%;
+		line-height: 50px;
+		transition: all 0.3s;
+		text-align: right;
+		
+		h1 {
+			font-family: $accent-2-font;
+			font-size: 74px;
+			color: #fff;
+			text-shadow: 0 2px 6px rgba(35, 31, 32, .41);
+			-webkit-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+			-moz-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+			-o-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+			transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
+			-webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+			-moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+			-o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+			transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);			
+		}
+		
+		span {
+			display: inline-block;
+			font-family: $accent-1-font;
+			font-size: 15px;
+			color: #fff;
+			text-transform: uppercase;
+			text-align: right;
+			letter-spacing: 2px;
+			background: #172128;
+			height: 45px;
+			padding: 0 20px;
+			font-weight: 300;
+			line-height: 46px;
+			margin: 0 50px 0 0;			
+		}
+	}
 }
 
-.pager-slider a span {
-    font-family: $accent-2-font;
-    font-size: 32px;
-    display: block;
-    color: #fff;
-    font-weight: 700;
-    position: Absolute;
-    left: 15px;
-    top: 1px;
-}
-
-.main-slider .slider-details {
-    position: absolute;
-    top: 45%;
-    left: 20%;
-    line-height: 50px;
-    transition: all 0.3s;
-    text-align: right;
-}
-
-.main-slider .slider-details h1 {
-    font-family: $accent-2-font;
-    font-size: 74px;
-    color: #fff;
-    text-shadow: 0 2px 6px rgba(35, 31, 32, .41);
-    -webkit-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -moz-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -o-transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: background 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-    -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-    -o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.main-slider .slider-details span {
-    display: inline-block;
-    font-family: $accent-1-font;
-    font-size: 15px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: right;
-    letter-spacing: 2px;
-    background: #172128;
-    height: 45px;
-    padding: 0 20px;
-    font-weight: 300;
-    line-height: 46px;
-    margin: 0 50px 0 0;
-}
-
-.owl-item.active .slider-details h1 {
-    display: block;
-    animation: anim_affluent_sliderPro_title 1200ms linear both;
-    animation-delay: .3s;
-    margin-bottom: 0;
-}
-
-.owl-item.active .slider-details span {
-    animation: anim_affluent_sliderPro_category 1000ms linear both;
-    animation-delay: 400ms;
+.owl-item.active {
+	.slider-details {
+		
+		h1 {
+			display: block;
+			animation: anim_affluent_sliderPro_title 1200ms linear both;
+			animation-delay: .3s;
+			margin-bottom: 0;
+		}
+		
+		span {
+			animation: anim_affluent_sliderPro_category 1000ms linear both;
+			animation-delay: 400ms;
+		}
+	}
 }
 
 
-@media (max-width: 1024px) {
+
+@media (min-width: 1024px) {
 	.main-slider .slider-details h1 {
 			font-size:48px;
 			line-height:48px;
 	}
 }
 
+@media (min-width: 769px) and (max-width: 991px) {
+	
+    .main-slider {
+		.slider-details {
+			top: 5%;
+			left:10%;
+			width: 90%;
+			text-align: center;
+			
+			h1 {
+				text-align: center;
+				font-size:36px;
+			}
+			
+			span {
+				height: 35px;
+				line-height: 37px;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
 @media (max-width: 768px) {
 
-	.main-slider .item-overlay {
-		opacity:.5;
-	}
-
-	.main-slider .slider-details {
-		top: 20%;
-		left:10%;
-	}
-
-}
-
-
-@media (max-width: 991px) {
-	
-    .main-slider .slider-details h1 {
-        text-align: center;
-    }
-    .main-slider .slider-details span {
-        height: 35px;
-        line-height: 37px;
-        font-size: 14px;
-    }
-}
-
-
-@media (max-width: 500px) {
-
     .main-slider {
-        display: none;
-    }
+		.slider-details {
+			top: 10vh;
+			left:10%;
+			width: 90%;
+			text-align: center;
+			
+			h1 {
+				text-align: center;
+				font-size:28px;
+			}
+			
+			span {
+				height: 30px;
+				line-height: 30px;
+				font-size: 10px;
+			}
+		}
+	}
+	
     .pager-slider {
         display: none;
     }
+}
+
+@media (max-width: 540px) {
+	
+    .main-slider {
+		.slider-details {
+			top: 1vh;
+			
+			span {
+				display:none;
+			}
+		}
+	}
 }
 
 /* ----------------------------------- #00 - Section Hero - END --------------------------------------- */
