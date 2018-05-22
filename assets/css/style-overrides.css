@@ -488,9 +488,12 @@
    =Blog
    ========================================================================== */
    
-	/*
-	#back-to-top:hover { background-color: %8$s; }
+   #back-to-top { background-color:%2$s; }
+   
+	#back-to-top:hover { background-color: %3$s; }
 	#back-to-top:hover i { color: #ffffff; }
+	
+	/*
 	.sticky .post-thumbnail:after {
 		color: %2$s;
 	}

@@ -12,6 +12,7 @@
       Portum.Plugins.animateCounters();
       Portum.Plugins.animateProgress();
       Portum.Plugins.animatePieCharts();
+      Portum.Theme.hideBackTop();
     } catch ( error ) {
 
     }
@@ -54,6 +55,7 @@
       Portum.Theme.animations();
       Portum.Theme.newsletter();
       Portum.Theme.backTop();
+	  Portum.Theme.hideBackTop();
       Portum.Theme.footerLogo();
       Portum.Theme.smoothScroll();
       Portum.Theme.contact();
