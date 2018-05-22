@@ -330,7 +330,7 @@
 	#mobile-menu {			
 		color: %14$s;									/* epsilon_menu_item_color */
 		border-bottom-color: rgba(255, 255, 255, 0.25);
-		background-color: %13$s;
+		background-color: %11$s;
 	}
 
 	#mobile-menu li a {
@@ -345,6 +345,10 @@
 		
 	#mobile-menu-trigger { 
 		color: %14$s;									/* epsilon_menu_item_color */
+	}
+	
+	#mobile-menu li > a:hover {
+		background-color: %13$s;
 	}
 
 	#mobile-menu-trigger:hover {
