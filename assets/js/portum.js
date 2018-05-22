@@ -540,13 +540,14 @@ var Portum = {
     /**
      * Back to top function
      */
+	 hideBackTop: function(){
+		if ( jQuery( window ).scrollTop() > jQuery( window ).height() / 2 ) {
+ 		  jQuery( '#back-to-top' ).removeClass( 'gone' ).addClass( 'visible' );
+		} else {
+		  jQuery( '#back-to-top' ).removeClass( 'visible' ).addClass( 'gone' );
+		}
+	 }, 
     backTop: function() {
-      if ( jQuery( window ).scrollTop() > jQuery( window ).height() / 2 ) {
-        jQuery( '#back-to-top' ).removeClass( 'gone' ).addClass( 'visible' );
-      } else {
-        jQuery( '#back-to-top' ).removeClass( 'visible' ).addClass( 'gone' );
-      }
-
       jQuery( '#back-to-top' ).on( 'click', function() {
         jQuery( 'html, body' ).animate( { scrollTop: 0 }, 'slow' );
         return false;
