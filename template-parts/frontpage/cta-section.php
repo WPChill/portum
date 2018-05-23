@@ -63,40 +63,14 @@ $parent_attr = array(
 								<?php }; ?>
 							</div>
 							<div class="col-sm-7">
-								<?php 
-								
-								echo wp_kses_post(
-									Portum_Helper::generate_section_title(
-										$fields['cta_title'],
-										$fields['cta_description'],
-										array(
-											'doubled' => false,
-											'center'  => false,
-										)
-									)
-								);
-								
-								?>
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_title'], $fields['cta_description'] ) ); ?>
 							</div>
 
 						<?php }elseif($fields['cta_row_title_align'] == 'top'){ ?>
 						
 							<div class="col-sm-12">
 								
-								<?php 
-								
-								echo wp_kses_post(
-									Portum_Helper::generate_section_title(
-										$fields['cta_title'],
-										$fields['cta_description'],
-										array(
-											'doubled' => false,
-											'center'  => false,
-										)
-									)
-								);
-								
-								?>
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_title'], $fields['cta_description'] ) ); ?>
 								
 								<?php if ($button_primary) { ?>
 									<a class="ewf-btn ewf-btn--huge" href="<?php echo esc_url( $fields['cta_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['cta_button_primary_label'] ); ?></a>
@@ -111,20 +85,7 @@ $parent_attr = array(
 						<?php }else{ ?>
 						
 							<div class="col-sm-7">
-								<?php 
-								
-								echo wp_kses_post(
-									Portum_Helper::generate_section_title(
-										$fields['cta_title'],
-										$fields['cta_description'],
-										array(
-											'doubled' => false,
-											'center'  => false,
-										)
-									)
-								);
-								
-								?>
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_title'], $fields['cta_description'] ) ); ?>
 							</div>
 							<div class="col-sm-5 ewf-text-align--right">
 								<?php if ($button_primary) { ?>
@@ -142,22 +103,7 @@ $parent_attr = array(
 					<?php }else{ ?>
 							
 						<div class="col-sm-12">
-						
-							<?php 
-							
-							echo wp_kses_post(
-								Portum_Helper::generate_section_title(
-									$fields['cta_title'],
-									$fields['cta_description'],
-									array(
-										'doubled' => false,
-										'center'  => false,
-									)
-								)
-							);
-							
-							?>
-						
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_title'], $fields['cta_description'] ) ); ?>
 						</div>
 						
 					<?php }?>

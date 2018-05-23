@@ -107,14 +107,14 @@ $span      = 12 / absint( $fields['progress_column_group'] );
 					</div>
 					
 					<div class="col-md-<?php echo $section_item_columns; ?>">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'], array('bottom' => true) ) ); ?>
 					</div>
 				</div>
 			<?php }else{ ?>
 			
 				<div class="row">
 					<div class="col-md-12">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'], false ) ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
 					</div>
 				</div>
 			

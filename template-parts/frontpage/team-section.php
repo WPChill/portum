@@ -41,7 +41,7 @@ $items_class = null;
 				<?php if ($fields['team_row_title_align'] == 'left'){ ?>
 
 					<div class="col-md-6">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ), false ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
 					</div>					
 
 					<div class="col-md-6">
@@ -201,13 +201,13 @@ $items_class = null;
 					</div>
 
 					<div class="col-md-6">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ), false ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
 					</div>
 
 				<?php }else{ ?>
 					
 					<div class="col-md-12">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ), false ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
 					</div>
 					
 					<div class="col-md-12">

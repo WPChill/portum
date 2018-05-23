@@ -112,7 +112,7 @@ $span = 12 / absint( $fields['piecharts_column_group'] );
 					</div>
 					
 					<div class="col-md-<?php echo $section_item_columns; ?>">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'] ) ); ?>			
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'], array('bottom' => true) ) ); ?>			
 					</div>
 					
 				</div>

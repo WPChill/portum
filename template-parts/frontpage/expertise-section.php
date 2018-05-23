@@ -30,11 +30,6 @@ $parent_attr         = array(
 		$attr_helper->generate_color_overlay();
 		
 		$section_content_cols = ($fields['expertise_image'] ? '7' : '12');
-		
-		// echo '<pre>';
-			// print_r($fields);
-		// echo '</pre>';
-		
 		?>
 		
 		<div class="ewf-section__content">
@@ -45,18 +40,7 @@ $parent_attr         = array(
 					<?php if ($fields['expertise_row_title_align'] == 'left'){ ?>
 					
 					<div class="col-md-<?php echo $section_content_cols; ?>">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['expertise_subtitle'],
-								$fields['expertise_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
-						?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['expertise_subtitle'], $fields['expertise_title'] ) ); ?>
 
 						<?php if ( ! empty( $fields['expertise'] ) ) { ?>
 
@@ -93,17 +77,7 @@ $parent_attr         = array(
 					<?php } ?>
 					<div class="col-md-<?php echo $section_content_cols; ?>">
 						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['expertise_subtitle'],
-								$fields['expertise_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
-						?>
+						echo wp_kses_post( Portum_Helper::generate_section_title( $fields['expertise_subtitle'], $fields['expertise_title'], array('bottom' => true) ) ); ?>
 
 						<?php if ( ! empty( $fields['expertise'] ) ) { ?>
 

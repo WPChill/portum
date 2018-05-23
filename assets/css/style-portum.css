@@ -541,6 +541,15 @@ a.social-icon:active
     {
         text-align: center;
     }
+
+    .headline--xs-bottom
+    {
+        margin-top: 55px;
+    }
+    .headline--xs-bottom h3
+    {
+        margin: 0;
+    }
 }
 /* ------------------------------ HEADLINE section - END --------------------*/
 /* ==========================================================================
@@ -6214,11 +6223,7 @@ input[type='button']:active
 
 .services-item
 {
-    margin-top: 30px;
-}
-.services-item.services-item-first
-{
-    margin-top: 0;
+    margin-bottom: 30px;
 }
 .services-item i
 {
@@ -6242,6 +6247,13 @@ input[type='button']:active
     display: block;
 }
 
+@media (max-width: 768px)
+{
+    .services-item
+    {
+        text-align: center;
+    }
+}
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/
 /* ----------------------------------- #03 - PORTFOLIO section --------------------------------*/
 .portfolio-grid

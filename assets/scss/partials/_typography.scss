@@ -418,6 +418,7 @@ a.social-icon:active {
 	}
 }
 
+
 .contrast { 
 	.headline h3 {
 		color: #fff;
@@ -442,6 +443,13 @@ a.social-icon:active {
 	.headline {
 		text-align:center;
 	}
+	
+	.headline--xs-bottom  {
+		margin-top:55px;
+		
+		h3{ margin: 0; }
+	}
+
 }
 
 /* ------------------------------ HEADLINE section - END --------------------*/

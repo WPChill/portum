@@ -47,19 +47,7 @@ $parent_attr = array(
 					<?php } ?>
 
 					<div class="col-md-6">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['about_subtitle'],
-								$fields['about_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
-						?>
-
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
 						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 					</div>
 
@@ -67,19 +55,7 @@ $parent_attr = array(
 				<?php }else { ?>
 
 					<div class="col-md-6">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['about_subtitle'],
-								$fields['about_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
-						?>
-
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?> 
 						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 					</div>
 
