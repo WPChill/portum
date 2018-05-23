@@ -46,11 +46,12 @@ $span      = 12 / absint( $fields['progress_column_group'] );
 			<?php if ($fields['progress_row_title_align'] == 'left'){ ?>
 				<div class="row">
 				
-					<div class="col-md-<?php echo $section_item_columns; ?>">
+					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
 					</div>
 					
-					<div class="col-md-<?php echo $section_items_content; ?>">
+					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+						<div class="row">
 						<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
 							<div class="col-md-<?php echo $section_item_columns; ?>">
 								<div class="ewf-progress <?php echo $progress['progress_bar_type'] === 'alternate' ? 'ewf-progress--alternative-modern' : ''; ?>">
@@ -74,13 +75,15 @@ $span      = 12 / absint( $fields['progress_column_group'] );
 								</div><!-- end .ewf-progress -->
 							</div>
 						<?php } ?>
+						</div>
 					</div>
 					
 				</div>
 			<?php }elseif ($fields['progress_row_title_align'] == 'right'){ ?>
 				<div class="row">
 									
-					<div class="col-md-<?php echo $section_items_content; ?>">
+					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+						<div class="row">
 						<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
 							<div class="col-md-<?php echo $section_item_columns; ?>">
 								<div class="ewf-progress <?php echo $progress['progress_bar_type'] === 'alternate' ? 'ewf-progress--alternative-modern' : ''; ?>">
@@ -104,9 +107,10 @@ $span      = 12 / absint( $fields['progress_column_group'] );
 								</div><!-- end .ewf-progress -->
 							</div>
 						<?php } ?>
+						</div>
 					</div>
 					
-					<div class="col-md-<?php echo $section_item_columns; ?>">
+					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'], array('bottom' => true) ) ); ?>
 					</div>
 				</div>

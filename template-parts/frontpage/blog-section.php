@@ -49,7 +49,7 @@ $parent_attr = array(
 
 					<div class="blog-news-item">
 						<div class="row">
-							<div class="col-md-8 col-sm-7 col-sx-12">
+							<div class="col-md-8 col-sm-6 col-sx-12">
 								<div class="post-details">
 									<h4>
 										<a href="<?php echo esc_url( get_permalink() ); ?>">
@@ -57,11 +57,11 @@ $parent_attr = array(
 										</a>
 									</h4>
 
-									<?php echo wpautop( wp_kses_post( wp_trim_words( get_the_content(), 40 ) ) ); ?>
+									<?php echo wpautop( wp_kses_post( wp_trim_words( get_the_content(), 30 ) ) ); ?>
 
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-5 col-sx-12">
+							<div class="col-md-4 col-sm-6 col-sx-12">
 								<div class="featured">
 									<?php
 									if ( has_post_thumbnail() ) {

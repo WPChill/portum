@@ -111,21 +111,40 @@
 	}
 }
 
+@media (min-width: 768px) and (max-width:1024px) {
+	
+	.portfolio-grid-item.small-column {	
+		p {
+			display:none;
+		}
+	}
+}
 
 @media (max-width: 767px) {
 	
     .portfolio-grid-item.small-column {
         width: 50%;
+		
+		p {
+			display:none;
+		}
     }
+	
 }
 
 
 @media (max-width: 600px) {
+
+    .portfolio-grid-item.small-column {
+        width: 100%;
+    }
+	
     .portfolio-grid-item {
         height: 300px;
 		
 		p {
 			margin-bottom: 35px;
+			display:block;
 		}
     }
 	

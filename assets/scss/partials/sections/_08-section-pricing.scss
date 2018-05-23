@@ -21,6 +21,7 @@
 	&.featured,
 	&:hover {
 		transform: scale(1.05);
+		z-index:9999;
 	}
 
 	&.featured .details,
@@ -227,6 +228,53 @@
 
 		ul li {
 			text-align:center;
+		}
+	}
+}
+
+
+@media (max-width: 425px) {
+
+	.pricing-item {
+		&.featured {
+			transform: scale(1);
+		}
+		
+		.wrapper {
+			position:relative;
+			top:auto;
+			right:auto;
+			bottom:auto;
+			left:auto;
+			padding-left:0;
+			text-align:center;
+		}
+		
+		.details {
+			position:relative;
+			min-height:150px;
+			width:100%;
+			top:auto;
+			right:auto;
+			bottom:auto;
+			left:auto;			
+		}
+		
+		.btn {
+			margin-bottom:35px;
+		}
+		
+		.plan {
+			width:100%;
+			text-align:center;
+		}
+
+		ul {
+			padding:20px;
+			
+			li {
+				text-align:center;
+			}
 		}
 	}
 }
