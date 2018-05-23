@@ -89,6 +89,9 @@
 	
 	
 	/* Pricing */
+	.section-pricing .pricing-item .plan sup,
+	.section-pricing .pricing-item .plan sub,
+	.section-pricing .pricing-item .plan strong,
 	.section-pricing .pricing-item ul span {
 		color: %2$s;					/*	epsilon_accent_color */
 	}
@@ -97,6 +100,10 @@
 		background-color: %2$s;			/*	epsilon_accent_color */
 	}
 
+
+	.section-pricing .pricing-item:hover .plan sup,
+	.section-pricing .pricing-item:hover .plan sub,
+	.section-pricing .pricing-item:hover .plan strong,
 	.section-pricing .pricing-item:hover ul span{
 		color: %3$s;					/* epsilon_accent_color_second */
 	}
@@ -104,6 +111,19 @@
 	.section-pricing .pricing-item:hover .details{
 		background-color: %3$s;			/* epsilon_accent_color_second */
 	}	
+	
+	@media (max-width: 768px) {
+		.section-pricing .pricing-item .plan sup,
+		.section-pricing .pricing-item .plan sub,
+		.section-pricing .pricing-item .plan strong,
+		.section-pricing .pricing-item:hover .plan sup,
+		.section-pricing .pricing-item:hover .plan sub,
+		.section-pricing .pricing-item:hover .plan strong {
+			color: #fff;
+		}
+	}
+	
+	
 	
 	
 	
