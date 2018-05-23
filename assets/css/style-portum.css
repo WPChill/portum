@@ -6385,21 +6385,39 @@ input[type='button']:active
     color: #a9afb1;
 }
 
+@media (min-width: 768px) and (max-width: 1024px)
+{
+    .portfolio-grid-item.small-column p
+    {
+        display: none;
+    }
+}
 @media (max-width: 767px)
 {
     .portfolio-grid-item.small-column
     {
         width: 50%;
     }
+    .portfolio-grid-item.small-column p
+    {
+        display: none;
+    }
 }
 @media (max-width: 600px)
 {
+    .portfolio-grid-item.small-column
+    {
+        width: 100%;
+    }
+
     .portfolio-grid-item
     {
         height: 300px;
     }
     .portfolio-grid-item p
     {
+        display: block;
+
         margin-bottom: 35px;
     }
 
@@ -6744,6 +6762,8 @@ input[type='button']:active
 .pricing-item.featured,
 .pricing-item:hover
 {
+    z-index: 9999;
+
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);
@@ -6984,6 +7004,56 @@ input[type='button']:active
         text-align: center;
     }
 }
+@media (max-width: 425px)
+{
+    .pricing-item.featured
+    {
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+    }
+    .pricing-item .wrapper
+    {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        padding-left: 0;
+
+        text-align: center;
+    }
+    .pricing-item .details
+    {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        width: 100%;
+        min-height: 150px;
+    }
+    .pricing-item .btn
+    {
+        margin-bottom: 35px;
+    }
+    .pricing-item .plan
+    {
+        width: 100%;
+
+        text-align: center;
+    }
+    .pricing-item ul
+    {
+        padding: 20px;
+    }
+    .pricing-item ul li
+    {
+        text-align: center;
+    }
+}
 /* ----------------------------------- #08 - PRICING section - END ---------------------------*/
 /* ----------------------------------- #09 - BLOG section --------------------------------*/
 .blog-news-item
@@ -7178,12 +7248,15 @@ input[type='button']:active
     height: 100%;
 }
 
+@media (max-width: 991px)
+{
+    .blog-news-item .post-details
+    {
+        padding-bottom: 30px;
+    }
+}
 @media (max-width: 768px)
 {
-    .blog-news-item .featured .overlay
-    {
-        display: none;
-    }
     .blog-news-item .featured img
     {
         width: 100%;
@@ -7213,18 +7286,26 @@ input[type='button']:active
     {
         float: none;
 
-        width: 120%;
-        margin-left: -10px;
+        width: 100%;
+        margin-left: 8px;
     }
     .blog-news-item .post-details
     {
-        padding-right: 40px;
-        padding-bottom: 60px;
+        padding-right: 0;
+        padding-bottom: 0;
     }
 }
-@media (max-width: 320px)
+@media (max-width: 767px)
 {
     .blog-news-item .news-date
+    {
+        display: none;
+    }
+    .blog-news-item .featured
+    {
+        width: auto;
+    }
+    .blog-news-item .featured .overlay
     {
         display: none;
     }
@@ -7237,6 +7318,10 @@ input[type='button']:active
     .blog-news-item .news-category strong a
     {
         text-align: center;
+    }
+    .blog-news-item .post-details
+    {
+        padding: 25px 0  40px 40px;
     }
 }
 /* ----------------------------------- #09 - BLOG section - END --------------------------------*/
