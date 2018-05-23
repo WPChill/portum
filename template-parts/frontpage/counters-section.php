@@ -122,7 +122,7 @@ wp_enqueue_script( 'odometer' );
 					</div>
 					
 					<div class="col-md-<?php echo $section_item_columns; ?>">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'], array('bottom' => true) ) ); ?>
 					</div>
 				</div>
 			

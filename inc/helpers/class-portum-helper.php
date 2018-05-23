@@ -294,12 +294,16 @@ class Portum_Helper {
 		$subtitle = '',
 		$title = '',
 		$args = array(
+			'bottom'  		=> false,
 			'center'  		=> false,
 		)
 	) {
 		$class = 'headline';
-		if ( $args['center'] ) {
+		if ( !empty($args['center']) ) {
 			$class .= ' text-center';
+		}
+		if ( !empty($args['bottom']) ) {
+			$class .= ' headline--xs-bottom';
 		}
 		$html = '<div class="' . $class . '">';
 

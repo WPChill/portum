@@ -45,7 +45,7 @@ $parent_attr = array(
 					<div class="col-md-6">
 						<?php
 						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ));					
+							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'], array('bottom' => true) ) );
 						?>
 					</div>
 					
@@ -54,7 +54,7 @@ $parent_attr = array(
 					<div class="col-md-6">
 						<?php
 						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title']));					
+							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ) );					
 						?>
 					</div>
 					<div class="col-md-6">
@@ -66,7 +66,7 @@ $parent_attr = array(
 					<div class="col-sm-12">
 						<?php
 						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title']));					
+							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ) );					
 						?>
 						
 						

@@ -6,12 +6,8 @@
 }
 
 .services-item {
-  margin-top:30px;
-  
-  &.services-item-first {
-	  margin-top:0;
-  }
-  
+  margin-bottom:30px;
+   
   i {
 	  color: #fff;
 	  font-size: 30px;
@@ -32,6 +28,12 @@ strong {
 	  display: block;
    }
   
+}
+
+@media (max-width: 768px) {
+	.services-item {
+		text-align:center;
+	}
 }
 
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/

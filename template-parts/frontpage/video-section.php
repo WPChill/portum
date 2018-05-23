@@ -30,75 +30,39 @@ wp_enqueue_script( 'plyr' );
 		?>
 		
 		<div class="ewf-section__content">
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'video', $fields ) ); ?>">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-			
-			<div class="row">
-			<?php if ($fields['video_row_title_align'] == 'left'){ ?>
-				<div class="col-md-6">
-					<?php
-					echo wp_kses_post(
-						Portum_Helper::generate_section_title(
-							$fields['video_subtitle'],
-							$fields['video_title'],
-							array(
-								'doubled' => false,
-								'center'  => false,
-							)
-						)
-					);
-					?>
-					
-					<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
-				</div>
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'video', $fields ) ); ?>">
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 				
-				<div class="col-md-6">
-					<div class="video-area auto-resizable-iframe">
-						<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
+				<div class="row">
+				<?php if ($fields['video_row_title_align'] == 'left'){ ?>
+					<div class="col-md-6">
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?>
+						<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
 					</div>
-				</div>
-				
-			<?php }elseif($fields['video_row_title_align'] == 'right') { ?>
-			
-				<div class="col-md-6">
-					<div class="video-area auto-resizable-iframe">
-						<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
-					</div>
-				</div>
-			
-				<div class="col-md-6">
-					<?php
-					echo wp_kses_post(
-						Portum_Helper::generate_section_title(
-							$fields['video_subtitle'],
-							$fields['video_title'],
-							array(
-								'doubled' => false,
-								'center'  => false,
-							)
-						)
-					);
-					?>
 					
-					<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
-				</div>
+					<div class="col-md-6">
+						<div class="video-area auto-resizable-iframe">
+							<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
+						</div>
+					</div>
+					
+				<?php }elseif($fields['video_row_title_align'] == 'right') { ?>
 				
-			<?php }else { ?>
-			
+					<div class="col-md-6">
+						<div class="video-area auto-resizable-iframe">
+							<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
+						</div>
+					</div>
+				
+					<div class="col-md-6">
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'], array('bottom' => true) ) ); ?>
+						<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
+					</div>
+					
+				<?php }else { ?>
+				
 					<div class="col-md-12">				
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['video_subtitle'],
-								$fields['video_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
-						?>
-					
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?>
 						<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
 						
 						<?php if ( 'none' !== $video['video_type'] ) { ?>
@@ -110,7 +74,6 @@ wp_enqueue_script( 'plyr' );
 					</div>
 					
 				<?php } ?>
-				
 				</div>
 				
 			</div> 
