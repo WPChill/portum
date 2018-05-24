@@ -36,6 +36,10 @@ $menu-dropdown-background-color: #a1083a !default;
 $menu-dropdown-hover-background-color: #940534 !default;
 
 
+// Portfolio
+// 
+$color-background-portfolio-overlay: rgba(255, 255, 255, 0.25) !default;
+
 
 // Blog
 //
@@ -112,12 +116,12 @@ $spacing-xxl-large: 175px !default;
 
 
 // Portfolio Spacing
-//
+
 $spacing-portfolio-none: 0 !default;
 $spacing-portfolio-line: 1px !default;
-$spacing-portfolio-small: 10px !default;
-$spacing-portfolio-medium: 20px !default;
-$spacing-portfolio-large: 30px !default;
+$spacing-portfolio-small: 7px !default;
+$spacing-portfolio-medium: 13px !default;
+$spacing-portfolio-large: 26px !default;
 
 
 
