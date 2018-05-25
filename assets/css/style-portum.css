@@ -6327,7 +6327,7 @@ input[type='button']:active
             transition: all .25s;
 
     opacity: 0;
-    background: rgba(255, 255, 255, .25);
+    background: rgba(255, 255, 255, .75);
 }
 
 .ewf-portfolio-item__control-zoom
