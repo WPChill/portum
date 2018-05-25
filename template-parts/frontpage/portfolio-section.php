@@ -56,36 +56,15 @@ wp_enqueue_script( 'magnificPopup' );
 
 										<div class="ewf-portfolio-item__details">
 											<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
-												<h5><?php echo esc_html( $item['portfolio_title'] ); ?></h5>
+												<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
 											<?php } ?>
 
-											<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>
-											
-											
-											<!--
-											<div class="action fixed">
-												<?php 
-													$is_single_button = null;
-													
-													if ( empty( $item['portfolio_link'] ) ) {
-														$is_single_button = ' zoom-single';
-													}
-												?>
-												<a href="<?php echo esc_url( $item['portfolio_image'] ); ?>" class="magnific-link zoom<?php echo $is_single_button; ?>">
-													<i class="fa fa-search" aria-hidden="true"></i> </a>
-												<?php if ( ! empty( $item['portfolio_link'] ) ) { ?>
-													<a href="<?php echo esc_url( $item['portfolio_link'] ) ?>" class="link">
-														<i class="fa fa-chain" aria-hidden="true"></i> </a>
-												<?php } ?>
-											</div>
-											-->
-											
-											
-											<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( $item['portfolio_image'] ); ?>">
-												<i class="fa fa-eye"></i>
-											</a>
-											
+											<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>											
 										</div><!-- ewf-portfolio-item__details -->
+										
+										<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( $item['portfolio_image'] ); ?>">
+											<i class="fa fa-eye"></i>
+										</a>
 
 									</div><!-- ewf-portfolio-item__overlay -->
 									
