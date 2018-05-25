@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
+<?php $cform       = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
 <?php $cform_title = get_theme_mod( 'portum_footer_contact_title', __( 'Learn more about us', 'portum' ) ); ?>
 
 <?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>

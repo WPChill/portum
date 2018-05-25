@@ -31,19 +31,19 @@ wp_enqueue_script( 'magnificPopup' );
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
-		
+
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">		
 		<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-		
+
 		<div class="ewf-section__content">
 
 			<div class="row">
-			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'], array('center' => true) ) ); ?>
+			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'], array( 'center' => true ) ) ); ?>
 
 			<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
-								
-				<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo intval($fields['portfolio_spacing']); ?> ewf-portfolio--columns-<?php echo $fields['portfolio_column_group']; ?>">
-				
+
+				<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo intval( $fields['portfolio_spacing'] ); ?> ewf-portfolio--columns-<?php echo $fields['portfolio_column_group']; ?>">
+
 					<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
 						<li>
 							<div class="ewf-portfolio-item">
@@ -61,18 +61,18 @@ wp_enqueue_script( 'magnificPopup' );
 
 											<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>											
 										</div><!-- ewf-portfolio-item__details -->
-										
+
 										<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( $item['portfolio_image'] ); ?>">
 											<i class="fa fa-eye"></i>
 										</a>
 
 									</div><!-- ewf-portfolio-item__overlay -->
-									
+
 								</div><!-- ewf-portfolio-item__thumbnail -->
 							</div><!-- ewf-portfolio-item -->
 						</li>
 					<?php } ?>
-					
+
 				</ul>
 			<?php } ?>
 			</div>

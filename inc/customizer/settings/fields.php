@@ -345,7 +345,7 @@ Epsilon_Customizer::add_field(
 		'type'              => 'text',
 		'section'           => 'portum_footer_section',
 		'sanitize_callback' => 'sanitize_text_field',
-		'default'    		=> __( 'Learn more about us', 'portum' ),
+		'default'           => __( 'Learn more about us', 'portum' ),
 		'label'             => esc_html__( 'Contact form CTA', 'portum' ),
 	)
 );
@@ -636,7 +636,7 @@ Epsilon_Customizer::add_field(
 				'default' => 'normal',
 				'choices' => array(
 					'normal'   => __( 'Normal', 'portum' ),
-					'odometer' => __( 'Odometer', 'portum' )
+					'odometer' => __( 'Odometer', 'portum' ),
 				),
 			),
 			'counter_icon_display' => array(
@@ -681,7 +681,7 @@ Epsilon_Customizer::add_field(
 				'default' => 'normal',
 				'choices' => array(
 					'normal'    => esc_html__( 'Normal', 'portum' ),
-					'alternate' => esc_html__( 'Alternate', 'portum' )
+					'alternate' => esc_html__( 'Alternate', 'portum' ),
 				),
 			),
 		),
@@ -940,7 +940,7 @@ Epsilon_Customizer::add_field(
 				'sanitize_callback' => 'wp_kses_post',
 				'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
 			),
-			'slide_background_color' => array(
+			'slide_background_color'   => array(
 				'label'      => esc_html__( 'Background color', 'portum' ),
 				'type'       => 'epsilon-color-picker',
 				'defaultVal' => '#f9f9fa',
@@ -1031,7 +1031,7 @@ Epsilon_Customizer::add_field(
 		'section'             => 'portum_repeatable_section',
 		'page_builder'        => true,
 		'selective_refresh'   => true,
-        'transport'           => 'postMessage',
+		'transport'           => 'postMessage',
 		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
 	)
 );
@@ -1055,32 +1055,32 @@ Epsilon_Customizer::add_field(
 				'name'   => 'Primary',
 				'colors' => array(
 					// 'epsilon_general_separator'         		=> '',
-					'epsilon_accent_color'              		=> '#0385d0',
-					'epsilon_accent_color_second'       		=> '#a1083a',
-					
+					'epsilon_accent_color'              => '#0385d0',
+					'epsilon_accent_color_second'       => '#a1083a',
+
 					// 'epsilon_text_separator'            		=> '',
-					'epsilon_title_color'               		=> '#1a171c',
-					'epsilon_text_color'               			=> '#777777',
-					'epsilon_link_color'                		=> '#0385d0',
-					'epsilon_link_hover_color'          		=> '#a1083a',
-					'epsilon_link_active_color'         		=> '#333333',
-					
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_link_color'                => '#0385d0',
+					'epsilon_link_hover_color'          => '#a1083a',
+					'epsilon_link_active_color'         => '#333333',
+
 					// 'epsilon_menu_separator'            		=> '',
-					'epsilon_header_background'           		=> '#151c1f',
-					'epsilon_dropdown_menu_background'          => '#a1083a',
-					'epsilon_dropdown_menu_hover_background'	=> '#940534',
-					'epsilon_menu_item_color'    				=> '#ebebeb',
-					'epsilon_menu_item_hover_color' 			=> '#ffffff',
-					'epsilon_menu_item_active_color'        	=> '#0385d0',
-					
+					'epsilon_header_background'         => '#151c1f',
+					'epsilon_dropdown_menu_background'  => '#a1083a',
+					'epsilon_dropdown_menu_hover_background' => '#940534',
+					'epsilon_menu_item_color'           => '#ebebeb',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#0385d0',
+
 					// 'epsilon_footer_separator'         			=> '',
-					'epsilon_footer_contact_background'         => '#0377bb',
-					'epsilon_footer_background'         		=> '#192229',
-					'epsilon_footer_title_color'         		=> '#ffffff',
-					'epsilon_footer_text_color'         		=> '#a9afb1',
-					'epsilon_footer_link_color'         		=> '#a9afb1',
-					'epsilon_footer_link_hover_color'         	=> '#ffffff',
-					'epsilon_footer_link_active_color'         	=> '#a9afb1',
+					'epsilon_footer_contact_background' => '#0377bb',
+					'epsilon_footer_background'         => '#192229',
+					'epsilon_footer_title_color'        => '#ffffff',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1',
+					'epsilon_footer_link_hover_color'   => '#ffffff',
+					'epsilon_footer_link_active_color'  => '#a9afb1',
 				),
 			),
 			array(
@@ -1088,32 +1088,32 @@ Epsilon_Customizer::add_field(
 				'name'   => 'Yellow',
 				'colors' => array(
 					// 'epsilon_general_separator'         		=> '',
-					'epsilon_accent_color'              		=> '#FFC000',
-					'epsilon_accent_color_second'       		=> '#3E4346',
-					
+					'epsilon_accent_color'              => '#FFC000',
+					'epsilon_accent_color_second'       => '#3E4346',
+
 					// 'epsilon_text_separator'            		=> '',
-					'epsilon_title_color'               		=> '#3E4346',
-					'epsilon_text_color'               			=> '#777777',
-					'epsilon_link_color'                		=> '#3e4346',
-					'epsilon_link_hover_color'          		=> '#ffc000',
-					'epsilon_link_active_color'         		=> '#3e4346',
-					
+					'epsilon_title_color'               => '#3E4346',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_link_color'                => '#3e4346',
+					'epsilon_link_hover_color'          => '#ffc000',
+					'epsilon_link_active_color'         => '#3e4346',
+
 					// 'epsilon_menu_separator'            		=> '',
-					'epsilon_header_background'           		=> '#ffffff',
-					'epsilon_dropdown_menu_background'          => '#ffffff',
-					'epsilon_dropdown_menu_hover_background'	=> '#ffc000',
-					'epsilon_menu_item_color'    				=> '#3e4346',
-					'epsilon_menu_item_hover_color' 			=> '#ffc000',
-					'epsilon_menu_item_active_color'        	=> '#ffc000',
-					
+					'epsilon_header_background'         => '#ffffff',
+					'epsilon_dropdown_menu_background'  => '#ffffff',
+					'epsilon_dropdown_menu_hover_background' => '#ffc000',
+					'epsilon_menu_item_color'           => '#3e4346',
+					'epsilon_menu_item_hover_color'     => '#ffc000',
+					'epsilon_menu_item_active_color'    => '#ffc000',
+
 					// 'epsilon_footer_separator'         			=> '',
-					'epsilon_footer_contact_background'         => '#ffc000',
-					'epsilon_footer_background'         		=> '#3e4346',
-					'epsilon_footer_title_color'         		=> '#ffffff',
-					'epsilon_footer_text_color'         		=> '#a9afb1',
-					'epsilon_footer_link_color'         		=> '#a9afb1',
-					'epsilon_footer_link_hover_color'         	=> '#ffffff',
-					'epsilon_footer_link_active_color'         	=> '#a9afb1',
+					'epsilon_footer_contact_background' => '#ffc000',
+					'epsilon_footer_background'         => '#3e4346',
+					'epsilon_footer_title_color'        => '#ffffff',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1',
+					'epsilon_footer_link_hover_color'   => '#ffffff',
+					'epsilon_footer_link_active_color'  => '#a9afb1',
 				),
 			),
 			/*
