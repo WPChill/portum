@@ -27,11 +27,11 @@ $parent_attr = array(
 
 		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'about', $fields ) ); ?>">
-		
+
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 			<div class="row">
-				<?php if ($fields['about_row_title_align'] == 'right'){ ?>
+				<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
 
 					<?php if ( ! empty( $fields['about_image'] ) ) { ?>
 						<div class="col-md-6">
@@ -40,12 +40,12 @@ $parent_attr = array(
 					<?php } ?>
 
 					<div class="col-md-6">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array('bottom' => true) ) ); ?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) ); ?>
 						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 					</div>
 
 
-				<?php }else { ?>
+				<?php } else { ?>
 
 					<div class="col-md-6">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?> 
@@ -58,7 +58,7 @@ $parent_attr = array(
 						</div>
 					<?php } ?>
 
-				<?php }?>
+				<?php } ?>
 
 
 			</div>

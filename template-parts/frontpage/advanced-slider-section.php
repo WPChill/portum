@@ -57,13 +57,13 @@ wp_enqueue_style( 'slick' );
 				$css .= '"';
 
 				$captions = array(
-					'advanced-slider-slide-content'               => true,
-					'advanced-slider-slide-content-valign-top'    => 'aligntop' === $slide['slide_vertical_alignment'] ? true : false,
+					'advanced-slider-slide-content' => true,
+					'advanced-slider-slide-content-valign-top' => 'aligntop' === $slide['slide_vertical_alignment'] ? true : false,
 					'advanced-slider-slide-content-valign-middle' => 'alignmiddle' === $slide['slide_vertical_alignment'] ? true : false,
 					'advanced-slider-slide-content-valign-bottom' => 'alignbottom' === $slide['slide_vertical_alignment'] ? true : false,
-					'advanced-slider-slide-content-align-left'    => 'left' === $slide['slide_alignment'] ? true : false,
-					'advanced-slider-slide-content-align-center'  => 'center' === $slide['slide_alignment'] ? true : false,
-					'advanced-slider-slide-content-align-right'   => 'right' === $slide['slide_alignment'] ? true : false,
+					'advanced-slider-slide-content-align-left' => 'left' === $slide['slide_alignment'] ? true : false,
+					'advanced-slider-slide-content-align-center' => 'center' === $slide['slide_alignment'] ? true : false,
+					'advanced-slider-slide-content-align-right' => 'right' === $slide['slide_alignment'] ? true : false,
 				);
 				$captions = array_filter( $captions );
 

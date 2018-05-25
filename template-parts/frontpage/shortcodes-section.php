@@ -33,46 +33,48 @@ $parent_attr = array(
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
-		
+
 		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'shortcodes', $fields ) ); ?>">
 			<div class="row">
-			
-				<?php if ($fields['shortcodes_row_title_align'] == 'right'){ ?>
+
+				<?php if ( 'right' === $fields['shortcodes_row_title_align'] ) { ?>
 					<div class="col-md-6">
 						<?php echo do_shortcode( $fields['shortcodes_field'] ); ?>
 					</div>
 					<div class="col-md-6">
 						<?php
 						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'], array('bottom' => true) ) );
+							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'], array( 'bottom' => true ) )
+						);
 						?>
 					</div>
-					
-				<?php } elseif ($fields['shortcodes_row_title_align'] == 'left'){ ?>
-				
+
+				<?php } elseif ( 'left' === $fields['shortcodes_row_title_align'] ) { ?>
+
 					<div class="col-md-6">
 						<?php
 						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ) );					
+							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] )
+						);
 						?>
 					</div>
 					<div class="col-md-6">
 						<?php echo do_shortcode( $fields['shortcodes_field'] ); ?>
 					</div>
-					
-				<?php }else { ?>
+
+				<?php } else { ?>
 
 					<div class="col-sm-12">
 						<?php
 						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ) );					
+							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] )
+						);
 						?>
-						
-						
+
 						<?php echo do_shortcode( $fields['shortcodes_field'] ); ?>
 					</div>
-				
+
 				<?php } ?>
 			</div>
 		</div>
