@@ -15,12 +15,12 @@
 get_header();
 
 $show_on_front = get_option( 'show_on_front' );
-$show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
+$show_welcome  = get_theme_mod( 'portum_show_blog_welcome', false );
 
 if ( 'posts' === $show_on_front ) :
 
 	$img = get_custom_header();
-	$img       = $img->url;
+	$img = $img->url;
 
 	$layout = Portum_Helper::get_layout();
 	?>
@@ -29,18 +29,16 @@ if ( 'posts' === $show_on_front ) :
 				<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 			</div>
 		</div>
-		
-		
+
 		<div class="container">
-			
+
 			<?php
-			
 			if ( $show_welcome ) {
 				get_template_part( 'template-parts/blog/welcome' );
-			} 
-			
+			}
+
 			?>
-			
+
 			<div class="row">
 				<?php
 				if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
