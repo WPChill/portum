@@ -72,6 +72,23 @@ $panels = array(
  * Register sections
  */
 $sections = array(
+	array(
+		'id'   => 'portum_recomended_section',
+		'args' => array(
+			'type'                         => 'epsilon-section-recommended-actions',
+			'title'                        => esc_html__( 'Recomended Actions', 'portum' ),
+			'social_text'                  => esc_html__( 'MachoThemes is also social', 'portum' ),
+			'plugin_text'                  => esc_html__( 'Recomended Plugins', 'portum' ),
+			'actions'                      => Portum_Dashboard_Setup::get_instance()->get_actions(),
+			'plugins'                      => Portum_Dashboard_Setup::get_instance()->get_plugins(),
+			'theme_specific_option'        => Portum_Dashboard_Setup::get_instance()->theme['theme-slug'] . '_actions_left',
+			'theme_specific_plugin_option' => Portum_Dashboard_Setup::get_instance()->theme['theme-slug'] . '_plugins_left',
+			'facebook'                     => 'https://www.facebook.com/machothemes',
+			'twitter'                      => 'https://twitter.com/MachoThemez',
+			'wp_review'                    => false,
+			'priority'                     => 0,
+		),
+	),
 	/**
 	 * General section
 	 */
