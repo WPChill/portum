@@ -147,11 +147,10 @@
 			margin: 0 -15px 52px;
 		}
 		
-		.ewf-portfolio--spacing-0 	{ margin: $spacing-portfolio-none; }
-		.ewf-portfolio--spacing-1 	{ margin-left: 0 -$spacing-portfolio-line; margin-right: 0 -$spacing-portfolio-line; }
-		.ewf-portfolio--spacing-2 	{ margin-left: 0 -($spacing-portfolio-small/2); margin-right: 0 -($spacing-portfolio-small/2); }
-		.ewf-portfolio--spacing-3 	{ margin-left: 0 -($spacing-portfolio-medium/2); margin-right: 0 -($spacing-portfolio-medium/2); }
-		.ewf-portfolio--spacing-4 	{ margin-left: 0 -($spacing-portfolio-large/2); margin-right: 0 -($spacing-portfolio-large/2); }
+		.ewf-portfolio--spacing-none 	{ margin: $spacing-portfolio-none; }
+		.ewf-portfolio--spacing-sm 	{ margin-left: 0 -$spacing-portfolio-small; margin-right: 0 -$spacing-portfolio-small; }
+		.ewf-portfolio--spacing-md 	{ margin-left: 0 -($spacing-portfolio-medium/2); margin-right: 0 -($spacing-portfolio-medium/2); }
+		.ewf-portfolio--spacing-lg 	{ margin-left: 0 -($spacing-portfolio-large/2); margin-right: 0 -($spacing-portfolio-large/2); }
 		
 		.ewf-portfolio li {
 			float: left;
@@ -164,13 +163,12 @@
 		.ewf-portfolio--columns-2 li { width: 50%; }
 		.ewf-portfolio--columns-3 li { width: 33.33333333%; }
 		.ewf-portfolio--columns-4 li { width: 25%; }
-		.ewf-portfolio--columns-5 li { width: 20%; }
+		.ewf-portfolio--columns-5 li { width: 20%; } 
 		
-		.ewf-portfolio--spacing-0 li 	{ padding: $spacing-portfolio-none; }
-		.ewf-portfolio--spacing-1 li 	{ padding: $spacing-portfolio-line; }
-		.ewf-portfolio--spacing-2 li 	{ padding: $spacing-portfolio-small/2; }
-		.ewf-portfolio--spacing-3 li 	{ padding: $spacing-portfolio-medium/2; }
-		.ewf-portfolio--spacing-4 li 	{ padding: $spacing-portfolio-large/2; }
+		.ewf-portfolio--spacing-none li 	{ padding: $spacing-portfolio-none; }
+		.ewf-portfolio--spacing-sm li 	{ padding: $spacing-portfolio-small; }
+		.ewf-portfolio--spacing-md li 	{ padding: $spacing-portfolio-medium/2; }
+		.ewf-portfolio--spacing-lg li 	{ padding: $spacing-portfolio-large/2; }
 		
 	}
 

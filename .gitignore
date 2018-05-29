@@ -1,5 +1,6 @@
 .git/
 /.idea/
+/.sass-cache/
 /node_modules/
 /build/
 portum.zip

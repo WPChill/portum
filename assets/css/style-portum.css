@@ -6456,30 +6456,24 @@ input[type='button']:active
         margin: 0 -15px 52px;
     }
 
-    .ewf-portfolio--spacing-0
+    .ewf-portfolio--spacing-none
     {
         margin: 0;
     }
 
-    .ewf-portfolio--spacing-1
+    .ewf-portfolio--spacing-sm
     {
         margin-right: -1px;
         margin-left: -1px;
     }
 
-    .ewf-portfolio--spacing-2
-    {
-        margin-right: -3.5px;
-        margin-left: -3.5px;
-    }
-
-    .ewf-portfolio--spacing-3
+    .ewf-portfolio--spacing-md
     {
         margin-right: -6.5px;
         margin-left: -6.5px;
     }
 
-    .ewf-portfolio--spacing-4
+    .ewf-portfolio--spacing-lg
     {
         margin-right: -13px;
         margin-left: -13px;
@@ -6516,27 +6510,22 @@ input[type='button']:active
         width: 20%;
     }
 
-    .ewf-portfolio--spacing-0 li
+    .ewf-portfolio--spacing-none li
     {
         padding: 0;
     }
 
-    .ewf-portfolio--spacing-1 li
+    .ewf-portfolio--spacing-sm li
     {
         padding: 1px;
     }
 
-    .ewf-portfolio--spacing-2 li
-    {
-        padding: 3.5px;
-    }
-
-    .ewf-portfolio--spacing-3 li
+    .ewf-portfolio--spacing-md li
     {
         padding: 6.5px;
     }
 
-    .ewf-portfolio--spacing-4 li
+    .ewf-portfolio--spacing-lg li
     {
         padding: 13px;
     }
