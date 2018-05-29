@@ -44,7 +44,7 @@ wp_enqueue_script( 'odometer' );
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 				<?php if ( 'left' === $fields['counters_row_title_align'] ) { ?>
 				<div class="row">
-					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
+					<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
 					</div>
 					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
@@ -58,7 +58,7 @@ wp_enqueue_script( 'odometer' );
 							}
 							?>
 
-							<div class="col-md-<?php echo $section_item_columns; ?> col-xs-6">
+							<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-xs-6">
 							<div class="ewf-counter">
 
 								<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
@@ -97,7 +97,7 @@ wp_enqueue_script( 'odometer' );
 							}
 							?>
 
-							<div class="col-md-<?php echo $section_item_columns; ?> col-xs-6">
+							<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-xs-6">
 							<div class="ewf-counter">
 
 								<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
@@ -123,7 +123,7 @@ wp_enqueue_script( 'odometer' );
 						</div>
 					</div>
 
-					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
+					<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'], array( 'bottom' => true ) ) ); ?>
 					</div>
 				</div>
@@ -146,7 +146,7 @@ wp_enqueue_script( 'odometer' );
 						}
 						?>
 
-						<div class="col-md-<?php echo $section_item_columns; ?> col-xs-6">
+						<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-xs-6">
 						<div class="ewf-counter">
 
 							<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>

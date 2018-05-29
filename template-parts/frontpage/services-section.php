@@ -42,7 +42,7 @@ $parent_attr = array(
 
 			<?php if ( 'left' === $fields['services_row_title_align'] ) { ?>
 				<div class="row">
-					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
+					<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
 					</div>
 
@@ -51,7 +51,7 @@ $parent_attr = array(
 							<div class="row">
 							<?php foreach ( $fields['services'] as $key => $service ) { ?>
 
-								<div class="col-md-<?php echo $section_item_columns; ?> col-xs-6">
+								<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-xs-6">
 									<div class="services-item<?php echo ( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
 										<?php if ( ! empty( $service['service_icon'] ) ) { ?>
 											<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
@@ -78,7 +78,7 @@ $parent_attr = array(
 							<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 								<div class="row">
 								<?php foreach ( $fields['services'] as $key => $service ) { ?>
-									<div class="col-md-<?php echo $section_item_columns; ?> col-xs-6">
+									<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-xs-6">
 										<div class="services-item<?php echo ( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
 											<?php if ( ! empty( $service['service_icon'] ) ) { ?>
 												<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
@@ -98,7 +98,7 @@ $parent_attr = array(
 							</div>
 						<?php } ?>
 
-						<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
+						<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-sm-4">
 							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'], array( 'bottom' => true ) ) ); ?>
 						</div>
 					</div>
