@@ -64,7 +64,7 @@ wp_enqueue_script( 'googlemaps' );
 							if ( ! empty( $fields['contact_boxes'] ) ) {
 								?>
 									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
-										<div class="col-xs-12 col-md-<?php echo esc_attr($section_item_columns); ?>">
+										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
@@ -104,7 +104,7 @@ wp_enqueue_script( 'googlemaps' );
 							if ( ! empty( $fields['contact_boxes'] ) ) {
 								?>
 									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
-										<div class="col-xs-12 col-md-<?php echo esc_attr($section_item_columns); ?>">
+										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
