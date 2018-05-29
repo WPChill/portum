@@ -46,14 +46,14 @@ $span = 12 / absint( $fields['progress_column_group'] );
 			<?php if ( 'left' === $fields['progress_row_title_align'] ) { ?>
 				<div class="row">
 
-					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
+					<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
 					</div>
 
 					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 						<div class="row">
 						<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
-							<div class="col-md-<?php echo $section_item_columns; ?>">
+							<div class="col-md-<?php echo esc_attr($section_item_columns); ?>">
 								<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
 
 									<h6 class="ewf-progress__title">
@@ -87,7 +87,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 						<div class="row">
 						<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
-							<div class="col-md-<?php echo $section_item_columns; ?>">
+							<div class="col-md-<?php echo esc_attr($section_item_columns); ?>">
 								<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
 
 									<h6 class="ewf-progress__title">
@@ -115,7 +115,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 						</div>
 					</div>
 
-					<div class="col-md-<?php echo $section_item_columns; ?> col-sm-4">
+					<div class="col-md-<?php echo esc_attr($section_item_columns); ?> col-sm-4">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'], array( 'bottom' => true ) ) ); ?>
 					</div>
 				</div>
@@ -129,7 +129,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 
 				<div class="row">
 					<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
-						<div class="col-md-<?php echo $section_item_columns; ?>">
+						<div class="col-md-<?php echo esc_attr($section_item_columns); ?>">
 							<div class="ewf-progress <?php echo  'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
 
 								<h6 class="ewf-progress__title">
