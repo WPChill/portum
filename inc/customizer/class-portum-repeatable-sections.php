@@ -586,6 +586,10 @@ class Portum_Repeatable_Sections {
 						'default' => 3,
 						'choices' => array( 2, 3, 4 ),
 					),
+					'column-spacing'     => array(
+						'default' => 'none',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
+					),
 					'row-spacing-top'    => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
@@ -649,17 +653,6 @@ class Portum_Repeatable_Sections {
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_portfolio', 'portfolio_title' ),
 					'default'     => array( 'all' ),
-				),
-				'portfolio_spacing'           => array(
-					'type'        => 'epsilon-slider',
-					'label'       => esc_html__( 'Portfolio Items spacing', 'portum' ),
-					'description' => esc_html__( 'Increase or decrease the space between portfolio items.', 'portum' ),
-					'default'     => 4,
-					'choices'     => array(
-						'min'  => 0,
-						'max'  => 4,
-						'step' => 1,
-					),
 				),
 				'portfolio_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',

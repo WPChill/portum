@@ -42,7 +42,7 @@ wp_enqueue_script( 'magnificPopup' );
 
 			<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
 
-				<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo intval( $fields['portfolio_spacing'] ); ?> ewf-portfolio--columns-<?php echo $fields['portfolio_column_group']; ?>">
+				<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo $fields['portfolio_column_spacing']; ?> ewf-portfolio--columns-<?php echo $fields['portfolio_column_group']; ?>">
 
 					<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
 						<li>
