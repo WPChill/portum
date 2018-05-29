@@ -129,7 +129,7 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 
 				<div class="row">
 					<?php foreach ( $fields['piecharts'] as $piechart ) { ?>
-						<div class="col-md-<?php echo esc_attr$section_item_columns); ?>">
+						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 							<div class="ewf-pie">
 								<div class="ewf-pie__chart" data-percent="<?php echo ! empty( $piechart['piechart_value'] ) ? esc_attr( $piechart['piechart_value'] ) : 55; ?>" data-barColor="<?php echo esc_attr( $color ); ?>" data-trackColor="#e1e1e1" data-lineWidth="<?php echo ! empty( $piechart['piechart_bar_width'] ) ? esc_attr( $piechart['piechart_bar_width'] ) : 15; ?>" data-barSize="<?php echo ! empty( $piechart['piechart_size'] ) ? esc_attr( $piechart['piechart_size'] ) : 250; ?>" data-lineCap="square">
 									<?php if ( 'icon' === $piechart['piechart_type'] ) { ?>
