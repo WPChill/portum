@@ -8,7 +8,7 @@
 get_header();
 
 $img = get_custom_header();
-$img       = $img->url;
+$img = $img->url;
 ?>
 	<div id="content">
 		<div class="custom-header">
