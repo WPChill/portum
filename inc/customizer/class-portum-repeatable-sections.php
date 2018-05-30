@@ -598,7 +598,7 @@ class Portum_Repeatable_Sections {
 						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'column-alignment'          => array(
+					'column-alignment'   => array(
 						'default' => 'left',
 						'choices' => array( 'left', 'center', 'right' ),
 					),
@@ -665,7 +665,7 @@ class Portum_Repeatable_Sections {
 					'navigateToLabel' => esc_html__( 'Add Portfolio Item &rarr;', 'portum' ),
 				),
 				'portfolio_description_below' => array(
-					'label'       => esc_html__( 'Description under thumbnail', 'portum' ),
+					'label'       => esc_html__( 'Details under thumbnail', 'portum' ),
 					'description' => esc_html__( 'Portfolio item description will be under the image', 'portum' ),
 					'type'        => 'epsilon-toggle',
 					'default'     => false,
