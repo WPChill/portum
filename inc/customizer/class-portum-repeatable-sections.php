@@ -598,6 +598,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right' ),
+					),
 				),
 				'styling' => array(
 					'background-color'         => array(
@@ -659,6 +663,12 @@ class Portum_Repeatable_Sections {
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_portfolio_section',
 					'navigateToLabel' => esc_html__( 'Add Portfolio Item &rarr;', 'portum' ),
+				),
+				'portfolio_description_below' => array(
+					'label'       => esc_html__( 'Description under thumbnail', 'portum' ),
+					'description' => esc_html__( 'Portfolio item description will be under the image', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => false,
 				),
 				'portfolio_repeater_field'    => array(
 					'type'    => 'hidden',
