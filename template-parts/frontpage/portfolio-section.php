@@ -41,7 +41,6 @@ wp_enqueue_script( 'magnificPopup' );
 				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'], array( 'center' => true ) ) ); ?>
 
 				<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
-
 					<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo esc_attr( $fields['portfolio_column_spacing'] ); ?> ewf-portfolio--columns-<?php echo esc_attr( $fields['portfolio_column_group'] ); ?>">
 
 						<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
@@ -54,7 +53,7 @@ wp_enqueue_script( 'magnificPopup' );
 
 										<div class="ewf-portfolio-item__overlay">
 
-											<?php if ( ! $fields['portfolio_description_below'] ) { ?>
+											<?php if ( 'false' !== $fields['portfolio_description_below'] ) { ?>
 												<div class="ewf-portfolio-item__details">
 													<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 														<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
@@ -72,7 +71,7 @@ wp_enqueue_script( 'magnificPopup' );
 
 									</div><!-- ewf-portfolio-item__thumbnail -->
 
-									<?php if ( $fields['portfolio_description_below'] ) { ?>
+									<?php if ( 'false' !== $fields['portfolio_description_below'] ) { ?>
 										<div class="ewf-portfolio-item__details">
 											<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 												<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
