@@ -54,13 +54,15 @@ wp_enqueue_script( 'magnificPopup' );
 
 										<div class="ewf-portfolio-item__overlay">
 
-											<div class="ewf-portfolio-item__details">
-												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
-													<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
-												<?php } ?>
+											<?php if (!$fields['portfolio_description_below']) { ?>
+												<div class="ewf-portfolio-item__details">
+													<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
+														<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
+													<?php } ?>
 
-												<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>											
-											</div><!-- ewf-portfolio-item__details -->
+													<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>											
+												</div><!-- ewf-portfolio-item__details -->
+											<?php } ?>
 
 											<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( $item['portfolio_image'] ); ?>">
 												<i class="fa fa-eye"></i>
@@ -69,6 +71,17 @@ wp_enqueue_script( 'magnificPopup' );
 										</div><!-- ewf-portfolio-item__overlay -->
 
 									</div><!-- ewf-portfolio-item__thumbnail -->
+
+									<?php if ($fields['portfolio_description_below']) { ?>
+										<div class="ewf-portfolio-item__details">
+											<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
+												<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
+											<?php } ?>
+
+											<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>											
+										</div><!-- ewf-portfolio-item__details -->
+									<?php } ?>
+
 								</div><!-- ewf-portfolio-item -->
 							</li>
 						<?php } ?>
