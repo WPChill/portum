@@ -53,7 +53,7 @@ wp_enqueue_script( 'magnificPopup' );
 
 										<div class="ewf-portfolio-item__overlay">
 
-											<?php if ( 'false' === $fields['portfolio_description_below'] ) { ?>
+											<?php if ( 'false' === $fields['portfolio_description_below'] || null == $fields['portfolio_description_below'] ) { ?>
 												<div class="ewf-portfolio-item__details">
 													<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 														<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
@@ -71,7 +71,7 @@ wp_enqueue_script( 'magnificPopup' );
 
 									</div><!-- ewf-portfolio-item__thumbnail -->
 
-									<?php if ( 'false' !== $fields['portfolio_description_below'] ) { ?>
+									<?php if ( null != $fields['portfolio_description_below'] && 'false' !== $fields['portfolio_description_below'] ) { ?>
 										<div class="ewf-portfolio-item__details">
 											<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 												<h5><a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a></h5>
