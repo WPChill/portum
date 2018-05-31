@@ -295,6 +295,8 @@ button.btn
     background-clip: padding-box;
 
     -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 a.btn
@@ -496,6 +498,7 @@ a.social-icon:active
 /* ------------------------------ HEADLINE section ---------------------------*/
 .headline h3
 {
+    font-family: inherit;
     font-size: 30px;
     font-weight: 300;
 
@@ -511,8 +514,8 @@ a.social-icon:active
 }
 .headline span
 {
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: inherit;
+    font-size: .65em;
 
     opacity: .65;
     color: #1a171c;
@@ -6394,6 +6397,7 @@ input[type='button']:active
 .ewf-portfolio-item__thumbnail + .ewf-portfolio-item__details
 {
     margin: 26px 0;
+    padding: 0 15px;
 }
 
 .ewf-portfolio-item:hover .ewf-portfolio-item__thumbnail img
