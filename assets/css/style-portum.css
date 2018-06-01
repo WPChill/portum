@@ -46,9 +46,6 @@ h6
     margin-bottom: 25px;
 
     color: #1a171c;
-    /*
-  color: #232323;
-  */
 }
 
 h1 a,
@@ -515,7 +512,7 @@ a.social-icon:active
 .headline span
 {
     font-family: inherit;
-    font-size: .65em;
+    font-size: 16px;
 
     opacity: .65;
     color: #1a171c;
@@ -2802,7 +2799,7 @@ input[type='button']:active
 
 .sf-menu a
 {
-    font-family: 'Hind', sans-serif;
+    font-family: inherit;
 
     display: block;
 
@@ -3215,7 +3212,6 @@ input[type='button']:active
 
 .intro-item .actions a
 {
-    font-family: 'Hind', sans-serif;
     font-size: 12px;
 
     display: inline-block;
@@ -3877,7 +3873,6 @@ input[type='button']:active
 
 .post-meta a
 {
-    font-family: 'Hind', sans-serif;
     font-size: 12px;
 
     display: inline-block;
@@ -5998,7 +5993,7 @@ input[type='button']:active
 
 .pager-slider strong
 {
-    font-family: 'Hind', sans-serif;
+    font-family: inherit;
     font-size: 13px;
     line-height: 45px;
 
@@ -6061,8 +6056,8 @@ input[type='button']:active
 }
 .main-slider .slider-details h1
 {
-    font-family: 'Poppins', sans-serif;
     font-size: 74px;
+    font-weight: 700;
 
     -webkit-transition: background-color 150ms cubic-bezier(.645, .045, .355, 1);
          -o-transition: background-color 150ms cubic-bezier(.645, .045, .355, 1);
@@ -6076,7 +6071,7 @@ input[type='button']:active
 }
 .main-slider .slider-details span
 {
-    font-family: 'Hind', sans-serif;
+    font-family: inherit;
     font-size: 15px;
     font-weight: 300;
     line-height: 46px;
@@ -6854,8 +6849,6 @@ input[type='button']:active
 }
 .pricing-item .details
 {
-    font-family: 'Hind', sans-serif;
-
     margin: 5px -2px 25px -2px;
     padding: 15px 0;
 
@@ -6864,8 +6857,6 @@ input[type='button']:active
 }
 .pricing-item .details h4
 {
-    font-family: 'Hind', sans-serif;
-    font-size: 20px;
     font-weight: bold;
 
     margin: 0;
@@ -7241,10 +7232,6 @@ input[type='button']:active
 .blog-news-item .news-date span,
 .blog-news-item .news-category a
 {
-    font-family: 'Hind', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    font-weight: normal;
     line-height: 40px;
 
     display: block;
@@ -7292,7 +7279,6 @@ input[type='button']:active
 }
 .item-carousel-blog h6
 {
-    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 500;
 
@@ -7302,7 +7288,6 @@ input[type='button']:active
 }
 .item-carousel-blog span
 {
-    font-family: 'Hind', sans-serif;
     font-size: 12px;
 
     letter-spacing: 1px;

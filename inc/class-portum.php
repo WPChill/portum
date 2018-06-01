@@ -435,8 +435,11 @@ class Portum {
 		 * Instantiate the Epsilon Typography object
 		 */
 		$options = array(
+			'portum_typography_global',
 			'portum_typography_headings',
-			'portum_paragraphs_typography',
+			'portum_typography_navigation',
+			'portum_typography_headline_title',
+			'portum_typography_headline_subtitle',
 		);
 
 		$handler = 'portum-main';

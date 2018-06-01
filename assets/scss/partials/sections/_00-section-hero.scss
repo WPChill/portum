@@ -116,7 +116,7 @@
 	
 	strong {
 		background: $accent-1-color;
-		font-family: $accent-1-font;
+		font-family: inherit;
 		font-size: 13px;
 		color: #fff;
 		text-transform: uppercase;
@@ -160,9 +160,9 @@
 		text-align: right;
 		
 		h1 {
-			font-family: $accent-2-font;
 			font-size: 74px;
 			color: #fff;
+			font-weight:700;
 			text-shadow: 0 2px 6px rgba(35, 31, 32, .41);
 			transition: background-color 150ms cubic-bezier(0.645, 0.045, 0.355, 1);
 			transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);			
@@ -170,7 +170,7 @@
 		
 		span {
 			display: inline-block;
-			font-family: $accent-1-font;
+			font-family: inherit;
 			font-size: 15px;
 			color: #fff;
 			text-transform: uppercase;

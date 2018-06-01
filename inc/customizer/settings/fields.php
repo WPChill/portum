@@ -88,6 +88,31 @@ Epsilon_Customizer::add_field(
  * Typography section options
  */
 Epsilon_Customizer::add_field(
+	'portum_typography_global',
+	array(
+		'type'          => 'epsilon-typography',
+		'transport'     => 'postMessage',
+		'section'       => 'portum_layout_section',
+		'label'         => esc_html__( 'Global font', 'portum' ),
+		'description'   => esc_html__( 'The font that will be applied to the entire document', 'portum' ),
+		'stylesheet'    => 'portum-main',
+		'choices'       => array(
+			'font-family',
+			'font-size',
+			'line-height',
+		),
+		'selectors'     => array(
+			'body',
+		),
+		'font_defaults' => array(
+			'font-family' => '"Hind", sans-serif',
+			'font-size'   => '16',
+			'line-height' => '26',
+		),
+	)
+);
+
+Epsilon_Customizer::add_field(
 	'portum_typography_headings',
 	array(
 		'type'          => 'epsilon-typography',
@@ -98,48 +123,108 @@ Epsilon_Customizer::add_field(
 		'stylesheet'    => 'portum-main',
 		'choices'       => array(
 			'font-family',
-			'font-weight',
-			'font-style',
 			'letter-spacing',
 		),
 		'selectors'     => array(
 			'.post-title',
-			'.post-content h1',
-			'.post-content h2',
-			'.post-content h3',
-			'.post-content h4',
-			'.post-content h5',
-			'.post-content h6',
+			'h1',
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+			'.pager-slider a span',
+			'.expertise-item h4 strong',
+			'.pricing-item .plan',
+			'.item-carousel-blog a',
 		),
 		'font_defaults' => array(
+			'font-family'    => '"Poppins", sans-serif',
 			'letter-spacing' => '0',
-			'font-family'    => '',
-			'font-weight'    => '',
-			'font-style'     => '',
 		),
 	)
 );
+
 Epsilon_Customizer::add_field(
-	'portum_paragraphs_typography',
+	'portum_typography_navigation',
 	array(
 		'type'          => 'epsilon-typography',
 		'transport'     => 'postMessage',
 		'section'       => 'portum_layout_section',
-		'label'         => esc_html__( 'Paragraphs', 'portum' ),
-		'description'   => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'portum' ),
+		'label'         => esc_html__( 'Navigation font', 'portum' ),
+		'description'   => esc_html__( 'The font that will be applied to header and footer navigation', 'portum' ),
+		'stylesheet'    => 'portum-main',
+		'choices'       => array(
+			'font-family',
+			'font-weight',
+		),
+		'selectors'     => array(
+			'#menu',
+			'#footer ul.nav',
+		),
+		'font_defaults' => array(
+			'font-family' => '"Hind", sans-serif',
+			'font-weight' => '',
+		),
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'portum_typography_headline_title',
+	array(
+		'type'          => 'epsilon-typography',
+		'transport'     => 'postMessage',
+		'section'       => 'portum_layout_section',
+		'label'         => esc_html__( 'Headline title', 'portum' ),
 		'stylesheet'    => 'portum-main',
 		'choices'       => array(
 			'font-family',
 			'font-weight',
 			'font-style',
+			'font-size',
+			'line-height',
+			'letter-spacing',
 		),
 		'selectors'     => array(
-			'.post-content p',
+			'.headline span',
 		),
 		'font_defaults' => array(
-			'font-family' => '',
-			'font-weight' => '',
-			'font-style'  => '',
+			'font-family'    => '"Hind", sans-serif',
+			'font-weight'    => 'on',
+			'font-style'     => '',
+			'font-size'      => '16',
+			'line-height'    => '22',
+			'letter-spacing' => '1',
+		),
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'portum_typography_headline_subtitle',
+	array(
+		'type'          => 'epsilon-typography',
+		'transport'     => 'postMessage',
+		'section'       => 'portum_layout_section',
+		'label'         => esc_html__( 'Headline subtitle', 'portum' ),
+		'stylesheet'    => 'portum-main',
+		'choices'       => array(
+			'font-family',
+			'font-weight',
+			'font-style',
+			'font-size',
+			'line-height',
+			'letter-spacing',
+		),
+		'selectors'     => array(
+			'.headline h3',
+		),
+		'font_defaults' => array(
+			'font-family'    => '"Poppins", sans-serif',
+			'font-weight'    => 'on',
+			'font-style'     => 'normal',
+			'font-size'      => '30',
+			'line-height'    => '28',
+			'letter-spacing' => '0',
 		),
 	)
 );
