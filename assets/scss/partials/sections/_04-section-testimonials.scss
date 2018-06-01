@@ -32,12 +32,12 @@
 	}
 
 	img {
-	  display: block;
-	  position: absolute;
-	  width: 160px;
-	  height: auto;		
-	  bottom: -25px;
-	  box-shadow: 0 7px 19px 2px rgba(0, 0, 0, .1); 
+		display: block;
+		position: absolute;
+		width: 160px;
+		height: auto;		
+		bottom: -25px;
+		box-shadow: 0 7px 19px 2px rgba(0, 0, 0, .1); 
 	}
 	
 	p {	font-style: italic;	}
@@ -50,8 +50,6 @@
 	.section-testimonials .comment-hidden-mobile + .show-more-comments {
 		display: block;
 		width: 100%;
-		-webkit-border-radius: 0 0 20px 20px;
-		-moz-border-radius: 0 0 20px 20px;
 		border-radius: 0 0 20px 20px;
 	}
 

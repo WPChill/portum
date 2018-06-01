@@ -52,7 +52,6 @@
 #logo img {
   width: auto;
   max-width:nonew;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -86,7 +85,6 @@
     margin: 0 auto;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     background-color: #0b0b0b;
-    -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
   #header.stuck #logo img {

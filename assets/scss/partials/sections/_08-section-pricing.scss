@@ -11,8 +11,6 @@
     position: relative;
     transition: 150ms all;
     transition: all 100ms ease-in-out;
-	-webkit-box-shadow: 0 0 20px rgba(35,31,32,.1);
-	-moz-box-shadow: 0 0 20px rgba(35,31,32,.1);
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
 	margin-bottom:30px;
 	background:#fff;
@@ -87,7 +85,6 @@
 	.wrapper {
 		position: absolute;
 		left: 50%;
-		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
 		bottom: 40px;
 	}
@@ -136,13 +133,10 @@
     .pricing-item {
         margin-bottom: 0;
         background-color: #fff;
-        -webkit-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
-        -moz-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
         box-shadow: 0 0 20px rgba(35, 31, 32, .1);
         min-height: 170px !important;
         padding: 0;
 		z-index: 999;
-
 
 		ul {
 			display: block;
