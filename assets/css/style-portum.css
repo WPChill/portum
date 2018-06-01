@@ -2251,6 +2251,8 @@ textarea
     background-color: #fff;
 
     -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 input[type='text']:focus,
@@ -2398,6 +2400,8 @@ select
     background-color: #fff;
 
     -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 select[multiple]
@@ -2479,6 +2483,8 @@ input[type='button']
     background-clip: padding-box;
 
     -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 input[type='reset']:hover,
@@ -2902,7 +2908,6 @@ input[type='button']:active
     text-align: center;
 
     color: #ebebeb;
-    background: #\f107;
 }
 
 .sf-menu > li.arrow:hover::before
@@ -3195,9 +3200,6 @@ input[type='button']:active
     text-align: Center;
 
     color: #f9f9f9;
-
-     -khtml-user-select: none;
-         -o-user-select: none;
 }
 
 .intro-item .actions
@@ -3370,7 +3372,7 @@ input[type='button']:active
     margin-top: -5px;
 
     -webkit-transform: skewX(15deg);
-        -ms-transform: skewT(15deg);
+        -ms-transform: skewX(15deg);
             transform: skewX(15deg);
 
     opacity: 1;
@@ -3833,39 +3835,6 @@ input[type='button']:active
     display: block;
 }
 
-/*
-.more-link {
-  height: auto;
-  width: 50px;
-  line-height: 50px;
-  -ms-transform: skewX(-15deg);
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
-  background: $accent-1-color none repeat scroll 0 0;
-  display: inline-block;
-  text-align: center;
-  margin-right: -10px;
-  vertical-align: top;
-  position: absolute;
-  right: 0;
-}
-
-.more-link:hover,
-.more-link:focus {
-  background: $accent-2-color;
-}
-
-.more-link:active {
-  background: $accent-3-color;
-}
-
-.more-link i {
-  -ms-transform: skewX(15deg);
-  -webkit-transform: skewX(15deg);
-  transform: skewX(15deg);
-  color: #fff;
-}
-*/
 @media (max-width: 425px)
 {
     .post.sticky .post-header
@@ -5802,6 +5771,8 @@ input[type='button']:active
     background-clip: padding-box;
 
     -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 .ewf-btn:focus,
@@ -5891,8 +5862,8 @@ input[type='button']:active
     height: 140px;
 
     opacity: 1;
-    background-image: -o-linear-gradient(top, #0c2737, rgba(12, 39, 55, .9) 10%, rgba(238, 238, 238, 0));
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0c2737), color-stop(10%, rgba(12, 39, 55, .9)), to(rgba(238, 238, 238, 0)));
+    background-image: -o-linear-gradient(top, #0c2737, rgba(12, 39, 55, .9) 10%, rgba(238, 238, 238, 0));
     background-image:    linear-gradient(to bottom, #0c2737, rgba(12, 39, 55, .9) 10%, rgba(238, 238, 238, 0));
 }
 
@@ -6093,9 +6064,9 @@ input[type='button']:active
     font-family: 'Poppins', sans-serif;
     font-size: 74px;
 
-    -webkit-transition: background 150ms cubic-bezier(.645, .045, .355, 1);
-         -o-transition: background 150ms cubic-bezier(.645, .045, .355, 1);
-            transition: background 150ms cubic-bezier(.645, .045, .355, 1);
+    -webkit-transition: background-color 150ms cubic-bezier(.645, .045, .355, 1);
+         -o-transition: background-color 150ms cubic-bezier(.645, .045, .355, 1);
+            transition: background-color 150ms cubic-bezier(.645, .045, .355, 1);
     -webkit-transition-timing-function: cubic-bezier(.645, .045, .355, 1);
          -o-transition-timing-function: cubic-bezier(.645, .045, .355, 1);
             transition-timing-function: cubic-bezier(.645, .045, .355, 1);
@@ -7465,8 +7436,8 @@ input[type='button']:active
     padding: 50px 95px;
 
     background-color: #0377bb;
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, 0)));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
     background-image:    linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
 }
 .contact-form h4
@@ -7852,6 +7823,7 @@ input[type='button']:active
     display: block;
 
     -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 
 .ewf-counter__odometer .odometer-digit .odometer-value
@@ -7859,6 +7831,7 @@ input[type='button']:active
     display: block;
 
     -webkit-transform: translateZ(0);
+            transform: translateZ(0);
 }
 
 .ewf-counter__odometer .odometer-digit .odometer-value.odometer-last-value

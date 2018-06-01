@@ -3,8 +3,6 @@
   position: relative;
   text-align: center;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-  -moz-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
   box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
   height: 190px;
   margin: -100px 0 60px 0;
@@ -38,10 +36,6 @@
   line-height: 206px;
 
   user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
 }
 
 .intro-item .actions {
@@ -178,8 +172,6 @@
   width: 510px;
   opacity: 1;
   margin-top: -5px;
-  -ms-transform: skewT(15deg);
-  -webkit-transform: skewX(15deg);
   transform: skewX(15deg);
 }
 
@@ -393,40 +385,6 @@
   display: block;
 }
 
-/*
-.more-link {
-  height: auto;
-  width: 50px;
-  line-height: 50px;
-  -ms-transform: skewX(-15deg);
-  -webkit-transform: skewX(-15deg);
-  transform: skewX(-15deg);
-  background: $accent-1-color none repeat scroll 0 0;
-  display: inline-block;
-  text-align: center;
-  margin-right: -10px;
-  vertical-align: top;
-  position: absolute;
-  right: 0;
-}
-
-.more-link:hover,
-.more-link:focus {
-  background: $accent-2-color;
-}
-
-.more-link:active {
-  background: $accent-3-color;
-}
-
-.more-link i {
-  -ms-transform: skewX(15deg);
-  -webkit-transform: skewX(15deg);
-  transform: skewX(15deg);
-  color: #fff;
-}
-*/
-
 @media (max-width: 425px) {
 
   .post.sticky .post-header {
@@ -447,8 +405,6 @@
 
   .post.sticky .post-title,
   .post.sticky .post-title a {
-    -ms-transform: skewX(0);
-    -webkit-transform: skewX(0);
     transform: skewX(0);
   }
 
@@ -830,7 +786,6 @@
   position: relative;
   padding: 30px 50px;
   background-color: #FFF;
-  -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
   box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
   margin: 25px 0 50px;
 }
@@ -1101,7 +1056,6 @@
 .comment-form .comment-form-email,
 .comment-form .comment-form-url,
 .comment-form .form-submit {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-right: 15px;
   padding-left: 15px;
@@ -1577,12 +1531,8 @@
 .widget_search .search-field {
   padding-left: 25px;
   height: 39px;
-  -webkit-border-radius: 19px 20px 20px 19px/20px 20px 19px 19px;
-  -moz-border-radius: 19px 20px 20px 19px/20px 20px 19px 19px;
   border-radius: 19px 20px 20px 19px/20px 20px 19px 19px;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 19px 2px rgba(35, 31, 32, .07);
-  -moz-box-shadow: 0 0 19px 2px rgba(35, 31, 32, .07);
   box-shadow: 0 0 19px 2px rgba(35, 31, 32, .07);
   font-size: 14px;
   color: #a8a8a8;
@@ -1674,8 +1624,6 @@
 .gallery-item {
   display: inline-block;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 1.79104477%;
   text-align: center;

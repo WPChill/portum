@@ -212,8 +212,6 @@ button.btn {
 
 .btn {
   position: relative;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
   background-clip: padding-box;
   display: inline-block;
   padding: 9px 22px;
@@ -226,7 +224,7 @@ button.btn {
   cursor: pointer;
   border-radius: 35px;
   border: none;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 a.btn {
@@ -405,15 +403,16 @@ a.social-icon:active {
 		z-index: 9;
 		margin-top: 0;
 		animation: anim_affluent_sliderPro_category 1000ms linear both;
-		animation-delay: 400ms;
+    animation-delay: 400ms;
+    font-family: inherit;
 		font-size: 30px;
 		font-weight: 300;
 	}
 
 	span {
-		color:$headings-color;
-		text-transform: uppercase;
-		letter-spacing: 2px;
+    color:$headings-color;
+    font-size: .65em; 
+    font-family:inherit;
 		opacity:.65;
 	}
 }
