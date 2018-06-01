@@ -258,7 +258,7 @@ class Portum_Repeatable_Sections {
 			'fields'        => array(
 				'testimonials_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
-					'type'              => 'epsilon-text-editor',
+					'type'              => 'text',
 					'default'           => wp_kses_post( 'Why Choose us?' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
