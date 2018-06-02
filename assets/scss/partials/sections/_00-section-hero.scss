@@ -29,24 +29,79 @@
     z-index: 10;
     overflow: hidden;
 	
+	strong {
+		background-color: $accent-1-color;
+		font-family: inherit;
+		font-size: 13px;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		text-align: left;
+		line-height: 45px;
+		display: block;
+		margin: 0;
+		transform: skewX(-15deg);
+	}
+	
+	a {
+		transform: skewX(15deg);
+		display: block;
+		height: 45px;
+		line-height: 45px;
+		padding: 0 0 0 70px;
+		color: #fff;
+		
+		span {
+			font-family: $accent-2-font;
+			font-size: 32px;
+			display: block;
+			color: #fff;
+			font-weight: 700;
+			position: Absolute;
+			left: 15px;
+			top: 1px;			
+		}
+	}
+
 	li {
 		width: 25%;
 		height: 45px;
 		float: left;
 		position: relative;
 		display: block;
-		background: transparent;
+		background-color: transparent;
 		box-sizing: border-box;
 		padding: 0 1px;
+		
+		&:hover a, 
+		&.active a {
+			color: #fff;
+		}
+		
+		&:first-child:hover:before ,
+		&:last-child:hover:before,
+		&.active:before,
+		&:hover strong, 
+		&.active strong {
+			background-color: $accent-2-color;
+		}
+
+		&:last-child::before,
+		&:first-child::before {
+			content: "";
+			position: absolute;
+			height: 45px;
+			width: 45px;
+			transition: background-color 50ms;
+			background-color: $accent-1-color;
+			top: 0;
+			left: 0;
+		}
+
+		&:last-child::before {
+			right: 0;
+		}
 	}
-}
-
-.pager-slider li:hover strong, .pager-slider li.active strong {
-    background: $accent-2-color;
-}
-
-.pager-slider li.active:before {
-    background: $accent-2-color;
 }
 
 .pager-items-02 li {
@@ -81,73 +136,8 @@
     padding-right: 2px;
 }
 
-.pager-slider li:hover a, .pager-slider li.active a {
-    color: #fff;
-}
 
-.pager-slider li:first-child::before {
-    content: "";
-    height: 45px;
-    width: 45px;
-    background: $accent-1-color;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: all 50ms
-}
 
-.pager-slider li:last-child::before {
-    content: "";
-    height: 45px;
-    width: 45px;
-    background:$accent-1-color;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all 50ms
-}
-
-.pager-slider li:first-child:hover:before ,
-.pager-slider li:last-child:hover:before {
-    background: $accent-2-color;
-}
-
-.pager-slider {
-	
-	strong {
-		background: $accent-1-color;
-		font-family: inherit;
-		font-size: 13px;
-		color: #fff;
-		text-transform: uppercase;
-		letter-spacing: 3px;
-		text-align: left;
-		line-height: 45px;
-		display: block;
-		margin: 0;
-		transform: skewX(-15deg);
-	}
-	
-	a {
-		transform: skewX(15deg);
-		display: block;
-		height: 45px;
-		line-height: 45px;
-		padding: 0 0 0 70px;
-		color: #fff;
-		
-		span {
-			font-family: $accent-2-font;
-			font-size: 32px;
-			display: block;
-			color: #fff;
-			font-weight: 700;
-			position: Absolute;
-			left: 15px;
-			top: 1px;			
-		}
-	}
-}
 
 .main-slider {
 	
@@ -176,7 +166,7 @@
 			text-transform: uppercase;
 			text-align: right;
 			letter-spacing: 2px;
-			background: #172128;
+			background-color: #172128;
 			height: 45px;
 			padding: 0 20px;
 			font-weight: 300;

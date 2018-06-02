@@ -48,7 +48,7 @@
 		position: absolute;
 		bottom: 0;
 		color: transparent;
-		background: transparent;
+		background-color: transparent;
 		transform: skewX(-15deg);
 	}
 	
@@ -61,8 +61,8 @@
 			height: 40px;
 			float: right;
 			text-align: right;
-			background: #151C1F;
-			transition: 150ms all;
+			background-color: #151C1F;
+			transition:background-color 150ms;
 		}
 		
 		span {
@@ -81,13 +81,13 @@
 		}
 		
 		strong {
-			background: $accent-1-color;
-			transition: 150ms all;
+			background-color: $accent-1-color;
+			transition: background-color 150ms;
 			
 		}
 		
 		&:hover strong {
-			background: $accent-2-color;
+			background-color: $accent-2-color;
 		}
 	}
 	
@@ -156,8 +156,8 @@
 
 @media (max-width: 768px) {
 
-   .blog-news-item {
-	   
+	.blog-news-item {
+
 		.featured {
 			img { width:100%;height:auto; }
 		}

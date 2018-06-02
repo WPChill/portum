@@ -7,55 +7,54 @@
   height: 190px;
   margin: -100px 0 60px 0;
   z-index: 99;
-}
 
-.intro-item h4 {
-  font-size: 30px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-  width: 100%;
-  font-weight: 400;
-}
+  h4 {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    font-weight: 400;
+  }
 
-.intro-item span {
-  font-size: 160px;
-  color: #f9f9f9;
-  font-family: $accent-2-font;
-  font-weight: 700;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: Center;
-  display: block;
-  width: 100%;
-  line-height: 206px;
+  span {
+    font-size: 160px;
+    color: #f9f9f9;
+    font-family: $accent-2-font;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: Center;
+    display: block;
+    width: 100%;
+    line-height: 206px;
+    user-select: none;
+  }
 
-  user-select: none;
-}
+  .actions {
+    position: absolute;
+    bottom: 25px;
+    left: 75px;
+    transition: color 120ms;
 
-.intro-item .actions {
-  position: absolute;
-  bottom: 25px;
-  left: 75px;
-  transition: 120ms all;
-}
+    a {
+      display: inline-block;
+      text-transform: uppercase;
+      color: #333;
+      letter-spacing: 1px;
+      font-size: 12px;
+      margin-right: 15px;
 
-.intro-item .actions a {
-  display: inline-block;
-  text-transform: uppercase;
-  color: #333;
-  letter-spacing: 1px;
-  font-size: 12px;
-  margin-right: 15px;
-}
-
-.intro-item .actions a:hover {
-  color: #a1083a;
+      &:hover {
+        color: #a1083a;
+      }
+    }
+  }
 }
 
 @media (max-width: 991px) {
@@ -70,9 +69,9 @@
 
 }
 
-/* ==========================================================================
-   =Posts
-   ========================================================================== */
+/*==========================================================================
+  =Posts
+  ========================================================================== */
 
 .post {
   position: relative;
@@ -155,113 +154,125 @@
   height: 345px;
   position: relative;
   overflow: hidden;
-}
 
-.post-thumbnail-preloader .preloader {
-  height: 100%;
-  width: 100%;
-  position: Absolute;
-  right: 50px;
-  top: 0;
-}
+  .preloader {
+    height: 100%;
+    width: 100%;
+    position: Absolute;
+    right: 50px;
+    top: 0;
+  }
 
-.post-thumbnail-preloader .overlay {
-  height: 355px;
-  background: $blog-post-background;
-  width: 510px;
-  opacity: 1;
-  margin-top: -5px;
-  transform: skewX(15deg);
-}
+  .overlay {
+    height: 355px;
+    background-color: $blog-post-background;
+    width: 510px;
+    opacity: 1;
+    margin-top: -5px;
+    transform: skewX(15deg);
 
-.post-thumbnail-preloader .overlay:before {
-  content: "";
-  height: 355px;
-  width: 510px;
-  background: $blog-post-background;
-  opacity: .7;
-  position: absolute;
-  left: 10px;
-  top: 0;
-}
+    &:before {
+      content: "";
+      height: 355px;
+      width: 510px;
+      background-color: $blog-post-background;
+      opacity: .7;
+      position: absolute;
+      left: 10px;
+      top: 0;
+    }
 
-.post-thumbnail-preloader .overlay:after {
-  content: "";
-  height: 355px;
-  background: $blog-post-background;
-  opacity: .4;
-  width: 510px;
-  position: Absolute;
-  left: 20px;
-  top: 0;
-}
+    &:after {
+      content: "";
+      height: 355px;
+      background-color: $blog-post-background;
+      opacity: .4;
+      width: 510px;
+      position: Absolute;
+      left: 20px;
+      top: 0;
+    }
+  }
 
-.post-thumbnail-preloader img {
-  opacity: 0;
-  width: auto;
-  max-width: none;
-  height: 345px;
-}
+  img {
+    opacity: 0;
+    width: auto;
+    max-width: none;
+    height: 345px;
+  }
 
-.post-thumbnail-preloader.animate img {
-  opacity: 1;
-}
+  &.animate{
+    img {
+      opacity: 1;
+    }
 
-.post-thumbnail-preloader.animate .preloader {
-  animation: anim-blog-preloader 1500ms linear both;
-  animation-delay: 450;
+    .preloader {
+      animation: anim-blog-preloader 1500ms linear both;
+      animation-delay: 450;
+    }
+  }
 }
 
 @media (max-width: 991px) {
 
-  .post-thumbnail-preloader .preloader {
-    display: none;
+  .post-thumbnail-preloader {
+
+    .preloader {
+      display: none;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+.post-thumbnail{
+
+  img {
+    display: block;
   }
 
-  .post-thumbnail-preloader img {
-    height: auto;
-    width: 100%;
+  .effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  img + .effect {
+    top: -6px;
+    opacity: .45;
+    z-index: -5;
+    width: 98.8%;
+    left: 5px;
   }
 
+  img + .effect + .effect {
+    top: -12px;
+    opacity: .1;
+    z-index: -10;
+    width: 97.6%;
+    left: 10px;
+  }
+
+  img.animate + .effect {
+    animation: anim-blog-sticky-effect 250ms linear both;
+    animation-delay: 200ms;
+  }
+
+  img.animate + .effect + .effect {
+    animation: anim-blog-sticky-effect 450ms linear both;
+    animation-delay: 280ms;
+  }
 }
 
-.post-thumbnail img {
-  display: block;
-}
 
-.post-thumbnail .effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  display: block;
-}
 
-.post-thumbnail img + .effect {
-  top: -6px;
-  opacity: .45;
-  z-index: -5;
-  width: 98.8%;
-  left: 5px;
-}
 
-.post-thumbnail img + .effect + .effect {
-  top: -12px;
-  opacity: .1;
-  z-index: -10;
-  width: 97.6%;
-  left: 10px;
-}
 
-.post-thumbnail img.animate + .effect {
-  animation: anim-blog-sticky-effect 250ms linear both;
-  animation-delay: 200ms;
-}
-
-.post-thumbnail img.animate + .effect + .effect {
-  animation: anim-blog-sticky-effect 450ms linear both;
-  animation-delay: 280ms;
-}
 
 @keyframes anim-blog-sticky-effect {
   0% {
@@ -376,7 +387,7 @@
 }
 
 .post.sticky .post-header {
-	background: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.6);
 	overflow: hidden;
 }
 
@@ -593,14 +604,14 @@
 .pagination .next.page-numbers:focus,
 .pagination .next.page-numbers:hover {
   border: 1px solid $accent-2-color;
-  background: $accent-2-color;
+  background-color: $accent-2-color;
   color: #fff;
 }
 
 .pagination .prev.page-numbers:active,
 .pagination .next.page-numbers:active {
   border: 1px solid $accent-1-color;
-  background: $accent-1-color;
+  background-color: $accent-1-color;
   color: #fff;
 }
 
@@ -649,15 +660,13 @@
    ========================================================================== */
 .page-links {
   margin: 25px 0;
-}
-
-.page-links .page-number {
-  padding: 5px;
-}
-
-.page-links {
   color: #414444;
+
+  .page-number {
+    padding: 5px;
+  }
 }
+
 
 /* =Post Pagination
    ========================================================================== */
@@ -706,16 +715,17 @@
 
   .pagination {
     margin: 50px 0 50px;
-  }
-
-  .pagination .page-numbers {
-    display: none;
-  }
-
-  .pagination .page-numbers.prev,
-  .pagination .page-numbers.next,
-  .pagination .page-numbers.current {
-    display: inline-block;
+    
+    .page-numbers {
+      display: none;
+    
+    
+      &.prev,
+      &.next,
+      &.current {
+        display: inline-block;
+      }
+    }
   }
 
   .page-numbers.prev .screen-reader-text,
@@ -1208,7 +1218,7 @@
   border: 1px solid #ebebeb;
   */
   font-size: 0.9em;
-  background: #FAFAFA;
+  background-color: #FAFAFA;
   line-height: 30px;
 }
 
@@ -1268,14 +1278,14 @@
 #wp-calendar #next a:hover,
 #wp-calendar #next a:focus {
   border: 1px solid $accent-2-color;
-  background: $accent-2-color;
+  background-color: $accent-2-color;
   color: #fff;
 }
 
 #wp-calendar #prev a:active,
 #wp-calendar #next a:active {
   border: 1px solid $accent-3-color;
-  background: $accent-3-color;
+  background-color: $accent-3-color;
   color: #fff;
 }
 
@@ -1318,14 +1328,14 @@
 #footer #wp-calendar #next a:hover,
 #footer #wp-calendar #next a:focus {
   border: 1px solid $footer-link-hover-color;
-  background: $footer-link-hover-color;
+  background-color: $footer-link-hover-color;
   color: #fff;
 }
 
 #footer #wp-calendar #prev a:active,
 #footer #wp-calendar #next a:active {
   border: 1px solid $footer-link-active-color;
-  background: $footer-link-active-color;
+  background-color: $footer-link-active-color;
   color: #fff;
 }
 
