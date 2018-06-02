@@ -719,8 +719,7 @@ del
     text-decoration: line-through;
 }
 
-/* ==========================================================================
-   =Grid
+/* =Grid
    ========================================================================== */
 .container
 {
@@ -1932,9 +1931,8 @@ del
         margin-left: 0;
     }
 }
-/* ==========================================================================
-   =Grid Helpers
-   ========================================================================== */
+/* =Visibility
+ ========================================================================== */
 .visible-xs,
 .visible-sm,
 .visible-md,
@@ -2163,39 +2161,302 @@ del
         display: none !important;
     }
 }
-/* ==========================================================================
-   =Clearings
-   ========================================================================== */
-/**
-  * ClearFix Hack
- * Usage:  add  class="fixed"  to parents of floated elements
-  */
-.fixed:after
+/* =Padding
+ ========================================================================== */
+.ewf-padding-top--none
 {
-    font-size: 0;
-
-    display: block;
-    visibility: hidden;
-    clear: both;
-
-    height: 0;
-
-    content: ' ';
+    padding-top: 0 !important;
 }
 
-/**
-  * Clear content
- * Usage:  <br class="clear">
-  */
-.clear
+.ewf-padding-right--none
 {
-    display: block;
-    visibility: hidden;
-    clear: both;
-    overflow: hidden;
+    padding-right: 0 !important;
+}
 
-    width: 0;
-    height: 0;
+.ewf-padding-bottom--none
+{
+    padding-bottom: 0 !important;
+}
+
+.ewf-padding-left--none
+{
+    padding-left: 0 !important;
+}
+
+.ewf-padding-vertical--none
+{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.ewf-padding-horizontal--none
+{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ewf-padding-around--none
+{
+    padding: 0;
+}
+
+.ewf-padding-top--xx-small
+{
+    padding-top: 12.5px;
+}
+
+.ewf-padding-right--xx-small
+{
+    padding-right: 12.5px;
+}
+
+.ewf-padding-bottom--xx-small
+{
+    padding-bottom: 12.5px;
+}
+
+.ewf-padding-left--xx-small
+{
+    padding-left: 12.5px;
+}
+
+.ewf-padding-vertical--xx-small
+{
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+}
+
+.ewf-padding-horizontal--xx-small
+{
+    padding-right: 12.5px;
+    padding-left: 12.5px;
+}
+
+.ewf-padding-around--xx-small
+{
+    padding: 12.5px;
+}
+
+.ewf-padding-top--x-small
+{
+    padding-top: 17.5px;
+}
+
+.ewf-padding-right--x-small
+{
+    padding-right: 17.5px;
+}
+
+.ewf-padding-bottom--x-small
+{
+    padding-bottom: 17.5px;
+}
+
+.ewf-padding-left--x-small
+{
+    padding-left: 17.5px;
+}
+
+.ewf-padding-vertical--x-small
+{
+    padding-top: 17.5px;
+    padding-bottom: 17.5px;
+}
+
+.ewf-padding-horizontal--x-small
+{
+    padding-right: 17.5px;
+    padding-left: 17.5px;
+}
+
+.ewf-padding-around--x-small
+{
+    padding: 17.5px;
+}
+
+.ewf-padding-top--small
+{
+    padding-top: 35px;
+}
+
+.ewf-padding-right--small
+{
+    padding-right: 35px;
+}
+
+.ewf-padding-bottom--small
+{
+    padding-bottom: 35px;
+}
+
+.ewf-padding-left--small
+{
+    padding-left: 35px;
+}
+
+.ewf-padding-vertical--small
+{
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.ewf-padding-horizontal--small
+{
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.ewf-padding-around--small
+{
+    padding: 35px;
+}
+
+.ewf-padding-top--medium
+{
+    padding-top: 70px;
+}
+
+.ewf-padding-right--medium
+{
+    padding-right: 70px;
+}
+
+.ewf-padding-bottom--medium
+{
+    padding-bottom: 70px;
+}
+
+.ewf-padding-left--medium
+{
+    padding-left: 70px;
+}
+
+.ewf-padding-vertical--medium
+{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.ewf-padding-horizontal--medium
+{
+    padding-right: 70px;
+    padding-left: 70px;
+}
+
+.ewf-padding-around--medium
+{
+    padding: 70px;
+}
+
+.ewf-padding-top--large
+{
+    padding-top: 105px;
+}
+
+.ewf-padding-right--large
+{
+    padding-right: 105px;
+}
+
+.ewf-padding-bottom--large
+{
+    padding-bottom: 105px;
+}
+
+.ewf-padding-left--large
+{
+    padding-left: 105px;
+}
+
+.ewf-padding-vertical--large
+{
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+.ewf-padding-horizontal--large
+{
+    padding-right: 105px;
+    padding-left: 105px;
+}
+
+.ewf-padding-around--large
+{
+    padding: 105px;
+}
+
+.ewf-padding-top--x-large
+{
+    padding-top: 140px;
+}
+
+.ewf-padding-right--x-large
+{
+    padding-right: 140px;
+}
+
+.ewf-padding-bottom--x-large
+{
+    padding-bottom: 140px;
+}
+
+.ewf-padding-left--x-large
+{
+    padding-left: 140px;
+}
+
+.ewf-padding-vertical--x-large
+{
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.ewf-padding-horizontal--x-large
+{
+    padding-right: 140px;
+    padding-left: 140px;
+}
+
+.ewf-padding-around--x-large
+{
+    padding: 140px;
+}
+
+.ewf-padding-top--xx-large
+{
+    padding-top: 175px;
+}
+
+.ewf-padding-right--xx-large
+{
+    padding-right: 175px;
+}
+
+.ewf-padding-bottom--xx-large
+{
+    padding-bottom: 175px;
+}
+
+.ewf-padding-left--xx-large
+{
+    padding-left: 175px;
+}
+
+.ewf-padding-vertical--xx-large
+{
+    padding-top: 175px;
+    padding-bottom: 175px;
+}
+
+.ewf-padding-horizontal--xx-large
+{
+    padding-right: 175px;
+    padding-left: 175px;
+}
+
+.ewf-padding-around--xx-large
+{
+    padding: 175px;
 }
 
 /* ==========================================================================

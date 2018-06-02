@@ -555,6 +555,18 @@ class Portum_Repeatable_Sections {
 					'size'    => 'large',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/01_about.png' ),
 				),
+				'about_button_primary_label'   => array(
+					'label'             => esc_html__( 'Primary button label', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'Primary button', 'portum' ),
+					'sanitize_callback' => 'sanitize_textfield',
+				),
+				'about_button_primary_url'     => array(
+					'label'             => esc_html__( 'Primary button URL', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_url( 'https://google.com' ),
+					'sanitize_callback' => 'esc_url_raw',
+				),
 				'about_section_unique_id' => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
