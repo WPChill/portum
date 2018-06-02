@@ -5480,9 +5480,9 @@ input[type='button']:active
     margin-left: auto;
 }
 
-/* ==========================================================================
-   =Back to top
-   ========================================================================== */
+/*  ==========================================================================
+    =Back to top
+    ========================================================================== */
 #back-to-top
 {
     line-height: 32px;
@@ -5499,21 +5499,27 @@ input[type='button']:active
     height: 2.33333333em;
 
     cursor: pointer;
-    -webkit-transition: all .4s ease 0s;
-         -o-transition: all .4s ease 0s;
-            transition: all .4s ease 0s;
+    -webkit-transition-timing-function: ease;
+         -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+    -webkit-transition-duration: .4s;
+         -o-transition-duration: .4s;
+            transition-duration: .4s;
+    -webkit-transition-property: background-color, right;
+         -o-transition-property: background-color, right;
+            transition-property: background-color, right;
     text-align: center;
 
-    opacity: .5;
+    opacity: .95;
     color: #fff;
     border-radius: 50%;
     background-color: #0385d0;
 }
 #back-to-top i
 {
-    -webkit-transition: all .4s ease 0s;
-         -o-transition: all .4s ease 0s;
-            transition: all .4s ease 0s;
+    -webkit-transition: color .4s ease 0s;
+         -o-transition: color .4s ease 0s;
+            transition: color .4s ease 0s;
 }
 #back-to-top:hover
 {
