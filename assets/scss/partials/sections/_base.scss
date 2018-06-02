@@ -15,7 +15,8 @@
   z-index: 0;
   padding: $spacing-section-medium 0;
   margin-bottom: 0;
-  background: no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 

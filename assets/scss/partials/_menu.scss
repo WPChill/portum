@@ -95,7 +95,8 @@
   border: none;
   color: $menu-item-color;
   font-size: 16px;
-  transition: all 0.3s;
+  transition-property: background-color, color;
+  transition-duration: .3s;
 }
 
 .sf-menu > li a i {
@@ -115,7 +116,7 @@
 }
 
 .dropdown li:hover {
-  background: $menu-dropdown-hover-background-color;
+  background-color: $menu-dropdown-hover-background-color;
 }
 
 .dropdown li a {

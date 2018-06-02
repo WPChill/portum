@@ -1,7 +1,7 @@
 
 body {
   font-family: $accent-1-font;
-  background: #fff;
+  background-color: #fff;
   font-size: 16px;
   overflow-x: hidden;
   font-weight: 400;
@@ -171,8 +171,8 @@ dd {
 }
 
 /* ==========================================================================
-   =Links
-   ========================================================================== */
+  =Links
+  ========================================================================== */
 
 a, a:visited {
   color: $link-color;
@@ -185,7 +185,7 @@ a, a:visited {
 	*/
 
 a:active {
-  background: transparent;
+  background-color: transparent;
   /* 1 */
   color: $link-active-color;
 }

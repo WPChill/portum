@@ -6,7 +6,7 @@
 	box-shadow: 0 0 15px 1px rgba(0,0,0,.07);
 	position:relative;
 	z-index:50;
-	background: $header_background;
+	background-color: $header_background;
 
   &.has-top-bar {
     top: 40px;
@@ -30,8 +30,8 @@
 }
 
 /* ==========================================================================
-   =Logo
-   ========================================================================== */
+  =Logo
+  ========================================================================== */
 
 #logo {
   line-height: 80px;
@@ -51,8 +51,8 @@
 
 #logo img {
   width: auto;
-  max-width:nonew;
-  transition: all 0.3s;
+  max-width:none;
+  transition: width 0.3s;
 }
 
 @media (max-width: 767px) {
@@ -68,7 +68,7 @@
 }
 
 /* ==========================================================================
-   =Sticky Header
+  =Sticky Header
    ========================================================================== */
 
 @media (min-width: 1025px) {

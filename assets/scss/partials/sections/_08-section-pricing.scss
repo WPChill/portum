@@ -13,7 +13,7 @@
     transition: all 100ms ease-in-out;
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
 	margin-bottom:30px;
-	background:#fff;
+	background-color:#fff;
 	overflow:hidden;
 
 	&.featured,
@@ -164,7 +164,7 @@
 		}
 
 		.details {
-			background: $accent-1-color;
+			background-color: $accent-1-color;
 			position: absolute;
 			left: 0;
 			top: 0;
