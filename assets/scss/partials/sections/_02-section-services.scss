@@ -26,8 +26,40 @@
   span,
 strong {  
 	  display: block;
-   }
+  }
   
+}
+
+.services-item--no-border {
+
+}
+
+.services-item--normal i,
+.services-item--no-border i,
+.services-item--border-square i,
+.services-item--border-round i {
+  height:30px;
+  width:30px;
+  padding:20px;
+  text-align: center;
+  border-width:2px;
+  border-style: solid;
+}
+
+
+.services-item--normal i {
+  border-color: transparent;
+}
+
+.services-item--border-round i,
+.services-item--border-square i {
+
+}
+
+.services-item--border-round i {
+  border-radius:80px; 
+
+  border-style: solid;
 }
 
 @media (max-width: 768px) {

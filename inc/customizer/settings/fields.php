@@ -595,6 +595,16 @@ Epsilon_Customizer::add_field(
 				'type'    => 'epsilon-icon-picker',
 				'default' => 'fa fa-users',
 			),
+			'service_type'        => array(
+				'label'   => esc_html__( 'Display style', 'portum' ),
+				'type'    => 'select',
+				'default' => 'no-border',
+				'choices' => array(
+					'no-border'     => __( 'No Border', 'portum' ),
+					'border-square' => __( 'Square Border', 'portum' ),
+					'border-round'  => __( 'Round Border', 'portum' ),
+				),
+			),
 		),
 	)
 );

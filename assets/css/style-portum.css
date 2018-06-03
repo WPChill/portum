@@ -6439,6 +6439,32 @@ input[type='button']:active
     display: block;
 }
 
+.services-item--normal i,
+.services-item--no-border i,
+.services-item--border-square i,
+.services-item--border-round i
+{
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+
+    text-align: center;
+
+    border-width: 2px;
+    border-style: solid;
+}
+
+.services-item--normal i
+{
+    border-color: transparent;
+}
+
+.services-item--border-round i
+{
+    border-style: solid;
+    border-radius: 80px;
+}
+
 @media (max-width: 768px)
 {
     .services-item
