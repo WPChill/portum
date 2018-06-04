@@ -7,6 +7,11 @@
  *
  *
  */
+
+/**
+* @uses: https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+*/
+
 @import "variables/variables";
 @import "mixins/mixins";
 @import "partials/typography";
@@ -16,8 +21,6 @@
 @import "partials/menu";
 @import "partials/blog";
 @import "partials/back-top";
-/*
-*/
 @import "partials/sections/base";
 @import "partials/sections/00-header-bar";
 @import "partials/sections/00-section-hero";

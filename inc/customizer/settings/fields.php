@@ -603,6 +603,18 @@ Epsilon_Customizer::add_field(
 					'no-border'     => __( 'No Border', 'portum' ),
 					'border-square' => __( 'Square Border', 'portum' ),
 					'border-round'  => __( 'Round Border', 'portum' ),
+					'filled-square' => __( 'Filled Square', 'portum' ),
+					'filled-round'  => __( 'Filled Round', 'portum' ),
+				),
+			),
+			'service_type_color' => array(
+				'label'   => esc_html__( 'Color style', 'portum' ),
+				'type'    => 'select',
+				'default' => 'color-default',
+				'choices' => array(
+					'color-default'  => __( 'White', 'portum' ),
+					'color-accent1' => __( 'Color Accent 1', 'portum' ),
+					'color-accent2' => __( 'Color Accent 2', 'portum' ),
 				),
 			),
 		),

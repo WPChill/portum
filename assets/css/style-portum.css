@@ -7,6 +7,9 @@
  *
  *
  */
+/**
+* @uses: https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+*/
 body
 {
     font-family: 'Hind', sans-serif;
@@ -5780,8 +5783,6 @@ input[type='button']:active
     right: -2.66666666em;
 }
 
-/*
-*/
 /* ----------------------- SECTIONS ------------------------ */
 .section-grey
 {
@@ -6415,50 +6416,108 @@ input[type='button']:active
 
 .services-item
 {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 .services-item i
 {
     font-size: 30px;
 
-    color: #fff;
-}
-.services-item span
-{
-    margin-top: 25px;
-
-    color: #0385d0;
-}
-.services-item strong
-{
-    color: #fff;
-}
-.services-item span,
-.services-item strong
-{
-    display: block;
-}
-
-.services-item--normal i,
-.services-item--no-border i,
-.services-item--border-square i,
-.services-item--border-round i
-{
     width: 30px;
     height: 30px;
     padding: 20px;
 
     text-align: center;
 
+    color: #fff;
     border-width: 2px;
     border-style: solid;
 }
-
-.services-item--normal i
+.services-item span
 {
-    border-color: transparent;
+    display: block;
+
+    margin-top: 15px;
+
+    color: #0385d0;
+}
+.services-item strong
+{
+    display: block;
+
+    color: #fff;
 }
 
+.services-item--filled-round.services-item--color-default i,
+.services-item--filled-square.services-item--color-default i
+{
+    color: #333;
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.services-item--filled-round.services-item--color-accent1 i,
+.services-item--filled-square.services-item--color-accent1 i
+{
+    border-color: #0385d0;
+    background-color: #0385d0;
+}
+
+.services-item--filled-round.services-item--color-accent2 i,
+.services-item--filled-square.services-item--color-accent2 i
+{
+    border-color: #a1083a;
+    background-color: #a1083a;
+}
+
+.services-item--border-square.services-item--color-default i,
+.services-item--border-round.services-item--color-default i
+{
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+}
+
+.services-item--border-square.services-item--color-accent1 i,
+.services-item--border-round.services-item--color-accent1 i
+{
+    color: #0385d0;
+    border-color: #0385d0;
+    background-color: transparent;
+}
+
+.services-item--border-square.services-item--color-accent2 i,
+.services-item--border-round.services-item--color-accent2 i
+{
+    color: #a1083a;
+    border-color: #a1083a;
+    background-color: transparent;
+}
+
+.services-item--no-border.services-item--color-default i,
+.services-item--no-border.services-item--color-default i
+{
+    color: #fff;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.services-item--no-border.services-item--color-accent1 i,
+.services-item--no-border.services-item--color-accent1 i
+{
+    color: #0385d0;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.services-item--no-border.services-item--color-accent2 i,
+.services-item--no-border.services-item--color-accent2 i
+{
+    color: #a1083a;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.services-item--filled-round i,
 .services-item--border-round i
 {
     border-style: solid;

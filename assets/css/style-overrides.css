@@ -131,6 +131,43 @@
 	.services-item span {
 		color: %2$s;							/*	epsilon_accent_color */
 	}	
+
+	.services-item--filled-round.services-item--color-accent1 i,
+	.services-item--filled-square.services-item--color-accent1 i {
+		background-color: %2$s;
+		border-color: %2$s;
+	}
+
+	.services-item--filled-round.services-item--color-accent2 i,
+	.services-item--filled-square.services-item--color-accent2 i {
+		background-color: %3$s;
+		border-color: %3$s;
+	}
+
+	.services-item--border-square.services-item--color-accent1 i,
+	.services-item--border-round.services-item--color-accent1 i {
+		border-color: %2$s;
+		color: %2$s;
+	}
+
+	.services-item--border-square.services-item--color-accent2 i,
+	.services-item--border-round.services-item--color-accent2 i {
+		border-color: %3$s;
+		color: %3$s;
+	}
+
+	.services-item--no-border.services-item--color-accent1 i,
+	.services-item--no-border.services-item--color-accent1 i {
+		color: %2$s;
+	}
+
+	.services-item--no-border.services-item--color-accent2 i,
+	.services-item--no-border.services-item--color-accent2 i {
+		color: %3$s;
+	}
+
+
+
 	
 	/* Counters */
 	.ewf-counter__icon i {
