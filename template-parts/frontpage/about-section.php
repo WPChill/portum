@@ -45,7 +45,7 @@ $parent_attr = array(
 					</div>
 
 
-				<?php } else { ?>
+				<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
 
 					<div class="col-md-6">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?> 
@@ -57,6 +57,14 @@ $parent_attr = array(
 							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
 						</div>
 					<?php } ?>
+
+				<?php } else { ?>
+
+					<div class="col-md-12">
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?> 
+						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+						<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
+					</div>
 
 				<?php } ?>
 
