@@ -1,5 +1,6 @@
-
 /* ----------------------------------- #00 - Section Hero --------------------------------------------- */
+
+$skew_angle: 15deg;
 
 .custom-header {
 	margin-bottom:60px;
@@ -24,120 +25,58 @@
 .pager-slider {
     height: 45px;
     padding: 0;
-    margin: -45px 0 0 0;
+    margin: -45px -10px 0 -10px;
     position: relative;
-    z-index: 10;
     overflow: hidden;
+	z-index: 10;
+	justify-content: space-between;
+	display: flex;
+	flex-flow: row wrap;
+	flex-wrap: nowrap;
 	
-	strong {
-		background-color: $accent-1-color;
-		font-family: inherit;
-		font-size: 13px;
-		color: #fff;
-		text-transform: uppercase;
-		letter-spacing: 3px;
-		text-align: left;
-		line-height: 45px;
-		display: block;
-		margin: 0;
-		transform: skewX(-15deg);
-	}
-	
-	a {
-		transform: skewX(15deg);
-		display: block;
-		height: 45px;
-		line-height: 45px;
-		padding: 0 0 0 70px;
-		color: #fff;
-		
-		span {
-			font-family: $accent-2-font;
-			font-size: 32px;
-			display: block;
-			color: #fff;
-			font-weight: 700;
-			position: Absolute;
-			left: 15px;
-			top: 1px;			
-		}
-	}
-
 	li {
-		width: 25%;
 		height: 45px;
-		float: left;
+		line-height: 45px;
 		position: relative;
 		display: block;
-		background-color: transparent;
+		flex-grow: 1;
+		margin:0 1px;
+		background-color: $accent-1-color;
 		box-sizing: border-box;
-		padding: 0 1px;
+		transform: skewX(-$skew_angle);
+		transition: background-color .2s;
 		
-		&:hover a, 
-		&.active a {
-			color: #fff;
-		}
-		
-		&:first-child:hover:before ,
-		&:last-child:hover:before,
-		&.active:before,
-		&:hover strong, 
-		&.active strong {
+		&.active {
 			background-color: $accent-2-color;
 		}
+	}
 
-		&:last-child::before,
-		&:first-child::before {
-			content: "";
-			position: absolute;
-			height: 45px;
-			width: 45px;
-			transition: background-color 50ms;
-			background-color: $accent-1-color;
-			top: 0;
-			left: 0;
-		}
+	a {
+		transform: skewX($skew_angle);
+		display: block;
+		height: 45px;
+		line-height: inherit;
+		padding:0 0 0 20px;
+		color: #fff;
 
-		&:last-child::before {
-			right: 0;
+		&:hover,
+		&:focus,
+		&:hover {
+			color:#fff;
 		}
 	}
+
+	strong {
+		font-family: $accent-2-font;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: inherit;
+		vertical-align: middle;
+		display: inline-block;
+		padding-right: 5px;
+		color: #fff;
+	}
 }
-
-.pager-items-02 li {
-    width: 50%;
-}
-
-.pager-items-03 li {
-    width: 33.3333333%;
-}
-
-.pager-items-04 li {
-    width: 25%;
-}
-
-.pager-items-05 li {
-    width: 20%;
-}
-
-.pager-items-03 .pager-item-01 {
-    padding-right: 2px;
-}
-
-.pager-items-04 .pager-item-03 {
-    padding-right: 2px;
-}
-
-.pager-items-05 .pager-item-02 {
-    padding-right: 2px;
-}
-
-.pager-items-05 .pager-item-04 {
-    padding-right: 2px;
-}
-
-
-
 
 .main-slider {
 	

@@ -41,17 +41,11 @@
 	
 
 	/* Hero - Slider */
-	.section-slider .pager-slider li:first-child::before,
-	.section-slider .pager-slider li:last-child::before,	
-	.section-slider .pager-slider strong {
+	.section-slider .pager-slider li {
 		background: %2$s;				/* epsilon_accent_color_second */
 	}	
 	
-	.section-slider .pager-slider li:hover strong, 
-	.section-slider .pager-slider li:hover:before, 
-	.section-slider .pager-slider li.active strong,	
-	.section-slider .pager-slider li.active strong:hover, 
-	.section-slider .pager-slider li.active:before{
+	.section-slider .pager-slider li.active{
 		background: %3$s;				/*	epsilon_accent_color */
 	}
 
