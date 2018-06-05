@@ -421,6 +421,8 @@ var Portum = {
           navClass: '',
           autoplay: true,
           loop: true,
+          lazyLoad:true,
+          autoHeight:true,
           autoplayTimeout: 5000,
           responsive: {
             1: {
