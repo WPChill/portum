@@ -470,7 +470,7 @@ class Portum_Repeatable_Sections {
 				'layout'  => array(
 					'row-title-align'           => array(
 						'default' => 'right',
-						'choices' => array( 'left', 'right' ),
+						'choices' => array( 'left', 'top', 'right' ),
 					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
@@ -531,43 +531,43 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'about_title'             => array(
+				'about_title'                => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Learn more about us and how can we help you:', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'about_subtitle'          => array(
+				'about_subtitle'             => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'ABOUT' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'about_text'              => array(
+				'about_text'                 => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'about_image'             => array(
+				'about_image'                => array(
 					'label'   => esc_html__( 'Image', 'portum' ),
 					'type'    => 'epsilon-image',
 					'size'    => 'large',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/01_about.png' ),
 				),
-				'about_button_primary_label'   => array(
+				'about_button_primary_label' => array(
 					'label'             => esc_html__( 'Primary button label', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Primary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
 				),
-				'about_button_primary_url'     => array(
+				'about_button_primary_url'   => array(
 					'label'             => esc_html__( 'Primary button URL', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_url( 'https://google.com' ),
 					'sanitize_callback' => 'esc_url_raw',
 				),
-				'about_section_unique_id' => array(
+				'about_section_unique_id'    => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
