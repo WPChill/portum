@@ -133,7 +133,7 @@ Epsilon_Customizer::add_field(
 			'h4',
 			'h5',
 			'h6',
-			'.pager-slider a span',
+			'.pager-slider li strong',
 			'.expertise-item h4 strong',
 			'.pricing-item .plan',
 			'.item-carousel-blog a',
