@@ -36,7 +36,8 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Homepage Content', 'portum' ),
+			'title'          => esc_html__( 'Epsilon Editor', 'portum' ),
+			'hidden'         => true,
 		),
 	),
 	/**
@@ -51,6 +52,20 @@ $panels = array(
 			'title'          => esc_html__( 'Colors', 'portum' ),
 		),
 	),
+	/**
+	 * Customization panel
+	 */
+	array(
+		'id'   => 'portum_panel_customization',
+		'args' => array(
+			'priority'       => 28,
+			'capability'     => 'edit_theme_options',
+			'theme_supports' => '',
+			'title'          => esc_html__( 'Customisation', 'portum' ),
+		),
+	),
+
+
 	/**
 	 * Content panel
 	 */
@@ -77,7 +92,7 @@ $sections = array(
 		'args' => array(
 			'type'                         => 'epsilon-section-recommended-actions',
 			'title'                        => esc_html__( 'Recomended Actions', 'portum' ),
-			'social_text'                  => esc_html__( 'MachoThemes is also social', 'portum' ),
+			'social_text'                  => esc_html__( 'Macho Themes is also social', 'portum' ),
 			'plugin_text'                  => esc_html__( 'Recomended Plugins', 'portum' ),
 			'actions'                      => Portum_Dashboard_Setup::get_instance()->get_actions(),
 			'plugins'                      => Portum_Dashboard_Setup::get_instance()->get_plugins(),
@@ -101,13 +116,22 @@ $sections = array(
 		),
 	),
 	array(
+		'id'   => 'portum_typography_section',
+		'args' => array(
+			'title'    => esc_html__( 'Typography', 'portum' ),
+			'panel'    => 'portum_panel_customization',
+			'priority' => 2,
+		),
+	),
+	array(
 		'id'   => 'portum_layout_section',
 		'args' => array(
-			'title'    => esc_html__( 'Layout & Typography', 'portum' ),
-			'panel'    => 'portum_panel_general',
+			'title'    => esc_html__( 'Layout', 'portum' ),
+			'panel'    => 'portum_panel_customization',
 			'priority' => 3,
 		),
 	),
+
 	array(
 		'id'   => 'portum_footer_section',
 		'args' => array(
@@ -119,7 +143,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_misc_section',
 		'args' => array(
-			'title'    => esc_html__( 'Misc', 'portum' ),
+			'title'    => esc_html__( 'API Keys', 'portum' ),
 			'panel'    => 'portum_panel_general',
 			'priority' => 60,
 		),
@@ -130,10 +154,10 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'       => esc_html__( 'Page Sections', 'portum' ),
-			'description' => esc_html__( 'Portum theme pages are rendered through the use of these sections.', 'portum' ),
+			'title'       => esc_html__( 'Epsilon Editor', 'portum' ),
+			'description' => esc_html__( 'You can rearrange the sections below using drag & drop', 'portum' ),
 			'priority'    => 0,
-			'panel'       => 'portum_panel_content',
+			//'panel'       => 'portum_panel_content',
 		),
 	),
 

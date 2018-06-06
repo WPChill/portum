@@ -92,7 +92,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'          => 'epsilon-typography',
 		'transport'     => 'postMessage',
-		'section'       => 'portum_layout_section',
+		'section'       => 'portum_typography_section',
 		'label'         => esc_html__( 'Global font', 'portum' ),
 		'description'   => esc_html__( 'The font that will be applied to the entire document', 'portum' ),
 		'stylesheet'    => 'portum-main',
@@ -118,7 +118,7 @@ Epsilon_Customizer::add_field(
 		'type'          => 'epsilon-typography',
 		'transport'     => 'postMessage',
 		'label'         => esc_html__( 'Headings', 'portum' ),
-		'section'       => 'portum_layout_section',
+		'section'       => 'portum_typography_section',
 		'description'   => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'portum' ),
 		'stylesheet'    => 'portum-main',
 		'choices'       => array(
@@ -150,7 +150,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'          => 'epsilon-typography',
 		'transport'     => 'postMessage',
-		'section'       => 'portum_layout_section',
+		'section'       => 'portum_typography_section',
 		'label'         => esc_html__( 'Navigation font', 'portum' ),
 		'description'   => esc_html__( 'The font that will be applied to header and footer navigation', 'portum' ),
 		'stylesheet'    => 'portum-main',
@@ -174,7 +174,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'          => 'epsilon-typography',
 		'transport'     => 'postMessage',
-		'section'       => 'portum_layout_section',
+		'section'       => 'portum_typography_section',
 		'label'         => esc_html__( 'Headline title', 'portum' ),
 		'stylesheet'    => 'portum-main',
 		'choices'       => array(
@@ -204,7 +204,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'          => 'epsilon-typography',
 		'transport'     => 'postMessage',
-		'section'       => 'portum_layout_section',
+		'section'       => 'portum_typography_section',
 		'label'         => esc_html__( 'Headline subtitle', 'portum' ),
 		'stylesheet'    => 'portum-main',
 		'choices'       => array(
