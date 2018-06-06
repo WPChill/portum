@@ -71,7 +71,7 @@ $parent_attr             = array(
 
 								<?php if ( ! empty( $pricing_box['price_box_url'] ) ) { ?>
 									<div class="wrapper">
-										<a href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>" class="btn">
+										<a href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>" class="ewf-btn">
 											<?php echo empty( $pricing_box['price_box_url_label'] ) ? esc_html__( 'Purchase', 'portum' ) : esc_html( $pricing_box['price_box_url_label'] ); ?>
 										</a>
 									</div>
