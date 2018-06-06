@@ -197,42 +197,54 @@ var Portum = {
       }
     },
     advancedSlider: function () {
-      jQuery('.advanced-slider').each(function () {
+      if (typeof $.fn.slick === 'undefined') { return false; }
+
+      jQuery('.ewf-slider').each(function () {
 
         var $t = jQuery(this);
 
-        var $slider = $t.find('.slides');
+        var $slider = $t.find('.ewf-slider__slides');
 
-        var $sliderConfig = {
-          fade: 'true' === $t.attr('data-advanced-slider-mode-fade'),
-          speed: $t.attr('data-advanced-slider-speed') ? parseInt($t.attr('data-advanced-slider-speed'), 10) : 500,
-          autoplay: 'true' === $t.attr('data-advanced-slider-autoplay'),
-          infinite: 'true' === $t.attr('data-advanced-slider-loop'),
-          pager: 'true' === $t.attr('data-advanced-slider-enable-pager'),
-          controls: 'true' === $t.attr('data-advanced-slider-enable-controls')
+        var $slider_config = {
+          fade: 'true' === $t.attr('data-slider-mode-fade'),
+          speed: $t.attr('data-slider-speed') ? parseInt($t.attr('data-slider-speed'), 10) : 500,
+          autoplay: 'true' === $t.attr('data-slider-autoplay'),
+          infinite: 'true' === $t.attr('data-slider-loop'),
+          pager: 'true' === $t.attr('data-slider-enable-pager'),
+          controls: 'true' === $t.attr('data-slider-enable-controls')
         };
 
         $slider.slick({
 
           adaptiveHeight: true,
 
-          fade: $sliderConfig.fade,
+          fade: $slider_config.fade,
           cssEase: 'linear',
 
-          speed: $sliderConfig.speed,
+          speed: $slider_config.speed,
 
-          autoplay: $sliderConfig.autoplay,
+          autoplay: $slider_config.autoplay,
 
-          infinite: $sliderConfig.infinite,
+          infinite: $slider_config.infinite,
 
-          arrows: $sliderConfig.controls,
-          appendArrows: $t.find('.advanced-slider-arrows'),
+          arrows: $slider_config.controls,
+          appendArrows: $t.find('.ewf-slider__arrows'),
           prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
           nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
 
-          dots: $sliderConfig.pager,
-          appendDots: $t.find('.advanced-slider-dots')
+          dots: $slider_config.pager,
+          appendDots: $t.find('.ewf-slider__pager')
 
+        });
+
+        $slider.on('init', function (e, slick) {
+          var $firstAnimatingElements = $('.slick-slide:first-child').find('[data-animation]');
+          Portum.Plugins.doAnimations($firstAnimatingElements);
+        });
+
+        $slider.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+          var $animatingElements = $('.slick-slide[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+          Portum.Plugins.doAnimations($animatingElements);
         });
 
       });
@@ -386,6 +398,21 @@ var Portum = {
 
       }
 
+    },
+    doAnimations: function (elements) {
+      var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+      elements.each(function () {
+        var $t = jQuery(this);
+        var animationDelay = $t.data('delay') || '0';
+        var animationType = 'animated ' + $t.data('animation');
+        $t.css({
+          'animation-delay': animationDelay,
+          '-webkit-animation-delay': animationDelay
+        });
+        $t.addClass(animationType).one(animationEndEvents, function () {
+          $t.removeClass(animationType);
+        });
+      });
     },
     /**
      * Initiate the magnific Popup
