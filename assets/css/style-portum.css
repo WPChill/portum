@@ -7451,7 +7451,6 @@ input[type='button']:active
         -ms-transform: skewX(-15deg);
             transform: skewX(-15deg);
     text-align: center;
-    letter-spacing: 2px;
 
     color: transparent;
     background-color: transparent;
@@ -7465,6 +7464,8 @@ input[type='button']:active
 }
 .blog-news-item .news-date strong
 {
+    font-weight: 400;
+
     float: right;
 
     height: 40px;
@@ -7490,11 +7491,11 @@ input[type='button']:active
 {
     margin-right: 10px;
     padding: 0 40px 0 45px;
-
-    letter-spacing: 2px;
 }
 .blog-news-item .news-category strong
 {
+    font-weight: 400;
+
     -webkit-transition: background-color 150ms;
          -o-transition: background-color 150ms;
             transition: background-color 150ms;
@@ -7566,7 +7567,6 @@ input[type='button']:active
 {
     font-size: 12px;
 
-    letter-spacing: 1px;
     text-transform: uppercase;
 
     color: #999;
