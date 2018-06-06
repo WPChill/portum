@@ -25,10 +25,9 @@
 	%24$s - epsilon_footer_link_active_color - #a9afb1
  */
 
- 
  /* ==========================================================================
-   =Accent colors
-   ========================================================================== */
+	=Accent colors
+   	========================================================================== */
 
 	.text-accent-color {
 		color: %1$s;					/*	epsilon_accent_color */
@@ -214,85 +213,11 @@
 	.map-info-item h5 { color: %2$s; }					/*	epsilon_accent_color */
 		
 	
-	/* Buttons */
-	.btn-contrast,
-	a.btn-contrast{
-		background-color: %3$s;							/* epsilon_accent_color_second */
-	}
 
-	.btn-contrast:hover,
-	a.btn-contrast:hover{
-		background-color: %2$s;							/*	epsilon_accent_color */
-	}
-	
-	a.btn {	
-		border-color: %2$s;								/*	epsilon_accent_color */
-		background-color: %2$s;							/*	epsilon_accent_color */
-	}
-		
-
-	a.btn:hover {
-		border-color: %3$s;								/* epsilon_accent_color_second */
-		background-color: %3$s;							/* epsilon_accent_color_second */
-	}
-
-	a.btn:focus{
-		border-color: %3$s;								/* epsilon_accent_color_second */
-		background-color: %3$s;							/* epsilon_accent_color_second */
-	}
-
-	.ewf-btn { 
-		background-color:  %2$s;						/*	epsilon_accent_color */
-	}
-	
-	.ewf-btn:focus,
-	.ewf-btn:hover {
-		background-color: #ffffff;
-		color:  %3$s;									/* epsilon_accent_color_second */
-	}
-	
-	.ewf-btn:active {
-		background-color: %3$s;							/* epsilon_accent_color_second */
-		color: #ffffff;
-	}
-	
-	.ewf-btn.ewf-btn--huge:focus,
-	.ewf-btn.ewf-btn--huge:hover {
-		background-color: %3$s;							/* epsilon_accent_color_second */
-		color:  #fff;									
-	}
-	
-	.ewf-btn.ewf-btn--huge:active {
-		background-color: %2$s;							/* epsilon_accent_color_second */
-		color: #ffffff;
-	}
-	
-	.ewf-btn.ewf-btn--secondary {
-		-webkit-box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
-		        box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
-		color: %2$s;									/*	epsilon_accent_color */
-		background-color:transparent;
-	}
-	
-	.ewf-btn.ewf-btn--secondary:focus,
-	.ewf-btn.ewf-btn--secondary:hover {
-		-webkit-box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
-		        box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
-		color: %3$s;									/* epsilon_accent_color_second */
-		background:transparent;
-	}
-	
-	.ewf-btn.ewf-btn--secondary:active {
-		-webkit-box-shadow:inset 0 0 0 2px %2$s;
-		        box-shadow:inset 0 0 0 2px %2$s;		/* epsilon_accent_color_second */
-		color: %2$s;									/*	epsilon_accent_color */
-		background:transparent;
-	}
-	
 	
  /* ==========================================================================
-   =Navigation
-   ========================================================================== */   
+	=Navigation
+   	========================================================================== */   
 	
 	#header { 
 		background-color:%11$s; 
@@ -344,8 +269,8 @@
 	
 	.sf-menu > li:hover,
 	.sf-menu > li.current {
-	  -webkit-box-shadow: inset 0px 3px 0px 0px %12$s;
-	          box-shadow: inset 0px 3px 0px 0px %12$s;
+		-webkit-box-shadow: inset 0px 3px 0px 0px %12$s;
+	        	box-shadow: inset 0px 3px 0px 0px %12$s;
 	}
 
 	.sf-menu > li.current > a {
@@ -369,7 +294,7 @@
 	}
 
 	.dropdown li:hover {
-	  background: %13$s;
+		background: %13$s;
 	}
 	
 	#mobile-menu {			
@@ -418,12 +343,11 @@
 		color: %12$s;
 	}
 	*/
-   
-   
+
 	
  /* ==========================================================================
-   =Typography
-   ========================================================================== */   
+	=Typography
+   	========================================================================== */   
 
 	body,
 	.comment-metadata >  a,
@@ -450,7 +374,7 @@
 	a:hover,
 	a:focus  { color: %8$s; }				/* epsilon_link_hover_color */
 	a:active { color: %9$s; }				/* epsilon_link_active_color */
-   
+
 	input[type="text"],
 	input[type="password"],
 	input[type="date"],
@@ -469,7 +393,6 @@
 	select{
 		color: %6$s;						/* epsilon_text_color */
 	}
-   
 
 	input[type="reset"],
 	input[type="submit"],
@@ -494,12 +417,12 @@
 		border-color: %2$s;
 		background-color: %2$s;
 	}	
-   
-   
+
+
  /* ==========================================================================
-   =Footer
-   ========================================================================== */
- 	#footer{
+	=Footer
+   	========================================================================== */
+	#footer{
 		background-color: %19$s;			/* epsilon_footer_background */
 		color : %21$s;						/* epsilon_footer_text_color */
 	}
@@ -530,11 +453,11 @@
 	
 	
  /* ==========================================================================
-   =Blog
-   ========================================================================== */
-   
-   #back-to-top { background-color:%2$s; }
-   
+	=Blog
+   	========================================================================== */
+	
+	#back-to-top { background-color:%2$s; }
+	
 	#back-to-top:hover { background-color: %3$s; }
 	#back-to-top:hover i { color: #ffffff; }
 	
@@ -562,16 +485,16 @@
 	}
 
 	.post-meta a {
-	  color: %5$s;
+		color: %5$s;
 	}
 
 	.post-meta a:focus,
 	.post-meta a:hover {
-	  color: %8$s;
+		color: %8$s;
 	}
 
 	.post-meta a:active {
-	  color: %9$s;
+		color: %9$s;
 	}
 
 	.tags-links {
@@ -609,28 +532,28 @@
 	}
 
 	.pagination .page-numbers:hover {
-	  color: %3$s;
+		color: %3$s;
 	}
 
 	.pagination .page-numbers:active {
-	  color: $%3$s;
+		color: $%3$s;
 	}
 
 	.pagination .prev.page-numbers,
 	.pagination .next.page-numbers,
 	.pagination .prev.page-numbers:active,
 	.pagination .next.page-numbers:active {
-	  border: 1px solid %6$s;
-	  color: %6$s;
+		border: 1px solid %6$s;
+		color: %6$s;
 	}
 
 	.pagination .prev.page-numbers:focus,
 	.pagination .prev.page-numbers:hover,
 	.pagination .next.page-numbers:focus,
 	.pagination .next.page-numbers:hover {
-	  border: 1px solid %3$s;
-	  background: %3$s;
-	  color: #fff;
+		border: 1px solid %3$s;
+		background: %3$s;
+		color: #fff;
 	}
 
 	.page-links {
@@ -681,7 +604,7 @@
 
 	.widget .widget-title,
 	.widget .widget-title a {
-	  color: %2$s;
+		color: %2$s;
 	}
 
 	#wp-calendar caption {
@@ -774,14 +697,77 @@
 	}
 
 	.widget a {
-	  color: %7$s;
+		color: %7$s;
 	}
 
 	.widget a:hover,
 	.widget a:focus {
-	  color: %8$s;
+		color: %8$s;
 	}
 
 	.widget a:active {
-	  color: %9$s;
+		color: %9$s;
 	}
+
+
+	/* Buttons */
+	.ewf-btn { 
+		background-color: %2$s;							/*	epsilon_accent_color */
+		-webkit-box-shadow:inset 0 0 0 2px %2$s;
+		        box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
+	}
+	
+	.ewf-btn:focus,
+	.ewf-btn:hover {
+		-webkit-box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
+		        box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
+		background-color: %3$s;							/* epsilon_accent_color_second */
+	}
+	
+	.ewf-btn:active {
+		-webkit-box-shadow:inset 0 0 0 2px %2$s;		/* epsilon_accent_color */
+		        box-shadow:inset 0 0 0 2px %2$s;		/* epsilon_accent_color */
+		background-color: %2$s;							/* epsilon_accent_color */
+	}
+	
+	.ewf-btn.ewf-btn--inverted {
+		background-color: %3$s;
+		-webkit-box-shadow:inset 0 0 0 2px %3$s;
+		        box-shadow:inset 0 0 0 2px %3$s;
+	}
+
+	.ewf-btn.ewf-btn--inverted:focus,					/* epsilon_accent_color */
+	.ewf-btn.ewf-btn--inverted:hover {					/* epsilon_accent_color */
+		background-color: %2$s;
+		-webkit-box-shadow:inset 0 0 0 2px %2$s;
+		        box-shadow:inset 0 0 0 2px %2$s;
+	}
+
+	.ewf-btn.ewf-btn--inverted:active {
+		background-color: %3$s;							/* epsilon_accent_color_second */
+		-webkit-box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
+		        box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
+	}
+	
+	.ewf-btn.ewf-btn--secondary {
+		-webkit-box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
+		        box-shadow:inset 0 0 0 2px %2$s;		/*	epsilon_accent_color */
+		color: %2$s;									/*	epsilon_accent_color */
+		background-color:transparent;
+	}
+	
+	.ewf-btn.ewf-btn--secondary:focus,
+	.ewf-btn.ewf-btn--secondary:hover {
+		-webkit-box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
+		        box-shadow:inset 0 0 0 2px %3$s;		/* epsilon_accent_color_second */
+		color: %3$s;									/* epsilon_accent_color_second */
+		background:transparent;
+	}
+	
+	.ewf-btn.ewf-btn--secondary:active {
+		-webkit-box-shadow:inset 0 0 0 2px %2$s;
+		        box-shadow:inset 0 0 0 2px %2$s;		/* epsilon_accent_color_second */
+		color: %2$s;									/*	epsilon_accent_color */
+		background:transparent;
+	}
+	

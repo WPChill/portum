@@ -5998,10 +5998,13 @@ input[type='button']:active
     display: inline-block;
 
     min-width: 110px;
-    margin-bottom: 28px;
-    padding: 6px 14px;
+    margin-bottom: 26px;
+    padding: 6px 13px;
 
     cursor: pointer;
+    -webkit-transition: .3s all ease;
+         -o-transition: .3s all ease;
+            transition: .3s all ease;
     text-align: center;
     text-decoration: none;
 
@@ -6009,23 +6012,58 @@ input[type='button']:active
     border-radius: 21px;
     background-color: #0385d0;
     background-clip: padding-box;
+    -webkit-box-shadow: inset 0 0 0 2px #0385d0;
+            box-shadow: inset 0 0 0 2px #0385d0;
 
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
 }
-
 .ewf-btn:focus,
 .ewf-btn:hover
 {
-    color: #a1083a;
-    background-color: #fff;
+    color: #fff;
+    background-color: #a1083a;
+    -webkit-box-shadow: inset 0 0 0 2px #a1083a;
+            box-shadow: inset 0 0 0 2px #a1083a;
 }
-
 .ewf-btn:active
 {
     color: #fff;
+    background-color: #0385d0;
+    -webkit-box-shadow: inset 0 0 0 2px #0385d0;
+            box-shadow: inset 0 0 0 2px #0385d0;
+}
+
+#wrap .ewf-btn,
+#wrap .ewf-btn:active,
+#wrap .ewf-btn:hover,
+#wrap .ewf-btn:focus
+{
+    color: #fff;
+}
+
+.ewf-btn.ewf-btn--inverted
+{
+    color: #fff;
     background-color: #a1083a;
+    -webkit-box-shadow: inset 0 0 0 2px #a1083a;
+            box-shadow: inset 0 0 0 2px #a1083a;
+}
+.ewf-btn.ewf-btn--inverted:focus,
+.ewf-btn.ewf-btn--inverted:hover
+{
+    color: #fff;
+    background-color: #0385d0;
+    -webkit-box-shadow: inset 0 0 0 2px #0385d0;
+            box-shadow: inset 0 0 0 2px #0385d0;
+}
+.ewf-btn.ewf-btn--inverted:active
+{
+    color: #fff;
+    background-color: #a1083a;
+    -webkit-box-shadow: inset 0 0 0 2px #a1083a;
+            box-shadow: inset 0 0 0 2px #a1083a;
 }
 
 .ewf-btn.ewf-btn--small
@@ -7137,10 +7175,6 @@ input[type='button']:active
 {
     color: #333;
 }
-.pricing-item .btn
-{
-    min-width: 120px;
-}
 .pricing-item .wrapper
 {
     position: absolute;
@@ -7339,10 +7373,6 @@ input[type='button']:active
 
         width: 100%;
         min-height: 150px;
-    }
-    .pricing-item .btn
-    {
-        margin-bottom: 35px;
     }
     .pricing-item .plan
     {
@@ -7682,15 +7712,9 @@ input[type='button']:active
     color: #fff;
     text-shadow: 0 1px rgba(35, 31, 32, .41);
 }
-.contact-form button
+.contact-form .ewf-btn
 {
     float: right;
-
-    min-width: 150px;
-
-    -webkit-transition: none;
-         -o-transition: none;
-            transition: none;
 }
 
 .input-item
@@ -7721,7 +7745,7 @@ input[type='button']:active
 
         text-align: center;
     }
-    .contact-form button
+    .contact-form .ewf-btn
     {
         display: inline-block;
         float: none;
