@@ -11,7 +11,8 @@ $fields    = $frontpage->sections[ $section_id ];
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'about', Portum_Repeatable_Sections::get_instance() );
 
-$parent_attr = array(
+$button_primary = $fields['about_button_primary_label'] . $fields['about_button_primary_url'];
+$parent_attr    = array(
 	'id'    => ! empty( $fields['about_section_unique_id'] ) ? array( $fields['about_section_unique_id'] ) : array(),
 	'class' => array( 'section-about', 'section', 'ewf-section' ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
@@ -42,14 +43,21 @@ $parent_attr = array(
 					<div class="col-md-6">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) ); ?>
 						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-					</div>
 
+						<?php if ( $button_primary ) { ?>
+							<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+						<?php }; ?>
+					</div>
 
 				<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
 
 					<div class="col-md-6">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?> 
 						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+
+						<?php if ( $button_primary ) { ?>
+							<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+						<?php }; ?>
 					</div>
 
 					<?php if ( ! empty( $fields['about_image'] ) ) { ?>
@@ -63,11 +71,17 @@ $parent_attr = array(
 					<div class="col-md-12">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?> 
 						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-						<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
+
+						<?php if ( $button_primary ) { ?>
+							<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+						<?php }; ?>
+
+						<?php if ( $fields['about_image'] ) { ?>
+							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
+						<?php }; ?>
 					</div>
 
 				<?php } ?>
-
 
 			</div>
 		</div>
