@@ -34,14 +34,14 @@ wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );
 ?>
 <div data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div class="ewf-slider" 
 		data-slider-mode-fade="<?php echo 'fade' === $fields['slider_transition'] ? 'true' : 'false'; ?>" 
 		data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>" 
 		data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>" 
 		data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>" 
 		data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>" 
-		data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>
-	">
+		data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
 
 		<ul class="ewf-slider__slides">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
@@ -79,12 +79,21 @@ wp_enqueue_style( 'slick' );
 					<div class="<?php echo esc_attr( implode( ' ', array_keys( $captions ) ) ); ?>">
 						<div class="ewf-slider-slide__content-wrap">
 							<?php
-							if ( ! empty( $slide['slide_cta'] ) ) {
-								echo '<h1 data-animation="bounceInLeft" data-delay="0.5s">' . wp_kses_post( $slide['slide_cta'] ) . '</h1>';
+							if ( ! empty( $slide['slide_title'] ) ) {
+								echo '<h1 data-animation="' . esc_attr( $slide['slide_title_animation'] ) . '" data-delay="0">' . wp_kses_post( $slide['slide_title'] ) . '</h1>';
 							}
 
-							if ( ! empty( $slide['slide_small'] ) ) {
-								echo '<h6 data-animation="bounceInRight" data-delay="0.5s">' . wp_kses_post( $slide['slide_small'] ) . '</h6>';
+							if ( ! empty( $slide['slide_description'] ) ) {
+								echo '<h6 data-animation="' . esc_attr( $slide['slide_description_animation'] ) . '" data-delay="0.2s">' . wp_kses_post( $slide['slide_description'] ) . '</h6>';
+							}
+
+
+							if ( ! empty( $slide['slide_cta_primary_label'] ) ) {
+								echo '<a class="ewf-btn ewf-btn--huge" href="' . esc_attr( $slide['slide_cta_primary_url'] ) . '" data-animation="' . esc_attr( $slide['slide_cta_primary_animation'] ) . '" data-delay="0.3s">' . wp_kses_post( $slide['slide_cta_primary_label'] ) . '</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+							}
+
+							if ( ! empty( $slide['slide_cta_secondary_label'] ) ) {
+								echo '<a class="ewf-btn ewf-btn--huge ewf-btn--secondary" href="' . esc_attr( $slide['slide_cta_secondary_url'] ) . '" data-animation="' . esc_attr( $slide['slide_cta_secondary_animation'] ) . '" data-delay="0.4s">' . wp_kses_post( $slide['slide_cta_secondary_label'] ) . '</a>';
 							}
 							?>
 						</div><!-- end .ewf-slider-slide__content -->

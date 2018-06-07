@@ -6,6 +6,11 @@
 	margin: 0 auto;	
 }
 
+.ewf-slider h1, 
+.ewf-slider h6 {
+	color: #ffffff;
+}
+
 .ewf-slider .ewf-slider__slides {
 	margin-bottom: 0;
 	list-style: none;
@@ -191,7 +196,7 @@
 }
 
 .ewf-slider .ewf-slider__pager .slick-dots li.slick-active button {
-	background-color: $accent-1-color;;
+	background-color: $accent-1-color;
 }
 
 .ewf-slider .ewf-slider__arrows a {

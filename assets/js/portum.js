@@ -197,8 +197,7 @@ var Portum = {
       }
     },
     advancedSlider: function () {
-      if (typeof $.fn.slick === 'undefined') { return false; }
-
+      
       jQuery('.ewf-slider').each(function () {
 
         var $t = jQuery(this);
@@ -215,7 +214,6 @@ var Portum = {
         };
 
         $slider.slick({
-
           adaptiveHeight: true,
 
           fade: $slider_config.fade,
@@ -228,14 +226,16 @@ var Portum = {
           infinite: $slider_config.infinite,
 
           arrows: $slider_config.controls,
-          appendArrows: $t.find('.ewf-slider__arrows'),
           prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
           nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
+          appendArrows: $t.find('.ewf-slider__arrows'),
 
           dots: $slider_config.pager,
           appendDots: $t.find('.ewf-slider__pager')
 
         });
+
+        console.log($slider_config);
 
         $slider.on('init', function (e, slick) {
           var $firstAnimatingElements = $('.slick-slide:first-child').find('[data-animation]');
@@ -243,7 +243,7 @@ var Portum = {
         });
 
         $slider.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
-          var $animatingElements = $('.slick-slide[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+          var $animatingElements = jQuery('.slick-slide[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
           Portum.Plugins.doAnimations($animatingElements);
         });
 
