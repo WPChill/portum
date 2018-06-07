@@ -235,8 +235,6 @@ var Portum = {
 
         });
 
-        console.log($slider_config);
-
         $slider.on('init', function (e, slick) {
           var $firstAnimatingElements = $('.slick-slide:first-child').find('[data-animation]');
           Portum.Plugins.doAnimations($firstAnimatingElements);
