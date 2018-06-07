@@ -2162,8 +2162,8 @@ del
         display: none !important;
     }
 }
-/* =Padding
- ========================================================================== */
+/* 	=Padding
+   	========================================================================== */
 .ewf-padding-top--none
 {
     padding-top: 0 !important;
@@ -2203,261 +2203,261 @@ del
 
 .ewf-padding-top--xx-small
 {
-    padding-top: 12.5px;
+    padding-top: 13px;
 }
 
 .ewf-padding-right--xx-small
 {
-    padding-right: 12.5px;
+    padding-right: 13px;
 }
 
 .ewf-padding-bottom--xx-small
 {
-    padding-bottom: 12.5px;
+    padding-bottom: 13px;
 }
 
 .ewf-padding-left--xx-small
 {
-    padding-left: 12.5px;
+    padding-left: 13px;
 }
 
 .ewf-padding-vertical--xx-small
 {
-    padding-top: 12.5px;
-    padding-bottom: 12.5px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 
 .ewf-padding-horizontal--xx-small
 {
-    padding-right: 12.5px;
-    padding-left: 12.5px;
+    padding-right: 13px;
+    padding-left: 13px;
 }
 
 .ewf-padding-around--xx-small
 {
-    padding: 12.5px;
+    padding: 13px;
 }
 
 .ewf-padding-top--x-small
 {
-    padding-top: 17.5px;
+    padding-top: 19.5px;
 }
 
 .ewf-padding-right--x-small
 {
-    padding-right: 17.5px;
+    padding-right: 19.5px;
 }
 
 .ewf-padding-bottom--x-small
 {
-    padding-bottom: 17.5px;
+    padding-bottom: 19.5px;
 }
 
 .ewf-padding-left--x-small
 {
-    padding-left: 17.5px;
+    padding-left: 19.5px;
 }
 
 .ewf-padding-vertical--x-small
 {
-    padding-top: 17.5px;
-    padding-bottom: 17.5px;
+    padding-top: 19.5px;
+    padding-bottom: 19.5px;
 }
 
 .ewf-padding-horizontal--x-small
 {
-    padding-right: 17.5px;
-    padding-left: 17.5px;
+    padding-right: 19.5px;
+    padding-left: 19.5px;
 }
 
 .ewf-padding-around--x-small
 {
-    padding: 17.5px;
+    padding: 19.5px;
 }
 
 .ewf-padding-top--small
 {
-    padding-top: 35px;
+    padding-top: 26px;
 }
 
 .ewf-padding-right--small
 {
-    padding-right: 35px;
+    padding-right: 26px;
 }
 
 .ewf-padding-bottom--small
 {
-    padding-bottom: 35px;
+    padding-bottom: 26px;
 }
 
 .ewf-padding-left--small
 {
-    padding-left: 35px;
+    padding-left: 26px;
 }
 
 .ewf-padding-vertical--small
 {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 26px;
+    padding-bottom: 26px;
 }
 
 .ewf-padding-horizontal--small
 {
-    padding-right: 35px;
-    padding-left: 35px;
+    padding-right: 26px;
+    padding-left: 26px;
 }
 
 .ewf-padding-around--small
 {
-    padding: 35px;
+    padding: 26px;
 }
 
 .ewf-padding-top--medium
 {
-    padding-top: 70px;
+    padding-top: 52px;
 }
 
 .ewf-padding-right--medium
 {
-    padding-right: 70px;
+    padding-right: 52px;
 }
 
 .ewf-padding-bottom--medium
 {
-    padding-bottom: 70px;
+    padding-bottom: 52px;
 }
 
 .ewf-padding-left--medium
 {
-    padding-left: 70px;
+    padding-left: 52px;
 }
 
 .ewf-padding-vertical--medium
 {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 52px;
+    padding-bottom: 52px;
 }
 
 .ewf-padding-horizontal--medium
 {
-    padding-right: 70px;
-    padding-left: 70px;
+    padding-right: 52px;
+    padding-left: 52px;
 }
 
 .ewf-padding-around--medium
 {
-    padding: 70px;
+    padding: 52px;
 }
 
 .ewf-padding-top--large
 {
-    padding-top: 105px;
+    padding-top: 78px;
 }
 
 .ewf-padding-right--large
 {
-    padding-right: 105px;
+    padding-right: 78px;
 }
 
 .ewf-padding-bottom--large
 {
-    padding-bottom: 105px;
+    padding-bottom: 78px;
 }
 
 .ewf-padding-left--large
 {
-    padding-left: 105px;
+    padding-left: 78px;
 }
 
 .ewf-padding-vertical--large
 {
-    padding-top: 105px;
-    padding-bottom: 105px;
+    padding-top: 78px;
+    padding-bottom: 78px;
 }
 
 .ewf-padding-horizontal--large
 {
-    padding-right: 105px;
-    padding-left: 105px;
+    padding-right: 78px;
+    padding-left: 78px;
 }
 
 .ewf-padding-around--large
 {
-    padding: 105px;
+    padding: 78px;
 }
 
 .ewf-padding-top--x-large
 {
-    padding-top: 140px;
+    padding-top: 104px;
 }
 
 .ewf-padding-right--x-large
 {
-    padding-right: 140px;
+    padding-right: 104px;
 }
 
 .ewf-padding-bottom--x-large
 {
-    padding-bottom: 140px;
+    padding-bottom: 104px;
 }
 
 .ewf-padding-left--x-large
 {
-    padding-left: 140px;
+    padding-left: 104px;
 }
 
 .ewf-padding-vertical--x-large
 {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 104px;
+    padding-bottom: 104px;
 }
 
 .ewf-padding-horizontal--x-large
 {
-    padding-right: 140px;
-    padding-left: 140px;
+    padding-right: 104px;
+    padding-left: 104px;
 }
 
 .ewf-padding-around--x-large
 {
-    padding: 140px;
+    padding: 104px;
 }
 
 .ewf-padding-top--xx-large
 {
-    padding-top: 175px;
+    padding-top: 130px;
 }
 
 .ewf-padding-right--xx-large
 {
-    padding-right: 175px;
+    padding-right: 130px;
 }
 
 .ewf-padding-bottom--xx-large
 {
-    padding-bottom: 175px;
+    padding-bottom: 130px;
 }
 
 .ewf-padding-left--xx-large
 {
-    padding-left: 175px;
+    padding-left: 130px;
 }
 
 .ewf-padding-vertical--xx-large
 {
-    padding-top: 175px;
-    padding-bottom: 175px;
+    padding-top: 130px;
+    padding-bottom: 130px;
 }
 
 .ewf-padding-horizontal--xx-large
 {
-    padding-right: 175px;
-    padding-left: 175px;
+    padding-right: 130px;
+    padding-left: 130px;
 }
 
 .ewf-padding-around--xx-large
 {
-    padding: 175px;
+    padding: 130px;
 }
 
 /* ==========================================================================
@@ -8713,6 +8713,19 @@ input[type='button']:active
         padding: 100px 30px;
     }
 }
+.ewf-slider .ewf-slider__slides li .ewf-slider-slide__overlay
+{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: .35;
+    background-color: black;
+}
+
 .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
 {
     position: relative;
