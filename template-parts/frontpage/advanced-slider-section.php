@@ -49,10 +49,20 @@ wp_enqueue_style( 'slick' );
 				<?php
 				$style = array(
 					'background-image' => ! empty( $slide['slide_background'] ) ? $slide['slide_background'] : '',
-					'background-color' => ! empty( $slide['slide_background_color'] ) ? $slide['slide_background_color'] : '',
 				);
+
 				$css   = 'style="';
 				$style = array_filter( $style );
+
+
+				$style_overlay = array(
+					'background-color' => ! empty( $slide['slide_background_color'] ) ? $slide['slide_background_color'] : '',
+				);
+
+				$css_overlay = '';
+				if ( ! empty( $slide['slide_background_color'] ) ) {
+					$css_overlay = ' style="background-color:' . esc_attr( $slide['slide_background_color'] ) . '" ';
+				}
 
 				foreach ( $style as $k => $v ) {
 					if ( 'background-image' === $k ) {
@@ -76,6 +86,8 @@ wp_enqueue_style( 'slick' );
 
 				?>
 				<li <?php echo $css; ?>>
+					<div class="ewf-slider-slide__overlay"<?php echo $css_overlay; ?>></div>
+
 					<div class="<?php echo esc_attr( implode( ' ', array_keys( $captions ) ) ); ?>">
 						<div class="ewf-slider-slide__content-wrap">
 							<?php
