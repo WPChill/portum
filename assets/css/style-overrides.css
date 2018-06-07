@@ -37,7 +37,14 @@
 		color: %2$s;					/* epsilon_accent_color_second */
 	}
 	
-	
+	/* Advanced - Slider */
+	.ewf-slider .ewf-slider__pager .slick-dots li.slick-active button {
+		background-color: %2$s;			/* epsilon_accent_color */
+	}
+
+	.ewf-slider .ewf-slider__arrows a:hover { 
+		color: %2$s;			/* epsilon_accent_color */
+	}
 
 	/* Hero - Slider */
 	.section-slider .pager-slider li {
