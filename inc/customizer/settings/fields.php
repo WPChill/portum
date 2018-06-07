@@ -113,7 +113,7 @@ Epsilon_Customizer::add_field(
 		),
 		'font_defaults' => array(
 			'letter-spacing' => '0',
-			'font-family'    => '',
+			'font-family'    => 'default_font',
 			'font-weight'    => '',
 			'font-style'     => '',
 		),
@@ -137,7 +137,7 @@ Epsilon_Customizer::add_field(
 			'.post-content p',
 		),
 		'font_defaults' => array(
-			'font-family' => '',
+			'font-family' => 'default_font',
 			'font-weight' => '',
 			'font-style'  => '',
 		),
@@ -1057,14 +1057,14 @@ Epsilon_Customizer::add_field(
 					// 'epsilon_general_separator'         		=> '',
 					'epsilon_accent_color'              		=> '#0385d0',
 					'epsilon_accent_color_second'       		=> '#a1083a',
-					
+
 					// 'epsilon_text_separator'            		=> '',
 					'epsilon_title_color'               		=> '#1a171c',
 					'epsilon_text_color'               			=> '#777777',
 					'epsilon_link_color'                		=> '#0385d0',
 					'epsilon_link_hover_color'          		=> '#a1083a',
 					'epsilon_link_active_color'         		=> '#333333',
-					
+
 					// 'epsilon_menu_separator'            		=> '',
 					'epsilon_header_background'           		=> '#151c1f',
 					'epsilon_dropdown_menu_background'          => '#a1083a',
@@ -1072,7 +1072,7 @@ Epsilon_Customizer::add_field(
 					'epsilon_menu_item_color'    				=> '#ebebeb',
 					'epsilon_menu_item_hover_color' 			=> '#ffffff',
 					'epsilon_menu_item_active_color'        	=> '#0385d0',
-					
+
 					// 'epsilon_footer_separator'         			=> '',
 					'epsilon_footer_contact_background'         => '#0377bb',
 					'epsilon_footer_background'         		=> '#192229',
@@ -1090,14 +1090,14 @@ Epsilon_Customizer::add_field(
 					// 'epsilon_general_separator'         		=> '',
 					'epsilon_accent_color'              		=> '#FFC000',
 					'epsilon_accent_color_second'       		=> '#3E4346',
-					
+
 					// 'epsilon_text_separator'            		=> '',
 					'epsilon_title_color'               		=> '#3E4346',
 					'epsilon_text_color'               			=> '#777777',
 					'epsilon_link_color'                		=> '#3e4346',
 					'epsilon_link_hover_color'          		=> '#ffc000',
 					'epsilon_link_active_color'         		=> '#3e4346',
-					
+
 					// 'epsilon_menu_separator'            		=> '',
 					'epsilon_header_background'           		=> '#ffffff',
 					'epsilon_dropdown_menu_background'          => '#ffffff',
@@ -1105,7 +1105,7 @@ Epsilon_Customizer::add_field(
 					'epsilon_menu_item_color'    				=> '#3e4346',
 					'epsilon_menu_item_hover_color' 			=> '#ffc000',
 					'epsilon_menu_item_active_color'        	=> '#ffc000',
-					
+
 					// 'epsilon_footer_separator'         			=> '',
 					'epsilon_footer_contact_background'         => '#ffc000',
 					'epsilon_footer_background'         		=> '#3e4346',
