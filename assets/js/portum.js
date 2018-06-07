@@ -559,30 +559,30 @@ var Portum = {
       if ( typeof google === 'undefined' ) {
         return;
       }
-	  
-	self = this;
-	
-	jQuery('.map-canvas').each(function(){
-		var map_element = this;
-		var geocoder = new google.maps.Geocoder(),
-		address = jQuery(this);
 
-		if ( ! address.length ) {
-			return;
-		}		  
+      self = this;
 
-		geocoder.geocode( {
-			'address': address.attr( 'data-address' )
-		}, function( results, status ) {
-			if ( status === google.maps.GeocoderStatus.OK ) {
-				self._mapCallback( results, address.attr( 'data-zoom' ), map_element);
-			}
-		} );
-		
-	});
-	
-   },
-	
+      jQuery( '.map-canvas' ).each( function() {
+        var map_element = this,
+            geocoder = new google.maps.Geocoder(),
+            address = jQuery( this );
+
+        if ( ! address.length ) {
+          return;
+        }
+
+        geocoder.geocode( {
+          'address': address.attr( 'data-address' )
+        }, function( results, status ) {
+          if ( status === google.maps.GeocoderStatus.OK ) {
+            self._mapCallback( results, address.attr( 'data-zoom' ), map_element );
+          }
+        } );
+
+      } );
+
+    },
+
     /**
      * After we "find" out the center, initiate the map & marker
      * @param results
@@ -591,7 +591,7 @@ var Portum = {
      * @private
      */
     _mapCallback: function( results, zoom, map_element ) {
-	
+
       var map, marker, totalHeight, mapHeight, section,
           config = {
             zoom: parseFloat( zoom ),
@@ -601,23 +601,23 @@ var Portum = {
             disableDefaultUI: true,
             styles: Portum.mapStyle
           };
-	
-	  section = jQuery(map_element).closest('.ewf-section');
-	  mapHeight =  parseInt(jQuery(map_element).attr('data-mapheight'));
+
+      section = jQuery( map_element ).closest( '.ewf-section' );
+      mapHeight = parseInt( jQuery( map_element ).attr( 'data-mapheight' ) );
       map = new google.maps.Map( map_element, config );
       marker = new google.maps.Marker( {
         map: map,
         position: results[ 0 ].geometry.location
       } );
-	
-	  if (jQuery(section).hasClass('ewf-section--title-top')){		  
-		  jQuery(section).css('padding-top', mapHeight + 'px');	  
-		  totalHeight = jQuery(section).height();
-		  panValue = (totalHeight - ((totalHeight + mapHeight) / 2)) +  (mapHeight/2);
-		  map.panBy( 0, panValue );
-	  }else{
-		  
-	  }
+
+      if ( jQuery( section ).hasClass( 'ewf-section--title-top' ) ) {
+        jQuery( section ).css( 'padding-top', mapHeight + 'px' );
+        totalHeight = jQuery( section ).height();
+        panValue = (totalHeight - ((totalHeight + mapHeight) / 2)) + (mapHeight / 2);
+        map.panBy( 0, panValue );
+      } else {
+
+      }
     },
 
     /**

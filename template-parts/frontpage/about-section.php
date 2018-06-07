@@ -13,7 +13,7 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'about', Portum_Repeata
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['about_section_unique_id'] ) ? array( $fields['about_section_unique_id'] ) : array(),
-	'class' => array( 'section-about', 'section', 'ewf-section' ),
+	'class' => array( 'section-about', 'section', 'ewf-section', 'ewf-section-' . $fields['about_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 ?>
