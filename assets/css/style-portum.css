@@ -265,85 +265,6 @@ a:focus
     color: #a1083a;
 }
 
-/* =Buttons
-   ========================================================================== */
-input.btn,
-button.btn
-{
-    min-width: 120px;
-}
-
-.btn
-{
-    font: inherit;
-
-    position: relative;
-
-    display: inline-block;
-
-    margin-bottom: 25px;
-    padding: 9px 22px;
-
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-
-    color: #fff;
-    border: none;
-    border-radius: 35px;
-    background-color: #0385d0;
-    background-clip: padding-box;
-
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-}
-
-a.btn
-{
-    color: #fff;
-}
-
-.btn:focus,
-.btn:hover
-{
-    color: #fff;
-    background-color: #a1083a;
-}
-
-.btn:active
-{
-    color: #fff;
-    background-color: #172128;
-}
-
-.btn.btn-small
-{
-    padding: 2px 22px;
-}
-
-.btn.btn-large
-{
-    padding: 15px 30px;
-}
-
-.btn-contrast
-{
-    color: #fff;
-    background-color: #a1083a;
-}
-
-.btn-contrast:focus,
-.btn-contrast:hover
-{
-    background-color: #0385d0;
-}
-
-.btn-contrast:active
-{
-    background-color: #172128;
-}
-
 /* =Social Links
    ========================================================================== */
 .social-links
@@ -6045,7 +5966,7 @@ input[type='button']:active
 
 .ewf-btn.ewf-btn--inverted
 {
-    color: #fff;
+    color: #a1083a;
     background-color: #a1083a;
     -webkit-box-shadow: inset 0 0 0 2px #a1083a;
             box-shadow: inset 0 0 0 2px #a1083a;
@@ -6053,14 +5974,14 @@ input[type='button']:active
 .ewf-btn.ewf-btn--inverted:focus,
 .ewf-btn.ewf-btn--inverted:hover
 {
-    color: #fff;
+    color: #0385d0;
     background-color: #0385d0;
     -webkit-box-shadow: inset 0 0 0 2px #0385d0;
             box-shadow: inset 0 0 0 2px #0385d0;
 }
 .ewf-btn.ewf-btn--inverted:active
 {
-    color: #fff;
+    color: #a1083a;
     background-color: #a1083a;
     -webkit-box-shadow: inset 0 0 0 2px #a1083a;
             box-shadow: inset 0 0 0 2px #a1083a;
