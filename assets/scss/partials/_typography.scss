@@ -199,68 +199,6 @@ a:hover, a:focus {
   color: $link-hover-color;
 }
 
-/* =Buttons
-   ========================================================================== */
-
-input.btn,
-button.btn {
-  min-width: 120px;
-}
-
-.btn {
-  position: relative;
-  background-clip: padding-box;
-  display: inline-block;
-  padding: 9px 22px;
-  margin-bottom: 25px;
-  background-color: $accent-1-color;
-  color: #ffffff;
-  font: inherit;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 35px;
-  border: none;
-  appearance: none;
-}
-
-a.btn {
-  color: #fff;
-}
-
-.btn:focus,
-.btn:hover {
-  background-color: $accent-2-color;
-  color: #ffffff;
-}
-
-.btn:active {
-  background-color: $accent-3-color;
-  color: #ffffff;
-}
-
-.btn.btn-small {
-  padding: 2px 22px;
-}
-
-.btn.btn-large {
-  padding: 15px 30px;
-}
-
-.btn-contrast {
-  background-color: $accent-2-color;
-  color: #ffffff;
-}
-
-.btn-contrast:focus,
-.btn-contrast:hover {
-  background-color: $accent-1-color;
-}
-
-.btn-contrast:active {
-  background-color: $accent-3-color;
-}
-
 /* =Social Links
    ========================================================================== */
 

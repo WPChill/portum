@@ -778,3 +778,12 @@
 		background:transparent;
 	}
 	
+#wrap .ewf-btn.ewf-btn--secondary:active,
+#wrap .ewf-btn.ewf-btn--secondary {
+	color: %2$s;
+}
+
+#wrap .ewf-btn.ewf-btn--secondary:focus,
+#wrap .ewf-btn.ewf-btn--secondary:hover {
+	color: %3$s;
+}

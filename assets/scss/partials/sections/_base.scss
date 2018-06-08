@@ -180,22 +180,19 @@
   .ewf-btn.ewf-btn--inverted {
     background-color: $accent-2-color;
     box-shadow:inset 0 0 0 2px $accent-2-color;
-
-    color: #fff;
+    color: $accent-2-color;;
 
     &:focus,
     &:hover {
       background-color: $accent-1-color;
       box-shadow:inset 0 0 0 2px $accent-1-color;
-
-      color: #fff;
+      color: $accent-1-color;
     }
     
     &:active {
       background-color: $accent-2-color;
       box-shadow:inset 0 0 0 2px $accent-2-color;
-
-      color: #fff;
+      color: $accent-2-color;
     }
   }
 	
