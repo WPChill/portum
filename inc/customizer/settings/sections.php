@@ -61,7 +61,7 @@ $panels = array(
 			'priority'       => 28,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
-			'title'          => esc_html__( 'Customisation', 'portum' ),
+			'title'          => esc_html__( 'Customization', 'portum' ),
 		),
 	),
 
