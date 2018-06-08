@@ -164,7 +164,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_misc_section',
 		'args' => array(
-			'title'    => esc_html__( 'API Keys', 'portum' ),
+			'title'    => esc_html__( 'Integrations', 'portum' ),
 			'panel'    => 'portum_panel_general',
 			'priority' => 60,
 		),
