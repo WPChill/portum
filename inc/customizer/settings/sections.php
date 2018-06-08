@@ -87,6 +87,24 @@ $panels = array(
  * Register sections
  */
 $sections = array(
+
+	/**
+	 * feedback section
+	 */
+	array(
+		'id'   => 'portum_feedback_section',
+		'args' => array(
+			'type'        => 'epsilon-section-pro',
+			'title'       => esc_html__( 'Help make Portum better', 'sparkling' ),
+			'button_text' => esc_html__( 'Send Feedback', 'sparkling' ),
+			'button_url'  => esc_url_raw( 'http://bit.ly/feedback-portum' ),
+			'priority'    => 0,
+		),
+	),
+
+	/**
+	 * Recommended actions section
+	 */
 	array(
 		'id'   => 'portum_recomended_section',
 		'args' => array(
@@ -104,6 +122,9 @@ $sections = array(
 			'priority'                     => 0,
 		),
 	),
+
+
+
 	/**
 	 * General section
 	 */
