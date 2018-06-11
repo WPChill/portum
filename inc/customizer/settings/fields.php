@@ -304,6 +304,18 @@ Epsilon_Customizer::add_field(
 );
 
 Epsilon_Customizer::add_field(
+	'portum_header_over_content',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Set header over content', 'portum' ),
+		'description' => esc_html__( 'This will set header over slider, using colors you can make the header transparent.', 'portum' ),
+		'section'     => 'portum_header_section',
+		'priority'    => 1,
+		'default'     => false,
+	)
+);
+
+Epsilon_Customizer::add_field(
 	'portum_header_columns',
 	array(
 		'type'            => 'epsilon-layouts',
