@@ -2726,9 +2726,16 @@ input[type='button']:active
     -webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, .07);
             box-shadow: 0 0 15px 1px rgba(0, 0, 0, .07);
 }
-#header.has-top-bar
+#header.sticky--top-bar
 {
     top: 40px;
+}
+#header.sticky--over-content
+{
+    position: absolute;
+    top: 0;
+
+    width: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 991px)
@@ -2776,9 +2783,6 @@ input[type='button']:active
 
 #logo img
 {
-    width: auto;
-    max-width: none;
-
     -webkit-transition: width .3s;
          -o-transition: width .3s;
             transition: width .3s;

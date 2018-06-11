@@ -3,15 +3,21 @@
    ========================================================================== */
 
 #header {
-	box-shadow: 0 0 15px 1px rgba(0,0,0,.07);
-	position:relative;
-	z-index:50;
-	background-color: $header_background;
+  box-shadow: 0 0 15px 1px rgba(0,0,0,.07);
+  position:relative;
+  z-index:50;
+  background-color: $header_background;
 
-  &.has-top-bar {
+  &.sticky--top-bar {
     top: 40px;
   }
+  &.sticky--over-content {
+    position: absolute;
+    width: 100%;
+    top:0;
+  }
 }
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   #header {
@@ -50,8 +56,6 @@
 }
 
 #logo img {
-  width: auto;
-  max-width:none;
   transition: width 0.3s;
 }
 
