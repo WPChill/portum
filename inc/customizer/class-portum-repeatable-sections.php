@@ -1326,6 +1326,12 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'Section description', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'shortcodes_text'                 => array(
+					'label'             => esc_html__( 'Extra text', 'portum' ),
+					'type'              => 'epsilon-text-editor',
+					'default'           => null,
+					'sanitize_callback' => 'wp_kses_post',
+				),
 				'shortcodes_field'             => array(
 					'label'             => esc_html__( 'Shortcode', 'portum' ),
 					'type'              => 'textarea',

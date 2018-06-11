@@ -43,21 +43,15 @@ $parent_attr = array(
 						<?php echo do_shortcode( $fields['shortcodes_field'] ); ?>
 					</div>
 					<div class="col-md-6">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'], array( 'bottom' => true ) )
-						);
-						?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'], array( 'bottom' => true ) ) ); ?>
+						<?php echo wpautop( wp_kses_post( $fields['shortcodes_text'] ) ); ?>
 					</div>
 
 				<?php } elseif ( 'left' === $fields['shortcodes_row_title_align'] ) { ?>
 
 					<div class="col-md-6">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] )
-						);
-						?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ) ); ?>
+						<?php echo wpautop( wp_kses_post( $fields['shortcodes_text'] ) ); ?>
 					</div>
 					<div class="col-md-6">
 						<?php echo do_shortcode( $fields['shortcodes_field'] ); ?>
@@ -66,12 +60,8 @@ $parent_attr = array(
 				<?php } else { ?>
 
 					<div class="col-sm-12">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] )
-						);
-						?>
-
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['shortcodes_subtitle'], $fields['shortcodes_title'] ) ); ?>
+						<?php echo wpautop( wp_kses_post( $fields['shortcodes_text'] ) ); ?>
 						<?php echo do_shortcode( $fields['shortcodes_field'] ); ?>
 					</div>
 
