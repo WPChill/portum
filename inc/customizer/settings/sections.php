@@ -36,7 +36,7 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Epsilon Editor', 'portum' ),
+			'title'          => esc_html__( 'Epsilon Page Builder', 'portum' ),
 			'hidden'         => true,
 		),
 	),
@@ -95,8 +95,8 @@ $sections = array(
 		'id'   => 'portum_feedback_section',
 		'args' => array(
 			'type'        => 'epsilon-section-pro',
-			'title'       => esc_html__( 'Help make Portum better', 'sparkling' ),
-			'button_text' => esc_html__( 'Send Feedback', 'sparkling' ),
+			'title'       => esc_html__( 'Help Improve Portum', 'sparkling' ),
+			'button_text' => esc_html__( 'Give Feedback', 'sparkling' ),
 			'button_url'  => esc_url_raw( 'http://bit.ly/feedback-portum' ),
 			'priority'    => 0,
 		),
@@ -175,7 +175,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'       => esc_html__( 'Epsilon Editor', 'portum' ),
+			'title'       => esc_html__( 'Epsilon Page Builder', 'portum' ),
 			'description' => esc_html__( 'You can rearrange the sections below using drag & drop', 'portum' ),
 			'priority'    => 0,
 			//'panel'       => 'portum_panel_content',
