@@ -2730,12 +2730,17 @@ input[type='button']:active
 {
     top: 40px;
 }
-#header.sticky--over-content
+#header.header--over-content
 {
     position: absolute;
     top: 0;
 
     width: 100%;
+}
+#header.header--no-shadow
+{
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 @media (min-width: 768px) and (max-width: 991px)
@@ -2791,10 +2796,10 @@ input[type='button']:active
 @media (max-width: 767px)
 {
     /**
-       * 1. on mobile devices logo padding right needs to be the width of the
-       *	  mobile menu trigger + some spacing so as to not let the logo <a>
-       *    overlap the mobile menu trigger
-       */
+     * 1. on mobile devices logo padding right needs to be the width of the
+     *	  mobile menu trigger + some spacing so as to not let the logo <a>
+     *    overlap the mobile menu trigger
+     */
     #logo
     {
         padding-right: 50px;
@@ -2807,8 +2812,8 @@ input[type='button']:active
 @media (min-width: 1025px)
 {
     /**
-       * 1. The z-index has to be 1020 so it is bigger than the back to top buttons z-index that is 1010
-       */
+     * 1. The z-index has to be 1020 so it is bigger than the back to top buttons z-index that is 1010
+     */
     #header.stuck
     {
         position: fixed;
