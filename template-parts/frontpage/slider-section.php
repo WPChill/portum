@@ -28,7 +28,7 @@ wp_enqueue_style( 'slick' );
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
 					<?php if ( ! empty( $slide['slides_image'] ) ) { ?>
-						<img class="owl-lazy" data-src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
+						<img class="owl-lazy" src="" data-src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
 					<?php } ?>
 					<div class="slider-details">
 						<?php if ( ! empty( $slide['slides_title'] ) ) { ?>
