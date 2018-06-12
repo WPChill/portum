@@ -78,7 +78,7 @@ $items_class = null;
 
 									<?php if ( ! empty( $member['member_image'] ) ) { ?>
 										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
 											<div class="overlay"></div>
 										</div>
 									<?php } ?>
@@ -102,7 +102,7 @@ $items_class = null;
 									</div>
 									<?php if ( ! empty( $member['member_image'] ) ) { ?>
 										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
 											<div class="overlay"></div>
 										</div>
 									<?php } ?>
@@ -157,7 +157,7 @@ $items_class = null;
 
 									<?php if ( ! empty( $member['member_image'] ) ) { ?>
 										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
 											<div class="overlay"></div>
 										</div>
 									<?php } ?>
@@ -181,7 +181,7 @@ $items_class = null;
 									</div>
 									<?php if ( ! empty( $member['member_image'] ) ) { ?>
 										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
 											<div class="overlay"></div>
 										</div>
 									<?php } ?>
@@ -253,7 +253,7 @@ $items_class = null;
 									</div>
 									<?php if ( ! empty( $member['member_image'] ) ) { ?>
 										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
 											<div class="overlay"></div>
 										</div>
 									<?php } ?>
@@ -262,7 +262,7 @@ $items_class = null;
 
 									<?php if ( ! empty( $member['member_image'] ) ) { ?>
 										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>"/>
+											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
 											<div class="overlay"></div>
 										</div>
 									<?php } ?>
