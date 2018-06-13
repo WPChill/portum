@@ -28,35 +28,19 @@ $parent_attr         = array(
 		<?php
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
-		
-		$section_content_cols = ($fields['expertise_image'] ? '7' : '12');
-		
-		// echo '<pre>';
-			// print_r($fields);
-		// echo '</pre>';
-		
+
+		$section_content_cols = ( $fields['expertise_image'] ? '7' : '12' );
 		?>
-		
+
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'expertise', $fields ) ); ?>">
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'expertise' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 				<div class="row">
-				
-					<?php if ($fields['expertise_row_title_align'] == 'left'){ ?>
-					
+
+					<?php if ( 'left' === $fields['expertise_row_title_align'] ) { ?>
+
 					<div class="col-md-<?php echo $section_content_cols; ?>">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['expertise_subtitle'],
-								$fields['expertise_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
-						?>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['expertise_subtitle'], $fields['expertise_title'] ) ); ?>
 
 						<?php if ( ! empty( $fields['expertise'] ) ) { ?>
 
@@ -67,9 +51,9 @@ $parent_attr         = array(
 											<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
 											<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong> 
 											<?php } ?>
-											
+
 											<?php echo esc_html( $expertise['expertise_title'] ); ?>
-											
+
 										</h4>
 									<?php } ?>
 
@@ -84,8 +68,8 @@ $parent_attr         = array(
 							<img src="<?php echo esc_url( $fields['expertise_image'] ); ?>" alt=""/>
 						</div>
 					<?php } ?>
-				
-				<?php }else{ ?>
+
+				<?php } else { ?>
 					<?php if ( ! empty( $fields['expertise_image'] ) ) { ?>
 						<div class="col-md-5">
 							<img src="<?php echo esc_url( $fields['expertise_image'] ); ?>" alt=""/>
@@ -93,16 +77,7 @@ $parent_attr         = array(
 					<?php } ?>
 					<div class="col-md-<?php echo $section_content_cols; ?>">
 						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['expertise_subtitle'],
-								$fields['expertise_title'],
-								array(
-									'doubled' => false,
-									'center'  => false,
-								)
-							)
-						);
+						echo wp_kses_post( Portum_Helper::generate_section_title( $fields['expertise_subtitle'], $fields['expertise_title'], array( 'bottom' => true ) ) );
 						?>
 
 						<?php if ( ! empty( $fields['expertise'] ) ) { ?>
@@ -114,9 +89,9 @@ $parent_attr         = array(
 											<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
 											<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong> 
 											<?php } ?>
-											
+
 											<?php echo esc_html( $expertise['expertise_title'] ); ?>
-											
+
 										</h4>
 									<?php } ?>
 
@@ -126,9 +101,9 @@ $parent_attr         = array(
 
 						<?php } ?>
 					</div>
-				
+
 				<?php } ?>
-				
+
 				</div>
 			</div>
 		</div>

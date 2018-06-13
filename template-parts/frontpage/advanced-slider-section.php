@@ -34,18 +34,35 @@ wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );
 ?>
 <div data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="portum-advanced-slider" data-portum-slider-mode-fade="<?php echo 'fade' === $fields['slider_transition'] ? 'true' : 'false'; ?>" data-portum-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>" data-portum-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>" data-portum-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>" data-portum-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>" data-portum-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+	<div class="ewf-slider" 
+		data-slider-mode-fade="<?php echo 'fade' === $fields['slider_transition'] ? 'true' : 'false'; ?>" 
+		data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>" 
+		data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>" 
+		data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>" 
+		data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>" 
+		data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
 
-		<ul class="slides">
+		<ul class="ewf-slider__slides">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 
 				<?php
 				$style = array(
 					'background-image' => ! empty( $slide['slide_background'] ) ? $slide['slide_background'] : '',
-					'background-color' => ! empty( $slide['slide_background_color'] ) ? $slide['slide_background_color'] : '',
 				);
+
 				$css   = 'style="';
 				$style = array_filter( $style );
+
+
+				$style_overlay = array(
+					'background-color' => ! empty( $slide['slide_background_color'] ) ? $slide['slide_background_color'] : '',
+				);
+
+				$css_overlay = '';
+				if ( ! empty( $slide['slide_background_color'] ) ) {
+					$css_overlay = ' style="background-color:' . esc_attr( $slide['slide_background_color'] ) . '" ';
+				}
 
 				foreach ( $style as $k => $v ) {
 					if ( 'background-image' === $k ) {
@@ -57,38 +74,49 @@ wp_enqueue_style( 'slick' );
 				$css .= '"';
 
 				$captions = array(
-					'portum-slider-slide-content'               => true,
-					'portum-slider-slide-content-valign-top'    => 'aligntop' === $slide['slide_vertical_alignment'] ? true : false,
-					'portum-slider-slide-content-valign-middle' => 'alignmiddle' === $slide['slide_vertical_alignment'] ? true : false,
-					'portum-slider-slide-content-valign-bottom' => 'alignbottom' === $slide['slide_vertical_alignment'] ? true : false,
-					'portum-slider-slide-content-align-left'    => 'left' === $slide['slide_alignment'] ? true : false,
-					'portum-slider-slide-content-align-center'  => 'center' === $slide['slide_alignment'] ? true : false,
-					'portum-slider-slide-content-align-right'   => 'right' === $slide['slide_alignment'] ? true : false,
+					'ewf-slider-slide__content' => true,
+					'ewf-slider-slide__content--valign-top' => 'aligntop' === $slide['slide_vertical_alignment'] ? true : false,
+					'ewf-slider-slide__content--valign-middle' => 'alignmiddle' === $slide['slide_vertical_alignment'] ? true : false,
+					'ewf-slider-slide__content--valign-bottom' => 'alignbottom' === $slide['slide_vertical_alignment'] ? true : false,
+					'ewf-slider-slide__content--align-left' => 'left' === $slide['slide_alignment'] ? true : false,
+					'ewf-slider-slide__content--align-center' => 'center' === $slide['slide_alignment'] ? true : false,
+					'ewf-slider-slide__content--align-right' => 'right' === $slide['slide_alignment'] ? true : false,
 				);
 				$captions = array_filter( $captions );
 
 				?>
 				<li <?php echo $css; ?>>
+					<div class="ewf-slider-slide__overlay"<?php echo $css_overlay; ?>></div>
+
 					<div class="<?php echo esc_attr( implode( ' ', array_keys( $captions ) ) ); ?>">
-						<div class="portum-slider-slide-content-wrap">
+						<div class="ewf-slider-slide__content-wrap">
 							<?php
-							if ( ! empty( $slide['slide_cta'] ) ) {
-								echo '<h1>' . wp_kses_post( $slide['slide_cta'] ) . '</h1>';
+							if ( ! empty( $slide['slide_title'] ) ) {
+								echo '<h1 data-animation="' . esc_attr( $slide['slide_title_animation'] ) . '" data-delay="0">' . wp_kses_post( $slide['slide_title'] ) . '</h1>';
 							}
 
-							if ( ! empty( $slide['slide_small'] ) ) {
-								echo wpautop( wp_kses_post( $slide['slide_small'] ) );
+							if ( ! empty( $slide['slide_description'] ) ) {
+								echo '<h6 data-animation="' . esc_attr( $slide['slide_description_animation'] ) . '" data-delay="0.2s">' . wp_kses_post( $slide['slide_description'] ) . '</h6>';
+							}
+
+
+							if ( ! empty( $slide['slide_cta_primary_label'] ) ) {
+								echo '<a class="ewf-btn ewf-btn--huge" href="' . esc_attr( $slide['slide_cta_primary_url'] ) . '" data-animation="' . esc_attr( $slide['slide_cta_primary_animation'] ) . '" data-delay="0.3s">' . wp_kses_post( $slide['slide_cta_primary_label'] ) . '</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+							}
+
+							if ( ! empty( $slide['slide_cta_secondary_label'] ) ) {
+								echo '<a class="ewf-btn ewf-btn--huge ewf-btn--secondary" href="' . esc_attr( $slide['slide_cta_secondary_url'] ) . '" data-animation="' . esc_attr( $slide['slide_cta_secondary_animation'] ) . '" data-delay="0.4s">' . wp_kses_post( $slide['slide_cta_secondary_label'] ) . '</a>';
 							}
 							?>
-						</div>
+						</div><!-- end .ewf-slider-slide__content -->
 					</div>
 				</li>
 			<?php } ?>
 		</ul><!-- end .slides -->
 
-		<div class="portum-slider-dots portum-slider-dots-align-center"></div>
-		<div class="portum-slider-arrows"></div>
+		<div class="ewf-slider__pager ewf-slider__pager--align-center"></div>
+		<div class="ewf-slider__arrows"></div>
 
-	</div><!-- end .portum-slider -->
+	</div><!-- end .advanced-slider -->
 </div>
 

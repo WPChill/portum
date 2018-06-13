@@ -1,7 +1,6 @@
 
 /* ----------------------------------- #07 - TEAM section --------------------------------*/
 
-
 .team-members-item,
 .team-members-item .portrait,
 .team-members-item .details {
@@ -10,9 +9,8 @@
     position: relative;
 }
 
-
 .team-members-item {
-    background: #fff;
+    background-color: #fff;
     transition: 180ms all;
 	overflow:hidden;
 
@@ -26,8 +24,6 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		-webkit-box-shadow: inset 0 10px 20px rgba(35, 31, 32, .05);
-		-moz-box-shadow: inset 0 10px 20px rgba(35, 31, 32, .05);
 		box-shadow: inset 0 10px 20px rgba(35, 31, 32, .05);
 		transition:background 150ms;
 		z-index: 99;
@@ -48,7 +44,7 @@
 	}
 	
 	&.right .social-team {
-	  left:0;
+		left:0;
 	}
 }
 

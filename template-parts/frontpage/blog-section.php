@@ -28,20 +28,20 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 ?>
- 
+
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
 		?>
-		
+
 		<div class="ewf-section__content">
-			
+
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'blog', $fields ) ); ?>">
 
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'], array('center' => true) ) ); ?>
+				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'], array( 'center' => true ) ) ); ?>
 
 				<?php while ( $query->have_posts() ) { ?>
 
@@ -49,7 +49,7 @@ $parent_attr = array(
 
 					<div class="blog-news-item">
 						<div class="row">
-							<div class="col-md-8 col-sm-7 col-sx-12">
+							<div class="col-md-8 col-sm-6 col-sx-12">
 								<div class="post-details">
 									<h4>
 										<a href="<?php echo esc_url( get_permalink() ); ?>">
@@ -57,11 +57,11 @@ $parent_attr = array(
 										</a>
 									</h4>
 
-									<?php echo wpautop( wp_kses_post( wp_trim_words( get_the_content(), 40 ) ) ); ?>
+									<?php echo wpautop( wp_kses_post( wp_trim_words( get_the_content(), 30 ) ) ); ?>
 
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-5 col-sx-12">
+							<div class="col-md-4 col-sm-6 col-sx-12">
 								<div class="featured">
 									<?php
 									if ( has_post_thumbnail() ) {
@@ -89,7 +89,6 @@ $parent_attr = array(
 				<?php }// End while(). ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
-		
 		</div>
 	</div>
 </section>

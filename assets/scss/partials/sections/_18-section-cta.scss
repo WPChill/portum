@@ -1,0 +1,41 @@
+
+/* ----------------------------------- #18 - Section CTA --------------------------------------------- */
+
+	@media (max-width: 767px) {
+
+		.section-cta .ewf-text-align--left,
+		.section-cta .ewf-text-align--right { 
+			text-align:center;
+		}
+		
+		.section-cta.ewf-section--title-right .headline h3 { 
+			margin-bottom:0;
+		}
+		
+		.section-cta.ewf-section--title-left .ewf-btn:last-child { 
+			margin-bottom:0;
+		}
+	}
+	
+	@media (min-width: 540px) {
+		
+	}
+
+	@media (min-width: 767px) {
+		.section-cta .ewf-btn { 
+			margin-bottom:0; 
+		}		
+	}
+	
+	@media (min-width: 992px) {
+
+		
+	}	
+	
+	@media (min-width: 1200px) {
+		
+		
+	}	
+	
+	
+/* ----------------------------------- #18 - Section CTA - END --------------------------------------- */

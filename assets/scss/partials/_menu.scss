@@ -74,7 +74,7 @@
 .sf-menu a {
   display: block;
   padding: 15px 0;
-  font-family: $accent-1-font;
+  font-family: inherit;
   letter-spacing: 1.5px;
   color: $menu-item-color;
   text-decoration: none;
@@ -95,8 +95,8 @@
   border: none;
   color: $menu-item-color;
   font-size: 16px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  transition-property: background-color, color;
+  transition-duration: .3s;
 }
 
 .sf-menu > li a i {
@@ -116,7 +116,7 @@
 }
 
 .dropdown li:hover {
-  background: $menu-dropdown-hover-background-color;
+  background-color: $menu-dropdown-hover-background-color;
 }
 
 .dropdown li a {
@@ -133,8 +133,6 @@
 .sf-menu li.dropdown ul {
   min-width: 250px;
   background-color: $menu-dropdown-background-color;
-  -webkit-box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
-  -moz-box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
   box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
   box-shadow: none;
 }
@@ -146,7 +144,6 @@
   content: "\f107";
   height: 12px;
   width: 12px;
-  background: #\f107;
   position: absolute;
   top: 34px;
   right: 8px;

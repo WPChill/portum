@@ -25,7 +25,6 @@
 }
 
 .ewf-counter__icon i {
-  margin-right: 14px;
   font-size: 42px;
   color: $accent-1-color;
 }
@@ -78,12 +77,12 @@
 
 .ewf-counter__odometer .odometer-digit .odometer-ribbon-inner {
   display: block;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .ewf-counter__odometer .odometer-digit .odometer-value {
   display: block;
-  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .ewf-counter__odometer .odometer-digit .odometer-value.odometer-last-value {

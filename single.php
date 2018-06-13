@@ -13,7 +13,7 @@ get_header();
 $img = get_custom_header();
 $img = $img->url;
 
-$layout = Portum_Helper::get_layout();
+$layout       = Portum_Helper::get_layout();
 $show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
 
 ?>
@@ -24,15 +24,15 @@ $show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
 
 
 	<div class="container">
-	
+
 		<?php
-		
+
 		if ( $show_welcome ) {
 			get_template_part( 'template-parts/blog/welcome' );
-		} 
-		
+		}
+
 		?>
-		
+
 		<div class="row">
 			<?php
 			if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {

@@ -39,7 +39,7 @@ if ( is_sticky() ) {
 		<?php } ?>
 
 			<div class="post-content">
-				<?php the_content('', false); ?>
+				<?php the_content( '', false ); ?>
 			</div><!-- .post-content -->
 
 			<div class="post-footer">

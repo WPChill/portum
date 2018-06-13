@@ -91,6 +91,7 @@ module.exports = function( grunt ) {
         src: [
           '**',
           '!node_modules/**',
+          '!inc/libraries/epsilon-framework/node_modules/**',
           '!build/**',
           '!readme.md',
           '!gruntfile.js',
@@ -100,7 +101,9 @@ module.exports = function( grunt ) {
           '!README.md',
           '!Gruntfile.js',
           '!package.json',
+          '!package-lock.json',
           '!set_tags.sh',
+          '!portum.zip',
           '!portum.zip' ],
         dest: 'build/'
       }

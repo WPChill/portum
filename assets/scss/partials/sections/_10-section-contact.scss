@@ -1,69 +1,79 @@
 /* ----------------------------------- #10 - CONTACT section --------------------------------*/
 
 .section-contact {
-  position: relative;
-  z-index: 9;
+	position: relative;
+	z-index: 9;
 
-  .container {
-    position: relative;
-  }
+	.container {
+		position: relative;
+	}
 }
 
 .contact-decoration {
-  height: 8px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width:100%;
-  background-color: $contact-ribbon-3-color;
-  background: repeating-linear-gradient(135deg, $contact-ribbon-1-color, $contact-ribbon-1-color 3.030%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 6.060%, $contact-ribbon-2-color 0, $contact-ribbon-2-color 9.090%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 12.12%);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	height: 8px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width:100%;
+	background-color: $contact-ribbon-3-color;
+	background: repeating-linear-gradient(135deg, $contact-ribbon-1-color, $contact-ribbon-1-color 3.030%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 6.060%, $contact-ribbon-2-color 0, $contact-ribbon-2-color 9.090%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 12.12%);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 
 .contact-form-content {
-  display: none;
+	display: none;
 }
 
 .contact-form {
-  padding: 50px 95px;
-  margin: 0 0 45px 0;
-  position: relative;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-color: $footer-contact-color;
+	padding: 50px 95px;
+	margin: 0 0 45px 0;
+	position: relative;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+	background-color: $footer-contact-color;
 
-  h4 {
-    text-shadow: 0 1px rgba(35, 31, 32, .41);
-    color: #fff;
-    float: left;
-    margin: 0;
-    line-height: 45px;
-  }
+	h4 {
+		text-shadow: 0 1px rgba(35, 31, 32, .41);
+		color: #fff;
+		float: left;
+		margin: 0;
+		line-height: 45px;
+	}
 
-  button {
-    float: right;
-    transition: none;
-    min-width: 150px;
-  }
-
+	.ewf-btn {
+		float: right;
+	}
 }
 
 .input-item {
-  position: relative;
+	position: relative;
 
-  span.input-icon {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    opacity: .3;
-  }
+	span.input-icon {
+		position: absolute;
+		top: 8px;
+		right: 16px;
+		opacity: .3;
+	}
+}
+
+@media (max-width: 540px) {
+	
+	.contact-form {
+		padding: 20px 45px;
+		margin-bottom:25px;
+		text-align:center;
+		
+		h4 {
+			float:none;
+			text-align:center;
+		} 
+		
+		.ewf-btn {
+			float:none;
+			display:inline-block;
+		}
+	}
 }
 
 
