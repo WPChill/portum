@@ -79,10 +79,8 @@ class Portum_Customizer {
 		/**
 		 * @since 1.0.3
 		 */
-		$wp_customize->get_section( 'colors' )->priority                    = 0;
-		$wp_customize->get_section( 'portum_typography_section' )->priority = 1;
-		$wp_customize->get_section( 'portum_layout_section' )->priority     = 2;
-		$wp_customize->get_section( 'custom_css' )->priority                = 10;
+		$wp_customize->get_section( 'colors' )->priority     = 0;
+		$wp_customize->get_section( 'custom_css' )->priority = 10;
 
 		/**
 		 * Change labels
@@ -95,23 +93,19 @@ class Portum_Customizer {
 			return;
 		}
 
-		$wp_customize->selective_refresh->add_partial(
-			'blogname', array(
-				'selector'        => '.site-title',
-				'render_callback' => function () {
-					bloginfo( 'name' );
-				},
-			)
-		);
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector'        => '.site-title',
+			'render_callback' => function () {
+				bloginfo( 'name' );
+			},
+		) );
 
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription', array(
-				'selector'        => '.site-description',
-				'render_callback' => function () {
-					bloginfo( 'description' );
-				},
-			)
-		);
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector'        => '.site-description',
+			'render_callback' => function () {
+				bloginfo( 'description' );
+			},
+		) );
 	}
 
 	/**
@@ -122,17 +116,13 @@ class Portum_Customizer {
 	public function customizer_enqueue_scripts() {
 		wp_enqueue_script( 'portum-customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-controls' ) );
 
-		wp_localize_script(
-			'portum-customizer-scripts',
-			'portumCustomizer',
-			array(
-				'templateDirectory' => esc_url( get_template_directory_uri() ),
-				'ajaxNonce'         => wp_create_nonce( 'portum_nonce' ),
-				'siteUrl'           => esc_url( get_site_url() ),
-				'blogPage'          => esc_url( get_permalink( get_option( 'page_for_posts', false ) ) ),
-				'frontPage'         => esc_url( get_permalink( get_option( 'page_on_front', false ) ) ),
-			)
-		);
+		wp_localize_script( 'portum-customizer-scripts', 'portumCustomizer', array(
+			'templateDirectory' => esc_url( get_template_directory_uri() ),
+			'ajaxNonce'         => wp_create_nonce( 'portum_nonce' ),
+			'siteUrl'           => esc_url( get_site_url() ),
+			'blogPage'          => esc_url( get_permalink( get_option( 'page_for_posts', false ) ) ),
+			'frontPage'         => esc_url( get_permalink( get_option( 'page_on_front', false ) ) ),
+		) );
 	}
 
 	/**
