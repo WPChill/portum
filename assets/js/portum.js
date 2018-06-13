@@ -197,7 +197,7 @@ var Portum = {
       }
     },
     advancedSlider: function () {
-      
+
       jQuery('.ewf-slider').each(function () {
 
         var $t = jQuery(this);

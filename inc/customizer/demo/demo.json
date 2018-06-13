@@ -149,7 +149,25 @@
                      "label":"Contact"
                   }
                ]
-            }
+            },
+           "footer":{
+             "id": "footer",
+             "label": "Footer Menu",
+             "menu":[
+               {
+                 "href":"#",
+                 "label":"Home"
+               },
+               {
+                 "href":"#",
+                 "label":"Blog"
+               },
+               {
+                 "href":"#",
+                 "label":"Contact"
+               }
+             ]
+           }
          }
       },
       "sections":{

@@ -106,7 +106,7 @@ Epsilon_Customizer::add_field(
 			'body',
 		),
 		'font_defaults' => array(
-			'font-family' => '"Hind", sans-serif',
+			'font-family' => 'default_font',
 			'font-size'   => '16',
 			'line-height' => '26',
 		),
@@ -140,8 +140,9 @@ Epsilon_Customizer::add_field(
 			'.item-carousel-blog a',
 		),
 		'font_defaults' => array(
-			'font-family'    => '"Poppins", sans-serif',
+			'font-family'    => 'default_font',
 			'letter-spacing' => '0',
+			'font-weight'    => '',
 		),
 	)
 );
@@ -190,7 +191,7 @@ Epsilon_Customizer::add_field(
 			'.headline span',
 		),
 		'font_defaults' => array(
-			'font-family'    => '"Hind", sans-serif',
+			'font-family'    => 'default_font',
 			'font-weight'    => 'on',
 			'font-style'     => '',
 			'font-size'      => '16',
@@ -220,9 +221,9 @@ Epsilon_Customizer::add_field(
 			'.headline h3',
 		),
 		'font_defaults' => array(
-			'font-family'    => '"Poppins", sans-serif',
-			'font-weight'    => 'on',
-			'font-style'     => 'normal',
+			'font-family' => 'default_font',
+			'font-weight' => '',
+			'font-style'  => '',
 			'font-size'      => '30',
 			'line-height'    => '28',
 			'letter-spacing' => '0',
@@ -618,7 +619,8 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 				'service_icon'        => array(
 					'label'   => esc_html__( 'Icon', 'portum' ),
 					'type'    => 'epsilon-icon-picker',
-					'default' => 'fa fa-users',
+					'default' => 'fa fa-500px',
+				'groups'  => array( 'medical', 'sport', 'reading' )
 				),
 				'service_type'        => array(
 					'label'   => esc_html__( 'Display style', 'portum' ),
@@ -1047,26 +1049,26 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 		)
 	);
 
-	Epsilon_Customizer::add_field(
-		'portum_advanced_slides',
-		array(
-			'type'         => 'epsilon-repeater',
-			'section'      => 'portum_advanced_slides_section',
-			'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-			'label'        => esc_html__( 'Slides', 'portum' ),
-			'button_label' => esc_html__( 'Add new slides', 'portum' ),
-			'row_label'    => array(
-				'type'  => 'field',
-				'field' => 'slide_cta',
+Epsilon_Customizer::add_field(
+	'portum_advanced_slides',
+	array(
+		'type'         => 'epsilon-repeater',
+		'section'      => 'portum_advanced_slides_section',
+		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+		'label'        => esc_html__( 'Slides', 'portum' ),
+		'button_label' => esc_html__( 'Add new slides', 'portum' ),
+		'row_label'    => array(
+			'type'  => 'field',
+			'field' => 'slide_cta',
+		),
+		'fields'       => array(
+			'slide_title'                => array(
+				'label'             => esc_html__( 'Slide title', 'portum' ),
+				'type'              => 'text',
+				'sanitize_callback' => 'wp_kses_post',
+				'default'           => esc_html__( 'Best Medical Care you can get for you and your family.', 'portum' ),
 			),
-			'fields'       => array(
-				'slide_title'                   => array(
-					'label'             => esc_html__( 'Slide title', 'portum' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'wp_kses_post',
-					'default'           => esc_html__( 'Best Medical Care you can get for you and your family.', 'portum' ),
-				),
-				'slide_title_animation'         => array(
+			'slide_title_animation'         => array(
 					'label'   => esc_html__( 'Slide title animation', 'portum' ),
 					'type'    => 'select',
 					'default' => 'fadeInDown',
@@ -1078,13 +1080,13 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 						'fadeInRight' => __( 'Fade In Right', 'portum' ),
 					),
 				),
-				'slide_description'             => array(
-					'label'             => esc_html__( 'Slide description', 'portum' ),
-					'type'              => 'epsilon-text-editor',
-					'sanitize_callback' => 'wp_kses_post',
-					'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
-				),
-				'slide_description_animation'   => array(
+				'slide_description'              => array(
+				'label'             => esc_html__( 'Slide description', 'portum' ),
+				'type'              => 'epsilon-text-editor',
+				'sanitize_callback' => 'wp_kses_post',
+				'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
+			),
+			'slide_description_animation'   => array(
 					'label'   => esc_html__( 'Slide description animation', 'portum' ),
 					'type'    => 'select',
 					'default' => 'fadeInDown',
@@ -1096,16 +1098,15 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 						'fadeInRight' => __( 'Fade In Right', 'portum' ),
 					),
 				),
-				'slide_background_color'        => array(
-					'label'      => esc_html__( 'Background color', 'portum' ),
-					'type'       => 'epsilon-color-picker',
-					'defaultVal' => '#f9f9fa',
-					'default'    => '#f9f9fa',
-				),
-				'slide_background'              => array(
-					'label' => esc_html__( 'Background image', 'portum' ),
-					'type'  => 'epsilon-image',
-				),
+				'slide_background_color' => array(
+				'label'      => esc_html__( 'Background color', 'portum' ),
+				'type'       => 'epsilon-color-picker',
+				'defaultVal' => '#f9f9fa',
+				'default'    => '#f9f9fa',
+			),
+			'slide_background'         => array(
+				'label' => esc_html__( 'Background image', 'portum' ),
+				'type'  => 'epsilon-image',),
 				'slide_cta_primary_label'       => array(
 					'label'             => esc_html__( 'Primary Button Text', 'portum' ),
 					'type'              => 'text',
@@ -1153,52 +1154,52 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 						'fadeInLeft'  => __( 'Fade In Left', 'portum' ),
 						'fadeInRight' => __( 'Fade In Right', 'portum' ),
 					),
-				),
-				'slide_alignment'               => array(
-					'type'      => 'epsilon-button-group',
-					'label'     => __( 'Alignment', 'epsilon-framework' ),
-					'group'     => 'layout',
-					'groupType' => 'three',
-					'choices'   => array(
-						'left'   => array(
-							'icon'  => 'dashicons-editor-alignleft',
-							'value' => 'left',
-						),
-						'center' => array(
-							'icon'  => 'dashicons-editor-aligncenter',
-							'value' => 'center',
-						),
-						'right'  => array(
-							'icon'  => 'dashicons-editor-alignright',
-							'value' => 'right',
-						),
-					),
-					'default'   => 'center',
-				),
-				'slide_vertical_alignment'      => array(
-					'type'      => 'epsilon-button-group',
-					'label'     => __( 'Vertical Alignment', 'epsilon-framework' ),
-					'group'     => 'layout',
-					'groupType' => 'three',
-					'choices'   => array(
-						'top'    => array(
-							'value' => 'alignbottom',
-							'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-alignbottom.png',
-						),
-						'middle' => array(
-							'value' => 'alignmiddle',
-							'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-alignmiddle.png',
-						),
-						'bottom' => array(
-							'value' => 'aligntop',
-							'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-aligntop.png',
-						),
-					),
-					'default'   => 'alignmiddle',
-				),
 			),
-		)
-	);
+			'slide_alignment'          => array(
+				'type'      => 'epsilon-button-group',
+				'label'     => __( 'Alignment', 'epsilon-framework' ),
+				'group'     => 'layout',
+				'groupType' => 'three',
+				'choices'   => array(
+					'left'   => array(
+						'icon'  => 'dashicons-editor-alignleft',
+						'value' => 'left',
+					),
+					'center' => array(
+						'icon'  => 'dashicons-editor-aligncenter',
+						'value' => 'center',
+					),
+					'right'  => array(
+						'icon'  => 'dashicons-editor-alignright',
+						'value' => 'right',
+					),
+				),
+				'default'   => 'center',
+			),
+			'slide_vertical_alignment' => array(
+				'type'      => 'epsilon-button-group',
+				'label'     => __( 'Vertical Alignment', 'epsilon-framework' ),
+				'group'     => 'layout',
+				'groupType' => 'three',
+				'choices'   => array(
+					'top'    => array(
+						'value' => 'alignbottom',
+						'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-alignbottom.png',
+					),
+					'middle' => array(
+						'value' => 'alignmiddle',
+						'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-alignmiddle.png',
+					),
+					'bottom' => array(
+						'value' => 'aligntop',
+						'png'   => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-aligntop.png',
+					),
+				),
+				'default'   => 'alignmiddle',
+			),
+		),
+	)
+);
 
 	/**
  * Section builder page changer ( acts as a menu )
@@ -1227,164 +1228,164 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 	/**
  * Repeatable sections
  */
-	Epsilon_Customizer::add_field(
-		'portum_frontpage_sections',
-		array(
-			'type'                => 'epsilon-section-repeater',
-			'label'               => esc_html__( 'Sections', 'portum' ),
-			'section'             => 'portum_repeatable_section',
-			'page_builder'        => true,
-			'selective_refresh'   => true,
-			'transport'           => 'postMessage',
-			'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
-		)
-	);
+Epsilon_Customizer::add_field(
+	'portum_frontpage_sections',
+	array(
+		'type'                => 'epsilon-section-repeater',
+		'label'               => esc_html__( 'Sections', 'portum' ),
+		'section'             => 'portum_repeatable_section',
+		'page_builder'        => true,
+		'selective_refresh'   => true,
+        'transport'           => 'postMessage',
+		'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
+	)
+);
 
 	/**
  * Color Schemes
  */
-	Epsilon_Customizer::add_field(
-		'portum_color_scheme',
-		array(
-			'label'       => esc_html__( 'Color scheme', 'portum' ),
-			'description' => esc_html__( 'Select a color scheme', 'portum' ),
-			'type'        => 'epsilon-color-scheme',
-			'priority'    => 0,
-			'default'     => 'primary',
-			'section'     => 'colors',
-			'transport'   => 'postMessage',
-			'choices'     => array(
-				array(
-					'id'     => 'primary',
-					'name'   => 'Primary',
-					'colors' => array(
-						// 'epsilon_general_separator'         		=> '',
-						'epsilon_accent_color'             => '#0385d0',
-						'epsilon_accent_color_second'      => '#a1083a',
+Epsilon_Customizer::add_field(
+	'portum_color_scheme',
+	array(
+		'label'       => esc_html__( 'Color scheme', 'portum' ),
+		'description' => esc_html__( 'Select a color scheme', 'portum' ),
+		'type'        => 'epsilon-color-scheme',
+		'priority'    => 0,
+		'default'     => 'primary',
+		'section'     => 'colors',
+		'transport'   => 'postMessage',
+		'choices'     => array(
+			array(
+				'id'     => 'primary',
+				'name'   => 'Primary',
+				'colors' => array(
+					// 'epsilon_general_separator'         		=> '',
+					'epsilon_accent_color'              		=> '#0385d0',
+					'epsilon_accent_color_second'       		=> '#a1083a',
 
-						// 'epsilon_text_separator'            		=> '',
-						'epsilon_title_color'              => '#1a171c',
-						'epsilon_text_color'               => '#777777',
-						'epsilon_link_color'               => '#0385d0',
-						'epsilon_link_hover_color'         => '#a1083a',
-						'epsilon_link_active_color'        => '#333333',
+					// 'epsilon_text_separator'            		=> '',
+					'epsilon_title_color'               		=> '#1a171c',
+					'epsilon_text_color'               			=> '#777777',
+					'epsilon_link_color'                		=> '#0385d0',
+					'epsilon_link_hover_color'          		=> '#a1083a',
+					'epsilon_link_active_color'         		=> '#333333',
 
-						// 'epsilon_menu_separator'            		=> '',
-						'epsilon_header_background'        => '#151c1f',
-						'epsilon_dropdown_menu_background' => '#a1083a',
-						'epsilon_dropdown_menu_hover_background' => '#940534',
-						'epsilon_menu_item_color'          => '#ebebeb',
-						'epsilon_menu_item_hover_color'    => '#ffffff',
-						'epsilon_menu_item_active_color'   => '#0385d0',
+					// 'epsilon_menu_separator'            		=> '',
+					'epsilon_header_background'           		=> '#151c1f',
+					'epsilon_dropdown_menu_background'          => '#a1083a',
+					'epsilon_dropdown_menu_hover_background'	=> '#940534',
+					'epsilon_menu_item_color'    				=> '#ebebeb',
+					'epsilon_menu_item_hover_color' 			=> '#ffffff',
+					'epsilon_menu_item_active_color'        	=> '#0385d0',
 
-						// 'epsilon_footer_separator'         			=> '',
-						'epsilon_footer_contact_background' => '#0377bb',
-						'epsilon_footer_background'        => '#192229',
-						'epsilon_footer_title_color'       => '#ffffff',
-						'epsilon_footer_text_color'        => '#a9afb1',
-						'epsilon_footer_link_color'        => '#a9afb1',
-						'epsilon_footer_link_hover_color'  => '#ffffff',
-						'epsilon_footer_link_active_color' => '#a9afb1',
-					),
+					// 'epsilon_footer_separator'         			=> '',
+					'epsilon_footer_contact_background'         => '#0377bb',
+					'epsilon_footer_background'         		=> '#192229',
+					'epsilon_footer_title_color'         		=> '#ffffff',
+					'epsilon_footer_text_color'         		=> '#a9afb1',
+					'epsilon_footer_link_color'         		=> '#a9afb1',
+					'epsilon_footer_link_hover_color'         	=> '#ffffff',
+					'epsilon_footer_link_active_color'         	=> '#a9afb1',
 				),
-				array(
-					'id'     => 'yellow',
-					'name'   => 'Yellow',
-					'colors' => array(
-						// 'epsilon_general_separator'         		=> '',
-						'epsilon_accent_color'             => '#FFC000',
-						'epsilon_accent_color_second'      => '#3E4346',
-
-						// 'epsilon_text_separator'            		=> '',
-						'epsilon_title_color'              => '#3E4346',
-						'epsilon_text_color'               => '#777777',
-						'epsilon_link_color'               => '#3e4346',
-						'epsilon_link_hover_color'         => '#ffc000',
-						'epsilon_link_active_color'        => '#3e4346',
-
-						// 'epsilon_menu_separator'            		=> '',
-						'epsilon_header_background'        => '#ffffff',
-						'epsilon_dropdown_menu_background' => '#ffffff',
-						'epsilon_dropdown_menu_hover_background' => '#ffc000',
-						'epsilon_menu_item_color'          => '#3e4346',
-						'epsilon_menu_item_hover_color'    => '#ffc000',
-						'epsilon_menu_item_active_color'   => '#ffc000',
-
-						// 'epsilon_footer_separator'         			=> '',
-						'epsilon_footer_contact_background' => '#ffc000',
-						'epsilon_footer_background'        => '#3e4346',
-						'epsilon_footer_title_color'       => '#ffffff',
-						'epsilon_footer_text_color'        => '#a9afb1',
-						'epsilon_footer_link_color'        => '#a9afb1',
-						'epsilon_footer_link_hover_color'  => '#ffffff',
-						'epsilon_footer_link_active_color' => '#a9afb1',
-					),
-				),
-				/*
-				array(
-					'id'     => 'green',
-					'name'   => 'Green',
-					'colors' => array(
-						'epsilon_accent_color'              => '#097d3d',
-						'epsilon_accent_color_second'       => '#364d7c',
-						'epsilon_text_color'                => '#777777',
-						'epsilon_title_color'               => '#1a171c',
-						'epsilon_link_color'                => '#d1d5de',
-						'epsilon_link_hover_color'          => '#A1083A',
-						'epsilon_link_active_color'         => '#172128',
-						'epsilon_menu_background'           => '#aacfdf',
-						'epsilon_menu_item_color'           => '#ffffff',
-						'epsilon_menu_item_hover_color'     => '#ffffff',
-						'epsilon_menu_item_active_color'    => '#ffffff',
-						'epsilon_footer_contact_background' => '#ffffff',
-						'epsilon_footer_background'         => '#18304c',
-						'epsilon_footer_text_color'         => '#a9afb1',
-						'epsilon_footer_link_color'         => '#a9afb1'
-					),
-				),
-				array(
-					'id'     => 'blue',
-					'name'   => 'Blue',
-					'colors' => array(
-						'epsilon_accent_color'              => '#298dd2',
-						'epsilon_accent_color_second'       => '#364d7c',
-						'epsilon_text_color'                => '#777777',
-						'epsilon_title_color'               => '#1a171c',
-						'epsilon_link_color'                => '#d1d5de',
-						'epsilon_link_hover_color'          => '#A1083A',
-						'epsilon_link_active_color'         => '#172128',
-						'epsilon_menu_background'           => '#aacfdf',
-						'epsilon_menu_item_color'           => '#ffffff',
-						'epsilon_menu_item_hover_color'     => '#ffffff',
-						'epsilon_menu_item_active_color'    => '#ffffff',
-						'epsilon_footer_contact_background' => '#ffffff',
-						'epsilon_footer_background'         => '#18304c',
-						'epsilon_footer_text_color'         => '#a9afb1',
-						'epsilon_footer_link_color'         => '#a9afb1',
-					),
-				),
-				array(
-					'id'     => 'magenta',
-					'name'   => 'Magenta',
-					'colors' => array(
-						'epsilon_accent_color'              => '#ae1062',
-						'epsilon_accent_color_second'       => '#364d7c',
-						'epsilon_text_color'                => '#777777',
-						'epsilon_title_color'               => '#1a171c',
-						'epsilon_link_color'                => '#d1d5de',
-						'epsilon_link_hover_color'          => '#A1083A',
-						'epsilon_link_active_color'         => '#172128',
-						'epsilon_menu_background'           => '#aacfdf',
-						'epsilon_menu_item_color'           => '#ffffff',
-						'epsilon_menu_item_hover_color'     => '#ffffff',
-						'epsilon_menu_item_active_color'    => '#ffffff',
-						'epsilon_footer_contact_background' => '#ffffff',
-						'epsilon_footer_background'         => '#18304c',
-						'epsilon_footer_text_color'         => '#a9afb1',
-						'epsilon_footer_link_color'         => '#a9afb1'
-					),
-				),
-				*/
 			),
-		)
-	);
+			array(
+				'id'     => 'yellow',
+				'name'   => 'Yellow',
+				'colors' => array(
+					// 'epsilon_general_separator'         		=> '',
+					'epsilon_accent_color'              		=> '#FFC000',
+					'epsilon_accent_color_second'       		=> '#3E4346',
+
+					// 'epsilon_text_separator'            		=> '',
+					'epsilon_title_color'               		=> '#3E4346',
+					'epsilon_text_color'               			=> '#777777',
+					'epsilon_link_color'                		=> '#3e4346',
+					'epsilon_link_hover_color'          		=> '#ffc000',
+					'epsilon_link_active_color'         		=> '#3e4346',
+
+					// 'epsilon_menu_separator'            		=> '',
+					'epsilon_header_background'           		=> '#ffffff',
+					'epsilon_dropdown_menu_background'          => '#ffffff',
+					'epsilon_dropdown_menu_hover_background'	=> '#ffc000',
+					'epsilon_menu_item_color'    				=> '#3e4346',
+					'epsilon_menu_item_hover_color' 			=> '#ffc000',
+					'epsilon_menu_item_active_color'        	=> '#ffc000',
+
+					// 'epsilon_footer_separator'         			=> '',
+					'epsilon_footer_contact_background'         => '#ffc000',
+					'epsilon_footer_background'         		=> '#3e4346',
+					'epsilon_footer_title_color'         		=> '#ffffff',
+					'epsilon_footer_text_color'         		=> '#a9afb1',
+					'epsilon_footer_link_color'         		=> '#a9afb1',
+					'epsilon_footer_link_hover_color'         	=> '#ffffff',
+					'epsilon_footer_link_active_color'         	=> '#a9afb1',
+				),
+			),
+			/*
+			array(
+				'id'     => 'green',
+				'name'   => 'Green',
+				'colors' => array(
+					'epsilon_accent_color'              => '#097d3d',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1'
+				),
+			),
+			array(
+				'id'     => 'blue',
+				'name'   => 'Blue',
+				'colors' => array(
+					'epsilon_accent_color'              => '#298dd2',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1',
+				),
+			),
+			array(
+				'id'     => 'magenta',
+				'name'   => 'Magenta',
+				'colors' => array(
+					'epsilon_accent_color'              => '#ae1062',
+					'epsilon_accent_color_second'       => '#364d7c',
+					'epsilon_text_color'                => '#777777',
+					'epsilon_title_color'               => '#1a171c',
+					'epsilon_link_color'                => '#d1d5de',
+					'epsilon_link_hover_color'          => '#A1083A',
+					'epsilon_link_active_color'         => '#172128',
+					'epsilon_menu_background'           => '#aacfdf',
+					'epsilon_menu_item_color'           => '#ffffff',
+					'epsilon_menu_item_hover_color'     => '#ffffff',
+					'epsilon_menu_item_active_color'    => '#ffffff',
+					'epsilon_footer_contact_background' => '#ffffff',
+					'epsilon_footer_background'         => '#18304c',
+					'epsilon_footer_text_color'         => '#a9afb1',
+					'epsilon_footer_link_color'         => '#a9afb1'
+				),
+			),
+			*/
+		),
+	)
+);
