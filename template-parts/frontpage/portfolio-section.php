@@ -23,7 +23,12 @@ $fields['portfolio_description_below'] = isset( $fields['portfolio_description_b
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'portfolio', Portum_Repeatable_Sections::get_instance() );
 $parent_attr = array(
 	'id'    => ! empty( $fields['portfolio_section_unique_id'] ) ? array( $fields['portfolio_section_unique_id'] ) : array(),
-	'class' => array( 'section-portfolio', 'section', 'ewf-section' ),
+	'class' => array(
+		'section-portfolio',
+		'section',
+		'ewf-section',
+		'ewf-section-' . $fields['portfolio_section_visibility'],
+	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 wp_enqueue_style( 'magnificPopup' );

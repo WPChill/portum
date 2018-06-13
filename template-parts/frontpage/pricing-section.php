@@ -19,7 +19,12 @@ $fields['pricing_boxes'] = $frontpage->get_repeater_field( $fields['pricing_repe
 $attr_helper             = new Epsilon_Section_Attr_Helper( $fields, 'pricing', Portum_Repeatable_Sections::get_instance() );
 $parent_attr             = array(
 	'id'    => ! empty( $fields['pricing_section_unique_id'] ) ? array( $fields['pricing_section_unique_id'] ) : array(),
-	'class' => array( 'section-pricing', 'section', 'ewf-section' ),
+	'class' => array(
+		'section-pricing',
+		'section',
+		'ewf-section',
+		'ewf-section-' . $fields['pricing_section_visibility'],
+	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 

@@ -19,7 +19,12 @@ $attr_helper       = new Epsilon_Section_Attr_Helper( $fields, 'clientlist', Por
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['clientlist_section_unique_id'] ) ? array( $fields['clientlist_section_unique_id'] ) : array(),
-	'class' => array( 'section-clientlist', 'section', 'ewf-section' ),
+	'class' => array(
+		'section-clientlist',
+		'section',
+		'ewf-section',
+		'ewf-section-' . $fields['clientlist_section_visibility'],
+	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
@@ -31,50 +36,49 @@ $parent_attr = array(
 		$attr_helper->generate_color_overlay();
 		?>
 
-
 		<div class="ewf-section__content">
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'clientlist', $fields ) ); ?>">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'clientlist', $fields ) ); ?>">
 
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-			<div class="row">
-				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>			
-			</div>
+				<div class="row">
+					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>
+				</div>
 
-			<div class="row">
-				<!--suppress Annotator -->
-				<div class="col-sm-12">
-					<?php if ( $fields['clientlist_slider'] ) { ?>
+				<div class="row">
+					<!--suppress Annotator -->
+					<div class="col-sm-12">
+						<?php if ( $fields['clientlist_slider'] ) { ?>
 
-					<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
-						<ul class="ewf-partner-slider__slides" data-slick='{ "slidesToShow": 6, "slidesToScroll": 2, "autoplay": true, "infinite": true, "speed": 500, "dots": true }'>
-							<?php } else { ?>
-							<ul class="ewf-partners-list ewf-partners-list--spacing-medium ewf-partners-list--columns-6">
-								<?php } ?>
+						<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
+							<ul class="ewf-partner-slider__slides" data-slick='{ "slidesToShow": 6, "slidesToScroll": 2, "autoplay": true, "infinite": true, "speed": 500, "dots": true }'>
+								<?php } else { ?>
+								<ul class="ewf-partners-list ewf-partners-list--spacing-medium ewf-partners-list--columns-6">
+									<?php } ?>
 
-								<?php foreach ( $fields['clients'] as $client ) { ?>
-									<li>
-										<div class="ewf-partner">
-											<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
-												<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
-											</a>
-										</div><!-- end .ewf-partner -->
-									</li>
-								<?php } ?>
+									<?php foreach ( $fields['clients'] as $client ) { ?>
+										<li>
+											<div class="ewf-partner">
+												<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
+													<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
+												</a>
+											</div><!-- end .ewf-partner -->
+										</li>
+									<?php } ?>
 
-								<?php if ( $fields['clientlist_slider'] ) { ?>
-							</ul>
+									<?php if ( $fields['clientlist_slider'] ) { ?>
+								</ul>
 
-							<div class="ewf-partner-slider__pager">
-								<!-- dots will be added here -->
-							</div>
-					</div>
-					<?php } else { ?>
+								<div class="ewf-partner-slider__pager">
+									<!-- dots will be added here -->
+								</div>
+						</div>
+						<?php } else { ?>
 						</ul>
-					<?php } ?>
+						<?php } ?>
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 </section>

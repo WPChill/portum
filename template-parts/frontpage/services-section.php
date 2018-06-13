@@ -19,7 +19,13 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'services', Portum_Repe
 
 $parent_attr = array(
 	'id'    => $fields['services_section_unique_id'] ? array( $fields['services_section_unique_id'] ) : array(),
-	'class' => array( 'section-services', 'section', 'ewf-section', 'contrast' ),
+	'class' => array(
+		'section-services',
+		'section',
+		'ewf-section',
+		'contrast',
+		'ewf-section-' . $fields['services_section_visibility'],
+	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 

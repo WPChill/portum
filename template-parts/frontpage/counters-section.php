@@ -19,7 +19,12 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'counters', Portum_Repe
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['counters_section_unique_id'] ) ? array( $fields['counters_section_unique_id'] ) : array(),
-	'class' => array( 'section-counters', 'section', 'ewf-section' ),
+	'class' => array(
+		'section-counters',
+		'section',
+		'ewf-section',
+		'ewf-section-' . $fields['counters_section_visibility'],
+	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
@@ -39,16 +44,104 @@ wp_enqueue_script( 'odometer' );
 		?>
 
 		<div class="ewf-section__content">
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'counters', $fields ) ); ?>">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'counters', $fields ) ); ?>">
 
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 				<?php if ( 'left' === $fields['counters_row_title_align'] ) { ?>
-				<div class="row">
-					<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
+					<div class="row">
+						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
+						</div>
+						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+							<div class="row">
+								<?php foreach ( $fields['counters'] as $counter ) { ?>
+
+									<?php
+									$class = 'ewf-counter__standard';
+									if ( 'odometer' === $counter['counter_type'] ) {
+										$class = 'ewf-counter__odometer odometer';
+									}
+									?>
+
+									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
+										<div class="ewf-counter">
+
+											<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
+												<div class="ewf-counter__icon">
+													<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
+												</div>
+											<?php } ?>
+
+											<div class="ewf-counter__content">
+												<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
+												<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
+													<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
+												<?php } ?>
+												<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
+													<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
+												<?php } ?>
+											</div>
+
+										</div><!-- end .ewf-counter -->
+									</div>
+								<?php } ?>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
-						<div class="row">
+				<?php } elseif ( 'right' === $fields['counters_row_title_align'] ) { ?>
+
+					<div class="row">
+						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+							<div class="row">
+								<?php foreach ( $fields['counters'] as $counter ) { ?>
+
+									<?php
+									$class = 'ewf-counter__standard';
+									if ( 'odometer' === $counter['counter_type'] ) {
+										$class = 'ewf-counter__odometer odometer';
+									}
+									?>
+
+									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
+										<div class="ewf-counter">
+
+											<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
+												<div class="ewf-counter__icon">
+													<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
+												</div>
+											<?php } ?>
+
+											<div class="ewf-counter__content">
+												<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
+												<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
+													<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
+												<?php } ?>
+												<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
+													<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
+												<?php } ?>
+											</div>
+
+										</div><!-- end .ewf-counter -->
+									</div>
+
+								<?php } ?>
+							</div>
+						</div>
+
+						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'], array( 'bottom' => true ) ) ); ?>
+						</div>
+					</div>
+
+				<?php } else { ?>
+
+					<div class="row">
+						<div class="col-md-12">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
+						</div>
+					</div>
+
+					<div class="row">
 						<?php foreach ( $fields['counters'] as $counter ) { ?>
 
 							<?php
@@ -59,122 +152,33 @@ wp_enqueue_script( 'odometer' );
 							?>
 
 							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
-							<div class="ewf-counter">
+								<div class="ewf-counter">
 
-								<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
-									<div class="ewf-counter__icon">
-										<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
+									<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
+										<div class="ewf-counter__icon">
+											<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
+										</div>
+									<?php } ?>
+
+									<div class="ewf-counter__content">
+										<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
+										<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
+											<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
+										<?php } ?>
+										<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
+											<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
+										<?php } ?>
 									</div>
-								<?php } ?>
 
-								<div class="ewf-counter__content">
-									<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
-									<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
-										<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
-									<?php } ?>
-									<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-										<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
-									<?php } ?>
-								</div>
-
-							</div><!-- end .ewf-counter -->
-							</div>
-						<?php } ?>
-						</div>
-					</div>
-				</div>
-			<?php } elseif ( 'right' === $fields['counters_row_title_align'] ) { ?>
-
-				<div class="row">			
-					<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
-						<div class="row">
-						<?php foreach ( $fields['counters'] as $counter ) { ?>
-
-							<?php
-							$class = 'ewf-counter__standard';
-							if ( 'odometer' === $counter['counter_type'] ) {
-								$class = 'ewf-counter__odometer odometer';
-							}
-							?>
-
-							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
-							<div class="ewf-counter">
-
-								<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
-									<div class="ewf-counter__icon">
-										<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
-									</div>
-								<?php } ?>
-
-								<div class="ewf-counter__content">
-									<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
-									<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
-										<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
-									<?php } ?>
-									<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-										<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
-									<?php } ?>
-								</div>
-
-							</div><!-- end .ewf-counter -->
+								</div><!-- end .ewf-counter -->
 							</div>
 
 						<?php } ?>
-						</div>
 					</div>
 
-					<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'], array( 'bottom' => true ) ) ); ?>
-					</div>
-				</div>
+				<?php } ?>
 
-			<?php } else { ?>
-
-				<div class="row">
-					<div class="col-md-12">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
-					</div>
-				</div>
-
-				<div class="row">	
-					<?php foreach ( $fields['counters'] as $counter ) { ?>
-
-						<?php
-						$class = 'ewf-counter__standard';
-						if ( 'odometer' === $counter['counter_type'] ) {
-							$class = 'ewf-counter__odometer odometer';
-						}
-						?>
-
-						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
-						<div class="ewf-counter">
-
-							<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
-								<div class="ewf-counter__icon">
-									<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
-								</div>
-							<?php } ?>
-
-							<div class="ewf-counter__content">
-								<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
-								<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
-									<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
-								<?php } ?>
-								<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-									<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
-								<?php } ?>
-							</div>
-
-						</div><!-- end .ewf-counter -->
-						</div>
-
-					<?php } ?>
-					</div>
-
-			<?php } ?>
-
-
-		</div>
+			</div>
 		</div>
 	</div>
 </section>

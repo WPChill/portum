@@ -23,7 +23,7 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'google_map', Portum_Re
 
 $parent_attr = array(
 	'id'    => array(),
-	'class' => array( 'section-map', 'ewf-section' ),
+	'class' => array( 'section-map', 'ewf-section', 'ewf-section-' . $fields['google_map_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
@@ -46,23 +46,23 @@ wp_enqueue_script( 'googlemaps' );
 			?>
 
 			<div class="ewf-section__content">
-			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
+					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-				<div class="row">
-					<div class="col-md-6">
-						<?php if ( ! empty( $api ) ) : ?>
-							<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
-						<?php endif; ?>
-					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<?php if ( ! empty( $api ) ) : ?>
+								<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
+							<?php endif; ?>
+						</div>
 
-					<div class="col-md-6">
+						<div class="col-md-6">
 
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'], array( 'bottom' => true ) ) ); ?>
-						<div class="row">
-							<?php
-							if ( ! empty( $fields['contact_boxes'] ) ) {
-								?>
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'], array( 'bottom' => true ) ) ); ?>
+							<div class="row">
+								<?php
+								if ( ! empty( $fields['contact_boxes'] ) ) {
+									?>
 									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
@@ -74,12 +74,12 @@ wp_enqueue_script( 'googlemaps' );
 											</div>
 										</div>
 									<?php } ?>
-							<?php } ?>
-						</div>					
+								<?php } ?>
+							</div>
+						</div>
 					</div>
-				</div>
 
-			</div>
+				</div>
 			</div>
 
 		<?php } elseif ( 'left' === $fields['google_map_row_title_align'] ) { ?>
@@ -92,17 +92,17 @@ wp_enqueue_script( 'googlemaps' );
 			?>
 
 			<div class="ewf-section__content">
-			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
+					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-				<div class="row">					
-					<div class="col-md-6">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'] ) ); ?>
+					<div class="row">
+						<div class="col-md-6">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'] ) ); ?>
 
-						<div class="row">
-							<?php
-							if ( ! empty( $fields['contact_boxes'] ) ) {
-								?>
+							<div class="row">
+								<?php
+								if ( ! empty( $fields['contact_boxes'] ) ) {
+									?>
 									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
@@ -114,17 +114,17 @@ wp_enqueue_script( 'googlemaps' );
 											</div>
 										</div>
 									<?php } ?>
-							<?php } ?>
-						</div>					
+								<?php } ?>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<?php if ( ! empty( $api ) ) : ?>
+								<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
+							<?php endif; ?>
+						</div>
 					</div>
-					<div class="col-md-6">
-						<?php if ( ! empty( $api ) ) : ?>
-							<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
-						<?php endif; ?>
-					</div>
-				</div>
 
-			</div>
+				</div>
 			</div>
 
 		<?php } else { ?>
@@ -135,37 +135,37 @@ wp_enqueue_script( 'googlemaps' );
 			<?php endif; ?>
 
 			<div class="ewf-section__content">
-			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
+					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-				<div class="map-info-wrapper" <?php $attr_helper->generate_attributes( $style_attr ); ?>>
+					<div class="map-info-wrapper" <?php $attr_helper->generate_attributes( $style_attr ); ?>>
 
-					<?php
-					$attr_helper->generate_video_overlay();
-					$attr_helper->generate_color_overlay();
-					?>
-
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'] ) ); ?>
-					<?php
-					if ( ! empty( $fields['contact_boxes'] ) ) {
+						<?php
+						$attr_helper->generate_video_overlay();
+						$attr_helper->generate_color_overlay();
 						?>
-						<div class="row">
-							<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
-								<div class="col-xs-12 col-md-<?php echo absint( $span ); ?>">
-									<div class="map-info-item">
-										<h5>
-											<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-											<?php echo esc_html( $field['contact_title'] ); ?>
-										</h5>
-										<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
-									</div>
-								</div>
-							<?php } ?>
-						</div>
-					<?php } ?>
-				</div>
 
-			</div>
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['google_map_subtitle'], $fields['google_map_title'] ) ); ?>
+						<?php
+						if ( ! empty( $fields['contact_boxes'] ) ) {
+							?>
+							<div class="row">
+								<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+									<div class="col-xs-12 col-md-<?php echo absint( $span ); ?>">
+										<div class="map-info-item">
+											<h5>
+												<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
+												<?php echo esc_html( $field['contact_title'] ); ?>
+											</h5>
+											<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
+										</div>
+									</div>
+								<?php } ?>
+							</div>
+						<?php } ?>
+					</div>
+
+				</div>
 			</div>
 
 		<?php } ?>
