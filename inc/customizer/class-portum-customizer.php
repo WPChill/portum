@@ -28,6 +28,7 @@ class Portum_Customizer {
 		 * Customizer enqueues & controls
 		 */
 		add_action( 'customize_register', array( $this, 'add_theme_options' ), 99 );
+		add_filter( 'epsilon_section_repeater_importable_sections', array( $this, 'add_importable_sections' ) );
 		$this->change_default_panels();
 	}
 
@@ -129,6 +130,55 @@ class Portum_Customizer {
 	 */
 	public function customize_preview_js() {
 		wp_enqueue_script( 'portum-previewer', get_template_directory_uri() . '/inc/customizer/assets/js/previewer.js', array( 'customize-preview' ), '211215', true );
+	}
+
+	/**
+	 * @param $array
+	 *
+	 * @return array
+	 */
+	public function add_importable_sections( $array ) {
+		$importables = array(
+			/**
+			 * First importable section
+			 */
+			'first'  => array(
+				'id'       => 'first',
+				'thumb'    => 'image link',
+				'sections' => array(
+					array(
+						'cta_title'                => 'Cosmin',
+						'cta_description'          => 'Cosmin Description',
+						'cta_button_primary_label' => 'Label',
+						'type'                     => 'cta',
+					),
+					array(
+						'cta_title'                => 'Cristea',
+						'cta_description'          => 'Cristea Description',
+						'cta_button_primary_label' => 'Label',
+						'type'                     => 'cta',
+					),
+				)
+			),
+			'second' => array(
+				'id'       => 'second',
+				'thumb'    => 'image link',
+				'sections' => array(
+					array(
+						'cta_title'                => 'Cosmin',
+						'cta_description'          => 'Cosmin Description',
+						'cta_button_primary_label' => 'Label',
+						'type'                     => 'cta',
+					),
+					array(
+						'testimonials_title' => 'Cosmin testimonials',
+						'type'               => 'testimonials',
+					)
+				),
+			),
+		);
+
+		return array_merge( $array, $importables );
 	}
 
 	/**
