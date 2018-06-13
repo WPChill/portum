@@ -51,78 +51,69 @@ $parent_attr    = array(
 
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-			<div class="row">
-				<?php if ('right' ===$fields['about_row_title_align'] ){ ?>
-
-					<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-						<div class="col-md-6
-							<?php
-								echo ('fullwidth' ===$fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
-
-							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
-						</div>
-					<?php } ?>
-
-					<div class="col-md-6">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['about_subtitle'],
-								$fields['about_title'],
-								array('bottom' => true ) ) ); ?>
-									<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-
-								<?php if ( $button_primary){ ?>
-							<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
-
-						<?php echo  wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
-						<?php }; ?>
-					</div>
-
-
-				<?php }elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
-
-					<div class="col-md-6">
-						<?php
-						echo wp_kses_post(
-							Portum_Helper::generate_section_title(
-								$fields['about_subtitle'],
-								$fields['about_title']) ); ?>
-								<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-
-									<?php if ( $button_primary ) { ?>
-								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
-
-						<?php echo  wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
-						<?php }; ?>
-					</div>
+				<div class="row">
+					<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
 
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-							<div class="col-md-6<?php echo ( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
+							<div class="col-md-6
+							<?php
+							echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
+
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
 							</div>
 						<?php } ?>
 
-				<?php }else { ?>
+						<div class="col-md-6">
+							<?php
+							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
-					<div class="col-md-12">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
-						<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+							<?php if ( $button_primary ) { ?>
+								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
 
-						<?php if ( $button_primary ) { ?>
-							<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
-						<?php }; ?>
+									<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+							<?php }; ?>
+						</div>
 
-						<?php if ( $fields['about_image'] ) { ?>
-							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt=""/>
-						<?php }; ?>
-					</div>
+					<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
 
-				<?php }?>
+						<div class="col-md-6">
+							<?php
+							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
+							<?php if ( $button_primary ) { ?>
+								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
 
+									<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+							<?php }; ?>
+						</div>
+
+						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
+							<div class="col-md-6<?php echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+							</div>
+						<?php } ?>
+
+					<?php } else { ?>
+
+						<div class="col-md-12">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+
+							<?php if ( $button_primary ) { ?>
+								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+							<?php }; ?>
+
+							<?php if ( $fields['about_image'] ) { ?>
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+							<?php }; ?>
+						</div>
+
+					<?php } ?>
+
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 </section>
