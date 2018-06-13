@@ -20,7 +20,7 @@ $fields['members'] = $frontpage->get_repeater_field( $fields['team_repeater_fiel
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['team_section_unique_id'] ) ? array( $fields['team_section_unique_id'] ) : array(),
-	'class' => array( 'section-team', 'ewf-section' ),
+	'class' => array( 'section-team', 'ewf-section', 'ewf-section-' . $fields['team_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
@@ -36,266 +36,266 @@ $items_class = null;
 		?>
 
 		<div class="ewf-section__content">
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'team', $fields ) ); ?>">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'team', $fields ) ); ?>">
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'team' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-			<div class="row">
+				<div class="row">
 
-				<?php if ( 'left' === $fields['team_row_title_align'] ) { ?>
+					<?php if ( 'left' === $fields['team_row_title_align'] ) { ?>
 
-					<div class="col-md-6">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
-					</div>					
+						<div class="col-md-6">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
+						</div>
 
-					<div class="col-md-6">
-					<?php if ( $fields['members'] ) { ?>
-						<?php foreach ( $fields['members'] as $member ) { ?>
+						<div class="col-md-6">
+							<?php if ( $fields['members'] ) { ?>
+								<?php foreach ( $fields['members'] as $member ) { ?>
 
-							<?php
+									<?php
 
-							if ( $items_count & 1 ) {
-								$items_class = ( $items_class ? null : ' right' );
-							}
+									if ( $items_count & 1 ) {
+										$items_class = ( $items_class ? null : ' right' );
+									}
 
-								$items_count ++;
-							?>
+									$items_count++;
+									?>
 
-							<div class="team-members-item team-members-item--full<?php echo $items_class; ?>">
+									<div class="team-members-item team-members-item--full<?php echo $items_class; ?>">
 
-								<?php
-								$arr = array(
-									'facebook'  => $member['member_social_facebook'],
-									'twitter'   => $member['member_social_twitter'],
-									'pinterest' => $member['member_social_pinterest'],
-									'linkedin'  => $member['member_social_linkedin'],
-								);
+										<?php
+										$arr = array(
+											'facebook'  => $member['member_social_facebook'],
+											'twitter'   => $member['member_social_twitter'],
+											'pinterest' => $member['member_social_pinterest'],
+											'linkedin'  => $member['member_social_linkedin'],
+										);
 
-								$arr = array_filter( $arr );
-								?>
-
-
-								<?php if ( $items_count & 1 ) { ?>
-
-									<?php if ( ! empty( $member['member_image'] ) ) { ?>
-										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-											<div class="overlay"></div>
-										</div>
-									<?php } ?>
-
-									<div class="details">
-										<?php if ( ! empty( $member['member_title'] ) ) { ?>
-											<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-											<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-										<?php } ?>
-									</div>
-
-								<?php } else { ?>
-
-									<div class="details">
-										<?php if ( ! empty( $member['member_title'] ) ) { ?>
-											<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-											<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-										<?php } ?>
-									</div>
-									<?php if ( ! empty( $member['member_image'] ) ) { ?>
-										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-											<div class="overlay"></div>
-										</div>
-									<?php } ?>
-
-								<?php } ?>
+										$arr = array_filter( $arr );
+										?>
 
 
-								<ul class="social-team">
-									<?php foreach ( $arr as $k => $v ) { ?>
-										<li>
-											<a href="<?php echo esc_url( $v ); ?>">
-												<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i> </a>
-										</li>
-									<?php } ?>
-								</ul>
+										<?php if ( $items_count & 1 ) { ?>
 
-							</div>
-						<?php }// End foreach(). ?>
-					<?php }// End if(). ?>
-					</div>
+											<?php if ( ! empty( $member['member_image'] ) ) { ?>
+												<div class="portrait">
+													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
+													<div class="overlay"></div>
+												</div>
+											<?php } ?>
 
-				<?php } elseif ( 'right' === $fields['team_row_title_align'] ) { ?>
+											<div class="details">
+												<?php if ( ! empty( $member['member_title'] ) ) { ?>
+													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
+													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
 
-					<div class="col-md-6">
-					<?php if ( $fields['members'] ) { ?>
-						<?php foreach ( $fields['members'] as $member ) { ?>
+												<?php } ?>
+											</div>
 
-							<?php
+										<?php } else { ?>
 
-							if ( $items_count & 1 ) {
-								$items_class = ( $items_class ? null : ' right' );
-							}
+											<div class="details">
+												<?php if ( ! empty( $member['member_title'] ) ) { ?>
+													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
+													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
 
-								$items_count ++;
-							?>
-
-							<div class="team-members-item team-members-item--full<?php echo $items_class; ?>">
-
-								<?php
-								$arr = array(
-									'facebook'  => $member['member_social_facebook'],
-									'twitter'   => $member['member_social_twitter'],
-									'pinterest' => $member['member_social_pinterest'],
-									'linkedin'  => $member['member_social_linkedin'],
-								);
-
-								$arr = array_filter( $arr );
-								?>
-
-
-								<?php if ( $items_count & 1 ) { ?>
-
-									<?php if ( ! empty( $member['member_image'] ) ) { ?>
-										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-											<div class="overlay"></div>
-										</div>
-									<?php } ?>
-
-									<div class="details">
-										<?php if ( ! empty( $member['member_title'] ) ) { ?>
-											<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-											<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+												<?php } ?>
+											</div>
+											<?php if ( ! empty( $member['member_image'] ) ) { ?>
+												<div class="portrait">
+													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
+													<div class="overlay"></div>
+												</div>
+											<?php } ?>
 
 										<?php } ?>
+
+										<ul class="social-team">
+											<?php foreach ( $arr as $k => $v ) { ?>
+												<li>
+													<a href="<?php echo esc_url( $v ); ?>">
+														<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
+													</a>
+												</li>
+											<?php } ?>
+										</ul>
+
 									</div>
+								<?php }// End foreach(). ?>
+							<?php }// End if(). ?>
+						</div>
 
-								<?php } else { ?>
+					<?php } elseif ( 'right' === $fields['team_row_title_align'] ) { ?>
 
-									<div class="details">
-										<?php if ( ! empty( $member['member_title'] ) ) { ?>
-											<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-											<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+						<div class="col-md-6">
+							<?php if ( $fields['members'] ) { ?>
+								<?php foreach ( $fields['members'] as $member ) { ?>
+
+									<?php
+
+									if ( $items_count & 1 ) {
+										$items_class = ( $items_class ? null : ' right' );
+									}
+
+									$items_count++;
+									?>
+
+									<div class="team-members-item team-members-item--full<?php echo $items_class; ?>">
+
+										<?php
+										$arr = array(
+											'facebook'  => $member['member_social_facebook'],
+											'twitter'   => $member['member_social_twitter'],
+											'pinterest' => $member['member_social_pinterest'],
+											'linkedin'  => $member['member_social_linkedin'],
+										);
+
+										$arr = array_filter( $arr );
+										?>
+
+
+										<?php if ( $items_count & 1 ) { ?>
+
+											<?php if ( ! empty( $member['member_image'] ) ) { ?>
+												<div class="portrait">
+													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
+													<div class="overlay"></div>
+												</div>
+											<?php } ?>
+
+											<div class="details">
+												<?php if ( ! empty( $member['member_title'] ) ) { ?>
+													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
+													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+
+												<?php } ?>
+											</div>
+
+										<?php } else { ?>
+
+											<div class="details">
+												<?php if ( ! empty( $member['member_title'] ) ) { ?>
+													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
+													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+
+												<?php } ?>
+											</div>
+											<?php if ( ! empty( $member['member_image'] ) ) { ?>
+												<div class="portrait">
+													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
+													<div class="overlay"></div>
+												</div>
+											<?php } ?>
 
 										<?php } ?>
+
+										<ul class="social-team">
+											<?php foreach ( $arr as $k => $v ) { ?>
+												<li>
+													<a href="<?php echo esc_url( $v ); ?>">
+														<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
+													</a>
+												</li>
+											<?php } ?>
+										</ul>
+
 									</div>
-									<?php if ( ! empty( $member['member_image'] ) ) { ?>
-										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-											<div class="overlay"></div>
-										</div>
-									<?php } ?>
+								<?php }// End foreach(). ?>
+							<?php }// End if(). ?>
+						</div>
 
-								<?php } ?>
+						<div class="col-md-6">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
+						</div>
 
+					<?php } else { ?>
 
-								<ul class="social-team">
-									<?php foreach ( $arr as $k => $v ) { ?>
-										<li>
-											<a href="<?php echo esc_url( $v ); ?>">
-												<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i> </a>
-										</li>
-									<?php } ?>
-								</ul>
+						<div class="col-md-12">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
+						</div>
 
-							</div>
-						<?php }// End foreach(). ?>
-					<?php }// End if(). ?>
-					</div>
+						<div class="col-md-12">
+							<?php if ( $fields['members'] ) { ?>
+								<?php foreach ( $fields['members'] as $member ) { ?>
 
-					<div class="col-md-6">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
-					</div>
+									<?php
 
-				<?php } else { ?>
+									if ( 2 === $items_count ) {
+										$items_class = ( $items_class ? null : ' right' );
 
-					<div class="col-md-12">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
-					</div>
+										$items_count = 0;
+									}
 
-					<div class="col-md-12">
-					<?php if ( $fields['members'] ) { ?>
-						<?php foreach ( $fields['members'] as $member ) { ?>
+									$items_count++;
+									?>
 
-							<?php
+									<div class="team-members-item<?php echo $items_class; ?>">
 
-							if ( 2 === $items_count ) {
-								$items_class = ( $items_class ? null : ' right' );
+										<?php
+										$arr = array(
+											'facebook'  => $member['member_social_facebook'],
+											'twitter'   => $member['member_social_twitter'],
+											'pinterest' => $member['member_social_pinterest'],
+											'linkedin'  => $member['member_social_linkedin'],
+										);
 
-								$items_count = 0;
-							}
-
-								$items_count ++;
-							?>
-
-							<div class="team-members-item<?php echo $items_class; ?>">
-
-								<?php
-								$arr = array(
-									'facebook'  => $member['member_social_facebook'],
-									'twitter'   => $member['member_social_twitter'],
-									'pinterest' => $member['member_social_pinterest'],
-									'linkedin'  => $member['member_social_linkedin'],
-								);
-
-								$arr = array_filter( $arr );
-								?>
+										$arr = array_filter( $arr );
+										?>
 
 
-								<?php if ( $items_class ) { ?>
+										<?php if ( $items_class ) { ?>
 
-									<div class="details">
-										<?php if ( ! empty( $member['member_title'] ) ) { ?>
-											<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-											<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+											<div class="details">
+												<?php if ( ! empty( $member['member_title'] ) ) { ?>
+													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
+													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+
+												<?php } ?>
+											</div>
+											<?php if ( ! empty( $member['member_image'] ) ) { ?>
+												<div class="portrait">
+													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
+													<div class="overlay"></div>
+												</div>
+											<?php } ?>
+
+										<?php } else { ?>
+
+											<?php if ( ! empty( $member['member_image'] ) ) { ?>
+												<div class="portrait">
+													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
+													<div class="overlay"></div>
+												</div>
+											<?php } ?>
+
+											<div class="details">
+												<?php if ( ! empty( $member['member_title'] ) ) { ?>
+													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
+													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
+
+												<?php } ?>
+											</div>
 
 										<?php } ?>
+
+										<ul class="social-team">
+											<?php foreach ( $arr as $k => $v ) { ?>
+												<li>
+													<a href="<?php echo esc_url( $v ); ?>">
+														<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
+													</a>
+												</li>
+											<?php } ?>
+										</ul>
+
 									</div>
-									<?php if ( ! empty( $member['member_image'] ) ) { ?>
-										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-											<div class="overlay"></div>
-										</div>
-									<?php } ?>
+								<?php }// End foreach(). ?>
+							<?php }// End if(). ?>
+						</div>
 
-								<?php } else { ?>
+					<?php } ?>
+				</div>
 
-									<?php if ( ! empty( $member['member_image'] ) ) { ?>
-										<div class="portrait">
-											<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-											<div class="overlay"></div>
-										</div>
-									<?php } ?>
-
-									<div class="details">
-										<?php if ( ! empty( $member['member_title'] ) ) { ?>
-											<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-											<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-										<?php } ?>
-									</div>
-
-								<?php } ?>
-
-
-								<ul class="social-team">
-									<?php foreach ( $arr as $k => $v ) { ?>
-										<li>
-											<a href="<?php echo esc_url( $v ); ?>">
-												<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i> </a>
-										</li>
-									<?php } ?>
-								</ul>
-
-							</div>
-						<?php }// End foreach(). ?>
-					<?php }// End if(). ?>
-					</div>
-
-				<?php } ?>			
 			</div>
-
-		</div>
 		</div>
 
 	</div>

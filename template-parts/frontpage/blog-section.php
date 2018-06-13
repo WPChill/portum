@@ -24,7 +24,13 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'blog', Portum_Repeatab
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['blog_section_unique_id'] ) ? array( $fields['blog_section_unique_id'] ) : array(),
-	'class' => array( 'section-blog', 'section', 'section-grey', 'ewf-section' ),
+	'class' => array(
+		'section-blog',
+		'section',
+		'section-grey',
+		'ewf-section',
+		'ewf-section-' . $fields['blog_section_visibility'],
+	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 ?>

@@ -15,19 +15,17 @@ $id = get_the_ID();
 if ( ! empty( $fields['content_page_id'] ) ) {
 	$id = $fields['content_page_id'];
 }
-$pages = new WP_Query(
-	array(
-		'p'         => $id,
-		'post_type' => 'page',
-	)
-);
+$pages = new WP_Query( array(
+	'p'         => $id,
+	'post_type' => 'page',
+) );
 
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'content', Portum_Repeatable_Sections::get_instance() );
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['content_section_unique_id'] ) ? array( $fields['content_section_unique_id'] ) : array(),
-	'class' => array( 'ewf-section' ),
+	'class' => array( 'ewf-section', 'ewf-section-' . $fields['content_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 ?>

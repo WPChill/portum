@@ -23,12 +23,12 @@ wp_enqueue_style( 'owl-carousel' );
 wp_enqueue_style( 'slick' );
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-slider" <?php echo ! empty( $fields['slider_section_unique_id'] ) ? 'id="' . $fields['slider_section_unique_id'] . '"' : ''; ?>>
+	<div class="<?php echo 'ewf-section-' . $fields['slider_section_visibility']; ?> section-slider" <?php echo ! empty( $fields['slider_section_unique_id'] ) ? 'id="' . $fields['slider_section_unique_id'] . '"' : ''; ?>>
 		<div class="main-slider owl-carousel owl-theme">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
 					<?php if ( ! empty( $slide['slides_image'] ) ) { ?>
-						<img class="owl-lazy" data-src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
+						<img class="owl-lazy" data-src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>" />
 					<?php } ?>
 					<div class="slider-details">
 						<?php if ( ! empty( $slide['slides_title'] ) ) { ?>
@@ -50,9 +50,10 @@ wp_enqueue_style( 'slick' );
 			<?php $i = 1; ?>
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<li<?php echo 1 === $i ? ' class="active"' : ''; ?>>
-					<a href="#"><strong>0<?php echo absint( $i ); ?></strong> <?php echo esc_html( $slide['slides_title'] ); ?></a>
+					<a href="#"><strong>0<?php echo absint( $i ); ?></strong> <?php echo esc_html( $slide['slides_title'] ); ?>
+					</a>
 				</li>
-				<?php $i ++; ?>
+				<?php $i++; ?>
 			<?php } ?>
 		</ul>
 	</div>
