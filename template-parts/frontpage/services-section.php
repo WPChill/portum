@@ -49,23 +49,23 @@ $parent_attr = array(
 						<?php if ( ! empty( $fields['services'] ) ) { ?>
 							<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 								<div class="row">
-								<?php foreach ( $fields['services'] as $key => $service ) { ?>
-									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
-										<div class="services-item services-item--<?php echo esc_attr( $service['service_type'] ); ?> services-item--<?php echo esc_attr( $service['service_type_color'] ); ?><?php echo ( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
-											<?php if ( ! empty( $service['service_icon'] ) ) { ?>
-												<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
-											<?php } ?>
+									<?php foreach ( $fields['services'] as $key => $service ) { ?>
+										<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
+											<div class="services-item services-item--<?php echo esc_attr( isset( $service['service_type'] ) ? $service['service_type'] : '' ); ?> services-item--<?php echo esc_attr( isset( $service['service_type_color'] ) ? $service['service_type_color'] : '' ); ?><?php echo( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
+												<?php if ( ! empty( $service['service_icon'] ) ) { ?>
+													<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
+												<?php } ?>
 
-											<?php if ( ! empty( $service['service_title'] ) ) { ?>
-												<span><?php echo esc_html( $service['service_title'] ); ?></span>
-											<?php } ?>
+												<?php if ( ! empty( $service['service_title'] ) ) { ?>
+													<span><?php echo esc_html( $service['service_title'] ); ?></span>
+												<?php } ?>
 
-											<?php if ( ! empty( $service['service_description'] ) ) { ?>
-												<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
-											<?php } ?>
+												<?php if ( ! empty( $service['service_description'] ) ) { ?>
+													<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
+												<?php } ?>
+											</div>
 										</div>
-									</div>
-								<?php } ?>
+									<?php } ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -75,23 +75,23 @@ $parent_attr = array(
 						<?php if ( ! empty( $fields['services'] ) ) { ?>
 							<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 								<div class="row">
-								<?php foreach ( $fields['services'] as $key => $service ) { ?>
-									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
-										<div class="services-item services-item--<?php echo esc_attr( $service['service_type'] ); ?> services-item--<?php echo esc_attr( $service['service_type_color'] ); ?><?php echo ( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
-											<?php if ( ! empty( $service['service_icon'] ) ) { ?>
-												<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
-											<?php } ?>
+									<?php foreach ( $fields['services'] as $key => $service ) { ?>
+										<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
+											<div class="services-item services-item--<?php echo esc_attr( isset( $service['service_type'] ) ? $service['service_type'] : '' ); ?> services-item--<?php echo esc_attr( isset( $service['service_type_color'] ) ? $service['service_type_color'] : '' ); ?><?php echo( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
+												<?php if ( ! empty( $service['service_icon'] ) ) { ?>
+													<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
+												<?php } ?>
 
-											<?php if ( ! empty( $service['service_title'] ) ) { ?>
-												<span><?php echo esc_html( $service['service_title'] ); ?></span>
-											<?php } ?>
+												<?php if ( ! empty( $service['service_title'] ) ) { ?>
+													<span><?php echo esc_html( $service['service_title'] ); ?></span>
+												<?php } ?>
 
-											<?php if ( ! empty( $service['service_description'] ) ) { ?>
-												<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
-											<?php } ?>
+												<?php if ( ! empty( $service['service_description'] ) ) { ?>
+													<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
+												<?php } ?>
+											</div>
 										</div>
-									</div>
-								<?php } ?>
+									<?php } ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -112,7 +112,7 @@ $parent_attr = array(
 							<?php foreach ( $fields['services'] as $key => $service ) { ?>
 
 								<div class="col-md-<?php echo $section_item_columns; ?> col-xs-6">
-									<div class="services-item services-item--<?php echo esc_attr( $service['service_type'] ); ?> services-item--<?php echo esc_attr( $service['service_type_color'] ); ?><?php echo ( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' -services-item-first' : null ); ?>">
+									<div class="services-item services-item--<?php echo esc_attr( isset( $service['service_type'] ) ? $service['service_type'] : '' ); ?> services-item--<?php echo esc_attr( isset( $service['service_type_color'] ) ? $service['service_type_color'] : '' ); ?><?php echo( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' -services-item-first' : null ); ?>">
 										<?php if ( ! empty( $service['service_icon'] ) ) { ?>
 											<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
 										<?php } ?>
