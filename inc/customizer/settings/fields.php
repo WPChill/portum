@@ -106,7 +106,7 @@ Epsilon_Customizer::add_field(
 			'body',
 		),
 		'font_defaults' => array(
-			'font-family' => '"Hind", sans-serif',
+			'font-family' => 'default_font',
 			'font-size'   => '16',
 			'line-height' => '26',
 		),
@@ -140,9 +140,8 @@ Epsilon_Customizer::add_field(
 			'.item-carousel-blog a',
 		),
 		'font_defaults' => array(
-			'font-family'    => '"Poppins", sans-serif',
-			'letter-spacing' => '0',
 			'font-family'    => 'default_font',
+			'letter-spacing' => '0',
 			'font-weight'    => '',
 		),
 	)
@@ -192,7 +191,7 @@ Epsilon_Customizer::add_field(
 			'.headline span',
 		),
 		'font_defaults' => array(
-			'font-family'    => '"Hind", sans-serif',
+			'font-family'    => 'default_font',
 			'font-weight'    => 'on',
 			'font-style'     => '',
 			'font-size'      => '16',
@@ -225,9 +224,6 @@ Epsilon_Customizer::add_field(
 			'font-family' => 'default_font',
 			'font-weight' => '',
 			'font-style'  => '',
-			'font-family'    => '"Poppins", sans-serif',
-			'font-weight'    => 'on',
-			'font-style'     => 'normal',
 			'font-size'      => '30',
 			'line-height'    => '28',
 			'letter-spacing' => '0',
