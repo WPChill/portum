@@ -60,9 +60,10 @@ class Portum_Customizer {
 		 */
 		$wp_customize->get_section( 'header_image' )->panel      = 'portum_panel_general';
 		$wp_customize->get_section( 'background_image' )->panel  = 'portum_panel_general';
-		$wp_customize->get_section( 'colors' )->panel            = 'portum_panel_general';
+		$wp_customize->get_section( 'colors' )->panel            = 'portum_panel_customization';
 		$wp_customize->get_section( 'title_tagline' )->panel     = 'portum_panel_general';
-		$wp_customize->get_section( 'static_front_page' )->panel = 'portum_panel_content';
+		$wp_customize->get_section( 'static_front_page' )->panel = 'portum_panel_general';
+		$wp_customize->get_section( 'custom_css' )->panel        = 'portum_panel_customization';
 
 		/**
 		 * Change priorities
@@ -70,34 +71,47 @@ class Portum_Customizer {
 		$wp_customize->get_section( 'title_tagline' )->priority     = 0;
 		$wp_customize->get_control( 'custom_logo' )->priority       = 0;
 		$wp_customize->get_control( 'blogname' )->priority          = 2;
-		$wp_customize->get_section( 'header_image' )->priority      = 4;
+		$wp_customize->get_section( 'header_image' )->priority      = 51;
 		$wp_customize->get_control( 'blogdescription' )->priority   = 17;
 		$wp_customize->get_control( 'header_textcolor' )->priority  = 15;
 		$wp_customize->get_section( 'static_front_page' )->priority = 0;
+
+		/**
+		 * @since 1.0.3
+		 */
+		$wp_customize->get_section( 'colors' )->priority                    = 0;
+		$wp_customize->get_section( 'portum_typography_section' )->priority = 1;
+		$wp_customize->get_section( 'portum_layout_section' )->priority     = 2;
+		$wp_customize->get_section( 'custom_css' )->priority                = 10;
+
 		/**
 		 * Change labels
 		 */
 		$wp_customize->get_control( 'custom_logo' )->description   = esc_html__( 'The image logo, if set, will override the text logo. You can not have both at the same time. A tagline can be displayed under the text logo.', 'portum' );
-		$wp_customize->get_section( 'header_image' )->title        = esc_html__( 'Blog options', 'portum' );
+		$wp_customize->get_section( 'header_image' )->title        = esc_html__( 'Blog', 'portum' );
 		$wp_customize->get_control( 'page_on_front' )->description = esc_html__( 'If you have front-end sections, those will be displayed instead. Consider adding a "Content Section" if you need to display the page content as well.', 'portum' );
 
 		if ( ! isset( $wp_customize->selective_refresh ) ) {
 			return;
 		}
 
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title',
-			'render_callback' => function () {
-				bloginfo( 'name' );
-			},
-		) );
+		$wp_customize->selective_refresh->add_partial(
+			'blogname', array(
+				'selector'        => '.site-title',
+				'render_callback' => function () {
+					bloginfo( 'name' );
+				},
+			)
+		);
 
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'        => '.site-description',
-			'render_callback' => function () {
-				bloginfo( 'description' );
-			},
-		) );
+		$wp_customize->selective_refresh->add_partial(
+			'blogdescription', array(
+				'selector'        => '.site-description',
+				'render_callback' => function () {
+					bloginfo( 'description' );
+				},
+			)
+		);
 	}
 
 	/**

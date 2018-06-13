@@ -7,17 +7,20 @@
  *
  *
  */
+
+/**
+* @uses: https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+*/
+
 @import "variables/variables";
 @import "mixins/mixins";
 @import "partials/typography";
-@import "partials/grid";
+@import "partials/utils";
 @import "partials/forms";
 @import "partials/header";
 @import "partials/menu";
 @import "partials/blog";
 @import "partials/back-top";
-/*
-*/
 @import "partials/sections/base";
 @import "partials/sections/00-header-bar";
 @import "partials/sections/00-section-hero";
@@ -36,6 +39,8 @@
 @import "partials/sections/14-section-piecharts";
 @import "partials/sections/15-section-clients";
 @import "partials/sections/16-section-map";
+@import "partials/sections/17-section-advanced-slider.scss";
+@import "partials/sections/18-section-cta.scss";
 
 .page {
   .widget {
@@ -75,7 +80,6 @@
   .portfolio-wrapper-arrows {
     width: 100px;
     height: 50px;
-    background: Red;
   }
 }
 

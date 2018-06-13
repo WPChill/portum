@@ -7,9 +7,12 @@
  * @package Portum
  */
 
-$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
-$fields    = $frontpage->sections[ $section_id ];
-$grouping  = array( 'values'   => $fields['piecharts_grouping'],'group_by' => 'piechart_title', );
+$frontpage           = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields              = $frontpage->sections[ $section_id ];
+$grouping            = array(
+	'values'   => $fields['piecharts_grouping'],
+	'group_by' => 'piechart_title',
+);
 $fields['piecharts'] = $frontpage->get_repeater_field( $fields['piecharts_repeater_field'], array(), $grouping );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'piecharts', Portum_Repeatable_Sections::get_instance() );
@@ -22,7 +25,7 @@ $parent_attr = array(
 
 wp_enqueue_script( 'easypiechart' );
 $color = get_theme_mod( 'epsilon_accent_color', '#cc263d' );
-$span = 12 / absint( $fields['piecharts_column_group'] );
+$span  = 12 / absint( $fields['piecharts_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -30,28 +33,28 @@ $span = 12 / absint( $fields['piecharts_column_group'] );
 		<?php
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
-		
-		$section_item_columns = 12 / intval($fields['piecharts_column_group']);
+
+		$section_item_columns  = 12 / intval( $fields['piecharts_column_group'] );
 		$section_items_content = 12 - $section_item_columns;
 		?>
-			
+
 		<div class="ewf-section__content">
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'piecharts', $fields ) ); ?>">
 			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'piecharts' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-		
 
-			
-			<?php if ($fields['piecharts_row_title_align'] == 'left'){ ?>
-			
+
+
+			<?php if ( 'left' === $fields['piecharts_row_title_align'] ) { ?>
+
 				<div class="row">
 
-					<div class="col-md-<?php echo $section_item_columns; ?>">
+					<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'] ) ); ?>			
 					</div>
-				
+
 					<div class="col-md-<?php echo $section_items_content; ?>">
 						<?php foreach ( $fields['piecharts'] as $piechart ) { ?>
-							<div class="col-md-<?php echo $section_item_columns; ?>">
+							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 								<div class="ewf-pie">
 									<div class="ewf-pie__chart" data-percent="<?php echo ! empty( $piechart['piechart_value'] ) ? esc_attr( $piechart['piechart_value'] ) : 55; ?>" data-barColor="<?php echo esc_attr( $color ); ?>" data-trackColor="#e1e1e1" data-lineWidth="<?php echo ! empty( $piechart['piechart_bar_width'] ) ? esc_attr( $piechart['piechart_bar_width'] ) : 15; ?>" data-barSize="<?php echo ! empty( $piechart['piechart_size'] ) ? esc_attr( $piechart['piechart_size'] ) : 250; ?>" data-lineCap="square">
 										<?php if ( 'icon' === $piechart['piechart_type'] ) { ?>
@@ -76,16 +79,16 @@ $span = 12 / absint( $fields['piecharts_column_group'] );
 							</div>
 						<?php } ?>
 					</div>
-					
+
 				</div>
-			
-			<?php }elseif ($fields['piecharts_row_title_align'] == 'right'){ ?>
-			
+
+			<?php } elseif ( 'right' === $fields['piecharts_row_title_align'] ) { ?>
+
 				<div class="row">
-							
+
 					<div class="col-md-<?php echo $section_items_content; ?>">
 						<?php foreach ( $fields['piecharts'] as $piechart ) { ?>
-							<div class="col-md-<?php echo $section_item_columns; ?>">
+							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 								<div class="ewf-pie">
 									<div class="ewf-pie__chart" data-percent="<?php echo ! empty( $piechart['piechart_value'] ) ? esc_attr( $piechart['piechart_value'] ) : 55; ?>" data-barColor="<?php echo esc_attr( $color ); ?>" data-trackColor="#e1e1e1" data-lineWidth="<?php echo ! empty( $piechart['piechart_bar_width'] ) ? esc_attr( $piechart['piechart_bar_width'] ) : 15; ?>" data-barSize="<?php echo ! empty( $piechart['piechart_size'] ) ? esc_attr( $piechart['piechart_size'] ) : 250; ?>" data-lineCap="square">
 										<?php if ( 'icon' === $piechart['piechart_type'] ) { ?>
@@ -110,24 +113,23 @@ $span = 12 / absint( $fields['piecharts_column_group'] );
 							</div>
 						<?php } ?>
 					</div>
-					
-					<div class="col-md-<?php echo $section_item_columns; ?>">
-						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'] ) ); ?>			
-					</div>
-					
+
+					<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'], array( 'bottom' => true ) ) ); ?>			
+					</div>	
 				</div>
-			
-			<?php }else{ ?>
-			
+
+			<?php } else { ?>
+
 				<div class="row">
 					<div class="col-md-12">
 						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['piecharts_subtitle'], $fields['piecharts_title'] ) ); ?>			
 					</div>
 				</div>
-			
+
 				<div class="row">
 					<?php foreach ( $fields['piecharts'] as $piechart ) { ?>
-						<div class="col-md-<?php echo $section_item_columns; ?>">
+						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 							<div class="ewf-pie">
 								<div class="ewf-pie__chart" data-percent="<?php echo ! empty( $piechart['piechart_value'] ) ? esc_attr( $piechart['piechart_value'] ) : 55; ?>" data-barColor="<?php echo esc_attr( $color ); ?>" data-trackColor="#e1e1e1" data-lineWidth="<?php echo ! empty( $piechart['piechart_bar_width'] ) ? esc_attr( $piechart['piechart_bar_width'] ) : 15; ?>" data-barSize="<?php echo ! empty( $piechart['piechart_size'] ) ? esc_attr( $piechart['piechart_size'] ) : 250; ?>" data-lineCap="square">
 									<?php if ( 'icon' === $piechart['piechart_type'] ) { ?>
@@ -152,11 +154,11 @@ $span = 12 / absint( $fields['piecharts_column_group'] );
 						</div>
 					<?php } ?>
 				</div>
-			
+
 			<?php } ?>
-			
+
 		</div>
 		</div>
-		
+
 	</div>
 </section>

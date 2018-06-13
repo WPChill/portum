@@ -1,7 +1,7 @@
 
 body {
   font-family: $accent-1-font;
-  background: #fff;
+  background-color: #fff;
   font-size: 16px;
   overflow-x: hidden;
   font-weight: 400;
@@ -30,9 +30,6 @@ h6 {
   color: $headings-color;
   font-family: $accent-2-font;
   margin-bottom: 25px;
-  /*
-  color: #232323;
-  */
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -174,8 +171,8 @@ dd {
 }
 
 /* ==========================================================================
-   =Links
-   ========================================================================== */
+  =Links
+  ========================================================================== */
 
 a, a:visited {
   color: $link-color;
@@ -188,7 +185,7 @@ a, a:visited {
 	*/
 
 a:active {
-  background: transparent;
+  background-color: transparent;
   /* 1 */
   color: $link-active-color;
 }
@@ -200,70 +197,6 @@ a:active, a:hover, a:focus {
 
 a:hover, a:focus {
   color: $link-hover-color;
-}
-
-/* =Buttons
-   ========================================================================== */
-
-input.btn,
-button.btn {
-  min-width: 120px;
-}
-
-.btn {
-  position: relative;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
-  background-clip: padding-box;
-  display: inline-block;
-  padding: 9px 22px;
-  margin-bottom: 25px;
-  background-color: $accent-1-color;
-  color: #ffffff;
-  font: inherit;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 35px;
-  border: none;
-  -webkit-appearance: none;
-}
-
-a.btn {
-  color: #fff;
-}
-
-.btn:focus,
-.btn:hover {
-  background-color: $accent-2-color;
-  color: #ffffff;
-}
-
-.btn:active {
-  background-color: $accent-3-color;
-  color: #ffffff;
-}
-
-.btn.btn-small {
-  padding: 2px 22px;
-}
-
-.btn.btn-large {
-  padding: 15px 30px;
-}
-
-.btn-contrast {
-  background-color: $accent-2-color;
-  color: #ffffff;
-}
-
-.btn-contrast:focus,
-.btn-contrast:hover {
-  background-color: $accent-1-color;
-}
-
-.btn-contrast:active {
-  background-color: $accent-3-color;
 }
 
 /* =Social Links
@@ -405,18 +338,18 @@ a.social-icon:active {
 		z-index: 9;
 		margin-top: 0;
 		animation: anim_affluent_sliderPro_category 1000ms linear both;
-		animation-delay: 400ms;
+    animation-delay: 400ms;
 		font-size: 30px;
 		font-weight: 300;
 	}
 
 	span {
-		color:$headings-color;
-		text-transform: uppercase;
-		letter-spacing: 2px;
+    color:$headings-color;
+    font-size: 16px; 
 		opacity:.65;
 	}
 }
+
 
 .contrast { 
 	.headline h3 {
@@ -442,13 +375,20 @@ a.social-icon:active {
 	.headline {
 		text-align:center;
 	}
+	
+	.headline--xs-bottom  {
+		margin-top:55px;
+		
+		h3{ margin: 0; }
+	}
+
 }
 
 /* ------------------------------ HEADLINE section - END --------------------*/
 
 /* ==========================================================================
-   =Images
-   ========================================================================== */
+  =Images
+  ========================================================================== */
 
 img {
   max-width: 100%;
@@ -459,8 +399,8 @@ img {
 }
 
 /* ==========================================================================
-   =Tables
-   ========================================================================== */
+  =Tables
+  ========================================================================== */
 table,
 th,
 td {

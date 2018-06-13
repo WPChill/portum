@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php $cform = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
+<?php $cform       = absint( get_theme_mod( 'portum_contact_form', 0 ) ); ?>
 <?php $cform_title = get_theme_mod( 'portum_footer_contact_title', __( 'Learn more about us', 'portum' ) ); ?>
 
 <?php if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) { ?>
@@ -22,12 +22,12 @@
 				echo esc_html( $cform_title );
 				?>
 			</h4>
-			<button class="btn-contrast btn contact-action contact-submit" type="button">
+			<a class="ewf-btn ewf-btn--large contact-action contact-submit">
 				<?php
 				// Translators: Contact button label
 				echo esc_html__( 'Contact us', 'portum' );
 				?>
-			</button>
+			</a>
 		</div>
 		<div class="contact-form-content">
 			<?php echo do_shortcode( '[contact-form-7 id="' . absint( $cform ) . '" title="Contact Form"]' ); ?>

@@ -253,14 +253,14 @@ class Portum_Helper {
 
 		switch ( $element ) {
 			case 'author':
-				$html = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
+				$html  = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
 				$html .= '<a class="post-author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a>';
 				$html .= '</span>';
 
 				echo wp_kses_post( $html );
 				break;
 			case 'category':
-				$html = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
+				$html  = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
 				$html .= get_the_category_list( ' ' );
 				$html .= '</div><!-- .cat-links -->';
 
@@ -270,7 +270,7 @@ class Portum_Helper {
 				echo ' <span class="comments-link"><a title="' . esc_attr__( 'Comment on Post', 'portum' ) . '" href="' . esc_url( get_the_permalink( get_the_ID() ) ) . '#comments">' . esc_html( $comments->approved ) . '</a></span>';
 				break;
 			case 'tags':
-				$html = '<div class="tags-links">';
+				$html  = '<div class="tags-links">';
 				$html .= get_the_tag_list( '', ' ' );
 				$html .= '</div><!-- .tags-links -->';
 				echo wp_kses_post( $html );
@@ -294,12 +294,16 @@ class Portum_Helper {
 		$subtitle = '',
 		$title = '',
 		$args = array(
-			'center'  		=> false,
+			'bottom' => false,
+			'center' => false,
 		)
 	) {
 		$class = 'headline';
-		if ( $args['center'] ) {
+		if ( ! empty( $args['center'] ) ) {
 			$class .= ' text-center';
+		}
+		if ( ! empty( $args['bottom'] ) ) {
+			$class .= ' headline--xs-bottom';
 		}
 		$html = '<div class="' . $class . '">';
 
@@ -437,7 +441,6 @@ class Portum_Helper {
 			$video_id = $vm_matches[5];
 			$type     = 'vimeo';
 		}
-
 
 		return array(
 			'video_id'   => $video_id,

@@ -36,6 +36,10 @@ $menu-dropdown-background-color: #a1083a !default;
 $menu-dropdown-hover-background-color: #940534 !default;
 
 
+// Portfolio
+// 
+$color-background-portfolio-overlay: rgba(255, 255, 255, 0.95) !default;
+
 
 // Blog
 //
@@ -98,26 +102,28 @@ $contrast-link-active-color: #414444 !default; // Link :active color
 $contrast-border-color: rgba(255, 255, 255, 0.25) !default; // border color
 
 
+// Advanced Slider 
+
+$color-background-slider-overlay: rgb(0,0,0) !default;
+
 
 // Spacing
-//
-$spacing-xx-small: 12.5px !default;
-$spacing-x-small: 17.5px !default;
-$spacing-small: 35px !default;
-$spacing-medium: 70px !default;
-$spacing-large: 105px !default;
-$spacing-xl-large: 140px !default;
-$spacing-xxl-large: 175px !default;
 
+$spacing-xx-small: 13px !default;
+$spacing-x-small: 19.5px !default;
+$spacing-small: 26px !default;
+$spacing-medium: 52px !default;
+$spacing-large: 78px !default;
+$spacing-xl-large: 104px !default;
+$spacing-xxl-large: 130px !default;
 
 
 // Portfolio Spacing
-//
+
 $spacing-portfolio-none: 0 !default;
-$spacing-portfolio-line: 1px !default;
-$spacing-portfolio-small: 10px !default;
-$spacing-portfolio-medium: 20px !default;
-$spacing-portfolio-large: 30px !default;
+$spacing-portfolio-small: 1px !default;
+$spacing-portfolio-medium: 13px !default;
+$spacing-portfolio-large: 26px !default;
 
 
 

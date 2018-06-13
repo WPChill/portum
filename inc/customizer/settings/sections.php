@@ -36,7 +36,8 @@ $panels = array(
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Homepage Content', 'portum' ),
+			'title'          => esc_html__( 'Epsilon Page Builder', 'portum' ),
+			'hidden'         => true,
 		),
 	),
 	/**
@@ -51,6 +52,20 @@ $panels = array(
 			'title'          => esc_html__( 'Colors', 'portum' ),
 		),
 	),
+	/**
+	 * Customization panel
+	 */
+	array(
+		'id'   => 'portum_panel_customization',
+		'args' => array(
+			'priority'       => 28,
+			'capability'     => 'edit_theme_options',
+			'theme_supports' => '',
+			'title'          => esc_html__( 'Customization', 'portum' ),
+		),
+	),
+
+
 	/**
 	 * Content panel
 	 */
@@ -72,6 +87,44 @@ $panels = array(
  * Register sections
  */
 $sections = array(
+
+	/**
+	 * feedback section
+	 */
+	array(
+		'id'   => 'portum_feedback_section',
+		'args' => array(
+			'type'        => 'epsilon-section-pro',
+			'title'       => esc_html__( 'Help Improve Portum', 'portum' ),
+			'button_text' => esc_html__( 'Give Feedback', 'portum' ),
+			'button_url'  => esc_url_raw( 'http://bit.ly/feedback-portum' ),
+			'priority'    => 0,
+		),
+	),
+
+	/**
+	 * Recommended actions section
+	 */
+	array(
+		'id'   => 'portum_recomended_section',
+		'args' => array(
+			'type'                         => 'epsilon-section-recommended-actions',
+			'title'                        => esc_html__( 'Recomended Actions', 'portum' ),
+			'social_text'                  => esc_html__( 'Macho Themes is also social', 'portum' ),
+			'plugin_text'                  => esc_html__( 'Recomended Plugins', 'portum' ),
+			'actions'                      => Portum_Dashboard_Setup::get_instance()->get_actions(),
+			'plugins'                      => Portum_Dashboard_Setup::get_instance()->get_plugins(),
+			'theme_specific_option'        => Portum_Dashboard_Setup::get_instance()->theme['theme-slug'] . '_actions_left',
+			'theme_specific_plugin_option' => Portum_Dashboard_Setup::get_instance()->theme['theme-slug'] . '_plugins_left',
+			'facebook'                     => 'https://www.facebook.com/machothemes',
+			'twitter'                      => 'https://twitter.com/MachoThemez',
+			'wp_review'                    => false,
+			'priority'                     => 0,
+		),
+	),
+
+
+
 	/**
 	 * General section
 	 */
@@ -84,13 +137,22 @@ $sections = array(
 		),
 	),
 	array(
+		'id'   => 'portum_typography_section',
+		'args' => array(
+			'title'    => esc_html__( 'Typography', 'portum' ),
+			'panel'    => 'portum_panel_customization',
+			'priority' => 2,
+		),
+	),
+	array(
 		'id'   => 'portum_layout_section',
 		'args' => array(
-			'title'    => esc_html__( 'Layout & Typography', 'portum' ),
-			'panel'    => 'portum_panel_general',
+			'title'    => esc_html__( 'Layout', 'portum' ),
+			'panel'    => 'portum_panel_customization',
 			'priority' => 3,
 		),
 	),
+
 	array(
 		'id'   => 'portum_footer_section',
 		'args' => array(
@@ -102,7 +164,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_misc_section',
 		'args' => array(
-			'title'    => esc_html__( 'Misc', 'portum' ),
+			'title'    => esc_html__( 'Integrations', 'portum' ),
 			'panel'    => 'portum_panel_general',
 			'priority' => 60,
 		),
@@ -113,10 +175,10 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'       => esc_html__( 'Page Sections', 'portum' ),
-			'description' => esc_html__( 'Portum theme pages are rendered through the use of these sections.', 'portum' ),
+			'title'       => esc_html__( 'Epsilon Page Builder', 'portum' ),
+			'description' => esc_html__( 'You can rearrange the sections below using drag & drop', 'portum' ),
 			'priority'    => 0,
-			'panel'       => 'portum_panel_content',
+			//'panel'       => 'portum_panel_content',
 		),
 	),
 

@@ -4,8 +4,6 @@
 .blog-news-item {
     overflow: hidden;
     background-color: #fff;
-    -webkit-box-shadow: 0px 0px 40.5px 4.5px rgba(35, 31, 32, 0.07);
-    -moz-box-shadow: 0px 0px 40.5px 4.5px rgba(35, 31, 32, 0.07);
     box-shadow: 0px 0px 40.5px 4.5px rgba(35, 31, 32, 0.07);
     margin: 0 0 45px 0;
 	
@@ -45,28 +43,26 @@
 	.news-date, 
 	.news-category {
 		text-align: center;
-		letter-spacing: 2px;
 		z-index: 5;
 		position: absolute;
 		bottom: 0;
 		color: transparent;
-		background: transparent;
-		-ms-transform: skewX(-15deg);
-		-webkit-transform: skewX(-15deg);
+		background-color: transparent;
 		transform: skewX(-15deg);
 	}
 	
 	.news-date {
-		height:36px;
+		height:40px;
 		left: -245px;
 		width: 250px;
 
 		strong {
-			height: 36px;
+			height: 40px;
+			font-weight: 400;
 			float: right;
 			text-align: right;
-			background: #151C1F;
-			transition: 150ms all;
+			background-color: #151C1F;
+			transition:background-color 150ms;
 		}
 		
 		span {
@@ -75,39 +71,33 @@
 	}
 
 	.news-category {
-		height:36px;
+		height:40px;
 		left: 4px;
 
 		a {
-			letter-spacing: 2px;
 			padding: 0 40px 0 45px;
 			margin-right:10px;
 		}
 		
 		strong {
-			background: $accent-1-color;
-			transition: 150ms all;
+			font-weight: 400;
+			background-color: $accent-1-color;
+			transition: background-color 150ms;
 			
 		}
 		
 		&:hover strong {
-			background: $accent-2-color;
+			background-color: $accent-2-color;
 		}
 	}
 	
 	.news-date span, 
 	.news-category a {
 		text-transform: uppercase;
-		font-size: 14px;
-		font-family: $accent-1-font;
-		font-weight: 400;
 		text-align: center;
 		display: block;
 		color: #fff;
-		font-weight: normal;
 		line-height: 40px;
-		-ms-transform: skewX(15deg);
-		-webkit-transform: skewX(15deg);
 		transform: skewX(15deg);
 	}
 
@@ -137,7 +127,6 @@
 	
 	h6 {
 		color: #101920;
-		font-family: $accent-2-font;
 		font-size: 16px;
 		font-weight: 500;
 		margin-bottom: 5px;
@@ -145,9 +134,7 @@
 	
 	span {
 		color: #999;
-		font-family: $accent-1-font;
 		font-size: 12px;
-		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
 	
@@ -158,22 +145,27 @@
 }
 
 @media (max-width: 991px) {
-	
+	.blog-news-item {
+		
+		.post-details {
+			padding-bottom:30px;
+		}
+	}
 }
 
 @media (max-width: 768px) {
 
-   .blog-news-item {
-	   
+	.blog-news-item {
+
 		.featured {
-			.overlay { display: none; }
 			img { width:100%;height:auto; }
 		}
 		
 		.news-category {
-			top:-18px;
+			top:auto;
+			bottom:0;
 			width:100%; 
-			left:120px;
+			left:140px;
 		}
 		
 		.news-category strong a {
@@ -181,24 +173,50 @@
 		}
 		
 		.news-date {
-			top:-18px;
+			top:auto;
+			bottom:0;
 			left:0;
-			width:120px;
-		} 
-		
-		.news-date strong {
-			float:none;
-			width:120%;
-			margin-left:-10px;
+			width:140px;
+			
+			strong {
+				float:none;
+				width:100%;
+				margin-left:8px;
+			}
 		}
 		
 		.post-details {
-			padding-bottom:60px;
-			padding-right:40px;
+			padding-bottom:0;
+			padding-right:0;
 		}
     }
+}
+
+@media (max-width: 767px) {
 	
-  
+	.blog-news-item {
+		.news-date { 
+			display:none;
+		}
+		
+		.featured {
+			width:auto;
+			.overlay { display: none; }
+		}
+		
+		.news-category {
+			width:110%; 
+			left:-10px;
+			
+			strong a {
+				text-align:center;
+			}
+		}
+		
+		.post-details {
+			padding:25px 0  40px 40px;
+		}
+	}
 }
 
 /* ----------------------------------- #09 - BLOG section - END --------------------------------*/

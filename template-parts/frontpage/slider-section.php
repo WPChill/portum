@@ -28,7 +28,7 @@ wp_enqueue_style( 'slick' );
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 				<div class="item">
 					<?php if ( ! empty( $slide['slides_image'] ) ) { ?>
-						<img src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
+						<img class="owl-lazy" data-src="<?php echo esc_url( $slide['slides_image'] ); ?>" alt="<?php echo ! empty( $slide['title'] ) ? esc_html( $slide['title'] ) : ''; ?>"/>
 					<?php } ?>
 					<div class="slider-details">
 						<?php if ( ! empty( $slide['slides_title'] ) ) { ?>
@@ -49,16 +49,10 @@ wp_enqueue_style( 'slick' );
 		<ul class="pager-slider clearfix pager-items-0<?php echo count( $fields['slides'] ); ?>">
 			<?php $i = 1; ?>
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
-
-				<li class="pager-item-0<?php echo absint( $i ); ?> <?php echo 1 === $i ? 'active' : ''; ?>">
-					<strong>
-						<a href="#"><span>0<?php echo absint( $i ); ?></span> <?php echo esc_html( $slide['slides_title'] ); ?>
-						</a>
-					</strong>
+				<li<?php echo 1 === $i ? ' class="active"' : ''; ?>>
+					<a href="#"><strong>0<?php echo absint( $i ); ?></strong> <?php echo esc_html( $slide['slides_title'] ); ?></a>
 				</li>
-
 				<?php $i ++; ?>
-
 			<?php } ?>
 		</ul>
 	</div>
