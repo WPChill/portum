@@ -35,7 +35,7 @@ wp_enqueue_style( 'slick' );
 ?>
 <div data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-	<div class="<?php echo 'ewf-section-' . $fields['advanced_slider_section_visibility']; ?> ewf-slider"
+	<div class="<?php echo 'ewf-section-' . $fields['advanced-slider_section_visibility']; ?> ewf-slider"
 	     data-slider-mode-fade="<?php echo 'fade' === $fields['slider_transition'] ? 'true' : 'false'; ?>"
 	     data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>"
 	     data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>"
