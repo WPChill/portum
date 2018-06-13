@@ -26,20 +26,7 @@ $panels = array(
 			'title'          => esc_html__( 'General options', 'portum' ),
 		),
 	),
-	/**
-	 * Content Panel
-	 */
-	array(
-		'id'   => 'portum_panel_content',
-		'args' => array(
-			'priority'       => 27,
-			'capability'     => 'edit_theme_options',
-			'theme_supports' => '',
-			'type'           => 'epsilon-panel-regular',
-			'title'          => esc_html__( 'Epsilon Page Builder', 'portum' ),
-			'hidden'         => true,
-		),
-	),
+
 	/**
 	 * Color panel
 	 */
@@ -77,7 +64,6 @@ $panels = array(
 			'theme_supports' => '',
 			'type'           => 'epsilon-panel-regular',
 			'title'          => esc_html__( 'Front Page Content', 'portum' ),
-			'panel'          => 'portum_panel_content',
 			'hidden'         => true,
 		),
 	),
@@ -122,7 +108,6 @@ $sections = array(
 			'priority'                     => 0,
 		),
 	),
-
 
 
 	/**
@@ -175,10 +160,8 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'       => esc_html__( 'Epsilon Page Builder', 'portum' ),
-			'description' => esc_html__( 'You can rearrange the sections below using drag & drop', 'portum' ),
-			'priority'    => 0,
-			//'panel'       => 'portum_panel_content',
+			'title'    => esc_html__( 'Epsilon Page Builder', 'portum' ),
+			'priority' => 0,
 		),
 	),
 
