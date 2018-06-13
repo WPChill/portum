@@ -96,7 +96,7 @@ $sections = array(
 		'args' => array(
 			'type'        => 'epsilon-section-pro',
 			'title'       => esc_html__( 'Help Improve Portum', 'portum' ),
-			'button_text' => esc_html__( 'Give Feedback', 'portum' ),
+			'button_text' => esc_html__( 'Send Feedback', 'portum' ),
 			'button_url'  => esc_url_raw( 'http://bit.ly/feedback-portum' ),
 			'priority'    => 0,
 		),
