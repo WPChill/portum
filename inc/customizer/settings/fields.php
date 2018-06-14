@@ -18,16 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * General section options
  */
-Epsilon_Customizer::add_field(
-	'portum_enable_go_top',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Go to top button', 'portum' ),
-		'description' => esc_html__( 'Toggle the display of the go to top button.', 'portum' ),
-		'section'     => 'portum_header_section',
-		'default'     => true,
-	)
-);
+
 /**
  * Layout section options
  */
@@ -299,32 +290,8 @@ Epsilon_Customizer::add_field(
 		'type'     => 'epsilon-toggle',
 		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
 		'section'  => 'portum_header_section',
-		'priority' => 0,
 		'default'  => true,
-	)
-);
-
-Epsilon_Customizer::add_field(
-	'portum_header_over_content',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Set header over content', 'portum' ),
-		'description' => esc_html__( 'This will set header over slider, using colors you can make the header transparent.', 'portum' ),
-		'section'     => 'portum_header_section',
-		'priority'    => 1,
-		'default'     => false,
-	)
-);
-
-Epsilon_Customizer::add_field(
-	'portum_header_shadow',
-	array(
-		'type'        => 'epsilon-toggle',
-		'label'       => esc_html__( 'Header shadow', 'portum' ),
-		'description' => esc_html__( 'This will add or remove header shadow.', 'portum' ),
-		'section'     => 'portum_header_section',
-		'priority'    => 2,
-		'default'     => true,
+		'priority' => 0,
 	)
 );
 
@@ -333,7 +300,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'            => 'epsilon-layouts',
 		'section'         => 'portum_header_section',
-		'priority'        => 2,
+		'priority'        => 1,
 		'layouts'         => array(
 			1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
 			2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
@@ -358,6 +325,41 @@ Epsilon_Customizer::add_field(
 		'active_callback' => array( 'Portum_Customizer', 'header_top_bar_enabled_callback' ),
 	)
 );
+
+
+Epsilon_Customizer::add_field(
+	'portum_header_over_content',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Set header over content', 'portum' ),
+		'description' => esc_html__( 'This will set header over slider, using colors you can make the header transparent.', 'portum' ),
+		'section'     => 'portum_header_section',
+		'default'     => false,
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'portum_header_shadow',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Header shadow', 'portum' ),
+		'description' => esc_html__( 'This will add or remove header shadow.', 'portum' ),
+		'section'     => 'portum_header_section',
+		'default'     => true,
+	)
+);
+
+Epsilon_Customizer::add_field(
+	'portum_enable_go_top',
+	array(
+		'type'        => 'epsilon-toggle',
+		'label'       => esc_html__( 'Go to top button', 'portum' ),
+		'description' => esc_html__( 'Toggle the display of the go to top button.', 'portum' ),
+		'section'     => 'portum_header_section',
+		'default'     => true,
+	)
+);
+
 /**
  * Footer section options
  */
