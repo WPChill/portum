@@ -161,7 +161,7 @@ $sections = array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
 			'title'              => esc_html__( 'Epsilon Page Builder', 'portum' ),
-			'description'        => esc_html__( 'Drag & drop to re-order front-page sections.', 'portum' ) . Epsilon_Helper::add_description_button(),
+			'description'        => esc_html__( 'Drag & drop to re-order front-page sections.', 'portum' ),
 			'description_hidden' => true,
 			'priority'           => 0,
 		),
