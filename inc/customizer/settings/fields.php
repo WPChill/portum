@@ -1103,6 +1103,7 @@ Epsilon_Customizer::add_field(
 				'slide_background_color' => array(
 				'label'      => esc_html__( 'Background color', 'portum' ),
 				'type'       => 'epsilon-color-picker',
+				'mode'       => 'rgba',
 				'defaultVal' => '#f9f9fa',
 				'default'    => '#f9f9fa',
 			),
