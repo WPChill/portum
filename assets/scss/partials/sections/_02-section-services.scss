@@ -1,106 +1,96 @@
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
 .section-services {
-  background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .8);
 }
 
 .services-item {
-  margin-bottom:35px;
-  
-  i {
-    height:30px;
-    width:30px;
-    padding:20px;
-    text-align: center;
-    border-width:2px;
-    border-style: solid;
-	  color: #fff;
-	  font-size: 30px;
-  }
-  	
-  span {
-    display: block;
-	  color: $accent-1-color;
-	  margin-top: 15px;
-  }
-  
-  strong {
-    display: block;
-	  color: #fff;
-  }  
+    margin-bottom: 35px;
+    i {
+        height: 36px;
+        width: 36px;
+        padding: 20px;
+        text-align: center;
+        border-width: 2px;
+        border-style: solid;
+        color: #fff;
+        font-size: 36px;
+        display: block;
+    }
 }
 
 .services-item--filled-round.services-item--color-default i,
 .services-item--filled-square.services-item--color-default i {
-  background-color: #fff;
-  border-color: #fff;
-  color:#333;
+    background-color: #fff;
+    border-color: #fff;
+    color: #333;
 }
 
 .services-item--filled-round.services-item--color-accent1 i,
 .services-item--filled-square.services-item--color-accent1 i {
-  background-color: $accent-1-color;
-  border-color: $accent-1-color;
+    background-color: $accent-1-color;
+    border-color: $accent-1-color;
 }
 
 .services-item--filled-round.services-item--color-accent2 i,
 .services-item--filled-square.services-item--color-accent2 i {
-  background-color: $accent-2-color;
-  border-color: $accent-2-color;
+    background-color: $accent-2-color;
+    border-color: $accent-2-color;
 }
 
 .services-item--border-square.services-item--color-default i,
 .services-item--border-round.services-item--color-default i {
-  background-color: transparent;
-  border-color: #fff;
-  color:#fff;
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
 }
 
 .services-item--border-square.services-item--color-accent1 i,
 .services-item--border-round.services-item--color-accent1 i {
-  background-color: transparent;
-  border-color: $accent-1-color;
-  color: $accent-1-color;
+    background-color: transparent;
+    border-color: $accent-1-color;
+    color: $accent-1-color;
 }
 
 .services-item--border-square.services-item--color-accent2 i,
 .services-item--border-round.services-item--color-accent2 i {
-  background-color:  transparent;
-  border-color: $accent-2-color;
-  color: $accent-2-color;
+    background-color: transparent;
+    border-color: $accent-2-color;
+    color: $accent-2-color;
 }
 
 .services-item--no-border.services-item--color-default i,
 .services-item--no-border.services-item--color-default i {
-  background-color: transparent;
-  border-color: transparent;
-  color:#fff;
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
 }
 
 .services-item--no-border.services-item--color-accent1 i,
 .services-item--no-border.services-item--color-accent1 i {
-  background-color: transparent;
-  border-color: transparent;
-  color: $accent-1-color;
+    background-color: transparent;
+    border-color: transparent;
+    color: $accent-1-color;
 }
 
 .services-item--no-border.services-item--color-accent2 i,
 .services-item--no-border.services-item--color-accent2 i {
-  background-color: transparent;
-  border-color: transparent;
-  color: $accent-2-color;
+    background-color: transparent;
+    border-color: transparent;
+    color: $accent-2-color;
 }
 
 .services-item--filled-round i,
 .services-item--border-round i {
-  border-radius:80px; 
-  border-style: solid;
+    border-radius: 80px;
+    border-style: solid;
 }
 
 @media (max-width: 768px) {
-	.services-item {
-		text-align:center;
-	}
+    .services-item {
+        text-align: center;
+    }
 }
+
 
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/

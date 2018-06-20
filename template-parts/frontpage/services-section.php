@@ -50,6 +50,7 @@ $parent_attr = array(
 					<div class="row">
 						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
 							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 						</div>
 
 						<?php if ( ! empty( $fields['services'] ) ) { ?>
@@ -63,11 +64,11 @@ $parent_attr = array(
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_title'] ) ) { ?>
-													<span><?php echo esc_html( $service['service_title'] ); ?></span>
+													<h5><?php echo esc_html( $service['service_title'] ); ?></h5>
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
-													<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
+													<p><?php echo esc_html( $service['service_description'] ); ?></p>
 												<?php } ?>
 											</div>
 										</div>
@@ -89,11 +90,11 @@ $parent_attr = array(
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_title'] ) ) { ?>
-													<span><?php echo esc_html( $service['service_title'] ); ?></span>
+													<h5><?php echo esc_html( $service['service_title'] ); ?></h5>
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
-													<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
+													<p><?php echo esc_html( $service['service_description'] ); ?></p>
 												<?php } ?>
 											</div>
 										</div>
@@ -104,12 +105,14 @@ $parent_attr = array(
 
 						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
 							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'], array( 'bottom' => true ) ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 						</div>
 					</div>
 				<?php } else { ?>
 					<div class="row">
 						<div class="col-md-12">
 							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 						</div>
 					</div>
 
@@ -124,11 +127,11 @@ $parent_attr = array(
 										<?php } ?>
 
 										<?php if ( ! empty( $service['service_title'] ) ) { ?>
-											<span><?php echo esc_html( $service['service_title'] ); ?></span>
+											<h5><?php echo esc_html( $service['service_title'] ); ?></h5>
 										<?php } ?>
 
 										<?php if ( ! empty( $service['service_description'] ) ) { ?>
-											<strong><?php echo esc_html( $service['service_description'] ); ?></strong>
+											<p><?php echo esc_html( $service['service_description'] ); ?></p>
 										<?php } ?>
 									</div>
 								</div>

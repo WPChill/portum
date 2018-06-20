@@ -427,6 +427,12 @@ class Portum_Repeatable_Sections {
 					'default'           => wp_kses_post( 'SERVICES' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'services_description'            => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'type'              => 'epsilon-text-editor',
+					'default'           => esc_html__( 'Add a description text over here', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
 				'services_grouping'          => array(
 					'label'       => esc_html__( 'Services Item To Show', 'portum' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
@@ -552,7 +558,7 @@ class Portum_Repeatable_Sections {
 				'about_image'                => array(
 					'label'   => esc_html__( 'Image', 'portum' ),
 					'type'    => 'epsilon-image',
-					'size'    => 'large',
+					'size'    => 'original',
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/01_about.png' ),
 				),
 				'about_button_primary_label' => array(
@@ -1326,7 +1332,7 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'Section description', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'shortcodes_text'                 => array(
+				'shortcodes_text'              => array(
 					'label'             => esc_html__( 'Extra text', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => null,
