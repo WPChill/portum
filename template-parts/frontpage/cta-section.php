@@ -30,22 +30,10 @@ $parent_attr = array(
 		$button_primary   = $fields['cta_button_primary_label'] . $fields['cta_button_primary_url'];
 		$button_secondary = $fields['cta_button_secondary_label'] . $fields['cta_button_secondary_url'];
 		?>
-
-		<!--
-		<?php if ( ! empty( $fields['cta_title'] ) ) { ?>
-			<h1><?php echo wp_kses_post( $fields['cta_title'] ); ?></h1>
-		<?php } ?>
-
-		<?php if ( ! empty( $fields['cta_description'] ) ) { ?>
-
-			<?php echo wp_kses_post( $fields['cta_description'] ); ?>
-
-		<?php } ?>
-		-->
-
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'cta', $fields ) ); ?>">
 				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+
 				<div class="row">
 
 					<?php if ( $button_primary . $button_secondary ) { ?>

@@ -440,15 +440,6 @@ a.social-icon:active
     color: #1a171c;
 }
 
-.contrast .headline h3
-{
-    color: #fff;
-}
-.contrast .headline span
-{
-    color: #fff;
-}
-
 @media (min-width: 768px)
 {
     .ewf-section--title-right .headline:last-child h3,
@@ -6326,10 +6317,12 @@ input[type='button']:active
 }
 .services-item i
 {
-    font-size: 30px;
+    font-size: 36px;
 
-    width: 30px;
-    height: 30px;
+    display: block;
+
+    width: 36px;
+    height: 36px;
     padding: 20px;
 
     text-align: center;
@@ -6337,20 +6330,6 @@ input[type='button']:active
     color: #fff;
     border-width: 2px;
     border-style: solid;
-}
-.services-item span
-{
-    display: block;
-
-    margin-top: 15px;
-
-    color: #0385d0;
-}
-.services-item strong
-{
-    display: block;
-
-    color: #fff;
 }
 
 .services-item--filled-round.services-item--color-default i,
@@ -8626,21 +8605,21 @@ input[type='button']:active
 {
     .ewf-slider .ewf-slider__slides li
     {
-        padding: 75px 15px;
+        padding: 50px 15px;
     }
 }
 @media (min-width: 992px)
 {
     .ewf-slider .ewf-slider__slides li
     {
-        padding: 75px 20px;
+        padding: 50px 20px;
     }
 }
 @media (min-width: 1200px)
 {
     .ewf-slider .ewf-slider__slides li
     {
-        padding: 100px 30px;
+        padding: 50px 30px;
     }
 }
 .ewf-slider .ewf-slider__slides li .ewf-slider-slide__overlay
@@ -8666,7 +8645,7 @@ input[type='button']:active
     .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
     {
         width: 730px;
-        min-height: 350px;
+        min-height: 300px;
         margin: 0 auto;
     }
 }
@@ -8675,7 +8654,7 @@ input[type='button']:active
     .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
     {
         width: 940px;
-        min-height: 400px;
+        min-height: 300px;
     }
 }
 @media (min-width: 1200px)
@@ -8683,7 +8662,7 @@ input[type='button']:active
     .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
     {
         width: 1140px;
-        min-height: 500px;
+        min-height: 300px;
     }
 }
 @media (min-width: 768px)
