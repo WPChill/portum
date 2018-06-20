@@ -48,7 +48,7 @@ wp_enqueue_script( 'magnificPopup' );
 			<div class="ewf-section__content">
 
 				<div class="row">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'], array( 'center' => true ) ) ); ?>
+					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title']) ); ?>
 
 					<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
 						<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo esc_attr( $fields['portfolio_column_spacing'] ); ?> ewf-portfolio--columns-<?php echo esc_attr( $fields['portfolio_column_group'] ); ?>">
