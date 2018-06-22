@@ -2155,7 +2155,7 @@ class Portum_Repeatable_Sections {
 					'label'    => esc_html__( 'Slides to show', 'portum' ),
 					'type'     => 'selectize',
 					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_cta' ),
+					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_title' ),
 					'default'  => array( 'all' ),
 				),
 				'slider_navigation'        => array(

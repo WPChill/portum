@@ -11,7 +11,7 @@ $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' 
 $fields    = $frontpage->sections[ $section_id ];
 $grouping  = array(
 	'values'   => $fields['slider_advanced_grouping'],
-	'group_by' => 'slide_cta',
+	'group_by' => 'slide_title',
 );
 
 $arr = array(
