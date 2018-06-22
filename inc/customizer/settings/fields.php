@@ -455,7 +455,7 @@ if ( defined( 'WPCF7_VERSION' ) ) {
 	Epsilon_Customizer::add_field(
 		'portum_footer_contact_title',
 		array(
-			'type'              => 'text',
+			'type'    => 'epsilon-text-editor',
 			'section'           => 'portum_footer_section',
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => __( 'Learn more about us', 'portum' ),
