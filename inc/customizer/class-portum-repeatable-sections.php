@@ -98,9 +98,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -222,9 +219,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -294,6 +288,83 @@ class Portum_Repeatable_Sections {
 			),
 		);
 	}
+
+
+	/**
+	 * Repeatable slider section
+	 *
+	 * @return array
+	 */
+
+	private function repeatable_advanced_slider() {
+		$slider = array(
+			'id'          => 'advanced-slider',
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
+			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
+			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
+			'fields'      => array(
+				'slider_transition'        => array(
+					'label'   => esc_html__( 'Transition', 'portum' ),
+					'type'    => 'select',
+					'default' => 'slide',
+					'choices' => array(
+						'fade'  => esc_html__( 'Fade', 'portum' ),
+						'slide' => esc_html__( 'Slide', 'portum' ),
+					),
+				),
+				'slider_speed'             => array(
+					'label'   => esc_html__( 'Speed', 'portum' ),
+					'type'    => 'epsilon-slider',
+					'default' => 500,
+					'choices' => array(
+						'min'  => 0,
+						'max'  => 2000,
+						'step' => 100,
+					),
+				),
+				'slider_autostart'         => array(
+					'label'   => esc_html__( 'Autostart', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_infinite'          => array(
+					'label'   => esc_html__( 'Infinite slides', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_pager'             => array(
+					'label'   => esc_html__( 'Pager', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_controls'          => array(
+					'label'   => esc_html__( 'Controls', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_advanced_grouping' => array(
+					'label'    => esc_html__( 'Slides to show', 'portum' ),
+					'type'     => 'selectize',
+					'multiple' => true,
+					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_title' ),
+					'default'  => array( 'all' ),
+				),
+				'slider_navigation'        => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'portum_advanced_slides_section',
+					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
+				),
+				'slider_repeater_field'    => array(
+					'type'    => 'hidden',
+					'default' => 'portum_advanced_slides',
+				),
+			),
+		);
+
+		return $slider;
+	}
+
 
 	/**
 	 * Repeatable slider section
@@ -380,9 +451,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -503,9 +571,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -625,9 +690,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -744,9 +806,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -850,9 +909,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -953,9 +1009,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -1061,9 +1114,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -1178,9 +1228,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -1285,9 +1332,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -1399,9 +1443,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -1551,9 +1592,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -1670,9 +1708,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -1791,9 +1826,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -1898,9 +1930,6 @@ class Portum_Repeatable_Sections {
 				'styling' => array(
 					'background-color'         => array(
 						'default' => false,
-					),
-					'background-color-opacity' => array(
-						'default' => 1,
 					),
 					'background-image'         => array(
 						'default' => false,
@@ -2021,9 +2050,6 @@ class Portum_Repeatable_Sections {
 					'background-color'         => array(
 						'default' => false,
 					),
-					'background-color-opacity' => array(
-						'default' => 1,
-					),
 					'background-image'         => array(
 						'default' => false,
 					),
@@ -2078,9 +2104,9 @@ class Portum_Repeatable_Sections {
 					'type'    => 'select',
 					'default' => 'color-default',
 					'choices' => array(
-						'ewf-btn-color-default' => __( 'White', 'portum' ),
-						'ewf-btn-color-accent1' => __( 'Color Accent 1', 'portum' ),
-						'ewf-btn-color-accent2' => __( 'Color Accent 2', 'portum' ),
+						'ewf-btn--color-default' => __( 'White', 'portum' ),
+						'ewf-btn--color-accent1' => __( 'Color Accent 1', 'portum' ),
+						'ewf-btn--color-accent2' => __( 'Color Accent 2', 'portum' ),
 					),
 				),
 				'cta_button_primary_url'     => array(
@@ -2100,9 +2126,9 @@ class Portum_Repeatable_Sections {
 					'type'    => 'select',
 					'default' => 'color-default',
 					'choices' => array(
-						'ewf-btn-color-default' => __( 'White', 'portum' ),
-						'ewf-btn-color-accent1' => __( 'Color Accent 1', 'portum' ),
-						'ewf-btn-color-accent2' => __( 'Color Accent 2', 'portum' ),
+						'ewf-btn--color-default' => __( 'White', 'portum' ),
+						'ewf-btn--color-accent1' => __( 'Color Accent 1', 'portum' ),
+						'ewf-btn--color-accent2' => __( 'Color Accent 2', 'portum' ),
 					),
 				),
 				'cta_button_secondary_url'   => array(
@@ -2118,81 +2144,6 @@ class Portum_Repeatable_Sections {
 				),
 			),
 		);
-	}
-
-	/**
-	 * Repeatable slider section
-	 *
-	 * @return array
-	 */
-
-	private function repeatable_advanced_slider() {
-		$slider = array(
-			'id'          => 'advanced-slider',
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
-			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
-			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
-			'fields'      => array(
-				'slider_transition'        => array(
-					'label'   => esc_html__( 'Transition', 'portum' ),
-					'type'    => 'select',
-					'default' => 'slide',
-					'choices' => array(
-						'fade'  => esc_html__( 'Fade', 'portum' ),
-						'slide' => esc_html__( 'Slide', 'portum' ),
-					),
-				),
-				'slider_speed'             => array(
-					'label'   => esc_html__( 'Speed', 'portum' ),
-					'type'    => 'epsilon-slider',
-					'default' => 500,
-					'choices' => array(
-						'min'  => 0,
-						'max'  => 2000,
-						'step' => 100,
-					),
-				),
-				'slider_autostart'         => array(
-					'label'   => esc_html__( 'Autostart', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_infinite'          => array(
-					'label'   => esc_html__( 'Infinite slides', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_pager'             => array(
-					'label'   => esc_html__( 'Pager', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_controls'          => array(
-					'label'   => esc_html__( 'Controls', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_advanced_grouping' => array(
-					'label'    => esc_html__( 'Slides to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_title' ),
-					'default'  => array( 'all' ),
-				),
-				'slider_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'portum_advanced_slides_section',
-					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
-				),
-				'slider_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'portum_advanced_slides',
-				),
-			),
-		);
-
-		return $slider;
 	}
 
 }
