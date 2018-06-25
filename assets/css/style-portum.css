@@ -2771,6 +2771,9 @@ input[type='button']:active
 	 */
 #logo a
 {
+    font-size: 24px;
+    font-weight: bold;
+
     display: inline-block;
 
     max-width: 100%;
