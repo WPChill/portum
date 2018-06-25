@@ -46,35 +46,37 @@ $parent_attr = array(
 				</div>
 
 				<div class="row">
-					<!--suppress Annotator -->
 					<div class="col-sm-12">
-						<?php if ( $fields['clientlist_slider'] ) { ?>
-
+						<?php if ( $fields['clientlist_slider'] == '1' || $fields['clientlist_slider'] === 'true' ) { ?>
 						<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
 							<ul class="ewf-partner-slider__slides" data-slick='{ "slidesToShow": 6, "slidesToScroll": 2, "autoplay": true, "infinite": true, "speed": 500, "dots": true }'>
-								<?php } else { ?>
-								<ul class="ewf-partners-list ewf-partners-list--spacing-medium ewf-partners-list--columns-6">
-									<?php } ?>
 
-									<?php foreach ( $fields['clients'] as $client ) { ?>
-										<li>
-											<div class="ewf-partner">
-												<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
-													<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
-												</a>
-											</div><!-- end .ewf-partner -->
-										</li>
-									<?php } ?>
-
-									<?php if ( $fields['clientlist_slider'] ) { ?>
-								</ul>
-
-								<div class="ewf-partner-slider__pager">
-									<!-- dots will be added here -->
-								</div>
-						</div>
 						<?php } else { ?>
-						</ul>
+							<ul class="ewf-partners-list ewf-partners-list--spacing-small ewf-partners-list--columns-6">
+						<?php } ?>
+
+								<?php foreach ( $fields['clients'] as $client ) { ?>
+								<li>
+									<div class="ewf-partner">
+										<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
+											<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
+										</a>
+									</div><!-- end .ewf-partner -->
+								</li>
+								<?php } ?>
+
+						<?php if ( $fields['clientlist_slider'] == '1' || $fields['clientlist_slider'] === 'true' ) { ?>
+							</ul><!-- end .ewf-partner-slider__slides -->
+
+							<div class="ewf-partner-slider__pager">
+								<!-- dots will be added here -->
+							</div>
+						</div><!-- end .ewf-partner-slider -->
+
+						<?php } else { ?>
+
+							</ul><!-- end .ewf-partners-list -->
+
 						<?php } ?>
 					</div>
 				</div>

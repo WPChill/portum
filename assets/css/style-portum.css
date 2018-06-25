@@ -8458,8 +8458,9 @@ input[type='button']:active
 
     color: transparent;
     border: 0;
+    border-radius: 5px;
     outline: none;
-    background-color: #ebebeb;
+    background-color: #eee;
 }
 
 .ewf-partner-slider__pager .slick-dots li.slick-active button
@@ -8843,7 +8844,7 @@ input[type='button']:active
     border: 0;
     border-radius: 50%;
     outline: none;
-    background-color: #fff;
+    background-color: #eee;
 }
 
 .ewf-slider .ewf-slider__pager .slick-dots li.slick-active button
