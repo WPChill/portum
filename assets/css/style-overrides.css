@@ -41,8 +41,9 @@
 }
 
 
-/* Advanced - Slider */
+/* Advanced Slider, Clients List Slider - Pager */
 
+.ewf-partner-slider__pager .slick-dots li.slick-active button,
 .ewf-slider .ewf-slider__pager .slick-dots li.slick-active button {
     background-color: %2$s;
     /* epsilon_accent_color */
