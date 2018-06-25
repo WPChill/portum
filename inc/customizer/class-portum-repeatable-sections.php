@@ -427,7 +427,7 @@ class Portum_Repeatable_Sections {
 					'default'           => wp_kses_post( 'SERVICES' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_description'            => array(
+				'services_description'       => array(
 					'label'             => esc_html__( 'Description', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'default'           => esc_html__( 'Add a description text over here', 'portum' ),
@@ -2073,6 +2073,16 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'Primary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
 				),
+				'cta_button_primary_color'   => array(
+					'label'   => esc_html__( 'Primary button color style', 'portum' ),
+					'type'    => 'select',
+					'default' => 'color-default',
+					'choices' => array(
+						'ewf-btn-color-default' => __( 'White', 'portum' ),
+						'ewf-btn-color-accent1' => __( 'Color Accent 1', 'portum' ),
+						'ewf-btn-color-accent2' => __( 'Color Accent 2', 'portum' ),
+					),
+				),
 				'cta_button_primary_url'     => array(
 					'label'             => esc_html__( 'Primary button URL', 'portum' ),
 					'type'              => 'text',
@@ -2084,6 +2094,16 @@ class Portum_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => esc_html__( 'Secondary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
+				),
+				'cta_button_secondary_color'   => array(
+					'label'   => esc_html__( 'Secoondary button color style', 'portum' ),
+					'type'    => 'select',
+					'default' => 'color-default',
+					'choices' => array(
+						'ewf-btn-color-default' => __( 'White', 'portum' ),
+						'ewf-btn-color-accent1' => __( 'Color Accent 1', 'portum' ),
+						'ewf-btn-color-accent2' => __( 'Color Accent 2', 'portum' ),
+					),
 				),
 				'cta_button_secondary_url'   => array(
 					'label'             => esc_html__( 'Secondary button URL', 'portum' ),
@@ -2109,6 +2129,7 @@ class Portum_Repeatable_Sections {
 	private function repeatable_advanced_slider() {
 		$slider = array(
 			'id'          => 'advanced-slider',
+			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
 			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
 			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
 			'fields'      => array(
