@@ -219,6 +219,12 @@ var Portum = {
             if (typeof jQuery.fn.slick !== 'undefined') {
                 jQuery('.ewf-partner-slider .ewf-partner-slider__slides').each(function() {
                     var $t = jQuery(this);
+
+                    // if slider already initialize go to next;
+                    if ($t.hasClass('slick-initialized')) {
+                        return true;
+                    }
+
                     $t.slick({
                         variableWidth: true,
                         autoplay: false,
