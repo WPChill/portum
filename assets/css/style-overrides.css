@@ -921,3 +921,27 @@ input[type="button"]:active {
 #wrap .ewf-btn.ewf-btn--secondary:hover {
     color: %3$s;
 }
+
+#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default,
+#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default:active,
+#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default:hover,
+#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default:focus {
+    color: #fff;
+    ;
+}
+
+#wrap .ewf-btn.ewf-btn--color-accent1,
+#wrap .ewf-btn.ewf-btn--color-accent1:active,
+#wrap .ewf-btn.ewf-btn--color-accent1:hover,
+#wrap .ewf-btn.ewf-btn--color-accent1:focus {
+    color: %2$s;
+    ;
+}
+
+#wrap .ewf-btn.ewf-btn--color-accent2,
+#wrap .ewf-btn.ewf-btn--color-accent2:active,
+#wrap .ewf-btn.ewf-btn--color-accent2:hover,
+#wrap .ewf-btn.ewf-btn--color-accent2:focus {
+    color: %3$s;
+    ;
+}
