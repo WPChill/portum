@@ -285,16 +285,17 @@ Epsilon_Customizer::add_field(
  * Header section options
  * @todo still needs support
  */
-// Epsilon_Customizer::add_field(
-// 	'portum_header_top_bar',
-// 	array(
-// 		'type'     => 'epsilon-toggle',
-// 		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
-// 		'section'  => 'portum_header_section',
-// 		'default'  => true,
-// 		'priority' => 0,
-// 	)
-// );
+/*
+Epsilon_Customizer::add_field(
+	'portum_header_top_bar',
+	array(
+		'type'     => 'epsilon-toggle',
+		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
+		'section'  => 'portum_header_section',
+		'default'  => true,
+		'priority' => 0,
+	)
+);
 
 Epsilon_Customizer::add_field(
 	'portum_header_columns',
@@ -326,6 +327,7 @@ Epsilon_Customizer::add_field(
 		'active_callback' => array( 'Portum_Customizer', 'header_top_bar_enabled_callback' ),
 	)
 );
+*/
 
 
 Epsilon_Customizer::add_field(
