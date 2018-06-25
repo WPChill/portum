@@ -2102,7 +2102,7 @@ class Portum_Repeatable_Sections {
 				'cta_button_primary_color'   => array(
 					'label'   => esc_html__( 'Primary button color style', 'portum' ),
 					'type'    => 'select',
-					'default' => 'color-default',
+					'default' => 'ewf-btn--color-default',
 					'choices' => array(
 						'ewf-btn--color-default' => __( 'White', 'portum' ),
 						'ewf-btn--color-accent1' => __( 'Color Accent 1', 'portum' ),
@@ -2124,7 +2124,7 @@ class Portum_Repeatable_Sections {
 				'cta_button_secondary_color'   => array(
 					'label'   => esc_html__( 'Secoondary button color style', 'portum' ),
 					'type'    => 'select',
-					'default' => 'color-default',
+					'default' => 'ewf-btn--color-accent1',
 					'choices' => array(
 						'ewf-btn--color-default' => __( 'White', 'portum' ),
 						'ewf-btn--color-accent1' => __( 'Color Accent 1', 'portum' ),
