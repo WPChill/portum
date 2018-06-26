@@ -17,24 +17,25 @@ $parent_attr    = array(
 	'class' => array( 'section-about', 'section', 'ewf-section', 'ewf-section-' . $fields['about_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php
 	if ( is_customize_preview() ) {
 		?>
 		<style>
-			[data-section="<?php echo esc_attr($section_id); ?>"] h1,
-			[data-section="<?php echo esc_attr($section_id); ?>"] h2,
-			[data-section="<?php echo esc_attr($section_id); ?>"] h3,
-			[data-section="<?php echo esc_attr($section_id); ?>"] h4,
-			[data-section="<?php echo esc_attr($section_id); ?>"] h5,
-			[data-section="<?php echo esc_attr($section_id); ?>"] h6,
-			[data-section="<?php echo esc_attr($section_id); ?>"] .headline span {
-				color: <?php echo esc_attr($fields['about_heading_color']); ?>
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] h1,
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] h2,
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] h3,
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] h4,
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] h5,
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] h6,
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] .headline span {
+				color: <?php echo esc_attr( $fields['about_heading_color'] ); ?>
 			}
 
-			[data-section="<?php echo esc_attr($section_id); ?>"] p {
-				color: <?php echo esc_attr($fields['about_text_color']); ?>
+			[data-section="<?php echo esc_attr( $section_id ); ?>"] p {
+				color: <?php echo esc_attr( $fields['about_text_color'] ); ?>
 			}
 		</style>
 		<?php
@@ -57,7 +58,9 @@ $parent_attr    = array(
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
 							<div class="col-md-6
 							<?php
-							echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
+							echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' );
+							?>
+							">
 
 								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
 							</div>
@@ -65,7 +68,8 @@ $parent_attr    = array(
 
 						<div class="col-md-6">
 							<?php
-							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) ); ?>
+							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) );
+							?>
 							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
 							<?php if ( $button_primary ) { ?>
@@ -79,7 +83,8 @@ $parent_attr    = array(
 
 						<div class="col-md-6">
 							<?php
-							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
+							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) );
+							?>
 							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
 							<?php if ( $button_primary ) { ?>

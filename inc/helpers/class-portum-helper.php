@@ -100,7 +100,7 @@ class Portum_Helper {
 		if ( ! empty( $fields[ $key . '_row_spacing_bottom' ] ) ) {
 			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_bottom' ] . '-bottom';
 		}
-		if ( ! empty( $fields[ $key . '_background_parallax' ] ) ) {
+		if ( ! empty( $fields[ $key . '_background_parallax' ] ) && 'false' != $fields[ $key . '_background_parallax' ] ) {
 			$additional .= ' ewf-section--parallax';
 		}
 
@@ -315,7 +315,7 @@ class Portum_Helper {
 		}
 		$html .= '</div>';
 
-		return $html;
+		return wpautop( $html );
 	}
 
 	/**
