@@ -6485,6 +6485,8 @@ input[type='button']:active
     bottom: 0;
     left: 0;
 
+    overflow: hidden;
+
     -webkit-transition: all .25s;
          -o-transition: all .25s;
             transition: all .25s;
@@ -6577,12 +6579,6 @@ input[type='button']:active
 {
     margin: 26px 0;
     padding: 0 15px;
-}
-
-.ewf-portfolio-item:hover .ewf-portfolio-item__thumbnail img
-{
-    -webkit-filter: blur(4px);
-            filter: blur(4px);
 }
 
 .ewf-portfolio-item:hover .ewf-portfolio-item__overlay
