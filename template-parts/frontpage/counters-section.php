@@ -52,7 +52,7 @@ wp_enqueue_script( 'odometer' );
 						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
 							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['counters_subtitle'], $fields['counters_title'] ) ); ?>
 						</div>
-						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+						<div class="col-md-<?php echo esc_attr($section_items_content); ?> col-sm-8">
 							<div class="row">
 								<?php foreach ( $fields['counters'] as $counter ) { ?>
 
@@ -91,7 +91,7 @@ wp_enqueue_script( 'odometer' );
 				<?php } elseif ( 'right' === $fields['counters_row_title_align'] ) { ?>
 
 					<div class="row">
-						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+						<div class="col-md-<?php echo esc_attr($section_items_content); ?> col-sm-8">
 							<div class="row">
 								<?php foreach ( $fields['counters'] as $counter ) { ?>
 

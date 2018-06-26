@@ -91,7 +91,7 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 
 					<div class="row">
 
-						<div class="col-md-<?php echo $section_items_content; ?>">
+						<div class="col-md-<?php echo esc_attr($section_items_content); ?>">
 							<?php foreach ( $fields['piecharts'] as $piechart ) { ?>
 								<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 									<div class="ewf-pie">
