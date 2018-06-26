@@ -41,7 +41,7 @@
                "id":"portum_contact_form",
                "label":"Portum_contact_form",
                "setting":"portum_contact_form",
-               "content":"38"
+               "content": 0
             },
             "portum_google_api_key":{
                "id":"portum_google_api_key",
