@@ -89,7 +89,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 				<?php } elseif ( 'right' === $fields['progress_row_title_align'] ) { ?>
 					<div class="row">
 
-						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
+						<div class="col-md-<?php echo esc_attr($section_items_content); ?> col-sm-8">
 							<div class="row">
 								<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">

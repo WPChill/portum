@@ -55,7 +55,7 @@ $items_class = null;
 
 							<?php $i++; ?>
 
-							<div class="col-md-<?php echo $span; ?>">
+							<div class="col-md-<?php echo esc_attr($span); ?>">
 								<div class="testimonial<?php echo ( 1 & $i ) ? ' left' : ' right'; ?>">
 									<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
 										<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">

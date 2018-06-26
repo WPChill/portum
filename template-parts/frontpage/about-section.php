@@ -63,7 +63,6 @@ $parent_attr    = array(
 							echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' );
 							?>
 							">
-
 								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
 							</div>
 						<?php } ?>

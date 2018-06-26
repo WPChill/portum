@@ -60,7 +60,7 @@ $items_class = null;
 									$items_count++;
 									?>
 
-									<div class="team-members-item team-members-item--full<?php echo $items_class; ?>">
+									<div class="team-members-item team-members-item--full<?php echo esc_attr($items_class); ?>">
 
 										<?php
 										$arr = array(
@@ -139,7 +139,7 @@ $items_class = null;
 									$items_count++;
 									?>
 
-									<div class="team-members-item team-members-item--full<?php echo $items_class; ?>">
+									<div class="team-members-item team-members-item--full<?php echo esc_attr($items_class); ?>">
 
 										<?php
 										$arr = array(
@@ -228,7 +228,7 @@ $items_class = null;
 									$items_count++;
 									?>
 
-									<div class="team-members-item<?php echo $items_class; ?>">
+									<div class="team-members-item<?php echo esc_attr($items_class); ?>">
 
 										<?php
 										$arr = array(
