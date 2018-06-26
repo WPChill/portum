@@ -82,6 +82,7 @@
         Portum.Plugins.clientList();
         Portum.Plugins.advancedSlider();
         Portum.Plugins.video();
+        Portum.Plugins.videoSections($);
         Portum.Plugins.magnificPopup();
         Portum.Plugins.animateCounters();
         Portum.Plugins.animateProgress();
