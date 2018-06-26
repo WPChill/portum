@@ -151,7 +151,7 @@ wp_enqueue_script( 'googlemaps' );
 							?>
 							<div class="row">
 								<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
-									<div class="col-xs-12 col-md-<?php echo esc_attr(absint( $span )); ?>">
+									<div class="col-xs-12 col-md-<?php echo esc_attr( absint( $span ) ); ?>">
 										<div class="map-info-item">
 											<h5>
 												<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>

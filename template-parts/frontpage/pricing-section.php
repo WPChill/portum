@@ -43,7 +43,7 @@ $parent_attr             = array(
 
 				<div class="row">
 					<?php foreach ( $fields['pricing_boxes'] as $pricing_box ) { ?>
-						<div class="col-md-<?php echo esc_attr(absint( $span )); ?>">
+						<div class="col-md-<?php echo esc_attr( absint( $span ) ); ?>">
 							<div class="pricing-item <?php echo $pricing_box['price_box_featured'] ? 'featured' : ''; ?>">
 								<div class="plan">
 									<strong>
