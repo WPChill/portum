@@ -8622,21 +8622,21 @@ input[type='button']:active
 {
     .ewf-slider .ewf-slider__slides li
     {
-        padding: 50px 15px;
+        padding: 75px 15px;
     }
 }
 @media (min-width: 992px)
 {
     .ewf-slider .ewf-slider__slides li
     {
-        padding: 50px 20px;
+        padding: 75px 20px;
     }
 }
 @media (min-width: 1200px)
 {
     .ewf-slider .ewf-slider__slides li
     {
-        padding: 50px 30px;
+        padding: 100px 30px;
     }
 }
 .ewf-slider .ewf-slider__slides li .ewf-slider-slide__overlay
@@ -8662,7 +8662,7 @@ input[type='button']:active
     .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
     {
         width: 730px;
-        min-height: 300px;
+        min-height: 350px;
         margin: 0 auto;
     }
 }
@@ -8671,7 +8671,7 @@ input[type='button']:active
     .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
     {
         width: 940px;
-        min-height: 300px;
+        min-height: 400px;
     }
 }
 @media (min-width: 1200px)
@@ -8679,7 +8679,7 @@ input[type='button']:active
     .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content
     {
         width: 1140px;
-        min-height: 300px;
+        min-height: 500px;
     }
 }
 @media (min-width: 768px)
