@@ -93,11 +93,11 @@ wp_enqueue_style( 'slick' );
 						<div class="ewf-slider-slide__content-wrap">
 							<?php
 							if ( ! empty( $slide['slide_title'] ) ) {
-								echo '<h1 data-animation="' . esc_attr( $slide['slide_title_animation'] ) . '" data-delay="0">' . wp_kses_post( $slide['slide_title'] ) . '</h1>';
+								echo '<h1 data-animation="' . esc_attr( $slide['slide_title_animation'] ) . '" data-delay="0">' . wpautop( wp_kses_post( $slide['slide_title'] ) ) . '</h1>';
 							}
 
 							if ( ! empty( $slide['slide_description'] ) ) {
-								echo '<h6 data-animation="' . esc_attr( $slide['slide_description_animation'] ) . '" data-delay="0.2s">' . wp_kses_post( $slide['slide_description'] ) . '</h6>';
+								echo '<h6 data-animation="' . esc_attr( $slide['slide_description_animation'] ) . '" data-delay="0.2s">' . wpautop( wp_kses_post( $slide['slide_description'] ) ) . '</h6>';
 							}
 
 
