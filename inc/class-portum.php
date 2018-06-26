@@ -524,7 +524,6 @@ class Portum {
 		wp_register_style( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.css' );
 		wp_register_style( 'animate', get_template_directory_uri() . '/assets/vendors/animate/animate.css' );
 		wp_register_style( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/magnific-popup.css' );
-		wp_register_script( 'waypoints', get_template_directory_uri() . '/assets/vendors/waypoints/waypoints.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'viewport', get_template_directory_uri() . '/assets/vendors/viewport/viewport.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'superfish-hoverIntent', get_template_directory_uri() . '/assets/vendors/superfish/hoverIntent.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'superfish', get_template_directory_uri() . '/assets/vendors/superfish/superfish.min.js', array(), $theme['Version'], true );
@@ -534,7 +533,6 @@ class Portum {
 		wp_register_script( 'odometer', get_template_directory_uri() . '/assets/vendors/odometer/odometer.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'easypiechart', get_template_directory_uri() . '/assets/vendors/easypiechart/jquery.easypiechart.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'stickem', get_template_directory_uri() . '/assets/vendors/stickem/jquery.stickem.js', array(), $theme['Version'], true );
-		wp_register_script( 'offscreen', get_template_directory_uri() . '/assets/vendors/offscreen/offscreen.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/jquery.magnific-popup.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'portum-object', get_template_directory_uri() . '/assets/js/portum.js', array( 'jquery' ), $theme['Version'], true );
@@ -577,12 +575,9 @@ class Portum {
 			get_template_directory_uri() . '/assets/js/main.js',
 			array(
 				'jquery',
-				'offscreen',
-				'waypoints',
 				'superfish-hoverIntent',
 				'superfish',
 				'stickem',
-				'offscreen',
 				'viewport',
 				'ytplayer',
 				'portum-object',
