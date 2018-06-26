@@ -5967,6 +5967,7 @@ input[type='button']:active
     color: #fff;
 }
 
+#wrap .ewf-btn,
 #wrap .ewf-btn.ewf-btn--color-default,
 #wrap .ewf-btn:active,
 #wrap .ewf-btn:hover,
@@ -7680,7 +7681,7 @@ input[type='button']:active
 /* ----------------------------------- #11 - FOOTER section --------------------------------------------- */
 #footer
 {
-    padding: 35px 0;
+    padding: 0 0 35px 0;
 
     color: #a9afb1;
     background-color: #192229;
