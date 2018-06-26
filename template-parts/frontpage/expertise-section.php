@@ -44,7 +44,7 @@ $parent_attr         = array(
 
 					<?php if ( 'left' === $fields['expertise_row_title_align'] ) { ?>
 
-						<div class="col-md-<?php echo $section_content_cols; ?>">
+						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['expertise_subtitle'], $fields['expertise_title'] ) ); ?>
 
 							<?php if ( ! empty( $fields['expertise'] ) ) { ?>

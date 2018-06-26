@@ -45,6 +45,8 @@ $parent_attr    = array(
 		<?php
 		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+
+		$section_content_cols = ( $fields['about_image'] ? '6' : '12' );
 		?>
 
 		<div class="ewf-section__content">
@@ -66,7 +68,7 @@ $parent_attr    = array(
 							</div>
 						<?php } ?>
 
-						<div class="col-md-6">
+						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) );
 							?>
@@ -81,7 +83,7 @@ $parent_attr    = array(
 
 					<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
 
-						<div class="col-md-6">
+						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) );
 							?>
