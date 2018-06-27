@@ -1,6 +1,6 @@
 /* ==========================================================================
-   =Header
-   ========================================================================== */
+    =Header
+    ========================================================================= */
 
 #header {
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, .07);
@@ -18,6 +18,14 @@
     &.header--no-shadow {
         box-shadow: none;
     }
+}
+
+body.admin-bar #header.header--over-content {
+    top: 32px;
+}
+
+body.ctdw-bar-visible #header.header--over-content {
+    top: 40px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -38,8 +46,8 @@
 
 
 /* ==========================================================================
-  =Logo
-  ========================================================================== */
+    =Logo
+    ========================================================================= */
 
 #logo {
     line-height: 80px;
@@ -78,8 +86,8 @@
 
 
 /* ==========================================================================
-  =Sticky Header
-   ========================================================================== */
+    =Sticky Header
+    ========================================================================= */
 
 @media (min-width: 1025px) {
     /**
@@ -91,23 +99,29 @@
         /* 1 */
         top: 0;
         width: 100%;
-        padding: 10px 0 0 0;
+        // padding: 10px 0 0 0;
         margin: 0 auto;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         transition: all 0.3s;
+        #logo img {
+            width: 80%;
+        }
+        .sf-menu>li>a,
+        .sf-menu>li.dropdown>a {
+            padding: 26px 15px 36px;
+        }
+        .sf-arrows .sf-with-ul:after {
+            margin-top: -1px;
+        }
+        #custom-search-button {
+            top: 23px;
+        }
     }
-    #header.stuck #logo img {
-        width: 80%;
+    body.ctdw-bar-visible #header.stuck {
+        top: 40px;
     }
-    #header.stuck .sf-menu>li>a,
-    #header.stuck .sf-menu>li.dropdown>a {
-        padding: 26px 15px 36px;
-    }
-    #header.stuck .sf-arrows .sf-with-ul:after {
-        margin-top: -1px;
-    }
-    #header.stuck #custom-search-button {
-        top: 23px;
+    body.admin-bar #header.stuck {
+        top: 32px;
     }
 }
 
