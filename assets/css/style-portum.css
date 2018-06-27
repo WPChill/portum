@@ -2706,8 +2706,8 @@ input[type='button']:active
 }
 
 /* ==========================================================================
-   =Header
-   ========================================================================== */
+    =Header
+    ========================================================================= */
 #header
 {
     position: relative;
@@ -2734,6 +2734,16 @@ input[type='button']:active
             box-shadow: none;
 }
 
+body.admin-bar #header.header--over-content
+{
+    top: 32px;
+}
+
+body.ctdw-bar-visible #header.header--over-content
+{
+    top: 40px;
+}
+
 @media (min-width: 768px) and (max-width: 991px)
 {
     #header
@@ -2757,8 +2767,8 @@ input[type='button']:active
     }
 }
 /* ==========================================================================
-  =Logo
-  ========================================================================== */
+    =Logo
+    ========================================================================= */
 #logo
 {
     line-height: 80px;
@@ -2801,8 +2811,8 @@ input[type='button']:active
     }
 }
 /* ==========================================================================
-  =Sticky Header
-   ========================================================================== */
+    =Sticky Header
+    ========================================================================= */
 @media (min-width: 1025px)
 {
     /**
@@ -2817,7 +2827,6 @@ input[type='button']:active
 
         width: 100%;
         margin: 0 auto;
-        padding: 10px 0 0 0;
 
         -webkit-transition: all .3s;
              -o-transition: all .3s;
@@ -2826,26 +2835,32 @@ input[type='button']:active
         -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
                 box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
     }
-
     #header.stuck #logo img
     {
         width: 80%;
     }
-
     #header.stuck .sf-menu > li > a,
     #header.stuck .sf-menu > li.dropdown > a
     {
         padding: 26px 15px 36px;
     }
-
     #header.stuck .sf-arrows .sf-with-ul:after
     {
         margin-top: -1px;
     }
-
     #header.stuck #custom-search-button
     {
         top: 23px;
+    }
+
+    body.ctdw-bar-visible #header.stuck
+    {
+        top: 40px;
+    }
+
+    body.admin-bar #header.stuck
+    {
+        top: 32px;
     }
 }
 @media (min-width: 1200px)
