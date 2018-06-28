@@ -289,6 +289,7 @@ class Portum_Helper {
 	 * @param array  $args
 	 *
 	 * @return string;
+	 * @todo restore wpautop
 	 */
 	public static function generate_section_title(
 		$subtitle = '',
@@ -315,7 +316,7 @@ class Portum_Helper {
 		}
 		$html .= '</div>';
 
-		return wpautop( $html );
+		return $html;
 	}
 
 	/**
