@@ -1,0 +1,256 @@
+/* ----------------------------------- #17 - Section Advanced Slider --------------------------------------------- */
+
+.ewf-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.ewf-slider h1,
+.ewf-slider h6 {
+    color: #ffffff;
+}
+
+.ewf-slider .ewf-slider__slides {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.ewf-slider .ewf-slider__slides li {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 50px 15px;
+    min-height: 250px;
+}
+
+@media (min-width: 768px) {
+    .ewf-slider .ewf-slider__slides li {
+        padding: 75px 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .ewf-slider .ewf-slider__slides li {
+        padding: 75px 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ewf-slider .ewf-slider__slides li {
+        padding: 100px 30px;
+    }
+}
+
+.ewf-slider .ewf-slider__slides li .ewf-slider-slide__overlay {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .95;
+    background-color: $color-background-slider-overlay;
+}
+
+.ewf-slider .ewf-slider__slides li .ewf-slider-slide__content {
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content {
+        width: 730px;
+        min-height: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content {
+        width: 940px;
+        min-height: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ewf-slider .ewf-slider__slides li .ewf-slider-slide__content {
+        width: 1140px;
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ewf-slider-slide__content--align-left {}
+    .ewf-slider-slide__content--align-center {
+        text-align: center;
+    }
+    .ewf-slider-slide__content--align-right {
+        text-align: right;
+    }
+}
+
+.ewf-slider .ewf-slider-slide__content-wrap {}
+
+.ewf-slider .ewf-slider-slide__content-wrap *:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .ewf-slider-slide__content--valign-top .ewf-slider-slide__content-wrap {}
+    .ewf-slider-slide__content--valign-middle .ewf-slider-slide__content-wrap {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+    }
+    .ewf-slider-slide__content--valign-bottom .ewf-slider-slide__content-wrap {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.ewf-slider .ewf-slider__pager {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .ewf-slider .ewf-slider__pager {
+        left: 50%;
+        bottom: 10px;
+        padding: 15px 0;
+        width: 730px;
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 992px) {
+    .ewf-slider .ewf-slider__pager {
+        width: 940px;
+        bottom: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ewf-slider .ewf-slider__pager {
+        width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .ewf-slider .ewf-slider__pager {
+        bottom: 25px;
+    }
+}
+
+.ewf-slider .ewf-slider__pager .slick-dots {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.ewf-slider .ewf-slider__pager .slick-dots:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    content: " ";
+    clear: both;
+}
+
+.ewf-slider .ewf-slider__pager.ewf-slider__pager--align-left .slick-dots {
+    text-align: left;
+}
+
+.ewf-slider .ewf-slider__pager.ewf-slider__pager--align-center .slick-dots {
+    text-align: center;
+}
+
+.ewf-slider .ewf-slider__pager.ewf-slider__pager--align-right .slick-dots {
+    text-align: right;
+}
+
+.ewf-slider .ewf-slider__pager .slick-dots li {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 3px;
+}
+
+.ewf-slider .ewf-slider__pager .slick-dots li:last-child {
+    margin-right: 0;
+}
+
+.ewf-slider .ewf-slider__pager .slick-dots li.slick-active {}
+
+.ewf-slider .ewf-slider__pager .slick-dots li button {
+    display: block;
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    color: transparent;
+    background-color: #eee;
+    font-size: 0;
+    line-height: 0;
+}
+
+.ewf-slider .ewf-slider__pager .slick-dots li.slick-active button {
+    background-color: $accent-1-color;
+}
+
+.ewf-slider .ewf-slider__arrows a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.ewf-slider .ewf-slider__arrows a:hover {
+    color: $accent-1-color;
+}
+
+.ewf-slider .ewf-slider__arrows .slick-prev {
+    left: 5px;
+}
+
+.ewf-slider .ewf-slider__arrows .slick-next {
+    right: 5px;
+}
+
+@media (min-width: 767px) {
+    .ewf-slider .ewf-slider__arrows a {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .ewf-slider .ewf-slider__arrows .slick-prev {
+        left: 15px;
+    }
+    .ewf-slider .ewf-slider__arrows .slick-next {
+        right: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ewf-slider .ewf-slider__arrows .slick-prev {
+        left: 25px;
+    }
+    .ewf-slider .ewf-slider__arrows .slick-next {
+        right: 25px;
+    }
+}
+
+
+/* ----------------------------------- #17 - Section Advanced Slider - END --------------------------------------- */

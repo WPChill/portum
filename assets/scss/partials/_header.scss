@@ -1,31 +1,31 @@
- 
 /* ==========================================================================
-   =Header
-   ========================================================================== */
-
-
-/**
- 	 * 1. z-index is 105 because the tp arrows 100
- 	 */
-
-.header-overlay {
-    background: url("../images/back-shadow-nav.png") repeat-x left top;
-    height: 40%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 99;
-}
+    =Header
+    ========================================================================= */
 
 #header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    z-index: 105;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, .07);
+    position: relative;
+    z-index: 50;
+    background-color: $header_background;
+    &.sticky--top-bar {
+        top: 40px;
+    }
+    &.header--over-content {
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+    &.header--no-shadow {
+        box-shadow: none;
+    }
+}
+
+body.admin-bar #header.header--over-content {
+    top: 32px;
+}
+
+body.ctdw-bar-visible #header.header--over-content {
+    top: 40px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -46,8 +46,8 @@
 
 
 /* ==========================================================================
-   =Logo
-   ========================================================================== */
+    =Logo
+    ========================================================================= */
 
 #logo {
     line-height: 80px;
@@ -63,80 +63,85 @@
 #logo a {
     display: inline-block;
     max-width: 100%;
+    font-weight: bold;
+    font-size: 24px;
     /* 1 */
 }
 
 #logo img {
-    width: 100%;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    transition: width 0.3s;
 }
 
 @media (max-width: 767px) {
     /**
-		 * 1. on mobile devices logo padding right needs to be the width of the
-		 *	  mobile menu trigger + some spacing so as to not let the logo <a>
-		 *    overlap the mobile menu trigger
-		 */
+       * 1. on mobile devices logo padding right needs to be the width of the
+       *	  mobile menu trigger + some spacing so as to not let the logo <a>
+       *    overlap the mobile menu trigger
+       */
     #logo {
         padding-right: 50px;
         /* 1 */
     }
 }
 
+
 /* ==========================================================================
-   =Sticky Header
-   ========================================================================== */
+    =Sticky Header
+    ========================================================================= */
 
 @media (min-width: 1025px) {
     /**
-		 * 1. The z-index has to be 1020 so it is bigger than the back to top buttons z-index that is 1010
-		 */
+       * 1. The z-index has to be 1020 so it is bigger than the back to top buttons z-index that is 1010
+       */
     #header.stuck {
         position: fixed;
         z-index: 1020;
         /* 1 */
         top: 0;
         width: 100%;
-        padding: 10px 0 0 0;
+        // padding: 10px 0 0 0;
         margin: 0 auto;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        background-color: #0b0b0b;
-        -webkit-transition: all 0.3s;
         transition: all 0.3s;
+        #logo img {
+            width: 80%;
+        }
+        .sf-menu>li>a,
+        .sf-menu>li.dropdown>a {
+            padding: 26px 15px 36px;
+        }
+        .sf-arrows .sf-with-ul:after {
+            margin-top: -1px;
+        }
+        #custom-search-button {
+            top: 23px;
+        }
     }
-    #header.stuck #logo img {
-        width: 80%;
+    body.ctdw-bar-visible #header.stuck {
+        top: 40px;
     }
-    #header.stuck .sf-menu>li>a, #header.stuck .sf-menu>li.dropdown>a {
-        padding: 26px 15px 36px;
-    }
-    #header.stuck .sf-arrows .sf-with-ul:after {
-        margin-top: -1px;
-    }
-    #header.stuck #custom-search-button {
-        top: 23px;
+    body.admin-bar #header.stuck {
+        top: 32px;
     }
 }
 
 @media (min-width: 1200px) {
-    #header.stuck .sf-menu>li>a, #header.stuck .sf-menu>li.dropdown>a {
+    #header.stuck .sf-menu>li>a,
+    #header.stuck .sf-menu>li.dropdown>a {
         padding: 26px 25px 36px;
     }
 }
 
-
 @media (max-width: 991px) {
-	
     #header {
         padding: 0;
     }
     #mobile-menu-trigger {
-        top: -66px;
+        top: 13px;
         margin: 0;
         position: absolute;
         right: 0;
-        display: block;
+        display: block !important;
         padding: 10px;
     }
     .small-arrow>a::before {
@@ -151,5 +156,4 @@
     #mobile-menu li>a:hover {
         background-color: #A1083A;
     }
-	
 }

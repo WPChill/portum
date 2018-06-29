@@ -1,0 +1,966 @@
+{
+   "standard":{
+      "label":"Standard",
+      "thumb": "/inc/customizer/demo/mt-onb-preivew-portum-01.png",
+      "tag":[
+         "business"
+      ],
+      "posts":{
+         "label":"Posts",
+         "content":{
+            "importer":{
+               "class":"Epsilon_Post_Generator",
+               "method":"add_posts"
+            },
+            "post_count":4,
+            "image_size":[
+               520,
+               340
+            ],
+            "image_category":[
+               "business"
+            ]
+         }
+      },
+      "options":{
+         "label":"Theme Options",
+         "content":{
+            "portum_footer_columns":{
+               "id":"portum_footer_columns",
+               "label":"Portum_footer_columns",
+               "setting":"portum_footer_columns",
+               "content":"{\"columnsCount\":1,\"columns\":{\"1\":{\"index\":1,\"span\":\"12\"}}}"
+            },
+            "portum_used_onboarding":{
+               "id":"portum_used_onboarding",
+               "label":"Portum_used_onboarding",
+               "setting":"portum_used_onboarding",
+               "content":"1"
+            },
+            "portum_contact_form":{
+               "id":"portum_contact_form",
+               "label":"Portum_contact_form",
+               "setting":"portum_contact_form",
+               "content": 0
+            },
+            "portum_google_api_key":{
+               "id":"portum_google_api_key",
+               "label":"Portum_google_api_key",
+               "setting":"portum_google_api_key",
+               "content":"AIzaSyD8H7MXaTBDEQzvC7_e_Ovy_NzdC4JsEa0"
+            },
+            "logo":{
+               "id":"logo",
+               "label":"Logo",
+               "setting":"custom_logo",
+               "content":"\/assets\/images\/logo.png"
+            },
+            "frontpage":{
+               "id":"frontpage",
+               "label":"Set frontpage to static",
+               "setting":"default",
+               "content":"default"
+            },
+            "blogpage":{
+               "id":"blogpage",
+               "label":"Set blog page",
+               "setting":"default",
+               "content":"default"
+            }
+         }
+      },
+      "widgets":{
+         "label":"Widgets",
+         "content":{
+            "sidebar":{
+               "search-2":{
+                  "title":""
+               },
+               "recent-posts-2":{
+                  "title":"",
+                  "number":5
+               },
+               "recent-comments-2":{
+                  "title":"",
+                  "number":5
+               },
+               "archives-2":{
+                  "title":"",
+                  "count":0,
+                  "dropdown":0
+               },
+               "categories-2":{
+                  "title":"",
+                  "count":0,
+                  "hierarchical":0,
+                  "dropdown":0
+               },
+               "meta-2":{
+                  "title":""
+               }
+            }
+         }
+      },
+      "plugins":{
+         "label":"Plugins",
+         "content":{
+            "contact-form-7":"Contact Form 7",
+            "kiwi-social-share":"Kiwi Social Share",
+            "modula-best-grid-gallery":"Modula Best Grid Gallery"
+         }
+      },
+      "menus":{
+         "label":"Menus",
+         "content":{
+            "primary":{
+               "id":"primary",
+               "label":"Primary Menu",
+               "menu":[
+                  {
+                     "href":"#",
+                     "label":"Services",
+                     "submenus":[
+                        {
+                           "href":"#",
+                           "label":"Web Design"
+                        },
+                        {
+                           "href":"#",
+                           "label":"Web Optimisations",
+                           "submenus":[
+                              {
+                                 "href":"#",
+                                 "label":"Google Seo"
+                              },
+                              {
+                                 "href":"#",
+                                 "label":"Amazon Seo"
+                              }
+                           ]
+                        },
+                        {
+                           "href":"#",
+                           "label":"Print"
+                        }
+                     ]
+                  },
+                  {
+                     "href":"#",
+                     "label":"Contact"
+                  }
+               ]
+            },
+           "footer":{
+             "id": "footer",
+             "label": "Footer Menu",
+             "menu":[
+               {
+                 "href":"#",
+                 "label":"Home"
+               },
+               {
+                 "href":"#",
+                 "label":"Blog"
+               },
+               {
+                 "href":"#",
+                 "label":"Contact"
+               }
+             ]
+           }
+         }
+      },
+      "sections":{
+         "id":"sections",
+         "label":"Sections",
+         "content":{
+            "slider9939":{
+               "id":"slider9939",
+               "label":"Slider",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "slider_navigation":"",
+                  "slider_grouping":[
+                     "all"
+                  ],
+                  "slider_repeater_field":"portum_slides",
+                  "slider_section_unique_id":"",
+                  "slider_section_class":"section-slider-484740925",
+                  "index":0,
+                  "type":"slider"
+               }
+            },
+            "about26650":{
+               "id":"about26650",
+               "label":"About",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "about_title":"Learn more about us and how can we help you:",
+                  "about_subtitle":"ABOUT",
+                  "about_text":"<p>Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, fermentum ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus. In dictum ut nunc vitae ultricies<\/p><p>Sed pharetra tellus arcu, ac fringilla diam porttitor at. Phasellus ligula nisl, ultricies in eleifendid, accumsan vitae nis subim at ullas doc victus et renit amulusl.<\/p><a href=\"#\">Get a quote <i class=\"fa fa-angle-right\" aria-hidden=\"true\"><\/i><\/a>",
+                  "about_image":"\/assets\/images\/01_about.png",
+                  "about_section_unique_id":"",
+                  "about_section_class":"section-about-1044114822",
+                  "about_background_color":false,
+                  "about_background_color_opacity":1,
+                  "about_background_image":"",
+                  "about_background_position":"center",
+                  "about_background_size":"cover",
+                  "about_background_repeat":"no-repeat",
+                  "about_background_parallax":"",
+                  "about_background_video":"",
+                  "about_row_title_align":"right",
+                  "about_column_stretch":"boxedin",
+                  "about_row_spacing_top":"md",
+                  "about_row_spacing_bottom":"md",
+                  "about_column_alignment":"left",
+                  "about_column_vertical_alignment":"middle",
+                  "about_heading_color":"",
+                  "about_text_color":"",
+                  "index":1,
+                  "type":"about"
+               }
+            },
+            "services45855":{
+               "id":"services45855",
+               "label":"Services",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "services_title":"We offer:",
+                  "services_subtitle":"SERVICES",
+                  "services_grouping":[
+                     "all"
+                  ],
+                  "services_navigation":"",
+                  "services_repeater_field":"portum_services",
+                  "services_section_unique_id":"",
+                  "services_section_class":"section-services-1485479551",
+                  "services_background_color":false,
+                  "services_background_color_opacity":1,
+                  "services_background_image":"\/assets\/images\/02_services.jpg",
+                  "services_background_position":"center",
+                  "services_background_size":"cover",
+                  "services_background_repeat":"no-repeat",
+                  "services_background_parallax":"",
+                  "services_background_video":"",
+                  "services_row_title_align":"left",
+                  "services_column_stretch":"boxedin",
+                  "services_row_spacing_top":"md",
+                  "services_row_spacing_bottom":"md",
+                  "services_column_group":3,
+                  "services_column_alignment":"left",
+                  "services_column_vertical_alignment":"middle",
+                  "services_heading_color":"",
+                  "services_text_color":"",
+                  "index":2,
+                  "type":"services"
+               }
+            },
+            "portfolio52381":{
+               "id":"portfolio52381",
+               "label":"Portfolio",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "portfolio_title":"Check out our latest projects",
+                  "portfolio_subtitle":"PORTFOLIO",
+                  "portfolio_grouping":[
+                     "all"
+                  ],
+                  "portfolio_navigation":"",
+                  "portfolio_repeater_field":"portum_portfolio",
+                  "portfolio_section_unique_id":"",
+                  "portfolio_section_class":"section-portfolio-1446933691",
+                  "portfolio_background_color":false,
+                  "portfolio_background_color_opacity":1,
+                  "portfolio_background_image":"",
+                  "portfolio_background_position":"center",
+                  "portfolio_background_size":"cover",
+                  "portfolio_background_repeat":"no-repeat",
+                  "portfolio_background_parallax":"",
+                  "portfolio_column_stretch":"fullwidth",
+                  "portfolio_row_spacing_top":"md",
+                  "portfolio_row_spacing_bottom":"none",
+                  "portfolio_heading_color":"",
+                  "portfolio_text_color":"",
+                  "index":3,
+                  "type":"portfolio"
+               }
+            },
+            "testimonials49363":{
+               "id":"testimonials49363",
+               "label":"Testimonials",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "testimonials_title":"Why Choose Us?",
+                  "testimonials_subtitle":"testimonials",
+                  "testimonials_grouping":[
+                     "all"
+                  ],
+                  "testimonials_navigation":"",
+                  "testimonials_repeater_field":"portum_testimonials",
+                  "testimonials_section_unique_id":"",
+                  "testimonials_section_class":"section-testimonials-494706219",
+                  "testimonials_background_color":false,
+                  "testimonials_background_color_opacity":1,
+                  "testimonials_background_image":"\/assets\/images\/back-dashed.jpg",
+                  "testimonials_background_position":"center",
+                  "testimonials_background_size":"initial",
+                  "testimonials_background_repeat":"repeat",
+                  "testimonials_background_parallax":"",
+                  "testimonials_background_video":"",
+                  "testimonials_row_spacing_top":"md",
+                  "testimonials_row_spacing_bottom":"md",
+                  "testimonials_column_group":2,
+                  "testimonials_heading_color":"",
+                  "testimonials_text_color":"",
+                  "index":4,
+                  "type":"testimonials"
+               }
+            },
+            "expertise38659":{
+               "id":"expertise38659",
+               "label":"Expertise",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "expertise_title":"We can take your business to the next level",
+                  "expertise_subtitle":"OUR EXPERTISE",
+                  "expertise_image":"\/assets\/images\/expertise-img-01.png",
+                  "expertise_grouping":[
+                     "all"
+                  ],
+                  "expertise_navigation":"",
+                  "expertise_repeater_field":"portum_expertise",
+                  "expertise_section_unique_id":"",
+                  "expertise_section_class":"section-expertise-2145209134",
+                  "expertise_background_color":false,
+                  "expertise_background_color_opacity":1,
+                  "expertise_background_image":"",
+                  "expertise_background_position":"center",
+                  "expertise_background_size":"cover",
+                  "expertise_background_repeat":"no-repeat",
+                  "expertise_background_parallax":"",
+                  "expertise_background_video":"",
+                  "expertise_row_title_align":"left",
+                  "expertise_column_stretch":"boxedin",
+                  "expertise_row_spacing_top":"md",
+                  "expertise_row_spacing_bottom":"md",
+                  "expertise_column_alignment":"left",
+                  "expertise_column_vertical_alignment":"middle",
+                  "expertise_heading_color":"",
+                  "expertise_text_color":"",
+                  "index":5,
+                  "type":"expertise"
+               }
+            },
+            "video52881":{
+               "id":"video52881",
+               "label":"Video",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "video_title":"The revolutionary camera that adapts like the human eye.",
+                  "video_subtitle":"Sound Sistem",
+                  "video_id":"https:\/\/www.youtube.com\/watch?v=szfvSBceBn0",
+                  "video_text":"",
+                  "video_section_unique_id":"",
+                  "video_section_class":"section-video-1853169873",
+                  "video_background_color":"#000000",
+                  "video_background_color_opacity":1,
+                  "video_background_image":"",
+                  "video_background_position":"center",
+                  "video_background_size":"cover",
+                  "video_background_repeat":"no-repeat",
+                  "video_background_parallax":"",
+                  "video_row_title_align":"top",
+                  "video_column_stretch":"fullwidth",
+                  "video_row_spacing_top":"md",
+                  "video_row_spacing_bottom":"md",
+                  "video_column_alignment":"center",
+                  "video_column_vertical_alignment":"middle",
+                  "video_heading_color":"#ffffff",
+                  "video_text_color":"#ffffff",
+                  "index":6,
+                  "type":"video"
+               }
+            },
+            "team95782":{
+               "id":"team95782",
+               "label":"Team",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "team_title":"Meet the people behind the scene",
+                  "team_subtitle":"TEAM",
+                  "team_grouping":[
+                     "all"
+                  ],
+                  "team_navigation":"",
+                  "team_repeater_field":"portum_team_members",
+                  "team_section_unique_id":"",
+                  "team_section_class":"section-team-873922405",
+                  "team_background_color":false,
+                  "team_background_color_opacity":1,
+                  "team_background_image":"\/assets\/images\/back-dashed.jpg",
+                  "team_background_position":"center",
+                  "team_background_size":"initial",
+                  "team_background_repeat":"repeat",
+                  "team_background_parallax":"",
+                  "team_background_video":"",
+                  "team_row_title_align":"top",
+                  "team_row_spacing_top":"md",
+                  "team_row_spacing_bottom":"md",
+                  "team_column_alignment":"left",
+                  "team_column_vertical_alignment":"middle",
+                  "team_heading_color":"",
+                  "team_text_color":"",
+                  "index":7,
+                  "type":"team"
+               }
+            },
+            "cta23872":{
+               "id":"cta23872",
+               "label":"Cta",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "cta_title":"Get it Now",
+                  "cta_description":"Now is the time! Pick up your copy of the ultimate WordPress theme today.",
+                  "cta_button_primary_label":"Download this",
+                  "cta_button_primary_url":"https:\/\/google.com",
+                  "cta_button_secondary_label":"Tell me more",
+                  "cta_button_secondary_url":"https:\/\/google.com",
+                  "cta_section_unique_id":"",
+                  "cta_section_class":"section-cta-45302525",
+                  "cta_background_color":"#192229",
+                  "cta_background_color_opacity":1,
+                  "cta_background_image":"",
+                  "cta_background_position":"center",
+                  "cta_background_size":"cover",
+                  "cta_background_repeat":"no-repeat",
+                  "cta_background_parallax":"",
+                  "cta_background_video":"",
+                  "cta_row_title_align":"top",
+                  "cta_column_stretch":"boxedin",
+                  "cta_row_spacing_top":"md",
+                  "cta_row_spacing_bottom":"sm",
+                  "cta_column_alignment":"center",
+                  "cta_column_vertical_alignment":"middle",
+                  "cta_heading_color":"#ffffff",
+                  "cta_text_color":"",
+                  "index":8,
+                  "type":"cta"
+               }
+            },
+            "pricing86665":{
+               "id":"pricing86665",
+               "label":"Pricing",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "pricing_title":"See what package suits best for you",
+                  "pricing_subtitle":"PRICING",
+                  "pricing_grouping":[
+                     "all"
+                  ],
+                  "pricing_navigation":"",
+                  "pricing_repeater_field":"portum_price_boxes",
+                  "pricing_section_unique_id":"",
+                  "pricing_section_class":"section-pricing-366319725",
+                  "pricing_background_color":false,
+                  "pricing_background_color_opacity":1,
+                  "pricing_background_image":"",
+                  "pricing_background_position":"center",
+                  "pricing_background_size":"cover",
+                  "pricing_background_repeat":"no-repeat",
+                  "pricing_background_parallax":"",
+                  "pricing_background_video":"",
+                  "pricing_column_stretch":"boxedin",
+                  "pricing_row_spacing_top":"md",
+                  "pricing_row_spacing_bottom":"md",
+                  "pricing_column_group":"3",
+                  "pricing_heading_color":"",
+                  "pricing_text_color":"",
+                  "index":9,
+                  "type":"pricing"
+               }
+            },
+            "blog95057":{
+               "id":"blog95057",
+               "label":"Blog",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "blog_title":"Find out the latest news?",
+                  "blog_subtitle":"BLOG",
+                  "blog_post_count":"3",
+                  "blog_section_unique_id":"",
+                  "blog_section_class":"section-blog-1414283915",
+                  "blog_background_color":false,
+                  "blog_background_color_opacity":1,
+                  "blog_background_image":"\/assets\/images\/back-dashed.jpg",
+                  "blog_background_position":"center",
+                  "blog_background_size":"initial",
+                  "blog_background_repeat":"repeat",
+                  "blog_background_parallax":"",
+                  "blog_background_video":"",
+                  "blog_row_spacing_top":"md",
+                  "blog_row_spacing_bottom":"md",
+                  "blog_heading_color":"",
+                  "blog_text_color":"",
+                  "index":10,
+                  "type":"blog"
+               }
+            },
+            "counters46324":{
+               "id":"counters46324",
+               "label":"Counters",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "counters_title":"Check out our milestones!",
+                  "counters_subtitle":"COUNTERS",
+                  "counters_grouping":null,
+                  "counters_navigation":"",
+                  "counters_repeater_field":"portum_counter_boxes",
+                  "counters_section_unique_id":"",
+                  "counters_section_class":"section-counters-144760783",
+                  "counters_background_color":false,
+                  "counters_background_color_opacity":1,
+                  "counters_background_image":"",
+                  "counters_background_position":"center",
+                  "counters_background_size":"cover",
+                  "counters_background_repeat":"no-repeat",
+                  "counters_background_parallax":"",
+                  "counters_background_video":"",
+                  "counters_row_title_align":"top",
+                  "counters_column_stretch":"boxedin",
+                  "counters_row_spacing_top":"md",
+                  "counters_row_spacing_bottom":"md",
+                  "counters_column_group":4,
+				  "counters_column_alignment":"center",
+                  "counters_column_vertical_alignment":"middle",
+                  "counters_heading_color":"",
+                  "counters_text_color":"",
+                  "index":11,
+                  "type":"counters"
+               }
+            },
+            "progress86575":{
+               "id":"progress86575",
+               "label":"Progress",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "progress_bars_title":"See our growth",
+                  "progress_bars_subtitle":"PROGRESS BARS",
+                  "progress_bars_grouping":null,
+                  "progress_bars_navigation":"",
+                  "progress_bars_repeater_field":"portum_progress_bars",
+                  "progress_section_unique_id":"",
+                  "progress_section_class":"section-progress-710316736",
+                  "progress_background_color":false,
+                  "progress_background_color_opacity":1,
+                  "progress_background_image":"\/assets\/images\/back-dashed.jpg",
+                  "progress_background_position":"center",
+                  "progress_background_size":"initial",
+                  "progress_background_repeat":"repeat",
+                  "progress_background_parallax":"",
+                  "progress_background_video":"",
+                  "progress_row_title_align":"top",
+                  "progress_column_stretch":"boxedin",
+                  "progress_row_spacing_top":"md",
+                  "progress_row_spacing_bottom":"md",
+                  "progress_column_group":4,
+                  "progress_column_alignment":"center",
+                  "progress_column_vertical_alignment":"top",
+                  "progress_heading_color":"",
+                  "progress_text_color":"",
+                  "index":12,
+                  "type":"progress"
+               }
+            },
+            "google68986":{
+               "id":"google68986",
+               "label":"Google",
+               "setting":"portum_frontpage_sections",
+               "content":{
+                  "google_map_title":"How can we help you?",
+                  "google_map_subtitle":"CONTACT",
+                  "google_map_grouping":[
+                     "all"
+                  ],
+                  "google_map_address":"Centrul Vechi, Brasov",
+                  "google_map_zoom":13,
+                  "google_map_height":450,
+                  "google_map_api_key":"",
+                  "google_map_navigation":"",
+                  "google_map_repeater_field":"portum_contact_section",
+                  "google_map_section_unique_id":"",
+                  "google_map_section_class":"section-google_map-1706603737",
+                  "google_map_background_color":false,
+                  "google_map_background_color_opacity":1,
+                  "google_map_background_image":"",
+                  "google_map_background_position":"center",
+                  "google_map_background_size":"cover",
+                  "google_map_background_repeat":"no-repeat",
+                  "google_map_background_parallax":"",
+                  "google_map_background_video":"",
+                  "google_map_row_title_align":"top",
+                  "google_map_column_stretch":"boxedin",
+                  "google_map_column_group":3,
+                  "google_map_row_spacing_top":"md",
+                  "google_map_row_spacing_bottom":"md",
+                  "google_map_column_alignment":"center",
+                  "google_map_column_vertical_alignment":"middle",
+                  "google_map_heading_color":"",
+                  "google_map_text_color":"",
+                  "index":13,
+                  "type":"google_map"
+               }
+            }
+         }
+      },
+      "content":{
+         "id":"content",
+         "label":"Content",
+         "content":{
+            "contact_section":{
+               "id":"contact_section",
+               "setting":"portum_contact_section",
+               "label":"TODO MAKE SURE ITS CORRECT  contact section",
+               "content":{
+                  "0":{
+                     "contact_title":"Headquarters",
+                     "contact_icon":"fa fa-map-marker",
+                     "contact_text":"<p>176 Westmore Mondaile Street <br> Victorian 887 NYC<\/p>"
+                  },
+                  "1":{
+                     "contact_title":"Phone",
+                     "contact_icon":"fa fa-mobile",
+                     "contact_text":"<p>Phone Number: 234 445 778 65<br>Fax Number: 234 445 778 65<\/p>"
+                  },
+                  "2":{
+                     "contact_title":"Email",
+                     "contact_icon":"fa fa-envelope",
+                     "contact_text":"<p>Support: <a href=\"#\">support@contact.com<\/a> <br> Sales: <a href=\"#\">sales@contact.com<\/a><\/p>"
+                  }
+               }
+            },
+            "team_members":{
+               "id":"team_members",
+               "setting":"portum_team_members",
+               "label":"TODO MAKE SURE ITS CORRECT  team members",
+               "content":{
+                  "0":{
+                     "member_title":"Amelia Couchin Delgado",
+                     "member_text":"Duis ut consequat lorem, quis pellentesque metus. Cras porttitor ex at tempor vulputate.",
+                     "member_image":"\/assets\/images\/07_team_01.jpg",
+                     "member_social_facebook":"https:\/\/facebook.com",
+                     "member_social_twitter":"https:\/\/twitter.com",
+                     "member_social_pinterest":"https:\/\/pinterest.com",
+                     "member_social_linkedin":"https:\/\/linkedin.com"
+                  },
+                  "1":{
+                     "member_title":"James Austin",
+                     "member_text":"Donec felis neque, sagittis vel euismod eget, pellentesque ut mi. Ut auctor sed mi ac blandit.",
+                     "member_image":"\/assets\/images\/07_team_02.jpg",
+                     "member_social_facebook":"https:\/\/facebook.com",
+                     "member_social_twitter":"https:\/\/twitter.com",
+                     "member_social_pinterest":"https:\/\/pinterest.com",
+                     "member_social_linkedin":"https:\/\/linkedin.com"
+                  },
+                  "2":{
+                     "member_title":"Marisol Schwartzeneger",
+                     "member_text":"Donec felis neque, sagittis vel euismod eget, pellentesque ut mi. Ut auctor sed mi ac blandit.",
+                     "member_image":"\/assets\/images\/07_team_03.jpg",
+                     "member_social_facebook":"https:\/\/facebook.com",
+                     "member_social_twitter":"https:\/\/twitter.com",
+                     "member_social_pinterest":"https:\/\/pinterest.com",
+                     "member_social_linkedin":"https:\/\/linkedin.com"
+                  },
+                  "3":{
+                     "member_title":"Bobby Toder",
+                     "member_text":"Duis ut consequat lorem, quis pellentesque metus. Cras porttitor ex at tempor vulputate. Vivamus nulla orci, fringilla et metu.",
+                     "member_image":"\/assets\/images\/07_team_04.jpg",
+                     "member_social_facebook":"https:\/\/facebook.com",
+                     "member_social_twitter":"https:\/\/twitter.com",
+                     "member_social_pinterest":"https:\/\/pinterest.com",
+                     "member_social_linkedin":"https:\/\/linkedin.com"
+                  }
+               }
+            },
+            "expertise":{
+               "id":"expertise",
+               "setting":"portum_expertise",
+               "label":"TODO MAKE SURE ITS CORRECT  expertise",
+               "content":{
+                  "0":{
+                     "expertise_number":"01",
+                     "expertise_title":"We can improove your business!",
+                     "expertise_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada malesuada tortor, at porta nisl ultricies vitae. Duis purus metus, tempor et ante sed, rutrum sollicitudin ligula."
+                  },
+                  "1":{
+                     "expertise_number":"02",
+                     "expertise_title":"Let us help you save money!",
+                     "expertise_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada malesuada tortor, at porta nisl ultricies vitae. Duis purus metus, tempor et ante sed, rutrum sollicitudin ligula."
+                  },
+                  "2":{
+                     "expertise_number":"03",
+                     "expertise_title":"Spend more time doing what you love.",
+                     "expertise_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada malesuada tortor, at porta nisl ultricies vitae. Duis purus metus, tempor et ante sed, rutrum sollicitudin ligula."
+                  }
+               }
+            },
+            "services":{
+               "id":"services",
+               "setting":"portum_services",
+               "label":"TODO MAKE SURE ITS CORRECT  services",
+               "content":{
+                  "0":{
+                     "service_title":"BUSINESS",
+                     "service_icon":"fa fa-briefcase",
+                     "service_description":"Consultance"
+                  },
+                  "1":{
+                     "service_title":"COMPETITION",
+                     "service_icon":"fa fa-archive",
+                     "service_description":"Analysis"
+                  },
+                  "2":{
+                     "service_title":"DEVELOPMENT",
+                     "service_icon":"fa fa-cogs",
+                     "service_description":"Plan"
+                  },
+                  "3":{
+                     "service_title":"GENERAL FONDS",
+                     "service_icon":"fa fa-cube",
+                     "service_description":"Expertise"
+                  },
+                  "4":{
+                     "service_title":"SPECIALISED",
+                     "service_icon":"fa fa-users",
+                     "service_description":"Recruitment"
+                  },
+                  "5":{
+                     "service_title":"PERSONALIZED",
+                     "service_icon":"fa fa-lock",
+                     "service_description":"Security"
+                  }
+               }
+            },
+            "slides":{
+               "id":"slides",
+               "setting":"portum_slides",
+               "label":"TODO MAKE SURE ITS CORRECT  slides",
+               "content":{
+                  "0":{
+                     "slides_title":"Growing your business",
+                     "slides_description":"From <strong>ZERO<\/strong> to <strong>HERO<\/strong> along with you",
+                     "slides_image":"\/assets\/images\/slider-img-01.jpg"
+                  },
+                  "1":{
+                     "slides_title":"Maintainang the business",
+                     "slides_description":"Take your<strong>TIME<\/strong> and <strong>grow and grow<\/strong> your business",
+                     "slides_image":"\/assets\/images\/slider-img-02.jpg"
+                  },
+                  "2":{
+                     "slides_title":"Apogee of the business",
+                     "slides_description":"From <strong>ZERO<\/strong> to <strong>HERO<\/strong> along with you",
+                     "slides_image":"\/assets\/images\/slider-img-03.jpg"
+                  }
+               }
+            },
+            "portfolio":{
+               "id":"portfolio",
+               "setting":"portum_portfolio",
+               "label":"TODO MAKE SURE ITS CORRECT  portfolio",
+               "content":{
+                  "0":{
+                     "portfolio_title":"IMAGES",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_01.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "1":{
+                     "portfolio_title":"VIDEOS",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_02.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "2":{
+                     "portfolio_title":"AUDIO",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_03.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "3":{
+                     "portfolio_title":"CINEMATOGRAPHY",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_04.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "4":{
+                     "portfolio_title":"PHOTOGRAPHY",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_05.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "5":{
+                     "portfolio_title":"DISCOGRAPHY",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_06.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "6":{
+                     "portfolio_title":"WRITING",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_07.jpg",
+                     "portfolio_link":"#"
+                  },
+                  "7":{
+                     "portfolio_title":"CODING",
+                     "portfolio_description":"<p>Nullam nec metus ullamcorper, scelerisque null<\/p>",
+                     "portfolio_image":"\/assets\/images\/03_projects_08.jpg",
+                     "portfolio_link":"#"
+                  }
+               }
+            },
+            "testimonials":{
+               "id":"testimonials",
+               "setting":"portum_testimonials",
+               "label":"TODO MAKE SURE ITS CORRECT  testimonials",
+               "content":{
+                  "0":{
+                     "testimonial_title":"Michael Cross",
+                     "testimonial_subtitle":"CEO @ Hampybrewry",
+                     "testimonial_text":"\"Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula\"",
+                     "testimonial_image":"\/assets\/images\/04_testimonials_01.png"
+                  },
+                  "1":{
+                     "testimonial_title":"Daniel Humphrey",
+                     "testimonial_subtitle":"CEO @ Hampybrewry",
+                     "testimonial_text":"\"Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula\"",
+                     "testimonial_image":"\/assets\/images\/04_testimonials_02.png"
+                  },
+                  "2":{
+                     "testimonial_title":"James Smith",
+                     "testimonial_subtitle":"Product Manager @ Vista",
+                     "testimonial_text":"\"Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula\"",
+                     "testimonial_image":"\/assets\/images\/04_testimonials_03.png"
+                  },
+                  "3":{
+                     "testimonial_title":"Jessica Stole",
+                     "testimonial_subtitle":"Product Manager @ Vista",
+                     "testimonial_text":"\"Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula\"",
+                     "testimonial_image":"\/assets\/images\/04_testimonials_04.png"
+                  }
+               }
+            },
+            "price_boxes":{
+               "id":"price_boxes",
+               "setting":"portum_price_boxes",
+               "label":"TODO MAKE SURE ITS CORRECT  price boxes",
+               "content":{
+                  "0":{
+                     "price_box_title":"STARTUP",
+                     "price_box_text":"Get started Now! You have the base",
+                     "price_box_featured":"0",
+                     "price_box_currency":"$",
+                     "price_box_price":"75",
+                     "price_box_period":"mo",
+                     "price_box_url":"#",
+                     "price_box_features":"<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><\/ul>"
+                  },
+                  "1":{
+                     "price_box_title":"GROWTH",
+                     "price_box_text":"Take your business to the next level",
+                     "price_box_currency":"$",
+                     "price_box_featured":"true",
+                     "price_box_price":"95",
+                     "price_box_period":"mo",
+                     "price_box_url":"#",
+                     "price_box_features":"<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><\/ul>"
+                  },
+                  "2":{
+                     "price_box_title":"PREMIUM",
+                     "price_box_text":"Get started Now! You have the base ",
+                     "price_box_currency":"$",
+                     "price_box_featured":"0",
+                     "price_box_price":"125",
+                     "price_box_period":"mo",
+                     "price_box_url":"#",
+                     "price_box_features":"<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><\/ul>"
+                  }
+               }
+            },
+            "counter_boxes":{
+               "id":"counter_boxes",
+               "setting":"portum_counter_boxes",
+               "label":"TODO MAKE SURE ITS CORRECT  counter boxes",
+               "content":{
+                  "0":{
+                     "counter_title":"Issues resolved",
+                     "counter_number":"32",
+                     "counter_symbol":"",
+                     "counter_icon":"fa fa-bug",
+                     "counter_type":"odometer",
+                     "counter_icon_display":true,
+                     "index":0
+                  },
+                  "1":{
+                     "counter_title":"Files saved",
+                     "counter_number":"89",
+                     "counter_symbol":"",
+                     "counter_icon":"fa fa-hdd-o",
+                     "counter_type":"odometer",
+                     "counter_icon_display":true,
+                     "index":1
+                  },
+                  "2":{
+                     "counter_title":"Available servers",
+                     "counter_number":"12",
+                     "counter_symbol":"",
+                     "counter_icon":"fa fa-globe",
+                     "counter_type":"odometer",
+                     "counter_icon_display":true,
+                     "index":3
+                  },
+                  "3":{
+                     "counter_title":"Satisfied Clients",
+                     "counter_number":"72",
+                     "counter_symbol":"",
+                     "counter_icon":"fa fa-hdd-o",
+                     "counter_type":"odometer",
+                     "counter_icon_display":true,
+                     "index":2
+                  }
+               }
+            },
+            "progress_bars":{
+               "id":"progress_bars",
+               "setting":"portum_progress_bars",
+               "label":"TODO MAKE SURE ITS CORRECT  progress bars",
+               "content":{
+                  "0":{
+                     "progress_bar_title":"Webdesign",
+                     "progress_bar_value":55,
+                     "progress_bar_type":"normal",
+                     "index":0
+                  },
+                  "1":{
+                     "progress_bar_title":"Wordpress",
+                     "progress_bar_value":"92",
+                     "progress_bar_type":"normal",
+                     "index":1
+                  },
+                  "2":{
+                     "progress_bar_title":"CSS & HTML",
+                     "progress_bar_value":"61",
+                     "progress_bar_type":"normal",
+                     "index":2
+                  },
+                  "3":{
+                     "progress_bar_title":"Plugins",
+                     "progress_bar_value":"37",
+                     "progress_bar_type":"normal",
+                     "index":3
+                  }
+               }
+            }
+         }
+      }
+   }
+}

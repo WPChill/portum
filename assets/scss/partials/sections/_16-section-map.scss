@@ -1,0 +1,88 @@
+/* ----------------------------------- #16 - Google Map section --------------------------------------------- */
+
+.section-map {
+	position: relative;
+	
+	&.ewf-section.ewf-section--title-top {
+		padding: 450px 0 0 0;	
+		
+		.map-canvas {
+			background-color: #F5F5F5;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	
+	&.ewf-section.ewf-section--title-left,
+	&.ewf-section.ewf-section--title-right {
+		
+		.map-canvas {
+			height:550px;
+		}
+	}
+
+
+
+	.map-canvas-side {
+		box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045); 
+		border:1px solid #eee;
+	}
+	
+	.map-overlay {
+		width: 100%;
+		height: 50px;
+		background: url("../images/back-section-shadow.png") repeat-x left top;
+		position: Absolute;
+		top: 0;
+		left: 0;
+		z-index: 999;
+	}
+	
+
+}
+
+.ewf-section--spacing-sm-top .map-info-wrapper { padding-top: $spacing-section-small; }
+.ewf-section--spacing-md-top .map-info-wrapper { padding-top: $spacing-section-medium; }
+.ewf-section--spacing-lg-top .map-info-wrapper { padding-top: $spacing-section-large; }
+.ewf-section--spacing-none-top .map-info-wrapper { padding-top: 0; }
+
+.ewf-section--spacing-sm-bottom .map-info-wrapper { padding-bottom: $spacing-section-small; }
+.ewf-section--spacing-md-bottom .map-info-wrapper { padding-bottom: $spacing-section-medium; }
+.ewf-section--spacing-lg-bottom .map-info-wrapper { padding-bottom: $spacing-section-large; }
+.ewf-section--spacing-none-bottom .map-info-wrapper { padding-bottom: 0; } 
+
+.map-info-wrapper {
+  padding: 0 75px;
+  background-color: #fff;
+  box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+  position: relative;
+  box-sizing: border-box;
+}
+
+
+.map-info-item {
+  padding: 0 20px 20px 20px;
+
+  h5 {
+    color: $accent-1-color;
+    margin-bottom: 15px;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+	
+	.map-info-wrapper {
+	  padding: 0 35px;
+	}
+	
+}
+
+
+/* ----------------------------------- #11 - Google Map section - END ------------------------------------- */

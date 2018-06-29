@@ -1,0 +1,65 @@
+/* =Progress Bar
+   ========================================================================== */
+
+.ewf-progress {
+
+	&:after {
+	  visibility: hidden;
+	  display: block;
+	  height: 0;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	}
+}
+
+.ewf-progress__title {
+	display: block;
+	margin-bottom: 14px;
+	font-weight: 600;
+	line-height: 14px;
+	text-align:left;
+
+	span {
+		float: right;
+	}
+}
+
+.ewf-progress__bar {
+	position: relative;
+	margin-bottom: 28px;
+}
+
+.ewf-progress__bar-liniar-wrap {
+	position: relative;
+	padding: 4px;
+	background-color: #ebebeb;
+}
+
+.ewf-progress__bar-liniar {
+	background-color: $accent-1-color;
+	height: 10px;
+	width: 0;
+}
+
+.ewf-progress--alternative-modern {
+	
+	.ewf-progress__bar {}
+	
+	.ewf-progress__bar-liniar { }
+	
+	.ewf-progress__bar-liniar-wrap {
+		padding: 0;
+		background-color: transparent;
+		
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background-color: $accent-2-color;
+		}
+	}
+}

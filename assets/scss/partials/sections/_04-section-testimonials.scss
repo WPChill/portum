@@ -1,162 +1,89 @@
 /* ----------------------------------- #04 - TESTIMONIALS section ------------------------*/
 
-.section-testimonials {
-  padding: 70px 0 25px 0;
-}
-
-.section-testimonials button {
-  display: none;
-}
-
-.section-testimonials.animate-- {
-  background: transparent;
-}
-
 .testimonial {
-  background: #fff;
-  position: Relative;
-  margin-bottom: 75px;
-  transition: 280ms all;
-  min-height: 150px;
+	background: #fff url("../images/back-quote.png") no-repeat;
+	position: relative;
+	margin-bottom: 75px;
+	min-height: 150px;
+	box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045);
+	padding: 30px 0 40px 0;
+
+	&.left {
+		padding-left:95px;
+		padding-right:30px;
+		text-align: left;
+		background-position:top left;
+		
+		img { left: -95px; }
+	}
+
+	&.right {
+		padding-right:95px;
+		padding-left:30px;
+		text-align: right;
+		background-position:top right;
+		
+		img { right: -95px; }
+	}
+	
+	h6 {
+		position: relative;
+		z-index: 999;
+	}
+
+	img {
+		display: block;
+		position: absolute;
+		width: 160px;
+		height: auto;		
+		bottom: -25px;
+		box-shadow: 0 7px 19px 2px rgba(0, 0, 0, .1); 
+	}
+	
+	p {	font-style: italic;	}
+		
 }
 
-.testimonial a {
-  color: $accent-1-color;
-}
-
-.testimonial.left {
-  padding: 25px 0 35px 95px;
-}
-
-.testimonial.right {
-  padding: 30px 95px 40px 0;
-  text-align: right;
-}
-
-.testimonial.left img {
-  display: block;
-  position: absolute;
-  left: -95px;
-  bottom: -25px;
-  width: 160px;
-  height: 160px;
-}
-
-.testimonial.right img {
-  display: block;
-  position: absolute;
-  right: -95px;
-  bottom: -25px;
-  width: 160px;
-  height: 160px;
-}
-
-.testimonial.right span {
-  width: 35px;
-  height: 25px;
-  display: block;
-  right: 25px;
-  top: 25px;
-  position: absolute;
-}
-
-.testimonial.left span {
-  width: 35px;
-  height: 25px;
-  display: block;
-  left: 25px;
-  top: 25px;
-  position: absolute;
-}
-
-.testimonial span {
-  background: url("../images/back-quote.png") no-repeat center center;
-  x-index: 9;
-
-}
-
-.testimonial img {
-  -webkit-box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
-  -moz-box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
-  box-shadow: 0 7px 19px 2px rgba(35, 31, 32, .04);
-}
-
-.testimonial p {
-  font-style: italic;
-  margin-bottom: 25px;
-}
-
-.testimonial h6 {
-  margin-bottom: 10px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  position: relative;
-  z-index: 999;
-}
-
-.testimonial:hover {
-  cursor: pointer;
-  background-color: $accent-2-color;
-}
-
-.testimonial:hover h6,
-.testimonial:hover p,
-.testimonial:hover a {
-  color: #fff;
-}
 
 @media (max-width: 768px) {
 
-  .section-testimonials .comment-hidden-mobile + .show-more-comments {
-    display: block;
-    width: 100%;
-    -webkit-border-radius: 0 0 20px 20px;
-    -moz-border-radius: 0 0 20px 20px;
-    border-radius: 0 0 20px 20px;
-  }
+	.section-testimonials .comment-hidden-mobile + .show-more-comments {
+		display: block;
+		width: 100%;
+		border-radius: 0 0 20px 20px;
+	}
 
-  .testimonial {
-    margin-bottom: 35px;
-  }
+	.hidden-testimonial {
+		display: none;
+	}
 
-  .hidden-testimonial {
-    display: none;
-  }
+	.testimonial {
+		margin-bottom: 35px;
+		
+		&.left {
+			padding: 25px 0 25px 35px;
+			
+			img {
+				right: 20px;
+				left: initial;			
+			}
+		}
 
-  .testimonial.left {
-    padding: 15px 0 25px 35px;
-  }
-  .testimonial.left span {
-    left: 15px;
-    top: 20px;
-  }
-
-  .testimonial.right {
-    padding: 15px 35px 25px 0;
-  }
-  .testimonial.right span {
-    right: 15px;
-    top: 20px;
-  }
-
-  .testimonial.right img {
-    height: 65px;
-    width: 65px;
-    left: 20px;
-    right: initial;
-    bottom: initial;
-    top: -20px;
-  }
-
-  .testimonial.left img {
-    height: 65px;
-    width: 65px;
-    right: 20px;
-    left: initial;
-    bottom: initial;
-    top: -20px;
-  }
-
+		&.right {
+			padding: 25px 35px 25px 0;
+			
+			img {
+				left: 20px;
+				right: initial;
+			}
+		}
+		
+		img {
+			width: 65px;
+			top: -20px;
+			bottom: initial;
+		}
+	}
 }
 
 /* ----------------------------------- #04 - TESTIMONIALS section - END -------------------*/

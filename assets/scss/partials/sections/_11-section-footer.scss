@@ -1,154 +1,142 @@
 /* ----------------------------------- #11 - FOOTER section --------------------------------------------- */
 
-.section-contact + #footer {
-  padding: 0 0 35px 0;
-}
-
 #footer {
-  color: $footer-text-color;
-  background-color: $footer-background-color;
-  padding: 35px 0;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
-}
-
-.footer-sub p {
-  margin: 0;
-}
-
-#footer a {
-  color: $footer-link-color;
-}
-
-#footer a:hover,
-#footer a:focus {
-  color: $footer-link-hover-color;
-}
-
-#footer a:active {
-  color: $footer-link-active-color;
-}
-
-#footer p {
-  color: $footer-text-color;
-}
-
-#footer ul.nav {
-  float: right;
-  margin: 0 0 25px 0;
-}
-
-#footer ul.nav li {
-  display: inline-block;
-}
-
-#footer ul.nav a {
-  padding: 0 10px;
+    color: $footer-text-color;
+    background-color: $footer-background-color;
+    &.footer-sub p {
+        margin: 0;
+    }
+    a {
+        color: $footer-link-color;
+        &:hover,
+        &:focus {
+            color: $footer-link-hover-color;
+        }
+        &:active {
+            color: $footer-link-active-color;
+        }
+    }
+    p {
+        color: $footer-text-color;
+    }
+    ul.nav {
+        float: right;
+        margin: 0 0 25px 0;
+        li {
+            display: inline-block;
+        }
+        a {
+            padding: 0 10px;
+        }
+    }
 }
 
 .footer-logo {
-  text-align: center;
-  display: block;
-  max-width: 200px;
-  margin: 0 auto 10px auto;
+    text-align: center;
+    display: block;
+    max-width: 200px;
+    margin: 0 auto 10px auto;
 }
 
 #footer .widget_media_image.footer-logo {
-  margin: 0 auto 10px auto;
+    margin: 0 auto 10px auto;
 }
 
 .widget_nav_menu .menu,
 .social {
-  padding: 0;
-  text-align: center;
-
-  li {
-    list-style-type: none;
-    display: inline-block;
-    margin: 0;
-    &:before {
-      content: none;
-    }
-
-    a {
-      padding: 9px 5px;
-      color: #FFF;
-      width: 35px;
-      height: 18px;
-      text-align: center;
-      overflow: hidden;
-      &:before {
-        content: '\f408';
+    padding: 0;
+    text-align: center;
+    li {
+        list-style-type: none;
         display: inline-block;
-        padding: 0 5px;
-        font-family: 'FontAwesome';
-        font-size: 16px;
-        vertical-align: top;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      &[href*="wordpress.org"]::before,
-      &[href*="wordpress.com"]::before {
-        content: '\f19a';
-      }
-      &[href*="facebook.com"]::before {
-        content: '\f09a';
-      }
-      &[href*="twitter.com"]::before {
-        content: '\f099';
-      }
-      &[href*="dribbble.com"]::before {
-        content: '\f17d';
-      }
-      &[href*="plus.google.com"]::before {
-        content: '\f0d5';
-      }
-      &[href*="pinterest.com"]::before {
-        content: '\f231';
-      }
-      &[href*="github.com"]::before {
-        content: '\f09b';
-      }
-      &[href*="tumblr.com"]::before {
-        content: '\f173';
-      }
-      &[href*="youtube.com"]::before {
-        content: '\f167';
-      }
-      &[href*="flickr.com"]::before {
-        content: '\f16e';
-      }
-      &[href*="vimeo.com"]::before {
-        content: '\f27d';
-      }
-      &[href*="instagram.com"]::before {
-        content: '\e900';
-      }
-      &[href*="codepen.io"]::before {
-        content: '\f1cb';
-      }
-      &[href*="linkedin.com"]::before {
-        content: '\f0e1';
-      }
+        margin: 0;
+        &:before {
+            content: none;
+        }
+        a {
+            padding: 9px 5px;
+            color: #FFF;
+            width: 35px;
+            height: 18px;
+            text-align: center;
+            overflow: hidden;
+            &:before {
+                content: '\f408';
+                display: inline-block;
+                padding: 0 5px;
+                font-family: 'FontAwesome';
+                font-size: 16px;
+                vertical-align: top;
+                -webkit-font-smoothing: antialiased;
+            }
+            &[href*="wordpress.org"]::before,
+            &[href*="wordpress.com"]::before {
+                content: '\f19a';
+            }
+            &[href*="facebook.com"]::before {
+                content: '\f09a';
+            }
+            &[href*="twitter.com"]::before {
+                content: '\f099';
+            }
+            &[href*="dribbble.com"]::before {
+                content: '\f17d';
+            }
+            &[href*="plus.google.com"]::before {
+                content: '\f0d5';
+            }
+            &[href*="pinterest.com"]::before {
+                content: '\f231';
+            }
+            &[href*="github.com"]::before {
+                content: '\f09b';
+            }
+            &[href*="tumblr.com"]::before {
+                content: '\f173';
+            }
+            &[href*="youtube.com"]::before {
+                content: '\f167';
+            }
+            &[href*="flickr.com"]::before {
+                content: '\f16e';
+            }
+            &[href*="vimeo.com"]::before {
+                content: '\f27d';
+            }
+            &[href*="instagram.com"]::before {
+                content: '\e900';
+            }
+            &[href*="codepen.io"]::before {
+                content: '\f1cb';
+            }
+            &[href*="linkedin.com"]::before {
+                content: '\f0e1';
+            }
+        }
     }
-  }
-
-  li:last-child {
-    margin: 0;
-  }
+    li:last-child {
+        margin: 0;
+    }
 }
 
 @media (max-width: 960px) {
-  .footer-sub p {
-    text-align: center;
-  }
-  .footer-sub .nav {
-    width: 100%;
-    text-align: center;
-  }
+    .footer-sub {
+        p {
+            text-align: center;
+        }
+        .nav {
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
+
+@media (max-width: 768px) {
+    #footer-bottom-widget-area-1,
+    #footer-bottom-widget-area-2 {
+        text-align: center;
+    }
+}
+
 
 /* ----------------------------------- #11 - FOOTER section - END ------------------------------------- */

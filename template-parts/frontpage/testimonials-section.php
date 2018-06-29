@@ -14,52 +14,69 @@ $grouping  = array(
 	'group_by' => 'testimonial_title',
 );
 
+$attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'testimonials', Portum_Repeatable_Sections::get_instance() );
+
 $fields['testimonials'] = $frontpage->get_repeater_field( $fields['testimonials_repeater_field'], array(), $grouping );
 
-$i = 0;
+$parent_attr = array(
+	'id'    => ! empty( $fields['testimonials_section_unique_id'] ) ? array( $fields['testimonials_section_unique_id'] ) : array(),
+	'class' => array(
+		'section-testimonials',
+		'section',
+		'ewf-section',
+		'ewf-section-' . $fields['testimonials_section_visibility'],
+	),
+	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
+);
+
+$i    = 0;
+$span = 12 / absint( $fields['testimonials_column_group'] );
+
+$items_count = 0;
+$items_class = null;
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<div class="section-testimonials section dashed">
-		<div class="container">
-			<?php echo wp_kses_post( Portum_Helper::generate_pencil() ); ?>
-			<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'] ) ); ?>
+	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
+		<?php
+		$attr_helper->generate_video_overlay();
+		$attr_helper->generate_color_overlay();
+		?>
 
-			<?php if ( ! empty( $fields['testimonials'] ) ) { ?>
-				<div class="row">
-					<?php $max_row = ceil( count( $fields['testimonials'] ) / 2 ); ?>
-					<?php foreach ( $fields['testimonials'] as $k => $v ) { ?>
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'testimonials', $fields ) ); ?>">
 
-						<?php $i ++; ?>
-						<div class="col-md-6">
-							<div class="testimonial <?php echo 0 === (int) fmod( $i, $max_row ) ? 'hidden-testimonial right' : 'left'; ?>">
-								<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
-									<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">
-								<?php } ?>
+				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'testimonials' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'], array( 'center' => true ) ) ); ?>
 
-								<?php if ( ! empty( $v['testimonial_title'] ) ) { ?>
-									<h6><?php echo esc_html( $v['testimonial_title'] ); ?></h6>
-								<?php } ?>
+				<?php if ( ! empty( $fields['testimonials'] ) ) { ?>
+					<div class="row">
+						<?php foreach ( $fields['testimonials'] as $k => $v ) { ?>
 
-								<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
+							<?php $i++; ?>
 
-								<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
-									<a href="#"><?php echo esc_html( $v['testimonial_subtitle'] ); ?></a>
-								<?php } ?>
-								<span></span>
+							<div class="col-md-<?php echo esc_attr( $span ); ?>">
+								<div class="testimonial<?php echo ( 1 & $i ) ? ' left' : ' right'; ?>">
+									<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
+										<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">
+									<?php } ?>
+
+									<?php if ( ! empty( $v['testimonial_title'] ) ) { ?>
+										<h6><?php echo esc_html( $v['testimonial_title'] ); ?></h6>
+									<?php } ?>
+
+									<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
+
+									<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
+										<a href="#"><?php echo esc_html( $v['testimonial_subtitle'] ); ?></a>
+									<?php } ?>
+								</div>
 							</div>
-						</div>
-						<?php
-						if ( 0 === (int) fmod( $i, $max_row ) && count( $fields['testimonials'] ) !== (int) $i ) {
-							echo '</div><div class="row">';
-						} elseif ( count( $fields['testimonials'] ) === (int) $i ) {
-							continue;
-						}
-						?>
 
-					<?php } ?>
-				</div>
-			<?php } ?>
+						<?php } ?>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
 	</div>
 </section>

@@ -8,7 +8,7 @@
  * Check if we have the object created somewhere else
  * @type {{}}
  */
-var Portum = typeof( Portum ) ? {} : Portum;
+var Portum = typeof(Portum) ? {} : Portum;
 
 /**
  * Portum Customizer functions
@@ -211,11 +211,15 @@ wp.customize.bind( 'ready', function() {
    Portum.Customizer.handleActiveCallback( activeCallbacked );
    */
 
-  /**
-   *
-   * @type {{portum_expertise: {field: string, filter: string}, portum_portfolio: {field: string, filter: string}, portum_price_boxes: {field: string, filter: string}, portum_services: {field: string, filter: string}, portum_team_members: {field: string, filter: string}, portum_testimonials: {field: string, filter: string}}}
-   */
   var obj = {
+    'portum_slides': {
+      field: 'slider_grouping',
+      filter: 'slides_title'
+    },
+    'portum_advanced_slides': {
+      field: 'slider_advanced_grouping',
+      filter: 'slide_cta'
+    },
     'portum_expertise': {
       field: 'expertise_grouping',
       filter: 'expertise_title'
@@ -239,6 +243,26 @@ wp.customize.bind( 'ready', function() {
     'portum_testimonials': {
       field: 'testimonials_grouping',
       filter: 'testimonial_title'
+    },
+    'portum_contact_section': {
+      field: 'google_map_grouping',
+      filter: 'contact_title'
+    },
+    'portum_counter_boxes': {
+      field: 'counters_grouping',
+      filter: 'counter_title'
+    },
+    'portum_progress_bars': {
+      field: 'progress_bars_grouping',
+      filter: 'progress_bar_title'
+    },
+    'portum_pie_charts': {
+      field: 'piecharts_grouping',
+      filter: 'piechart_title'
+    },
+    'portum_clients': {
+      field: 'clientlist_grouping',
+      filter: 'client_title'
     }
   };
 

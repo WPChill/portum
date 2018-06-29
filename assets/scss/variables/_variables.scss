@@ -1,97 +1,144 @@
-	
-	
-	
-	$heading-color: #232323 !default;  				/* #232323 */	
-	 
-	$accent-1-color: #0385D0 !default; 				/* #F7670E */	// Color 1 - blue
-	$accent-1-color-rgba: rgba(109,109,109,0.65);
-	
-	$accent-2-color: #96588A !default;	 			/*	*/			// Color 2 - red
-	$accent-2-color-rgba: rgba(150,88,138,0.65);
-	
-	$accent-3-color: #151C1F !default;	 			/* #151C1F	*/	// Color 3 - black
-	$accent-3-color-rgba: rgba(21,28,31,0.65);
-	
-	$contact-ribbon-1-color: #6D6D6D !default;		/* */
-	$contact-ribbon-2-color: #96588A !default;		/* */
-	$contact-ribbon-3-color: #DFDFDF !default;		/* */
-	
-	$footer-contact-color: #257954;
-	$footer-background-color: #18304C;			/* #232d33 */
-	
-	$accent-1-font : 'Hind', sans-serif;
-	$accent-2-font : 'Poppins', sans-serif;
-	
-	$text-color: #a9afb1 !default; 	/* b7b7b7 | #a9afb1 */			// Text color
-	
-	
-	
-	// Blog
-	//
-	$blog-heading-color: #1a1e24 !default;
-	$blog-post-background: #ffffff;
-	$blog-text-color: #a9afb1;
-	$blog-widgets-links: #35434E;
-	$blog-widgets-title: #0284CF;
-	
-	
-	
-	// Links
-	//
-	$link-color: #0385D0  !default; 									// Link color
-	$link-hover-color: #96588A !default; 								// Link :hover / :focus Color
-	$link-active-color: #151C1F !default; 							// Link :active color
+// Fonts
+//
+$accent-1-font: 'Hind', sans-serif;
+$accent-2-font: 'Poppins', sans-serif;
 
 
 
-
-	
-	//Footer colors
-	//
-	$footer-link-color: #FD8814  !default; 							// Link color
-	$footer-link-hover-color: #FF661D !default; 						// Link :hover / :focus Color
-	$footer-link-active-color: #D2442C !default; 					// Link :active color
-	
-	$footer-text-color: #13B0A5;								//
-	
-	$footer-widgets-title-color: #fff;
-	
-	
-	
-	
-	
+// Accent colors
+//
+$accent-1-color: #0385D0 !default;
+$accent-1-color-rgba: rgba(3, 133, 208, 0.65);
+$accent-2-color: #A1083A !default;
+$accent-2-color-rgba: rgba(161, 8, 58, 0.65);
+$accent-3-color: #172128 !default;
+$accent-3-color-rgba: rgba(21, 28, 31, 0.65);
 
 
-	$menu-item-color: #ffffff !default; 							// Menu item color
-	$menu-item-hover-color: #ffffff !default; 						// Menu item hover color
-	$menu-dropdown-background-color: rgba(170, 207, 223, 0.90) !default;
 
-	
-	$border-color: #ebebeb !default; 								// Borders (Grey)
+// Typography
+//
+$headings-color: #1A171C !default; 
+$text-color: #777777 !default;
+$link-color: #0385D0 !default;
+$link-hover-color: #A1083A !default;
+$link-active-color: #172128 !default;
 
-	$input-placeholder-color: #ababb2 !default; 					// input placeholders color
-	$input-text-color: #ababb2 !default; 							// input text color
-	$input-border-color: #ebebeb !default; 							// input border color
-	$input-border-focus-color: #cde0e9 !default; 					// input border color :focus 
-	$input-border-invalid-color: #ffc3be !default; 					// input border color :invalid
 
-	$background-color: #fbfcfe !default; 							// frontpage sections backgrounds
 
-	// Colors Contrast
+// Navigation
+//
+$header_background: #151c1f;
+$menu-item-color: #ebebeb !default;
+$menu-item-hover-color: #ffffff !default;
+$menu-item-active-color: #A1083A !default;
+$menu-dropdown-background-color: #a1083a !default;
+$menu-dropdown-hover-background-color: #940534 !default;
 
-	$contrast-text-color: #ffffff!default; 							// Text color
 
-	$contrast-header-color: #ffffff !default; 						// Headers
+// Portfolio
+// 
+$color-background-portfolio-overlay: rgba(255, 255, 255, 0.95) !default;
 
-	$contrast-link-color: #ffffff !default; 						// Link color
-	$contrast-link-hover-color: #aacfdf !default; 					// Link :hover / :focus Color
-	$contrast-link-active-color: #414444 !default; 					// Link :active color
 
-	$contrast-border-color: rgba(255, 255, 255, 0.25) !default; 	// border color
+// Blog
+//
+$blog-post-background: #ffffff;
+$blog-heading-color: #1A171C !default;
+$blog-text-color: #777777;
+$blog-widgets-links: #0385D0;
+$blog-widgets-title: #0385D0;
 
-	// Other colors
 
-	$footer-top-background-color: #b2d3e2 !default;					// footer top bg color
-	$page-header-overlay-background-color: rgba(187, 217, 228, 0.95) !default;
-	
-	
+
+//Footer
+//
+$footer-contact-color: #0377BB;
+
+$footer-background-color: #192229;
+$footer-text-color: #A9AFB1;
+$footer-headings-color: #ffffff;
+
+$footer-link-color: #A9AFB1 !default;
+$footer-link-hover-color: #ffffff !default;
+$footer-link-active-color: #A9AFB1 !default;
+
+
+
+// Forms
+//
+$input-placeholder-color: #ababb2 !default;
+$input-text-color: #ababb2 !default;
+$input-border-color: #ebebeb !default;
+$input-border-focus-color: #cde0e9 !default; 
+$input-border-invalid-color: #ffc3be !default; 
+
+
+
+// Misc
+//
+$background-color: #fbfcfe !default; // frontpage sections backgrounds
+
+$footer-top-background-color: #b2d3e2 !default; // footer top bg color
+
+$page-header-overlay-background-color: rgba(187, 217, 228, 0.95) !default;
+
+$border-color: #ebebeb !default; // Borders (Grey)
+
+$contact-ribbon-1-color: #A41342 !default;
+$contact-ribbon-2-color: #232D33 !default;
+$contact-ribbon-3-color: #DFDFDF !default;
+
+
+// Contrast Colors
+
+$contrast-text-color: #ffffff !default; // Text color
+$contrast-header-color: #ffffff !default; // Headers
+
+$contrast-link-color: #ffffff !default; // Link color
+$contrast-link-hover-color: #aacfdf !default; // Link :hover / :focus Color
+$contrast-link-active-color: #414444 !default; // Link :active color
+
+$contrast-border-color: rgba(255, 255, 255, 0.25) !default; // border color
+
+
+// Advanced Slider 
+
+$color-background-slider-overlay: rgb(0,0,0) !default;
+
+
+// Spacing
+
+$spacing-xx-small: 13px !default;
+$spacing-x-small: 19.5px !default;
+$spacing-small: 26px !default;
+$spacing-medium: 52px !default;
+$spacing-large: 78px !default;
+$spacing-xl-large: 104px !default;
+$spacing-xxl-large: 130px !default;
+
+
+// Portfolio Spacing
+
+$spacing-portfolio-none: 0 !default;
+$spacing-portfolio-small: 1px !default;
+$spacing-portfolio-medium: 13px !default;
+$spacing-portfolio-large: 26px !default;
+
+
+
+// Partner and client list Spacing
+//
+$spacing-partner-none: 0 !default;
+$spacing-partner-line: 1px !default;
+$spacing-partner-small: 10px !default;
+$spacing-partner-medium: 20px !default;
+$spacing-partner-large: 30px !default;
+
+
+
+// Section spacings
+//
+$spacing-section-small: 35px !default;
+$spacing-section-medium: 70px !default;
+$spacing-section-large: 105px !default;

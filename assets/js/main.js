@@ -1,57 +1,99 @@
-(function( $ ) {
-  'use strict';
-  /**
-   * Window scroll events
-   */
-  $( window ).scroll( function() {
-    Portum.Theme.animations();
-  } );
-
-  /**
-   * Window resize event
-   */
-  $( window ).resize( function() {
-    Portum.Mobile.menu();
-  } );
-
-  /**
-   * Document ready event
-   */
-  $( document ).ready( function() {
+(function($) {
+    'use strict';
     /**
-     * Initiate plugins
+     * Window scroll events
      */
-    Portum.Plugins.owlSlider();
-    Portum.Plugins.video();
-    Portum.Plugins.magnificPopup();
+    $(window).scroll(function() {
+        /**
+         * Initiate plugins
+         */
+        try {
+            Portum.Theme.animations();
+            Portum.Plugins.animateCounters();
+            Portum.Plugins.animateProgress();
+            Portum.Plugins.animatePieCharts();
+            Portum.Theme.hideBackTop();
+            Portum.Theme.header();
+        } catch (error) {
+
+        }
+    });
 
     /**
-     * Initiate Theme related functions
+     * Window resize event
      */
-    Portum.Theme.map();
-    Portum.Theme.blog();
-    Portum.Theme.menu();
-    Portum.Theme.animations();
-    Portum.Theme.contact();
-    Portum.Theme.newsletter();
-    Portum.Theme.backTop();
-    Portum.Theme.footerLogo();
+    $(window).resize(function() {
+        Portum.Mobile.menu();
+        Portum.Plugins.animatePieCharts();
+        Portum.Plugins.setDimensionsPieCharts();
+        Portum.Theme.header();
+    });
 
     /**
-     * Mobile functions
+     * Document ready event
      */
-    Portum.Mobile.testimonials();
-    Portum.Mobile.blog();
-    Portum.Mobile.menu();
-  } );
+    $(document).ready(function($) {
+        /**
+         * Initiate plugins
+         */
+        try {
+            Portum.Plugins.owlSlider();
+            Portum.Plugins.clientList();
+            Portum.Plugins.advancedSlider();
+            Portum.Plugins.video();
+            Portum.Plugins.videoSections($);
+            Portum.Plugins.magnificPopup();
+            Portum.Plugins.animateCounters();
+            Portum.Plugins.animateProgress();
+            Portum.Plugins.animatePieCharts();
+            Portum.Plugins.setDimensionsPieCharts();
 
-  $( document ).on( 'epsilon-selective-refresh-ready', function() {
-    /**
-     * Initiate plugins
-     */
-    Portum.Plugins.owlSlider();
-    Portum.Plugins.video();
-    Portum.Plugins.magnificPopup();
-  } );
+            /**
+             * Initiate Theme related functions
+             */
+            Portum.Theme.header();
+            Portum.Theme.map();
+            Portum.Theme.blog();
+            Portum.Theme.menu();
+            Portum.Theme.animations();
+            Portum.Theme.newsletter();
+            Portum.Theme.backTop();
+            Portum.Theme.hideBackTop();
+            Portum.Theme.footerLogo();
+            Portum.Theme.smoothScroll();
+            Portum.Theme.contact();
 
-})( jQuery );
+            /**
+             * Mobile functions
+             */
+            Portum.Mobile.testimonials();
+            Portum.Mobile.blog();
+            Portum.Mobile.menu();
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
+    $(document).on('epsilon-selective-refresh-ready', function() {
+        /**
+         * Initiate plugins
+         */
+        Portum.Plugins.owlSlider();
+        Portum.Plugins.clientList();
+        Portum.Plugins.advancedSlider();
+        Portum.Plugins.video();
+        Portum.Plugins.videoSections($);
+        Portum.Plugins.magnificPopup();
+        Portum.Plugins.animateCounters();
+        Portum.Plugins.animateProgress();
+        Portum.Plugins.animatePieCharts();
+        Portum.Plugins.setDimensionsPieCharts();
+
+        /**
+         * Initiate theme scripts
+         */
+        Portum.Theme.map();
+        Portum.Theme.header();
+    });
+
+})(jQuery);

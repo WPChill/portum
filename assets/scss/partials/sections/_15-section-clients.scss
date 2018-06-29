@@ -1,0 +1,189 @@
+/* =Partner/Client
+   ========================================================================== */
+
+.ewf-partner {}
+
+
+/* =Partner/Client List
+   ========================================================================== */
+
+.ewf-partners-list {
+    list-style: none;
+    &:after {
+        visibility: hidden;
+        display: block;
+        height: 0;
+        font-size: 0;
+        content: " ";
+        clear: both;
+    }
+    li {
+        margin-bottom: 14px;
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) {
+    .ewf-partners-list {
+        margin: 0 -15px;
+    }
+    .ewf-partners-list--spacing-none {
+        margin: $spacing-partner-none;
+    }
+    .ewf-partners-list--spacing-line {
+        margin: 0 -$spacing-partner-line;
+    }
+    .ewf-partners-list--spacing-small {
+        margin: 0 -($spacing-partner-small/2);
+    }
+    .ewf-partners-list--spacing-medium {
+        margin: 0 -($spacing-partner-medium/2);
+    }
+    .ewf-partners-list--spacing-large {
+        margin: 0 -($spacing-partner-large/2);
+    }
+    .ewf-partners-list li {
+        display: inline-block;
+        width: 16.66666666%;
+        padding: 15px;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
+    .ewf-partners-list--columns-2 li {
+        width: 50%;
+    }
+    .ewf-partners-list--columns-3 li {
+        width: 33.33333333%;
+    }
+    .ewf-partners-list--columns-4 li {
+        width: 25%;
+    }
+    .ewf-partners-list--columns-5 li {
+        width: 20%;
+    }
+    .ewf-partners-list--columns-6 li {
+        width: 16.66666666%;
+    }
+    .ewf-partners-list--spacing-none li {
+        padding: $spacing-partner-none;
+    }
+    .ewf-partners-list--spacing-line li {
+        padding: $spacing-partner-line;
+    }
+    .ewf-partners-list--spacing-small li {
+        padding: $spacing-partner-small/2;
+    }
+    .ewf-partners-list--spacing-medium li {
+        padding: $spacing-partner-medium/2;
+    }
+    .ewf-partners-list--spacing-large li {
+        padding: $spacing-partner-large/2;
+    }
+}
+
+@media (max-width: 768px) {
+    .ewf-partners-list li {
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+
+/* =Partner/Client Slider
+   ========================================================================== */
+
+.ewf-partner-slider {
+    position: relative;
+}
+
+.ewf-partner-slider--spacing-none {
+    margin: 0 $spacing-partner-none;
+}
+
+.ewf-partner-slider--spacing-line {
+    margin: 0 -$spacing-partner-line;
+}
+
+.ewf-partner-slider--spacing-small {
+    margin: 0 -($spacing-partner-small/2);
+}
+
+.ewf-partner-slider--spacing-medium {
+    margin: 0 -($spacing-partner-medium/2);
+}
+
+.ewf-partner-slider--spacing-large {
+    margin: 0 -($spacing-partner-large/2);
+}
+
+.ewf-partner-slider__slides {
+    margin-bottom: 0;
+    list-style: none;
+    li {
+        box-sizing: border-box;
+    }
+}
+
+.ewf-partner-slider--spacing-none .ewf-partner-slider__slides li {
+    padding: 0 $spacing-partner-none;
+}
+
+.ewf-partner-slider--spacing-line .ewf-partner-slider__slides li {
+    padding: 0 $spacing-partner-line;
+}
+
+.ewf-partner-slider--spacing-small .ewf-partner-slider__slides li {
+    padding: 0 $spacing-partner-small/2;
+}
+
+.ewf-partner-slider--spacing-medium .ewf-partner-slider__slides li {
+    padding: 0 $spacing-partner-medium/2;
+}
+
+.ewf-partner-slider--spacing-large .ewf-partner-slider__slides li {
+    padding: 0 $spacing-partner-large/2;
+}
+
+.ewf-partner-slider__pager {}
+
+.ewf-partner-slider__pager .slick-dots {
+    margin-bottom: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.ewf-partner-slider--pager-left .ewf-partner-slider__pager .slick-dots {
+    text-align: left;
+}
+
+.ewf-partner-slider--pager-right .ewf-partner-slider__pager .slick-dots {
+    text-align: right;
+}
+
+.ewf-partner-slider__pager .slick-dots li {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 3px;
+}
+
+.ewf-partner-slider__pager .slick-dots li.slick-active {}
+
+.ewf-partner-slider__pager .slick-dots li button {
+    display: block;
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    color: transparent;
+    background-color: #eee;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 5px;
+}
+
+.ewf-partner-slider__pager .slick-dots li.slick-active button {
+    background-color: $accent-1-color;
+}

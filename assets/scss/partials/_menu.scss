@@ -22,12 +22,9 @@
   }
 }
 
-.sf-menu > li:hover {
-  background: url("../images/back-border-nav.png") repeat-x left top;
-}
-
+.sf-menu > li:hover,
 .sf-menu > li.current {
-  background: url("../images/back-border-nav.png") repeat-x left top;
+  box-shadow: inset 0px 3px 0px 0px $menu-item-active-color;
 }
 
 .sf-menu > li > a {
@@ -77,9 +74,9 @@
 .sf-menu a {
   display: block;
   padding: 15px 0;
-  font-family: 'Hind', sans-serif;
+  font-family: inherit;
   letter-spacing: 1.5px;
-  color: #fff;
+  color: $menu-item-color;
   text-decoration: none;
   letter-spacing: 0.5px;
 }
@@ -92,26 +89,34 @@
   border-bottom: none;
 }
 
-.sf-menu > li > a, .sf-menu > li.dropdown > a {
+.sf-menu > li > a, 
+.sf-menu > li.dropdown > a {
   padding: 35px 15px;
   border: none;
-  color: #e3e3e3;
+  color: $menu-item-color;
   font-size: 16px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  transition-property: background-color, color;
+  transition-duration: .3s;
 }
 
 .sf-menu > li a i {
   margin-right: 5px;
 }
 
-.sf-menu > li.current > a, .sf-menu li.sfHover > a, .sf-menu a:hover, .sf-menu li.sfHover a:hover {
-  color: #fff;
+.sf-menu > li.current > a {
+	color: $menu-item-active-color;
+} 
+
+.sf-menu li.sfHover > a, 
+.sf-menu li.sfHover a:hover 
+.sf-menu a:focus,
+.sf-menu a:hover{
+  color: $menu-item-hover-color;
   text-decoration: none;
 }
 
 .dropdown li:hover {
-  background: #A1083A;
+  background-color: $menu-dropdown-hover-background-color;
 }
 
 .dropdown li a {
@@ -127,9 +132,7 @@
 
 .sf-menu li.dropdown ul {
   min-width: 250px;
-  background-color: rgba(53, 68, 78, 0.90);
-  -webkit-box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
-  -moz-box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
+  background-color: $menu-dropdown-background-color;
   box-shadow: 4px 6px 6px 2px rgba(35, 31, 32, .3);
   box-shadow: none;
 }
@@ -141,14 +144,13 @@
   content: "\f107";
   height: 12px;
   width: 12px;
-  background: #\f107;
   position: absolute;
   top: 34px;
   right: 8px;
   font-family: fontawesome;
   text-align: center;
   font-size: 20px;
-  color: #fff;
+  color: $menu-item-color;
   transition: 180ms all;
   line-height: 12px;
 }
@@ -168,7 +170,7 @@
   font-family: fontawesome;
   text-align: center;
   font-size: 14px;
-  color: #fff;
+  color: $menu-item-color;
 }
 
 .small-arrow > a:hover::before {

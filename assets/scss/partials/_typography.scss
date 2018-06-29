@@ -1,24 +1,22 @@
-
 body {
-  font-family: $accent-1-font;
-  background: #fff;
-  font-size: 16px;
-  overflow-x: hidden;
-  font-weight: 400;
-  line-height: 26px;
-  color: $text-color;
-  margin: 0;
+    font-family: $accent-1-font;
+    background-color: #fff;
+    font-size: 16px;
+    overflow-x: hidden;
+    font-weight: 400;
+    line-height: 26px;
+    color: $text-color;
+    margin: 0;
 }
 
 html {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 p {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 h1,
@@ -27,111 +25,110 @@ h3,
 h4,
 h5,
 h6 {
-  color: $heading-color;
-  font-family: $accent-2-font;
-  margin-bottom: 25px;
-  /*
-  color: #232323;
-  */
+    color: $headings-color;
+    font-family: $accent-2-font;
+    margin-bottom: 25px;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  font-weight: inherit;
-  font-size: inherit;
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    font-weight: inherit;
+    font-size: inherit;
 }
 
 h1 {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-weight: 700;
-  @include font-size(32);
-  @include line-height(32, 36);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    @include font-size(32);
+    @include line-height(32, 36);
 }
 
 h2 {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-weight: 700;
-  @include font-size(28);
-  @include line-height(28, 33);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    @include font-size(28);
+    @include line-height(28, 33);
 }
 
 h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-weight: 400;
-  @include font-size(25);
-  @include line-height(25, 30);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    @include font-size(25);
+    @include line-height(25, 30);
 }
 
 h4 {
-  margin-top: 11px;
-  margin-bottom: 11px;
-  font-weight: 400;
-  @include font-size(23);
-  @include line-height(23, 28);
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-weight: 400;
+    @include font-size(23);
+    @include line-height(23, 28);
 }
 
 h5 {
-  margin-top: 11px;
-  margin-bottom: 11px;
-  font-weight: 400;
-  @include font-size(18);
-  @include line-height(18, 24);
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-weight: 400;
+    @include font-size(18);
+    @include line-height(18, 24);
 }
 
 h6 {
-  margin-top: 1px;
-  margin-bottom: 25px;
-  font-weight: 400;
-  @include font-size(16);
-  @include line-height(16, 22);
+    margin-top: 1px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    @include font-size(16);
+    @include line-height(16, 22);
 }
 
-ul, ol {
-  color: inherit;
-  font-family: inherit;
-  line-height: inherit;
-  font-weight: inherit;
-  /*
-  font-family: 'Hind', sans-serif;
-  color: #a9afb1;
-  line-height: 26px;
-  font-weight: 400;
-  */
-  margin-bottom: 25px;
+ul,
+ol {
+    color: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin-bottom: 25px;
 }
 
 ul.styled li:before {
-  content: "\f111";
-  font-family: "FontAwesome";
-  color: $accent-2-color;
-  margin-right: 12px;
+    content: "\f111";
+    font-family: "FontAwesome";
+    color: $accent-2-color;
+    margin-right: 12px;
 }
 
 ul.no-padding {
-  padding: 0;
+    padding: 0;
 }
 
 .screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  overflow-wrap: normal;
-  position: absolute;
-  width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    overflow-wrap: normal;
+    position: absolute;
+    width: 1px;
 }
+
 
 /* ==========================================================================
    =Formatting
    ========================================================================== */
 
 hr {
-  height: 1px;
-  border: 0;
-  margin: 25px 0;
-  background-color: $border-color;
+    height: 1px;
+    border: 0;
+    margin: 25px 0;
+    background-color: $border-color;
 }
+
 
 /* ==========================================================================
    =Lists
@@ -139,239 +136,186 @@ hr {
 
 ul,
 ol {
-  margin-bottom: 25px;
-  list-style-position: inside;
-  list-style: outside none none;
-  padding: 0;
-  margin: 0;
+    margin-bottom: 25px;
+    list-style-position: inside;
+    list-style: outside none none;
+    padding: 0;
+    margin: 0;
 }
 
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 25px;
+li>ul,
+li>ol {
+    margin-bottom: 0;
+    margin-left: 25px;
 }
 
-li {
-}
+li {}
 
 ul {
-  list-style-type: disc;
+    list-style-type: disc;
 }
 
 ul.square,
 ul.square ul {
-  list-style-type: square;
+    list-style-type: square;
 }
 
 ol {
-  list-style-type: decimal;
+    list-style-type: decimal;
 }
 
-dl {
-}
+dl {}
 
 dt {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 dd {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
+
 
 /* ==========================================================================
-   =Links
-   ========================================================================== */
+  =Links
+  ========================================================================== */
 
-a, a:visited {
-  color: $link-color;
-  text-decoration: none;
-  cursor: pointer;
+a,
+a:visited {
+    color: $link-color;
+    text-decoration: none;
+    cursor: pointer;
 }
+
 
 /**
 	* 1. Remove the gray background color from active links in IE 10.
 	*/
 
 a:active {
-  background: transparent;
-  /* 1 */
-  color: $link-active-color;
+    background-color: transparent;
+    /* 1 */
+    color: $link-active-color;
 }
 
-a:active, a:hover, a:focus {
-  outline: 0;
-  text-decoration: none;
+a:active,
+a:hover,
+a:focus {
+    outline: 0;
+    text-decoration: none;
 }
 
-a:hover, a:focus {
-  color: $link-hover-color;
+a:hover,
+a:focus {
+    color: $link-hover-color;
 }
 
-/* =Buttons
-   ========================================================================== */
-
-input.btn,
-button.btn {
-  min-width: 120px;
-}
-
-.btn {
-  position: relative;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
-  background-clip: padding-box;
-  display: inline-block;
-  padding: 9px 22px;
-  margin-bottom: 25px;
-  background-color: $accent-1-color;
-  color: #ffffff;
-  font: inherit;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 35px;
-  border: none;
-  -webkit-appearance: none;
-}
-
-a.btn {
-  color: #fff;
-}
-
-.btn:focus,
-.btn:hover {
-  background-color: $accent-2-color;
-  color: #ffffff;
-}
-
-.btn:active {
-  background-color: $accent-3-color;
-  color: #ffffff;
-}
-
-.btn.btn-small {
-  padding: 2px 22px;
-}
-
-.btn.btn-large {
-  padding: 15px 30px;
-}
-
-.btn-contrast {
-  background-color: $accent-2-color;
-  color: #ffffff;
-}
-
-.btn-contrast:focus,
-.btn-contrast:hover {
-  background-color: $accent-1-color;
-}
-
-.btn-contrast:active {
-  background-color: $accent-3-color;
-}
 
 /* =Social Links
    ========================================================================== */
 
 .social-links {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
+
 
 /*
  * 1. Clearfix hack
  */
 
-.social-links:after { /* 1 */
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
+.social-links:after {
+    /* 1 */
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 a.social-icon {
-  display: inline-block;
-  margin-right: 15px;
-  margin-bottom: 5px;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
 }
 
 a.social-icon:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 a.social-icon {
-  color: $text-color;
+    color: $text-color;
 }
 
 a.social-icon:hover,
 a.social-icon:focus {
-  color: $link-hover-color;
+    color: $link-hover-color;
 }
 
 a.social-icon:active {
-  color: $link-active-color;
+    color: $link-active-color;
 }
+
 
 /* ==========================================================================
    =Text Alignment classes
    ========================================================================== */
 
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 
 .text-right {
-  text-align: right;
+    text-align: right;
 }
 
 @media (max-width: 767px) {
-  .text-right {
-    text-align: left;
-  }
+    .text-right {
+        text-align: left;
+    }
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .text-justify {
-  text-align: justify;
+    text-align: justify;
 }
+
 
 /* ==========================================================================
    =Text Transformation classes
    ========================================================================== */
 
 .text-nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .text-lowercase {
-  text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .text-uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-capitalize {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .text-accent-color {
-  color: $accent-1-color;
+    color: $accent-1-color;
 }
 
 .text-accent-color-2 {
-  color: $accent-2-color;
+    color: $accent-2-color;
 }
+
 
 /* ==========================================================================
    =Clearings
    ========================================================================== */
+
 
 /**
   * ClearFix Hack
@@ -379,13 +323,14 @@ a.social-icon:active {
   */
 
 .fixed:after {
-  display: block;
-  visibility: hidden;
-  height: 0;
-  font-size: 0;
-  content: " ";
-  clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    content: " ";
+    clear: both;
 }
+
 
 /**
   * Clear content
@@ -393,185 +338,184 @@ a.social-icon:active {
   */
 
 .clear {
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
 }
+
 
 /* ------------------------------ HEADLINE section ---------------------------*/
 
 .headline {
-  position: relative;
-
-  h3 {
-    margin-bottom: 55px;
-    z-index: 99999;
-    position: relative;
-    margin-top: 4px;
-    animation: anim_affluent_sliderPro_category 1000ms linear both;
-    animation-delay: 400ms;
-    font-size: 30px;
-    font-weight: 300;
-  }
-
-  strong {
-    font-size: 160px;
-    color: #f9f9f9;
-    font-family: $accent-2-font;
-    text-transform: uppercase;
-    position: absolute;
-    top: -65px;
-    left: -185px;
-    z-index: 9;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  span {
-    font-size: 14px;
-    color: $text-color;
-    line-height: 26px;
-    font-weight: 400;
-    text-transform: uppercase;
-    position: relative;
-    font-family: $accent-1-font;
-    letter-spacing: 2px;
-  }
+    h3 {
+        margin-bottom: 55px;
+        z-index: 9;
+        margin-top: 0;
+        animation: anim_affluent_sliderPro_category 1000ms linear both;
+        animation-delay: 400ms;
+        font-size: 30px;
+        font-weight: 300;
+    }
+    span {
+        color: $headings-color;
+        font-size: 16px;
+        opacity: .65;
+    }
 }
 
-.contrast h3 {
-  color: #fff;
+// .contrast { 
+// 	.headline h3 {
+// 		color: #fff;
+// 	}	
+// 	.headline span {
+// 		color: #fff;
+// 	}	
+// }
+@media (min-width: 768px) {
+    .ewf-section--title-right .headline:last-child h3,
+    .ewf-section--title-left .headline:last-child h3 {
+        margin-bottom: 0;
+    }
 }
 
-@media (max-width: 991px) {
-
-  .headline strong {
-    left: initial;
-  }
+@media (max-width: 768px) {
+    .headline {
+        text-align: center;
+    }
+    .headline--xs-bottom {
+        margin-top: 55px;
+        h3 {
+            margin: 0;
+        }
+    }
 }
+
 
 /* ------------------------------ HEADLINE section - END --------------------*/
 
+
 /* ==========================================================================
-   =Images
-   ========================================================================== */
+  =Images
+  ========================================================================== */
 
 img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  border: none;
-  vertical-align: middle;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border: none;
+    vertical-align: middle;
 }
 
+
 /* ==========================================================================
-   =Tables
-   ========================================================================== */
+  =Tables
+  ========================================================================== */
+
 table,
 th,
 td {
-  border: 1px solid #ebebeb;
+    border: 1px solid #ebebeb;
 }
+
 
 /**
 	 * 1. Prevents HTML tables from becoming too wide
 	 */
+
 table {
-  width: 100%;
-  border-width: 1px 0 0 1px;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin-bottom: 25px;
-  table-layout: fixed;
-  /* 1 */
+    width: 100%;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 25px;
+    table-layout: fixed;
+    /* 1 */
 }
 
 caption,
 th,
 td {
-  font-weight: normal;
-  text-align: left;
+    font-weight: normal;
+    text-align: left;
 }
 
 caption {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 th {
-  border-width: 0 1px 1px 0;
-  font-weight: 700;
+    border-width: 0 1px 1px 0;
+    font-weight: 700;
 }
 
 td {
-  border-width: 0 1px 1px 0;
+    border-width: 0 1px 1px 0;
 }
 
 th,
 td {
-  padding: 12px;
+    padding: 12px;
 }
+
 
 /* ==========================================================================
    =Misc
    ========================================================================== */
+
 pre {
-  display: block;
-  overflow-x: auto;
-  margin-bottom: 28px;
-  white-space: pre-wrap;
-  background-color: #f9f9fa;
-  padding: 14px;
+    display: block;
+    overflow-x: auto;
+    margin-bottom: 28px;
+    white-space: pre-wrap;
+    background-color: #f9f9fa;
+    padding: 14px;
 }
 
 em {
-  font-style: italic;
+    font-style: italic;
 }
 
 strong {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 small {
-  font-size: 90%;
+    font-size: 90%;
 }
 
 big {
-  font-size: 125%;
+    font-size: 125%;
 }
 
 abbr[title] {
-  border-bottom: 1px dotted #777777;
-  cursor: help;
+    border-bottom: 1px dotted #777777;
+    cursor: help;
 }
 
 address {
-  display: block;
-  margin-bottom: 28px;
+    display: block;
+    margin-bottom: 28px;
 }
 
 q {
-  color: #1a171c;
-  font-family: 'Georgia', 'Lato', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 30px;
-  quotes: "\201C" "\201D" "\201C" "\201D";
+    color: #1a171c;
+    font-family: 'Georgia', 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 30px;
+    quotes: "\201C" "\201D" "\201C" "\201D";
 }
 
 q:before {
-  content: open-quote;
+    content: open-quote;
 }
 
 q:after {
-  content: close-quote;
+    content: close-quote;
 }
 
 kbd,
@@ -580,18 +524,17 @@ var,
 samp,
 code,
 pre {
-  font-family: monospace;
+    font-family: monospace;
 }
 
-code {
-}
+code {}
 
 mark,
 ins {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 s,
 del {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }

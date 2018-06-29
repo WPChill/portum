@@ -1,0 +1,57 @@
+/* =Pie Chart
+   ========================================================================== */
+
+.ewf-pie {
+	position: relative;
+	margin-bottom: 56px;
+	text-align: center;
+  
+	&:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		font-size: 0;
+		content: " ";
+		clear: both;
+	}
+}
+
+.ewf-pie__chart {
+	position: relative;
+	margin: 0 auto 28px;
+	text-align: center;
+
+	canvas {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}	
+}
+
+.ewf-pie__percent {
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.ewf-pie__icon,
+.ewf-pie__percent {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  color: $accent-1-color;
+  text-align: center;
+}
+
+.ewf-pie__title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.ewf-pie__description {
+  text-align: center;
+}

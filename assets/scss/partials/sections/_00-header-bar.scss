@@ -1,0 +1,12 @@
+.portum-top-bar {
+  background-color: #056595;
+  color: #fff;
+  padding: 7px 0;
+  a, p, li {
+    color: #fff;
+  }
+
+  .widget:first-of-type {
+    margin-top: 0 !important;
+  }
+}

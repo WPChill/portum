@@ -1,19 +1,6 @@
 
 /* ----------------------------------- #08 - PRICING section --------------------------------*/
 
-.section-pricing {
-    background: #fff;
-    padding: 70px 0 75px 0;
-}
-
-
-/*
-.section-pricing.animate-- {
-    background: transparent;
-}
-*/
-
-
 .pricing-item {
     padding: 20px 0 30px 0;
     text-align: center;
@@ -21,73 +8,82 @@
     position: relative;
     transition: 150ms all;
     transition: all 100ms ease-in-out;
-	-webkit-box-shadow: 0 0 20px rgba(35,31,32,.1);
-	-moz-box-shadow: 0 0 20px rgba(35,31,32,.1);
 	box-shadow: 0 0 20px rgba(35,31,32,.1);
-	
-	
-	.details {
-		
+	margin-bottom:30px;
+	background-color:#fff;
+	overflow:hidden;
+
+	&.featured,
+	&:hover {
+		transform: scale(1.05);
+		z-index:9999;
+	}
+
+	&.featured .details,
+	&:hover .details {
 		background-color: $accent-2-color;
-		font-family: $accent-1-font;
+	}
+
+	&.featured sub,
+	&.featured sup,
+	&.featured ul span,
+	&.featured strong,
+	&:hover sub,
+	&:hover sup,
+	&:hover ul span,
+	&:hover strong {
+		color: $accent-2-color;
+	}
+
+	.details {
+
+		background-color: $accent-1-color;
 		color: #fff;
 		margin: 5px -2px 25px -2px;
 		padding: 15px 0;
-	
-	
+
+
 		h4 {
-			font-family: $accent-1-font;
 			color: #fff;
 			font-weight: bold;
-			font-size: 20px;
 			letter-spacing: 1.5px;
 			margin: 0;
 		}
-	
+
 		p {
 			color: #fff;
 			margin: -5px 0 0 0;
 		}
 	}
-	
+
 	ul {
 		text-align: Center;
 		padding: 0;
 		display: inline-block;
-		
+
 		li {
 			list-style-type: none;
 			text-align: left;
 			margin: 0 0 5px 0;
 		}
-		
-		span { 
-			color: #333; 
+
+		span {
+			color: #333;
 		}
-	}
-	
-	.btn {
-		min-width:120px;
 	}
 
 	.wrapper {
 		position: absolute;
 		left: 50%;
-		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
 		bottom: 40px;
 	}
 }
 
 
-.pricing-item:hover {
-    transform: scale(1.05);
-}
-
-
 .pricing-item .plan {
 	font-family: $accent-2-font;
-		
+
 	strong {
 		font-size: 60px;
 		line-height:40px;
@@ -95,7 +91,7 @@
 		display:inline-block;
 		padding:25px 0 20px 0;
 	}
-	
+
 	sup {
 		height:20px;
 		line-height:28px;
@@ -105,7 +101,7 @@
 		font-weight: bold;
 		top: -0.7em;
 	}
-	
+
 	sub {
 		vertical-align: sub;
 		color: $accent-1-color;
@@ -116,39 +112,28 @@
 }
 
 
-.pricing-item:hover .details {
-    background-color: $accent-1-color;
+@media (min-width: 991px) {
+
+.section-pricing.ewf-section--spacing-none-bottom .pricing-item { margin-bottom:0; }
+
 }
-
-
-.pricing-item:hover sub,
-.pricing-item:hover sup,
-.pricing-item:hover ul span,
-.pricing-item:hover strong {
-    color: $accent-1-color;
-}
-
 
 @media (max-width: 991px) {
-	
+
     .pricing-item {
-        background: gold;
         margin-bottom: 0;
         background-color: #fff;
-        -webkit-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
-        -moz-box-shadow: 0 0 20px rgba(35, 31, 32, .1);
         box-shadow: 0 0 20px rgba(35, 31, 32, .1);
         min-height: 170px !important;
         padding: 0;
 		z-index: 999;
-		
-		
+
 		ul {
 			display: block;
 			padding: 30px 0 20px 205px;
 			margin: 0
 		}
-		
+
 		.wrapper {
 			position: initial;
 			transform: none;
@@ -158,21 +143,21 @@
 			left: initial;
 			bottom: 0;
 		}
-		
+
 		.plan {
 			position: Absolute;
 			left: 0;
 			top: 65px;
 			z-index: 99;
 			width: 190px;
-			
-			strong 	{ 
-				padding-top:0; 
+
+			strong 	{
+				padding-top:0;
 			}
 		}
-		
+
 		.details {
-			background: $accent-2-color;
+			background-color: $accent-1-color;
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -182,30 +167,30 @@
 			width: 190px;
 			z-index: 9;
 			height: 100%;
-			
-			h4 { 
-				padding-top: 30px; 
+
+			h4 {
+				padding-top: 30px;
 			}
-			
-			p 				{ 
-				display: none; 
+
+			p 				{
+				display: none;
 			}
 		}
     }
-	
-	
+
+
     .pricing-item:hover {
         transform: none;
     }
-		
-		
-    .pricing-item .plan strong, 
-	.pricing-item .plan sub, 
+
+
+    .pricing-item .plan strong,
+	.pricing-item .plan sub,
 	.pricing-item .plan sup {
         color: #fff;
     }
 
-	
+
     .pricing-item:hover .plan strong,
     .pricing-item:hover .plan sub,
     .pricing-item:hover .plan sup {
@@ -214,7 +199,7 @@
 }
 
 @media (max-width: 768px) {
-	
+
 	.pricing-item {
 		.wrapper {
 			position:relative;
@@ -224,12 +209,54 @@
 			left:auto;
 			padding-left:205px;
 		}
-		
-		ul li { 
-			text-align:center; 
+
+		ul li {
+			text-align:center;
 		}
-	}	
+	}
 }
 
+
+@media (max-width: 425px) {
+
+	.pricing-item {
+		&.featured {
+			transform: scale(1);
+		}
+		
+		.wrapper {
+			position:relative;
+			top:auto;
+			right:auto;
+			bottom:auto;
+			left:auto;
+			padding-left:0;
+			text-align:center;
+		}
+		
+		.details {
+			position:relative;
+			min-height:150px;
+			width:100%;
+			top:auto;
+			right:auto;
+			bottom:auto;
+			left:auto;			
+		}
+		
+		.plan {
+			width:100%;
+			text-align:center;
+		}
+
+		ul {
+			padding:20px;
+			
+			li {
+				text-align:center;
+			}
+		}
+	}
+}
 
 /* ----------------------------------- #08 - PRICING section - END ---------------------------*/

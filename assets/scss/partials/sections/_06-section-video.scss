@@ -1,110 +1,12 @@
 
 /* ----------------------------------- #06 - VIDEO section --------------------------------------------- */
 
-.section-video {
-    position: Relative;
-    background: #444;
-}
-
-.section-video cover { 
-	width:100%;
-	height:auto;
-}
-
-/*
-.section-video.animate-- {
-    background: grey;
-}
-*/
-
-
-.section-video .info-area {
-    background:rgba(0, 0, 0, 0.5);
-    left: 0;
-    position: Absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-	padding:45px 0;
-}
-
-.section-video .info-area p {
-    font-size: 22px;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: -0.5px;
-    margin: 0;
-    padding: 0;
-    line-height: 40px;
-}
-
-.section-video .info-area p strong {
-    color: $accent-2-color;
-	font-weight:normal;
-}
-
-.section-video .newsletter {
-	margin-top:-2px;
-    position: relative;
-}
-
-.section-video .newsletter input[type="text"] {
-    border-radius: 50px;
-    background: rgba(255,255,255,0.06);
-    coloe: $text-color;
-    border: none;
-	line-height:45px;
-	height:45px;
-	margin-bottom:0;
-}
-
-.newsletter input[type="text"]:active {
-	color:#fff;	 
-}
-
-.section-video .newsletter input[type="submit"] {
-    position: Absolute;
-	margin:0;
-    right: 0;
-    top: 0;
-}
-
-.plyr__play-large {
-    width: 90px;
-    height: 90px;
-    border: 2px solid currentcolor;
-    text-align: center;
-    background-color: transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.plyr__play-large svg {
-    height: 68px;
-    width: 40px;
-    display: inline-block;
-}
-
-@media (max-width: 767px) {
-	.section-video .info-area {
-		padding:30px 0;
+@media (max-width: 768px) {
+	
+	.video-area {
+		margin-bottom:60px;
 	}
 	
-	.section-video .info-area {
-		position:relative;
-		bottom:auto;
-		left:auto;
-	}
-	
-	.section-video .info-area p {
-		margin-bottom:20px;
-		font-size:22px;
-		line-height:22px;
-		text-align:center;
-	}
 }
-
 
 /* ----------------------------------- #06 - VIDEO section - END --------------------------------------- */

@@ -36,14 +36,18 @@ if ( ! is_array( $footer_layout ) ) {
 	$footer_layout = json_decode( $footer_layout, true );
 }
 
-/**
- * In case all the sidebars have widgets attached, we slice the array.
- */
+$front = get_option( 'show_on_front' );
+$cform = absint( get_theme_mod( 'portum_contact_form', 0 ) );
 ?>
-<div id="footer">
+
+<div id="footer"
+<?php
+if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) {
+	echo ' class="has-contact-form"'; }
+?>
+>
 	<div class="container">
 		<?php
-		$front = get_option( 'show_on_front' );
 		if ( 'page' === $front && is_front_page() ) {
 			get_template_part( 'template-parts/footer/contact-form' );
 		}

@@ -5,21 +5,23 @@
  *
  *  T.O.C
  *
- *	
+ *
  */
+/**
+* @uses: https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+*/
 @import "variables/variables";
 @import "mixins/mixins";
 @import "partials/typography";
-@import "partials/grid";
+@import "partials/utils";
 @import "partials/forms";
 @import "partials/header";
 @import "partials/menu";
 @import "partials/blog";
 @import "partials/back-top";
-/*
-*/
+@import "partials/sections/base";
+@import "partials/sections/00-header-bar";
 @import "partials/sections/00-section-hero";
-@import "partials/sections/01-section-about";
 @import "partials/sections/02-section-services";
 @import "partials/sections/03-section-portfolio";
 @import "partials/sections/04-section-testimonials";
@@ -30,51 +32,89 @@
 @import "partials/sections/09-section-blog";
 @import "partials/sections/10-section-contact";
 @import "partials/sections/11-section-footer";
-@import "partials/sections/base";
+@import "partials/sections/12-section-counters";
+@import "partials/sections/13-section-progress";
+@import "partials/sections/14-section-piecharts";
+@import "partials/sections/15-section-clients";
+@import "partials/sections/16-section-map";
+@import "partials/sections/17-section-advanced-slider.scss";
+@import "partials/sections/18-section-cta.scss";
 
 .page {
-  .widget {
-    &:first-of-type {
-      margin-top: 45px;
-    }
-  }
+	.widget {
+		&:first-of-type {
+			margin-top: 45px;
+		}
+	}
 }
 
 @include media('<=768px') {
-  .bni-rsp {
-    display: block;
-  }
+	.bni-rsp {
+		display: block;
+	}
 
-  .show-more-comments {
-    display: none;
-  }
-  .comment-hidden-mobile + .show-more-comments {
-    display: block;
-  }
+	.show-more-comments {
+		display: none;
+	}
+	.comment-hidden-mobile + .show-more-comments {
+		display: block;
+	}
 
-  .slick-next {
-    width: 75px;
-    padding-left: 0;
-    padding-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .slick-prev {
-    width: 75px;
-    padding-left: 0;
-    padding-right: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+	.slick-next {
+		width: 75px;
+		padding-left: 0;
+		padding-right: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.slick-prev {
+		width: 75px;
+		padding-left: 0;
+		padding-right: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
 
-  .portfolio-wrapper-arrows {
-    width: 100px;
-    height: 50px;
-    background: Red;
-  }
+	.portfolio-wrapper-arrows {
+		width: 100px;
+		height: 50px;
+	}
 }
 
 .bypostauthor {
-  font-size: initial;
+	font-size: initial;
 }
- 
+
+.container.container-boxedcenter {
+	@media (min-width: 992px) {
+		width: 970px;
+	}
+}
+
+.ewf-section--spacing-none-top.ewf-text-align--left .epsilon-pencil-button-group {
+	top: 5px;
+}
+
+.ewf-section--title-left .epsilon-pencil-button-group,
+.ewf-text-align--left .epsilon-pencil-button-group {
+	top: -35px;
+}
+
+.section-map .epsilon-pencil-button-group {
+	top: 15px;
+	left: 30px;
+}
+
+.epsilon-pencil-button-group {
+	left: 15px;
+
+	a { color: #fff !important; }
+}
+
+.ewf-section-hidden {
+	display: none !important;
+}
+
+.efw-section-visible {
+	display: block !important;
+}

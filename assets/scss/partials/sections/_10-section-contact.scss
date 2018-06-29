@@ -1,134 +1,80 @@
-
 /* ----------------------------------- #10 - CONTACT section --------------------------------*/
 
 .section-contact {
-    position: relative;
-    z-index: 9;
-}
+	position: relative;
+	z-index: 9;
 
-.section-contact .container {
-	padding-top:400px;
-}
-
-.section-contact.no-map{
-	.container{
-		padding-top:60px;
+	.container {
+		position: relative;
 	}
-}
-
-.contact-overlay {
-    width: 100%;
-    height: 50px;
-    background: url("../images/back-section-shadow.png") repeat-x left top;
-    position: Absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
-}
-
-.contact-map {
-	background:#F5F5F5;
-	position:absolute;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
-}
-
-.contact-details {
-    padding: 75px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-    -moz-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-    box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-    position: relative;
 }
 
 .contact-decoration {
-    height: 8px;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: $contact-ribbon-3-color;
-    width: 100%;
-    background: repeating-linear-gradient(135deg, $contact-ribbon-1-color, $contact-ribbon-1-color 3.030%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 6.060%, $contact-ribbon-2-color 0, $contact-ribbon-2-color 9.090%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 12.12%);
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	height: 8px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width:100%;
+	background-color: $contact-ribbon-3-color;
+	background: repeating-linear-gradient(135deg, $contact-ribbon-1-color, $contact-ribbon-1-color 3.030%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 6.060%, $contact-ribbon-2-color 0, $contact-ribbon-2-color 9.090%, $contact-ribbon-3-color 0, $contact-ribbon-3-color 12.12%);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
-
-.contact-details-item {
-	padding:0 20px 20px 20px;
-
-	h5 {
-		color: $accent-1-color;
-		margin-bottom: 15px;
-
-		i {
-			margin-right: 10px;
-		}
-	}
-}
-
 
 .contact-form-content {
-    display: none;
+	display: none;
 }
 
-
-
-
 .contact-form {
-    padding: 50px 95px;
-	margin:0 0 45px 0;
-	position:relative;
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-    background-color: $footer-contact-color;
+	padding: 50px 95px;
+	margin: 0 0 45px 0;
+	position: relative;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+	background-color: $footer-contact-color;
 
 	h4 {
 		text-shadow: 0 1px rgba(35, 31, 32, .41);
 		color: #fff;
 		float: left;
-		margin:0;
+		margin: 0;
 		line-height: 45px;
 	}
 
-	button {
+	.ewf-btn {
 		float: right;
-		transition:none;
-		min-width:150px;
 	}
-
 }
 
 .input-item {
-	position:relative;
+	position: relative;
 
 	span.input-icon {
-		position:absolute;
-		top:8px;
-		right:16px;
-		opacity:.3;
+		position: absolute;
+		top: 8px;
+		right: 16px;
+		opacity: .3;
 	}
 }
 
-
-@media (max-width: 425px) {
-	.contact-details {
-		padding: 75px 35px;
-	}
-
-	.contact-details-item {
+@media (max-width: 540px) {
+	
+	.contact-form {
+		padding: 20px 45px;
+		margin-bottom:25px;
 		text-align:center;
+		
+		h4 {
+			float:none;
+			text-align:center;
+		} 
+		
+		.ewf-btn {
+			float:none;
+			display:inline-block;
+		}
 	}
-
 }
-
 
 
 /* ----------------------------------- #10 - CONTACT section - END --------------------------------*/

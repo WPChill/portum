@@ -30,8 +30,8 @@ class Portum_Hooks {
 		/**
 		 * Add a <span> html tag to the category item
 		 */
-		add_filter( 'wp_list_categories', array( $this, 'add_span_to_count' ) );
-		add_filter( 'get_archives_link', array( $this, 'add_span_to_count' ) );
+		// add_filter( 'wp_list_categories', array( $this, 'add_span_to_count' ) );
+		// add_filter( 'get_archives_link', array( $this, 'add_span_to_count' ) );
 		/**
 		 * Fix responsive videos
 		 */
@@ -136,13 +136,13 @@ class Portum_Hooks {
 	public function custom_image_sizes( $sizes ) {
 		$custom_sizes = array(
 			'portum-main-slider'          => esc_html__( 'Main Slider', 'portum' ),
-			'portum-testimonial-portrait' => esc_html__( 'Testimonial Portrait', 'portum' ),
 			'portum-blog-section-image'   => esc_html__( 'Blog Section Image', 'portum' ),
-			'portum-expertise-image'      => esc_html__( 'Expertise Image', 'portum' ),
-			'portum-about-image'          => esc_html__( 'About Image', 'portum' ),
 			'portum-portfolio-image'      => esc_html__( 'Portfolio Image', 'portum' ),
 			'portum-team-image'           => esc_html__( 'Team Portrait', 'portum' ),
 			'portum-blog-post-image'      => esc_html__( 'Blog Post Image', 'portum' ),
+			// 'portum-testimonial-portrait' => esc_html__( 'Testimonial Portrait', 'portum' ),
+			//'portum-about-image'          => esc_html__( 'About Image', 'portum' ),
+			//'portum-expertise-image'      => esc_html__( 'Expertise Image', 'portum' ),
 		);
 
 		return array_merge( $sizes, $custom_sizes );

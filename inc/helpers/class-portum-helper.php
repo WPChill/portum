@@ -15,6 +15,27 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Portum_Helper {
 	/**
+	 * Create a "default" value for the header layout
+	 */
+	public static function get_header_default() {
+		return wp_json_encode(
+			array(
+				'columnsCount' => 2,
+				'columns'      => array(
+					array(
+						'index' => 1,
+						'span'  => 6,
+					),
+					array(
+						'index' => 2,
+						'span'  => 6,
+					),
+				),
+			)
+		);
+	}
+
+	/**
 	 * Create a "default" value for the footer layout
 	 */
 	public static function get_footer_default() {
@@ -63,6 +84,106 @@ class Portum_Helper {
 			)
 		);
 	}
+
+	/**
+	 * Generate a set of classes to be applied on a section
+	 *
+	 * @param $key
+	 * @param $fields
+	 *
+	 */
+	public static function generate_section_class( $key, $fields ) {
+		$additional = '';
+		if ( ! empty( $fields[ $key . '_row_spacing_top' ] ) ) {
+			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_top' ] . '-top';
+		}
+		if ( ! empty( $fields[ $key . '_row_spacing_bottom' ] ) ) {
+			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_bottom' ] . '-bottom';
+		}
+		if ( ! empty( $fields[ $key . '_background_parallax' ] ) && 'false' != $fields[ $key . '_background_parallax' ] ) {
+			$additional .= ' ewf-section--parallax';
+		}
+
+		echo esc_attr( $additional );
+	}
+
+	/**
+	 * Generate section attrbiutes
+	 *
+	 * @param $key
+	 * @param $fields
+	 *
+	 * @return bool | string | echo
+	 */
+	public static function generate_section_attr( $key, $fields ) {
+		if ( empty( $fields[ $key . '_background_image' ] ) ) {
+			return false;
+		}
+		$arr = array(
+			'background-image'    => 'url(' . esc_url( $fields[ $key . '_background_image' ] ) . ')',
+			'background-position' => esc_attr( $fields[ $key . '_background_position' ] ),
+			'background-size'     => esc_attr( $fields[ $key . '_background_size' ] ),
+		);
+
+		$style = 'style="';
+		foreach ( $arr as $k => $v ) {
+			$style .= $k . ':' . $v . ';';
+		}
+		$style .= '"';
+
+		echo $style;
+	}
+
+	/**
+	 * Generates the video overlay
+	 *
+	 * @param $key
+	 * @param $fields
+	 *
+	 * @return string
+	 */
+	public static function generate_video_overlay( $key, $fields ) {
+		if ( ! empty( $fields[ $key . '_background_video' ] ) ) {
+			echo '<div class="ewf-section__video-background-yt"> <a class="ewf-section__video-background-yt-source" data-property="" data-source="' . $fields[ $key . '_background_video' ] . '"></a> </div>';
+		}
+	}
+
+	/**
+	 * Generates overlay attr
+	 *
+	 * @param $key
+	 * @param $fields
+	 */
+	public static function generate_color_overlay( $key, $fields ) {
+		if ( ! empty( $fields[ $key . '_background_color' ] ) ) {
+			echo '<div class="ewf-section__overlay-color" style="background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . '; opacity: ' . esc_attr( $fields[ $key . '_background_color_opacity' ] ) . '"></div>';
+		}
+
+		echo '';
+
+	}
+
+	/**
+	 * Returns the class of the container
+	 *
+	 * @param $key
+	 *
+	 * @return string
+	 */
+	public static function container_class( $key, $fields ) {
+		$class = array(
+			'boxedin'     => 'container',
+			'boxedcenter' => 'container container-boxedcenter',
+			'fullwidth'   => '', // container-fluid
+		);
+
+		if ( ! empty( $fields[ $key . '_column_stretch' ] ) ) {
+			return isset( $class[ $fields[ $key . '_column_stretch' ] ] ) ? $class[ $fields[ $key . '_column_stretch' ] ] : 'container';
+		}
+
+		return 'container';
+	}
+
 
 	/**
 	 * Get blog layout
@@ -132,14 +253,14 @@ class Portum_Helper {
 
 		switch ( $element ) {
 			case 'author':
-				$html = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
+				$html  = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
 				$html .= '<a class="post-author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a>';
 				$html .= '</span>';
 
 				echo wp_kses_post( $html );
 				break;
 			case 'category':
-				$html = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
+				$html  = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
 				$html .= get_the_category_list( ' ' );
 				$html .= '</div><!-- .cat-links -->';
 
@@ -149,7 +270,7 @@ class Portum_Helper {
 				echo ' <span class="comments-link"><a title="' . esc_attr__( 'Comment on Post', 'portum' ) . '" href="' . esc_url( get_the_permalink( get_the_ID() ) ) . '#comments">' . esc_html( $comments->approved ) . '</a></span>';
 				break;
 			case 'tags':
-				$html = '<div class="tags-links">';
+				$html  = '<div class="tags-links">';
 				$html .= get_the_tag_list( '', ' ' );
 				$html .= '</div><!-- .tags-links -->';
 				echo wp_kses_post( $html );
@@ -168,24 +289,24 @@ class Portum_Helper {
 	 * @param array  $args
 	 *
 	 * @return string;
+	 * @todo restore wpautop
 	 */
 	public static function generate_section_title(
 		$subtitle = '',
 		$title = '',
 		$args = array(
-			'doubled' => false,
-			'center'  => true,
+			'bottom' => false,
+			'center' => false,
 		)
 	) {
 		$class = 'headline';
-		if ( $args['center'] ) {
+		if ( ! empty( $args['center'] ) ) {
 			$class .= ' text-center';
 		}
-		$html = '<div class="' . $class . '">';
-
-		if ( $args['doubled'] && ! ( empty( $subtitle ) ) ) {
-			$html .= '<strong>' . $subtitle . '</strong>';
+		if ( ! empty( $args['bottom'] ) ) {
+			$class .= ' headline--xs-bottom';
 		}
+		$html = '<div class="' . $class . '">';
 
 		if ( ! empty( $subtitle ) ) {
 			$html .= '<span>' . $subtitle . '</span>';
@@ -285,12 +406,47 @@ class Portum_Helper {
 
 	/**
 	 * Generate an edit shortcut for the frontend sections
+	 *
+	 * @deprecated
+	 *
 	 */
-	public static function generate_pencil() {
-		if ( is_customize_preview() ) {
-			return '<a href="#" class="epsilon-section-editor"><span class="dashicons dashicons-edit"></span></a>';
+	public static function generate_pencil( $class_name = '', $section_type = '' ) {
+		return Epsilon_Helper::generate_pencil( $class_name, $section_type );
+	}
+
+	/**
+	 * @param $url
+	 *
+	 * @return array
+	 */
+	public static function video_type( $url ) {
+		$youtube = preg_match(
+			'/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/',
+			$url,
+			$yt_matches
+		);
+
+		$vimeo = preg_match(
+			'/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([‌​0-9]{6,11})[?]?.*/',
+			$url,
+			$vm_matches
+		);
+
+		$video_id = 0;
+		$type     = 'none';
+
+		if ( $youtube ) {
+			$video_id = $yt_matches[5];
+			$type     = 'youtube';
+		} elseif ( $vimeo ) {
+			$video_id = $vm_matches[5];
+			$type     = 'vimeo';
 		}
 
-		return '';
+		return array(
+			'video_id'   => $video_id,
+			'video_type' => $type,
+		);
+
 	}
 }

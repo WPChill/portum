@@ -1,105 +1,3 @@
-/* ------- BUTTONS --------- */
-
-/*
-
-
-.btn {
-    font-family: 'Hind', sans-serif;
-    line-height: 45px;
-	height:45px;
-	font-size:inherit;
-    font-weight: 400;
-	font-size:15px;
-    color: #fff;
-    background-color: #0385D0;
-    border-radius: 50px;
-	padding:0 45px;
-	display:inline-block;
-	border:none;
-	
-	
-	&:focus,
-	&:hover { 
-		background:#A31241;
-		color:#fff;
-	}	
-}
-
-button {
-	@extend .btn;
-	
-    line-height: 25px;
-    padding: 12px 60px 8px 60px;
-    transition: 180ms all;
-	
-	&:active 	{ background-color: #333; }
-}
-
-.btn-contrast {
-	background-color: #A31241;
-	
-	&:hover { background-color: #0385D0; }
-	&:focus { background-color: #a31241; }
-}
-
-button.red {
-    @extend .btn-contrast;
-	
-	&:active 	{ background-color: #333; 		}	
-}
-
-
-button.dark-blue {
-    background-color: #101C24;
-	
-	&:hover { background: #0A0F12; }
-}
-
-
-button.large {
-    padding: 12px 60px 8px !important;
-}
-
-*/
-
-/* ------- BUTTONS - END --------- */
-
-
-/* -------------- INPUTS ----------------*/
-/*
-input {
-    transition: 120ms all;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    border-radius: 5px;
-    border: 1px solid #EDEDED;
-    height: 40px;
-    color: #9ea4a6;
-    font-size: 16px;
-    font-family: 'Hind', sans-serif;
-    padding: 0 0 0 20px;
-    margin: 0 0 20px 0;
-	
-	&:hover { border-color: #D9D9D9; }
-	&:focus { border-color: #B3DAF1;color: #333; }
-}
-
-textarea {
-	@extend input;
-    margin: 0 0 20px 0;
-    padding: 15px 0 0 20px;
-    min-height: 160px;
-	
-	&:hover { border-color: #D9D9D9; }
-	&:focus { border-color: #B3DAF1; color: #333; }
-}
-*/
-
-/* -------------- INPUTS -- END ----------------*/
-
-
-
 /* ==========================================================================
    =Forms
    ========================================================================== */
@@ -132,9 +30,7 @@ textarea {
 	input[type="color"],
 	textarea {
 		display: block;
-		-webkit-box-sizing: border-box;
-		   -moz-box-sizing: border-box;
-			    box-sizing: border-box;
+	    box-sizing: border-box;
 		width: 100%;
 		height: 37px; /* 1 */	
 		padding: 5px 12px;
@@ -144,7 +40,7 @@ textarea {
 		color: $text-color;
 		font-family:inherit;
 		font-size:inherit;
-		-webkit-appearance: none;
+		appearance: none;
 	}
 
 	input[type="text"]:focus,
@@ -265,9 +161,7 @@ textarea {
 	 */
 	
 	select {
-		-webkit-box-sizing: border-box;
-		   -moz-box-sizing: border-box;
-			    box-sizing: border-box;
+	    box-sizing: border-box;
 		width: 100%;
 		height: 37px; /* 1 */
 		padding: 5px 12px;
@@ -276,7 +170,7 @@ textarea {
 		background-color: #ffffff;
 		color: $text-color;
 		font:inherit;
-		-webkit-appearance: none;
+		appearance: none;
 	}
 
 	select[multiple] { 
@@ -319,9 +213,7 @@ textarea {
 	input[type="submit"],
 	input[type="button"]{
 		position: relative;
-		-webkit-background-clip: padding-box;
-		   -moz-background-clip: padding-box;
-				background-clip: padding-box;
+		background-clip: padding-box;
 		display: inline-block;
 		border-radius:35px;
 		padding: 9px 22px;	
@@ -333,7 +225,7 @@ textarea {
 		text-align: center;
 		text-decoration: none;
 		cursor: pointer;
-		-webkit-appearance: none;
+		appearance: none;
 		min-width:150px;
 	} 
 	

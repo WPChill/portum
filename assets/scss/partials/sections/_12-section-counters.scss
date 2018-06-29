@@ -1,0 +1,111 @@
+/* =Counter
+   ========================================================================== */
+
+.section-counters {
+	
+  .col-md-6, .col-md-4, .col-md-3 {
+    margin-bottom: 30px;
+  }
+  
+}
+
+.ewf-counter {
+	position: relative;
+	margin-bottom: 28px;
+	text-align: center;
+
+	&:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		font-size: 0;
+		content: " ";
+		clear: both;
+	}
+}
+
+.ewf-counter__icon i {
+  font-size: 42px;
+  color: $accent-1-color;
+}
+
+.ewf-counter__standard,
+.ewf-counter__odometer,
+.ewf-counter__symbol {
+  font-size: 56px;
+  line-height: 1;
+  margin-bottom: 14px;
+  color: $text-color;
+}
+
+.ewf-counter__title {
+  color: $headings-color;
+}
+
+.ewf-counter__odometer {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.ewf-counter__odometer .odometer-digit {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.ewf-counter__odometer .odometer-digit .odometer-digit-spacer {
+  display: inline-block;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.ewf-counter__odometer .odometer-digit .odometer-digit-inner {
+  text-align: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.ewf-counter__odometer .odometer-digit .odometer-ribbon {
+  display: block;
+}
+
+.ewf-counter__odometer .odometer-digit .odometer-ribbon-inner {
+  display: block;
+  backface-visibility: hidden;
+}
+
+.ewf-counter__odometer .odometer-digit .odometer-value {
+  display: block;
+  transform: translateZ(0);
+}
+
+.ewf-counter__odometer .odometer-digit .odometer-value.odometer-last-value {
+  position: absolute;
+}
+
+.ewf-counter__odometer.odometer-animating-up .odometer-ribbon-inner {
+  transition: transform 2s;
+}
+
+.ewf-counter__odometer.odometer-animating-up.odometer-animating .odometer-ribbon-inner {
+  transform: translateY(-100%);
+}
+
+.ewf-counter__odometer.odometer-animating-down .odometer-ribbon-inner {
+  transform: translateY(-100%);
+}
+
+.ewf-counter__odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+  transition: transform 2s;
+  transform: translateY(0);
+}
+
+.ewf-counter__odometer .odometer-value {
+  text-align: center;
+}

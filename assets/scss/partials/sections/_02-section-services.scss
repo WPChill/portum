@@ -1,111 +1,91 @@
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
-.section-services {
-  background-color: rgba(0, 0, 0, .8);
-  background-size: 100% 100%;
-  padding: 75px 0;
-  transition: 3s;
-}
-
-.section-services .row.space {
-  margin-bottom: 50px;
-}
-
-.section-services .headline h3 {
-  margin: 0;
-}
-
-.section-services .headline {
-  padding: 90px 0 0 0;
-}
-
-.section-services .headline span {
-  margin: 0 0 15px 0;
-}
-
 .services-item {
-  padding: 0 0 0 5px;
+    margin-bottom: 35px;
+    i {
+        height: 36px;
+        width: 36px;
+        padding: 20px;
+        text-align: center;
+        border-width: 2px;
+        border-style: solid;
+        color: #fff;
+        font-size: 36px;
+    }
 }
 
-.services-item a {
-  display: block;
-  transition: 180ms all;
+.services-item--filled-round.services-item--color-default i,
+.services-item--filled-square.services-item--color-default i {
+    background-color: #fff;
+    border-color: #fff;
+    color: #333;
 }
 
-.services-item a::before {
-  content: "";
-  height: 35px;
-  width: 1px;
-  background: #38393C;
-  position: Absolute;
-  left: 0;
-  top: 0;
+.services-item--filled-round.services-item--color-accent1 i,
+.services-item--filled-square.services-item--color-accent1 i {
+    background-color: $accent-1-color;
+    border-color: $accent-1-color;
 }
 
-.services-item a:hover span,
-.services-item a:hover i {
-  color: $accent-2-color;
+.services-item--filled-round.services-item--color-accent2 i,
+.services-item--filled-square.services-item--color-accent2 i {
+    background-color: $accent-2-color;
+    border-color: $accent-2-color;
 }
 
-.services-item a:hover::before {
-  background: $accent-2-color;
+.services-item--border-square.services-item--color-default i,
+.services-item--border-round.services-item--color-default i {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
 }
 
-.services-item i {
-  color: #fff;
-  font-size: 30px;
+.services-item--border-square.services-item--color-accent1 i,
+.services-item--border-round.services-item--color-accent1 i {
+    background-color: transparent;
+    border-color: $accent-1-color;
+    color: $accent-1-color;
 }
 
-.services-item span {
-  display: block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: $accent-1-color;
-  text-transform: uppercase;
-  margin-top: 25px;
-  letter-spacing: 1.2px;
+.services-item--border-square.services-item--color-accent2 i,
+.services-item--border-round.services-item--color-accent2 i {
+    background-color: transparent;
+    border-color: $accent-2-color;
+    color: $accent-2-color;
 }
 
-.services-item strong {
-  display: block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+.services-item--no-border.services-item--color-default i,
+.services-item--no-border.services-item--color-default i {
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
 }
 
-.section-services.animate-- {
-  background: transparent;
+.services-item--no-border.services-item--color-accent1 i,
+.services-item--no-border.services-item--color-accent1 i {
+    background-color: transparent;
+    border-color: transparent;
+    color: $accent-1-color;
 }
 
-.section-services .row .col-md-4:nth-child(-n+3) {
-  margin-bottom: 50px;
+.services-item--no-border.services-item--color-accent2 i,
+.services-item--no-border.services-item--color-accent2 i {
+    background-color: transparent;
+    border-color: transparent;
+    color: $accent-2-color;
 }
 
-@media (max-width: 991px) {
-
-  .section-services {
-    margin-top: 50px;
-  }
-
-  .section-services .headline {
-    padding: 0 0 70px 0;
-  }
-
-  .section-services .row .col-md-4:nth-child(-n+3) {
-    margin: 0;
-  }
-
-  .section-services .services-item {
-    margin-bottom: 50px;
-  }
-
-  .section-services {
-    padding-bottom: 25px;
-  }
-
+.services-item--filled-round i,
+.services-item--border-round i {
+    border-radius: 80px;
+    border-style: solid;
 }
+
+@media (max-width: 768px) {
+    .services-item {
+        text-align: center;
+    }
+}
+
 
 /* ----------------------------------- #02 - SERVICES section - END -----------------------------*/
