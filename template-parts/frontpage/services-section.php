@@ -49,8 +49,7 @@ $parent_attr = array(
 				<?php if ( 'left' === $fields['services_row_title_align'] ) { ?>
 					<div class="row">
 						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
-							<?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 						</div>
 
 						<?php if ( ! empty( $fields['services'] ) ) { ?>
@@ -59,6 +58,9 @@ $parent_attr = array(
 									<?php foreach ( $fields['services'] as $key => $service ) { ?>
 										<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
 											<div class="services-item services-item--<?php echo esc_attr( isset( $service['service_type'] ) ? $service['service_type'] : '' ); ?> services-item--<?php echo esc_attr( isset( $service['service_type_color'] ) ? $service['service_type_color'] : '' ); ?><?php echo( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<?php if ( ! empty( $service['service_icon'] ) ) { ?>
 													<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
 												<?php } ?>
@@ -104,15 +106,13 @@ $parent_attr = array(
 						<?php } ?>
 
 						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'], array( 'bottom' => true ) ) ); ?>
-							<?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'], array( 'bottom' => true ) ) ); ?><?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 						</div>
 					</div>
 				<?php } else { ?>
 					<div class="row">
 						<div class="col-md-12">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?>
-							<?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 						</div>
 					</div>
 
@@ -137,8 +137,7 @@ $parent_attr = array(
 								</div>
 							<?php } ?>
 						</div>
-					<?php } ?>
-				<?php } ?>
+					<?php } ?><?php } ?>
 
 			</div>
 		</div>

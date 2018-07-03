@@ -685,6 +685,23 @@ class Portum_Repeatable_Sections {
 						'default' => 'left',
 						'choices' => array( 'left', 'center', 'right' ),
 					),
+					'template-selector' => array(
+						'default' => 'normal',
+						'choices' => array(
+							array(
+								'value' => 'normal',
+								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png'
+							),
+							array(
+								'value' => 'isotope',
+								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png'
+							),
+							array(
+								'value' => 'masonry',
+								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png'
+							),
+						),
+					),
 				),
 				'styling' => array(
 					'background-color'         => array(
