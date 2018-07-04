@@ -36,6 +36,7 @@ wp_enqueue_script( 'magnificPopup' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_video_overlay();
@@ -43,12 +44,11 @@ wp_enqueue_script( 'magnificPopup' );
 		?>
 
 		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 			<div class="ewf-section__content">
 
 				<div class="row">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title']) ); ?>
+					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
 
 					<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
 						<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo esc_attr( $fields['portfolio_column_spacing'] ); ?> ewf-portfolio--columns-<?php echo esc_attr( $fields['portfolio_column_group'] ); ?>">

@@ -32,6 +32,7 @@ wp_enqueue_script( 'odometer' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_video_overlay();
@@ -45,8 +46,6 @@ wp_enqueue_script( 'odometer' );
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'counters', $fields ) ); ?>">
-
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 				<?php if ( 'left' === $fields['counters_row_title_align'] ) { ?>
 					<div class="row">
 						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">

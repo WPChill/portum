@@ -6,6 +6,8 @@
  *
  * @package Portum
  */
+
+//@todo: full-width, lacks the container-fluid CSS class
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 
@@ -41,6 +43,7 @@ $parent_attr    = array(
 		<?php
 	}
 	?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_video_overlay();
@@ -51,9 +54,6 @@ $parent_attr    = array(
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'about', $fields ) ); ?>">
-
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-
 				<div class="row">
 					<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
 
