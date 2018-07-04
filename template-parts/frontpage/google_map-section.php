@@ -35,6 +35,7 @@ wp_enqueue_script( 'googlemaps' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" class="google-map-section" <?php echo ! empty( $fields['google_map_section_unique_id'] ) ? 'id="' . $fields['google_map_section_unique_id'] . '"' : ''; ?>>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?> >
 
 		<?php if ( 'right' === $fields['google_map_row_title_align'] ) { ?>
@@ -47,7 +48,6 @@ wp_enqueue_script( 'googlemaps' );
 
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -93,7 +93,6 @@ wp_enqueue_script( 'googlemaps' );
 
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -136,7 +135,6 @@ wp_enqueue_script( 'googlemaps' );
 
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 					<div class="map-info-wrapper" <?php $attr_helper->generate_attributes( $style_attr ); ?>>
 

@@ -30,6 +30,7 @@ $parent_attr = array(
 
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_video_overlay();
@@ -38,8 +39,6 @@ $parent_attr = array(
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'clientlist', $fields ) ); ?>">
-
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 				<div class="row">
 					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>
@@ -51,31 +50,31 @@ $parent_attr = array(
 						<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
 							<ul class="ewf-partner-slider__slides" data-slick='{ "slidesToShow": 6, "slidesToScroll": 2, "autoplay": true, "infinite": true, "speed": 500, "dots": true }'>
 
-						<?php } else { ?>
-							<ul class="ewf-partners-list ewf-partners-list--spacing-small ewf-partners-list--columns-6">
-						<?php } ?>
+								<?php } else { ?>
+								<ul class="ewf-partners-list ewf-partners-list--spacing-small ewf-partners-list--columns-6">
+									<?php } ?>
 
-								<?php foreach ( $fields['clients'] as $client ) { ?>
-								<li>
-									<div class="ewf-partner">
-										<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
-											<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
-										</a>
-									</div><!-- end .ewf-partner -->
-								</li>
-								<?php } ?>
+									<?php foreach ( $fields['clients'] as $client ) { ?>
+										<li>
+											<div class="ewf-partner">
+												<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
+													<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
+												</a>
+											</div><!-- end .ewf-partner -->
+										</li>
+									<?php } ?>
 
-						<?php if ( $fields['clientlist_slider'] == '1' || $fields['clientlist_slider'] === 'true' ) { ?>
-							</ul><!-- end .ewf-partner-slider__slides -->
+									<?php if ( $fields['clientlist_slider'] == '1' || $fields['clientlist_slider'] === 'true' ) { ?>
+								</ul><!-- end .ewf-partner-slider__slides -->
 
-							<div class="ewf-partner-slider__pager">
-								<!-- dots will be added here -->
-							</div>
+								<div class="ewf-partner-slider__pager">
+									<!-- dots will be added here -->
+								</div>
 						</div><!-- end .ewf-partner-slider -->
 
 						<?php } else { ?>
 
-							</ul><!-- end .ewf-partners-list -->
+						</ul><!-- end .ewf-partners-list -->
 
 						<?php } ?>
 					</div>
