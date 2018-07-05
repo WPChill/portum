@@ -27,7 +27,6 @@ $parent_attr = array(
 	'class' => array(
 		'section-blog',
 		'section',
-		'section-grey',
 		'ewf-section',
 		'ewf-section-' . $fields['blog_section_visibility'],
 	),
@@ -36,6 +35,7 @@ $parent_attr = array(
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'blog', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -46,7 +46,6 @@ $parent_attr = array(
 		<div class="ewf-section__content">
 
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'blog', $fields ) ); ?>">
-
 
 				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'], array( 'center' => true ) ) ); ?>
 

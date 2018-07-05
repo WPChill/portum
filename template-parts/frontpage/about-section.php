@@ -22,27 +22,7 @@ $parent_attr    = array(
 
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php
-	if ( is_customize_preview() ) {
-		?>
-		<style>
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h1,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h2,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h3,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h4,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h5,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h6,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] .headline span {
-				color: <?php echo esc_attr( $fields['about_heading_color'] ); ?>
-			}
-
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] p {
-				color: <?php echo esc_attr( $fields['about_text_color'] ); ?>
-			}
-		</style>
-		<?php
-	}
-	?>
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'about', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
