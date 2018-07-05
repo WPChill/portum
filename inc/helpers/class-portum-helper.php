@@ -463,9 +463,16 @@ class Portum_Helper {
 		$text_selectors = array(
 			'p',
 			'ul li',
+			'span',
 		);
 
 		echo '<style type="text/css" media="all">';
+		foreach ( $text_selectors as $text_selector ) {
+			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $text_selector ) . ' ';
+			echo '{ ';
+			echo 'color: ' . esc_attr( $fields[ $key . '_text_color' ] );
+			echo '}';
+		}
 		foreach ( $heading_selectors as $heading_selector ) {
 			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $heading_selector ) . ' ';
 			echo '{ ';
@@ -473,12 +480,7 @@ class Portum_Helper {
 			echo '}';
 
 		}
-		foreach ( $text_selectors as $text_selector ) {
-			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $text_selector ) . ' ';
-			echo '{ ';
-				echo 'color: ' . esc_attr( $fields[ $key . '_text_color' ] );
-			echo '}';
-		}
+
 		echo '</style>';
 
 	}
