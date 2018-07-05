@@ -162,6 +162,7 @@ class Portum_Helper {
 	 * Returns the class of the container
 	 *
 	 * @param $key
+	 * @param $fields
 	 *
 	 * @return string
 	 */
@@ -169,7 +170,7 @@ class Portum_Helper {
 		$class = array(
 			'boxedin'     => 'container',
 			'boxedcenter' => 'container container-boxedcenter',
-			'fullwidth'   => 'container-fluid', // container-fluid
+			'fullwidth'   => 'container-fluid',
 		);
 
 		if ( $fields[ $key . '_column_stretch' ] == 'boxedin' ) {
@@ -288,7 +289,6 @@ class Portum_Helper {
 	 * @param array  $args
 	 *
 	 * @return string;
-	 * @todo restore wpautop
 	 */
 	public static function generate_section_title( $subtitle = '', $title = '', $args = array(
 		'bottom' => false,
@@ -311,7 +311,7 @@ class Portum_Helper {
 		}
 		$html .= '</div>';
 
-		return $html;
+		return wpautop( $html );
 	}
 
 	/**
@@ -434,6 +434,52 @@ class Portum_Helper {
 			'video_id'   => $video_id,
 			'video_type' => $type,
 		);
+
+	}
+
+	/**
+	 * Static method used to generate the corresponding CSS for the Colors Tab
+	 *
+	 * @param $section_id
+	 * @param $key
+	 * @param $fields
+	 */
+	public static function generate_css_color_tabs( $section_id, $key, $fields ) {
+
+		if ( ! is_customize_preview() ) {
+			return;
+		}
+
+		$heading_selectors = array(
+			'h1',
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+			'.headline span',
+		);
+
+		$text_selectors = array(
+			'p',
+			'ul li',
+		);
+
+		echo '<style type="text/css" media="all">';
+		foreach ( $heading_selectors as $heading_selector ) {
+			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $heading_selector ) . ' ';
+			echo '{ ';
+				echo 'color: ' . esc_attr( $fields[ $key . '_heading_color' ] );
+			echo '}';
+
+		}
+		foreach ( $text_selectors as $text_selector ) {
+			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $text_selector ) . ' ';
+			echo '{ ';
+				echo 'color: ' . esc_attr( $fields[ $key . '_text_color' ] );
+			echo '}';
+		}
+		echo '</style>';
 
 	}
 }

@@ -43,9 +43,8 @@ wp_enqueue_script( 'magnificPopup' );
 		$attr_helper->generate_color_overlay();
 		?>
 
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
-
-			<div class="ewf-section__content">
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
 
 				<div class="row">
 					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
