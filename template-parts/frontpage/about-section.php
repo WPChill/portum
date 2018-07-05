@@ -58,12 +58,8 @@ $parent_attr    = array(
 					<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
 
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-							<div class="col-md-6
-							<?php
-							echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' );
-							?>
-							">
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+							<div class="col-md-6">
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 							</div>
 						<?php } ?>
 
@@ -96,8 +92,8 @@ $parent_attr    = array(
 						</div>
 
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-							<div class="col-md-6<?php echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+							<div class="col-md-6">
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 							</div>
 						<?php } ?>
 
@@ -112,7 +108,7 @@ $parent_attr    = array(
 							<?php }; ?>
 
 							<?php if ( $fields['about_image'] ) { ?>
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 							<?php }; ?>
 						</div>
 

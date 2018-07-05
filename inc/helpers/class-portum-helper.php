@@ -14,75 +14,70 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Portum_Helper
  */
 class Portum_Helper {
+
 	/**
 	 * Create a "default" value for the header layout
 	 */
 	public static function get_header_default() {
-		return wp_json_encode(
-			array(
-				'columnsCount' => 2,
-				'columns'      => array(
-					array(
-						'index' => 1,
-						'span'  => 6,
-					),
-					array(
-						'index' => 2,
-						'span'  => 6,
-					),
+		return wp_json_encode( array(
+			'columnsCount' => 2,
+			'columns'      => array(
+				array(
+					'index' => 1,
+					'span'  => 6,
 				),
-			)
-		);
+				array(
+					'index' => 2,
+					'span'  => 6,
+				),
+			),
+		) );
 	}
 
 	/**
 	 * Create a "default" value for the footer layout
 	 */
 	public static function get_footer_default() {
-		return wp_json_encode(
-			array(
-				'columnsCount' => 4,
-				'columns'      => array(
-					array(
-						'index' => 1,
-						'span'  => 3,
-					),
-					array(
-						'index' => 2,
-						'span'  => 3,
-					),
-					array(
-						'index' => 3,
-						'span'  => 3,
-					),
-					array(
-						'index' => 4,
-						'span'  => 3,
-					),
+		return wp_json_encode( array(
+			'columnsCount' => 4,
+			'columns'      => array(
+				array(
+					'index' => 1,
+					'span'  => 3,
 				),
-			)
-		);
+				array(
+					'index' => 2,
+					'span'  => 3,
+				),
+				array(
+					'index' => 3,
+					'span'  => 3,
+				),
+				array(
+					'index' => 4,
+					'span'  => 3,
+				),
+			),
+		) );
 	}
 
 	/**
 	 * Create a "default" value for the blog layout
 	 */
 	public static function get_blog_default() {
-		return wp_json_encode(
-			array(
-				'columnsCount' => 2,
-				'columns'      => array(
-					1 => array(
-						'index' => 1,
-						'span'  => 8,
-					),
-					2 => array(
-						'index' => 2,
-						'span'  => 4,
-					),
+		return wp_json_encode( array(
+			'columnsCount' => 2,
+			'columns'      => array(
+				1 => array(
+					'index' => 1,
+					'span'  => 8,
 				),
-			)
-		);
+				2 => array(
+					'index' => 2,
+					'span'  => 4,
+				),
+			),
+		) );
 	}
 
 	/**
@@ -174,14 +169,18 @@ class Portum_Helper {
 		$class = array(
 			'boxedin'     => 'container',
 			'boxedcenter' => 'container container-boxedcenter',
-			'fullwidth'   => '', // container-fluid
+			'fullwidth'   => 'container-fluid', // container-fluid
 		);
 
-		if ( ! empty( $fields[ $key . '_column_stretch' ] ) ) {
-			return isset( $class[ $fields[ $key . '_column_stretch' ] ] ) ? $class[ $fields[ $key . '_column_stretch' ] ] : 'container';
+		if ( $fields[ $key . '_column_stretch' ] == 'boxedin' ) {
+			return $class['boxedin'];
+		} else if ( $fields[ $key . '_column_stretch' ] == 'boxedcenter' ) {
+			return $class['boxedcenter'];
+		} else if ( $fields[ $key . '_column_stretch' ] == 'fullwidth' ) {
+			return $class['fullwidth'];
 		}
 
-		return 'container';
+		return $class['boxedin']; // default is container
 	}
 
 
@@ -253,14 +252,14 @@ class Portum_Helper {
 
 		switch ( $element ) {
 			case 'author':
-				$html  = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
+				$html = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
 				$html .= '<a class="post-author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a>';
 				$html .= '</span>';
 
 				echo wp_kses_post( $html );
 				break;
 			case 'category':
-				$html  = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
+				$html = '<div class="cat-links">' . __( 'Categories: ', 'portum' );
 				$html .= get_the_category_list( ' ' );
 				$html .= '</div><!-- .cat-links -->';
 
@@ -270,7 +269,7 @@ class Portum_Helper {
 				echo ' <span class="comments-link"><a title="' . esc_attr__( 'Comment on Post', 'portum' ) . '" href="' . esc_url( get_the_permalink( get_the_ID() ) ) . '#comments">' . esc_html( $comments->approved ) . '</a></span>';
 				break;
 			case 'tags':
-				$html  = '<div class="tags-links">';
+				$html = '<div class="tags-links">';
 				$html .= get_the_tag_list( '', ' ' );
 				$html .= '</div><!-- .tags-links -->';
 				echo wp_kses_post( $html );
@@ -291,14 +290,10 @@ class Portum_Helper {
 	 * @return string;
 	 * @todo restore wpautop
 	 */
-	public static function generate_section_title(
-		$subtitle = '',
-		$title = '',
-		$args = array(
-			'bottom' => false,
-			'center' => false,
-		)
-	) {
+	public static function generate_section_title( $subtitle = '', $title = '', $args = array(
+		'bottom' => false,
+		'center' => false,
+	) ) {
 		$class = 'headline';
 		if ( ! empty( $args['center'] ) ) {
 			$class .= ' text-center';
@@ -420,17 +415,9 @@ class Portum_Helper {
 	 * @return array
 	 */
 	public static function video_type( $url ) {
-		$youtube = preg_match(
-			'/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/',
-			$url,
-			$yt_matches
-		);
+		$youtube = preg_match( '/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/', $url, $yt_matches );
 
-		$vimeo = preg_match(
-			'/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([‌​0-9]{6,11})[?]?.*/',
-			$url,
-			$vm_matches
-		);
+		$vimeo = preg_match( '/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([‌​0-9]{6,11})[?]?.*/', $url, $vm_matches );
 
 		$video_id = 0;
 		$type     = 'none';
