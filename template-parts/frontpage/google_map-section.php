@@ -41,8 +41,8 @@ wp_enqueue_script( 'googlemaps' );
 
 		<?php if ( 'right' === $fields['google_map_row_title_align'] ) { ?>
 			<?php
-			$attr_helper->generate_video_overlay();
 			$attr_helper->generate_color_overlay();
+			$attr_helper->generate_video_overlay();
 
 			$section_item_columns = 12 / intval( $fields['google_map_column_group'] );
 			?>
