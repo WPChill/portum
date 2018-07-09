@@ -38,8 +38,8 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'piecharts' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 
 		$section_item_columns  = 12 / intval( $fields['piecharts_column_group'] );
 		$section_items_content = 12 - $section_item_columns;
