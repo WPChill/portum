@@ -1242,7 +1242,7 @@ Epsilon_Customizer::add_field( 'portum_color_scheme', array(
 				'epsilon_title_color'                    => '#3E4346',
 				'epsilon_text_color'                     => '#777777',
 				'epsilon_link_color'                     => '#3e4346',
-				'epsilon_link_hover_color'               => '#ffc000',
+				'epsilon_link_hover_color'               => 'rgba(232, 9, 65, 1)',
 				'epsilon_link_active_color'              => '#3e4346',
 
 				// 'epsilon_menu_separator'            		=> '',
