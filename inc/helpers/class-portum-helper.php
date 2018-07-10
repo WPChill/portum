@@ -463,7 +463,7 @@ class Portum_Helper {
 		$text_selectors = array(
 			'p',
 			'ul li',
-			'span',
+			'span:not(.dashicons)',
 		);
 
 		echo '<style type="text/css" media="all">';
