@@ -10,20 +10,21 @@
 	%9$s - epsilon_link_active_color - #333333
 	%10$s - epsilon_menu_separator - 
 	%11$s - epsilon_header_background - #151c1f
-	%12$s - epsilon_header_background_sticky - #FFFFFF
-	%13$s - epsilon_dropdown_menu_background - #a1083a
-	%14$s - epsilon_dropdown_menu_hover_background - #940534
-	%15$s - epsilon_menu_item_color - #ebebeb
-	%16$s - epsilon_menu_item_hover_color - #ffffff
-	%17$s - epsilon_menu_item_active_color - #0385d0
-	%18$s - epsilon_footer_separator -
-	%19$s - epsilon_footer_contact_background - #0377bb
-	%20$s - epsilon_footer_background - #192229
-	%21$s - epsilon_footer_title_color - #ffffff
-	%22$s - epsilon_footer_text_color - #a9afb1
-	%23$s - epsilon_footer_link_color - #a9afb1
-	%24$s - epsilon_footer_link_hover_color - #ffffff
-	%25$s - epsilon_footer_link_active_color - #a9afb1
+	%12$s - epsilon_header_background_sticky - rgba(255,255,255,.3)
+	%13$s - epsilon_header_background_border_bot - rgba(255,255,255,.1)
+	%14$s - epsilon_dropdown_menu_background - #a1083a
+	%15$s - epsilon_dropdown_menu_hover_background - #940534
+	%16$s - epsilon_menu_item_color - #ebebeb
+	%17$s - epsilon_menu_item_hover_color - #ffffff
+	%18$s - epsilon_menu_item_active_color - #0385d0
+	%19$s - epsilon_footer_separator -
+	%20$s - epsilon_footer_contact_background - #0377bb
+	%21$s - epsilon_footer_background - #192229
+	%22$s - epsilon_footer_title_color - #ffffff
+	%23$s - epsilon_footer_text_color - #a9afb1
+	%24$s - epsilon_footer_link_color - #a9afb1
+	%25$s - epsilon_footer_link_hover_color - #ffffff
+	%26$s - epsilon_footer_link_active_color - #a9afb1
  */
 
 
@@ -256,44 +257,46 @@
 
 #header {
     background-color: %11$s;
+    border-bottom: 1px solid %13$s;
 }
 
 #header.stuck {
     background-color: %12$s;
+    border-bottom: none;
 }
 
 
 
 .sf-menu>li:hover,
 .sf-menu>li.current {
-    -webkit-box-shadow: inset 0px 3px 0px 0px %16$s;
-    box-shadow: inset 0px 3px 0px 0px %16$s;
+    -webkit-box-shadow: inset 0px 3px 0px 0px %15$s !important;
+    box-shadow: inset 0px 3px 0px 0px %15$s !important;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu a {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu>li:hover.arrow:before {
     /* epsilon_menu_item_hover_color */
-    color: %16$s;
+    color: %17$s;
 }
 
 .sf-menu>li.arrow:before {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu a:hover,
 .sf-menu a:focus {
-    color: %16$s;
+    color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu a:active {
-    color: %17$s;
+    color: %18$s;
     /* epsilon_menu_item_active_color */
 }
 
@@ -301,110 +304,85 @@
 .sf-menu li.mega .sf-mega a {}
 
 .sf-menu li.dropdown li>a:hover:before {
-    border-bottom-color: %16$s;
+    border-bottom-color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu>li>a,
 .sf-menu>li.dropdown>a,
 .sf-menu>li.mega>a {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu>li a i {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
-.sf-menu>li:hover,
-.sf-menu>li.current {
-    -webkit-box-shadow: inset 0px 3px 0px 0px %13$s;
-    box-shadow: inset 0px 3px 0px 0px %13$s;
-}
 
 .sf-menu>li.current>a {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu>li.sfHover>a:hover,
 .sf-menu>li>a:hover {
-    color: %16$s;
+    color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu li.dropdown ul {
-    background-color: %13$s;
+    background-color: %14$s;
     /* epsilon_menu_background */
 }
 
 .sf-mega {
-    background-color: %13$s;
+    background-color: %14$s;
     /* epsilon_menu_background */
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .dropdown li:hover {
-    background: %14$s;
+    background: %15$s;
 }
 
 #mobile-menu {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
     border-bottom-color: rgba(255, 255, 255, 0.25);
     background-color: %11$s;
 }
 
 #mobile-menu li a {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 #mobile-menu .mobile-menu-submenu-arrow {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 #mobile-menu .mobile-menu-submenu-arrow:hover {
-    background-color: %14$s;
+    background-color: %15$s;
     ;
 }
 
 #mobile-menu-trigger {
-    color: %15$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 #mobile-menu li>a:hover {
-    background-color: %14$s;
+    background-color: %15$s;
 }
 
 #mobile-menu-trigger:hover {
-    color: %16$s;
+    color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
-
-
-/*
-	.sf-menu li.dropdown ul{
-		background: %13$s;
-		opacity: .9;
-	}
-	.dropdown li:hover {
-		background: %1$s;
-	}
-	.sf-menu > li.current > a {
-		color: %9$s
-	}
-	.sf-menu li.sfHover > a, .sf-menu a:hover, .sf-menu li.sfHover a:hover{
-		color: %10$s;
-	}
-	.sf-menu a:focus, .sf-menu li.sfHover a:focus{
-		color: %13$s;
-	}
-	*/
 
 
 /* ==========================================================================
@@ -507,35 +485,35 @@ input[type="button"]:active {
    	========================================================================== */
 
 #footer {
-    background-color: %20$s;
+    background-color: %21$s;
     /* epsilon_footer_background */
-    color: %22$s;
+    color: %23$s;
     /* epsilon_footer_text_color */
 }
 
 #footer a {
-    color: %23$s;
+    color: %24$s;
 }
 
 
 /* epsilon_footer_link_color */
 
 #footer a:hover {
-    color: %24$s;
+    color: %25$s;
 }
 
 
 /* epsilon_footer_link_hover_color */
 
 #footer a:focus {
-    color: %24$s;
+    color: %25$s;
 }
 
 
 /* epsilon_footer_link_hover_color */
 
 #footer a:active {
-    color: %25$s;
+    color: %26$s;
 }
 
 
@@ -547,24 +525,24 @@ input[type="button"]:active {
 #footer h4,
 #footer h5,
 #footer h6 {
-    color: %21$s;
+    color: %22$s;
 }
 
 #footer p {
-    color: %22$s;
+    color: %23$s;
 }
 
 
 /* epsilon_footer_text_color */
 
 .contact-form {
-    background-color: %19$s;
+    background-color: %20$s;
     /* epsilon_footer_contact_background */
 }
 
 #footer .widget .widget-title,
 #footer .widget .widget-title a {
-    color: %21$s;
+    color: %22$s;
     /* epsilon_footer_title_color */
 }
 
