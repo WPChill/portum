@@ -1042,6 +1042,12 @@
           "setting": "epsilon_header_background",
           "content": "rgba(0, 0, 0, 0)"
         },
+        "epsilon_header_background_sticky": {
+          "id": "epsilon_header_background_sticky",
+          "label": "Epsilon_header_background_sticky",
+          "setting": "epsilon_header_background_sticky",
+          "content": "rgba(255, 255, 255, 1)"
+        },
         "epsilon_menu_item_color": {
           "id": "epsilon_menu_item_color",
           "label": "Epsilon_menu_item_color",

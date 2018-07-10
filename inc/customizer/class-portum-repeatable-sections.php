@@ -14,6 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Portum_Repeatable_Sections
  */
 class Portum_Repeatable_Sections {
+
 	/**
 	 * Holds the sections
 	 *
@@ -95,25 +96,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -216,25 +217,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -300,7 +301,7 @@ class Portum_Repeatable_Sections {
 		$slider = array(
 			'id'          => 'advanced-slider',
 			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
-			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
+			'title'       => esc_html__( 'Slider', 'portum' ),
 			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
 			'fields'      => array(
 				'slider_transition'        => array(
@@ -367,45 +368,6 @@ class Portum_Repeatable_Sections {
 
 
 	/**
-	 * Repeatable slider section
-	 *
-	 * @return array
-	 */
-	private function repeatable_slider() {
-		return array(
-			'id'          => 'slider',
-			'title'       => esc_html__( 'Slider', 'portum' ),
-			'description' => esc_html__( 'A slider section. It retrieves content from Theme Content / Slides.', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-hero-pt.png' ),
-			'fields'      => array(
-				'slider_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'portum_slides_section',
-					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
-				),
-				'slider_grouping'          => array(
-					'label'       => esc_html__( 'Slides to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_slides', 'slides_title' ),
-					'default'     => array( 'all' ),
-				),
-				'slider_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'portum_slides',
-				),
-				'slider_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'portum' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
-				),
-			),
-		);
-	}
-
-	/**
 	 * Repeatable services section
 	 *
 	 * @return array
@@ -449,31 +411,41 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span', '.headline h3', '.services-item span' ),
+						'selectors' => array(
+							'h1',
+							'h2',
+							'h3',
+							'h4',
+							'h5',
+							'h6',
+							'.headline span',
+							'.headline h3',
+							'.services-item span',
+						),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -568,25 +540,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -685,41 +657,41 @@ class Portum_Repeatable_Sections {
 						'default' => 'left',
 						'choices' => array( 'left', 'center', 'right' ),
 					),
-					'template-selector' => array(
+					'template-selector'  => array(
 						'default' => 'normal',
 						'choices' => array(
 							array(
 								'value' => 'normal',
-								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png'
+								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png',
 							),
 							array(
 								'value' => 'isotope',
-								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png'
+								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png',
 							),
 							array(
 								'value' => 'masonry',
-								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png'
+								'png'   => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png',
 							),
 						),
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
 				),
@@ -820,25 +792,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -923,25 +895,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1024,25 +996,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1129,25 +1101,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1242,22 +1214,22 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
 				),
@@ -1347,25 +1319,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1458,25 +1430,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1606,25 +1578,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1723,25 +1695,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1840,25 +1812,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -1945,25 +1917,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -2064,25 +2036,25 @@ class Portum_Repeatable_Sections {
 					),
 				),
 				'styling' => array(
-					'background-color'         => array(
+					'background-color'    => array(
 						'default' => false,
 					),
-					'background-image'         => array(
+					'background-image'    => array(
 						'default' => false,
 					),
-					'background-position'      => array(
+					'background-position' => array(
 						'default' => 'center',
 					),
-					'background-size'          => array(
+					'background-size'     => array(
 						'default' => 'initial',
 					),
-					'background-repeat'        => array(
+					'background-repeat'   => array(
 						'default' => 'repeat',
 					),
-					'background-parallax'      => array(
+					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'         => array(
+					'background-video'    => array(
 						'default' => '',
 					),
 				),
@@ -2138,7 +2110,7 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'Secondary button', 'portum' ),
 					'sanitize_callback' => 'sanitize_textfield',
 				),
-				'cta_button_secondary_color'   => array(
+				'cta_button_secondary_color' => array(
 					'label'   => esc_html__( 'Secoondary button color style', 'portum' ),
 					'type'    => 'select',
 					'default' => 'ewf-btn--color-accent1',

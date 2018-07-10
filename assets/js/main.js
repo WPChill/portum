@@ -37,7 +37,6 @@
          * Initiate plugins
          */
         try {
-            Portum.Plugins.owlSlider();
             Portum.Plugins.clientList();
             Portum.Plugins.advancedSlider();
             Portum.Plugins.video();
@@ -78,7 +77,6 @@
         /**
          * Initiate plugins
          */
-        Portum.Plugins.owlSlider();
         Portum.Plugins.clientList();
         Portum.Plugins.advancedSlider();
         Portum.Plugins.video();
