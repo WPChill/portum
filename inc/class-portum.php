@@ -312,6 +312,14 @@ class Portum {
 				'hover-state' => false,
 			),
 
+			'epsilon_header_background_border_bot' => array(
+				'label'       => esc_html__( 'Header Border Bottom Color', 'portum' ),
+				'description' => esc_html__( 'The color used for the header border bottom', 'portum' ),
+				'default'     => '#FFFFFF',
+				'section'     => 'colors',
+				'hover-state' => false,
+			),
+
 			'epsilon_dropdown_menu_background' => array(
 				'label'       => esc_html__( 'Dropdown background', 'portum' ),
 				'description' => esc_html__( 'The color used for the menu background.', 'portum' ),
