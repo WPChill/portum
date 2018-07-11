@@ -1,7 +1,9 @@
 /* =Partner/Client
    ========================================================================== */
 
-.ewf-partner {}
+.ewf-partner {
+    position: relative; /* fix for when client list is a slider and we need to display the quick edit icons */
+}
 
 
 /* =Partner/Client List

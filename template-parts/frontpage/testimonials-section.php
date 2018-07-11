@@ -31,7 +31,6 @@ $parent_attr = array(
 
 $i    = 0;
 $span = 12 / absint( $fields['testimonials_column_group'] );
-
 $items_count = 0;
 $items_class = null;
 ?>
@@ -52,12 +51,15 @@ $items_class = null;
 
 				<?php if ( ! empty( $fields['testimonials'] ) ) { ?>
 					<div class="row">
-						<?php foreach ( $fields['testimonials'] as $k => $v ) { ?>
+						<?php foreach ( $fields['testimonials'] as $key => $v ) { ?>
 
 							<?php $i++; ?>
 
 							<div class="col-md-<?php echo esc_attr( $span ); ?>">
 								<div class="testimonial<?php echo ( 1 & $i ) ? ' left' : ' right'; ?>">
+									<?php
+									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_testimonials_section', 'portum_testimonials' ), Epsilon_Helper::allowed_kses_pencil() );
+									?>
 									<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
 										<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">
 									<?php } ?>

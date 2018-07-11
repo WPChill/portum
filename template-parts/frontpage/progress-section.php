@@ -57,10 +57,12 @@ $span = 12 / absint( $fields['progress_column_group'] );
 
 						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 							<div class="row">
-								<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
+								<?php foreach ( $fields['progress_bars'] as $key=> $progress ) { ?>
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 										<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<h6 class="ewf-progress__title">
 												<?php
 												if ( ! empty( $progress['progress_bar_title'] ) ) {
@@ -91,10 +93,12 @@ $span = 12 / absint( $fields['progress_column_group'] );
 
 						<div class="col-md-<?php echo esc_attr( $section_items_content ); ?> col-sm-8">
 							<div class="row">
-								<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
+								<?php foreach ( $fields['progress_bars'] as $key=> $progress ) { ?>
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 										<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<h6 class="ewf-progress__title">
 												<?php
 												if ( ! empty( $progress['progress_bar_title'] ) ) {
@@ -133,10 +137,12 @@ $span = 12 / absint( $fields['progress_column_group'] );
 					</div>
 
 					<div class="row">
-						<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
+						<?php foreach ( $fields['progress_bars'] as $key=> $progress ) { ?>
 							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 								<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-
+									<?php
+									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
+									?>
 									<h6 class="ewf-progress__title">
 										<?php
 										if ( ! empty( $progress['progress_bar_title'] ) ) {

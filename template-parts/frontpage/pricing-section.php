@@ -43,9 +43,12 @@ $parent_attr             = array(
 				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['pricing_subtitle'], $fields['pricing_title'], array( 'center' => true ) ) ); ?>
 
 				<div class="row">
-					<?php foreach ( $fields['pricing_boxes'] as $pricing_box ) { ?>
+					<?php foreach ( $fields['pricing_boxes'] as $key => $pricing_box ) { ?>
 						<div class="col-md-<?php echo esc_attr( absint( $span ) ); ?>">
 							<div class="pricing-item <?php echo $pricing_box['price_box_featured'] ? 'featured' : ''; ?>">
+								<?php
+								echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_pricing_section', 'portum_price_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
+								?>
 								<div class="plan">
 									<strong>
 										<?php if ( ! empty( $pricing_box['price_box_currency'] ) ) { ?>
