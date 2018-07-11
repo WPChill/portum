@@ -72,7 +72,7 @@ $parent_attr = array(
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
 													<p><?php echo esc_html( $service['service_description'] ); ?></p>
 												<?php } ?>
-											</div>portum_services_section
+											</div>
 										</div>
 									<?php } ?>
 								</div>
