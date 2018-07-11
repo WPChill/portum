@@ -50,7 +50,7 @@ $items_class = null;
 
 						<div class="col-md-6">
 							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $member ) { ?>
+								<?php foreach ( $fields['members'] as $key => $member ) { ?>
 
 									<?php
 
@@ -62,7 +62,9 @@ $items_class = null;
 									?>
 
 									<div class="team-members-item team-members-item--full<?php echo esc_attr( $items_class ); ?>">
-
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<?php
 										$arr = array(
 											'facebook'  => $member['member_social_facebook'],
@@ -129,7 +131,7 @@ $items_class = null;
 
 						<div class="col-md-6">
 							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $member ) { ?>
+								<?php foreach ( $fields['members'] as $key => $member ) { ?>
 
 									<?php
 
@@ -141,7 +143,9 @@ $items_class = null;
 									?>
 
 									<div class="team-members-item team-members-item--full<?php echo esc_attr( $items_class ); ?>">
-
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<?php
 										$arr = array(
 											'facebook'  => $member['member_social_facebook'],
@@ -216,7 +220,7 @@ $items_class = null;
 
 						<div class="col-md-12">
 							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $member ) { ?>
+								<?php foreach ( $fields['members'] as $key => $member ) { ?>
 
 									<?php
 
@@ -230,7 +234,9 @@ $items_class = null;
 									?>
 
 									<div class="team-members-item<?php echo esc_attr( $items_class ); ?>">
-
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<?php
 										$arr = array(
 											'facebook'  => $member['member_social_facebook'],

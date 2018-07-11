@@ -54,7 +54,7 @@ wp_enqueue_script( 'odometer' );
 						</div>
 						<div class="col-md-<?php echo esc_attr( $section_items_content ); ?> col-sm-8">
 							<div class="row">
-								<?php foreach ( $fields['counters'] as $counter ) { ?>
+								<?php foreach ( $fields['counters'] as $key => $counter ) { ?>
 
 									<?php
 									$class = 'ewf-counter__standard';
@@ -65,7 +65,9 @@ wp_enqueue_script( 'odometer' );
 
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
 										<div class="ewf-counter">
-
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_counters_section', 'portum_counter_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
 												<div class="ewf-counter__icon">
 													<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
@@ -93,7 +95,7 @@ wp_enqueue_script( 'odometer' );
 					<div class="row">
 						<div class="col-md-<?php echo esc_attr( $section_items_content ); ?> col-sm-8">
 							<div class="row">
-								<?php foreach ( $fields['counters'] as $counter ) { ?>
+								<?php foreach ( $fields['counters'] as $key => $counter ) { ?>
 
 									<?php
 									$class = 'ewf-counter__standard';
@@ -104,7 +106,9 @@ wp_enqueue_script( 'odometer' );
 
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
 										<div class="ewf-counter">
-
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_counters_section', 'portum_counter_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
 												<div class="ewf-counter__icon">
 													<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
@@ -142,7 +146,7 @@ wp_enqueue_script( 'odometer' );
 					</div>
 
 					<div class="row">
-						<?php foreach ( $fields['counters'] as $counter ) { ?>
+						<?php foreach ( $fields['counters'] as $key => $counter ) { ?>
 
 							<?php
 							$class = 'ewf-counter__standard';
@@ -154,6 +158,9 @@ wp_enqueue_script( 'odometer' );
 							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
 								<div class="ewf-counter">
 
+									<?php
+									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_counters_section', 'portum_counter_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
+									?>
 									<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
 										<div class="ewf-counter__icon">
 											<i class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>

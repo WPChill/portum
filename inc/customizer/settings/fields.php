@@ -1127,15 +1127,6 @@ Epsilon_Customizer::add_field( 'portum_logo_dimensions', array(
 	'priority'       => 1,
 ) );
 
-Epsilon_Customizer::add_field( 'portum_dark_logo', array(
-	'type'     => 'epsilon-image',
-	'size'     => 'thumbnail',
-	'label'    => esc_html__( 'Dark Logo', 'portum' ),
-	'section'  => 'title_tagline',
-	'priority' => 1,
-) );
-
-
 /**
  * Repeatable sections
  */

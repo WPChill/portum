@@ -457,7 +457,7 @@ class Portum_Helper {
 			'h4',
 			'h5',
 			'h6',
-			'.headline span',
+			'.headline span:not(.dashicons)',
 		);
 
 		$text_selectors = array(

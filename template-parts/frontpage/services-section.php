@@ -72,7 +72,7 @@ $parent_attr = array(
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
 													<p><?php echo esc_html( $service['service_description'] ); ?></p>
 												<?php } ?>
-											</div>
+											</div>portum_services_section
 										</div>
 									<?php } ?>
 								</div>
@@ -87,6 +87,9 @@ $parent_attr = array(
 									<?php foreach ( $fields['services'] as $key => $service ) { ?>
 										<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
 											<div class="services-item services-item--<?php echo esc_attr( isset( $service['service_type'] ) ? $service['service_type'] : '' ); ?> services-item--<?php echo esc_attr( isset( $service['service_type_color'] ) ? $service['service_type_color'] : '' ); ?><?php echo( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' services-item-first' : null ); ?>">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<?php if ( ! empty( $service['service_icon'] ) ) { ?>
 													<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
 												<?php } ?>
@@ -122,6 +125,10 @@ $parent_attr = array(
 
 								<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-xs-6">
 									<div class="services-item services-item--<?php echo esc_attr( isset( $service['service_type'] ) ? $service['service_type'] : '' ); ?> services-item--<?php echo esc_attr( isset( $service['service_type_color'] ) ? $service['service_type_color'] : '' ); ?><?php echo( $key <= ( intval( $fields['services_column_group'] ) - 1 ) ? ' -services-item-first' : null ); ?>">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+
 										<?php if ( ! empty( $service['service_icon'] ) ) { ?>
 											<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" aria-hidden="true"></i>
 										<?php } ?>

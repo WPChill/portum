@@ -55,9 +55,13 @@ $parent_attr = array(
 								<ul class="ewf-partners-list ewf-partners-list--spacing-small ewf-partners-list--columns-6">
 									<?php } ?>
 
-									<?php foreach ( $fields['clients'] as $client ) { ?>
+									<?php foreach ( $fields['clients'] as $key => $client ) { ?>
+
 										<li>
 											<div class="ewf-partner">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_clientlists_section', 'portum_clients' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
 													<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
 												</a>

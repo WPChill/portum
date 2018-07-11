@@ -52,9 +52,12 @@ wp_enqueue_script( 'magnificPopup' );
 					<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
 						<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo esc_attr( $fields['portfolio_column_spacing'] ); ?> ewf-portfolio--columns-<?php echo esc_attr( $fields['portfolio_column_group'] ); ?>">
 
-							<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
+							<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
 								<li>
 									<div class="ewf-portfolio-item">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_portfolio_section', 'portum_portfolio' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<div class="ewf-portfolio-item__thumbnail">
 											<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
 												<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt="" />

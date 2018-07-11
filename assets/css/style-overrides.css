@@ -408,7 +408,7 @@ blockquote {
     /* epsilon_title_color */
 }
 
-.headline span {
+.headline span:not(.dashicons) {
     color: %5$s;
     /* epsilon_title_color */
 }
