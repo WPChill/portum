@@ -64,9 +64,12 @@ wp_enqueue_script( 'googlemaps' );
 								<?php
 								if ( ! empty( $fields['contact_boxes'] ) ) {
 									?>
-									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+									<?php foreach ( $fields['contact_boxes'] as $key => $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 													<?php echo esc_html( $field['contact_title'] ); ?>
@@ -103,9 +106,12 @@ wp_enqueue_script( 'googlemaps' );
 								<?php
 								if ( ! empty( $fields['contact_boxes'] ) ) {
 									?>
-									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+									<?php foreach ( $fields['contact_boxes'] as $key => $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 													<?php echo esc_html( $field['contact_title'] ); ?>
@@ -149,9 +155,12 @@ wp_enqueue_script( 'googlemaps' );
 						if ( ! empty( $fields['contact_boxes'] ) ) {
 							?>
 							<div class="row">
-								<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+								<?php foreach ( $fields['contact_boxes'] as $key => $field ) { ?>
 									<div class="col-xs-12 col-md-<?php echo esc_attr( absint( $span ) ); ?>">
 										<div class="map-info-item">
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<h5>
 												<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 												<?php echo esc_html( $field['contact_title'] ); ?>
