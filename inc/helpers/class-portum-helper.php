@@ -311,7 +311,7 @@ class Portum_Helper {
 		}
 		$html .= '</div>';
 
-		return wpautop( $html );
+		return $html;
 	}
 
 	/**
