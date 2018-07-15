@@ -11,6 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 class Portum_Dashboard_Setup {
+
 	/**
 	 * Theme array
 	 *
@@ -87,25 +88,18 @@ class Portum_Dashboard_Setup {
 			/* Translators: Notice Title */
 			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'portum' ), $this->theme['theme-name'] ) . '</h1>';
 			$this->notice .= '<p>';
-			$this->notice .=
-				sprintf( /* Translators: Notice */
-					esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'portum' ),
-					'<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme['theme-slug'] . '-dashboard' ) ) . '">',
-					'</a>',
-					$this->theme['theme-name']
-				);
+			$this->notice .= sprintf( /* Translators: Notice */
+				esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'portum' ), '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme['theme-slug'] . '-dashboard' ) ) . '">', '</a>', $this->theme['theme-name'] );
 			$this->notice .= '</p>';
 			/* Translators: Notice URL */
 			$this->notice .= '<p><a href="' . esc_url( admin_url( '?page=epsilon-onboarding' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'portum' ), $this->theme['theme-name'] ) . '</a></p>';
 		}
 		$notifications = Epsilon_Notifications::get_instance();
-		$notifications->add_notice(
-			array(
+		$notifications->add_notice( array(
 				'id'      => 'notification_testing',
 				'type'    => 'notice epsilon-big',
 				'message' => $this->notice,
-			)
-		);
+			) );
 	}
 
 	/**
@@ -115,20 +109,17 @@ class Portum_Dashboard_Setup {
 	 */
 	public function get_edd( $setup = array() ) {
 		$options = get_option( $setup['theme']['theme-slug'] . '_license_object', array() );
-		$options = wp_parse_args(
-			$options,
-			array(
+		$options = wp_parse_args( $options, array(
 				'expires'       => false,
 				'licenseStatus' => false,
-			)
-		);
+			) );
 
 		return array(
 			'license'       => trim( get_option( $setup['theme']['theme-slug'] . '_license_key', false ) ),
 			'licenseOption' => $setup['theme']['theme-slug'] . '_license_key',
 			'downloadId'    => '221300',
 			'expires'       => $options['expires'],
-			'status'        => $options['licenseStatus']
+			'status'        => $options['licenseStatus'],
 		);
 	}
 
@@ -177,7 +168,7 @@ class Portum_Dashboard_Setup {
 				'content'  => array(
 					'paragraphs' => array(
 						wp_kses_post( __( 'We\'ve made it easy for you to get up and running in a jiffy. Just pick any of the theme demos below, click on Select, Import and you\'ll be ready in no time. Feel free to skip this step if you\'d like to create the content yourself.', 'portum' ) ),
-						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'portum' ) )
+						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'portum' ) ),
 					),
 				),
 				'progress' => __( 'Demos', 'portum' ),
@@ -260,7 +251,7 @@ class Portum_Dashboard_Setup {
 				'recommended' => false,
 			),
 
-			'modula-best-grid-gallery' => array(
+			'modula-best-grid-gallery'  => array(
 				'integration' => false,
 				'recommended' => true,
 			),
@@ -421,6 +412,13 @@ class Portum_Dashboard_Setup {
 						'type'    => 'epsilon-toggle',
 						'checked' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
 					),
+					array(
+						'id'      => $this->theme['theme-slug'] . '_quickie_enabled',
+						'value'   => true,
+						'label'   => esc_html__( 'Disable Customizer Shortcuts Bar', 'portum' ),
+						'type'    => 'epsilon-toggle',
+						'checked' => get_option( $this->theme['theme-slug'] . '_quickie_enabled', false ),
+					),
 				),
 			),
 		);
@@ -437,7 +435,8 @@ class Portum_Dashboard_Setup {
 			//$this->theme['theme-slug'] . '_recommended_plugins' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
 			//$this->theme['theme-slug'] . '_lite_vs_pro'         => get_option( $this->theme['theme-slug'] . '_lite_vs_pro', 'NA' ),
 			//$this->theme['theme-slug'] . '_theme_upsells'       => get_option( $this->theme['theme-slug'] . '_theme_upsells', 'NA' ),
-			$this->theme['theme-slug'] . '_tracking_enable'     => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
+			$this->theme['theme-slug'] . '_tracking_enable' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
+			$this->theme['theme-slug'] . '_quickie_enabled' => get_option( $this->theme['theme-slug'] . '_quickie_enabled', false ),
 		);
 
 		foreach ( $arr as $id => $val ) {
