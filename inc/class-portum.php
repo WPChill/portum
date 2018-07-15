@@ -150,17 +150,17 @@ class Portum {
 		$html = '<p>';
 		$html .= vsprintf( // Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
 			__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s.', 'portum' ), array(
-				'Portum',
-				'<a target="_blank" href="https://bit.ly/feedback-portum">',
-				'</a>',
-			) );
+			'Portum',
+			'<a target="_blank" href="https://bit.ly/feedback-portum">',
+			'</a>',
+		) );
 
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice( array(
-				'id'      => 'portum_notification_feedback',
-				'type'    => 'notice epsilon-big',
-				'message' => $html,
-			) );
+			'id'      => 'portum_notification_feedback',
+			'type'    => 'notice epsilon-big',
+			'message' => $html,
+		) );
 	}
 
 	/**
@@ -462,11 +462,11 @@ class Portum {
 	 */
 	public function init_dashboard() {
 		Epsilon_Dashboard::get_instance( array(
-				'theme'    => array(
-					'download-id' => '212499',
-				),
-				'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
-			) );
+			'theme'    => array(
+				'download-id' => '212499',
+			),
+			'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
+		) );
 
 		$dashboard = Portum_Dashboard_Setup::get_instance();
 		$dashboard->add_admin_notice();
@@ -474,6 +474,11 @@ class Portum {
 		$upsells = get_option( $this->theme['theme-slug'] . '_theme_upsells', false );
 		if ( $upsells ) {
 			add_filter( 'epsilon_upsell_control_display', '__return_false' );
+		}
+
+		$quickie_bar = get_option( $this->theme['theme-slug'] . '_quickie_enabled', false );
+		if ( $quickie_bar ) {
+			add_filter( 'show_epsilon_quickie_bar', '__return_false' );
 		}
 	}
 
@@ -561,11 +566,11 @@ class Portum {
 		 */
 		wp_enqueue_style( 'portum', get_stylesheet_uri() );
 		wp_enqueue_style( 'portum-main', get_template_directory_uri() . '/assets/css/style-portum.css', array(
-				'font-awesome',
-				'animate',
-				'ytplayer',
-				'portum',
-			), $theme['Version'] );
+			'font-awesome',
+			'animate',
+			'ytplayer',
+			'portum',
+		), $theme['Version'] );
 
 		wp_enqueue_style( 'portum-style-overrides', get_template_directory_uri() . '/assets/css/overrides.css' );
 
@@ -573,14 +578,14 @@ class Portum {
 		 * Load scripts
 		 */
 		wp_enqueue_script( 'portum-main', get_template_directory_uri() . '/assets/js/main.js', array(
-				'jquery',
-				'superfish-hoverIntent',
-				'superfish',
-				'stickem',
-				'viewport',
-				'ytplayer',
-				'portum-object',
-			), $theme['Version'], true );
+			'jquery',
+			'superfish-hoverIntent',
+			'superfish',
+			'stickem',
+			'viewport',
+			'ytplayer',
+			'portum-object',
+		), $theme['Version'], true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -603,9 +608,9 @@ class Portum {
 		 * Load menus
 		 */
 		register_nav_menus( array(
-				'primary' => esc_html__( 'Primary Navigation', 'portum' ),
-				'footer'  => esc_html__( 'Footer Navigation', 'portum' ),
-			) );
+			'primary' => esc_html__( 'Primary Navigation', 'portum' ),
+			'footer'  => esc_html__( 'Footer Navigation', 'portum' ),
+		) );
 
 		/**
 		 * Theme supports
@@ -615,31 +620,31 @@ class Portum {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'custom-logo', array(
-				'flex-width'  => true,
-				'flex-height' => true,
-			) );
+			'flex-width'  => true,
+			'flex-height' => true,
+		) );
 		add_theme_support( 'post-formats', array(
-				'aside',
-				'image',
-				'quote',
-				'link',
-				'gallery',
-				'video',
-				'status',
-				'audio',
-				'chat',
-			) );
+			'aside',
+			'image',
+			'quote',
+			'link',
+			'gallery',
+			'video',
+			'status',
+			'audio',
+			'chat',
+		) );
 		add_theme_support( 'custom-header', array(
-				'width'              => 1920,
-				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
-				'height'             => 600,
-				'flex-height'        => true,
-				'flex-width'         => true,
-				'default-text-color' => '#232323',
-				'header-text'        => false,
-				'uploads'            => true,
-				'video'              => false,
-			) );
+			'width'              => 1920,
+			'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
+			'height'             => 600,
+			'flex-height'        => true,
+			'flex-width'         => true,
+			'default-text-color' => '#232323',
+			'header-text'        => false,
+			'uploads'            => true,
+			'video'              => false,
+		) );
 
 		/**
 		 * Image sizes
