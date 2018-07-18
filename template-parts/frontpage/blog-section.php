@@ -81,12 +81,12 @@ $parent_attr = array(
 									<div class="news-category">
 										<strong>
 											<?php $categories = get_the_category(); ?>
-											<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a>
+											<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo wp_kses_post( $categories[0]->name ); ?></a>
 										</strong>
 									</div>
 
 									<div class="news-date">
-										<strong><span><?php echo esc_html( get_the_date() ); ?></span></strong>
+										<strong><span><?php echo wp_kses_post( get_the_date() ); ?></span></strong>
 									</div>
 								</div>
 							</div>

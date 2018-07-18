@@ -72,7 +72,7 @@ wp_enqueue_script( 'googlemaps' );
 												?>
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-													<?php echo esc_html( $field['contact_title'] ); ?>
+													<?php echo wp_kses_post( $field['contact_title'] ); ?>
 												</h5>
 												<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 											</div>
@@ -114,7 +114,7 @@ wp_enqueue_script( 'googlemaps' );
 												?>
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-													<?php echo esc_html( $field['contact_title'] ); ?>
+													<?php echo wp_kses_post( $field['contact_title'] ); ?>
 												</h5>
 												<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 											</div>
@@ -163,7 +163,7 @@ wp_enqueue_script( 'googlemaps' );
 											?>
 											<h5>
 												<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-												<?php echo esc_html( $field['contact_title'] ); ?>
+												<?php echo wp_kses_post( $field['contact_title'] ); ?>
 											</h5>
 											<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 										</div>

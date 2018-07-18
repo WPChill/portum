@@ -47,8 +47,8 @@ $layout = Portum_Helper::get_layout( 'portum_page_layout' );
 
 				the_posts_pagination(
 					array(
-						'prev_text' => '<span class="fa fa-angle-left"></span> ' . esc_html__( 'Previous', 'portum' ),
-						'next_text' => esc_html__( 'Next', 'portum' ) . ' <span class="fa fa-angle-right"></span>',
+						'prev_text' => '<span class="fa fa-angle-left"></span> ' . wp_kses_post__( 'Previous', 'portum' ),
+						'next_text' => wp_kses_post__( 'Next', 'portum' ) . ' <span class="fa fa-angle-right"></span>',
 					)
 				);
 				?>

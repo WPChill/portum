@@ -66,11 +66,11 @@ $parent_attr = array(
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_title'] ) ) { ?>
-													<h5><?php echo esc_html( $service['service_title'] ); ?></h5>
+													<h5><?php echo wp_kses_post( $service['service_title'] ); ?></h5>
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
-													<p><?php echo esc_html( $service['service_description'] ); ?></p>
+													<p><?php echo wp_kses_post( $service['service_description'] ); ?></p>
 												<?php } ?>
 											</div>
 										</div>
@@ -95,11 +95,11 @@ $parent_attr = array(
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_title'] ) ) { ?>
-													<h5><?php echo esc_html( $service['service_title'] ); ?></h5>
+													<h5><?php echo wp_kses_post( $service['service_title'] ); ?></h5>
 												<?php } ?>
 
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
-													<p><?php echo esc_html( $service['service_description'] ); ?></p>
+													<p><?php echo wp_kses_post( $service['service_description'] ); ?></p>
 												<?php } ?>
 											</div>
 										</div>
@@ -134,11 +134,11 @@ $parent_attr = array(
 										<?php } ?>
 
 										<?php if ( ! empty( $service['service_title'] ) ) { ?>
-											<h5><?php echo esc_html( $service['service_title'] ); ?></h5>
+											<h5><?php echo wp_kses_post( $service['service_title'] ); ?></h5>
 										<?php } ?>
 
 										<?php if ( ! empty( $service['service_description'] ) ) { ?>
-											<p><?php echo esc_html( $service['service_description'] ); ?></p>
+											<p><?php echo wp_kses_post( $service['service_description'] ); ?></p>
 										<?php } ?>
 									</div>
 								</div>

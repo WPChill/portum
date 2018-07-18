@@ -185,8 +185,8 @@ class Portum_Dashboard_Setup {
 				'title'    => __( 'Almost ready', 'portum' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://www.machothemes.com">MachoThemes</a>.', 'portum' ),
-						__( 'Allow MachoThemes to track theme usage.', 'portum' ),
+						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'portum' ),
+						__( 'Allow Colorlib to track theme usage.', 'portum' ),
 						$this->get_permission_content(),
 					),
 				),

@@ -65,13 +65,13 @@ $items_class = null;
 									<?php } ?>
 
 									<?php if ( ! empty( $v['testimonial_title'] ) ) { ?>
-										<h6><?php echo esc_html( $v['testimonial_title'] ); ?></h6>
+										<h6><?php echo wp_kses_post( $v['testimonial_title'] ); ?></h6>
 									<?php } ?>
 
 									<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
 
 									<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
-										<a href="#"><?php echo esc_html( $v['testimonial_subtitle'] ); ?></a>
+										<a href="#"><?php echo wp_kses_post( $v['testimonial_subtitle'] ); ?></a>
 									<?php } ?>
 								</div>
 							</div>
