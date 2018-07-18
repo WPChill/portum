@@ -1239,7 +1239,7 @@ Epsilon_Customizer::add_field( 'portum_color_scheme', array(
 				// 'epsilon_menu_separator'            		=> '',
 				'epsilon_header_background'              => 'rgba(255,255,255,0)',
 				'epsilon_header_background_sticky'       => 'rgba(0,0,0,.9)',
-				'epsilon_header_background_border_bot'   => 'rgba(255,255,255,.05)',
+				'epsilon_header_background_border_bot'   => 'rgba(255,255,255,.1)',
 				'epsilon_dropdown_menu_background'       => '#333333',
 				'epsilon_dropdown_menu_hover_background' => '#ff3366',
 				'epsilon_menu_item_color'                => '#FFFFFF',
