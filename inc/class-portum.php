@@ -315,7 +315,7 @@ class Portum {
 			'epsilon_header_background_border_bot' => array(
 				'label'       => esc_html__( 'Header Border Bottom Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the header border bottom', 'portum' ),
-				'default'     => '#FFFFFF',
+				'default'     => 'rgba(255,255,255,.1)',
 				'section'     => 'colors',
 				'hover-state' => false,
 			),
