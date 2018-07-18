@@ -56,10 +56,10 @@ $parent_attr         = array(
 										<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
 											<h4>
 												<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
-													<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong>
+													<strong><?php echo wp_kses_post( $expertise['expertise_number'] ); ?></strong>
 												<?php } ?>
 
-												<?php echo esc_html( $expertise['expertise_title'] ); ?>
+												<?php echo wp_kses_post( $expertise['expertise_title'] ); ?>
 
 											</h4>
 										<?php } ?>
@@ -94,10 +94,10 @@ $parent_attr         = array(
 										<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
 											<h4>
 												<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
-													<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong>
+													<strong><?php echo wp_kses_post( $expertise['expertise_number'] ); ?></strong>
 												<?php } ?>
 
-												<?php echo esc_html( $expertise['expertise_title'] ); ?>
+												<?php echo wp_kses_post( $expertise['expertise_title'] ); ?>
 
 											</h4>
 										<?php } ?>

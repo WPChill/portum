@@ -971,7 +971,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 	'fields'       => array(
 		'slide_title'                   => array(
 			'label'             => esc_html__( 'Slide title', 'portum' ),
-			'type'              => 'epsilon-text-editor',
+			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'Best Medical Care you can get for you and your family.', 'portum' ),
 		),
@@ -989,7 +989,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		),
 		'slide_description'             => array(
 			'label'             => esc_html__( 'Slide description', 'portum' ),
-			'type'              => 'epsilon-text-editor',
+			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
 		),

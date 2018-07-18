@@ -52,17 +52,17 @@ $parent_attr             = array(
 								<div class="plan">
 									<strong>
 										<?php if ( ! empty( $pricing_box['price_box_currency'] ) ) { ?>
-											<sup><?php echo esc_html( $pricing_box['price_box_currency'] ); ?></sup>
+											<sup><?php echo wp_kses_post( $pricing_box['price_box_currency'] ); ?></sup>
 										<?php } ?>
 
 										<?php
 										if ( ! empty( $pricing_box['price_box_price'] ) ) {
-											echo esc_html( $pricing_box['price_box_price'] );
+											echo wp_kses_post( $pricing_box['price_box_price'] );
 										}
 										?>
 
 										<?php if ( ! empty( $pricing_box['price_box_period'] ) ) { ?>
-											<sub>/<?php echo esc_html( $pricing_box['price_box_period'] ); ?></sub>
+											<sub>/<?php echo wp_kses_post( $pricing_box['price_box_period'] ); ?></sub>
 										<?php } ?>
 									</strong>
 								</div>
@@ -81,7 +81,7 @@ $parent_attr             = array(
 								<?php if ( ! empty( $pricing_box['price_box_url'] ) ) { ?>
 									<div class="wrapper">
 										<a href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>" class="ewf-btn">
-											<?php echo empty( $pricing_box['price_box_url_label'] ) ? esc_html__( 'Purchase', 'portum' ) : esc_html( $pricing_box['price_box_url_label'] ); ?>
+											<?php echo empty( $pricing_box['price_box_url_label'] ) ? wp_kses_post__( 'Purchase', 'portum' ) : wp_kses_post( $pricing_box['price_box_url_label'] ); ?>
 										</a>
 									</div>
 								<?php } ?>

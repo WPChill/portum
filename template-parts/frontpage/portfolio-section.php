@@ -69,7 +69,7 @@ wp_enqueue_script( 'magnificPopup' );
 													<div class="ewf-portfolio-item__details">
 														<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 															<h5>
-																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a>
+																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
 															</h5>
 														<?php } ?>
 
@@ -89,7 +89,7 @@ wp_enqueue_script( 'magnificPopup' );
 											<div class="ewf-portfolio-item__details">
 												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 													<h5>
-														<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a>
+														<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
 													</h5>
 												<?php } ?>
 

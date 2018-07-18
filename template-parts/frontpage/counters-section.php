@@ -77,10 +77,10 @@ wp_enqueue_script( 'odometer' );
 											<div class="ewf-counter__content">
 												<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
 												<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
-													<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
+													<span class="ewf-counter__symbol"><?php echo wp_kses_post( $counter['counter_symbol'] ); ?></span>
 												<?php } ?>
 												<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-													<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
+													<h6 class="ewf-counter__title"><?php echo wp_kses_post( $counter['counter_title'] ); ?></h6>
 												<?php } ?>
 											</div>
 
@@ -118,10 +118,10 @@ wp_enqueue_script( 'odometer' );
 											<div class="ewf-counter__content">
 												<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
 												<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
-													<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
+													<span class="ewf-counter__symbol"><?php echo wp_kses_post( $counter['counter_symbol'] ); ?></span>
 												<?php } ?>
 												<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-													<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
+													<h6 class="ewf-counter__title"><?php echo wp_kses_post( $counter['counter_title'] ); ?></h6>
 												<?php } ?>
 											</div>
 
@@ -170,10 +170,10 @@ wp_enqueue_script( 'odometer' );
 									<div class="ewf-counter__content">
 										<span class="<?php echo esc_attr( $class ); ?>" data-value="<?php echo ! empty( $counter['counter_number'] ) ? esc_attr( $counter['counter_number'] ) : 720; ?>" data-speed="2000"></span>
 										<?php if ( ! empty( $counter['counter_symbol'] ) ) { ?>
-											<span class="ewf-counter__symbol"><?php echo esc_html( $counter['counter_symbol'] ); ?></span>
+											<span class="ewf-counter__symbol"><?php echo wp_kses_post( $counter['counter_symbol'] ); ?></span>
 										<?php } ?>
 										<?php if ( ! empty( $counter['counter_title'] ) ) { ?>
-											<h6 class="ewf-counter__title"><?php echo esc_html( $counter['counter_title'] ); ?></h6>
+											<h6 class="ewf-counter__title"><?php echo wp_kses_post( $counter['counter_title'] ); ?></h6>
 										<?php } ?>
 									</div>
 

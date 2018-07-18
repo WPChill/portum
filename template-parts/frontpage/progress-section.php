@@ -67,7 +67,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 												<?php
 												if ( ! empty( $progress['progress_bar_title'] ) ) {
 													?>
-													<?php echo esc_html( $progress['progress_bar_title'] ); ?>
+													<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
 
 													<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
 														<span><?php echo $progress['progress_bar_value']; ?>%</span>
@@ -103,7 +103,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 												<?php
 												if ( ! empty( $progress['progress_bar_title'] ) ) {
 													?>
-													<?php echo esc_html( $progress['progress_bar_title'] ); ?>
+													<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
 
 													<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
 														<span><?php echo $progress['progress_bar_value']; ?>%</span>
@@ -147,7 +147,7 @@ $span = 12 / absint( $fields['progress_column_group'] );
 										<?php
 										if ( ! empty( $progress['progress_bar_title'] ) ) {
 											?>
-											<?php echo esc_html( $progress['progress_bar_title'] ); ?>
+											<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
 
 											<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
 												<span><?php echo $progress['progress_bar_value']; ?>%</span>
