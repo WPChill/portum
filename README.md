@@ -55,33 +55,44 @@ Google Fonts
 
 ##### Portum - Original 
 
-	00_header_01  https://pixabay.com/en/nurse-medicine-doctor-hospital-2019420/
-	01_our impact  https://pixabay.com/en/blood-pressure-pressure-gauge-1006790/
-	02_appointment  https://pixabay.com/en/isolated-doctor-dentist-dental-care-1188036/
-	03_top experience  https://pixabay.com/en/elderly-corridor-doctor-1461424/
-	04_why choose us  https://pixabay.com/en/experiment-chemistry-liquid-220023/
-	05_doctors_01  https://pixabay.com/en/health-nurse-nursing-1476765/
-	05_doctors_02  https://pixabay.com/en/man-coat-people-laboratory-lab-216989/
-	05_doctors_03  https://pixabay.com/en/dentist-doctor-1191671/
-	05_doctors_04  https://pixabay.com/en/woman-coat-girl-people-laboratory-216988/
-	06_explore hospital  https://pixabay.com/en/asia-assistance-care-for-caretaker-1807539/
-	07_involvment  https://pixabay.com/en/doctor-medical-medicine-health-563429/
-	08_testimonial  https://pixabay.com/en/fashion-woman-clothing-female-1623089/
+- 00_header_01  https://pixabay.com/en/nurse-medicine-doctor-hospital-2019420/
+- 01_our impact  https://pixabay.com/en/blood-pressure-pressure-gauge-1006790/
+- 02_appointment  https://pixabay.com/en/isolated-doctor-dentist-dental-care-1188036/
+- 03_top experience  https://pixabay.com/en/elderly-corridor-doctor-1461424/
+- 04_why choose us  https://pixabay.com/en/experiment-chemistry-liquid-220023/
+- 05_doctors_01  https://pixabay.com/en/health-nurse-nursing-1476765/
+- 05_doctors_02  https://pixabay.com/en/man-coat-people-laboratory-lab-216989/
+- 05_doctors_03  https://pixabay.com/en/dentist-doctor-1191671/
+- 05_doctors_04  https://pixabay.com/en/woman-coat-girl-people-laboratory-216988/
+- 06_explore hospital  https://pixabay.com/en/asia-assistance-care-for-caretaker-1807539/
+- 07_involvment  https://pixabay.com/en/doctor-medical-medicine-health-563429/
+- 08_testimonial  https://pixabay.com/en/fashion-woman-clothing-female-1623089/
 
 ##### Portum - Business-X
 
-slide 1 - https://unsplash.com/photos/YoelVcKWmws
-slide 2 - https://unsplash.com/photos/SRjZtxsK3Os
-slide 3 - https://unsplash.com/photos/alS7ewQ41M8
-about section (title: seo friendly // title: fresh & clean use same image) - https://unsplash.com/photos/KXGkNQKwgj8
-services section (title: email marketing made easy) - https://unsplash.com/photos/SRjZtxsK3Os
+- slide 1 - https://unsplash.com/photos/YoelVcKWmws/info
+- slide 2 - https://unsplash.com/photos/SRjZtxsK3Os/info
+- slide 3 - https://unsplash.com/photos/alS7ewQ41M8/info
+- about section (title: seo friendly // title: fresh & clean use same image) - https://unsplash.com/photos/KXGkNQKwgj8/info
+- services section (title: email marketing made easy) - https://unsplash.com/photos/SRjZtxsK3Os/info
 
 ##### Portum - Material 
-
+- slide 1 - https://pixabay.com/en/backround-pattern-texture-dimension-1209772/
+- slide 2 - https://pixabay.com/en/arches-bridge-concrete-structure-1866598/
+- Portfolio Section 1 - https://pixabay.com/en/typography-sentence-black-white-791192/
+- Portfolio Section 2 - https://pixabay.com/en/girl-woman-snow-blizzard-people-926020/
 
 ##### Portum - Clean
-slide 1 - https://unsplash.com/photos/nvzvOPQW0gc
-slide 2 - https://unsplash.com/photos/nfTA8pdaq9A
-about section (title: Learn more about us and how can we help you) - https://unsplash.com/photos/2rm8p0rKXiw
-portfolio section :: image 1 - https://unsplash.com/photos/ncQ2sguVlgo
-portfolio section :: image 2 - https://unsplash.com/photos/fbAnIjhrOL4
+- hero section - https://pixabay.com/en/desk-computer-modern-keyboard-1140699/
+- about section (title: Learn more about us and how can we help you) - https://pixabay.com/en/computer-nobody-flatlay-workspace-2822070/
+- portfolio section - https://pixabay.com/en/plant-cactus-background-1985874/
+- portfolio section - https://pixabay.com/en/pink-lifestyle-headphones-keyboard-2569355/
+- portfolio section - https://pixabay.com/en/books-magazine-pen-eyeglasses-2569052/
+- about me section - https://pixabay.com/en/apple-apple-devices-simply-mockup-1868496/
+- team section - 
+
+##### Portum - One 
+- Hero section - https://pixabay.com/en/abstract-architecture-building-1851115/
+- Our Expertise Section (background image) - https://pixabay.com/en/abstract-architecture-background-21901/
+- Portfolio Section image 1 - https://pixabay.com/en/laptop-technology-computer-business-3244483/
+- Portfolio Section image 2 - https://pixabay.com/en/girl-woman-snow-blizzard-people-926020/
