@@ -53,7 +53,7 @@
           "id": "logo",
           "label": "Logo",
           "setting": "custom_logo",
-          "content": "\/assets\/images\/logo.png"
+          "content": "\/assets\/images\/material\/logo-portum-material.png"
         },
         "frontpage": {
           "id": "frontpage",
@@ -3104,7 +3104,10 @@
     },
     "plugins": {
       "label": "Plugins",
-      "content": []
+      "content": {
+        "contact-form-7": "Contact Form 7",
+        "modula-best-grid-gallery": "Modula Best Grid Gallery"
+      }
     },
     "menus": {
       "label": "Menus",
@@ -3188,7 +3191,6 @@
             "services_section_class": "section-services-2015408043",
             "services_section_visibility": "visible",
             "services_background_color": "#FFF",
-            "services_background_image": "",
             "services_background_position": "center",
             "services_background_size": "initial",
             "services_background_repeat": "repeat",
@@ -3229,7 +3231,6 @@
             "clientlist_section_class": "section-clientlist-1186043047",
             "clientlist_section_visibility": "visible",
             "clientlist_background_color": "#ff173d",
-            "clientlist_background_image": "",
             "clientlist_background_position": "center",
             "clientlist_background_size": "initial",
             "clientlist_background_repeat": "repeat",
@@ -3293,7 +3294,6 @@
             "portfolio_section_class": "section-portfolio-1776517009",
             "portfolio_section_visibility": "visible",
             "portfolio_background_color": false,
-            "portfolio_background_image": "",
             "portfolio_background_position": "center",
             "portfolio_background_size": "initial",
             "portfolio_background_repeat": "repeat",
@@ -3318,14 +3318,12 @@
             "about_title": "",
             "about_subtitle": "",
             "about_text": "<h6>HAPPY CLIENTS<\/h6>\n&nbsp;\n<em style=\"font-size: 26px; max-width: 60%;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.<\/em>\n&nbsp;&nbsp;\nMICHAEL PREY, <span style=\"color: #ff173d;\">WP PROFESSIONAL<\/span>",
-            "about_image": "",
             "about_button_primary_label": "",
             "about_button_primary_url": "",
             "about_section_unique_id": "",
             "about_section_class": "section-about-1737038487",
             "about_section_visibility": "visible",
             "about_background_color": "#000",
-            "about_background_image": "",
             "about_background_position": "center",
             "about_background_size": "cover",
             "about_background_repeat": "no-repeat",
@@ -3355,7 +3353,6 @@
             "blog_section_class": "section-blog-1647791194",
             "blog_section_visibility": "visible",
             "blog_background_color": "#f8f9f9",
-            "blog_background_image": "",
             "blog_background_position": "center",
             "blog_background_size": "initial",
             "blog_background_repeat": "repeat",
@@ -3386,7 +3383,6 @@
             "cta_section_class": "section-cta-1790721701",
             "cta_section_visibility": "visible",
             "cta_background_color": "#ff173d",
-            "cta_background_image": "",
             "cta_background_position": "center",
             "cta_background_size": "initial",
             "cta_background_repeat": "repeat",
