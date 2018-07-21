@@ -3413,7 +3413,7 @@
         "contact_section": {
           "id": "contact_section",
           "setting": "portum_contact_section",
-          "label": "TODO MAKE SURE ITS CORRECT  contact section",
+          "label": "contact section",
           "content": {
             "0": {
               "contact_title": "Headquarters",
@@ -3435,7 +3435,7 @@
         "team_members": {
           "id": "team_members",
           "setting": "portum_team_members",
-          "label": "TODO MAKE SURE ITS CORRECT  team members",
+          "label": "team members",
           "content": {
             "0": {
               "member_title": "Amelia Couchin Delgado",
@@ -3478,7 +3478,7 @@
         "expertise": {
           "id": "expertise",
           "setting": "portum_expertise",
-          "label": "TODO MAKE SURE ITS CORRECT  expertise",
+          "label": "expertise",
           "content": {
             "0": {
               "expertise_number": "01",
@@ -3497,7 +3497,7 @@
         "services": {
           "id": "services",
           "setting": "portum_services",
-          "label": "TODO MAKE SURE ITS CORRECT  services",
+          "label": "services",
           "content": {
             "0": {
               "service_title": "Typography",
@@ -3552,7 +3552,7 @@
         "slides": {
           "id": "slides",
           "setting": "portum_slides",
-          "label": "TODO MAKE SURE ITS CORRECT  slides",
+          "label": "slides",
           "content": {
             "0": {
               "slides_title": "Growing your business",
@@ -3574,7 +3574,7 @@
         "portfolio": {
           "id": "portfolio",
           "setting": "portum_portfolio",
-          "label": "TODO MAKE SURE ITS CORRECT  portfolio",
+          "label": "portfolio",
           "content": {
             "0": {
               "portfolio_title": "VIDEOS",
@@ -3609,7 +3609,7 @@
         "testimonials": {
           "id": "testimonials",
           "setting": "portum_testimonials",
-          "label": "TODO MAKE SURE ITS CORRECT  testimonials",
+          "label": "testimonials",
           "content": {
             "0": {
               "testimonial_title": "Michael Cross",
@@ -3640,7 +3640,7 @@
         "price_boxes": {
           "id": "price_boxes",
           "setting": "portum_price_boxes",
-          "label": "TODO MAKE SURE ITS CORRECT  price boxes",
+          "label": "price boxes",
           "content": {
             "0": {
               "price_box_title": "STARTUP",
@@ -3677,7 +3677,7 @@
         "counter_boxes": {
           "id": "counter_boxes",
           "setting": "portum_counter_boxes",
-          "label": "TODO MAKE SURE ITS CORRECT  counter boxes",
+          "label": "counter boxes",
           "content": {
             "0": {
               "counter_title": "Issues resolved",
@@ -3720,7 +3720,7 @@
         "progress_bars": {
           "id": "progress_bars",
           "setting": "portum_progress_bars",
-          "label": "TODO MAKE SURE ITS CORRECT  progress bars",
+          "label": "progress bars",
           "content": {
             "0": {
               "progress_bar_title": "Webdesign",
@@ -3751,7 +3751,7 @@
         "advanced_slides": {
           "id": "advanced_slides",
           "setting": "portum_advanced_slides",
-          "label": "TODO MAKE SURE ITS CORRECT  advanced slides",
+          "label": "advanced slides",
           "content": {
             "0": {
               "slide_title": "Portum is Better & Wiser",
@@ -3775,7 +3775,7 @@
         "clients": {
           "id": "clients",
           "setting": "portum_clients",
-          "label": "TODO MAKE SURE ITS CORRECT  clients",
+          "label": "clients",
           "content": {
             "0": {
               "client_title": "Creatika",
