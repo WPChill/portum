@@ -81,7 +81,7 @@ $parent_attr             = array(
 								<?php if ( ! empty( $pricing_box['price_box_url'] ) ) { ?>
 									<div class="wrapper">
 										<a href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>" class="ewf-btn">
-											<?php echo empty( $pricing_box['price_box_url_label'] ) ? wp_kses_post__( 'Purchase', 'portum' ) : wp_kses_post( $pricing_box['price_box_url_label'] ); ?>
+											<?php echo empty( $pricing_box['price_box_url_label'] ) ? esc_html__( 'Purchase', 'portum' ) : wp_kses_post( $pricing_box['price_box_url_label'] ); ?>
 										</a>
 									</div>
 								<?php } ?>
