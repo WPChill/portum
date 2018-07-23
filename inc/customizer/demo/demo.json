@@ -1,7 +1,7 @@
 {
-  "standard": {
-    "label": "Standard",
-    "thumb": "/inc/customizer/demo/mt-onb-preivew-portum-01.png",
+  "portumoriginal": {
+    "label": "Portum Original",
+    "thumb": "\/inc\/customizer\/demo\/mt-onb-preivew-portum-original.png",
     "tag": [
       "business"
     ],
@@ -49,11 +49,17 @@
           "setting": "portum_google_api_key",
           "content": "AIzaSyD8H7MXaTBDEQzvC7_e_Ovy_NzdC4JsEa0"
         },
+        "portum_header_over_content": {
+          "id": "portum_header_over_content",
+          "label": "Portum_header_over_content",
+          "setting": "portum_header_over_content",
+          "content": true
+        },
         "logo": {
           "id": "logo",
           "label": "Logo",
           "setting": "custom_logo",
-          "content": "\/assets\/images\/material\/logo-portum-material.png"
+          "content": "\/assets\/images\/logo.png"
         },
         "frontpage": {
           "id": "frontpage",
@@ -96,6 +102,31 @@
             "dropdown": 0
           },
           "meta-2": {
+            "title": ""
+          },
+          "search-3": {
+            "title": ""
+          },
+          "recent-posts-3": {
+            "title": "",
+            "number": 5
+          },
+          "recent-comments-3": {
+            "title": "",
+            "number": 5
+          },
+          "archives-3": {
+            "title": "",
+            "count": 0,
+            "dropdown": 0
+          },
+          "categories-3": {
+            "title": "",
+            "count": 0,
+            "hierarchical": 0,
+            "dropdown": 0
+          },
+          "meta-3": {
             "title": ""
           }
         }
@@ -148,24 +179,6 @@
               "label": "Contact"
             }
           ]
-        },
-        "footer": {
-          "id": "footer",
-          "label": "Footer Menu",
-          "menu": [
-            {
-              "href": "#",
-              "label": "Home"
-            },
-            {
-              "href": "#",
-              "label": "Blog"
-            },
-            {
-              "href": "#",
-              "label": "Contact"
-            }
-          ]
         }
       }
     },
@@ -173,24 +186,28 @@
       "id": "sections",
       "label": "Sections",
       "content": {
-        "slider9939": {
-          "id": "slider9939",
+        "slider5686": {
+          "id": "slider5686",
           "label": "Slider",
           "setting": "portum_frontpage_sections",
           "content": {
+            "slider_pager": true,
+            "slider_autoplay": true,
+            "slider_loop": true,
             "slider_navigation": "",
             "slider_grouping": [
               "all"
             ],
             "slider_repeater_field": "portum_slides",
             "slider_section_unique_id": "",
-            "slider_section_class": "section-slider-484740925",
-            "index": 0,
+            "slider_section_class": "section-slider-2048068428",
+            "slider_section_visibility": "visible",
+            "index": 13,
             "type": "slider"
           }
         },
-        "about26650": {
-          "id": "about26650",
+        "about5591": {
+          "id": "about5591",
           "label": "About",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -198,10 +215,13 @@
             "about_subtitle": "ABOUT",
             "about_text": "<p>Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, fermentum ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nasceturridiculus mus. In dictum ut nunc vitae ultricies<\/p><p>Sed pharetra tellus arcu, ac fringilla diam porttitor at. Phasellus ligula nisl, ultricies in eleifendid, accumsan vitae nis subim at ullas doc victus et renit amulusl.<\/p><a href=\"#\">Get a quote <i class=\"fa fa-angle-right\" aria-hidden=\"true\"><\/i><\/a>",
             "about_image": "\/assets\/images\/01_about.png",
+            "about_button_primary_label": "Primary button",
+            "about_button_primary_url": "https:\/\/google.com",
             "about_section_unique_id": "",
             "about_section_class": "section-about-1044114822",
+            "about_section_visibility": "visible",
             "about_background_color": false,
-            "about_background_color_opacity": 1,
+            "about_background_image": "",
             "about_background_position": "center",
             "about_background_size": "cover",
             "about_background_repeat": "no-repeat",
@@ -215,17 +235,18 @@
             "about_column_vertical_alignment": "middle",
             "about_heading_color": "",
             "about_text_color": "",
-            "index": 1,
+            "index": 0,
             "type": "about"
           }
         },
-        "services45855": {
-          "id": "services45855",
+        "services35730": {
+          "id": "services35730",
           "label": "Services",
           "setting": "portum_frontpage_sections",
           "content": {
             "services_title": "We offer:",
             "services_subtitle": "SERVICES",
+            "services_description": "Add a description text over here",
             "services_grouping": [
               "all"
             ],
@@ -233,13 +254,13 @@
             "services_repeater_field": "portum_services",
             "services_section_unique_id": "",
             "services_section_class": "section-services-1485479551",
+            "services_section_visibility": "visible",
             "services_background_color": false,
-            "services_background_color_opacity": 1,
             "services_background_image": "\/assets\/images\/02_services.jpg",
             "services_background_position": "center",
             "services_background_size": "cover",
             "services_background_repeat": "no-repeat",
-            "services_background_parallax": "",
+            "services_background_parallax": "1",
             "services_background_video": "",
             "services_row_title_align": "left",
             "services_column_stretch": "boxedin",
@@ -248,14 +269,14 @@
             "services_column_group": 3,
             "services_column_alignment": "left",
             "services_column_vertical_alignment": "middle",
-            "services_heading_color": "",
+            "services_heading_color": "rgba(255, 255, 255, 1)",
             "services_text_color": "",
-            "index": 2,
+            "index": 1,
             "type": "services"
           }
         },
-        "portfolio52381": {
-          "id": "portfolio52381",
+        "portfolio15084": {
+          "id": "portfolio15084",
           "label": "Portfolio",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -265,23 +286,31 @@
               "all"
             ],
             "portfolio_navigation": "",
+            "portfolio_description_below": false,
             "portfolio_repeater_field": "portum_portfolio",
             "portfolio_section_unique_id": "",
             "portfolio_section_class": "section-portfolio-1446933691",
+            "portfolio_section_visibility": "visible",
             "portfolio_background_color": false,
-            "portfolio_background_color_opacity": 1,
+            "portfolio_background_image": "",
             "portfolio_background_position": "center",
             "portfolio_background_size": "cover",
             "portfolio_background_repeat": "no-repeat",
+            "portfolio_background_parallax": "",
             "portfolio_column_stretch": "fullwidth",
+            "portfolio_column_group": "4",
+            "portfolio_column_spacing": "none",
             "portfolio_row_spacing_top": "md",
             "portfolio_row_spacing_bottom": "none",
-            "index": 3,
+            "portfolio_column_alignment": "center",
+            "portfolio_heading_color": "",
+            "portfolio_text_color": "",
+            "index": 2,
             "type": "portfolio"
           }
         },
-        "testimonials49363": {
-          "id": "testimonials49363",
+        "testimonials9004": {
+          "id": "testimonials9004",
           "label": "Testimonials",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -294,8 +323,8 @@
             "testimonials_repeater_field": "portum_testimonials",
             "testimonials_section_unique_id": "",
             "testimonials_section_class": "section-testimonials-494706219",
+            "testimonials_section_visibility": "visible",
             "testimonials_background_color": false,
-            "testimonials_background_color_opacity": 1,
             "testimonials_background_image": "\/assets\/images\/back-dashed.jpg",
             "testimonials_background_position": "center",
             "testimonials_background_size": "initial",
@@ -307,12 +336,12 @@
             "testimonials_column_group": 2,
             "testimonials_heading_color": "",
             "testimonials_text_color": "",
-            "index": 4,
+            "index": 3,
             "type": "testimonials"
           }
         },
-        "expertise38659": {
-          "id": "expertise38659",
+        "expertise59572": {
+          "id": "expertise59572",
           "label": "Expertise",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -326,8 +355,9 @@
             "expertise_repeater_field": "portum_expertise",
             "expertise_section_unique_id": "",
             "expertise_section_class": "section-expertise-2145209134",
+            "expertise_section_visibility": "visible",
             "expertise_background_color": false,
-            "expertise_background_color_opacity": 1,
+            "expertise_background_image": "",
             "expertise_background_position": "center",
             "expertise_background_size": "cover",
             "expertise_background_repeat": "no-repeat",
@@ -341,12 +371,12 @@
             "expertise_column_vertical_alignment": "middle",
             "expertise_heading_color": "",
             "expertise_text_color": "",
-            "index": 5,
+            "index": 4,
             "type": "expertise"
           }
         },
-        "video52881": {
-          "id": "video52881",
+        "video94171": {
+          "id": "video94171",
           "label": "Video",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -356,8 +386,9 @@
             "video_text": "",
             "video_section_unique_id": "",
             "video_section_class": "section-video-1853169873",
+            "video_section_visibility": "visible",
             "video_background_color": "#000000",
-            "video_background_color_opacity": 1,
+            "video_background_image": "",
             "video_background_position": "center",
             "video_background_size": "cover",
             "video_background_repeat": "no-repeat",
@@ -370,12 +401,12 @@
             "video_column_vertical_alignment": "middle",
             "video_heading_color": "#ffffff",
             "video_text_color": "#ffffff",
-            "index": 6,
+            "index": 5,
             "type": "video"
           }
         },
-        "team95782": {
-          "id": "team95782",
+        "team54159": {
+          "id": "team54159",
           "label": "Team",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -388,8 +419,8 @@
             "team_repeater_field": "portum_team_members",
             "team_section_unique_id": "",
             "team_section_class": "section-team-873922405",
+            "team_section_visibility": "visible",
             "team_background_color": false,
-            "team_background_color_opacity": 1,
             "team_background_image": "\/assets\/images\/back-dashed.jpg",
             "team_background_position": "center",
             "team_background_size": "initial",
@@ -403,25 +434,28 @@
             "team_column_vertical_alignment": "middle",
             "team_heading_color": "",
             "team_text_color": "",
-            "index": 7,
+            "index": 6,
             "type": "team"
           }
         },
-        "cta23872": {
-          "id": "cta23872",
+        "cta77815": {
+          "id": "cta77815",
           "label": "Cta",
           "setting": "portum_frontpage_sections",
           "content": {
             "cta_title": "Get it Now",
             "cta_description": "Now is the time! Pick up your copy of the ultimate WordPress theme today.",
             "cta_button_primary_label": "Download this",
+            "cta_button_primary_color": "ewf-btn--color-default",
             "cta_button_primary_url": "https:\/\/google.com",
             "cta_button_secondary_label": "Tell me more",
+            "cta_button_secondary_color": "ewf-btn--color-accent1",
             "cta_button_secondary_url": "https:\/\/google.com",
             "cta_section_unique_id": "",
             "cta_section_class": "section-cta-45302525",
+            "cta_section_visibility": "visible",
             "cta_background_color": "#192229",
-            "cta_background_color_opacity": 1,
+            "cta_background_image": "",
             "cta_background_position": "center",
             "cta_background_size": "cover",
             "cta_background_repeat": "no-repeat",
@@ -435,26 +469,25 @@
             "cta_column_vertical_alignment": "middle",
             "cta_heading_color": "#ffffff",
             "cta_text_color": "",
-            "index": 8,
+            "index": 7,
             "type": "cta"
           }
         },
-        "pricing86665": {
-          "id": "pricing86665",
+        "pricing4709": {
+          "id": "pricing4709",
           "label": "Pricing",
           "setting": "portum_frontpage_sections",
           "content": {
             "pricing_title": "See what package suits best for you",
             "pricing_subtitle": "PRICING",
-            "pricing_grouping": [
-              "all"
-            ],
+            "pricing_grouping": null,
             "pricing_navigation": "",
             "pricing_repeater_field": "portum_price_boxes",
             "pricing_section_unique_id": "",
             "pricing_section_class": "section-pricing-366319725",
+            "pricing_section_visibility": "visible",
             "pricing_background_color": false,
-            "pricing_background_color_opacity": 1,
+            "pricing_background_image": "",
             "pricing_background_position": "center",
             "pricing_background_size": "cover",
             "pricing_background_repeat": "no-repeat",
@@ -466,12 +499,12 @@
             "pricing_column_group": "3",
             "pricing_heading_color": "",
             "pricing_text_color": "",
-            "index": 9,
+            "index": 8,
             "type": "pricing"
           }
         },
-        "blog95057": {
-          "id": "blog95057",
+        "blog18122": {
+          "id": "blog18122",
           "label": "Blog",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -480,8 +513,8 @@
             "blog_post_count": "3",
             "blog_section_unique_id": "",
             "blog_section_class": "section-blog-1414283915",
+            "blog_section_visibility": "visible",
             "blog_background_color": false,
-            "blog_background_color_opacity": 1,
             "blog_background_image": "\/assets\/images\/back-dashed.jpg",
             "blog_background_position": "center",
             "blog_background_size": "initial",
@@ -492,12 +525,12 @@
             "blog_row_spacing_bottom": "md",
             "blog_heading_color": "",
             "blog_text_color": "",
-            "index": 10,
+            "index": 9,
             "type": "blog"
           }
         },
-        "counters46324": {
-          "id": "counters46324",
+        "counters72062": {
+          "id": "counters72062",
           "label": "Counters",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -508,8 +541,9 @@
             "counters_repeater_field": "portum_counter_boxes",
             "counters_section_unique_id": "",
             "counters_section_class": "section-counters-144760783",
+            "counters_section_visibility": "visible",
             "counters_background_color": false,
-            "counters_background_color_opacity": 1,
+            "counters_background_image": "",
             "counters_background_position": "center",
             "counters_background_size": "cover",
             "counters_background_repeat": "no-repeat",
@@ -524,12 +558,12 @@
             "counters_column_vertical_alignment": "middle",
             "counters_heading_color": "",
             "counters_text_color": "",
-            "index": 11,
+            "index": 10,
             "type": "counters"
           }
         },
-        "progress86575": {
-          "id": "progress86575",
+        "progress2367": {
+          "id": "progress2367",
           "label": "Progress",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -540,8 +574,8 @@
             "progress_bars_repeater_field": "portum_progress_bars",
             "progress_section_unique_id": "",
             "progress_section_class": "section-progress-710316736",
+            "progress_section_visibility": "visible",
             "progress_background_color": false,
-            "progress_background_color_opacity": 1,
             "progress_background_image": "\/assets\/images\/back-dashed.jpg",
             "progress_background_position": "center",
             "progress_background_size": "initial",
@@ -557,12 +591,12 @@
             "progress_column_vertical_alignment": "top",
             "progress_heading_color": "",
             "progress_text_color": "",
-            "index": 12,
+            "index": 11,
             "type": "progress"
           }
         },
-        "google68986": {
-          "id": "google68986",
+        "google24821": {
+          "id": "google24821",
           "label": "Google",
           "setting": "portum_frontpage_sections",
           "content": {
@@ -571,19 +605,20 @@
             "google_map_grouping": [
               "all"
             ],
-            "google_map_address": "Centrul Vechi, Brasov",
-            "google_map_zoom": 13,
+            "google_map_address": "New York City",
+            "google_map_zoom": "15",
             "google_map_height": 450,
             "google_map_api_key": "",
             "google_map_navigation": "",
             "google_map_repeater_field": "portum_contact_section",
             "google_map_section_unique_id": "",
-            "google_map_section_class": "section-google_map-1706603737",
+            "google_map_section_class": "section-google_map-1238591047",
+            "google_map_section_visibility": "visible",
             "google_map_background_color": false,
-            "google_map_background_color_opacity": 1,
+            "google_map_background_image": "",
             "google_map_background_position": "center",
-            "google_map_background_size": "cover",
-            "google_map_background_repeat": "no-repeat",
+            "google_map_background_size": "initial",
+            "google_map_background_repeat": "repeat",
             "google_map_background_parallax": "",
             "google_map_background_video": "",
             "google_map_row_title_align": "top",
@@ -595,7 +630,7 @@
             "google_map_column_vertical_alignment": "middle",
             "google_map_heading_color": "",
             "google_map_text_color": "",
-            "index": 13,
+            "index": 12,
             "type": "google_map"
           }
         }
@@ -608,7 +643,7 @@
         "contact_section": {
           "id": "contact_section",
           "setting": "portum_contact_section",
-          "label": "contact section",
+          "label": "TODO MAKE SURE ITS CORRECT  contact section",
           "content": {
             "0": {
               "contact_title": "Headquarters",
@@ -630,7 +665,7 @@
         "team_members": {
           "id": "team_members",
           "setting": "portum_team_members",
-          "label": "team members",
+          "label": "TODO MAKE SURE ITS CORRECT  team members",
           "content": {
             "0": {
               "member_title": "Amelia Couchin Delgado",
@@ -673,7 +708,7 @@
         "expertise": {
           "id": "expertise",
           "setting": "portum_expertise",
-          "label": "expertise",
+          "label": "TODO MAKE SURE ITS CORRECT  expertise",
           "content": {
             "0": {
               "expertise_number": "01",
@@ -695,7 +730,7 @@
         "services": {
           "id": "services",
           "setting": "portum_services",
-          "label": "services",
+          "label": "TODO MAKE SURE ITS CORRECT  services",
           "content": {
             "0": {
               "service_title": "BUSINESS",
@@ -732,7 +767,7 @@
         "slides": {
           "id": "slides",
           "setting": "portum_slides",
-          "label": "slides",
+          "label": "TODO MAKE SURE ITS CORRECT  slides",
           "content": {
             "0": {
               "slides_title": "Growing your business",
@@ -754,7 +789,7 @@
         "portfolio": {
           "id": "portfolio",
           "setting": "portum_portfolio",
-          "label": "portfolio",
+          "label": "TODO MAKE SURE ITS CORRECT  portfolio",
           "content": {
             "0": {
               "portfolio_title": "IMAGES",
@@ -809,7 +844,7 @@
         "testimonials": {
           "id": "testimonials",
           "setting": "portum_testimonials",
-          "label": "testimonials",
+          "label": "TODO MAKE SURE ITS CORRECT  testimonials",
           "content": {
             "0": {
               "testimonial_title": "Michael Cross",
@@ -840,44 +875,47 @@
         "price_boxes": {
           "id": "price_boxes",
           "setting": "portum_price_boxes",
-          "label": "price boxes",
+          "label": "TODO MAKE SURE ITS CORRECT  price boxes",
           "content": {
             "0": {
               "price_box_title": "STARTUP",
               "price_box_text": "Get started Now! You have the base",
-              "price_box_featured": "0",
               "price_box_currency": "$",
               "price_box_price": "75",
               "price_box_period": "mo",
               "price_box_url": "#",
-              "price_box_features": "<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><\/ul>"
+              "price_box_features": "<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><\/ul>",
+              "price_box_featured": "0",
+              "index": 0
             },
             "1": {
               "price_box_title": "GROWTH",
               "price_box_text": "Take your business to the next level",
               "price_box_currency": "$",
-              "price_box_featured": "true",
               "price_box_price": "95",
               "price_box_period": "mo",
               "price_box_url": "#",
-              "price_box_features": "<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><\/ul>"
+              "price_box_features": "<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><\/ul>",
+              "price_box_featured": "true",
+              "index": 1
             },
             "2": {
               "price_box_title": "PREMIUM",
               "price_box_text": "Get started Now! You have the base ",
               "price_box_currency": "$",
-              "price_box_featured": "0",
               "price_box_price": "125",
               "price_box_period": "mo",
               "price_box_url": "#",
-              "price_box_features": "<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><\/ul>"
+              "price_box_features": "<ul><li><span>10GB<\/span> Disk Space<\/li><li><span>Free<\/span> DDoS Protection<\/li><li><span>Free<\/span> Daily Backups<\/li><li>Managed Hosting<\/li><li>Managed Hosting<\/li><\/ul>",
+              "price_box_featured": "0",
+              "index": 2
             }
           }
         },
         "counter_boxes": {
           "id": "counter_boxes",
           "setting": "portum_counter_boxes",
-          "label": "counter boxes",
+          "label": "TODO MAKE SURE ITS CORRECT  counter boxes",
           "content": {
             "0": {
               "counter_title": "Issues resolved",
@@ -920,7 +958,7 @@
         "progress_bars": {
           "id": "progress_bars",
           "setting": "portum_progress_bars",
-          "label": "progress bars",
+          "label": "TODO MAKE SURE ITS CORRECT  progress bars",
           "content": {
             "0": {
               "progress_bar_title": "Webdesign",
@@ -949,6 +987,10 @@
           }
         }
       }
+    },
+    "custom_css": {
+      "label": "Custom CSS",
+      "content": null
     }
   },
   "portummaterial": {
