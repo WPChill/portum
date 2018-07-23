@@ -96,3 +96,9 @@ Google Fonts
 - Our Expertise Section (background image) - https://pixabay.com/en/abstract-architecture-background-21901/
 - Portfolio Section image 1 - https://pixabay.com/en/laptop-technology-computer-business-3244483/
 - Portfolio Section image 2 - https://pixabay.com/en/girl-woman-snow-blizzard-people-926020/
+
+##### Portum - Construction
+- Slide - https://pixabay.com/en/building-construction-site-cranes-768815/
+- Slide - https://pixabay.com/en/construction-site-1359136/
+- Our Expertise - https://pixabay.com/en/construction-site-build-1510561/
+- Logos - Original creation, released under GPLv3

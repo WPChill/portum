@@ -1015,6 +1015,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		'slide_background'              => array(
 			'label' => esc_html__( 'Background image', 'portum' ),
 			'type'  => 'epsilon-image',
+			'size'  => 'portum-main-slider',
 		),
 		'slide_cta_primary_label'       => array(
 			'label'             => esc_html__( 'Primary Button Text', 'portum' ),
@@ -1221,7 +1222,8 @@ Epsilon_Customizer::add_field( 'portum_color_scheme', array(
 				'epsilon_footer_link_hover_color'        => '#ffffff',
 				'epsilon_footer_link_active_color'       => '#a9afb1',
 			),
-		),array(
+		),
+		array(
 			'id'     => 'material',
 			'name'   => 'Material Design',
 			'colors' => array(
