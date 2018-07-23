@@ -6586,4 +6586,12 @@ body.ctdw-bar-visible #header.header--over-content {
   }
 }
 
+.ewf-section-hidden {
+  display: none !important;
+}
+
+.efw-section-visible {
+  display: block !important;
+}
+
 /*# sourceMappingURL=style-portum.css.map */
