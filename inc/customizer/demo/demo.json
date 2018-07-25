@@ -3302,7 +3302,7 @@
             "expertise_section_unique_id": "",
             "expertise_section_class": "section-expertise-1513359819",
             "expertise_section_visibility": "visible",
-            "expertise_background_color": "rgba(0, 0, 0, 1)",
+            "expertise_background_color": "rgba(0, 0, 0, .85)",
             "expertise_background_image": "\/assets\/images\/one\/abstract-21901_1920.jpg",
             "expertise_background_position": "center",
             "expertise_background_size": "initial",
