@@ -102,3 +102,7 @@ Google Fonts
 - Slide - https://pixabay.com/en/construction-site-1359136/
 - Our Expertise - https://pixabay.com/en/construction-site-build-1510561/
 - Logos - Original creation, released under GPLv3
+
+##### Portum - Freelancer
+- Hero: https://pixabay.com/en/tattoos-adult-body-art-couple-girl-1867535/
+- portfolio images: personal creation, released under GPLv3 
