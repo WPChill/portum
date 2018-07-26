@@ -413,21 +413,15 @@ var Portum = {
 					self.parent().find('.pager-slider').addClass('active');
 				});
 
-				var owl_slider_config = {
-					autoplay: 'true' === self.attr('data-slider-autoplay'),
-					infinite: 'true' === self.attr('data-slider-loop'),
-					pager: 'true' === self.attr('data-slider-enable-pager'),
-				};
-
 				self.owlCarousel({
 					items: 1,
-					dots: owl_slider_config.pager,
+					dots: self.data('slider-enable-pager'),
 					mouseDrag: true,
 					navText: '',
 					nav: false,
 					navClass: '',
-					autoplay: owl_slider_config.autoplay,
-					loop: owl_slider_config.loop,
+					autoplay: self.data('slider-autoplay'),
+					loop: self.data('slider-loop'),
 					lazyLoad: false,
 					autoHeight: true,
 					autoplayTimeout: 5000,
