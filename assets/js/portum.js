@@ -513,7 +513,7 @@ var Portum = {
 
 				if (jQuery('body').hasClass('sticky-header')) {
 					Portum.sticky_header = true;
-					Portum.sticky_point = jQuery('#header').outerHeight() + 500;
+					Portum.sticky_point = jQuery('#header').outerHeight();
 				}
 
 			}
@@ -527,7 +527,7 @@ var Portum = {
 
 					if (!e) {
 						e = true;
-						setTimeout(d, 250);
+						setTimeout(d, 50);
 					}
 				}, false);
 
@@ -535,7 +535,7 @@ var Portum = {
 
 					if (!e) {
 						e = true;
-						setTimeout(d, 250);
+						setTimeout(d, 50);
 					}
 				}, false);
 			}

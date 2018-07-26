@@ -294,6 +294,14 @@ Epsilon_Customizer::add_field(
 );
 */
 
+Epsilon_Customizer::add_field( 'portum_header_sticky', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Sticky Header', 'portum' ),
+	'description' => esc_html__( 'This will make the header stick to the top of the page.', 'portum' ),
+	'section'     => 'portum_header_section',
+	'default'     => true,
+) );
+
 
 Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'type'        => 'epsilon-toggle',
