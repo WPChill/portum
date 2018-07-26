@@ -2191,7 +2191,7 @@ body.ctdw-bar-visible #header.header--over-content {
     transition: all 0.3s;
   }
   #header.stuck #logo img {
-    width: 80%;
+    max-width: 80%;
   }
   #header.stuck .sf-menu > li > a,
   #header.stuck .sf-menu > li.dropdown > a {
