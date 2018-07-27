@@ -440,6 +440,7 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-map',
+			'groups'  => array( 'general' ),
 		),
 		'contact_text'  => array(
 			'label'   => esc_html__( 'Text', 'portum' ),
@@ -562,7 +563,7 @@ Epsilon_Customizer::add_field( 'portum_services', array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-500px',
-			'groups'  => array( 'medical', 'sport', 'reading' ),
+			'groups'  => array( 'general' ),
 		),
 		'service_type'        => array(
 			'label'   => esc_html__( 'Display style', 'portum' ),
@@ -696,6 +697,7 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-hdd-o',
+			'groups'  => array( 'general' ),
 		),
 		'counter_type'         => array(
 			'label'   => esc_html__( 'Counter type', 'portum' ),
@@ -816,6 +818,7 @@ Epsilon_Customizer::add_field( 'portum_pie_charts', array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-hdd-o',
+			'groups'  => array( 'general' ),
 		),
 	),
 ) );
