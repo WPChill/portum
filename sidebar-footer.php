@@ -67,7 +67,9 @@ if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) {
 			</div><!--.row-->
 		<?php } ?>
 
-		<?php get_template_part( 'template-parts/footer/copyright' ); ?>
+
 	</div>
+	<?php get_template_part( 'template-parts/footer/copyright' ); ?>
 </div>
+
 

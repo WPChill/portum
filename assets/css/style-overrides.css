@@ -20,11 +20,12 @@
 	%19$s - epsilon_footer_separator -
 	%20$s - epsilon_footer_contact_background - #0377bb
 	%21$s - epsilon_footer_background - #192229
-	%22$s - epsilon_footer_title_color - #ffffff
-	%23$s - epsilon_footer_text_color - #a9afb1
-	%24$s - epsilon_footer_link_color - #a9afb1
-	%25$s - epsilon_footer_link_hover_color - #ffffff
-	%26$s - epsilon_footer_link_active_color - #a9afb1
+    %22$s - epsilon_footer_sub_background - #000
+	%23$s - epsilon_footer_title_color - #ffffff
+	%24$s - epsilon_footer_text_color - #a9afb1
+	%25$s - epsilon_footer_link_color - #a9afb1
+	%26$s - epsilon_footer_link_hover_color - #ffffff
+	%27$s - epsilon_footer_link_active_color - #a9afb1
  */
 
 
@@ -487,33 +488,37 @@ input[type="button"]:active {
 #footer {
     background-color: %21$s;
     /* epsilon_footer_background */
-    color: %23$s;
+    color: %24$s;
     /* epsilon_footer_text_color */
 }
 
+#footer-bottom {
+    background-color: %22$s;
+}
+
 #footer a {
-    color: %24$s;
+    color: %25$s;
 }
 
 
 /* epsilon_footer_link_color */
 
 #footer a:hover {
-    color: %25$s;
+    color: %26$s;
 }
 
 
 /* epsilon_footer_link_hover_color */
 
 #footer a:focus {
-    color: %25$s;
+    color: %26$s;
 }
 
 
 /* epsilon_footer_link_hover_color */
 
 #footer a:active {
-    color: %26$s;
+    color: %27$s;
 }
 
 
@@ -525,11 +530,11 @@ input[type="button"]:active {
 #footer h4,
 #footer h5,
 #footer h6 {
-    color: %22$s;
+    color: %23$s;
 }
 
 #footer p {
-    color: %23$s;
+    color: %24$s;
 }
 
 
@@ -542,7 +547,7 @@ input[type="button"]:active {
 
 #footer .widget .widget-title,
 #footer .widget .widget-title a {
-    color: %22$s;
+    color: %23$s;
     /* epsilon_footer_title_color */
 }
 
