@@ -76,8 +76,8 @@ wp_enqueue_script( 'magnificPopup' );
 														<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>
 													</div><!-- ewf-portfolio-item__details -->
 												<?php } ?>
-
-												<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( $item['portfolio_image'] ); ?>">
+												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
+												<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
 													<i class="fa fa-eye"></i>
 												</a>
 
