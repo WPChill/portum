@@ -1191,6 +1191,7 @@ Epsilon_Customizer::add_field( 'portum_color_scheme', array(
 
 				// 'epsilon_footer_separator'         			=> '',
 				'epsilon_footer_contact_background'      => '#0377bb',
+				'epsilon_footer_sub_background'          => '#000',
 				'epsilon_footer_background'              => '#192229',
 				'epsilon_footer_title_color'             => '#ffffff',
 				'epsilon_footer_text_color'              => '#a9afb1',
@@ -1227,6 +1228,7 @@ Epsilon_Customizer::add_field( 'portum_color_scheme', array(
 				// 'epsilon_footer_separator'         			=> '',
 				'epsilon_footer_contact_background'      => '#ffc000',
 				'epsilon_footer_background'              => '#3e4346',
+				'epsilon_footer_sub_background'          => '#000',
 				'epsilon_footer_title_color'             => '#ffffff',
 				'epsilon_footer_text_color'              => '#a9afb1',
 				'epsilon_footer_link_color'              => '#a9afb1',
@@ -1262,6 +1264,7 @@ Epsilon_Customizer::add_field( 'portum_color_scheme', array(
 				// 'epsilon_footer_separator'         			=> '',
 				'epsilon_footer_contact_background'      => '#333333',
 				'epsilon_footer_background'              => '#000000',
+				'epsilon_footer_sub_background'          => '#000',
 				'epsilon_footer_title_color'             => '#ffffff',
 				'epsilon_footer_text_color'              => '#a9afb1',
 				'epsilon_footer_link_color'              => '#a9afb1',

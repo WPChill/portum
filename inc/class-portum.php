@@ -374,9 +374,18 @@ class Portum {
 				'hover-state' => false,
 			),
 
+
 			'epsilon_footer_background' => array(
-				'label'       => esc_html__( 'Background Color', 'portum' ),
+				'label'       => esc_html__( 'Footer Bg. Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer background.', 'portum' ),
+				'default'     => '#192229',
+				'section'     => 'colors',
+				'hover-state' => false,
+			),
+
+			'epsilon_footer_sub_background' => array(
+				'label'       => esc_html__( 'Footer Sub Bg. Color', 'portum' ),
+				'description' => esc_html__( 'The color used for the footer sub background.', 'portum' ),
 				'default'     => '#192229',
 				'section'     => 'colors',
 				'hover-state' => false,
