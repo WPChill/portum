@@ -20,6 +20,7 @@ $parent_attr    = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'about', $fields ); ?>
@@ -44,7 +45,7 @@ $parent_attr    = array(
 							</div>
 						<?php } ?>
 
-						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+						<div class="ewf-section-text col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) );
 							?>
@@ -59,7 +60,7 @@ $parent_attr    = array(
 
 					<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
 
-						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+						<div class="ewf-section-text col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) );
 							?>

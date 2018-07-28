@@ -170,7 +170,7 @@ class Portum_Helper {
 		$class = array(
 			'boxedin'     => 'container',
 			'boxedcenter' => 'container container-boxedcenter',
-			'fullwidth'   => 'container-fluid',
+			'fullwidth'   => 'container-fluid ewf-padding-right--none ewf-padding-left--none',
 		);
 
 		if ( $fields[ $key . '_column_stretch' ] == 'boxedin' ) {
@@ -476,7 +476,7 @@ class Portum_Helper {
 		foreach ( $heading_selectors as $heading_selector ) {
 			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $heading_selector ) . ' ';
 			echo '{ ';
-				echo 'color: ' . esc_attr( $fields[ $key . '_heading_color' ] );
+			echo 'color: ' . esc_attr( $fields[ $key . '_heading_color' ] );
 			echo '}';
 
 		}
