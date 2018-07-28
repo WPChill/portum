@@ -562,8 +562,8 @@ class Portum_Repeatable_Sections {
 	private function repeatable_about() {
 		return array(
 			'id'            => 'about',
-			'title'         => esc_html__( 'About', 'portum' ),
-			'description'   => esc_html__( 'About section. It retrieves content from Theme Content / Services', 'portum' ),
+			'title'         => esc_html__( 'Alt. image & text', 'portum' ),
+			'description'   => esc_html__( 'Alternating image & text section.', 'portum' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
@@ -692,7 +692,7 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
 					),
 					'column-group'       => array(
-						'default' => 3,
+						'default' => 4,
 						'choices' => array( 2, 3, 4 ),
 					),
 					'column-spacing'     => array(
