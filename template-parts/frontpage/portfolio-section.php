@@ -73,7 +73,7 @@ wp_enqueue_script( 'magnificPopup' );
 															</h5>
 														<?php } ?>
 
-														<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>
+														<?php echo '<div class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</div>'; ?>
 													</div><!-- ewf-portfolio-item__details -->
 												<?php } ?>
 												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
@@ -93,7 +93,7 @@ wp_enqueue_script( 'magnificPopup' );
 													</h5>
 												<?php } ?>
 
-												<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>
+												<?php echo '<div class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</div>'; ?>
 											</div><!-- ewf-portfolio-item__details -->
 										<?php } ?>
 
