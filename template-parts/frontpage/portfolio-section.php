@@ -36,26 +36,28 @@ wp_enqueue_script( 'magnificPopup' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 		?>
 
-		<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
-			<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-
-			<div class="ewf-section__content">
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
 
 				<div class="row">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title']) ); ?>
+					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
 
 					<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
 						<ul class="ewf-portfolio ewf-portfolio--spacing-<?php echo esc_attr( $fields['portfolio_column_spacing'] ); ?> ewf-portfolio--columns-<?php echo esc_attr( $fields['portfolio_column_group'] ); ?>">
 
-							<?php foreach ( $fields['portfolio_items'] as $item ) { ?>
+							<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
 								<li>
 									<div class="ewf-portfolio-item">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_portfolio_section', 'portum_portfolio' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<div class="ewf-portfolio-item__thumbnail">
 											<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
 												<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt="" />
@@ -67,15 +69,15 @@ wp_enqueue_script( 'magnificPopup' );
 													<div class="ewf-portfolio-item__details">
 														<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 															<h5>
-																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a>
+																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
 															</h5>
 														<?php } ?>
 
 														<?php echo '<p class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</p>'; ?>
 													</div><!-- ewf-portfolio-item__details -->
 												<?php } ?>
-
-												<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( $item['portfolio_image'] ); ?>">
+												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
+												<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
 													<i class="fa fa-eye"></i>
 												</a>
 
@@ -87,7 +89,7 @@ wp_enqueue_script( 'magnificPopup' );
 											<div class="ewf-portfolio-item__details">
 												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 													<h5>
-														<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo esc_html( $item['portfolio_title'] ); ?></a>
+														<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
 													</h5>
 												<?php } ?>
 

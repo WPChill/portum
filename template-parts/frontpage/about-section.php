@@ -6,6 +6,8 @@
  *
  * @package Portum
  */
+
+//@todo: full-width, lacks the container-fluid CSS class
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 
@@ -18,56 +20,32 @@ $parent_attr    = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php
-	if ( is_customize_preview() ) {
-		?>
-		<style>
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h1,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h2,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h3,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h4,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h5,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] h6,
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] .headline span {
-				color: <?php echo esc_attr( $fields['about_heading_color'] ); ?>
-			}
-
-			[data-section="<?php echo esc_attr( $section_id ); ?>"] p {
-				color: <?php echo esc_attr( $fields['about_text_color'] ); ?>
-			}
-		</style>
-		<?php
-	}
-	?>
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'about', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
+
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 
 		$section_content_cols = ( $fields['about_image'] ? '6' : '12' );
 		?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'about', $fields ) ); ?>">
-
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-
 				<div class="row">
 					<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
 
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-							<div class="col-md-6
-							<?php
-							echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' );
-							?>
-							">
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+							<div class="col-md-6">
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 							</div>
 						<?php } ?>
 
-						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+						<div class="ewf-section-text col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) );
 							?>
@@ -82,7 +60,7 @@ $parent_attr    = array(
 
 					<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
 
-						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+						<div class="ewf-section-text col-md-<?php echo esc_attr( $section_content_cols ); ?>">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) );
 							?>
@@ -96,8 +74,8 @@ $parent_attr    = array(
 						</div>
 
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-							<div class="col-md-6<?php echo( 'fullwidth' === $fields['about_column_stretch'] ? ' ewf-padding-horizontal--none' : '' ); ?>">
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+							<div class="col-md-6">
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 							</div>
 						<?php } ?>
 
@@ -112,7 +90,7 @@ $parent_attr    = array(
 							<?php }; ?>
 
 							<?php if ( $fields['about_image'] ) { ?>
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" alt="" />
+								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 							<?php }; ?>
 						</div>
 

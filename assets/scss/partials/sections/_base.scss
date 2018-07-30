@@ -10,19 +10,11 @@
 
 .ewf-section {
     position: relative;
-    z-index: 0;
     padding: $spacing-section-medium 0;
     margin-bottom: 0;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-}
-
-.ewf-section.dashed {
-    background: url("../images/back-section-shadow.png") repeat-x left top;
-    background-image: url("../images/back-section-shadow.png"), url("../images/back-dashed.jpg");
-    background-repeat: repeat-x, repeat;
-    background-position: left top, all;
 }
 
 .ewf-section--spacing-small {
@@ -76,12 +68,11 @@
 
 .ewf-section__overlay-color {
     position: absolute;
-    z-index: 0;
+    z-index: 3;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.85;
 }
 
 .ewf-section__overlay-pattern {

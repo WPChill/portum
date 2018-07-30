@@ -11,6 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 class Portum_Dashboard_Setup {
+
 	/**
 	 * Theme array
 	 *
@@ -81,31 +82,24 @@ class Portum_Dashboard_Setup {
 		}
 
 		if ( empty( $this->notice ) ) {
-			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/macho-themes-logo-black.png" class="epsilon-author-logo" />';
+			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/colorlib-logo-dark.png" class="epsilon-author-logo" />';
 
 
 			/* Translators: Notice Title */
 			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'portum' ), $this->theme['theme-name'] ) . '</h1>';
 			$this->notice .= '<p>';
-			$this->notice .=
-				sprintf( /* Translators: Notice */
-					esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'portum' ),
-					'<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme['theme-slug'] . '-dashboard' ) ) . '">',
-					'</a>',
-					$this->theme['theme-name']
-				);
+			$this->notice .= sprintf( /* Translators: Notice */
+				esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'portum' ), '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme['theme-slug'] . '-dashboard' ) ) . '">', '</a>', $this->theme['theme-name'] );
 			$this->notice .= '</p>';
 			/* Translators: Notice URL */
 			$this->notice .= '<p><a href="' . esc_url( admin_url( '?page=epsilon-onboarding' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'portum' ), $this->theme['theme-name'] ) . '</a></p>';
 		}
 		$notifications = Epsilon_Notifications::get_instance();
-		$notifications->add_notice(
-			array(
+		$notifications->add_notice( array(
 				'id'      => 'notification_testing',
 				'type'    => 'notice epsilon-big',
 				'message' => $this->notice,
-			)
-		);
+			) );
 	}
 
 	/**
@@ -115,20 +109,17 @@ class Portum_Dashboard_Setup {
 	 */
 	public function get_edd( $setup = array() ) {
 		$options = get_option( $setup['theme']['theme-slug'] . '_license_object', array() );
-		$options = wp_parse_args(
-			$options,
-			array(
+		$options = wp_parse_args( $options, array(
 				'expires'       => false,
 				'licenseStatus' => false,
-			)
-		);
+			) );
 
 		return array(
 			'license'       => trim( get_option( $setup['theme']['theme-slug'] . '_license_key', false ) ),
 			'licenseOption' => $setup['theme']['theme-slug'] . '_license_key',
 			'downloadId'    => '221300',
 			'expires'       => $options['expires'],
-			'status'        => $options['licenseStatus']
+			'status'        => $options['licenseStatus'],
 		);
 	}
 
@@ -177,7 +168,7 @@ class Portum_Dashboard_Setup {
 				'content'  => array(
 					'paragraphs' => array(
 						wp_kses_post( __( 'We\'ve made it easy for you to get up and running in a jiffy. Just pick any of the theme demos below, click on Select, Import and you\'ll be ready in no time. Feel free to skip this step if you\'d like to create the content yourself.', 'portum' ) ),
-						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'portum' ) )
+						wp_kses_post( __( '<em>Note: This is the easiest way to see what goes where. After you\'ve finished the import, you can edit the content using the built-in Customizer, available under Appearance -> Customize.</em>', 'portum' ) ),
 					),
 				),
 				'progress' => __( 'Demos', 'portum' ),
@@ -194,8 +185,8 @@ class Portum_Dashboard_Setup {
 				'title'    => __( 'Almost ready', 'portum' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://www.machothemes.com">MachoThemes</a>.', 'portum' ),
-						__( 'Allow MachoThemes to track theme usage.', 'portum' ),
+						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'portum' ),
+						__( 'Allow Colorlib to track theme usage.', 'portum' ),
 						$this->get_permission_content(),
 					),
 				),
@@ -260,12 +251,11 @@ class Portum_Dashboard_Setup {
 				'recommended' => false,
 			),
 
-			'kiwi-social-share' => array(
+			'modula-best-grid-gallery'  => array(
 				'integration' => false,
-				'recommended' => false,
+				'recommended' => true,
 			),
-
-			'modula-best-grid-gallery' => array(
+			'colorlib-login-customizer' => array(
 				'integration' => false,
 				'recommended' => true,
 			),
@@ -359,7 +349,7 @@ class Portum_Dashboard_Setup {
 				'type'    => 'info',
 				'content' => array(
 					array(
-						'title'     => esc_html__( 'Step 1 - Implement recommended actions', 'portum' ),
+						'title'     => esc_html__( 'Step 1 - Recommended actions', 'portum' ),
 						'paragraph' => esc_html__( 'We compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.', 'portum' ),
 						'action'    => '<a href="' . esc_url( admin_url() . '?page=epsilon-onboarding' ) . '" class="button button-primary">' . __( 'Launch wizard', 'portum' ) . '</a>',
 					),
@@ -373,18 +363,7 @@ class Portum_Dashboard_Setup {
 						'paragraph' => esc_html__( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'portum' ),
 						'action'    => '<a target="_blank" href="' . esc_url( admin_url() . 'customize.php' ) . '" class="button button-primary">' . esc_html__( 'Go to Customizer', 'portum' ) . '</a>',
 					),
-					array(
-						'title'     => esc_html__( 'Lend a hand and share your thoughts', 'portum' ),
-						'paragraph' => vsprintf(
-						// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
-							__( 'We worked hard on making %1$s the best one out there. We are interested in hearing your thoughts about %1$s and what we could do to make it even better.<br/> <br/>', 'portum' ),
-							array(
-								$theme->get( 'Name' ),
-							)
-						),
-						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/feedback-portum">Have your say</a><br/>',
-						'type'      => 'standout',
-					),
+
 				),
 			),
 			array(
@@ -414,12 +393,6 @@ class Portum_Dashboard_Setup {
 				'type'   => 'plugins',
 			),
 			array(
-				'id'     => 'epsilon-registration',
-				'title'  => esc_html__( 'Registration', 'portum' ),
-				'hidden' => false,
-				'type'   => 'registration',
-			),
-			array(
 				'id'      => 'epsilon-privacy',
 				'title'   => esc_html__( 'Privacy', 'portum' ),
 				'type'    => 'option-page',
@@ -427,35 +400,24 @@ class Portum_Dashboard_Setup {
 				'content' => array(
 					'title'      => esc_html__( 'We believe in a better and streamlined user experiences', 'portum' ),
 					'paragraphs' => array(
-						esc_html__( 'And as such, we\'ve made it easy for you - our user, to disable all of our theme upsells & recommendations.', 'portum' ),
-						esc_html__( 'Mind you that we use these as a way to facilitate compatible product discovery - as in: plugins that enhance the
-		user experience with any of our products. But, in the end, the user should always have a say in it.', 'portum' ),
 						wp_kses_post( __( 'By turning any or all of the toggles below to the <span style="color: green;">ON</span> position you\'ll be able
 		to hide all upsells & recommended plugin discovery sections & actions.', 'portum' ) ),
-						wp_kses_post( __( '<u>We really hope</u> you\'ll enjoy using our products as much as we\'ve enjoyed building them.', 'portum' ) ),
 					),
 				),
 				'fields'  => array(
-					array(
-						'id'      => $this->theme['theme-slug'] . '_recommended_actions',
-						'type'    => 'epsilon-toggle',
-						'value'   => true,
-						'label'   => esc_html__( 'Hide Customizer Recommended Actions', 'portum' ),
-						'checked' => get_option( $this->theme['theme-slug'] . '_recommended_actions', false ),
-					),
-					array(
-						'id'      => $this->theme['theme-slug'] . '_recommended_plugins',
-						'type'    => 'epsilon-toggle',
-						'value'   => true,
-						'label'   => esc_html__( 'Hide Plugin Recommendations', 'portum' ),
-						'checked' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
-					),
 					array(
 						'id'      => $this->theme['theme-slug'] . '_tracking_enable',
 						'value'   => true,
 						'label'   => esc_html__( 'Allow Theme Tracking', 'portum' ),
 						'type'    => 'epsilon-toggle',
 						'checked' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
+					),
+					array(
+						'id'      => $this->theme['theme-slug'] . '_quickie_enabled',
+						'value'   => true,
+						'label'   => esc_html__( 'Disable Customizer Shortcuts Bar', 'portum' ),
+						'type'    => 'epsilon-toggle',
+						'checked' => get_option( $this->theme['theme-slug'] . '_quickie_enabled', false ),
 					),
 				),
 			),
@@ -469,11 +431,12 @@ class Portum_Dashboard_Setup {
 	 */
 	public function get_privacy_options() {
 		$arr = array(
-			$this->theme['theme-slug'] . '_recommended_actions' => get_option( $this->theme['theme-slug'] . '_recommended_actions', false ),
-			$this->theme['theme-slug'] . '_recommended_plugins' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
-			$this->theme['theme-slug'] . '_lite_vs_pro'         => get_option( $this->theme['theme-slug'] . '_lite_vs_pro', 'NA' ),
-			$this->theme['theme-slug'] . '_theme_upsells'       => get_option( $this->theme['theme-slug'] . '_theme_upsells', 'NA' ),
-			$this->theme['theme-slug'] . '_tracking_enable'     => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
+			//$this->theme['theme-slug'] . '_recommended_actions' => get_option( $this->theme['theme-slug'] . '_recommended_actions', false ),
+			//$this->theme['theme-slug'] . '_recommended_plugins' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
+			//$this->theme['theme-slug'] . '_lite_vs_pro'         => get_option( $this->theme['theme-slug'] . '_lite_vs_pro', 'NA' ),
+			//$this->theme['theme-slug'] . '_theme_upsells'       => get_option( $this->theme['theme-slug'] . '_theme_upsells', 'NA' ),
+			$this->theme['theme-slug'] . '_tracking_enable' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
+			$this->theme['theme-slug'] . '_quickie_enabled' => get_option( $this->theme['theme-slug'] . '_quickie_enabled', false ),
 		);
 
 		foreach ( $arr as $id => $val ) {

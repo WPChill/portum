@@ -29,17 +29,19 @@ $parent_attr         = array(
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'expertise', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'expertise' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 
 		$section_content_cols = ( $fields['expertise_image'] ? '7' : '12' );
 		?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'expertise', $fields ) ); ?>">
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'expertise' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+
 				<div class="row">
 
 					<?php if ( 'left' === $fields['expertise_row_title_align'] ) { ?>
@@ -54,10 +56,10 @@ $parent_attr         = array(
 										<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
 											<h4>
 												<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
-													<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong>
+													<strong><?php echo wp_kses_post( $expertise['expertise_number'] ); ?></strong>
 												<?php } ?>
 
-												<?php echo esc_html( $expertise['expertise_title'] ); ?>
+												<?php echo wp_kses_post( $expertise['expertise_title'] ); ?>
 
 											</h4>
 										<?php } ?>
@@ -92,10 +94,10 @@ $parent_attr         = array(
 										<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
 											<h4>
 												<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
-													<strong><?php echo esc_html( $expertise['expertise_number'] ); ?></strong>
+													<strong><?php echo wp_kses_post( $expertise['expertise_number'] ); ?></strong>
 												<?php } ?>
 
-												<?php echo esc_html( $expertise['expertise_title'] ); ?>
+												<?php echo wp_kses_post( $expertise['expertise_title'] ); ?>
 
 											</h4>
 										<?php } ?>

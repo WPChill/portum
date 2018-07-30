@@ -14,6 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Portum
  */
 class Portum {
+
 	/**
 	 * @var bool
 	 */
@@ -146,26 +147,20 @@ class Portum {
 		if ( ! class_exists( 'Epsilon_Notifications' ) ) {
 			return;
 		}
-		$html  = '<p>';
-		$html .=
-			vsprintf(
-				// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
-				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s.', 'portum' ),
-				array(
-					'Portum',
-					'<a target="_blank" href="https://bit.ly/feedback-portum">',
-					'</a>',
-				)
-			);
+		$html = '<p>';
+		$html .= vsprintf( // Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
+			__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s.', 'portum' ), array(
+			'Portum',
+			'<a target="_blank" href="https://bit.ly/feedback-portum">',
+			'</a>',
+		) );
 
 		$notifications = Epsilon_Notifications::get_instance();
-		$notifications->add_notice(
-			array(
-				'id'      => 'portum_notification_feedback',
-				'type'    => 'notice epsilon-big',
-				'message' => $html,
-			)
-		);
+		$notifications->add_notice( array(
+			'id'      => 'portum_notification_feedback',
+			'type'    => 'notice epsilon-big',
+			'message' => $html,
+		) );
 	}
 
 	/**
@@ -226,14 +221,14 @@ class Portum {
 
 	public function get_color_scheme() {
 
-		return  array(
-			'epsilon_general_separator'              => array(
+		return array(
+			'epsilon_general_separator' => array(
 				'label'     => esc_html__( 'Accent Colors', 'portum' ),
 				'section'   => 'colors',
 				'separator' => true,
 			),
 
-			'epsilon_accent_color'                   => array(
+			'epsilon_accent_color' => array(
 				'label'       => esc_html__( 'Accent Color #1', 'portum' ),
 				'description' => esc_html__( 'Theme main color.', 'portum' ),
 				'default'     => '#0385D0',
@@ -241,7 +236,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_accent_color_second'            => array(
+			'epsilon_accent_color_second' => array(
 				'label'       => esc_html__( 'Accent Color #2', 'portum' ),
 				'description' => esc_html__( 'The second main color.', 'portum' ),
 				'default'     => '#A1083A',
@@ -249,13 +244,13 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_text_separator'                 => array(
+			'epsilon_text_separator' => array(
 				'label'     => esc_html__( 'Typography Colors', 'portum' ),
 				'section'   => 'colors',
 				'separator' => true,
 			),
 
-			'epsilon_title_color'                    => array(
+			'epsilon_title_color' => array(
 				'label'       => esc_html__( 'Title Color', 'portum' ),
 				'description' => esc_html__( 'The color used for titles.', 'portum' ),
 				'default'     => '#1a171c',
@@ -263,7 +258,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_text_color'                     => array(
+			'epsilon_text_color' => array(
 				'label'       => esc_html__( 'Text Color', 'portum' ),
 				'description' => esc_html__( 'The color used for paragraphs.', 'portum' ),
 				'default'     => '#777777',
@@ -271,7 +266,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_link_color'                     => array(
+			'epsilon_link_color' => array(
 				'label'       => esc_html__( 'Link Color', 'portum' ),
 				'description' => esc_html__( 'The color used for links.', 'portum' ),
 				'default'     => '#0385d0',
@@ -279,7 +274,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_link_hover_color'               => array(
+			'epsilon_link_hover_color' => array(
 				'label'       => esc_html__( 'Link Hover Color', 'portum' ),
 				'description' => esc_html__( 'The color used for hovered links.', 'portum' ),
 				'default'     => '#a1083a',
@@ -287,7 +282,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_link_active_color'              => array(
+			'epsilon_link_active_color' => array(
 				'label'       => esc_html__( 'Link Active Color', 'portum' ),
 				'description' => esc_html__( 'The color used for active links.', 'portum' ),
 				'default'     => '#333333',
@@ -295,13 +290,13 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_menu_separator'                 => array(
+			'epsilon_menu_separator' => array(
 				'label'     => esc_html__( 'Navigation Colors', 'portum' ),
 				'section'   => 'colors',
 				'separator' => true,
 			),
 
-			'epsilon_header_background'              => array(
+			'epsilon_header_background' => array(
 				'label'       => esc_html__( 'Header background color', 'portum' ),
 				'description' => esc_html__( 'The color used for the header background.', 'portum' ),
 				'default'     => '#151C1F',
@@ -309,7 +304,23 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_dropdown_menu_background'       => array(
+			'epsilon_header_background_sticky' => array(
+				'label'       => esc_html__( 'Header Sticky bg. Color', 'portum' ),
+				'description' => esc_html__( 'The color used for the header background when it\'s fixes to the top of the browsing window.', 'portum' ),
+				'default'     => '#FFFFFF',
+				'section'     => 'colors',
+				'hover-state' => false,
+			),
+
+			'epsilon_header_background_border_bot' => array(
+				'label'       => esc_html__( 'Header Border Bottom Color', 'portum' ),
+				'description' => esc_html__( 'The color used for the header border bottom', 'portum' ),
+				'default'     => 'rgba(255,255,255,.1)',
+				'section'     => 'colors',
+				'hover-state' => false,
+			),
+
+			'epsilon_dropdown_menu_background' => array(
 				'label'       => esc_html__( 'Dropdown background', 'portum' ),
 				'description' => esc_html__( 'The color used for the menu background.', 'portum' ),
 				'default'     => '#A1083A',
@@ -325,7 +336,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_menu_item_color'                => array(
+			'epsilon_menu_item_color' => array(
 				'label'       => esc_html__( 'Menu item color', 'portum' ),
 				'description' => esc_html__( 'The color used for the menu item color.', 'portum' ),
 				'default'     => '#ebebeb',
@@ -333,7 +344,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_menu_item_hover_color'          => array(
+			'epsilon_menu_item_hover_color' => array(
 				'label'       => esc_html__( 'Menu item hover color', 'portum' ),
 				'description' => esc_html__( 'The color used for the menu item hover color.', 'portum' ),
 				'default'     => '#ffffff',
@@ -341,7 +352,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_menu_item_active_color'         => array(
+			'epsilon_menu_item_active_color' => array(
 				'label'       => esc_html__( 'Menu item active color', 'portum' ),
 				'description' => esc_html__( 'The color used for the menu item active color.', 'portum' ),
 				'default'     => '#0385D0',
@@ -349,13 +360,13 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_separator'               => array(
+			'epsilon_footer_separator' => array(
 				'label'     => esc_html__( 'Footer Colors', 'portum' ),
 				'section'   => 'colors',
 				'separator' => true,
 			),
 
-			'epsilon_footer_contact_background'      => array(
+			'epsilon_footer_contact_background' => array(
 				'label'       => esc_html__( 'Contact Background Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer contact background.', 'portum' ),
 				'default'     => '#0377bb',
@@ -363,15 +374,24 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_background'              => array(
-				'label'       => esc_html__( 'Background Color', 'portum' ),
+
+			'epsilon_footer_background' => array(
+				'label'       => esc_html__( 'Footer Bg. Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer background.', 'portum' ),
 				'default'     => '#192229',
 				'section'     => 'colors',
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_title_color'             => array(
+			'epsilon_footer_sub_background' => array(
+				'label'       => esc_html__( 'Footer Sub Bg. Color', 'portum' ),
+				'description' => esc_html__( 'The color used for the footer sub background.', 'portum' ),
+				'default'     => '#192229',
+				'section'     => 'colors',
+				'hover-state' => false,
+			),
+
+			'epsilon_footer_title_color' => array(
 				'label'       => esc_html__( 'Title Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer title color.', 'portum' ),
 				'default'     => '#ffffff',
@@ -379,7 +399,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_text_color'              => array(
+			'epsilon_footer_text_color' => array(
 				'label'       => esc_html__( 'Text Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 				'default'     => '#a9afb1',
@@ -387,7 +407,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_link_color'              => array(
+			'epsilon_footer_link_color' => array(
 				'label'       => esc_html__( 'Link Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 				'default'     => '#a9afb1',
@@ -395,7 +415,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_link_hover_color'        => array(
+			'epsilon_footer_link_hover_color' => array(
 				'label'       => esc_html__( 'Link Hover Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 				'default'     => '#ffffff',
@@ -403,7 +423,7 @@ class Portum {
 				'hover-state' => false,
 			),
 
-			'epsilon_footer_link_active_color'       => array(
+			'epsilon_footer_link_active_color' => array(
 				'label'       => esc_html__( 'Link Active Color', 'portum' ),
 				'description' => esc_html__( 'The color used for the footer text color.', 'portum' ),
 				'default'     => '#a9afb1',
@@ -450,14 +470,12 @@ class Portum {
 	 * Initiate the welcome screen
 	 */
 	public function init_dashboard() {
-		Epsilon_Dashboard::get_instance(
-			array(
-				'theme'    => array(
-					'download-id' => '212499',
-				),
-				'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
-			)
-		);
+		Epsilon_Dashboard::get_instance( array(
+			'theme'    => array(
+				'download-id' => '212499',
+			),
+			'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
+		) );
 
 		$dashboard = Portum_Dashboard_Setup::get_instance();
 		$dashboard->add_admin_notice();
@@ -465,6 +483,11 @@ class Portum {
 		$upsells = get_option( $this->theme['theme-slug'] . '_theme_upsells', false );
 		if ( $upsells ) {
 			add_filter( 'epsilon_upsell_control_display', '__return_false' );
+		}
+
+		$quickie_bar = get_option( $this->theme['theme-slug'] . '_quickie_enabled', false );
+		if ( $quickie_bar ) {
+			add_filter( 'show_epsilon_quickie_bar', '__return_false' );
 		}
 	}
 
@@ -518,7 +541,7 @@ class Portum {
 		 * Register scripts
 		 */
 		wp_register_style( 'font-awesome', get_template_directory_uri() . '/assets/vendors/font-awesome/font-awesome.css' );
-		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.css' );
+		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.min.css' );
 		wp_register_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 		wp_register_style( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.css' );
 		wp_register_style( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.css' );
@@ -553,38 +576,27 @@ class Portum {
 		 * Load stylesheet
 		 */
 		wp_enqueue_style( 'portum', get_stylesheet_uri() );
-		wp_enqueue_style(
-			'portum-main',
-			get_template_directory_uri() . '/assets/css/style-portum.css',
-			array(
-				'font-awesome',
-				'animate',
-				'ytplayer',
-				'portum',
-			),
-			$theme['Version']
-		);
+		wp_enqueue_style( 'portum-main', get_template_directory_uri() . '/assets/css/style-portum.css', array(
+			'font-awesome',
+			'animate',
+			'ytplayer',
+			'portum',
+		), $theme['Version'] );
 
 		wp_enqueue_style( 'portum-style-overrides', get_template_directory_uri() . '/assets/css/overrides.css' );
 
 		/**
 		 * Load scripts
 		 */
-		wp_enqueue_script(
-			'portum-main',
-			get_template_directory_uri() . '/assets/js/main.js',
-			array(
-				'jquery',
-				'superfish-hoverIntent',
-				'superfish',
-				'stickem',
-				'viewport',
-				'ytplayer',
-				'portum-object',
-			),
-			$theme['Version'],
-			true
-		);
+		wp_enqueue_script( 'portum-main', get_template_directory_uri() . '/assets/js/main.js', array(
+			'jquery',
+			'superfish-hoverIntent',
+			'superfish',
+			'stickem',
+			'viewport',
+			'ytplayer',
+			'portum-object',
+		), $theme['Version'], true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -606,12 +618,10 @@ class Portum {
 		/**
 		 * Load menus
 		 */
-		register_nav_menus(
-			array(
-				'primary' => esc_html__( 'Primary Navigation', 'portum' ),
-				'footer'  => esc_html__( 'Footer Navigation', 'portum' ),
-			)
-		);
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary Navigation', 'portum' ),
+			'footer'  => esc_html__( 'Footer Navigation', 'portum' ),
+		) );
 
 		/**
 		 * Theme supports
@@ -620,41 +630,32 @@ class Portum {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'customize-selective-refresh-widgets' );
-		add_theme_support(
-			'custom-logo',
-			array(
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-		add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-				'image',
-				'quote',
-				'link',
-				'gallery',
-				'video',
-				'status',
-				'audio',
-				'chat',
-			)
-		);
-		add_theme_support(
-			'custom-header',
-			array(
-				'width'              => 1920,
-				'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
-				'height'             => 600,
-				'flex-height'        => true,
-				'flex-width'         => true,
-				'default-text-color' => '#232323',
-				'header-text'        => false,
-				'uploads'            => true,
-				'video'              => false,
-			)
-		);
+		add_theme_support( 'custom-logo', array(
+			'flex-width'  => true,
+			'flex-height' => true,
+		) );
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'quote',
+			'link',
+			'gallery',
+			'video',
+			'status',
+			'audio',
+			'chat',
+		) );
+		add_theme_support( 'custom-header', array(
+			'width'              => 1920,
+			'default-image'      => get_template_directory_uri() . '/assets/images/00_header_01.jpg',
+			'height'             => 600,
+			'flex-height'        => true,
+			'flex-width'         => true,
+			'default-text-color' => '#232323',
+			'header-text'        => false,
+			'uploads'            => true,
+			'video'              => false,
+		) );
 
 		/**
 		 * Image sizes
@@ -665,9 +666,6 @@ class Portum {
 		add_image_size( 'portum-main-slider', 1600, 600, true );
 		add_image_size( 'portum-portfolio-image', 400, 450, true );
 		add_image_size( 'portum-team-image', 275, 275, true );
-		// add_image_size( 'portum-about-image', 750, 460, true );
-		//add_image_size( 'portum-expertise-image', 650, 420, true );
-		//add_image_size( 'portum-testimonial-portrait', 160, 160, true );
 	}
 
 	/**

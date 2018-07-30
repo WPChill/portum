@@ -331,13 +331,6 @@ a.social-icon:active
     text-align: right;
 }
 
-@media (max-width: 767px)
-{
-    .text-right
-    {
-        text-align: left;
-    }
-}
 .text-center
 {
     text-align: center;
@@ -425,7 +418,6 @@ a.social-icon:active
     z-index: 9;
 
     margin-top: 0;
-    margin-bottom: 55px;
 
     -webkit-animation: anim_affluent_sliderPro_category 1000ms linear both;
             animation: anim_affluent_sliderPro_category 1000ms linear both;
@@ -450,11 +442,6 @@ a.social-icon:active
 }
 @media (max-width: 768px)
 {
-    .headline
-    {
-        text-align: center;
-    }
-
     .headline--xs-bottom
     {
         margin-top: 55px;
@@ -470,7 +457,6 @@ a.social-icon:active
   ========================================================================== */
 img
 {
-    width: 100%;
     max-width: 100%;
     height: auto;
 
@@ -560,12 +546,12 @@ em
 
 strong
 {
-    font-weight: 700;
+    font-weight: 900;
 }
 
 small
 {
-    font-size: 90%;
+    font-size: 75%;
 }
 
 big
@@ -1844,6 +1830,13 @@ del
         margin-left: 0;
     }
 }
+.row-eq-height
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 /* =Visibility
  ========================================================================== */
 .visible-xs,
@@ -2372,6 +2365,27 @@ del
     padding: 130px;
 }
 
+.ewf-padding-left--none div[class*='col'],
+.ewf-padding-right--none div[class*='col']
+{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ewf-padding-left--none .row,
+.ewf-padding-right--none .row
+{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.ewf-padding-left--none .ewf-section-text,
+.ewf-padding-right--none .ewf-section-text
+{
+    max-width: 40%;
+    margin: 0 auto;
+}
+
 /* ==========================================================================
    =Forms
    ========================================================================== */
@@ -2837,7 +2851,7 @@ body.ctdw-bar-visible #header.header--over-content
     }
     #header.stuck #logo img
     {
-        width: 80%;
+        max-width: 80%;
     }
     #header.stuck .sf-menu > li > a,
     #header.stuck .sf-menu > li.dropdown > a
@@ -5730,7 +5744,6 @@ body.ctdw-bar-visible #header.header--over-content
 .ewf-section
 {
     position: relative;
-    z-index: 0;
 
     margin-bottom: 0;
     padding: 70px 0;
@@ -5738,14 +5751,6 @@ body.ctdw-bar-visible #header.header--over-content
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-}
-
-.ewf-section.dashed
-{
-    background: url('../images/back-section-shadow.png') repeat-x left top;
-    background-image: url('../images/back-section-shadow.png'), url('../images/back-dashed.jpg');
-    background-repeat: repeat-x, repeat;
-    background-position: left top, all;
 }
 
 .ewf-section--spacing-small
@@ -5812,13 +5817,11 @@ body.ctdw-bar-visible #header.header--over-content
 .ewf-section__overlay-color
 {
     position: absolute;
-    z-index: 0;
+    z-index: 3;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
-    opacity: .85;
 }
 
 .ewf-section__overlay-pattern
@@ -7696,55 +7699,40 @@ body.ctdw-bar-visible #header.header--over-content
 /* ----------------------------------- #11 - FOOTER section --------------------------------------------- */
 #footer
 {
-    padding: 0 0 35px 0;
-
     color: #a9afb1;
     background-color: #192229;
 }
-
-#footer.has-contact-form
-{
-    padding-top: 0;
-}
-
-.footer-sub p
+#footer.footer-sub p
 {
     margin: 0;
 }
-
 #footer a
 {
     color: #a9afb1;
 }
-
 #footer a:hover,
 #footer a:focus
 {
     color: #fff;
 }
-
 #footer a:active
 {
     color: #a9afb1;
 }
-
 #footer p
 {
     color: #a9afb1;
 }
-
 #footer ul.nav
 {
     float: right;
 
     margin: 0 0 25px 0;
 }
-
 #footer ul.nav li
 {
     display: inline-block;
 }
-
 #footer ul.nav a
 {
     padding: 0 10px;
@@ -7898,7 +7886,6 @@ body.ctdw-bar-visible #header.header--over-content
     {
         text-align: center;
     }
-
     .footer-sub .nav
     {
         width: 100%;
@@ -8230,6 +8217,12 @@ body.ctdw-bar-visible #header.header--over-content
 
 /* =Partner/Client
    ========================================================================== */
+.ewf-partner
+{
+    position: relative;
+    /* fix for when client list is a slider and we need to display the quick edit icons */
+}
+
 /* =Partner/Client List
    ========================================================================== */
 .ewf-partners-list
@@ -8952,6 +8945,13 @@ body.ctdw-bar-visible #header.header--over-content
     }
 }
 /* ----------------------------------- #18 - Section CTA - END --------------------------------------- */
+/* ----------------------------------- #19 - Section About --------------------------------------------- */
+.section-about .container-fluid img
+{
+    width: 100%;
+}
+
+/* ----------------------------------- #19 - Section About - END --------------------------------------- */
 .page .widget:first-of-type
 {
     margin-top: 45px;
@@ -9011,32 +9011,6 @@ body.ctdw-bar-visible #header.header--over-content
     {
         width: 970px;
     }
-}
-
-.ewf-section--spacing-none-top.ewf-text-align--left .epsilon-pencil-button-group
-{
-    top: 5px;
-}
-
-.ewf-section--title-left .epsilon-pencil-button-group,
-.ewf-text-align--left .epsilon-pencil-button-group
-{
-    top: -35px;
-}
-
-.section-map .epsilon-pencil-button-group
-{
-    top: 15px;
-    left: 30px;
-}
-
-.epsilon-pencil-button-group
-{
-    left: 15px;
-}
-.epsilon-pencil-button-group a
-{
-    color: #fff !important;
 }
 
 .ewf-section-hidden
