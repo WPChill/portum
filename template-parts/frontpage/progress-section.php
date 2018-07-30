@@ -32,10 +32,12 @@ $span = 12 / absint( $fields['progress_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'progress', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'progress' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 
 		$span = 12 / absint( $fields['progress_column_group'] );
 
@@ -46,8 +48,6 @@ $span = 12 / absint( $fields['progress_column_group'] );
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'progress', $fields ) ); ?>">
 
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'progress' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-
 				<?php if ( 'left' === $fields['progress_row_title_align'] ) { ?>
 					<div class="row">
 
@@ -57,15 +57,17 @@ $span = 12 / absint( $fields['progress_column_group'] );
 
 						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
 							<div class="row">
-								<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
+								<?php foreach ( $fields['progress_bars'] as $key=> $progress ) { ?>
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 										<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<h6 class="ewf-progress__title">
 												<?php
 												if ( ! empty( $progress['progress_bar_title'] ) ) {
 													?>
-													<?php echo esc_html( $progress['progress_bar_title'] ); ?>
+													<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
 
 													<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
 														<span><?php echo $progress['progress_bar_value']; ?>%</span>
@@ -91,15 +93,17 @@ $span = 12 / absint( $fields['progress_column_group'] );
 
 						<div class="col-md-<?php echo esc_attr( $section_items_content ); ?> col-sm-8">
 							<div class="row">
-								<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
+								<?php foreach ( $fields['progress_bars'] as $key=> $progress ) { ?>
 									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 										<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<h6 class="ewf-progress__title">
 												<?php
 												if ( ! empty( $progress['progress_bar_title'] ) ) {
 													?>
-													<?php echo esc_html( $progress['progress_bar_title'] ); ?>
+													<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
 
 													<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
 														<span><?php echo $progress['progress_bar_value']; ?>%</span>
@@ -133,15 +137,17 @@ $span = 12 / absint( $fields['progress_column_group'] );
 					</div>
 
 					<div class="row">
-						<?php foreach ( $fields['progress_bars'] as $progress ) { ?>
+						<?php foreach ( $fields['progress_bars'] as $key=> $progress ) { ?>
 							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 								<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-
+									<?php
+									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
+									?>
 									<h6 class="ewf-progress__title">
 										<?php
 										if ( ! empty( $progress['progress_bar_title'] ) ) {
 											?>
-											<?php echo esc_html( $progress['progress_bar_title'] ); ?>
+											<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
 
 											<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
 												<span><?php echo $progress['progress_bar_value']; ?>%</span>

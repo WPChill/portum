@@ -1,0 +1,1946 @@
+# <!=Copyright (C) 2018 Colorlib.com
+# This file is distributed under the GNU General Public License version 3.0.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Portum 1.0.2\n"
+"Report-Msgid-Bugs-To: https://colorlib.com.com/\n"
+"POT-Creation-Date: 2018-07-23 12:03:21+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Colorlib <office@colorlib.com>\n"
+"Language-Team: Colorlib <office@colorlib.com>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
+
+#: 404.php:22 template-parts/content/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: 404.php:26 template-parts/content/content-none.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: comments.php:31
+msgid "Comments"
+msgstr ""
+
+#: comments.php:36 comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:39 comments.php:63
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:40 comments.php:64
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr ""
+
+#: front-page.php:69 index.php:63 page.php:69 single.php:63
+#: template-parts/frontpage/content-section-base.php:50
+msgid "Previous"
+msgstr ""
+
+#: front-page.php:70 index.php:64 page.php:70 single.php:64
+#: template-parts/frontpage/content-section-base.php:51
+msgid "Next"
+msgstr ""
+
+#: inc/class-portum.php:152
+#. Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
+msgid ""
+"We've been working hard on making %1$s the best one out there. We're "
+"interested in hearing your thoughts about %1$s and what we could do to make "
+"it even better. %2$sSend your feedback our way%3$s."
+msgstr ""
+
+#: inc/class-portum.php:226
+msgid "Accent Colors"
+msgstr ""
+
+#: inc/class-portum.php:232
+msgid "Accent Color #1"
+msgstr ""
+
+#: inc/class-portum.php:233
+msgid "Theme main color."
+msgstr ""
+
+#: inc/class-portum.php:240
+msgid "Accent Color #2"
+msgstr ""
+
+#: inc/class-portum.php:241
+msgid "The second main color."
+msgstr ""
+
+#: inc/class-portum.php:248
+msgid "Typography Colors"
+msgstr ""
+
+#: inc/class-portum.php:254 inc/class-portum.php:386
+msgid "Title Color"
+msgstr ""
+
+#: inc/class-portum.php:255
+msgid "The color used for titles."
+msgstr ""
+
+#: inc/class-portum.php:262 inc/class-portum.php:394
+msgid "Text Color"
+msgstr ""
+
+#: inc/class-portum.php:263
+msgid "The color used for paragraphs."
+msgstr ""
+
+#: inc/class-portum.php:270 inc/class-portum.php:402
+msgid "Link Color"
+msgstr ""
+
+#: inc/class-portum.php:271
+msgid "The color used for links."
+msgstr ""
+
+#: inc/class-portum.php:278 inc/class-portum.php:410
+msgid "Link Hover Color"
+msgstr ""
+
+#: inc/class-portum.php:279
+msgid "The color used for hovered links."
+msgstr ""
+
+#: inc/class-portum.php:286 inc/class-portum.php:418
+msgid "Link Active Color"
+msgstr ""
+
+#: inc/class-portum.php:287
+msgid "The color used for active links."
+msgstr ""
+
+#: inc/class-portum.php:294
+msgid "Navigation Colors"
+msgstr ""
+
+#: inc/class-portum.php:300
+msgid "Header background color"
+msgstr ""
+
+#: inc/class-portum.php:301
+msgid "The color used for the header background."
+msgstr ""
+
+#: inc/class-portum.php:308
+msgid "Header Sticky bg. Color"
+msgstr ""
+
+#: inc/class-portum.php:309
+msgid ""
+"The color used for the header background when it's fixes to the top of the "
+"browsing window."
+msgstr ""
+
+#: inc/class-portum.php:316
+msgid "Header Border Bottom Color"
+msgstr ""
+
+#: inc/class-portum.php:317
+msgid "The color used for the header border bottom"
+msgstr ""
+
+#: inc/class-portum.php:324
+msgid "Dropdown background"
+msgstr ""
+
+#: inc/class-portum.php:325
+msgid "The color used for the menu background."
+msgstr ""
+
+#: inc/class-portum.php:332
+msgid "Dropdown Hover background"
+msgstr ""
+
+#: inc/class-portum.php:333
+msgid "The color used for the menu hover background."
+msgstr ""
+
+#: inc/class-portum.php:340
+msgid "Menu item color"
+msgstr ""
+
+#: inc/class-portum.php:341
+msgid "The color used for the menu item color."
+msgstr ""
+
+#: inc/class-portum.php:348
+msgid "Menu item hover color"
+msgstr ""
+
+#: inc/class-portum.php:349
+msgid "The color used for the menu item hover color."
+msgstr ""
+
+#: inc/class-portum.php:356
+msgid "Menu item active color"
+msgstr ""
+
+#: inc/class-portum.php:357
+msgid "The color used for the menu item active color."
+msgstr ""
+
+#: inc/class-portum.php:364
+msgid "Footer Colors"
+msgstr ""
+
+#: inc/class-portum.php:370
+msgid "Contact Background Color"
+msgstr ""
+
+#: inc/class-portum.php:371
+msgid "The color used for the footer contact background."
+msgstr ""
+
+#: inc/class-portum.php:378
+msgid "Background Color"
+msgstr ""
+
+#: inc/class-portum.php:379
+msgid "The color used for the footer background."
+msgstr ""
+
+#: inc/class-portum.php:387
+msgid "The color used for the footer title color."
+msgstr ""
+
+#: inc/class-portum.php:395 inc/class-portum.php:403 inc/class-portum.php:411
+#: inc/class-portum.php:419
+msgid "The color used for the footer text color."
+msgstr ""
+
+#: inc/class-portum.php:613
+msgid "Primary Navigation"
+msgstr ""
+
+#: inc/class-portum.php:614
+msgid "Footer Navigation"
+msgstr ""
+
+#: inc/customizer/class-portum-customizer.php:88
+msgid ""
+"The image logo, if set, will override the text logo. You can not have both "
+"at the same time. A tagline can be displayed under the text logo."
+msgstr ""
+
+#: inc/customizer/class-portum-customizer.php:89
+msgid "Blog"
+msgstr ""
+
+#: inc/customizer/class-portum-customizer.php:90
+msgid ""
+"If you have front-end sections, those will be displayed instead. Consider "
+"adding a \"Content Section\" if you need to display the page content as "
+"well."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:72
+msgid "Page Content Section"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:73
+msgid "Section that outputs page content."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:134
+msgid "Page Id"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:137
+msgid "Current Page"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:142
+msgid "Enable date"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:147
+msgid "Enable author"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:152
+msgid "Enable comments"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:157
+msgid "Enable categories"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:162
+msgid "Unique ID"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:200
+#: inc/customizer/settings/fields.php:464
+#: inc/customizer/settings/sections.php:176
+msgid "Testimonials"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:201
+msgid ""
+"A testimonial section. It retrieves content from Theme Content / "
+"Testimonials."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:255
+#: inc/customizer/class-portum-repeatable-sections.php:513
+#: inc/customizer/class-portum-repeatable-sections.php:632
+#: inc/customizer/class-portum-repeatable-sections.php:765
+#: inc/customizer/class-portum-repeatable-sections.php:884
+#: inc/customizer/class-portum-repeatable-sections.php:987
+#: inc/customizer/class-portum-repeatable-sections.php:1088
+#: inc/customizer/class-portum-repeatable-sections.php:1193
+#: inc/customizer/class-portum-repeatable-sections.php:1303
+#: inc/customizer/class-portum-repeatable-sections.php:1411
+#: inc/customizer/class-portum-repeatable-sections.php:1522
+#: inc/customizer/class-portum-repeatable-sections.php:1670
+#: inc/customizer/class-portum-repeatable-sections.php:1787
+#: inc/customizer/class-portum-repeatable-sections.php:1904
+#: inc/customizer/class-portum-repeatable-sections.php:2009
+#: inc/customizer/class-portum-repeatable-sections.php:2128
+#: inc/customizer/settings/fields.php:427
+#: inc/customizer/settings/fields.php:472
+#: inc/customizer/settings/fields.php:509
+#: inc/customizer/settings/fields.php:542
+#: inc/customizer/settings/fields.php:598
+#: inc/customizer/settings/fields.php:643
+#: inc/customizer/settings/fields.php:670
+#: inc/customizer/settings/fields.php:723
+#: inc/customizer/settings/fields.php:760
+#: inc/customizer/settings/fields.php:829
+#: inc/customizer/settings/fields.php:835
+msgid "Title"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:261
+#: inc/customizer/class-portum-repeatable-sections.php:519
+#: inc/customizer/class-portum-repeatable-sections.php:638
+#: inc/customizer/class-portum-repeatable-sections.php:771
+#: inc/customizer/class-portum-repeatable-sections.php:890
+#: inc/customizer/class-portum-repeatable-sections.php:993
+#: inc/customizer/class-portum-repeatable-sections.php:1094
+#: inc/customizer/class-portum-repeatable-sections.php:1199
+#: inc/customizer/class-portum-repeatable-sections.php:1528
+#: inc/customizer/class-portum-repeatable-sections.php:1676
+#: inc/customizer/class-portum-repeatable-sections.php:1793
+#: inc/customizer/class-portum-repeatable-sections.php:1910
+#: inc/customizer/class-portum-repeatable-sections.php:2015
+msgid "Subtitle"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:267
+msgid "Testimonials to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:268
+#: inc/customizer/class-portum-repeatable-sections.php:404
+#: inc/customizer/class-portum-repeatable-sections.php:532
+#: inc/customizer/class-portum-repeatable-sections.php:778
+#: inc/customizer/class-portum-repeatable-sections.php:903
+#: inc/customizer/class-portum-repeatable-sections.php:1101
+#: inc/customizer/class-portum-repeatable-sections.php:1206
+#: inc/customizer/class-portum-repeatable-sections.php:1535
+#: inc/customizer/class-portum-repeatable-sections.php:1683
+#: inc/customizer/class-portum-repeatable-sections.php:1800
+#: inc/customizer/class-portum-repeatable-sections.php:1917
+#: inc/customizer/class-portum-repeatable-sections.php:2022
+msgid "Only selected items will be shown in the frontend."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:278
+msgid "Add Testimonials &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:285
+#: inc/customizer/class-portum-repeatable-sections.php:415
+#: inc/customizer/class-portum-repeatable-sections.php:549
+#: inc/customizer/class-portum-repeatable-sections.php:668
+#: inc/customizer/class-portum-repeatable-sections.php:801
+#: inc/customizer/class-portum-repeatable-sections.php:920
+#: inc/customizer/class-portum-repeatable-sections.php:1009
+#: inc/customizer/class-portum-repeatable-sections.php:1118
+#: inc/customizer/class-portum-repeatable-sections.php:1223
+#: inc/customizer/class-portum-repeatable-sections.php:1328
+#: inc/customizer/class-portum-repeatable-sections.php:1435
+#: inc/customizer/class-portum-repeatable-sections.php:1583
+#: inc/customizer/class-portum-repeatable-sections.php:1700
+#: inc/customizer/class-portum-repeatable-sections.php:1817
+#: inc/customizer/class-portum-repeatable-sections.php:1934
+#: inc/customizer/class-portum-repeatable-sections.php:2044
+#: inc/customizer/class-portum-repeatable-sections.php:2184
+msgid "Section ID"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:304
+msgid "Advanced Slider"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:305
+msgid "A multi-purpose slider section that you can use through-out your website."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:308
+msgid "Transition"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:312
+msgid "Fade"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:313
+msgid "Slide"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:317
+msgid "Speed"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:327
+msgid "Autostart"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:332
+msgid "Infinite slides"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:337
+msgid "Pager"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:342
+msgid "Controls"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:347
+#: inc/customizer/class-portum-repeatable-sections.php:403
+msgid "Slides to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:357
+#: inc/customizer/class-portum-repeatable-sections.php:400
+msgid "Add Slides &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:377
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:378
+msgid "A slider section. It retrieves content from Theme Content / Slides."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:382
+msgid "Show Numbered Pager"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:387
+msgid "Slider Autoplay"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:392
+msgid "Slider Loop"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:432
+#: inc/customizer/settings/fields.php:534
+#: inc/customizer/settings/sections.php:203
+msgid "Services"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:433
+msgid "Services section. It retrieves content from Theme Content / Services"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:525
+#: inc/customizer/class-portum-repeatable-sections.php:1309
+#: inc/customizer/class-portum-repeatable-sections.php:1417
+#: inc/customizer/class-portum-repeatable-sections.php:2134
+#: inc/customizer/settings/fields.php:515
+#: inc/customizer/settings/fields.php:548
+#: inc/customizer/settings/fields.php:604
+#: inc/customizer/settings/fields.php:649
+msgid "Description"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:527
+msgid "Add a description text over here"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:531
+msgid "Services Item To Show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:542
+msgid "Add Services &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:565
+msgid "About"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:566
+msgid "About section. It retrieves content from Theme Content / Services"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:634
+msgid "Learn more about us and how can we help you:"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:644
+#: inc/customizer/class-portum-repeatable-sections.php:1322
+msgid "Information"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:646
+#: inc/customizer/class-portum-repeatable-sections.php:1324
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia "
+"velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, "
+"ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit "
+"tempor vel."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:650
+#: inc/customizer/settings/fields.php:609
+msgid "Image"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:656
+#: inc/customizer/class-portum-repeatable-sections.php:2140
+msgid "Primary button label"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:658
+#: inc/customizer/class-portum-repeatable-sections.php:2142
+msgid "Primary button"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:662
+#: inc/customizer/class-portum-repeatable-sections.php:2156
+msgid "Primary button URL"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:684
+#: inc/customizer/settings/sections.php:212
+msgid "Portfolio"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:685
+msgid "Portfolio section. It retrieves content from Theme Content / Portfolio"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:767
+msgid "Check out our latest projects"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:773
+msgid "PORTFOLIO"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:777
+msgid "Portfolio Items to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:788
+msgid "Add Portfolio Item &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:791
+msgid "Details under thumbnail"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:792
+msgid "Portfolio item description will be under the image"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:817
+#: inc/customizer/settings/sections.php:221
+msgid "Expertise"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:818
+msgid "Expertise section. It retrieves content from Theme Content / Portfolio"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:886
+msgid "We can take your business to the next level"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:892
+msgid "OUR EXPERTISE"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:896
+msgid "Section Image"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:902
+msgid "Expertise to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:913
+msgid "Add Expertise &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:936
+msgid "Blog Area"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:937
+msgid "Blog Area Section"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:989
+msgid "Find out the latest news?"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:995
+msgid "BLOG"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:999
+msgid "Post Count"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1000
+msgid "Only posts with featured image are loaded"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1025
+msgid "Team"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1026
+msgid "Team members section. It retrieves content from Theme Content / Portfolio"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1090
+msgid "Meet the people behind the scene"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1096
+msgid "TEAM"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1100
+msgid "Members to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1111
+msgid "Add Members &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1134
+msgid "Pricing"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1135
+msgid "Pricing section. It retrieves content from Theme Content / Pricing"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1195
+msgid "See what package suits best for you"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1201
+msgid "PRICING"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1205
+msgid "Price boxes to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1216
+msgid "Add Price Boxes &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1239
+msgid "Video"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1240
+msgid "A section witch allows you to add a video"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1305
+msgid "Video section title"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1311
+msgid "Video description"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1315
+msgid "Video URL"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1316
+msgid "Paste the URL of your video ( YouTube or Vimeo )"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1344
+msgid "Shortcodes"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1345
+msgid ""
+"A section in which you can add your own shortcodes to display in the "
+"frontend."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1413
+msgid "Section title"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1419
+msgid "Section description"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1423
+msgid "Extra text"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1429
+msgid "Shortcode"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1451
+msgid "Google Maps"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1452
+msgid "A Google Map section"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1524
+msgid "How can we help you?"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1530
+msgid "CONTACT"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1534
+#: inc/customizer/class-portum-repeatable-sections.php:1682
+msgid "Contact boxes to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1542
+msgid "Google Address"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1549
+msgid "Google Map Zoom"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1559
+msgid "Google Map Height"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1570
+msgid "Add Your API Key &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1576
+msgid "Add Contact Boxes &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1599
+msgid "Counters"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1600
+#: inc/customizer/class-portum-repeatable-sections.php:1717
+#: inc/customizer/class-portum-repeatable-sections.php:1834
+msgid "A section in which you can add your website counters."
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1672
+msgid "Check out our counters!"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1678
+msgid "COUNTERS"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1693
+msgid "Add Counter Boxes &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1716
+msgid "Progress"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1789
+msgid "See our growth"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1795
+msgid "PROGRESS BARS"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1799
+msgid "Progress bars to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1810
+msgid "Add Progress Bar Boxes &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1833
+msgid "Piecharts"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1906
+msgid "See our charts"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1912
+msgid "PIECHARTS"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1916
+msgid "Piecharts to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1927
+msgid "Add Piecharts Boxes &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1950
+msgid "Client List"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:1951
+msgid "A section where you can add logos of your clients"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2011
+msgid "See our clients"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2017
+msgid "CLIENTS"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2021
+msgid "Clients to show"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2029
+msgid "Enable slider"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2037
+msgid "Add Client Logos &rarr;"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2061
+msgid "Call To Action"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2062
+msgid "A simple call to action section"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2130
+msgid "Call to action title"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2136
+msgid "Call to action text"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2146
+msgid "Primary button color style"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2150
+#: inc/customizer/class-portum-repeatable-sections.php:2172
+#: inc/customizer/settings/fields.php:576
+msgid "White"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2151
+#: inc/customizer/class-portum-repeatable-sections.php:2173
+#: inc/customizer/settings/fields.php:577
+msgid "Color Accent 1"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2152
+#: inc/customizer/class-portum-repeatable-sections.php:2174
+#: inc/customizer/settings/fields.php:578
+msgid "Color Accent 2"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2162
+msgid "Secondary button label"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2164
+msgid "Secondary button"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2168
+msgid "Secoondary button color style"
+msgstr ""
+
+#: inc/customizer/class-portum-repeatable-sections.php:2178
+msgid "Secondary button URL"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:47
+msgid "Blog Layout"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:71
+msgid "Page Layout"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:80
+msgid "Global font"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:81
+msgid "The font that will be applied to the entire document"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:101
+msgid "Headings"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:103
+msgid "Note: Current typography controls will only be affecting the blog."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:133
+msgid "Navigation font"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:134
+msgid "The font that will be applied to header and footer navigation"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:154
+msgid "Headline title"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:181
+msgid "Headline subtitle"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:209
+msgid "Post Meta: Thumbnail in content"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:210
+msgid ""
+"This option will disable the post thumbnail from the beginning of the post "
+"content."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:217
+msgid "Post Meta: Categories"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:218
+msgid "This will disable the category section at the beggining of the post."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:226
+msgid "Post meta: Author"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:227
+msgid ""
+"Toggle the display of the author box, at the left side of the post. Will "
+"only display if the author has a description defined."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:234
+msgid "Post Meta: Tags"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:235
+msgid "This will disable the tags zone at the end of the post."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:242
+msgid "Blog welcome message"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:243
+msgid "This will disable the welcome section from blog header"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:300
+msgid "Set header over content"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:301
+msgid ""
+"This will set header over slider, using colors you can make the header "
+"transparent."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:308
+msgid "Header shadow"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:309
+msgid "This will add or remove header shadow."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:316
+msgid "Go to top button"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:317
+msgid "Toggle the display of the go to top button."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:357
+msgid "Footer Columns"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:366
+msgid "Google API KEY"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:370
+#. Translators: Contact forms not found label
+msgid "-- No Contact Forms --"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:380
+#. Translators: Select contact form label
+msgid "-- Select a Contact Form --"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:396
+msgid "To use this section you need to create a contact form with Contact Form 7"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:408
+#: template-parts/footer/contact-form.php:13
+msgid "Learn more about us"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:409
+msgid "Contact form CTA"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:419
+msgid "Contact Columns"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:420
+msgid "Add new boxes"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:429
+msgid "Headquarters"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:432
+#: inc/customizer/settings/fields.php:554
+#: inc/customizer/settings/fields.php:688
+#: inc/customizer/settings/fields.php:808
+msgid "Icon"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:437
+#: inc/customizer/settings/fields.php:482
+#: inc/customizer/settings/fields.php:766
+#: inc/customizer/settings/fields.php:868
+#: inc/customizer/settings/fields.php:921
+msgid "Text"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:439
+msgid "176 Westmore Mondaile Street Victorian 887 NYC"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:450
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:465
+msgid "Add new entries"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:477
+msgid "Position"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:487
+#: inc/customizer/settings/fields.php:520
+#: inc/customizer/settings/fields.php:873
+msgid "Portrait"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:501
+#: inc/customizer/settings/fields.php:965
+#: inc/customizer/settings/sections.php:185
+#: inc/customizer/settings/sections.php:194
+msgid "Slides"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:502
+#: inc/customizer/settings/fields.php:966
+msgid "Add new slides"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:535
+msgid "Add new service"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:560
+msgid "Display style"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:564
+msgid "No Border"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:565
+msgid "Square Border"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:566
+msgid "Round Border"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:567
+msgid "Filled Square"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:568
+msgid "Filled Round"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:572
+msgid "Color style"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:590
+msgid "Portfolio Items"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:591
+#: inc/customizer/settings/fields.php:630
+#: inc/customizer/settings/fields.php:663
+#: inc/customizer/settings/fields.php:716
+#: inc/customizer/settings/fields.php:753
+#: inc/customizer/settings/fields.php:822
+msgid "Add new items"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:601
+msgid "Project Title"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:606
+#: inc/customizer/settings/fields.php:768
+msgid "Nullam nec metus ullamcorper, scelerisque null"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:615
+msgid "Portfolio Item URL"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:629
+msgid "Expertise Items"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:637
+#: inc/customizer/settings/fields.php:676
+#: inc/customizer/settings/fields.php:729
+msgid "Number"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:646
+msgid "We can improve your business"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:651
+#: inc/customizer/settings/fields.php:870
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia "
+"velit quis sem dignissim porta."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:662
+msgid "Counter Items"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:682
+msgid "Symbol"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:693
+msgid "Counter type"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:697
+#: inc/customizer/settings/fields.php:739
+msgid "Normal"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:698
+msgid "Odometer"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:702
+msgid "Display icon?"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:715
+msgid "Progress Bars"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:735
+#: inc/customizer/settings/fields.php:799
+msgid "Type"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:740
+msgid "Alternate"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:752
+msgid "Pie Charts"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:771
+msgid "Value"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:777
+msgid "Size"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:778
+#: inc/customizer/settings/fields.php:789
+msgid "In pixels"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:788
+msgid "Width"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:803
+msgid "Percentage"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:804
+msgid "icon"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:821
+msgid "Client Logos"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:840
+msgid "Client Link"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:854
+#: inc/customizer/settings/sections.php:230
+msgid "Team Members"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:855
+msgid "Add new member"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:862
+#: inc/customizer/settings/fields.php:915
+msgid "Name"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:864
+msgid "James Austin"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:879
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:884
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:889
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:894
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:907
+#: inc/customizer/settings/sections.php:239
+msgid "Price Boxes"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:908
+msgid "Add new price box"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:917
+msgid "Standard"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:923
+msgid "Get started now! You have the base!"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:927
+msgid "Currency"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:932
+msgid "Price"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:937
+msgid "Period"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:942
+msgid "Button URL"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:948
+msgid "Features"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:955
+msgid "Featured state"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:973
+msgid "Slide title"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:976
+msgid "Best Medical Care you can get for you and your family."
+msgstr ""
+
+#: inc/customizer/settings/fields.php:979
+msgid "Slide title animation"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:983
+#: inc/customizer/settings/fields.php:1001
+#: inc/customizer/settings/fields.php:1036
+#: inc/customizer/settings/fields.php:1060
+msgid "Fade In"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:984
+#: inc/customizer/settings/fields.php:1002
+#: inc/customizer/settings/fields.php:1037
+#: inc/customizer/settings/fields.php:1061
+msgid "Fade In Up"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:985
+#: inc/customizer/settings/fields.php:1003
+#: inc/customizer/settings/fields.php:1038
+#: inc/customizer/settings/fields.php:1062
+msgid "Fade In Down"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:986
+#: inc/customizer/settings/fields.php:1004
+#: inc/customizer/settings/fields.php:1039
+#: inc/customizer/settings/fields.php:1063
+msgid "Fade In Left"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:987
+#: inc/customizer/settings/fields.php:1005
+#: inc/customizer/settings/fields.php:1040
+#: inc/customizer/settings/fields.php:1064
+msgid "Fade In Right"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:991
+msgid "Slide description"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:994
+msgid "More than 3000 specialists are here for you"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:997
+msgid "Slide description animation"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1009
+msgid "Background color"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1016
+msgid "Background image"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1020
+msgid "Primary Button Text"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1026
+msgid "Primary Button URL"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1032
+msgid "Slide primary button animation"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1044
+msgid "Secondary Button Text"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1050
+msgid "Secondary Button URL"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1056
+msgid "Slide secondary button animation"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1069
+msgid "Alignment"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1090
+msgid "Vertical Alignment"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1117
+msgid "Available pages"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1124
+msgid "Logo Dimensions"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1135
+msgid "Sections"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1147
+msgid "Color scheme"
+msgstr ""
+
+#: inc/customizer/settings/fields.php:1148
+msgid "Select a color scheme"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:26
+msgid "General options"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:39
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:51
+msgid "Customization"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:66
+msgid "Front Page Content"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:84
+msgid "Help us improve"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:85
+msgid "Send Feedback"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:100
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:108
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:116
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:125
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:133
+msgid "Integrations"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:145
+msgid "Epsilon Page Builder"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:146
+msgid "Drag & drop to re-order front-page sections."
+msgstr ""
+
+#: inc/customizer/settings/sections.php:158
+msgid "Contact Information"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:167
+msgid "Counter Section"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:248
+msgid "Progress Bars Section"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:257
+msgid "Pie Charts Section"
+msgstr ""
+
+#: inc/customizer/settings/sections.php:266
+msgid "Client Logos Section"
+msgstr ""
+
+#: inc/helpers/class-portum-helper.php:256
+msgid "by "
+msgstr ""
+
+#: inc/helpers/class-portum-helper.php:263
+msgid "Categories: "
+msgstr ""
+
+#: inc/helpers/class-portum-helper.php:270
+msgid "Comment on Post"
+msgstr ""
+
+#: inc/helpers/class-portum-helper.php:328
+#: inc/helpers/class-portum-helper.php:355
+msgid "All"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:89
+#. Translators: Notice Title
+msgid "Welcome to %1$s"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:92
+#. Translators: Notice
+msgid ""
+"Welcome! Thank you for choosing %3$s! To fully take advantage of the best "
+"our theme can offer please make sure you visit our %1$swelcome page%2$s."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:95
+#. Translators: Notice URL
+msgid "Get started with %1$s"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:135
+msgid "Welcome to Portum"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:138
+msgid ""
+" This wizard will set up your theme, install plugins and import demo "
+"content. It is optional & should take less than a minute."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:141
+#: inc/libraries/class-portum-dashboard-setup.php:347
+msgid "Getting Started"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:145
+msgid ""
+"Let's get started <span class=\"dashicons "
+"dashicons-arrow-right-alt2\"></span>"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:151
+msgid "Install Recommended Plugins"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:154
+msgid ""
+"Portum integrates tightly with a few plugins that we recommend installing "
+"to get the full theme experience, as we've intended it to be. This is an "
+"optional step, but we recommend installing them as we think these "
+"hand-picked plugins work really nice with Portum and help enhance the "
+"overall experience."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:157
+msgid "Plugins"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:161
+#: inc/libraries/class-portum-dashboard-setup.php:179
+msgid "Next <span class=\"dashicons dashicons-arrow-right-alt2\"></span>"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:167
+#: inc/libraries/class-portum-dashboard-setup.php:322
+msgid "Import Demo Content"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:170
+msgid ""
+"We've made it easy for you to get up and running in a jiffy. Just pick any "
+"of the theme demos below, click on Select, Import and you'll be ready in no "
+"time. Feel free to skip this step if you'd like to create the content "
+"yourself."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:171
+msgid ""
+"<em>Note: This is the easiest way to see what goes where. After you've "
+"finished the import, you can edit the content using the built-in "
+"Customizer, available under Appearance -> Customize.</em>"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:174
+msgid "Demos"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:185
+msgid "Almost ready"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:188
+msgid ""
+"Your new theme has been all set up. Enjoy your new theme by <a "
+"href=\"https://colorlib.com\">Colorlib</a>."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:189
+msgid "Allow Colorlib to track theme usage."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:193
+msgid "Finished"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:197
+msgid "Allow & Finish"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:211
+msgid "What permissions are being granted"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:217
+msgid "YOUR PROFILE OVERVIEW"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:218
+msgid "Name and email address"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:224
+msgid "YOUR SITE OVERVIEW"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:225
+msgid "Site URL, WP Version, PHP Version, plugins and themes"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:231
+msgid "CURRENT PLUGIN EVENTS"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:232
+msgid "Activation, deactivation and uninstall"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:282
+#: inc/libraries/class-portum-dashboard-setup.php:319
+msgid "Add sample content"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:283
+#: inc/libraries/class-portum-dashboard-setup.php:320
+msgid ""
+"Clicking the button below will add content/sections/settings and "
+"recommended plugins to your WordPress installation. Click advanced to "
+"customize the import process in the dedicated tab."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:288
+msgid "Advanced"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:303
+msgid "Activate Plugin"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:303
+msgid "Install Plugin"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:352
+msgid "Step 1 - Recommended actions"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:353
+msgid ""
+"We compiled a list of steps for you, to take make sure the experience you "
+"will have using one of our products is very easy to follow."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:354
+msgid "Launch wizard"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:357
+msgid "Step 2 - Check our documentation"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:358
+msgid ""
+"Even if you are a long-time WordPress user, we still believe you should "
+"give our documentation a very quick Read."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:359
+msgid "Full documentation"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:362
+msgid "Step 3 - Customize everything"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:363
+msgid ""
+"Using the WordPress Customizer you can easily customize every aspect of the "
+"theme."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:364
+msgid "Go to Customizer"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:371
+msgid "Demo Content"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:375
+msgid "Install your demo content"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:376
+msgid "Demo content already installed"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:377
+msgid ""
+"Since Portum is a versatile theme we provided a few sample demo styles for "
+"you, please choose one from the following pages so you will have to work as "
+"little as you should. Click on the style and press next!"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:384
+msgid "Actions"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:391
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:397
+msgid "Privacy"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:401
+msgid "We believe in a better and streamlined user experiences"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:403
+msgid ""
+"By turning any or all of the toggles below to the <span style=\"color: "
+"green;\">ON</span> position you'll be able\n"
+"\t\tto hide all upsells & recommended plugin discovery sections & actions."
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:411
+msgid "Allow Theme Tracking"
+msgstr ""
+
+#: inc/libraries/class-portum-dashboard-setup.php:418
+msgid "Disable Customizer Shortcuts Bar"
+msgstr ""
+
+#: inc/libraries/class-portum-hooks.php:138
+msgid "Main Slider"
+msgstr ""
+
+#: inc/libraries/class-portum-hooks.php:139
+msgid "Blog Section Image"
+msgstr ""
+
+#: inc/libraries/class-portum-hooks.php:140
+msgid "Portfolio Image"
+msgstr ""
+
+#: inc/libraries/class-portum-hooks.php:141
+msgid "Team Portrait"
+msgstr ""
+
+#: inc/libraries/class-portum-hooks.php:142
+msgid "Blog Post Image"
+msgstr ""
+
+#: inc/libraries/class-portum-navwalker.php:209
+msgid "Add a menu"
+msgstr ""
+
+#: inc/libraries/class-portum-notify-system.php:55
+#. Translators: %s is the plugin name.
+msgid "Install: %s"
+msgstr ""
+
+#: inc/libraries/class-portum-notify-system.php:57
+#. Translators: %s is the plugin name.
+msgid "Please install %s in order to create the demo content."
+msgstr ""
+
+#: inc/libraries/class-portum-notify-system.php:61
+#. Translators: %s is the plugin name
+msgid "Activate: %s"
+msgstr ""
+
+#: inc/libraries/class-portum-notify-system.php:63
+#. Translators: %s is the plugin name
+msgid "Please activate %s in order to create the demo content."
+msgstr ""
+
+#: inc/libraries/class-portum-post-parser.php:265
+#: template-parts/frontpage/pricing-section.php:84
+msgid "Purchase"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:49
+msgid "[Blog] Sidebar #1"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:57
+msgid "[Header] Sidebar #1"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:66
+msgid "[Header] Sidebar #2"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:75
+msgid "[Header] Sidebar #3"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:83
+msgid "[Header] Sidebar #4"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:91
+msgid "[Footer] Sidebar #1"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:100
+msgid "[Footer] Sidebar #2"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:109
+msgid "[Footer] Sidebar #3"
+msgstr ""
+
+#: inc/libraries/class-portum-sidebars.php:117
+msgid "[Footer] Sidebar #4"
+msgstr ""
+
+#: page.php:35
+msgid "Welcome"
+msgstr ""
+
+#: template-parts/content/content-none.php:30
+#. Translators: %s is a link.
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content/content-none.php:36
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content/content-page.php:34
+#: template-parts/content/content-single.php:37
+msgid "Next page"
+msgstr ""
+
+#: template-parts/content/content-page.php:35
+#: template-parts/content/content-single.php:38
+msgid "Previous page"
+msgstr ""
+
+#: template-parts/footer/contact-form.php:30
+#. Translators: Contact button label
+msgid "Contact us"
+msgstr ""
+
+#: template-parts/footer/copyright.php:19
+#. Translators: %s is a link.
+msgid "Macho Themes &copy; %s. All rights reserved."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Portum"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://colorlib.com/wp/themes/portum/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Portum an agency based theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Colorlib.com"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://colorlib.com/"
+msgstr ""

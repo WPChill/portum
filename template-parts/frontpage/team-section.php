@@ -29,15 +29,16 @@ $items_class = null;
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'team', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'team' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 		?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'team', $fields ) ); ?>">
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'team' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 				<div class="row">
 
@@ -49,7 +50,7 @@ $items_class = null;
 
 						<div class="col-md-6">
 							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $member ) { ?>
+								<?php foreach ( $fields['members'] as $key => $member ) { ?>
 
 									<?php
 
@@ -61,7 +62,9 @@ $items_class = null;
 									?>
 
 									<div class="team-members-item team-members-item--full<?php echo esc_attr( $items_class ); ?>">
-
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<?php
 										$arr = array(
 											'facebook'  => $member['member_social_facebook'],
@@ -128,7 +131,7 @@ $items_class = null;
 
 						<div class="col-md-6">
 							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $member ) { ?>
+								<?php foreach ( $fields['members'] as $key => $member ) { ?>
 
 									<?php
 
@@ -140,7 +143,9 @@ $items_class = null;
 									?>
 
 									<div class="team-members-item team-members-item--full<?php echo esc_attr( $items_class ); ?>">
-
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<?php
 										$arr = array(
 											'facebook'  => $member['member_social_facebook'],
@@ -215,7 +220,7 @@ $items_class = null;
 
 						<div class="col-md-12">
 							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $member ) { ?>
+								<?php foreach ( $fields['members'] as $key => $member ) { ?>
 
 									<?php
 
@@ -229,7 +234,9 @@ $items_class = null;
 									?>
 
 									<div class="team-members-item<?php echo esc_attr( $items_class ); ?>">
-
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
 										<?php
 										$arr = array(
 											'facebook'  => $member['member_social_facebook'],

@@ -21,18 +21,19 @@ $parent_attr = array(
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'cta', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 
 		$button_primary   = $fields['cta_button_primary_label'] . $fields['cta_button_primary_url'];
 		$button_secondary = $fields['cta_button_secondary_label'] . $fields['cta_button_secondary_url'];
 		?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'cta', $fields ) ); ?>">
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 				<div class="row">
 

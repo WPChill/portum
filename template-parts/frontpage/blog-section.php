@@ -27,7 +27,6 @@ $parent_attr = array(
 	'class' => array(
 		'section-blog',
 		'section',
-		'section-grey',
 		'ewf-section',
 		'ewf-section-' . $fields['blog_section_visibility'],
 	),
@@ -36,17 +35,18 @@ $parent_attr = array(
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'blog', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
-		$attr_helper->generate_video_overlay();
 		$attr_helper->generate_color_overlay();
+		$attr_helper->generate_video_overlay();
 		?>
 
 		<div class="ewf-section__content">
 
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'blog', $fields ) ); ?>">
 
-				<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'], array( 'center' => true ) ) ); ?>
 
 				<?php while ( $query->have_posts() ) { ?>
@@ -81,12 +81,12 @@ $parent_attr = array(
 									<div class="news-category">
 										<strong>
 											<?php $categories = get_the_category(); ?>
-											<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a>
+											<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo wp_kses_post( $categories[0]->name ); ?></a>
 										</strong>
 									</div>
 
 									<div class="news-date">
-										<strong><span><?php echo esc_html( get_the_date() ); ?></span></strong>
+										<strong><span><?php echo wp_kses_post( get_the_date() ); ?></span></strong>
 									</div>
 								</div>
 							</div>

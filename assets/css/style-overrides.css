@@ -10,19 +10,22 @@
 	%9$s - epsilon_link_active_color - #333333
 	%10$s - epsilon_menu_separator - 
 	%11$s - epsilon_header_background - #151c1f
-	%12$s - epsilon_dropdown_menu_background - #a1083a
-	%13$s - epsilon_dropdown_menu_hover_background - #940534
-	%14$s - epsilon_menu_item_color - #ebebeb
-	%15$s - epsilon_menu_item_hover_color - #ffffff
-	%16$s - epsilon_menu_item_active_color - #0385d0
-	%17$s - epsilon_footer_separator - 
-	%18$s - epsilon_footer_contact_background - #0377bb
-	%19$s - epsilon_footer_background - #192229
-	%20$s - epsilon_footer_title_color - #ffffff
-	%21$s - epsilon_footer_text_color - #a9afb1
-	%22$s - epsilon_footer_link_color - #a9afb1
-	%23$s - epsilon_footer_link_hover_color - #ffffff
-	%24$s - epsilon_footer_link_active_color - #a9afb1
+	%12$s - epsilon_header_background_sticky - rgba(255,255,255,.3)
+	%13$s - epsilon_header_background_border_bot - rgba(255,255,255,.1)
+	%14$s - epsilon_dropdown_menu_background - #a1083a
+	%15$s - epsilon_dropdown_menu_hover_background - #940534
+	%16$s - epsilon_menu_item_color - #ebebeb
+	%17$s - epsilon_menu_item_hover_color - #ffffff
+	%18$s - epsilon_menu_item_active_color - #0385d0
+	%19$s - epsilon_footer_separator -
+	%20$s - epsilon_footer_contact_background - #0377bb
+	%21$s - epsilon_footer_background - #192229
+    %22$s - epsilon_footer_sub_background - #000
+	%23$s - epsilon_footer_title_color - #ffffff
+	%24$s - epsilon_footer_text_color - #a9afb1
+	%25$s - epsilon_footer_link_color - #a9afb1
+	%26$s - epsilon_footer_link_hover_color - #ffffff
+	%27$s - epsilon_footer_link_active_color - #a9afb1
  */
 
 
@@ -215,7 +218,7 @@
 
 /*
 	.ewf-progress__bar-liniar-wrap {
-		background-color: %2$s;					
+		background-color: %2$s;
 	}
 	*/
 
@@ -255,38 +258,46 @@
 
 #header {
     background-color: %11$s;
+    border-bottom: 1px solid %13$s;
 }
+
+#header.stuck {
+    background-color: %12$s;
+    border-bottom: none;
+}
+
+
 
 .sf-menu>li:hover,
 .sf-menu>li.current {
-    -webkit-box-shadow: inset 0px 3px 0px 0px %15$s;
-    box-shadow: inset 0px 3px 0px 0px %15$s;
+    -webkit-box-shadow: inset 0px 3px 0px 0px %15$s !important;
+    box-shadow: inset 0px 3px 0px 0px %15$s !important;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu a {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu>li:hover.arrow:before {
     /* epsilon_menu_item_hover_color */
-    color: %15$s;
+    color: %17$s;
 }
 
 .sf-menu>li.arrow:before {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu a:hover,
 .sf-menu a:focus {
-    color: %15$s;
+    color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu a:active {
-    color: %16$s;
+    color: %18$s;
     /* epsilon_menu_item_active_color */
 }
 
@@ -294,110 +305,85 @@
 .sf-menu li.mega .sf-mega a {}
 
 .sf-menu li.dropdown li>a:hover:before {
-    border-bottom-color: %15$s;
+    border-bottom-color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu>li>a,
 .sf-menu>li.dropdown>a,
 .sf-menu>li.mega>a {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu>li a i {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
-.sf-menu>li:hover,
-.sf-menu>li.current {
-    -webkit-box-shadow: inset 0px 3px 0px 0px %12$s;
-    box-shadow: inset 0px 3px 0px 0px %12$s;
-}
 
 .sf-menu>li.current>a {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu>li.sfHover>a:hover,
 .sf-menu>li>a:hover {
-    color: %15$s;
+    color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
 .sf-menu li.dropdown ul {
-    background-color: %12$s;
+    background-color: %14$s;
     /* epsilon_menu_background */
 }
 
 .sf-mega {
-    background-color: %12$s;
+    background-color: %14$s;
     /* epsilon_menu_background */
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .dropdown li:hover {
-    background: %13$s;
+    background: %15$s;
 }
 
 #mobile-menu {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
     border-bottom-color: rgba(255, 255, 255, 0.25);
     background-color: %11$s;
 }
 
 #mobile-menu li a {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 #mobile-menu .mobile-menu-submenu-arrow {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 #mobile-menu .mobile-menu-submenu-arrow:hover {
-    background-color: %13$s;
+    background-color: %15$s;
     ;
 }
 
 #mobile-menu-trigger {
-    color: %14$s;
+    color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 #mobile-menu li>a:hover {
-    background-color: %13$s;
+    background-color: %15$s;
 }
 
 #mobile-menu-trigger:hover {
-    color: %15$s;
+    color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
-
-
-/*
-	.sf-menu li.dropdown ul{
-		background: %12$s;				
-		opacity: .9;
-	}
-	.dropdown li:hover {
-		background: %1$s;
-	}
-	.sf-menu > li.current > a {
-		color: %9$s
-	}
-	.sf-menu li.sfHover > a, .sf-menu a:hover, .sf-menu li.sfHover a:hover{
-		color: %10$s;
-	}
-	.sf-menu a:focus, .sf-menu li.sfHover a:focus{
-		color: %12$s;
-	}
-	*/
 
 
 /* ==========================================================================
@@ -423,7 +409,7 @@ blockquote {
     /* epsilon_title_color */
 }
 
-.headline span {
+.headline span:not(.dashicons) {
     color: %5$s;
     /* epsilon_title_color */
 }
@@ -500,35 +486,39 @@ input[type="button"]:active {
    	========================================================================== */
 
 #footer {
-    background-color: %19$s;
+    background-color: %21$s;
     /* epsilon_footer_background */
-    color: %21$s;
+    color: %24$s;
     /* epsilon_footer_text_color */
 }
 
+#footer-bottom {
+    background-color: %22$s;
+}
+
 #footer a {
-    color: %22$s;
+    color: %25$s;
 }
 
 
 /* epsilon_footer_link_color */
 
 #footer a:hover {
-    color: %23$s;
+    color: %26$s;
 }
 
 
 /* epsilon_footer_link_hover_color */
 
 #footer a:focus {
-    color: %23$s;
+    color: %26$s;
 }
 
 
 /* epsilon_footer_link_hover_color */
 
 #footer a:active {
-    color: %24$s;
+    color: %27$s;
 }
 
 
@@ -540,24 +530,24 @@ input[type="button"]:active {
 #footer h4,
 #footer h5,
 #footer h6 {
-    color: %20$s;
+    color: %23$s;
 }
 
 #footer p {
-    color: %21$s;
+    color: %24$s;
 }
 
 
 /* epsilon_footer_text_color */
 
 .contact-form {
-    background-color: %18$s;
+    background-color: %20$s;
     /* epsilon_footer_contact_background */
 }
 
 #footer .widget .widget-title,
 #footer .widget .widget-title a {
-    color: %20$s;
+    color: %23$s;
     /* epsilon_footer_title_color */
 }
 

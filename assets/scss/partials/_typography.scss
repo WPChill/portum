@@ -268,12 +268,6 @@ a.social-icon:active {
     text-align: right;
 }
 
-@media (max-width: 767px) {
-    .text-right {
-        text-align: left;
-    }
-}
-
 .text-center {
     text-align: center;
 }
@@ -351,7 +345,6 @@ a.social-icon:active {
 
 .headline {
     h3 {
-        margin-bottom: 55px;
         z-index: 9;
         margin-top: 0;
         animation: anim_affluent_sliderPro_category 1000ms linear both;
@@ -382,9 +375,7 @@ a.social-icon:active {
 }
 
 @media (max-width: 768px) {
-    .headline {
-        text-align: center;
-    }
+
     .headline--xs-bottom {
         margin-top: 55px;
         h3 {
@@ -403,7 +394,6 @@ a.social-icon:active {
 
 img {
     max-width: 100%;
-    width: 100%;
     height: auto;
     border: none;
     vertical-align: middle;
@@ -479,11 +469,11 @@ em {
 }
 
 strong {
-    font-weight: 700;
+    font-weight: 900;
 }
 
 small {
-    font-size: 90%;
+    font-size: 75%;
 }
 
 big {
