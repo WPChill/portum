@@ -35,19 +35,20 @@ wp_enqueue_script( 'googlemaps' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" class="google-map-section" <?php echo ! empty( $fields['google_map_section_unique_id'] ) ? 'id="' . $fields['google_map_section_unique_id'] . '"' : ''; ?>>
+	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'google_map', $fields ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?> >
 
 		<?php if ( 'right' === $fields['google_map_row_title_align'] ) { ?>
 			<?php
-			$attr_helper->generate_video_overlay();
 			$attr_helper->generate_color_overlay();
+			$attr_helper->generate_video_overlay();
 
 			$section_item_columns = 12 / intval( $fields['google_map_column_group'] );
 			?>
 
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -63,12 +64,15 @@ wp_enqueue_script( 'googlemaps' );
 								<?php
 								if ( ! empty( $fields['contact_boxes'] ) ) {
 									?>
-									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+									<?php foreach ( $fields['contact_boxes'] as $key => $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-													<?php echo esc_html( $field['contact_title'] ); ?>
+													<?php echo wp_kses_post( $field['contact_title'] ); ?>
 												</h5>
 												<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 											</div>
@@ -93,7 +97,6 @@ wp_enqueue_script( 'googlemaps' );
 
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -103,12 +106,15 @@ wp_enqueue_script( 'googlemaps' );
 								<?php
 								if ( ! empty( $fields['contact_boxes'] ) ) {
 									?>
-									<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+									<?php foreach ( $fields['contact_boxes'] as $key => $field ) { ?>
 										<div class="col-xs-12 col-md-<?php echo esc_attr( $section_item_columns ); ?>">
 											<div class="map-info-item">
+												<?php
+												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
+												?>
 												<h5>
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-													<?php echo esc_html( $field['contact_title'] ); ?>
+													<?php echo wp_kses_post( $field['contact_title'] ); ?>
 												</h5>
 												<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 											</div>
@@ -136,7 +142,6 @@ wp_enqueue_script( 'googlemaps' );
 
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
-					<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 					<div class="map-info-wrapper" <?php $attr_helper->generate_attributes( $style_attr ); ?>>
 
@@ -150,12 +155,15 @@ wp_enqueue_script( 'googlemaps' );
 						if ( ! empty( $fields['contact_boxes'] ) ) {
 							?>
 							<div class="row">
-								<?php foreach ( $fields['contact_boxes'] as $field ) { ?>
+								<?php foreach ( $fields['contact_boxes'] as $key => $field ) { ?>
 									<div class="col-xs-12 col-md-<?php echo esc_attr( absint( $span ) ); ?>">
 										<div class="map-info-item">
+											<?php
+											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
+											?>
 											<h5>
 												<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
-												<?php echo esc_html( $field['contact_title'] ); ?>
+												<?php echo wp_kses_post( $field['contact_title'] ); ?>
 											</h5>
 											<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 										</div>

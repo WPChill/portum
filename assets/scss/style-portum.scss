@@ -39,6 +39,7 @@
 @import "partials/sections/16-section-map";
 @import "partials/sections/17-section-advanced-slider.scss";
 @import "partials/sections/18-section-cta.scss";
+@import "partials/sections/19-section-about.scss";
 
 .page {
 	.widget {
@@ -89,26 +90,6 @@
 	@media (min-width: 992px) {
 		width: 970px;
 	}
-}
-
-.ewf-section--spacing-none-top.ewf-text-align--left .epsilon-pencil-button-group {
-	top: 5px;
-}
-
-.ewf-section--title-left .epsilon-pencil-button-group,
-.ewf-text-align--left .epsilon-pencil-button-group {
-	top: -35px;
-}
-
-.section-map .epsilon-pencil-button-group {
-	top: 15px;
-	left: 30px;
-}
-
-.epsilon-pencil-button-group {
-	left: 15px;
-
-	a { color: #fff !important; }
 }
 
 .ewf-section-hidden {

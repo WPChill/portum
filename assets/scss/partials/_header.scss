@@ -104,7 +104,7 @@ body.ctdw-bar-visible #header.header--over-content {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         transition: all 0.3s;
         #logo img {
-            width: 80%;
+            max-width: 80%;
         }
         .sf-menu>li>a,
         .sf-menu>li.dropdown>a {
