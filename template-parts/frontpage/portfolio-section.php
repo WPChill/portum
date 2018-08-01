@@ -31,8 +31,12 @@ $parent_attr = array(
 	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-wp_enqueue_style( 'magnificPopup' );
-wp_enqueue_script( 'magnificPopup' );
+
+// only load scripts if we're viewing images in a lightbox
+if ( $fields['portfolio_image_lightbox'] ) {
+	wp_enqueue_style( 'magnificPopup' );
+	wp_enqueue_script( 'magnificPopup' );
+}
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -77,9 +81,16 @@ wp_enqueue_script( 'magnificPopup' );
 													</div><!-- ewf-portfolio-item__details -->
 												<?php } ?>
 												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
-												<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
-													<i class="fa fa-eye"></i>
-												</a>
+
+												<?php if ( $fields['portfolio_image_lightbox'] ) { ?>
+													<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
+														<i class="fa fa-eye"></i>
+													</a>
+												<?php } else { ?>
+													<a class="ewf-portfolio-item__control-zoom" href="<?php echo esc_url( $item['portfolio_link'] ); ?>">
+														<i class="fa fa-eye"></i>
+													</a>
+												<?php } ?>
 
 											</div><!-- ewf-portfolio-item__overlay -->
 
