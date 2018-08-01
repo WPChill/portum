@@ -3,7 +3,7 @@
 
 .section-about {
 	.container-fluid {
-		img {
+		img { /* gets applied only when the section's set to full-width */
 			width: 100%;
 		}
 	}
