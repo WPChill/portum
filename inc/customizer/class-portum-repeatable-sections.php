@@ -383,12 +383,12 @@ class Portum_Repeatable_Sections {
 					'type'    => 'epsilon-toggle',
 					'default' => true,
 				),
-				'slider_autoplay'             => array(
+				'slider_autoplay'          => array(
 					'label'   => esc_html__( 'Slider Autoplay', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
 				),
-				'slider_loop'             => array(
+				'slider_loop'              => array(
 					'label'   => esc_html__( 'Slider Loop', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => true,
@@ -792,6 +792,12 @@ class Portum_Repeatable_Sections {
 					'description' => esc_html__( 'Portfolio item description will be under the image', 'portum' ),
 					'type'        => 'epsilon-toggle',
 					'default'     => false,
+				),
+				'portfolio_image_lightbox'    => array(
+					'label'       => esc_html__( 'Show items in lightbox', 'portum' ),
+					'description' => esc_html__( 'Toggling this to ON will display all images in a lightbox', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
 				),
 				'portfolio_repeater_field'    => array(
 					'type'    => 'hidden',
