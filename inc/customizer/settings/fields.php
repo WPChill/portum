@@ -372,6 +372,7 @@ Epsilon_Customizer::add_field( 'portum_google_api_key', array(
 	'section'           => 'portum_misc_section',
 	'sanitize_callback' => 'sanitize_text_field',
 	'label'             => esc_html__( 'Google API KEY', 'portum' ),
+	'description'       => __( 'You need to make sure you have enabled billing on your Google account, otherwise your Google Maps API Key will not work. This is a recent change Google introduced and not related to the theme itself. Please use <a href=" https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">this link to get your API key</a>', 'portum' ),
 ) );
 
 //Translators: Contact forms not found label
