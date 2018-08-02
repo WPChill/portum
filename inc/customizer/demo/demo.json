@@ -4530,7 +4530,6 @@
       "id": "content",
       "label": "Content",
       "content": {
-
         "expertise": {
           "id": "expertise",
           "setting": "portum_expertise",

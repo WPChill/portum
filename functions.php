@@ -29,4 +29,3 @@ add_action( 'all', function ( $tag ) {
 	$debug_tags[] = $tag;
 } );
 */
-

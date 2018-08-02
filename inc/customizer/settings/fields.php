@@ -1017,11 +1017,11 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			),
 		),
 		'slide_background_color'        => array(
-			'label'      => esc_html__( 'Background color', 'portum' ),
+			'label'      => esc_html__( 'Slider Overlay Color', 'portum' ),
 			'type'       => 'epsilon-color-picker',
 			'mode'       => 'rgba',
 			'defaultVal' => '#f9f9fa',
-			'default'    => '#f9f9fa',
+			'default'    => 'rgba(0,0,0,.1)',
 		),
 		'slide_background'              => array(
 			'label' => esc_html__( 'Background image', 'portum' ),
