@@ -264,8 +264,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'testimonials_grouping'          => array(
-					'label'       => esc_html__( 'Testimonials to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown testimonials', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),
@@ -275,7 +275,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_testimonials_section',
-					'navigateToLabel' => esc_html__( 'Add Testimonials &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Testimonials &rarr;', 'portum' ),
 				),
 				'testimonials_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -344,17 +344,18 @@ class Portum_Repeatable_Sections {
 					'default' => true,
 				),
 				'slider_advanced_grouping' => array(
-					'label'    => esc_html__( 'Slides to show', 'portum' ),
-					'type'     => 'selectize',
-					'multiple' => true,
-					'choices'  => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_title' ),
-					'default'  => array( 'all' ),
+					'label'       => esc_html__( 'Filter shown slides', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_title' ),
+					'default'     => array( 'all' ),
 				),
 				'slider_navigation'        => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_advanced_slides_section',
-					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Slides &rarr;', 'portum' ),
 				),
 				'slider_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -397,11 +398,11 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_slides_section',
-					'navigateToLabel' => esc_html__( 'Add Slides &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Slides &rarr;', 'portum' ),
 				),
 				'slider_grouping'          => array(
-					'label'       => esc_html__( 'Slides to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown slides', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_slides', 'slides_title' ),
@@ -528,8 +529,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'services_grouping'          => array(
-					'label'       => esc_html__( 'Services Item To Show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown services', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_services', 'service_title' ),
@@ -539,7 +540,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_services_section',
-					'navigateToLabel' => esc_html__( 'Add Services &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Services &rarr;', 'portum' ),
 				),
 				'services_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -774,8 +775,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'portfolio_grouping'          => array(
-					'label'       => esc_html__( 'Portfolio Items to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown portfolio items', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_portfolio', 'portfolio_title' ),
@@ -785,7 +786,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_portfolio_section',
-					'navigateToLabel' => esc_html__( 'Add Portfolio Item &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Portfolio Item &rarr;', 'portum' ),
 				),
 				'portfolio_description_below' => array(
 					'label'       => esc_html__( 'Details under thumbnail', 'portum' ),
@@ -905,8 +906,8 @@ class Portum_Repeatable_Sections {
 					'default' => esc_url( get_template_directory_uri() . '/assets/images/expertise-img-01.jpg' ),
 				),
 				'expertise_grouping'          => array(
-					'label'       => esc_html__( 'Expertise to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown items', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_expertise', 'expertise_title' ),
@@ -916,7 +917,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_expertise_section',
-					'navigateToLabel' => esc_html__( 'Add Expertise &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Expertise &rarr;', 'portum' ),
 				),
 				'expertise_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -1103,8 +1104,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'team_grouping'          => array(
-					'label'       => esc_html__( 'Members to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown members', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_team_members', 'member_title' ),
@@ -1114,7 +1115,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_team_members_section',
-					'navigateToLabel' => esc_html__( 'Add Members &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Members &rarr;', 'portum' ),
 				),
 				'team_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -1208,8 +1209,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'pricing_grouping'          => array(
-					'label'       => esc_html__( 'Price boxes to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown pricing tables', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_price_boxes', 'price_box_title' ),
@@ -1219,7 +1220,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_pricing_section',
-					'navigateToLabel' => esc_html__( 'Add Price Boxes &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Price Boxes &rarr;', 'portum' ),
 				),
 				'pricing_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -1526,19 +1527,21 @@ class Portum_Repeatable_Sections {
 			'fields'        => array(
 				'google_map_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
+					'description'       => esc_html__( 'Section title. Remove it for a cleaner look.', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'How can we help you?', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'google_map_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
+					'description'       => esc_html__( 'Section sub-title. Remove it for a cleaner look.', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'CONTACT', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'google_map_grouping'          => array(
-					'label'       => esc_html__( 'Contact boxes to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown content', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering functionality to achieve this.  ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_contact_section', 'contact_title' ),
@@ -1552,20 +1555,22 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'sanitize_text_field',
 				),
 				'google_map_zoom'              => array(
-					'type'    => 'epsilon-slider',
-					'label'   => esc_html__( 'Google Map Zoom', 'portum' ),
-					'default' => 13,
-					'choices' => array(
+					'type'        => 'epsilon-slider',
+					'label'       => esc_html__( 'Google Maps Zoom Level', 'portum' ),
+					'description' => esc_html__( 'Play around with this value until you reach a comfortable level. Increasing the level of the zoom will allow your visitors to get a better view of the surrounding streets', 'portum' ),
+					'default'     => 16,
+					'choices'     => array(
 						'min'  => 1,
 						'max'  => 20,
 						'step' => 1,
 					),
 				),
 				'google_map_height'            => array(
-					'type'    => 'epsilon-slider',
-					'label'   => esc_html__( 'Google Map Height', 'portum' ),
-					'default' => 450,
-					'choices' => array(
+					'type'        => 'epsilon-slider',
+					'label'       => esc_html__( 'Google Maps Height', 'portum' ),
+					'description' => esc_html__( 'Play around with this value until you are happy with the map height', 'portum' ),
+					'default'     => 450,
+					'choices'     => array(
 						'min'  => 120,
 						'max'  => 850,
 						'step' => 10,
@@ -1580,7 +1585,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_contact_section',
-					'navigateToLabel' => esc_html__( 'Add Contact Boxes &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Contact Boxes &rarr;', 'portum' ),
 				),
 				'google_map_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -1686,8 +1691,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'counters_grouping'          => array(
-					'label'       => esc_html__( 'Contact boxes to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown content', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_counter_boxes', 'counter_title' ),
@@ -1697,7 +1702,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_counters_section',
-					'navigateToLabel' => esc_html__( 'Add Counter Boxes &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Counter Boxes &rarr;', 'portum' ),
 				),
 				'counters_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -1803,7 +1808,7 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'progress_bars_grouping'       => array(
-					'label'       => esc_html__( 'Progress bars to show', 'portum' ),
+					'label'       => esc_html__( 'Filter shown content', 'portum' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
@@ -1814,7 +1819,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_progress_bars_section',
-					'navigateToLabel' => esc_html__( 'Add Progress Bar Boxes &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Progress Bar Boxes &rarr;', 'portum' ),
 				),
 				'progress_bars_repeater_field' => array(
 					'type'    => 'hidden',
@@ -1920,8 +1925,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'piecharts_grouping'          => array(
-					'label'       => esc_html__( 'Piecharts to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown content', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_pie_charts', 'piechart_title' ),
@@ -1931,7 +1936,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_piecharts_section',
-					'navigateToLabel' => esc_html__( 'Add Piecharts Boxes &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Piecharts Boxes &rarr;', 'portum' ),
 				),
 				'piecharts_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -2025,8 +2030,8 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'clientlist_grouping'          => array(
-					'label'       => esc_html__( 'Clients to show', 'portum' ),
-					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
+					'label'       => esc_html__( 'Filter shown clients', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_clients', 'client_title' ),
@@ -2041,7 +2046,7 @@ class Portum_Repeatable_Sections {
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_clientlists_section',
-					'navigateToLabel' => esc_html__( 'Add Client Logos &rarr;', 'portum' ),
+					'navigateToLabel' => esc_html__( 'Add/Edit Client Logos &rarr;', 'portum' ),
 				),
 				'clientlist_repeater_field'    => array(
 					'type'    => 'hidden',
