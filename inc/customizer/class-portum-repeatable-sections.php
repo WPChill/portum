@@ -1545,9 +1545,10 @@ class Portum_Repeatable_Sections {
 					'default'     => array( 'all' ),
 				),
 				'google_map_address'           => array(
-					'label'             => esc_html__( 'Google Address', 'portum' ),
+					'label'             => esc_html__( 'Google Maps Street Address', 'portum' ),
+					'description'       => esc_html__( 'Only your street address is required to get Google Maps to work. We\'ve built behind the scenes logic that take a physical address and convert it into lat & long coordinates for Google Maps. ', 'portum' ),
 					'type'              => 'text',
-					'default'           => 'Centrul Vechi, Brasov',
+					'default'           => 'New York City',
 					'sanitize_callback' => 'sanitize_text_field',
 				),
 				'google_map_zoom'              => array(
