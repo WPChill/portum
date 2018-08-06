@@ -261,11 +261,20 @@ $sections = array(
 		),
 	),
 	array(
+		'id'   => 'portum_schedule_section',
+		'args' => array(
+			'title'    => esc_html__( 'Schedule', 'medzone' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 11,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
 		'id'   => 'portum_clientlists_section',
 		'args' => array(
 			'title'    => esc_html__( 'Client Logos Section', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 11,
+			'priority' => 12,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),

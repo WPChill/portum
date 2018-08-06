@@ -120,7 +120,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -190,6 +190,160 @@ class Portum_Repeatable_Sections {
 	}
 
 	/**
+	 * Render OpenHours section
+	 *
+	 * @return array
+	 */
+	private function repeatable_openhours() {
+		return array(
+			'id'            => 'openhours',
+			'title'         => esc_html__( 'Open Hours Section', 'portum' ),
+			'description'   => esc_html__( 'Your hospital schedule.', 'portum' ),
+			'image'         => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-openhours.png',
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'top', 'right' ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right' ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom' ),
+					),
+				),
+				'styling' => array(
+					'background-color'    => array(
+						'default' => false,
+					),
+					'background-image'    => array(
+						'default' => false,
+					),
+					'background-position' => array(
+						'default' => 'center',
+					),
+					'background-size'     => array(
+						'default' => 'initial',
+					),
+					'background-repeat'   => array(
+						'default' => 'repeat',
+					),
+					'background-parallax' => array(
+						'default' => false,
+					),
+					'background-video'    => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p' ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
+				'openhours_title'                => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'Top notch <br>experience' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'openhours_subtitle'             => array(
+					'label'             => esc_html__( 'Subtitle', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'We make it better' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'openhours_schedule_title'       => array(
+					'label'             => esc_html__( 'Schedule Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'Opening Hours' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'openhours_text'                 => array(
+					'label'   => esc_html__( 'Description', 'portum' ),
+					'type'    => 'epsilon-text-editor',
+					'default' => wp_kses_post( 'Our specialist make sure you get the best care there is' ),
+				),
+				'openhours_color'                => array(
+					'label'   => esc_html__( 'Open Hours Background Color', 'portum' ),
+					'type'    => 'epsilon-color-picker',
+					'default' => 'rgba(0,0,0,.1)',
+				),
+				'openhours_button_primary_label' => array(
+					'label'             => esc_html__( 'Button label', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_html__( 'CTA button', 'portum' ),
+					'sanitize_callback' => 'sanitize_textfield',
+				),
+				'openhours_button_primary_color' => array(
+					'label'      => esc_html__( 'Button color style', 'portum' ),
+					'descriptin' => esc_html__( 'Color accent 1, 2 & Text color are the corresponding HEX color codes from Customization -> Colors.', 'portum' ),
+					'type'       => 'select',
+					'default'    => 'ewf-btn--color-default',
+					'choices'    => array(
+						'ewf-btn--color-default' => __( 'Text Color as background + White', 'portum' ),
+						'ewf-btn--color-accent1' => __( 'Color Accent 1 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent3' => __( 'Color Accent 1 as background + White', 'portum' ),
+						'ewf-btn--color-accent2' => __( 'Color Accent 2 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent4' => __( 'Color Accent 2 as background + White', 'portum' ),
+					),
+				),
+				'openhours_button_primary_url'   => array(
+					'label'             => esc_html__( 'Primary button URL', 'portum' ),
+					'type'              => 'text',
+					'default'           => esc_url( 'https://google.com' ),
+					'sanitize_callback' => 'esc_url_raw',
+				),
+				'openhours_grouping'             => array(
+					'label'       => esc_html__( 'Filter shown open hours schedule', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_schedule', 'schedule_days' ),
+					'default'     => array( 'all' ),
+				),
+				'openhours_navigation'           => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'portum_schedule_section',
+					'navigateToLabel' => esc_html__( 'Add/edit schedule hours &rarr;', 'portum' ),
+				),
+				'openhours_section_unique_id'    => array(
+					'label'             => esc_html__( 'Section ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
+				'openhours_repeater_field'       => array(
+					'type'    => 'hidden',
+					'default' => 'portum_schedule',
+				),
+			),
+		);
+	}
+
+	/**
 	 * Repeatable testimonials section
 	 *
 	 * @return array
@@ -241,7 +395,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -497,7 +651,7 @@ class Portum_Repeatable_Sections {
 							'h4',
 							'h5',
 							'h6',
-							'.headline span:not(.dashicons)',
+							'.headline span:not(.dashicons):not(.dashicons)',
 							'.headline h3',
 							'.services-item span:not(.dashicons)',
 						),
@@ -619,7 +773,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -664,6 +818,19 @@ class Portum_Repeatable_Sections {
 					'type'              => 'text',
 					'default'           => esc_url( 'https://google.com' ),
 					'sanitize_callback' => 'esc_url_raw',
+				),
+				'about_button_primary_color' => array(
+					'label'      => esc_html__( 'Button color style', 'portum' ),
+					'descriptin' => esc_html__( 'Color accent 1, 2 & Text color are the corresponding HEX color codes from Customization -> Colors.', 'portum' ),
+					'type'       => 'select',
+					'default'    => 'ewf-btn--color-default',
+					'choices'    => array(
+						'ewf-btn--color-default' => __( 'Text Color as background + White', 'portum' ),
+						'ewf-btn--color-accent1' => __( 'Color Accent 1 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent3' => __( 'Color Accent 1 as background + White', 'portum' ),
+						'ewf-btn--color-accent2' => __( 'Color Accent 2 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent4' => __( 'Color Accent 2 as background + White', 'portum' ),
+					),
 				),
 				'about_section_unique_id'    => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
@@ -752,7 +919,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -877,7 +1044,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -980,7 +1147,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1081,7 +1248,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1186,7 +1353,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1296,7 +1463,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1404,7 +1571,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1515,7 +1682,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1668,7 +1835,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1785,7 +1952,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -1902,7 +2069,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -2007,7 +2174,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -2126,7 +2293,7 @@ class Portum_Repeatable_Sections {
 				),
 				'colors'  => array(
 					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
 						'default'   => '',
 					),
 					'text-color'    => array(
@@ -2155,13 +2322,16 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'sanitize_textfield',
 				),
 				'cta_button_primary_color'   => array(
-					'label'   => esc_html__( 'Primary button color style', 'portum' ),
-					'type'    => 'select',
-					'default' => 'ewf-btn--color-default',
-					'choices' => array(
+					'label'      => esc_html__( 'Primary button color style', 'portum' ),
+					'descriptin' => esc_html__( 'Color accent 1, 2 & Text color are the corresponding HEX color codes from Customization -> Colors.', 'portum' ),
+					'type'       => 'select',
+					'default'    => 'ewf-btn--color-default',
+					'choices'    => array(
 						'ewf-btn--color-default' => __( 'White', 'portum' ),
-						'ewf-btn--color-accent1' => __( 'Color Accent 1', 'portum' ),
-						'ewf-btn--color-accent2' => __( 'Color Accent 2', 'portum' ),
+						'ewf-btn--color-accent1' => __( 'Color Accent 1 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent3' => __( 'Color Accent 1 as background + White', 'portum' ),
+						'ewf-btn--color-accent2' => __( 'Color Accent 2 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent4' => __( 'Color Accent 2 as background + White', 'portum' ),
 					),
 				),
 				'cta_button_primary_url'     => array(
@@ -2177,13 +2347,16 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'sanitize_textfield',
 				),
 				'cta_button_secondary_color' => array(
-					'label'   => esc_html__( 'Secoondary button color style', 'portum' ),
-					'type'    => 'select',
-					'default' => 'ewf-btn--color-accent1',
-					'choices' => array(
-						'ewf-btn--color-default' => __( 'White', 'portum' ),
-						'ewf-btn--color-accent1' => __( 'Color Accent 1', 'portum' ),
-						'ewf-btn--color-accent2' => __( 'Color Accent 2', 'portum' ),
+					'label'      => esc_html__( 'Secoondary button color style', 'portum' ),
+					'descriptin' => esc_html__( 'Color accent 1, 2 & Text color are the corresponding HEX color codes from Customization -> Colors.', 'portum' ),
+					'type'       => 'select',
+					'default'    => 'ewf-btn--color-accent1',
+					'choices'    => array(
+						'ewf-btn--color-default' => __( 'Text Color as background + White', 'portum' ),
+						'ewf-btn--color-accent1' => __( 'Color Accent 1 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent3' => __( 'Color Accent 1 as background + White', 'portum' ),
+						'ewf-btn--color-accent2' => __( 'Color Accent 2 as background + Text Color', 'portum' ),
+						'ewf-btn--color-accent4' => __( 'Color Accent 2 as background + White', 'portum' ),
 					),
 				),
 				'cta_button_secondary_url'   => array(

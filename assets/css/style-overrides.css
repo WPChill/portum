@@ -847,92 +847,52 @@ input[type="button"]:active {
     /* epsilon_accent_color */
 }
 
-.ewf-btn.ewf-btn--inverted {
+body .ewf-btn.ewf-btn--color-default,
+body .ewf-btn.ewf-btn--color-default:active,
+body .ewf-btn.ewf-btn--color-default:hover,
+body .ewf-btn.ewf-btn--color-default:focus {
+    color: #fff;
+	background-color: %6$s;
+	-webkit-box-shadow: inset 0 0 0 2px %6$s;
+	box-shadow: inset 0 0 0 2px %6$s;
+}
+
+body .ewf-btn.ewf-btn--color-accent1,
+body .ewf-btn.ewf-btn--color-accent1:active,
+body .ewf-btn.ewf-btn--color-accent1:hover,
+body .ewf-btn.ewf-btn--color-accent1:focus {
+    color: %6$s;
+	background-color: %2$s;
+	-webkit-box-shadow: inset 0 0 0 2px %2$s;
+	box-shadow: inset 0 0 0 2px %2$s;
+}
+
+body .ewf-btn.ewf-btn--color-accent2,
+body .ewf-btn.ewf-btn--color-accent2:active,
+body .ewf-btn.ewf-btn--color-accent2:hover,
+body .ewf-btn.ewf-btn--color-accent2:focus {
+    color: %6$s;
+	background-color: %3$s;
+	-webkit-box-shadow: inset 0 0 0 2px %3$s;
+	box-shadow: inset 0 0 0 2px %3$s;
+}
+
+body .ewf-btn.ewf-btn--color-accent4,
+body .ewf-btn.ewf-btn--color-accent4:active,
+body .ewf-btn.ewf-btn--color-accent4:hover,
+body .ewf-btn.ewf-btn--color-accent4:focus {
+    color: #FFF;
     background-color: %3$s;
     -webkit-box-shadow: inset 0 0 0 2px %3$s;
     box-shadow: inset 0 0 0 2px %3$s;
 }
 
-.ewf-btn.ewf-btn--inverted:focus,
-
-/* epsilon_accent_color */
-
-.ewf-btn.ewf-btn--inverted:hover {
-    /* epsilon_accent_color */
+body .ewf-btn.ewf-btn--color-accent3,
+body .ewf-btn.ewf-btn--color-accent3:active,
+body .ewf-btn.ewf-btn--color-accent3:hover,
+body .ewf-btn.ewf-btn--color-accent3:focus {
+    color: #FFF;
     background-color: %2$s;
     -webkit-box-shadow: inset 0 0 0 2px %2$s;
     box-shadow: inset 0 0 0 2px %2$s;
-}
-
-.ewf-btn.ewf-btn--inverted:active {
-    background-color: %3$s;
-    /* epsilon_accent_color_second */
-    -webkit-box-shadow: inset 0 0 0 2px %3$s;
-    /* epsilon_accent_color_second */
-    box-shadow: inset 0 0 0 2px %3$s;
-    /* epsilon_accent_color_second */
-}
-
-.ewf-btn.ewf-btn--secondary {
-    -webkit-box-shadow: inset 0 0 0 2px %2$s;
-    /*	epsilon_accent_color */
-    box-shadow: inset 0 0 0 2px %2$s;
-    /*	epsilon_accent_color */
-    color: %2$s;
-    /*	epsilon_accent_color */
-    background-color: transparent;
-}
-
-.ewf-btn.ewf-btn--secondary:focus,
-.ewf-btn.ewf-btn--secondary:hover {
-    -webkit-box-shadow: inset 0 0 0 2px %3$s;
-    /* epsilon_accent_color_second */
-    box-shadow: inset 0 0 0 2px %3$s;
-    /* epsilon_accent_color_second */
-    color: %3$s;
-    /* epsilon_accent_color_second */
-    background: transparent;
-}
-
-.ewf-btn.ewf-btn--secondary:active {
-    -webkit-box-shadow: inset 0 0 0 2px %2$s;
-    box-shadow: inset 0 0 0 2px %2$s;
-    /* epsilon_accent_color_second */
-    color: %2$s;
-    /*	epsilon_accent_color */
-    background: transparent;
-}
-
-#wrap .ewf-btn.ewf-btn--secondary:active,
-#wrap .ewf-btn.ewf-btn--secondary {
-    color: %2$s;
-}
-
-#wrap .ewf-btn.ewf-btn--secondary:focus,
-#wrap .ewf-btn.ewf-btn--secondary:hover {
-    color: %3$s;
-}
-
-#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default,
-#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default:active,
-#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default:hover,
-#wrap .ewf-btn.ewf-btn--secondary.ewf-btn--color-default:focus {
-    color: #fff;
-    ;
-}
-
-#wrap .ewf-btn.ewf-btn--color-accent1,
-#wrap .ewf-btn.ewf-btn--color-accent1:active,
-#wrap .ewf-btn.ewf-btn--color-accent1:hover,
-#wrap .ewf-btn.ewf-btn--color-accent1:focus {
-    color: %2$s;
-    ;
-}
-
-#wrap .ewf-btn.ewf-btn--color-accent2,
-#wrap .ewf-btn.ewf-btn--color-accent2:active,
-#wrap .ewf-btn.ewf-btn--color-accent2:hover,
-#wrap .ewf-btn.ewf-btn--color-accent2:focus {
-    color: %3$s;
-    ;
 }

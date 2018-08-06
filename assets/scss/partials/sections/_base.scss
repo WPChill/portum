@@ -1,257 +1,265 @@
 /* ----------------------- SECTIONS ------------------------ */
 
 .section-grey {
-    background-color: #F5F5F5;
+	background-color: #f5f5f5;
 }
-
 
 /* =Section
    ========================================================================== */
 
 .ewf-section {
-    position: relative;
-    padding: $spacing-section-medium 0;
-    margin-bottom: 0;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+	position: relative;
+	padding: $spacing-section-medium 0;
+	margin-bottom: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 }
 
 .ewf-section--spacing-small {
-    padding: $spacing-section-small 0;
+	padding: $spacing-section-small 0;
 }
 
 .ewf-section--spacing-medium {
-    padding: $spacing-section-medium 0;
+	padding: $spacing-section-medium 0;
 }
 
 .ewf-section--spacing-large {
-    padding: $spacing-section-large 0;
+	padding: $spacing-section-large 0;
 }
 
 .ewf-section--spacing-sm-top {
-    padding-top: $spacing-section-small;
+	padding-top: $spacing-section-small;
 }
 
 .ewf-section--spacing-md-top {
-    padding-top: $spacing-section-medium;
+	padding-top: $spacing-section-medium;
 }
 
 .ewf-section--spacing-lg-top {
-    padding-top: $spacing-section-large;
+	padding-top: $spacing-section-large;
 }
 
 .ewf-section--spacing-none-top {
-    padding-top: 0;
+	padding-top: 0;
 }
 
 .ewf-section--spacing-sm-bottom {
-    padding-bottom: $spacing-section-small;
+	padding-bottom: $spacing-section-small;
 }
 
 .ewf-section--spacing-md-bottom {
-    padding-bottom: $spacing-section-medium;
+	padding-bottom: $spacing-section-medium;
 }
 
 .ewf-section--spacing-lg-bottom {
-    padding-bottom: $spacing-section-large;
+	padding-bottom: $spacing-section-large;
 }
 
 .ewf-section--spacing-none-bottom {
-    padding-bottom: 0;
+	padding-bottom: 0;
 }
 
 .ewf-section--parallax {
-    background-attachment: fixed;
-    background-position: top center;
+	background-attachment: fixed;
+	background-position: top center;
 }
 
 .ewf-section__overlay-color {
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .ewf-section__overlay-pattern {
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .ewf-section__video-background-yt,
 .ewf-section__video-background-local {
-    position: absolute;
-    z-index: 2;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	z-index: 2;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .ewf-section__video-background-local video {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .ewf-section__content {
-    position: relative;
-    z-index: 3;
-    width: 100%;
+	position: relative;
+	z-index: 3;
+	width: 100%;
 }
 
 .ewf-text-align--left {
-    text-align: left;
+	text-align: left;
 }
 
 .ewf-text-align--center {
-    text-align: center;
+	text-align: center;
 }
 
 .ewf-text-align--right {
-    text-align: right;
+	text-align: right;
 }
 
 .ewf-text-transform--uppercase {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-    .ewf-valign--top .ewf-section__content>div>.row {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-    .ewf-valign--middle .ewf-section__content>div>.row {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .ewf-valign--bottom .ewf-section__content>div>.row {
-        display: flex;
-        align-items: flex-end;
-        flex-wrap: wrap;
-    }
+	.ewf-valign--top .ewf-section__content > div > .row {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+	.ewf-valign--middle .ewf-section__content > div > .row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.ewf-valign--bottom .ewf-section__content > div > .row {
+		display: flex;
+		align-items: flex-end;
+		flex-wrap: wrap;
+	}
 }
-
 
 /* ----------------------- SECTIONS ----- end ------------------------ */
 
 .footer-sub {
-    padding-top: 25px;
+	padding-top: 25px;
 }
-
 
 /* =Button
    ========================================================================== */
 
 .ewf-btn {
-    background-color: $accent-1-color;
-    box-shadow: inset 0 0 0 2px $accent-1-color;
-    color: #fff;
-    position: relative;
-    background-clip: padding-box;
-    display: inline-block;
-    min-width: 110px;
-    padding: 6px 13px;
-    border-radius: 21px;
-    margin-bottom: 26px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    appearance: none;
-    transition: .3s all ease;
-    &:focus,
-    &:hover {
-        box-shadow: inset 0 0 0 2px $accent-2-color;
-        background-color: $accent-2-color;
-        color: #fff;
-    }
-    &:active {
-        background-color: $accent-1-color;
-        box-shadow: inset 0 0 0 2px $accent-1-color;
-        color: #fff;
-    }
+	background-color: $accent-1-color;
+	box-shadow: inset 0 0 0 2px $accent-1-color;
+	color: #fff;
+	position: relative;
+	background-clip: padding-box;
+	display: inline-block;
+	min-width: 110px;
+	padding: 6px 13px;
+	border-radius: 21px;
+	margin-bottom: 26px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	appearance: none;
+	transition: .3s all ease;
+	&:focus,
+	&:hover {
+		box-shadow: inset 0 0 0 2px $accent-2-color;
+		background-color: $accent-2-color;
+		color: #fff;
+	}
+	&:active {
+		background-color: $accent-1-color;
+		box-shadow: inset 0 0 0 2px $accent-1-color;
+		color: #fff;
+	}
 }
 
-#wrap .ewf-btn.ewf-btn-color-default,
-#wrap .ewf-btn:active,
-#wrap .ewf-btn:hover,
-#wrap .ewf-btn:focus {
-    color: #fff;
+.ewf-btn.ewf-btn-color-default,
+.ewf-btn:active,
+.ewf-btn:hover,
+.ewf-btn:focus {
+	color: #fff;
 }
 
-#wrap .ewf-btn,
-#wrap .ewf-btn.ewf-btn--color-default,
-#wrap .ewf-btn:active,
-#wrap .ewf-btn:hover,
-#wrap .ewf-btn:focus {
-    color: #fff;
+.ewf-btn,
+.ewf-btn.ewf-btn--color-default,
+.ewf-btn:active,
+.ewf-btn:hover,
+.ewf-btn:focus {
+	color: #fff;
 }
 
-#wrap .ewf-btn.ewf-btn--color-accent1,
-#wrap .ewf-btn.ewf-btn--color-accent1:active,
-#wrap .ewf-btn.ewf-btn--color-accent1:hover,
-#wrap .ewf-btn.ewf-btn--color-accent1:focus {
-    color: $accent-1-color;
+.ewf-btn.ewf-btn--color-accent1,
+.ewf-btn.ewf-btn--color-accent1:active,
+.ewf-btn.ewf-btn--color-accent1:hover,
+.ewf-btn.ewf-btn--color-accent1:focus {
+	color: $accent-1-color;
 }
 
-#wrap .ewf-btn.ewf-btn--color-accent2,
-#wrap .ewf-btn.ewf-btn--color-accent2:active,
-#wrap .ewf-btn.ewf-btn--color-accent2:hover,
-#wrap .ewf-btn.ewf-btn--color-accent2:focus {
-    color: $accent-2-color;
+.ewf-btn.ewf-btn--color-accent2,
+.ewf-btn.ewf-btn--color-accent2:active,
+.ewf-btn.ewf-btn--color-accent2:hover,
+.ewf-btn.ewf-btn--color-accent2:focus {
+	color: $accent-2-color;
+}
+
+.ewf-btn.ewf-btn--color-accent3,
+.ewf-btn.ewf-btn--color-accent3:active,
+.ewf-btn.ewf-btn--color-accent3:hover,
+.ewf-btn.ewf-btn--color-accent3:focus {
+	color: #fff;
+	background-color: $accent-1-color;
+}
+
+.ewf-btn.ewf-btn--color-accent4,
+.ewf-btn.ewf-btn--color-accent4:active,
+.ewf-btn.ewf-btn--color-accent4:hover,
+.ewf-btn.ewf-btn--color-accent4:focus {
+	color: #fff;
+	background-color: $accent-2-color;
 }
 
 .ewf-btn.ewf-btn--inverted {
-    background-color: $accent-2-color;
-    box-shadow: inset 0 0 0 2px $accent-2-color;
-    color: $accent-2-color;
-    ;
-    &:focus,
-    &:hover {
-        background-color: $accent-1-color;
-        box-shadow: inset 0 0 0 2px $accent-1-color;
-        color: $accent-1-color;
-    }
-    &:active {
-        background-color: $accent-2-color;
-        box-shadow: inset 0 0 0 2px $accent-2-color;
-        color: $accent-2-color;
-    }
+	background-color: $accent-2-color;
+	box-shadow: inset 0 0 0 2px $accent-2-color;
+	color: $accent-2-color;;
+	&:focus,
+	&:hover {
+		background-color: $accent-1-color;
+		box-shadow: inset 0 0 0 2px $accent-1-color;
+		color: $accent-1-color;
+	}
+	&:active {
+		background-color: $accent-2-color;
+		box-shadow: inset 0 0 0 2px $accent-2-color;
+		color: $accent-2-color;
+	}
 }
 
 .ewf-btn.ewf-btn--small {
-    padding: 2px 14px;
-    border-radius: 18px;
+	padding: 2px 14px;
+	border-radius: 18px;
 }
 
 .ewf-btn.ewf-btn--large {
-    padding: 9px 21px;
-    border-radius: 24px;
+	padding: 9px 21px;
+	border-radius: 24px;
 }
 
-.ewf-btn.ewf-btn--small {
-    padding: 2px 14px;
-    border-radius: 18px;
+
+.ewf-btn.ewf-btn--huge {
+	padding: 16px 29px;
+	border-radius: 32px;
+	font-weight: bold;
 }
 
 .ewf-btn.ewf-btn--secondary {
-    box-shadow: inset 0 0 0 2px $accent-1-color;
-    background-color: transparent;
-    color: $accent-1-color;
-}
-
-.ewf-btn.ewf-btn--huge {
-    padding: 16px 29px;
-    border-radius: 32px;
-    font-weight: bold;
+	box-shadow: inset 0 0 0 2px $accent-1-color;
+	background-color: transparent;
+	color: $accent-1-color;
 }
