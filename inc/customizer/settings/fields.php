@@ -1207,6 +1207,8 @@ Epsilon_Customizer::add_field( 'portum_page_changer', array(
 	'label'    => esc_html__( 'Available pages', 'portum' ),
 	'section'  => 'portum_repeatable_section',
 	'priority' => 0,
+	'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
+	'page_builder_id' => 'portum_frontpage_sections',
 ) );
 
 Epsilon_Customizer::add_field( 'portum_logo_dimensions', array(
