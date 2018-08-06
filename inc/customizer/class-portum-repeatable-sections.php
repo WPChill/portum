@@ -841,6 +841,120 @@ class Portum_Repeatable_Sections {
 		);
 	}
 
+
+	/**
+	 * Repeatable accordion section
+	 *
+	 * @return array
+	 */
+	private function repeatable_accordion() {
+		return array(
+			'id'            => 'accordion',
+			'title'         => esc_html__( 'F.A.Q. Section', 'portum' ),
+			'description'   => esc_html__( 'General information about your practices. It retrieves content from Theme Content / General information section.', 'portum' ),
+			'image'         => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-faq.png',
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'right',
+						'choices' => array( 'left', 'top', 'right' ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right' ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom' ),
+					),
+				),
+				'styling' => array(
+					'background-color'    => array(
+						'default' => false,
+					),
+					'background-image'    => array(
+						'default' => false,
+					),
+					'background-position' => array(
+						'default' => 'center',
+					),
+					'background-size'     => array(
+						'default' => 'initial',
+					),
+					'background-repeat'   => array(
+						'default' => 'repeat',
+					),
+					'background-parallax' => array(
+						'default' => false,
+					),
+					'background-video'    => array(
+						'default' => '',
+					),
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p' ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
+				'accordion_title'             => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'Why Choose us?' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'accordion_subtitle'          => array(
+					'label'             => esc_html__( 'Subtitle', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'wp_kses_post',
+					'default'           => wp_kses_post( 'We are a full-service, non-profit community hospital, offering comprehensive medical, surgical and therapeutic services.' ),
+				),
+				'accordion_section_unique_id' => array(
+					'label'             => esc_html__( 'Section ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
+				'accordion_grouping'          => array(
+					'label'       => esc_html__( 'Filter shown FAQ items', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_accordion', 'info_title' ),
+					'default'     => array( 'all' ),
+				),
+				'accordion_navigation'        => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'portum_accordion_section',
+					'navigateToLabel' => esc_html__( 'Add/Edit FAQ &rarr;', 'portum' ),
+				),
+				'accordion_repeater_field'    => array(
+					'type'    => 'hidden',
+					'default' => 'portum_accordion',
+				),
+			),
+		);
+	}
+
 	/**
 	 * Repeatable portfolio section
 	 *

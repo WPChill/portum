@@ -56,12 +56,11 @@
 			Portum.Theme.blog();
 			Portum.Theme.menu();
 			Portum.Theme.animations();
-			Portum.Theme.newsletter();
 			Portum.Theme.backTop();
 			Portum.Theme.hideBackTop();
-			Portum.Theme.footerLogo();
 			Portum.Theme.smoothScroll();
 			Portum.Theme.contact();
+			Portum.Theme.handleAccordions();
 
 			/**
 			 * Mobile functions
@@ -94,6 +93,7 @@
 		 */
 		Portum.Theme.map();
 		Portum.Theme.header();
+
 	});
 
 })(jQuery);

@@ -270,11 +270,20 @@ $sections = array(
 		),
 	),
 	array(
+		'id'   => 'portum_accordion_section',
+		'args' => array(
+			'title'    => esc_html__( 'Accordion / FAQ', 'medzone' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 12,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
 		'id'   => 'portum_clientlists_section',
 		'args' => array(
 			'title'    => esc_html__( 'Client Logos Section', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
-			'priority' => 12,
+			'priority' => 13,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),

@@ -8983,6 +8983,92 @@ body.ctdw-bar-visible #header.header--over-content
     font-weight: 900;
 }
 
+/* =Accordion
+   ========================================================================== */
+.accordion
+{
+    margin-bottom: 28px;
+    margin-bottom: 1.86666666em;
+}
+.accordion .accordion-item__container
+{
+    position: relative;
+
+    margin: 10px auto;
+}
+
+.accordion-item
+{
+    position: relative;
+
+    display: block;
+
+    padding: 14px 42px;
+    padding: .93333333em 2.8em;
+
+    background-color: #f9f9fa;
+}
+.accordion-item:not(:first-child)
+{
+    margin-top: 14px;
+    margin-top: .93333333em;
+}
+.accordion-item:after
+{
+    font-family: 'FontAwesome';
+
+    float: right;
+
+    content: '\f107';
+}
+.accordion-item .active:after
+{
+    content: '\f106';
+}
+.accordion-item .active span:after
+{
+    position: absolute;
+    bottom: -1px;
+    left: 42px;
+    left: 2.8em;
+
+    width: 84px;
+    width: 5.6em;
+
+    content: ' ';
+
+    border-bottom: 1px solid #e11931;
+}
+
+.accordion-item-content
+{
+    display: none;
+
+    padding: 28px 42px;
+    padding: 1.86666666em 2.8em;
+
+    border-top: 1px solid #e1e1e1;
+    background-color: #f9f9fa;
+}
+.accordion-item-content:after
+{
+    font-size: 0;
+
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: ' ';
+}
+.accordion-item-content:last-child
+{
+    margin-bottom: 0;
+}
+
+/* = END Accordion Section
+   ========================================================================== */
 .page .widget:first-of-type
 {
     margin-top: 45px;
