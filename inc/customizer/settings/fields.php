@@ -82,8 +82,11 @@ Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'stylesheet'    => 'portum-main',
 	'choices'       => array(
 		'font-family',
+		'font-weight',
+		'font-style',
 		'font-size',
 		'line-height',
+		'letter-spacing',
 	),
 	'selectors'     => array(
 		'body',
@@ -104,6 +107,10 @@ Epsilon_Customizer::add_field( 'portum_typography_headings', array(
 	'stylesheet'    => 'portum-main',
 	'choices'       => array(
 		'font-family',
+		'font-weight',
+		'font-style',
+		'font-size',
+		'line-height',
 		'letter-spacing',
 	),
 	'selectors'     => array(
@@ -121,8 +128,11 @@ Epsilon_Customizer::add_field( 'portum_typography_headings', array(
 	),
 	'font_defaults' => array(
 		'font-family'    => 'default_font',
+		'font-size'      => '16',
 		'letter-spacing' => '0',
-		'font-weight'    => '',
+		'font-weight'    => 'on',
+		'line-height'    => '22',
+		'font-style'     => '',
 	),
 ) );
 
@@ -136,6 +146,10 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 	'choices'       => array(
 		'font-family',
 		'font-weight',
+		'font-style',
+		'font-size',
+		'line-height',
+		'letter-spacing',
 	),
 	'selectors'     => array(
 		'#menu',
