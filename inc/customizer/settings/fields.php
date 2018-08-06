@@ -480,6 +480,38 @@ Epsilon_Customizer::add_field( 'portum_copyright_contents', array(
  */
 
 /**
+ * Schedule
+ */
+Epsilon_Customizer::add_field(
+	'portum_schedule',
+	array(
+		'type'         => 'epsilon-repeater',
+		'section'      => 'portum_schedule_section',
+		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+		'label'        => esc_html__( 'Schedule', 'portum' ),
+		'button_label' => esc_html__( 'Add new entries', 'portum' ),
+		'row_label'    => array(
+			'type'  => 'field',
+			'field' => 'schedule_days',
+		),
+		'fields'       => array(
+			'schedule_days'  => array(
+				'label'             => esc_html__( 'Days', 'portum' ),
+				'description'       => esc_html__( 'e.g. Monday - Thursday', 'portum' ),
+				'type'              => 'text',
+				'sanitize_callback' => 'wp_kses_post',
+			),
+			'schedule_hours' => array(
+				'label'             => esc_html__( 'Hours', 'portum' ),
+				'description'       => esc_html__( 'e.g. 9:30 am – 8:30 pm', 'portum' ),
+				'type'              => 'text',
+				'sanitize_callback' => 'wp_kses_post',
+			),
+		),
+	)
+);
+
+/**
  * Testimonials
  */
 Epsilon_Customizer::add_field( 'portum_testimonials', array(

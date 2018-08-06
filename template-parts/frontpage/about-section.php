@@ -52,7 +52,7 @@ $parent_attr    = array(
 							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
 							<?php if ( $button_primary ) { ?>
-								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
+								<a class="ewf-btn ewf-btn--large <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
 
 									<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
 							<?php }; ?>
@@ -67,7 +67,7 @@ $parent_attr    = array(
 							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
 							<?php if ( $button_primary ) { ?>
-								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
+								<a class="ewf-btn ewf-btn--large <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
 
 									<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
 							<?php }; ?>
@@ -86,7 +86,7 @@ $parent_attr    = array(
 							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
 							<?php if ( $button_primary ) { ?>
-								<a class="ewf-btn ewf-btn--large" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+								<a class="ewf-btn ewf-btn--large <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
 							<?php }; ?>
 
 							<?php if ( $fields['about_image'] ) { ?>

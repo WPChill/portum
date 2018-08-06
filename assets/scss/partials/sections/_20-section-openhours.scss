@@ -1,0 +1,23 @@
+/* =Open hours section
+   ========================================================================== */
+.section-openhours {
+	.open-hours {
+		padding: 10px 30px;
+	}
+
+
+	.open-hours__schedule__container {
+		position: relative;
+
+		p.open_hours__schedule_hours {
+			opacity: .65;
+		}
+
+		.text-uppercase {
+			font-weight: 900;
+		}
+	}
+
+
+
+}
