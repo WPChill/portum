@@ -483,64 +483,63 @@ Epsilon_Customizer::add_field( 'portum_copyright_contents', array(
 /**
  * Accordion General Information
  */
-Epsilon_Customizer::add_field(
-	'portum_accordion',
-	array(
-		'type'         => 'epsilon-repeater',
-		'section'      => 'portum_accordion_section',
-		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-		'label'        => esc_html__( 'General Information', 'portum' ),
-		'button_label' => esc_html__( 'Add/edit new entries', 'portum' ),
-		'row_label'    => array(
-			'type'  => 'field',
-			'field' => 'info_title',
+Epsilon_Customizer::add_field( 'portum_accordion', array(
+	'type'         => 'epsilon-repeater',
+	'section'      => 'portum_accordion_section',
+	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'        => esc_html__( 'General Information', 'portum' ),
+	'button_label' => esc_html__( 'Add/edit new entries', 'portum' ),
+	'row_label'    => array(
+		'type'  => 'field',
+		'field' => 'info_title',
+	),
+	'fields'       => array(
+		'accordion_title'  => array(
+			'label'   => esc_html__( 'Accordion Title', 'portum' ),
+			'type'    => 'text',
+			'default' => '',
 		),
-		'fields'       => array(
-			'info_title' => array(
-				'label'   => esc_html__( 'Accordion Title', 'portum' ),
-				'type'    => 'text',
-				'default' => '',
-			),
-			'info_text'  => array(
-				'label'   => esc_html__( 'Accordion Text', 'portum' ),
-				'type'    => 'epsilon-text-editor',
-				'default' => '',
-			),
+		'accordion_text'   => array(
+			'label'   => esc_html__( 'Accordion Text', 'portum' ),
+			'type'    => 'epsilon-text-editor',
+			'default' => '',
 		),
-	)
-);
+		'accordion_opened' => array(
+			'label'   => esc_html__( 'Opened by default', 'portum' ),
+			'type'    => 'epsilon-toggle',
+			'default' => false,
+		),
+	),
+) );
 
 /**
  * Schedule
  */
-Epsilon_Customizer::add_field(
-	'portum_schedule',
-	array(
-		'type'         => 'epsilon-repeater',
-		'section'      => 'portum_schedule_section',
-		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-		'label'        => esc_html__( 'Schedule', 'portum' ),
-		'button_label' => esc_html__( 'Add new entries', 'portum' ),
-		'row_label'    => array(
-			'type'  => 'field',
-			'field' => 'schedule_days',
+Epsilon_Customizer::add_field( 'portum_schedule', array(
+	'type'         => 'epsilon-repeater',
+	'section'      => 'portum_schedule_section',
+	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'        => esc_html__( 'Schedule', 'portum' ),
+	'button_label' => esc_html__( 'Add new entries', 'portum' ),
+	'row_label'    => array(
+		'type'  => 'field',
+		'field' => 'schedule_days',
+	),
+	'fields'       => array(
+		'schedule_days'  => array(
+			'label'             => esc_html__( 'Days', 'portum' ),
+			'description'       => esc_html__( 'e.g. Monday - Thursday', 'portum' ),
+			'type'              => 'text',
+			'sanitize_callback' => 'wp_kses_post',
 		),
-		'fields'       => array(
-			'schedule_days'  => array(
-				'label'             => esc_html__( 'Days', 'portum' ),
-				'description'       => esc_html__( 'e.g. Monday - Thursday', 'portum' ),
-				'type'              => 'text',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'schedule_hours' => array(
-				'label'             => esc_html__( 'Hours', 'portum' ),
-				'description'       => esc_html__( 'e.g. 9:30 am – 8:30 pm', 'portum' ),
-				'type'              => 'text',
-				'sanitize_callback' => 'wp_kses_post',
-			),
+		'schedule_hours' => array(
+			'label'             => esc_html__( 'Hours', 'portum' ),
+			'description'       => esc_html__( 'e.g. 9:30 am – 8:30 pm', 'portum' ),
+			'type'              => 'text',
+			'sanitize_callback' => 'wp_kses_post',
 		),
-	)
-);
+	),
+) );
 
 /**
  * Testimonials

@@ -928,6 +928,12 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 					'default'           => wp_kses_post( 'We are a full-service, non-profit community hospital, offering comprehensive medical, surgical and therapeutic services.' ),
 				),
+				'accordion_text'              => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'type'              => 'epsilon-text-editor',
+					'sanitize_callback' => 'wp_kses_post',
+					'default'           => wp_kses_post( 'Toggle me' ),
+				),
 				'accordion_section_unique_id' => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',

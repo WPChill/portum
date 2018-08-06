@@ -10,7 +10,7 @@ $frontpage           = Epsilon_Page_Generator::get_instance( 'portum_frontpage_s
 $fields              = $frontpage->sections[ $section_id ];
 $grouping            = array(
 	'values'   => $fields['accordion_grouping'],
-	'group_by' => 'info_title',
+	'group_by' => 'accordion_title',
 );
 $fields['accordion'] = $frontpage->get_repeater_field( $fields['accordion_repeater_field'], array(), $grouping );
 
@@ -39,28 +39,75 @@ $parent_attr = array(
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'accordion', $fields ) ); ?>">
 				<div class="row row-eq-height">
-					<div class="col-sm-7">
-						<h4><?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['accordion_title'], $fields['accordion_subtitle'] ) ); ?></h4>
-						<?php echo wpautop( wp_kses_post( $fields['accordion_text'] ) ); ?>
-					</div>
 
-					<?php if ( ! empty( $fields['accordion'] ) ) { ?>
-						<div class="accordion col-sm-5">
-							<?php foreach ( $fields['accordion'] as $key => $accordion ) { ?>
-								<div class="accordion-item__container">
-									<?php
-									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_accordion_section', 'portum_accordion' ), Epsilon_Helper::allowed_kses_pencil() );
-									?>
-									<a class="accordion-item" href="#">
-										<span><?php echo esc_html( $accordion['info_title'] ); ?></span>
-									</a>
-									<div class="accordion-item-content">
-										<?php echo wp_kses_post( $accordion['info_text'] ); ?>
-									</div>
-								</div><!--/.accordion-item-container-->
-							<?php } ?>
-						</div>
+					<?php if ( 'left' === $fields['accordion_row_title_align'] ) { ?>
+						<div class="col-sm-7">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['accordion_title'], $fields['accordion_subtitle'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['accordion_text'] ) ); ?>
+						</div><!--/.col-sm-7-->
+						<?php if ( ! empty( $fields['accordion'] ) ) { ?>
+							<div class="accordion col-sm-5">
+								<?php foreach ( $fields['accordion'] as $key => $accordion ) { ?>
+									<div class="accordion-item__container">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_accordion_section', 'portum_accordion' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+										<h5 class="accordion-item-toggle">
+											<?php echo esc_html( $accordion['accordion_title'] ); ?>
+										</h5><!--/.accordion-item-toggle-->
+										<div class="accordion-item-content <?php echo esc_attr( true === $accordion['accordion_opened'] ) ? 'accordion-item-opened' : ''; ?>">
+											<?php echo wp_kses_post( $accordion['accordion_text'] ); ?>
+										</div><!--/.accordion-item-content-->
+									</div><!--/.accordion-item-container-->
+								<?php } //endforeach ?>
+							</div><!--/.accordion-->
+						<?php } // endif ?>
+					<?php } elseif ( 'right' === $fields['accordion_row_title_align'] ) { ?>
+						<?php if ( ! empty( $fields['accordion'] ) ) { ?>
+							<div class="accordion col-sm-5">
+								<?php foreach ( $fields['accordion'] as $key => $accordion ) { ?>
+									<div class="accordion-item__container">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_accordion_section', 'portum_accordion' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+										<h5 class="accordion-item-toggle">
+											<?php echo esc_html( $accordion['accordion_title'] ); ?>
+										</h5><!--/.accordion-item-toggle-->
+										<div class="accordion-item-content <?php echo esc_attr( true === $accordion['accordion_opened'] ) ? 'accordion-item-opened' : ''; ?>">
+											<?php echo wp_kses_post( $accordion['accordion_text'] ); ?>
+										</div><!--/.accordion-item-content-->
+									</div><!--/.accordion-item-container-->
+								<?php } //endforeach ?>
+							</div><!--/.accordion-->
+						<?php } // endif ?>
+						<div class="col-sm-7">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['accordion_title'], $fields['accordion_subtitle'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['accordion_text'] ) ); ?>
+						</div><!--/.col-sm-7-->
+					<?php } else { ?>
+						<div class="col-sm-12">
+							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['accordion_title'], $fields['accordion_subtitle'] ) ); ?>
+							<?php echo wpautop( wp_kses_post( $fields['accordion_text'] ) ); ?>
+						</div><!--/.col-sm-7-->
+						<?php if ( ! empty( $fields['accordion'] ) ) { ?>
+							<div class="accordion col-sm-12">
+								<?php foreach ( $fields['accordion'] as $key => $accordion ) { ?>
+									<div class="accordion-item__container">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_accordion_section', 'portum_accordion' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+										<h5 class="accordion-item-toggle" href="#">
+											<?php echo esc_html( $accordion['accordion_title'] ); ?>
+										</h5><!--/.accordion-item-toggle-->
+										<div class="accordion-item-content <?php echo esc_attr( true === $accordion['accordion_opened'] ) ? 'accordion-item-opened' : ''; ?>">
+											<?php echo wp_kses_post( $accordion['accordion_text'] ); ?>
+										</div><!--/.accordion-item-content-->
+									</div><!--/.accordion-item-container-->
+								<?php } //endforeach ?>
+							</div><!--/.accordion-->
+						<?php } // endif ?>
 					<?php } ?>
+
 				</div>
 			</div>
 		</div>

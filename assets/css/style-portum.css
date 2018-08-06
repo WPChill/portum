@@ -8997,23 +8997,26 @@ body.ctdw-bar-visible #header.header--over-content
     margin: 10px auto;
 }
 
-.accordion-item
+.accordion-item-toggle
 {
     position: relative;
 
     display: block;
 
+    margin-bottom: 0;
     padding: 14px 42px;
     padding: .93333333em 2.8em;
 
+    cursor: pointer;
+
     background-color: #f9f9fa;
 }
-.accordion-item:not(:first-child)
+.accordion-item-toggle:not(:first-child)
 {
     margin-top: 14px;
     margin-top: .93333333em;
 }
-.accordion-item:after
+.accordion-item-toggle:after
 {
     font-family: 'FontAwesome';
 
@@ -9021,11 +9024,11 @@ body.ctdw-bar-visible #header.header--over-content
 
     content: '\f107';
 }
-.accordion-item .active:after
+.accordion-item-toggle .active:after
 {
     content: '\f106';
 }
-.accordion-item .active span:after
+.accordion-item-toggle .active span:after
 {
     position: absolute;
     bottom: -1px;
@@ -9065,6 +9068,10 @@ body.ctdw-bar-visible #header.header--over-content
 .accordion-item-content:last-child
 {
     margin-bottom: 0;
+}
+.accordion-item-content.accordion-item-opened
+{
+    display: block;
 }
 
 /* = END Accordion Section

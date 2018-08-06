@@ -497,18 +497,18 @@ var Portum = {
 		 */
 		handleAccordions: function() {
 
-			jQuery( document ).on( 'click', '.accordion-item', function( e ) {
-				e.preventDefault();
-				if ( jQuery( this ).siblings('.accordion-item-content').is( ':visible' ) ) {
-					jQuery( this ).siblings('.accordion-item').removeClass( 'active' ).slideUp();
-				} else {
-					jQuery( this ).siblings( '.accordion-item' ).removeClass( 'active' );
-					jQuery( this ).siblings( '.accordion-item-content' ).slideUp( 'fast' );
-					jQuery( this ).addClass( 'active' ).next().slideToggle( 'fast' );
-				}
-			} );
+			jQuery( document ).on( 'click', '.accordion-item-toggle', function( e ) {
 
-			jQuery( '.accordion .accordion-item:first-child' ).trigger( 'click' ).addClass( 'active' );
+				// preventDefault clicks since accordion-item-toggles are links
+				e.preventDefault();
+
+				// show the clicked on panel
+				jQuery( this ).next().slideToggle( 'fast' );
+
+				// hide the other panels
+				jQuery( '.accordion-item-content' ).not( $( this ).next() ).slideUp( 'fast' );
+
+			} );
 
 		},
 

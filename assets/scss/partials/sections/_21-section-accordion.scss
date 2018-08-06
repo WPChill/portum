@@ -11,12 +11,14 @@
 	}
 }
 
-.accordion-item {
+.accordion-item-toggle {
 	position: relative;
 	display: block;
 	padding: 14px 42px;
 	padding: 0.93333333em 2.8em;
 	background-color: #f9f9fa;
+	cursor: pointer;
+	margin-bottom: 0;
 
 	&:not(:first-child) {
 		margin-top: 14px;
@@ -63,6 +65,10 @@
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&.accordion-item-opened {
+		display: block;
 	}
 }
 
