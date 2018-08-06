@@ -6580,25 +6580,22 @@ body.ctdw-bar-visible #header.header--over-content {
    ========================================================================== */
 .accordion {
   margin-bottom: 28px;
-  margin-bottom: 1.86666666em;
 }
 .accordion .accordion-item__container {
   position: relative;
-  margin: 10px auto;
 }
 
 .accordion-item-toggle {
   position: relative;
   display: block;
   padding: 14px 42px;
-  padding: 0.93333333em 2.8em;
-  background-color: #f9f9fa;
+  background-color: #FFF;
+  border: 1px solid #EEE;
   cursor: pointer;
   margin-bottom: 0;
 }
 .accordion-item-toggle:not(:first-child) {
   margin-top: 14px;
-  margin-top: 0.93333333em;
 }
 .accordion-item-toggle:after {
   float: right;
@@ -6612,9 +6609,7 @@ body.ctdw-bar-visible #header.header--over-content {
   position: absolute;
   bottom: -1px;
   left: 42px;
-  left: 2.8em;
   width: 84px;
-  width: 5.6em;
   border-bottom: 1px solid #e11931;
   content: " ";
 }
@@ -6622,9 +6617,9 @@ body.ctdw-bar-visible #header.header--over-content {
 .accordion-item-content {
   display: none;
   padding: 28px 42px;
-  padding: 1.86666666em 2.8em;
-  border-top: 1px solid #e1e1e1;
-  background-color: #f9f9fa;
+  border: 1px solid #EEE;
+  border-top: none;
+  background-color: #FFF;
 }
 .accordion-item-content:after {
   clear: both;
