@@ -37,7 +37,6 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 
 		<?php
 		$attr_helper->generate_color_overlay();
-		$attr_helper->generate_video_overlay();
 		?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'openhours', $fields ) ); ?>">

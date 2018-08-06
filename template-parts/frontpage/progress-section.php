@@ -37,7 +37,6 @@ $span = 12 / absint( $fields['progress_column_group'] );
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_color_overlay();
-		$attr_helper->generate_video_overlay();
 
 		$span = 12 / absint( $fields['progress_column_group'] );
 

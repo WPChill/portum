@@ -491,7 +491,7 @@ Epsilon_Customizer::add_field( 'portum_accordion', array(
 	'button_label' => esc_html__( 'Add/edit new entries', 'portum' ),
 	'row_label'    => array(
 		'type'  => 'field',
-		'field' => 'info_title',
+		'field' => 'accordion_title',
 	),
 	'fields'       => array(
 		'accordion_title'  => array(

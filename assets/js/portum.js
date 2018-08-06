@@ -174,28 +174,6 @@ var Portum = {
 	 * Plugin related functions
 	 */
 	Plugins: {
-		videoSections: function( $ ) {
-			if ( typeof $.fn.YTPlayer !== 'undefined' ) {
-
-				jQuery( '.ewf-section__video-background-yt-source' ).each( function( index ) {
-
-					var $t = jQuery( this ),
-						$parent = $t.parent(),
-						newID = 'ewf-section__video-background-yt-' + index,
-						videoSource = jQuery( this ).attr( 'data-source' );
-
-					$parent.attr( 'id', newID );
-
-					var videoBackgroundConfig = '{videoURL:\'' + videoSource + '\',containment:\'#' + newID + '\',showControls:false,autoPlay:true, mute:true, startAt:0, opacity:1}';
-
-					$t.attr( 'data-property', videoBackgroundConfig );
-
-				} );
-
-				jQuery( '.ewf-section__video-background-yt-source' ).YTPlayer( { playOnlyIfVisible: true } );
-
-			}
-		},
 		advancedSlider: function() {
 
 			jQuery( '.ewf-slider' ).each( function() {

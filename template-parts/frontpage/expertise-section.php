@@ -34,7 +34,6 @@ $parent_attr         = array(
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_color_overlay();
-		$attr_helper->generate_video_overlay();
 
 		$section_content_cols = ( $fields['expertise_image'] ? '7' : '12' );
 		?>

@@ -544,7 +544,6 @@ class Portum {
 		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.min.css' );
 		wp_register_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 		wp_register_style( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.css' );
-		wp_register_style( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.css' );
 		wp_register_style( 'animate', get_template_directory_uri() . '/assets/vendors/animate/animate.css' );
 		wp_register_style( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/magnific-popup.css' );
 		wp_register_script( 'viewport', get_template_directory_uri() . '/assets/vendors/viewport/viewport.js', array( 'jquery' ), $theme['Version'], true );
@@ -557,7 +556,6 @@ class Portum {
 		wp_register_script( 'easypiechart', get_template_directory_uri() . '/assets/vendors/easypiechart/jquery.easypiechart.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'stickem', get_template_directory_uri() . '/assets/vendors/stickem/jquery.stickem.js', array(), $theme['Version'], true );
 		wp_register_script( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/jquery.magnific-popup.min.js', array(), $theme['Version'], true );
-		wp_register_script( 'ytplayer', get_template_directory_uri() . '/assets/vendors/ytplayer/jquery.mb.YTPlayer.min.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'portum-object', get_template_directory_uri() . '/assets/js/portum.js', array( 'jquery' ), $theme['Version'], true );
 		$string = '';
 		$api    = get_theme_mod( 'portum_google_api_key', false );
@@ -579,7 +577,6 @@ class Portum {
 		wp_enqueue_style( 'portum-main', get_template_directory_uri() . '/assets/css/style-portum.css', array(
 			'font-awesome',
 			'animate',
-			'ytplayer',
 			'portum',
 		), $theme['Version'] );
 
@@ -594,7 +591,6 @@ class Portum {
 			'superfish',
 			'stickem',
 			'viewport',
-			'ytplayer',
 			'portum-object',
 		), $theme['Version'], true );
 
