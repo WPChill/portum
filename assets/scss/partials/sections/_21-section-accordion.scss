@@ -3,11 +3,9 @@
 
 .accordion {
 	margin-bottom: 28px;
-	margin-bottom: 1.86666666em;
 
 	.accordion-item__container {
 		position: relative;
-		margin: 10px auto;
 	}
 }
 
@@ -15,14 +13,13 @@
 	position: relative;
 	display: block;
 	padding: 14px 42px;
-	padding: 0.93333333em 2.8em;
-	background-color: #f9f9fa;
+	background-color: #FFF;
+	border: 1px solid #EEE;
 	cursor: pointer;
 	margin-bottom: 0;
 
 	&:not(:first-child) {
 		margin-top: 14px;
-		margin-top: 0.93333333em;
 	}
 
 	&:after {
@@ -39,9 +36,7 @@
 		position: absolute;
 		bottom: -1px;
 		left: 42px;
-		left: 2.8em;
 		width: 84px;
-		width: 5.6em;
 		border-bottom: 1px solid #e11931;
 		content: " ";
 	}
@@ -50,9 +45,9 @@
 .accordion-item-content {
 	display: none;
 	padding: 28px 42px;
-	padding: 1.86666666em 2.8em;
-	border-top: 1px solid #e1e1e1;
-	background-color: #f9f9fa;
+	border: 1px solid #EEE;
+	border-top: none;
+	background-color: #FFF;
 
 	&:after {
 		clear: both;
