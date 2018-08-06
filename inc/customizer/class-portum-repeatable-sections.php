@@ -114,9 +114,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -247,9 +245,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -389,9 +385,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -638,9 +632,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -767,9 +759,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -900,9 +890,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1158,9 +1146,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1261,9 +1247,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1362,9 +1346,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1467,9 +1449,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1685,9 +1665,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1796,9 +1774,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1949,9 +1925,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -2066,9 +2040,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -2183,9 +2155,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -2288,9 +2258,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -2407,9 +2375,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
-					'background-video'    => array(
-						'default' => '',
-					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(

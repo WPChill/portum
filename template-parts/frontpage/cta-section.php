@@ -27,7 +27,6 @@ $parent_attr = array(
 
 		<?php
 		$attr_helper->generate_color_overlay();
-		$attr_helper->generate_video_overlay();
 
 		$button_primary   = $fields['cta_button_primary_label'] . $fields['cta_button_primary_url'];
 		$button_secondary = $fields['cta_button_secondary_label'] . $fields['cta_button_secondary_url'];

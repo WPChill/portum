@@ -29,8 +29,8 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-$i    = 0;
-$span = 12 / absint( $fields['testimonials_column_group'] );
+$i           = 0;
+$span        = 12 / absint( $fields['testimonials_column_group'] );
 $items_count = 0;
 $items_class = null;
 ?>
@@ -41,7 +41,6 @@ $items_class = null;
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_color_overlay();
-		$attr_helper->generate_video_overlay();
 		?>
 
 		<div class="ewf-section__content">

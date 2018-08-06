@@ -37,7 +37,6 @@ $parent_attr = array(
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_color_overlay();
-		$attr_helper->generate_video_overlay();
 
 		$section_item_columns  = 12 / intval( $fields['services_column_group'] );
 		$section_items_content = 12 - $section_item_columns;
