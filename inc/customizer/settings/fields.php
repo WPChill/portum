@@ -479,6 +479,37 @@ Epsilon_Customizer::add_field( 'portum_copyright_contents', array(
  * Theme Content
  */
 
+
+/**
+ * Accordion General Information
+ */
+Epsilon_Customizer::add_field(
+	'portum_accordion',
+	array(
+		'type'         => 'epsilon-repeater',
+		'section'      => 'portum_accordion_section',
+		'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+		'label'        => esc_html__( 'General Information', 'portum' ),
+		'button_label' => esc_html__( 'Add/edit new entries', 'portum' ),
+		'row_label'    => array(
+			'type'  => 'field',
+			'field' => 'info_title',
+		),
+		'fields'       => array(
+			'info_title' => array(
+				'label'   => esc_html__( 'Accordion Title', 'portum' ),
+				'type'    => 'text',
+				'default' => '',
+			),
+			'info_text'  => array(
+				'label'   => esc_html__( 'Accordion Text', 'portum' ),
+				'type'    => 'epsilon-text-editor',
+				'default' => '',
+			),
+		),
+	)
+);
+
 /**
  * Schedule
  */
