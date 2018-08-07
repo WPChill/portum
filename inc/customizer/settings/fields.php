@@ -495,14 +495,14 @@ Epsilon_Customizer::add_field( 'portum_accordion', array(
 	),
 	'fields'       => array(
 		'accordion_title'  => array(
-			'label'   => esc_html__( 'Accordion Title', 'portum' ),
+			'label'   => esc_html__( 'FAQ Title', 'portum' ),
+			'default' => esc_html__( 'FAQ Title', 'portum' ),
 			'type'    => 'text',
-			'default' => '',
 		),
 		'accordion_text'   => array(
-			'label'   => esc_html__( 'Accordion Text', 'portum' ),
+			'label'   => esc_html__( 'FAQ Text', 'portum' ),
+			'default' => esc_html__( 'FAQ Text Content goes here', 'portum' ),
 			'type'    => 'epsilon-text-editor',
-			'default' => '',
 		),
 		'accordion_opened' => array(
 			'label'   => esc_html__( 'Opened by default', 'portum' ),
@@ -531,12 +531,14 @@ Epsilon_Customizer::add_field( 'portum_schedule', array(
 			'description'       => esc_html__( 'e.g. Monday - Thursday', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
+			'default'           => esc_html__( 'Monday - Thursday', 'portum' ),
 		),
 		'schedule_hours' => array(
 			'label'             => esc_html__( 'Hours', 'portum' ),
 			'description'       => esc_html__( 'e.g. 9:30 am – 8:30 pm', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
+			'default'           => esc_html__( '9:30 am – 8:30 pm', 'portum' ),
 		),
 	),
 ) );
@@ -1203,12 +1205,12 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
  * Section builder page changer ( acts as a menu )
  */
 Epsilon_Customizer::add_field( 'portum_page_changer', array(
-	'type'     => 'epsilon-page-changer',
-	'label'    => esc_html__( 'Available pages', 'portum' ),
-	'section'  => 'portum_repeatable_section',
-	'priority' => 0,
+	'type'                => 'epsilon-page-changer',
+	'label'               => esc_html__( 'Available pages', 'portum' ),
+	'section'             => 'portum_repeatable_section',
+	'priority'            => 0,
 	'repeatable_sections' => Portum_Repeatable_Sections::get_instance()->sections,
-	'page_builder_id' => 'portum_frontpage_sections',
+	'page_builder_id'     => 'portum_frontpage_sections',
 ) );
 
 Epsilon_Customizer::add_field( 'portum_logo_dimensions', array(

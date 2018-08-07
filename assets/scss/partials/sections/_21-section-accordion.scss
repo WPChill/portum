@@ -2,17 +2,17 @@
    ========================================================================== */
 
 .accordion {
-	margin-bottom: 28px;
 
 	.accordion-item__container {
 		position: relative;
+		margin: 5px auto;
 	}
 }
 
 .accordion-item-toggle {
 	position: relative;
 	display: block;
-	padding: 14px 42px;
+	padding: 11px 22px;
 	background-color: #FFF;
 	border: 1px solid #EEE;
 	cursor: pointer;
@@ -27,24 +27,11 @@
 		content: "\f107";
 		font-family: 'FontAwesome';
 	}
-
-	.active:after {
-		content: "\f106";
-	}
-
-	.active span:after {
-		position: absolute;
-		bottom: -1px;
-		left: 42px;
-		width: 84px;
-		border-bottom: 1px solid #e11931;
-		content: " ";
-	}
 }
 
 .accordion-item-content {
 	display: none;
-	padding: 28px 42px;
+	padding: 11px 22px;
 	border: 1px solid #EEE;
 	border-top: none;
 	background-color: #FFF;

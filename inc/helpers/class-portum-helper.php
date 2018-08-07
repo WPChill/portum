@@ -129,19 +129,6 @@ class Portum_Helper {
 		echo $style;
 	}
 
-	/**
-	 * Generates the video overlay
-	 *
-	 * @param $key
-	 * @param $fields
-	 *
-	 * @return string
-	 */
-	public static function generate_video_overlay( $key, $fields ) {
-		if ( ! empty( $fields[ $key . '_background_video' ] ) ) {
-			echo '<div class="ewf-section__video-background-yt"> <a class="ewf-section__video-background-yt-source" data-property="" data-source="' . $fields[ $key . '_background_video' ] . '"></a> </div>';
-		}
-	}
 
 	/**
 	 * Generates overlay attr

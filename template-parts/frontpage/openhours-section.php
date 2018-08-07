@@ -46,8 +46,10 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 					<?php if ( 'left' === $fields['openhours_row_title_align'] ) { ?>
 						<div class="col-sm-7">
 							<div class="open-hours-section-info">
-								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'] ) ); ?>
-								<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
+								<div class="ewf-section-text">
+									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => false ) ) ); ?>
+									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
+								</div>
 								<?php if ( $button_primary ) { ?>
 									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
 								<?php }; ?>
@@ -69,9 +71,6 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 											<p class="open_hours__schedule_hours"><?php echo wp_kses_post( $schedule['schedule_hours'] ); ?></p>
 										</div>
 									<?php } ?>
-
-									<br />
-
 								</div><!--/.open-hours-->
 							</div><!--/.col-sm-5-->
 						<?php } ?>
@@ -91,16 +90,15 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 											<p class="open_hours__schedule_hours"><?php echo wp_kses_post( $schedule['schedule_hours'] ); ?></p>
 										</div>
 									<?php } ?>
-
-									<br />
-
 								</div><!--/.open-hours-->
 							</div><!--/.col-sm-5-->
 						<?php } ?>
 						<div class="col-sm-7">
 							<div class="open-hours-section-info">
-								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'] ) ); ?>
-								<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
+								<div class="ewf-section-text">
+									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => false ) ) ); ?>
+									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
+								</div>
 								<?php if ( $button_primary ) { ?>
 									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
 								<?php }; ?>
@@ -109,16 +107,7 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 						</div><!--/.col-sm-7-->
 					<?php } else { ?>
 						<?php if ( ! empty( $fields['openhours'] ) ) { ?>
-							<div class="col-sm-12">
-								<div class="open-hours-section-info">
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => true ) ) ); ?>
-									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
-									<?php if ( $button_primary ) { ?>
-										<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
-									<?php }; ?>
-								</div>
 
-							</div><!--/.col-sm-12-->
 							<div class="col-sm-12">
 								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
 
@@ -134,11 +123,22 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 										</div>
 									<?php } ?>
 
-									<br />
-
 								</div><!--/.open-hours-->
 							</div><!--/.col-sm-12-->
 						<?php } ?>
+
+						<div class="col-sm-12">
+							<div class="open-hours-section-info">
+								<div class="ewf-section-text">
+									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => false ) ) ); ?>
+									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
+								</div>
+								<?php if ( $button_primary ) { ?>
+									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
+								<?php }; ?>
+							</div>
+
+						</div><!--/.col-sm-12-->
 					<?php } ?>
 
 				</div><!--/.row-eq-height-->
