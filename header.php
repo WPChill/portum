@@ -14,12 +14,9 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php //get_template_part( 'template-parts/header/topbar' ); ?>
 <?php
-//$header_class  = Portum::get_instance()->top_bar ? 'sticky--top-bar ' : '';
-$header_class .= get_theme_mod( 'portum_header_over_content', false ) ? 'header--over-content ' : '';
+$header_class  = get_theme_mod( 'portum_header_over_content', false ) ? 'header--over-content ' : '';
 $header_class .= get_theme_mod( 'portum_header_shadow', true ) ? '' : 'header--no-shadow ';
-
 $header_sticky = get_theme_mod( 'portum_header_sticky', true );
 ?>
 

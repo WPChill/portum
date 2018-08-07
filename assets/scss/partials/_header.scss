@@ -70,6 +70,7 @@ body.ctdw-bar-visible #header.header--over-content {
 
 #logo img {
     transition: width 0.3s;
+    max-width: initial !important;
 }
 
 @media (max-width: 767px) {

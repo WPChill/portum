@@ -763,22 +763,6 @@ var Portum = {
 			} );
 
 		},
-
-		/**
-		 * Homepage contact form
-		 */
-		contact: function() {
-			jQuery( '.contact-action' ).click( function() {
-				jQuery( '.contact-form-content' ).slideDown( '500' );
-				jQuery( '.contact-action' ).hide();
-			} );
-
-			jQuery( '.contact-trigger' ).click( function() {
-				jQuery( '.contact-form-content' ).slideUp( '500', function() {
-					jQuery( '.contact-action' ).show();
-				} );
-			} );
-		},
 	},
 	/**
 	 * Mobile related functions

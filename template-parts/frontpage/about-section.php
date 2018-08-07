@@ -7,7 +7,7 @@
  * @package Portum
  */
 
-//@todo: full-width, lacks the container-fluid CSS class
+
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 

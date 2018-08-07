@@ -58,7 +58,6 @@
 			Portum.Theme.backTop();
 			Portum.Theme.hideBackTop();
 			Portum.Theme.smoothScroll();
-			Portum.Theme.contact();
 			Portum.Theme.handleAccordions();
 
 			/**
