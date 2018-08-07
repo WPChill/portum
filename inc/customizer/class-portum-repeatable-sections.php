@@ -1057,7 +1057,7 @@ class Portum_Repeatable_Sections {
 					'label'   => esc_html__( 'Appointment form', 'portum' ),
 					'type'    => 'select',
 					'choices' => array(
-						'' => __( 'Select a Contact Form7 form', 'portum' ),
+						'' => __( 'Select a Contact7 form', 'portum' ),
 					),
 					'default' => '',
 				),
@@ -1081,6 +1081,7 @@ class Portum_Repeatable_Sections {
 					$arr['fields']['appointment_form']['choices'][ get_the_ID() ] = get_the_title();
 				}
 			}
+			wp_reset_query();
 		}
 
 		return $arr;
