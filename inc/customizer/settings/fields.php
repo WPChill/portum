@@ -386,52 +386,11 @@ Epsilon_Customizer::add_field( 'portum_google_api_key', array(
 	'section'           => 'portum_misc_section',
 	'sanitize_callback' => 'sanitize_text_field',
 	'label'             => esc_html__( 'Google API KEY', 'portum' ),
+	/* Translators: Explanation re. Google Maps API Key billing requirements */
 	'description'       => sprintf( __( 'You need to make sure you have enabled billing on your Google account, otherwise your Google Maps API Key will not work. 
 	This is a recent change Google introduced and not related to the theme itself. Please use <a href="%s" target="_blank">this link to get your API key</a>', 'portum' ), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ) ),
 ) );
 
-//Translators: Contact forms not found label
-$forms[0] = esc_html__( '-- No Contact Forms --', 'portum' );
-if ( defined( 'WPCF7_VERSION' ) ) {
-	$args = array(
-		'post_type' => 'wpcf7_contact_form',
-	);
-
-	$posts = new WP_Query( $args );
-	wp_reset_postdata();
-	if ( $posts->have_posts() ) {
-		//Translators: Select contact form label
-		$forms[0] = esc_html__( '-- Select a Contact Form --', 'portum' );
-
-		while ( $posts->have_posts() ) {
-			$posts->the_post();
-			$forms[ get_the_ID() ] = get_the_title();
-		}
-	}
-}
-
-/**
- * Contact Form
- */
-Epsilon_Customizer::add_field( 'portum_contact_form', array(
-	'type'        => 'select',
-	'section'     => 'portum_footer_section',
-	'label'       => 'Contact Form',
-	'description' => 1 === count( $forms ) ? __( 'To use this section you need to create a contact form with Contact Form 7', 'portum' ) : null,
-	'default'     => 'no-forms',
-	'choices'     => $forms,
-) );
-
-/**
- * Contact form title
- */
-Epsilon_Customizer::add_field( 'portum_footer_contact_title', array(
-	'type'              => 'epsilon-text-editor',
-	'section'           => 'portum_footer_section',
-	'sanitize_callback' => 'sanitize_text_field',
-	'default'           => __( 'Learn more about us', 'portum' ),
-	'label'             => esc_html__( 'Contact form CTA', 'portum' ),
-) );
 
 /**
  * Contact boxes

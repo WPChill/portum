@@ -36,37 +36,24 @@ if ( ! is_array( $footer_layout ) ) {
 	$footer_layout = json_decode( $footer_layout, true );
 }
 
-$front = get_option( 'show_on_front' );
-$cform = absint( get_theme_mod( 'portum_contact_form', 0 ) );
 ?>
 
-<div id="footer"
-<?php
-if ( defined( 'WPCF7_VERSION' ) && 0 !== $cform ) {
-	echo ' class="has-contact-form"'; }
-?>
->
+<div id="footer">
 	<div class="container">
-		<?php
-		if ( 'page' === $front && is_front_page() ) {
-			get_template_part( 'template-parts/footer/contact-form' );
-		}
-		?>
 
 		<?php if ( ! empty( $sidebars ) ) { ?>
 			<div class="row">
 				<?php foreach ( $footer_layout['columns'] as $sidebar ) : ?>
 
 					<?php if ( is_active_sidebar( 'footer-sidebar-' . $sidebar['index'] ) ) { ?>
-					<div id="footer-widget-area-<?php echo esc_attr( $sidebar['index'] ); ?>" class="col-sm-<?php echo esc_attr( $sidebar['span'] ); ?>">
-						<?php dynamic_sidebar( 'footer-sidebar-' . $sidebar['index'] ); ?>
-					</div>
-				<?php } ?>
+						<div id="footer-widget-area-<?php echo esc_attr( $sidebar['index'] ); ?>" class="col-sm-<?php echo esc_attr( $sidebar['span'] ); ?>">
+							<?php dynamic_sidebar( 'footer-sidebar-' . $sidebar['index'] ); ?>
+						</div>
+					<?php } ?>
 
 				<?php endforeach; ?>
 			</div><!--.row-->
 		<?php } ?>
-
 
 	</div>
 	<?php get_template_part( 'template-parts/footer/copyright' ); ?>

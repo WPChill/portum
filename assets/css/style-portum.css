@@ -2806,6 +2806,8 @@ body.ctdw-bar-visible #header.header--over-content
 
 #logo img
 {
+    max-width: initial !important;
+
     -webkit-transition: width .3s;
          -o-transition: width .3s;
             transition: width .3s;

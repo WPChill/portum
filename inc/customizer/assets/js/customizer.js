@@ -275,8 +275,6 @@ wp.customize.bind( 'ready', function() {
     }
   };
 
-  Portum.Customizer.checkValuesAndDisable( '#customize-control-portum_contact_form' );
-
   //Portum.Customizer.handleActiveCallback( activeCallbacked );
   Portum.Customizer.handleAwfulSorting();
 } );

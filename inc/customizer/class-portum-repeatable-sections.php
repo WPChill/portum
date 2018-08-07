@@ -953,6 +953,140 @@ class Portum_Repeatable_Sections {
 		);
 	}
 
+
+	/**
+	 * Create appointment section
+	 *
+	 * @return array
+	 */
+	private function repeatable_appointment() {
+		$arr = array(
+			'id'            => 'appointment',
+			'title'         => esc_html__( 'Appointments Section', 'portum' ),
+			'description'   => esc_html__( 'Contact form for your appointments, you need to have a working Contact Form 7 form created.', 'portum' ),
+			'integration'   => array(
+				'status' => true,
+				'plugin' => 'contact-form-7',
+				'check'  => defined( 'WPCF7_VERSION' ),
+			),
+			'image'         => get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-appointments.png',
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'row-title-align'           => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'top', 'right' ),
+					),
+					'column-stretch'            => array(
+						'default' => 'boxedin',
+						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
+					),
+					'row-spacing-top'           => array(
+						'default' => 'sm',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'column-alignment'          => array(
+						'default' => 'left',
+						'choices' => array( 'left', 'center', 'right' ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom' ),
+					),
+				),
+				'styling' => array(
+					'background-color'    => array(
+						'default' => false,
+					),
+					'background-image'    => array(
+						'default' => false,
+					),
+					'background-position' => array(
+						'default' => 'center',
+					),
+					'background-size'     => array(
+						'default' => 'cover',
+					),
+					'background-repeat'   => array(
+						'default' => 'no-repeat',
+					),
+					'background-parallax' => array(
+						'default' => false,
+					),
+
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p' ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
+				'appointment_title'      => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'Make an Appointment' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'appointment_subtitle'   => array(
+					'label'             => esc_html__( 'Subtitle', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'Schedule a call' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'appointment_text'       => array(
+					'label'   => esc_html__( 'Description', 'portum' ),
+					'type'    => 'epsilon-text-editor',
+					'default' => wp_kses_post( '<p>You do not need your physician or health care provider to make arrangements for you. Now it is easy and fast and you can book a consult within minutes!</p>' ),
+				),
+				'appointment_background' => array(
+					'label'   => esc_html__( 'Image', 'portum' ),
+					'type'    => 'epsilon-image',
+					'default' => '',
+				),
+				'appointment_form'       => array(
+					'label'   => esc_html__( 'Appointment form', 'portum' ),
+					'type'    => 'select',
+					'choices' => array(
+						'' => __( 'Select a Contact Form7 form', 'portum' ),
+					),
+					'default' => '',
+				),
+			),
+		);
+
+		if ( defined( 'WPCF7_VERSION' ) ) {
+			/**
+			 * Get cforms, populated appointment_form
+			 */
+			$args = array(
+				'post_type' => 'wpcf7_contact_form',
+			);
+
+			$posts = new WP_Query( $args );
+			wp_reset_postdata();
+			if ( $posts->have_posts() ) {
+				while ( $posts->have_posts() ) {
+					$posts->the_post();
+
+					$arr['fields']['appointment_form']['choices'][ get_the_ID() ] = get_the_title();
+				}
+			}
+		}
+
+		return $arr;
+	}
+
+
 	/**
 	 * Repeatable portfolio section
 	 *
