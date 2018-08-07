@@ -228,7 +228,7 @@ class Portum_Repeatable_Sections {
 				),
 				'styling' => array(
 					'background-color'    => array(
-						'default' => false,
+						'default' => '#EEEEEE',
 					),
 					'background-image'    => array(
 						'default' => false,
@@ -237,10 +237,10 @@ class Portum_Repeatable_Sections {
 						'default' => 'center',
 					),
 					'background-size'     => array(
-						'default' => 'initial',
+						'default' => 'cover',
 					),
 					'background-repeat'   => array(
-						'default' => 'repeat',
+						'default' => 'np-repeat',
 					),
 					'background-parallax' => array(
 						'default' => false,
@@ -262,7 +262,7 @@ class Portum_Repeatable_Sections {
 				'openhours_title'                => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Top notch <br>experience' ),
+					'default'           => wp_kses_post( 'Top notch experience' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'openhours_subtitle'             => array(
@@ -285,7 +285,7 @@ class Portum_Repeatable_Sections {
 				'openhours_color'                => array(
 					'label'   => esc_html__( 'Open Hours Background Color', 'portum' ),
 					'type'    => 'epsilon-color-picker',
-					'default' => 'rgba(0,0,0,.1)',
+					'default' => '#FAFAFA',
 				),
 				'openhours_button_primary_label' => array(
 					'label'             => esc_html__( 'Button label', 'portum' ),
@@ -297,7 +297,7 @@ class Portum_Repeatable_Sections {
 					'label'      => esc_html__( 'Button color style', 'portum' ),
 					'descriptin' => esc_html__( 'Color accent 1, 2 & Text color are the corresponding HEX color codes from Customization -> Colors.', 'portum' ),
 					'type'       => 'select',
-					'default'    => 'ewf-btn--color-default',
+					'default'    => 'ewf-btn--color-accent3',
 					'choices'    => array(
 						'ewf-btn--color-default' => __( 'Text Color as background + White', 'portum' ),
 						'ewf-btn--color-accent1' => __( 'Color Accent 1 as background + Text Color', 'portum' ),
@@ -847,15 +847,19 @@ class Portum_Repeatable_Sections {
 				'enabled' => true,
 				'layout'  => array(
 					'row-title-align'           => array(
-						'default' => 'right',
+						'default' => 'left',
 						'choices' => array( 'left', 'top', 'right' ),
 					),
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
 					),
+					'column-group'              => array(
+						'default' => 1,
+						'choices' => array( 1, 2 ),
+					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'sm',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
 					'row-spacing-bottom'        => array(
@@ -907,20 +911,20 @@ class Portum_Repeatable_Sections {
 				'accordion_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Why Choose us?' ),
+					'default'           => esc_html__( 'Why Choose us?', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'accordion_subtitle'          => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'wp_kses_post',
-					'default'           => wp_kses_post( 'We are a full-service, non-profit community hospital, offering comprehensive medical, surgical and therapeutic services.' ),
+					'default'           => esc_html__( 'We are a great agency', 'portum' ),
 				),
 				'accordion_text'              => array(
 					'label'             => esc_html__( 'Description', 'portum' ),
 					'type'              => 'epsilon-text-editor',
 					'sanitize_callback' => 'wp_kses_post',
-					'default'           => wp_kses_post( 'Toggle me' ),
+					'default'           => esc_html__( 'Section description text goes here.', 'portum' ),
 				),
 				'accordion_section_unique_id' => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
