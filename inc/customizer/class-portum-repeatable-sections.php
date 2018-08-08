@@ -1676,26 +1676,6 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'top', 'middle', 'bottom' ),
 					),
 				),
-				'styling' => array(
-					'background-color'    => array(
-						'default' => false,
-					),
-					'background-image'    => array(
-						'default' => false,
-					),
-					'background-position' => array(
-						'default' => 'center',
-					),
-					'background-size'     => array(
-						'default' => 'initial',
-					),
-					'background-repeat'   => array(
-						'default' => 'repeat',
-					),
-					'background-parallax' => array(
-						'default' => false,
-					),
-				),
 				'colors'  => array(
 					'heading-color' => array(
 						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
@@ -1745,10 +1725,22 @@ class Portum_Repeatable_Sections {
 					'type'        => 'epsilon-toggle',
 					'default'     => true,
 				),
-				'video_poster_image'      => array(
-					'label'       => esc_html__( 'Placeholder image', 'portum' ),
-					'description' => esc_html__( 'Adding an image here is what users will see before clicking play on your video. It works as a video featured image', 'portum' ),
-					'type'        => 'epsilon-image',
+				'video_autoplay'          => array(
+					'label'       => esc_html__( 'Video Autoplay', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will make your video autoplay.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => false,
+				),
+				'video_max_height'        => array(
+					'label'       => esc_html__( 'Max Video Section Height', 'portum' ),
+					'description' => esc_html__( 'Very useful when displaying videos in full-width mode. Height is in %', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 500,
+					'choices'     => array(
+						'min'  => 10,
+						'max'  => 100,
+						'step' => 5,
+					),
 				),
 				'video_text'              => array(
 					'label'             => esc_html__( 'Information', 'portum' ),

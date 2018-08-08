@@ -455,11 +455,12 @@ var Portum = {
 		 * Initiate Plyr library on video elements
 		 */
 		video: function() {
-			if ( typeof plyr !== 'undefined' ) {
-
-				let instances = plyr.setup( {
-					debug: false
-				} );
+			if ( typeof Plyr !== 'undefined' ) {
+				let videos = jQuery( '.portum-video-area' );
+				jQuery.each( videos, function( index, videoContainer ){
+					let video = jQuery( videoContainer ).find( 'div' );
+					new Plyr( video );
+				});
 			}
 		}
 	},
