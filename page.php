@@ -43,7 +43,7 @@ else :
 				<?php
 				if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
 					?>
-					<div class="col-sm-<?php echo esc_attr( $layout['columns']['content']['span'] ); ?>">
+					<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
 						<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
 						<?php dynamic_sidebar( 'sidebar' ); ?>
 						<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
