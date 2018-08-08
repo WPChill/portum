@@ -73,15 +73,13 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 												</div>
 											<?php } ?>
 										</div>
-										<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
-											<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
-										<?php } ?>
-
-										<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
-											<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
-										<?php } ?>
-
 									</div><!-- end .ewf-pie -->
+									<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
+										<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
+									<?php } ?>
+									<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
+										<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
+									<?php } ?>
 								</div>
 							<?php } ?>
 						</div>
@@ -110,15 +108,13 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 												</div>
 											<?php } ?>
 										</div>
-										<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
-											<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
-										<?php } ?>
-
-										<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
-											<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
-										<?php } ?>
-
 									</div><!-- end .ewf-pie -->
+									<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
+										<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
+									<?php } ?>
+									<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
+										<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
+									<?php } ?>
 								</div>
 							<?php } ?>
 						</div>
@@ -154,15 +150,13 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 											</div>
 										<?php } ?>
 									</div>
-									<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
-										<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
-									<?php } ?>
-
-									<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
-										<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
-									<?php } ?>
-
 								</div><!-- end .ewf-pie -->
+								<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
+									<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
+								<?php } ?>
+								<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
+									<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
+								<?php } ?>
 							</div>
 						<?php } ?>
 					</div>

@@ -8155,8 +8155,6 @@ body.ctdw-bar-visible #header.header--over-content
 {
     position: relative;
 
-    margin-bottom: 56px;
-
     text-align: center;
 }
 .ewf-pie:after
@@ -8176,7 +8174,7 @@ body.ctdw-bar-visible #header.header--over-content
 {
     position: relative;
 
-    margin: 0 auto 28px;
+    margin: 0 auto;
 
     text-align: center;
 }
@@ -8201,11 +8199,6 @@ body.ctdw-bar-visible #header.header--over-content
 .ewf-pie__icon,
 .ewf-pie__percent
 {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-
     display: block;
 
     width: 100%;

@@ -1,38 +1,37 @@
-(function($) {
+(function( $ ) {
 	'use strict';
 	/**
 	 * Window scroll events
 	 */
-	$(window).scroll(function() {
+	$( window ).scroll( function() {
 		/**
 		 * Initiate plugins
 		 */
 		try {
-			Portum.Theme.animations();
 			Portum.Plugins.animateCounters();
 			Portum.Plugins.animateProgress();
 			Portum.Plugins.animatePieCharts();
 			Portum.Theme.hideBackTop();
 			Portum.Theme.header();
-		} catch (error) {
+		} catch ( error ) {
 
 		}
-	});
+	} );
 
 	/**
 	 * Window resize event
 	 */
-	$(window).resize(function() {
+	$( window ).resize( function() {
 		Portum.Mobile.menu();
 		Portum.Plugins.animatePieCharts();
-		Portum.Plugins.setDimensionsPieCharts();
+		//Portum.Plugins.setDimensionsPieCharts();
 		Portum.Theme.header();
-	});
+	} );
 
 	/**
 	 * Document ready event
 	 */
-	$(document).ready(function($) {
+	$( document ).ready( function( $ ) {
 		/**
 		 * Initiate plugins
 		 */
@@ -52,9 +51,7 @@
 			 */
 			Portum.Theme.header();
 			Portum.Theme.map();
-			Portum.Theme.blog();
 			Portum.Theme.menu();
-			Portum.Theme.animations();
 			Portum.Theme.backTop();
 			Portum.Theme.hideBackTop();
 			Portum.Theme.smoothScroll();
@@ -63,15 +60,13 @@
 			/**
 			 * Mobile functions
 			 */
-			Portum.Mobile.testimonials();
-			Portum.Mobile.blog();
 			Portum.Mobile.menu();
-		} catch (error) {
-			console.log(error);
+		} catch ( error ) {
+			console.log( error );
 		}
-	});
+	} );
 
-	$(document).on('epsilon-selective-refresh-ready', function() {
+	$( document ).on( 'epsilon-selective-refresh-ready', function() {
 		/**
 		 * Initiate plugins
 		 */
@@ -91,6 +86,6 @@
 		Portum.Theme.map();
 		Portum.Theme.header();
 
-	});
+	} );
 
-})(jQuery);
+})( jQuery );
