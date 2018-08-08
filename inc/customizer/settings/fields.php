@@ -43,7 +43,6 @@ Epsilon_Customizer::add_field( 'portum_layout', array(
 		),
 	),
 	'min_span' => 4,
-	'fixed'    => true,
 	'label'    => esc_html__( 'Blog Layout', 'portum' ),
 ) );
 Epsilon_Customizer::add_field( 'portum_page_layout', array(
@@ -67,7 +66,6 @@ Epsilon_Customizer::add_field( 'portum_page_layout', array(
 		),
 	),
 	'min_span' => 4,
-	'fixed'    => true,
 	'label'    => esc_html__( 'Page Layout', 'portum' ),
 ) );
 /**

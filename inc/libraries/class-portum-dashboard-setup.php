@@ -71,6 +71,10 @@ class Portum_Dashboard_Setup {
 			return;
 		}
 
+		if ( ! is_super_admin() ) {
+			return;
+		}
+
 		$used_onboarding = get_theme_mod( $this->theme['theme-slug'] . '_used_onboarding', false );
 		if ( $used_onboarding ) {
 			return;
@@ -95,11 +99,13 @@ class Portum_Dashboard_Setup {
 			$this->notice .= '<p><a href="' . esc_url( admin_url( '?page=epsilon-onboarding' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'portum' ), $this->theme['theme-name'] ) . '</a></p>';
 		}
 		$notifications = Epsilon_Notifications::get_instance();
-		$notifications->add_notice( array(
+		$notifications->add_notice(
+			array(
 				'id'      => 'notification_testing',
 				'type'    => 'notice epsilon-big',
 				'message' => $this->notice,
-			) );
+			)
+		);
 	}
 
 	/**
@@ -110,9 +116,9 @@ class Portum_Dashboard_Setup {
 	public function get_edd( $setup = array() ) {
 		$options = get_option( $setup['theme']['theme-slug'] . '_license_object', array() );
 		$options = wp_parse_args( $options, array(
-				'expires'       => false,
-				'licenseStatus' => false,
-			) );
+			'expires'       => false,
+			'licenseStatus' => false,
+		) );
 
 		return array(
 			'license'       => trim( get_option( $setup['theme']['theme-slug'] . '_license_key', false ) ),
