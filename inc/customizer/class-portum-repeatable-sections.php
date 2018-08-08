@@ -1656,15 +1656,15 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'left', 'top', 'right' ),
 					),
 					'column-stretch'            => array(
-						'default' => 'boxedin',
+						'default' => 'fullwidth',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
 					'column-alignment'          => array(
@@ -1688,30 +1688,18 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'video_title'             => array(
-					'label'             => esc_html__( 'Title', 'portum' ),
-					'type'              => 'text',
-					'default'           => esc_html__( 'Video section title', 'portum' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
-				'video_subtitle'          => array(
-					'label'             => esc_html__( 'Description', 'portum' ),
-					'type'              => 'text',
-					'default'           => esc_html__( 'Video description', 'portum' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
 				'video_id'                => array(
 					'label'             => esc_html__( 'Video URL', 'portum' ),
 					'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
 					'type'              => 'text',
-					'default'           => 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
+					'default'           => 'https://vimeo.com/104779334',
 					'sanitize_callback' => 'esc_url_raw',
 				),
 				'video_show_controls'     => array(
 					'label'       => esc_html__( 'Show video controls', 'portum' ),
 					'description' => esc_html__( 'Turning this to ON will show video controls like: play, pause, stop, etc.', 'portum' ),
 					'type'        => 'epsilon-toggle',
-					'default'     => true,
+					'default'     => false,
 				),
 				'video_auto_loop'         => array(
 					'label'       => esc_html__( 'Video loop', 'portum' ),
@@ -1729,7 +1717,7 @@ class Portum_Repeatable_Sections {
 					'label'       => esc_html__( 'Video Autoplay', 'portum' ),
 					'description' => esc_html__( 'Turning this to ON will make your video autoplay.', 'portum' ),
 					'type'        => 'epsilon-toggle',
-					'default'     => false,
+					'default'     => true,
 				),
 				'video_max_height'        => array(
 					'label'       => esc_html__( 'Max Video Section Height', 'portum' ),
@@ -1742,10 +1730,22 @@ class Portum_Repeatable_Sections {
 						'step' => 5,
 					),
 				),
+				'video_title'             => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'type'              => 'text',
+					'default'           => '',
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'video_subtitle'          => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'type'              => 'text',
+					'default'           => '',
+					'sanitize_callback' => 'wp_kses_post',
+				),
 				'video_text'              => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
-					'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'portum' ),
+					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'video_section_unique_id' => array(
