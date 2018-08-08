@@ -228,7 +228,7 @@ class Portum_Repeatable_Sections {
 				),
 				'styling' => array(
 					'background-color'    => array(
-						'default' => '#EEEEEE',
+						'default' => false,
 					),
 					'background-image'    => array(
 						'default' => false,
@@ -447,11 +447,24 @@ class Portum_Repeatable_Sections {
 
 	private function repeatable_advanced_slider() {
 		$slider = array(
-			'id'          => 'advanced-slider',
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
-			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
-			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
-			'fields'      => array(
+			'id'            => 'advanced-slider',
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
+			'title'         => esc_html__( 'Advanced Slider', 'portum' ),
+			'description'   => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p' ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'slider_transition'        => array(
 					'label'   => esc_html__( 'Transition', 'portum' ),
 					'type'    => 'select',
@@ -466,7 +479,7 @@ class Portum_Repeatable_Sections {
 					'type'    => 'epsilon-slider',
 					'default' => 500,
 					'choices' => array(
-						'min'  => 0,
+						'min'  => 300,
 						'max'  => 2000,
 						'step' => 100,
 					),
