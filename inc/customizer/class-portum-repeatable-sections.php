@@ -709,7 +709,7 @@ class Portum_Repeatable_Sections {
 	private function repeatable_about() {
 		return array(
 			'id'            => 'about',
-			'title'         => esc_html__( 'Alt. image & text', 'portum' ),
+			'title'         => esc_html__( 'Alternating image + text', 'portum' ),
 			'description'   => esc_html__( 'Alternating image & text section.', 'portum' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
 			'customization' => array(
@@ -961,9 +961,9 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_appointment() {
 		$arr = array(
-			'id'            => 'appointment',
-			'title'         => esc_html__( 'Appointments Section', 'portum' ),
-			'description'   => esc_html__( 'Contact form for your appointments, you need to have a working Contact Form 7 form created.', 'portum' ),
+			'id'            => 'contact',
+			'title'         => esc_html__( 'Contact Form7 Section', 'portum' ),
+			'description'   => esc_html__( 'Contact form section. You need to have a working Contact Form 7 form created.', 'portum' ),
 			'integration'   => array(
 				'status' => true,
 				'plugin' => 'contact-form-7',
@@ -1031,42 +1031,38 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'appointment_title'      => array(
+				'contact_title'    => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Make an Appointment' ),
+					'default'           => esc_html__( 'Get a quote', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'appointment_subtitle'   => array(
+				'contact_subtitle' => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Schedule a call' ),
+					'default'           => esc_html__( 'Schedule a call', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'appointment_text'       => array(
+				'contact_text'     => array(
 					'label'   => esc_html__( 'Description', 'portum' ),
 					'type'    => 'epsilon-text-editor',
-					'default' => wp_kses_post( '<p>You do not need your physician or health care provider to make arrangements for you. Now it is easy and fast and you can book a consult within minutes!</p>' ),
+					'default' => esc_html__( 'Now it is easy and fast and you can book a consult within minutes!', 'portum' ),
 				),
-				'appointment_background' => array(
-					'label'   => esc_html__( 'Image', 'portum' ),
-					'type'    => 'epsilon-image',
-					'default' => '',
-				),
-				'appointment_form'       => array(
-					'label'   => esc_html__( 'Appointment form', 'portum' ),
-					'type'    => 'select',
-					'choices' => array(
+				'contact_form'     => array(
+					'label'       => esc_html__( 'Contact form', 'portum' ),
+					'description' => esc_html__( 'You need to make sure you have a Contact Form7 form created for this section to work properly.', 'portum' ),
+					'type'        => 'select',
+					'choices'     => array(
 						'' => __( 'Select a Contact7 form', 'portum' ),
 					),
-					'default' => '',
+					'default'     => '',
 				),
 			),
 		);
 
 		if ( defined( 'WPCF7_VERSION' ) ) {
 			/**
-			 * Get cforms, populated appointment_form
+			 * Get cforms, populated contact_form
 			 */
 			$args = array(
 				'post_type' => 'wpcf7_contact_form',
@@ -1078,7 +1074,7 @@ class Portum_Repeatable_Sections {
 				while ( $posts->have_posts() ) {
 					$posts->the_post();
 
-					$arr['fields']['appointment_form']['choices'][ get_the_ID() ] = get_the_title();
+					$arr['fields']['contact_form']['choices'][ get_the_ID() ] = get_the_title();
 				}
 			}
 			wp_reset_query();

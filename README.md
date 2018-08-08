@@ -23,11 +23,7 @@ Slick
 Font Awesome
 	-- Copyright Font Awesome by Dave Gandy - http://fontawesome.io
 	-- License: MIT License (http://opensource.org/licenses/mit-license.html)
-
-Stickem
-	-- Copyright Trevor Davis
-	-- License: MIT License (http://opensource.org/licenses/mit-license.html)
-
+	
 Selectize
 	-- Copyright (c) 2013 Brian Reavis & contributors
 	-- Licensed under the Apache License, Version 2.0 (the "License");
