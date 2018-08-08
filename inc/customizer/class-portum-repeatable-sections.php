@@ -1745,6 +1745,11 @@ class Portum_Repeatable_Sections {
 					'type'        => 'epsilon-toggle',
 					'default'     => true,
 				),
+				'video_poster_image'      => array(
+					'label'       => esc_html__( 'Placeholder image', 'portum' ),
+					'description' => esc_html__( 'Adding an image here is what users will see before clicking play on your video. It works as a video featured image', 'portum' ),
+					'type'        => 'epsilon-image',
+				),
 				'video_text'              => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
