@@ -18,9 +18,21 @@ $parent_attr = array(
 	'class' => array( 'section-video', 'section', 'ewf-section', 'ewf-section-' . $fields['video_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
+$controls    = isset( $fields['video_show_controls'] ) ? $fields['video_show_controls'] : 1;
 $plyr_config = array(
-	'controls' => isset( $fields['video_show_controls'] ) ? $fields['video_show_controls'] : 1,
+	'controls' => $controls ? array(
+		'play-large',
+		'play',
+		'progress',
+		'current-time',
+		'mute',
+		'volume',
+		'captions',
+		'settings',
+		'pip',
+		'airplay',
+		'fullscreen',
+	) : array(),
 	'loop'     => array(
 		'active' => isset( $fields['video_auto_loop'] ) ? $fields['video_auto_loop'] : 1,
 	),
