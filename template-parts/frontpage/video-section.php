@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying a frontpage section
+ * Template part for displaying afrontpage section
  *
  * @link    https://codex.wordpress.org/Template_Hierarchy
  *
@@ -41,16 +41,16 @@ wp_enqueue_script( 'plyr' );
 						</div>
 
 						<div class="col-md-6">
-							<div class="video-area auto-resizable-iframe">
-								<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
+							<div class="video-area">
+								<div data-plyr-provider="<?php echo esc_attr( $video['video_type'] ); ?>" data-plyr-embed-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
 							</div>
 						</div>
 
 					<?php } elseif ( 'right' === $fields['video_row_title_align'] ) { ?>
 
 						<div class="col-md-6">
-							<div class="video-area auto-resizable-iframe">
-								<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
+							<div class="video-area">
+								<div id="player" data-plyr-provider="<?php echo esc_attr( $video['video_type'] ); ?>" data-plyr-embed-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
 							</div>
 						</div>
 
@@ -66,8 +66,8 @@ wp_enqueue_script( 'plyr' );
 							<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
 
 							<?php if ( 'none' !== $video['video_type'] ) { ?>
-								<div class="video-area auto-resizable-iframe">
-									<div data-type="<?php echo esc_attr( $video['video_type'] ); ?>" data-video-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
+								<div class="video-area">
+									<div data-plyr-provider="<?php echo esc_attr( $video['video_type'] ); ?>" data-plyr-embed-id="<?php echo esc_attr( $video['video_id'] ); ?>"></div>
 								</div>
 							<?php } ?>
 

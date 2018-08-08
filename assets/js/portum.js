@@ -291,9 +291,6 @@ var Portum = {
 					n = self.parent().width(),
 					r = self.data( 'barsize' );
 
-				console.log( n );
-				console.log( r );
-
 				if ( n < r ) {
 					r = n;
 				}
@@ -460,9 +457,8 @@ var Portum = {
 		video: function() {
 			if ( typeof plyr !== 'undefined' ) {
 
-				var instances = plyr.setup( {
-					debug: false,
-					controls: []
+				let instances = plyr.setup( {
+					debug: false
 				} );
 			}
 		}
@@ -477,10 +473,7 @@ var Portum = {
 		 */
 		handleAccordions: function() {
 
-			jQuery( document ).on( 'click', '.accordion-item-toggle', function( e ) {
-
-				// preventDefault clicks since accordion-item-toggles are links
-				e.preventDefault();
+			jQuery( document ).on( 'click', '.accordion-item-toggle', function() {
 
 				// show the clicked on panel
 				jQuery( this ).next().slideToggle( 'fast' );

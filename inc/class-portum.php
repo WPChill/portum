@@ -590,6 +590,7 @@ class Portum {
 			'superfish-hoverIntent',
 			'superfish',
 			'viewport',
+			'plyr',
 			'portum-object',
 		), $theme['Version'], true );
 
