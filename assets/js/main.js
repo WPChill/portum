@@ -24,7 +24,7 @@
 	$( window ).resize( function() {
 		Portum.Mobile.menu();
 		Portum.Plugins.animatePieCharts();
-		//Portum.Plugins.setDimensionsPieCharts();
+		Portum.Plugins.setDimensionsPieCharts();
 		Portum.Theme.header();
 	} );
 
