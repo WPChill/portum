@@ -1727,6 +1727,24 @@ class Portum_Repeatable_Sections {
 					'default'           => 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
 					'sanitize_callback' => 'esc_url_raw',
 				),
+				'video_show_controls'     => array(
+					'label'       => esc_html__( 'Show video controls', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will show video controls like: play, pause, stop, etc.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'video_auto_loop'         => array(
+					'label'       => esc_html__( 'Video loop', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will make your video run on repeat mode. Goes great with muted videos that you want looped.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'video_mute_mode'         => array(
+					'label'       => esc_html__( 'Video muted', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will make your video run muted aka with no sound. This works great for videos you want looped.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
 				'video_text'              => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
