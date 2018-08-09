@@ -16,7 +16,7 @@ if ( get_theme_mod( 'portum_enable_copyright', true ) || has_nav_menu( 'copyrigh
 					<div id="footer-bottom-widget-area-1" class="col-sm-6 ol-xs-12">
 						<?php
 						// Translators: %s is a link.
-						echo wp_kses_post( get_theme_mod( 'portum_copyright_contents', sprintf( esc_html__( 'Macho Themes &copy; %s. All rights reserved.', 'portum' ), date( 'Y' ) ) ) );
+						echo wp_kses_post( get_theme_mod( 'portum_copyright_contents', sprintf( esc_html__( 'Colorlib &copy; %s. All rights reserved.', 'portum' ), date( 'Y' ) ) ) );
 						?>
 					</div><!-- end .col -->
 				<?php endif; ?>
