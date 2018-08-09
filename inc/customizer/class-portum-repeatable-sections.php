@@ -285,7 +285,7 @@ class Portum_Repeatable_Sections {
 				'openhours_color'                => array(
 					'label'   => esc_html__( 'Open Hours Background Color', 'portum' ),
 					'type'    => 'epsilon-color-picker',
-					'default' => '#FAFAFA',
+					'default' => 'rgba(250,250,250,.1)',
 				),
 				'openhours_button_primary_label' => array(
 					'label'             => esc_html__( 'Button label', 'portum' ),
