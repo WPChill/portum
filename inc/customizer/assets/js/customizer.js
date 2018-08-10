@@ -266,7 +266,7 @@ wp.customize.bind( 'ready', function() {
     }
   };
 
-  Portum.Customizer.pairedSettings( obj, wp.customize );
+  // Portum.Customizer.pairedSettings( obj, wp.customize );
 
   var activeCallbacked = {
     'show_on_front': {
