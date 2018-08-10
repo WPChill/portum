@@ -417,6 +417,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_testimonials', 'testimonial_title' ),
+					'linking'     => array( 'portum_testimonials', 'testimonial_title' ),
 					'default'     => array( 'all' ),
 				),
 				'testimonials_navigation'        => array(
@@ -497,6 +498,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_advanced_slides', 'slide_title' ),
+					'linking'     => array( 'portum_advanced_slides', 'slide_title' ),
 					'default'     => array( 'all' ),
 				),
 				'slider_navigation'        => array(
@@ -554,6 +556,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_slides', 'slides_title' ),
+					'linking'     => array( 'portum_slides', 'slides_title' ),
 					'default'     => array( 'all' ),
 				),
 				'slider_repeater_field'    => array(
@@ -680,6 +683,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_services', 'service_title' ),
+					'linking'     => array( 'portum_services', 'service_title' ),
 					'default'     => array( 'all' ),
 				),
 				'services_navigation'        => array(
@@ -937,6 +941,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_accordion', 'info_title' ),
+					'linking'     => array( 'portum_accordion', 'info_title' ),
 					'default'     => array( 'all' ),
 				),
 				'accordion_navigation'        => array(
@@ -1194,6 +1199,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_portfolio', 'portfolio_title' ),
+					'linking'     => array( 'portum_portfolio', 'portfolio_title' ),
 					'default'     => array( 'all' ),
 				),
 				'portfolio_navigation'        => array(
@@ -1323,6 +1329,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_expertise', 'expertise_title' ),
+					'linking'     => array( 'portum_expertise', 'expertise_title' ),
 					'default'     => array( 'all' ),
 				),
 				'expertise_navigation'        => array(
@@ -1517,6 +1524,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_team_members', 'member_title' ),
+					'linking'     => array( 'portum_team_members', 'member_title' ),
 					'default'     => array( 'all' ),
 				),
 				'team_navigation'        => array(
@@ -1620,6 +1628,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_price_boxes', 'price_box_title' ),
+					'linking'     => array( 'portum_price_boxes', 'price_box_title' ),
 					'default'     => array( 'all' ),
 				),
 				'pricing_navigation'        => array(
@@ -1947,6 +1956,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_contact_section', 'contact_title' ),
+					'linking'     => array( 'portum_contact_section', 'contact_title' ),
 					'default'     => array( 'all' ),
 				),
 				'google_map_address'           => array(
@@ -2096,6 +2106,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_counter_boxes', 'counter_title' ),
+					'linking'     => array( 'portum_counter_boxes', 'counter_title' ),
 					'default'     => array( 'all' ),
 				),
 				'counters_navigation'        => array(
@@ -2211,6 +2222,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_progress_bars', 'progress_bar_title' ),
+					'linking'     => array( 'portum_progress_bars', 'progress_bar_title' ),
 					'default'     => array( 'all' ),
 				),
 				'progress_bars_navigation'     => array(
@@ -2326,6 +2338,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_pie_charts', 'piechart_title' ),
+					'linking'     => array( 'portum_pie_charts', 'piechart_title' ),
 					'default'     => array( 'all' ),
 				),
 				'piecharts_navigation'        => array(
@@ -2429,6 +2442,7 @@ class Portum_Repeatable_Sections {
 					'type'        => 'selectize',
 					'multiple'    => true,
 					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_clients', 'client_title' ),
+					'linking'     => array( 'portum_clients', 'client_title' ),
 					'default'     => array( 'all' ),
 				),
 				'clientlist_slider'            => array(
@@ -2598,5 +2612,4 @@ class Portum_Repeatable_Sections {
 			),
 		);
 	}
-
 }

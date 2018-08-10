@@ -14,7 +14,7 @@
     }
 
     wp.customize.selectiveRefresh.bind( 'widget-updated', function( placement ) {
-      Portum.Theme.footerLogo();
+      // Portum.Theme.footerLogo();
     } );
   } );
 })( jQuery );
