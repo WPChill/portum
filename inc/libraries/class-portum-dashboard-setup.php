@@ -418,13 +418,7 @@ class Portum_Dashboard_Setup {
 						'type'    => 'epsilon-toggle',
 						'checked' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
 					),
-					array(
-						'id'      => $this->theme['theme-slug'] . '_quickie_enabled',
-						'value'   => true,
-						'label'   => esc_html__( 'Disable Customizer Shortcuts Bar', 'portum' ),
-						'type'    => 'epsilon-toggle',
-						'checked' => get_option( $this->theme['theme-slug'] . '_quickie_enabled', false ),
-					),
+
 				),
 			),
 		);
@@ -442,7 +436,6 @@ class Portum_Dashboard_Setup {
 			//$this->theme['theme-slug'] . '_lite_vs_pro'         => get_option( $this->theme['theme-slug'] . '_lite_vs_pro', 'NA' ),
 			//$this->theme['theme-slug'] . '_theme_upsells'       => get_option( $this->theme['theme-slug'] . '_theme_upsells', 'NA' ),
 			$this->theme['theme-slug'] . '_tracking_enable' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
-			$this->theme['theme-slug'] . '_quickie_enabled' => get_option( $this->theme['theme-slug'] . '_quickie_enabled', false ),
 		);
 
 		foreach ( $arr as $id => $val ) {

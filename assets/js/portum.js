@@ -174,73 +174,98 @@ var Portum = {
 	 * Plugin related functions
 	 */
 	Plugins: {
-		advancedSlider: function() {
+		/**
+		 * Initiate owl slider
+		 */
+		owlSlider: function() {
+			if ( typeof jQuery.fn.owlCarousel !== 'undefined' ) {
+				let owl = jQuery( '.main-slider' );
+				jQuery.each( owl, function( index, element ) {
+					let self = jQuery( element );
+					self.on( 'initialized.owl.carousel', function() {
+						self.parent().find( '.pager-slider' ).addClass( 'active' );
+					} );
 
-			jQuery( '.ewf-slider' ).each( function() {
+					self.owlCarousel( {
+						items: 1,
+						dots: self.data( 'slider-enable-pager' ),
+						mouseDrag: true,
+						navText: '',
+						nav: false,
+						navClass: '',
+						autoplay: self.data( 'slider-autoplay' ),
+						loop: self.data( 'slider-loop' ),
+						lazyLoad: false,
+						autoHeight: true,
+						autoplayTimeout: 5000,
+					} ).on( 'translated.owl.carousel', function( event ) {
+						self.parent().find( '.pager-slider li.active' ).removeClass( 'active' );
+						self.parent().find( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
+					} );
 
-				var $t = jQuery( this );
-
-				var $slider = $t.find( '.ewf-slider__slides' );
-
-				// if slider already initialize go to next;
-				if ( $slider.hasClass( 'slick-initialized' ) ) {
-					return true;
-				}
-
-				var $slider_config = {
-					fade: 'true' === $t.attr( 'data-slider-mode-fade' ),
-					speed: $t.attr( 'data-slider-speed' ) ? parseInt( $t.attr( 'data-slider-speed' ), 10 ) : 500,
-					autoplay: 'true' === $t.attr( 'data-slider-autoplay' ),
-					infinite: 'true' === $t.attr( 'data-slider-loop' ),
-					pager: 'true' === $t.attr( 'data-slider-enable-pager' ),
-					controls: 'true' === $t.attr( 'data-slider-enable-controls' )
-				};
-
-				$slider.slick( {
-					adaptiveHeight: true,
-
-					fade: $slider_config.fade,
-					cssEase: 'linear',
-
-					speed: $slider_config.speed,
-
-					autoplay: $slider_config.autoplay,
-
-					infinite: $slider_config.infinite,
-
-					arrows: $slider_config.controls,
-					prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
-					nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
-					appendArrows: $t.find( '.ewf-slider__arrows' ),
-
-					dots: $slider_config.pager,
-					appendDots: $t.find( '.ewf-slider__pager' )
-
+					self.parent().find( '.pager-slider li' ).click( function() {
+						var slideIndex = jQuery( this ).index();
+						self.trigger( 'to.owl.carousel', [ slideIndex, 300 ] );
+						return false;
+					} );
 				} );
-
-				$slider.on( 'init', function( e, slick ) {
-					var $firstAnimatingElements = jQuery( '.slick-slide:first-child' ).find( '[data-animation]' );
-					Portum.Plugins.doAnimations( $firstAnimatingElements );
-				} );
-
-				$slider.on( 'beforeChange', function( e, slick, currentSlide, nextSlide ) {
-					var $animatingElements = jQuery( '.slick-slide[data-slick-index="' + nextSlide + '"]' ).find( '[data-animation]' );
-					Portum.Plugins.doAnimations( $animatingElements );
-				} );
-
-			} );
+			}
 		},
-		clientList: function() {
+		/**
+		 * Initiate Slick slider
+		 */
+		advancedSlider: function() {
 			if ( typeof jQuery.fn.slick !== 'undefined' ) {
-				jQuery( '.ewf-partner-slider .ewf-partner-slider__slides' ).each( function() {
-					var $t = jQuery( this );
+				jQuery( '.ewf-slider' ).each( function( index, element ) {
+					let self = jQuery( element );
 
-					// if slider already initialize go to next;
-					if ( $t.hasClass( 'slick-initialized' ) ) {
+					let slider = self.find( '.ewf-slider__slides' );
+
+					if ( slider.hasClass( 'slick-initialized' ) ) {
 						return true;
 					}
 
-					$t.slick( {
+					slider.slick( {
+						adaptiveHeight: true,
+						fade: self.data( 'slider-mode-fade' ),
+						cssEase: 'linear',
+						speed: self.data( 'slider-speed' ) ? parseInt( self.data( 'slider-speed' ), 10 ) : 500,
+						autoplay: self.data( 'slider-autoplay' ),
+						infinite: self.data( 'slider-loop' ),
+						arrows: self.data( 'slider-enable-controls' ),
+						prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
+						nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
+						appendArrows: self.find( '.ewf-slider__arrows' ),
+						dots: self.data( 'slider-enable-pager' ),
+						appendDots: self.find( '.ewf-slider__pager' )
+
+					} );
+
+					slider.on( 'init', function( e, slick ) {
+						let $firstAnimatingElements = jQuery( '.slick-slide:first-child' ).find( '[data-animation]' );
+						Portum.Plugins.doAnimations( $firstAnimatingElements );
+					} );
+
+					slider.on( 'beforeChange', function( e, slick, currentSlide, nextSlide ) {
+						let $animatingElements = jQuery( '.slick-slide[data-slick-index="' + nextSlide + '"]' ).find( '[data-animation]' );
+						Portum.Plugins.doAnimations( $animatingElements );
+					} );
+
+				} );
+			}
+		},
+		clientList: function() {
+			if ( typeof jQuery.fn.slick !== 'undefined' ) {
+				jQuery( '.ewf-partner-slider .ewf-partner-slider__slides' ).each( function( index, element ) {
+
+					let self = jQuery( element );
+
+					// if slider already initialize go to next;
+					if ( self.hasClass( 'slick-initialized' ) ) {
+						return true;
+					}
+
+					self.slick( {
 						variableWidth: true,
 						autoplay: false,
 						infinite: true,
@@ -251,60 +276,70 @@ var Portum = {
 						cssEase: 'linear',
 						arrows: false,
 						dots: true,
-						appendDots: $t.next()
+						appendDots: self.next()
 					} );
 				} );
 			}
 		},
+		/**
+		 * Set Pie Chart Dimensions accordion to the width they occupy in the
+		 */
 		setDimensionsPieCharts: function() {
-			jQuery( '.ewf-pie__chart' ).each( function() {
+			jQuery( '.ewf-pie__chart' ).each( function( index, element ) {
 
-				var $t = jQuery( this ),
-					n = $t.parent().width(),
-					r = $t.attr( 'data-barSize' );
+				let self = jQuery( element ),
+					n = self.parent().width(),
+					r = self.data( 'barsize' );
 
 				if ( n < r ) {
 					r = n;
 				}
 
-				$t.css( {
+				self.find( 'canvas' ).css( {
 					'height': r,
 					'width': r,
-					'line-height': r + 'px'
 				} );
 
-				$t.find( '.ewf-pie__icon i' ).css( {
+				self.find( '.ewf-pie__icon i' ).css( {
 					'line-height': r + 'px',
 					'font-size': r / 3
 				} );
 
+				self.parent().css( {
+					'line-height': r + 'px'
+				} )
+
 			} );
 		},
+		/**
+		 * Animate Pie Charts
+		 */
 		animatePieCharts: function() {
 			if ( typeof jQuery.fn.easyPieChart !== 'undefined' ) {
 
-				jQuery( '.ewf-pie__chart:in-viewport' ).each( function() {
+				jQuery( '.ewf-pie__chart:in-viewport' ).each( function( index, element ) {
 
-					var $t = jQuery( this ),
-						n = $t.parent().width(),
-						r = $t.attr( 'data-barSize' ),
+					let self = jQuery( element );
+
+					n = self.parent().width(),
+						r = self.data( 'barSize' ),
 						l = 'square';
 
-					if ( $t.attr( 'data-lineCap' ) !== undefined ) {
-						l = $t.attr( 'data-lineCap' );
+					if ( self.data( 'lineCap' ) !== undefined ) {
+						l = self.attr( 'lineCap' );
 					}
 
 					if ( n < r ) {
 						r = n;
 					}
 
-					$t.easyPieChart( {
+					self.easyPieChart( {
 						animate: 1300,
 						lineCap: l,
-						lineWidth: $t.attr( 'data-lineWidth' ),
+						lineWidth: self.attr( 'data-lineWidth' ),
 						size: r,
-						barColor: $t.attr( 'data-barColor' ),
-						trackColor: $t.attr( 'data-trackColor' ),
+						barColor: self.attr( 'data-barColor' ),
+						trackColor: self.attr( 'data-trackColor' ),
 						scaleColor: 'transparent',
 						onStep: function( from, to, percent ) {
 							jQuery( this.el ).find( '.ewf-pie__percent span' ).text( Math.round( percent ) );
@@ -317,15 +352,15 @@ var Portum = {
 			}
 		},
 		animateProgress: function() {
-			jQuery( '.ewf-progress__bar-liniar:in-viewport' ).each( function() {
+			jQuery( '.ewf-progress__bar-liniar:in-viewport' ).each( function( index, element ) {
 
-				var $t = jQuery( this );
+				let self = jQuery( element );
 
-				if ( !$t.hasClass( 'already-animated' ) ) {
-					$t.addClass( 'already-animated' );
+				if ( !self.hasClass( 'already-animated' ) ) {
+					self.addClass( 'already-animated' );
 
-					$t.animate( {
-						width: $t.attr( 'data-value' ) + '%'
+					self.animate( {
+						width: self.data( 'value' ) + '%'
 					}, 2000 );
 				}
 
@@ -335,26 +370,26 @@ var Portum = {
 		 * Animate counters on page scroll
 		 */
 		animateCounters: function() {
-			jQuery( '.ewf-counter__standard:in-viewport' ).each( function() {
+			jQuery( '.ewf-counter__standard:in-viewport' ).each( function( index, element ) {
 
-				var $t = jQuery( this ),
-					n = $t.attr( 'data-value' ),
-					r = parseInt( $t.attr( 'data-speed' ), 10 );
+				let self = jQuery( element ),
+					n = self.data( 'value' ),
+					r = parseInt( self.data( 'speed' ), 10 );
 
-				if ( !$t.hasClass( 'already-animated' ) ) {
-					$t.addClass( 'already-animated' );
+				if ( !self.hasClass( 'already-animated' ) ) {
+					self.addClass( 'already-animated' );
 					jQuery( {
-						countNum: $t.text()
+						countNum: self.text()
 					} ).animate( {
 						countNum: n
 					}, {
 						duration: r,
 						easing: 'linear',
 						step: function() {
-							$t.text( Math.floor( this.countNum ) );
+							self.text( Math.floor( this.countNum ) );
 						},
 						complete: function() {
-							$t.text( this.countNum );
+							self.text( this.countNum );
 						}
 					} );
 				}
@@ -387,17 +422,17 @@ var Portum = {
 
 		},
 		doAnimations: function( elements ) {
-			var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-			elements.each( function() {
-				var $t = jQuery( this );
-				var animationDelay = $t.data( 'delay' ) || '0';
-				var animationType = 'animated ' + $t.data( 'animation' );
-				$t.css( {
+			let animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+			elements.each( function( index, element ) {
+				let self = jQuery( element );
+				let animationDelay = self.data( 'delay' ) || '0';
+				let animationType = 'animated ' + self.data( 'animation' );
+				self.css( {
 					'animation-delay': animationDelay,
 					'-webkit-animation-delay': animationDelay
 				} );
-				$t.addClass( animationType ).one( animationEndEvents, function() {
-					$t.removeClass( animationType );
+				self.addClass( animationType ).on( animationEndEvents, function() {
+					self.removeClass( animationType );
 				} );
 			} );
 		},
@@ -405,64 +440,28 @@ var Portum = {
 		 * Initiate the magnific Popup
 		 */
 		magnificPopup: function() {
-			if ( typeof jQuery().magnificPopup === 'undefined' ) {
-				return;
+			if ( typeof jQuery.fn.magnificPopup !== 'undefined' ) {
+				jQuery( '.magnific-link' ).magnificPopup( {
+					type: 'image',
+					gallery: {
+						enabled: true,
+						navigateByImgClick: true,
+						preload: [ 0, 1 ]
+					},
+				} );
 			}
-			jQuery( '.magnific-link' ).magnificPopup( {
-				type: 'image',
-				gallery: {
-					enabled: true,
-					navigateByImgClick: true,
-					preload: [ 0, 1 ]
-				},
-			} );
-		},
-		/**
-		 * Initiate owl slider
-		 */
-		owlSlider: function() {
-			var owl = jQuery( '.main-slider' );
-			jQuery.each( owl, function( index, element ) {
-				var self = jQuery( element );
-				self.on( 'initialized.owl.carousel', function() {
-					self.parent().find( '.pager-slider' ).addClass( 'active' );
-				} );
-
-				self.owlCarousel( {
-					items: 1,
-					dots: self.data( 'slider-enable-pager' ),
-					mouseDrag: true,
-					navText: '',
-					nav: false,
-					navClass: '',
-					autoplay: self.data( 'slider-autoplay' ),
-					loop: self.data( 'slider-loop' ),
-					lazyLoad: false,
-					autoHeight: true,
-					autoplayTimeout: 5000,
-				} ).on( 'translated.owl.carousel', function( event ) {
-					self.parent().find( '.pager-slider li.active' ).removeClass( 'active' );
-					self.parent().find( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
-				} );
-
-				self.parent().find( '.pager-slider li' ).click( function() {
-					var slideIndex = jQuery( this ).index();
-					self.trigger( 'to.owl.carousel', [ slideIndex, 300 ] );
-					return false;
-				} );
-			} );
 		},
 		/**
 		 * Initiate Plyr library on video elements
 		 */
 		video: function() {
-			if ( typeof plyr === 'undefined' ) {
-				return;
+			if ( typeof Plyr !== 'undefined' ) {
+				let videos = jQuery( '.portum-video-area' );
+				jQuery.each( videos, function( index, videoContainer ){
+					let video = jQuery( videoContainer ).find( 'div' );
+					new Plyr( video );
+				});
 			}
-			var instances = plyr.setup( {
-				debug: false,
-				controls: []
-			} );
 		}
 	},
 	/**
@@ -475,10 +474,7 @@ var Portum = {
 		 */
 		handleAccordions: function() {
 
-			jQuery( document ).on( 'click', '.accordion-item-toggle', function( e ) {
-
-				// preventDefault clicks since accordion-item-toggles are links
-				e.preventDefault();
+			jQuery( document ).on( 'click', '.accordion-item-toggle', function() {
 
 				// show the clicked on panel
 				jQuery( this ).next().slideToggle( 'fast' );
@@ -498,7 +494,7 @@ var Portum = {
 			jQuery( 'a[href*="#"]' )
 
 			// Remove links that don't actually link to anything
-				.not( '[href="#"]' ).not( '[href="#mt-popup-modal"]' ).not( '[href="#0"]' ).click( function( event ) {
+				.not( '[href="#"]' ).click( function( event ) {
 
 				// On-page links
 				if (
@@ -507,7 +503,7 @@ var Portum = {
 				) {
 
 					// Figure out element to scroll to
-					var target = jQuery( this.hash );
+					let target = jQuery( this.hash );
 					target = target.length ? target : jQuery( '[name=' + this.hash.slice( 1 ) + ']' );
 
 					// Does a scroll target exist?
@@ -521,13 +517,13 @@ var Portum = {
 
 							// Callback after animation
 							// Must change focus!
-							var $target = jQuery( target );
-							$target.focus();
-							if ( $target.is( ':focus' ) ) { // Checking if the target was focused
+							let target = jQuery( target );
+							target.focus();
+							if ( target.is( ':focus' ) ) { // Checking if the target was focused
 								return false;
 							} else {
-								$target.attr( 'tabindex', '-1' ); // Adding tabindex for elements not focusable
-								$target.focus(); // Set focus again
+								target.attr( 'tabindex', '-1' ); // Adding tabindex for elements not focusable
+								target.focus(); // Set focus again
 							}
 						} );
 					}
@@ -575,7 +571,7 @@ var Portum = {
 
 			function d() {
 
-				var h = c();
+				let h = c();
 
 				if ( h >= Portum.sticky_point ) {
 					jQuery( '#header' ).addClass( 'stuck' );
@@ -616,31 +612,29 @@ var Portum = {
 		 * Generate the map based on an address
 		 */
 		map: function() {
-			if ( typeof google === 'undefined' ) {
-				return;
-			}
+			if ( typeof google !== 'undefined' ) {
 
-			self = this;
+				self = this;
 
-			jQuery( '.map-canvas' ).each( function() {
-				var map_element = this;
-				var geocoder = new google.maps.Geocoder(),
-					address = jQuery( this );
+				jQuery( '.map-canvas' ).each( function() {
+					let map_element = this;
+					let geocoder = new google.maps.Geocoder(),
+						address = jQuery( this );
 
-				if ( !address.length ) {
-					return;
-				}
-
-				geocoder.geocode( {
-					'address': address.attr( 'data-address' )
-				}, function( results, status ) {
-					if ( status === google.maps.GeocoderStatus.OK ) {
-						self._mapCallback( results, address.attr( 'data-zoom' ), map_element );
+					if ( !address.length ) {
+						return;
 					}
+
+					geocoder.geocode( {
+						'address': address.attr( 'data-address' )
+					}, function( results, status ) {
+						if ( status === google.maps.GeocoderStatus.OK ) {
+							self._mapCallback( results, address.attr( 'data-zoom' ), map_element );
+						}
+					} );
+
 				} );
-
-			} );
-
+			}
 		},
 
 		/**
@@ -652,7 +646,7 @@ var Portum = {
 		 */
 		_mapCallback: function( results, zoom, map_element ) {
 
-			var map, marker, totalHeight, mapHeight, section,
+			let map, marker, totalHeight, mapHeight, section,
 				config = {
 					zoom: parseFloat( zoom ),
 					center: results[ 0 ].geometry.location,
@@ -678,47 +672,6 @@ var Portum = {
 			} else {
 
 			}
-		},
-
-		/**
-		 * Blog Related functions
-		 */
-		blog: function() {
-			jQuery( '.post.sticky .post-thumbnail' ).each( function() {
-				var $image = jQuery( 'img', this ),
-					parent = jQuery( this );
-
-				$image.on( 'load', function() {
-					$image.clone().addClass( 'effect' ).insertAfter( $image );
-					$image.clone().addClass( 'effect' ).insertAfter( $image );
-
-					$image.addClass( 'animate' );
-				} );
-
-				if ( 'undefined' === typeof $image[ 0 ] ) {
-					return;
-				}
-
-				if ( $image[ 0 ].complete ) {
-					$image.load();
-				}
-
-			} );
-
-			jQuery( '.post-thumbnail-preloader' ).each( function() {
-				var $image = jQuery( 'img', this ),
-					parent = jQuery( this ).closest( '.post-thumbnail-preloader' );
-
-				$image.on( 'load', function() {
-					jQuery( '.preloader', parent ).addClass( 'preloaded' );
-				} );
-
-				if ( $image[ 0 ].complete ) {
-					$image.load();
-				}
-
-			} );
-
 		},
 
 		/**
@@ -750,59 +703,11 @@ var Portum = {
 
 		},
 
-		/**
-		 * Section Animations
-		 */
-		animations: function() {
-			jQuery( '.section:in-viewport' ).each( function() {
-				jQuery( this ).addClass( 'animate' );
-			} );
-
-			jQuery( '.post-thumbnail-preloader:in-viewport' ).each( function() {
-				jQuery( this ).addClass( 'animate' );
-			} );
-
-		},
 	},
 	/**
 	 * Mobile related functions
 	 */
 	Mobile: {
-		/**
-		 * Testimonials
-		 */
-		testimonials: function() {
-			jQuery( '.hidden-testimonial' ).slice( 0, 1 ).show();
-			jQuery( '.show-more-comments' ).on( 'click', function( e ) {
-				var hidden = jQuery( '.hidden-testimonial:hidden' );
-				e.preventDefault();
-				hidden.slice( 0, 1 ).fadeIn( 'fast' );
-				if ( 0 === hidden.length ) {
-					jQuery( '.show-more-comments' ).fadeOut( 'slow' );
-				}
-			} );
-
-		},
-
-		/**
-		 * Blog
-		 */
-		blog: function() {
-			jQuery( '.item-carousel-blog' ).slice( 0, 1 ).show();
-			jQuery( '.blog-load-more' ).on( 'click', function( e ) {
-				var hidden = jQuery( '.item-carousel-blog:hidden' );
-				e.preventDefault();
-				hidden.slice( 0, 1 ).slideDown();
-				if ( 0 === hidden.length ) {
-					jQuery( '#load' ).slideUp();
-				}
-
-				jQuery( '.blog-carousel-mobile' ).animate( {
-					scrollTop: jQuery( this ).offset().top
-				}, 500 );
-			} );
-		},
-
 		/**
 		 * Mobile menu
 		 */

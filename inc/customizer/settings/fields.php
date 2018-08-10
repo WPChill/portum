@@ -150,7 +150,7 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 		'letter-spacing',
 	),
 	'selectors'     => array(
-		'#menu',
+		'#menu li a',
 		'#footer ul.nav',
 	),
 	'font_defaults' => array(
@@ -428,7 +428,7 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
  */
 Epsilon_Customizer::add_field( 'portum_copyright_contents', array(
 	'type'    => 'epsilon-text-editor',
-	'default' => 'Macho Themes © 2017. All rights reserved.',
+	'default' => 'Colorlib © 2018. All rights reserved.',
 	'label'   => esc_html__( 'Copyright Text', 'portum' ),
 	'section' => 'portum_footer_section',
 ) );
@@ -1037,7 +1037,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		),
 		'slide_description'             => array(
 			'label'             => esc_html__( 'Slide description', 'portum' ),
-			'type'              => 'text',
+			'type'              => 'epsilon-text-editor',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
 		),
