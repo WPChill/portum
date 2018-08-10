@@ -228,7 +228,7 @@ class Portum_Repeatable_Sections {
 				),
 				'styling' => array(
 					'background-color'    => array(
-						'default' => '#EEEEEE',
+						'default' => false,
 					),
 					'background-image'    => array(
 						'default' => false,
@@ -285,7 +285,7 @@ class Portum_Repeatable_Sections {
 				'openhours_color'                => array(
 					'label'   => esc_html__( 'Open Hours Background Color', 'portum' ),
 					'type'    => 'epsilon-color-picker',
-					'default' => '#FAFAFA',
+					'default' => 'rgba(250,250,250,.1)',
 				),
 				'openhours_button_primary_label' => array(
 					'label'             => esc_html__( 'Button label', 'portum' ),
@@ -448,11 +448,24 @@ class Portum_Repeatable_Sections {
 
 	private function repeatable_advanced_slider() {
 		$slider = array(
-			'id'          => 'advanced-slider',
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
-			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
-			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
-			'fields'      => array(
+			'id'            => 'advanced-slider',
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-advanced-slider.png' ),
+			'title'         => esc_html__( 'Advanced Slider', 'portum' ),
+			'description'   => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
+			'customization' => array(
+				'enabled' => true,
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span:not(.dashicons)' ),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p' ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
 				'slider_transition'        => array(
 					'label'   => esc_html__( 'Transition', 'portum' ),
 					'type'    => 'select',
@@ -467,7 +480,7 @@ class Portum_Repeatable_Sections {
 					'type'    => 'epsilon-slider',
 					'default' => 500,
 					'choices' => array(
-						'min'  => 0,
+						'min'  => 300,
 						'max'  => 2000,
 						'step' => 100,
 					),
@@ -713,7 +726,7 @@ class Portum_Repeatable_Sections {
 	private function repeatable_about() {
 		return array(
 			'id'            => 'about',
-			'title'         => esc_html__( 'Alt. image & text', 'portum' ),
+			'title'         => esc_html__( 'Alternating image + text', 'portum' ),
 			'description'   => esc_html__( 'Alternating image & text section.', 'portum' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
 			'customization' => array(
@@ -966,9 +979,9 @@ class Portum_Repeatable_Sections {
 	 */
 	private function repeatable_appointment() {
 		$arr = array(
-			'id'            => 'appointment',
-			'title'         => esc_html__( 'Appointments Section', 'portum' ),
-			'description'   => esc_html__( 'Contact form for your appointments, you need to have a working Contact Form 7 form created.', 'portum' ),
+			'id'            => 'contact',
+			'title'         => esc_html__( 'Contact Form7 Section', 'portum' ),
+			'description'   => esc_html__( 'Contact form section. You need to have a working Contact Form 7 form created.', 'portum' ),
 			'integration'   => array(
 				'status' => true,
 				'plugin' => 'contact-form-7',
@@ -1036,42 +1049,38 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'appointment_title'      => array(
+				'contact_title'    => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Make an Appointment' ),
+					'default'           => esc_html__( 'Get a quote', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'appointment_subtitle'   => array(
+				'contact_subtitle' => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
-					'default'           => wp_kses_post( 'Schedule a call' ),
+					'default'           => esc_html__( 'Schedule a call', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'appointment_text'       => array(
+				'contact_text'     => array(
 					'label'   => esc_html__( 'Description', 'portum' ),
 					'type'    => 'epsilon-text-editor',
-					'default' => wp_kses_post( '<p>You do not need your physician or health care provider to make arrangements for you. Now it is easy and fast and you can book a consult within minutes!</p>' ),
+					'default' => esc_html__( 'Now it is easy and fast and you can book a consult within minutes!', 'portum' ),
 				),
-				'appointment_background' => array(
-					'label'   => esc_html__( 'Image', 'portum' ),
-					'type'    => 'epsilon-image',
-					'default' => '',
-				),
-				'appointment_form'       => array(
-					'label'   => esc_html__( 'Appointment form', 'portum' ),
-					'type'    => 'select',
-					'choices' => array(
+				'contact_form'     => array(
+					'label'       => esc_html__( 'Contact form', 'portum' ),
+					'description' => esc_html__( 'You need to make sure you have a Contact Form7 form created for this section to work properly.', 'portum' ),
+					'type'        => 'select',
+					'choices'     => array(
 						'' => __( 'Select a Contact7 form', 'portum' ),
 					),
-					'default' => '',
+					'default'     => '',
 				),
 			),
 		);
 
 		if ( defined( 'WPCF7_VERSION' ) ) {
 			/**
-			 * Get cforms, populated appointment_form
+			 * Get cforms, populated contact_form
 			 */
 			$args = array(
 				'post_type' => 'wpcf7_contact_form',
@@ -1083,7 +1092,7 @@ class Portum_Repeatable_Sections {
 				while ( $posts->have_posts() ) {
 					$posts->the_post();
 
-					$arr['fields']['appointment_form']['choices'][ get_the_ID() ] = get_the_title();
+					$arr['fields']['contact_form']['choices'][ get_the_ID() ] = get_the_title();
 				}
 			}
 			wp_reset_query();
@@ -1669,15 +1678,15 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 'left', 'top', 'right' ),
 					),
 					'column-stretch'            => array(
-						'default' => 'boxedin',
+						'default' => 'fullwidth',
 						'choices' => array( 'boxedcenter', 'boxedin', 'fullwidth' ),
 					),
 					'row-spacing-top'           => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
 					'row-spacing-bottom'        => array(
-						'default' => 'md',
+						'default' => 'none',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
 					'column-alignment'          => array(
@@ -1708,6 +1717,7 @@ class Portum_Repeatable_Sections {
 					'background-parallax' => array(
 						'default' => false,
 					),
+
 				),
 				'colors'  => array(
 					'heading-color' => array(
@@ -1721,29 +1731,64 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
+				'video_id'                => array(
+					'label'             => esc_html__( 'Video URL', 'portum' ),
+					'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
+					'type'              => 'text',
+					'default'           => 'https://vimeo.com/104779334',
+					'sanitize_callback' => 'esc_url_raw',
+				),
+				'video_show_controls'     => array(
+					'label'       => esc_html__( 'Show video controls', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will show video controls like: play, pause, stop, etc.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => false,
+				),
+				'video_auto_loop'         => array(
+					'label'       => esc_html__( 'Video loop', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will make your video run on repeat mode. Goes great with muted videos that you want looped.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'video_mute_mode'         => array(
+					'label'       => esc_html__( 'Video muted', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will make your video run muted aka with no sound. This works great for videos you want looped.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'video_autoplay'          => array(
+					'label'       => esc_html__( 'Video Autoplay', 'portum' ),
+					'description' => esc_html__( 'Turning this to ON will make your video autoplay.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'video_max_height'        => array(
+					'label'       => esc_html__( 'Max Video Section Height', 'portum' ),
+					'description' => esc_html__( 'Very useful when displaying videos in full-width mode. Height is in %', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 500,
+					'choices'     => array(
+						'min'  => 10,
+						'max'  => 100,
+						'step' => 5,
+					),
+				),
 				'video_title'             => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
-					'default'           => esc_html__( 'Video section title', 'portum' ),
+					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'video_subtitle'          => array(
 					'label'             => esc_html__( 'Description', 'portum' ),
 					'type'              => 'text',
-					'default'           => esc_html__( 'Video description', 'portum' ),
+					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
-				),
-				'video_id'                => array(
-					'label'             => esc_html__( 'Video URL', 'portum' ),
-					'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
-					'type'              => 'text',
-					'default'           => 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
-					'sanitize_callback' => 'esc_url_raw',
 				),
 				'video_text'              => array(
 					'label'             => esc_html__( 'Information', 'portum' ),
 					'type'              => 'epsilon-text-editor',
-					'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'portum' ),
+					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'video_section_unique_id' => array(

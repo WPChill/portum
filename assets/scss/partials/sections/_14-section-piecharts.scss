@@ -3,7 +3,6 @@
 
 .ewf-pie {
 	position: relative;
-	margin-bottom: 56px;
 	text-align: center;
   
 	&:after {
@@ -18,7 +17,7 @@
 
 .ewf-pie__chart {
 	position: relative;
-	margin: 0 auto 28px;
+	margin: 0 auto;
 	text-align: center;
 
 	canvas {
@@ -37,15 +36,12 @@
 
 .ewf-pie__icon,
 .ewf-pie__percent {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
   display: block;
   width: 100%;
   color: $accent-1-color;
   text-align: center;
 }
+
 
 .ewf-pie__title {
   text-align: center;

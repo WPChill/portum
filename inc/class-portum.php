@@ -554,7 +554,7 @@ class Portum {
 		wp_register_script( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.js', array(), $theme['Version'], true );
 		wp_register_script( 'odometer', get_template_directory_uri() . '/assets/vendors/odometer/odometer.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'easypiechart', get_template_directory_uri() . '/assets/vendors/easypiechart/jquery.easypiechart.min.js', array(), $theme['Version'], true );
-		wp_register_script( 'stickem', get_template_directory_uri() . '/assets/vendors/stickem/jquery.stickem.js', array(), $theme['Version'], true );
+
 		wp_register_script( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/jquery.magnific-popup.min.js', array(), $theme['Version'], true );
 		wp_register_script( 'portum-object', get_template_directory_uri() . '/assets/js/portum.js', array( 'jquery' ), $theme['Version'], true );
 		$string = '';
@@ -589,8 +589,8 @@ class Portum {
 			'jquery',
 			'superfish-hoverIntent',
 			'superfish',
-			'stickem',
 			'viewport',
+			'plyr',
 			'portum-object',
 		), $theme['Version'], true );
 

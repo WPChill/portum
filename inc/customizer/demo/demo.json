@@ -1065,7 +1065,7 @@
           "id": "epsilon_footer_contact_background",
           "label": "Epsilon_footer_contact_background",
           "setting": "epsilon_footer_contact_background",
-          "content": "#fafafa"
+          "content": "rgba(255,255,255,.1)"
         },
         "epsilon_header_background": {
           "id": "epsilon_header_background",
@@ -1125,7 +1125,7 @@
           "id": "epsilon_footer_background",
           "label": "Epsilon_footer_background",
           "setting": "epsilon_footer_background",
-          "content": "#fafafa"
+          "content": "rgba(255,255,255,.1)"
         },
         "portum_color_scheme": {
           "id": "portum_color_scheme",
@@ -1368,7 +1368,7 @@
             "services_section_unique_id": "1234",
             "services_section_class": "section-services-1485479551",
             "services_section_visibility": "visible",
-            "services_background_color": "#fafafa",
+            "services_background_color": "rgba(255,255,255,.1)",
             "services_background_position": "center",
             "services_background_size": "cover",
             "services_background_repeat": "no-repeat",
@@ -1537,7 +1537,7 @@
             "portfolio_section_unique_id": "",
             "portfolio_section_class": "section-portfolio-304730406",
             "portfolio_section_visibility": "visible",
-            "portfolio_background_color": "#fafafa",
+            "portfolio_background_color": "rgba(255,255,255,.1)",
             "portfolio_background_position": "center",
             "portfolio_background_size": "initial",
             "portfolio_background_repeat": "repeat",
@@ -2436,7 +2436,7 @@
             "about_section_unique_id": "about-section",
             "about_section_class": "section-about-2035495143",
             "about_section_visibility": "visible",
-            "about_background_color": "#fdfffe",
+            "about_background_color": "rgba(253,255,254,.1)",
             "about_background_position": "center",
             "about_background_size": "cover",
             "about_background_repeat": "no-repeat",
@@ -2468,7 +2468,7 @@
             "portfolio_section_unique_id": "work-section",
             "portfolio_section_class": "section-portfolio-1915204698",
             "portfolio_section_visibility": "visible",
-            "portfolio_background_color": "rgba(250, 250, 250, 1)",
+            "portfolio_background_color": "rgba(255,255,255,.1)",
             "portfolio_background_position": "center",
             "portfolio_background_size": "initial",
             "portfolio_background_repeat": "repeat",
@@ -2530,7 +2530,7 @@
             "counters_section_unique_id": "",
             "counters_section_class": "section-counters-621877325",
             "counters_section_visibility": "visible",
-            "counters_background_color": "#FAFAFA",
+            "counters_background_color": "rgba(255,255,255,.1)",
             "counters_background_position": "top",
             "counters_background_size": "initial",
             "counters_background_repeat": "repeat",
@@ -2621,7 +2621,7 @@
             "shortcodes_section_unique_id": "contact-section",
             "shortcodes_section_class": "section-shortcodes-1599343353",
             "shortcodes_section_visibility": "visible",
-            "shortcodes_background_color": "#FAFAFA",
+            "shortcodes_background_color": "rgba(255,255,255,.1)",
             "shortcodes_background_position": "center",
             "shortcodes_background_size": "cover",
             "shortcodes_background_repeat": "no-repeat",
@@ -2841,7 +2841,7 @@
             "0": {
               "slide_title": "<strong>Fonts<\/strong> and <strong>colors<\/strong> at your fingertips!",
               "slide_title_animation": "fadeInDown",
-              "slide_description": "Designed for <span style=\"text-decoration: underline;\"><em>beginners and developers alike<\/em><\/span>",
+              "slide_description": "Designed for beginners and developers alike",
               "slide_description_animation": "fadeInDown",
               "slide_background_color": "rgba(0, 0, 0, 0.3)",
               "slide_background": "\/assets\/images\/clean\/desk-1140699_1920.jpg",
