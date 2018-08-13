@@ -23,8 +23,8 @@
 }
 
 .ewf-portfolio-item__thumbnail img {
-    width: 100%;
-    display: block;
+    max-width: 100%;
+    display: inline-block;
     transition: all 0.25s;
 }
 

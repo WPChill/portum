@@ -544,7 +544,6 @@ class Portum {
 		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.min.css' );
 		wp_register_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 		wp_register_style( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.css' );
-		wp_register_style( 'animate', get_template_directory_uri() . '/assets/vendors/animate/animate.css' );
 		wp_register_style( 'magnificPopup', get_template_directory_uri() . '/assets/vendors/magnific-popup/magnific-popup.css' );
 		wp_register_script( 'viewport', get_template_directory_uri() . '/assets/vendors/viewport/viewport.js', array( 'jquery' ), $theme['Version'], true );
 		wp_register_script( 'superfish-hoverIntent', get_template_directory_uri() . '/assets/vendors/superfish/hoverIntent.js', array(), $theme['Version'], true );
@@ -576,7 +575,6 @@ class Portum {
 		wp_enqueue_style( 'portum', get_stylesheet_uri() );
 		wp_enqueue_style( 'portum-main', get_template_directory_uri() . '/assets/css/style-portum.css', array(
 			'font-awesome',
-			'animate',
 			'portum',
 		), $theme['Version'] );
 

@@ -226,6 +226,7 @@ var Portum = {
 					}
 
 					slider.slick( {
+						slidesToShow: self.data('slides-shown'),
 						adaptiveHeight: true,
 						fade: self.data( 'slider-mode-fade' ),
 						cssEase: 'linear',
@@ -238,17 +239,6 @@ var Portum = {
 						appendArrows: self.find( '.ewf-slider__arrows' ),
 						dots: self.data( 'slider-enable-pager' ),
 						appendDots: self.find( '.ewf-slider__pager' )
-
-					} );
-
-					slider.on( 'init', function( e, slick ) {
-						let $firstAnimatingElements = jQuery( '.slick-slide:first-child' ).find( '[data-animation]' );
-						Portum.Plugins.doAnimations( $firstAnimatingElements );
-					} );
-
-					slider.on( 'beforeChange', function( e, slick, currentSlide, nextSlide ) {
-						let $animatingElements = jQuery( '.slick-slide[data-slick-index="' + nextSlide + '"]' ).find( '[data-animation]' );
-						Portum.Plugins.doAnimations( $animatingElements );
 					} );
 
 				} );
@@ -421,21 +411,6 @@ var Portum = {
 			}
 
 		},
-		doAnimations: function( elements ) {
-			let animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-			elements.each( function( index, element ) {
-				let self = jQuery( element );
-				let animationDelay = self.data( 'delay' ) || '0';
-				let animationType = 'animated ' + self.data( 'animation' );
-				self.css( {
-					'animation-delay': animationDelay,
-					'-webkit-animation-delay': animationDelay
-				} );
-				self.addClass( animationType ).on( animationEndEvents, function() {
-					self.removeClass( animationType );
-				} );
-			} );
-		},
 		/**
 		 * Initiate the magnific Popup
 		 */
@@ -457,10 +432,10 @@ var Portum = {
 		video: function() {
 			if ( typeof Plyr !== 'undefined' ) {
 				let videos = jQuery( '.portum-video-area' );
-				jQuery.each( videos, function( index, videoContainer ){
+				jQuery.each( videos, function( index, videoContainer ) {
 					let video = jQuery( videoContainer ).find( 'div' );
 					new Plyr( video );
-				});
+				} );
 			}
 		}
 	},
