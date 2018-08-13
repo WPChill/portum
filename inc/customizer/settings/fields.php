@@ -1017,103 +1017,55 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		'field' => 'slide_title',
 	),
 	'fields'       => array(
-		'slide_title'                   => array(
+		'slide_title'               => array(
 			'label'             => esc_html__( 'Slide title', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'Best Medical Care you can get for you and your family.', 'portum' ),
 		),
-		'slide_title_animation'         => array(
-			'label'   => esc_html__( 'Slide title animation', 'portum' ),
-			'type'    => 'select',
-			'default' => 'fadeInDown',
-			'choices' => array(
-				'fadeIn'      => __( 'Fade In', 'portum' ),
-				'fadeInUp'    => __( 'Fade In Up', 'portum' ),
-				'fadeInDown'  => __( 'Fade In Down', 'portum' ),
-				'fadeInLeft'  => __( 'Fade In Left', 'portum' ),
-				'fadeInRight' => __( 'Fade In Right', 'portum' ),
-			),
-		),
-		'slide_description'             => array(
+		'slide_description'         => array(
 			'label'             => esc_html__( 'Slide description', 'portum' ),
 			'type'              => 'epsilon-text-editor',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
 		),
-		'slide_description_animation'   => array(
-			'label'   => esc_html__( 'Slide description animation', 'portum' ),
-			'type'    => 'select',
-			'default' => 'fadeInDown',
-			'choices' => array(
-				'fadeIn'      => __( 'Fade In', 'portum' ),
-				'fadeInUp'    => __( 'Fade In Up', 'portum' ),
-				'fadeInDown'  => __( 'Fade In Down', 'portum' ),
-				'fadeInLeft'  => __( 'Fade In Left', 'portum' ),
-				'fadeInRight' => __( 'Fade In Right', 'portum' ),
-			),
-		),
-		'slide_background_color'        => array(
+		'slide_background_color'    => array(
 			'label'      => esc_html__( 'Slide Overlay Color', 'portum' ),
 			'type'       => 'epsilon-color-picker',
 			'mode'       => 'rgba',
 			'defaultVal' => '#f9f9fa',
 			'default'    => 'rgba(0,0,0,.1)',
 		),
-		'slide_background'              => array(
+		'slide_background'          => array(
 			'label' => esc_html__( 'Background image', 'portum' ),
 			'type'  => 'epsilon-image',
 			'size'  => 'portum-main-slider',
 		),
-		'slide_cta_primary_label'       => array(
+		'slide_cta_primary_label'   => array(
 			'label'             => esc_html__( 'Primary Button Text', 'portum' ),
 			'type'              => 'text',
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_primary_url'         => array(
+		'slide_cta_primary_url'     => array(
 			'label'             => esc_html__( 'Primary Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_primary_animation'   => array(
-			'label'   => esc_html__( 'Slide primary button animation', 'portum' ),
-			'type'    => 'select',
-			'default' => 'fadeInDown',
-			'choices' => array(
-				'fadeIn'      => __( 'Fade In', 'portum' ),
-				'fadeInUp'    => __( 'Fade In Up', 'portum' ),
-				'fadeInDown'  => __( 'Fade In Down', 'portum' ),
-				'fadeInLeft'  => __( 'Fade In Left', 'portum' ),
-				'fadeInRight' => __( 'Fade In Right', 'portum' ),
-			),
-		),
-		'slide_cta_secondary_label'     => array(
+		'slide_cta_secondary_label' => array(
 			'label'             => esc_html__( 'Secondary Button Text', 'portum' ),
 			'type'              => 'text',
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_secondary_url'       => array(
+		'slide_cta_secondary_url'   => array(
 			'label'             => esc_html__( 'Secondary Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_secondary_animation' => array(
-			'label'   => esc_html__( 'Slide secondary button animation', 'portum' ),
-			'type'    => 'select',
-			'default' => 'fadeInDown',
-			'choices' => array(
-				'fadeIn'      => __( 'Fade In', 'portum' ),
-				'fadeInUp'    => __( 'Fade In Up', 'portum' ),
-				'fadeInDown'  => __( 'Fade In Down', 'portum' ),
-				'fadeInLeft'  => __( 'Fade In Left', 'portum' ),
-				'fadeInRight' => __( 'Fade In Right', 'portum' ),
-			),
-		),
-		'slide_alignment'               => array(
+		'slide_alignment'           => array(
 			'type'      => 'epsilon-button-group',
 			'label'     => __( 'Alignment', 'epsilon-framework' ),
 			'group'     => 'layout',
@@ -1134,7 +1086,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			),
 			'default'   => 'center',
 		),
-		'slide_vertical_alignment'      => array(
+		'slide_vertical_alignment'  => array(
 			'type'      => 'epsilon-button-group',
 			'label'     => __( 'Vertical Alignment', 'epsilon-framework' ),
 			'group'     => 'layout',

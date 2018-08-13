@@ -94,20 +94,20 @@ wp_enqueue_style( 'slick' );
 						<div class="ewf-slider-slide__content-wrap">
 							<?php
 							if ( ! empty( $slide['slide_title'] ) ) {
-								echo '<h1 data-animation="' . esc_attr( $slide['slide_title_animation'] ) . '" data-delay="0">' . wp_kses_post( $slide['slide_title'] ) . '</h1>';
+								echo '<h1>' . wp_kses_post( $slide['slide_title'] ) . '</h1>';
 							}
 
 							if ( ! empty( $slide['slide_description'] ) ) {
-								echo '<p data-animation="' . esc_attr( $slide['slide_description_animation'] ) . '" data-delay="0.2s">' . wpautop( wp_kses_post( $slide['slide_description'] ) ) . '</p>';
+								echo '<p>' . wpautop( wp_kses_post( $slide['slide_description'] ) ) . '</p>';
 							}
 
 
 							if ( ! empty( $slide['slide_cta_primary_label'] ) ) {
-								echo '<a class="ewf-btn ewf-btn--huge" href="' . esc_attr( $slide['slide_cta_primary_url'] ) . '" data-animation="' . esc_attr( $slide['slide_cta_primary_animation'] ) . '" data-delay="0.3s">' . wp_kses_post( $slide['slide_cta_primary_label'] ) . '</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+								echo '<a class="ewf-btn ewf-btn--huge" href="' . esc_attr( $slide['slide_cta_primary_url'] ) . '">' . wp_kses_post( $slide['slide_cta_primary_label'] ) . '</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 							}
 
 							if ( ! empty( $slide['slide_cta_secondary_label'] ) ) {
-								echo '<a class="ewf-btn ewf-btn--huge ewf-btn--secondary" href="' . esc_attr( $slide['slide_cta_secondary_url'] ) . '" data-animation="' . esc_attr( $slide['slide_cta_secondary_animation'] ) . '" data-delay="0.4s">' . wp_kses_post( $slide['slide_cta_secondary_label'] ) . '</a>';
+								echo '<a class="ewf-btn ewf-btn--huge ewf-btn--secondary" href="' . esc_attr( $slide['slide_cta_secondary_url'] ) . '">' . wp_kses_post( $slide['slide_cta_secondary_label'] ) . '</a>';
 							}
 							?>
 						</div><!-- end .ewf-slider-slide__content -->

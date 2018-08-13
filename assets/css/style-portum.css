@@ -4356,7 +4356,7 @@ body.ctdw-bar-visible #header.header--over-content {
 
 .ewf-section__content {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   width: 100%;
 }
 
@@ -4801,8 +4801,8 @@ body.ctdw-bar-visible #header.header--over-content {
 }
 
 .ewf-portfolio-item__thumbnail img {
-  width: 100%;
-  display: block;
+  max-width: 100%;
+  display: inline-block;
   transition: all 0.25s;
 }
 

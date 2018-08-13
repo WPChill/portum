@@ -46,9 +46,14 @@ $parent_attr = array(
 
 				<div class="row">
 					<div class="col-sm-12">
-						<?php if ( $fields['clientlist_slider'] == '1' || $fields['clientlist_slider'] === 'true' ) { ?>
-						<div class="ewf-partner-slider ewf-partner-slider--spacing-small">
-							<ul class="ewf-partner-slider__slides" data-slick='{ "slidesToShow": 6, "slidesToScroll": 2, "autoplay": true, "infinite": true, "speed": 500, "dots": true }'>
+						<?php if ( '1' == $fields['clientlist_slider'] || 'true' === $fields['clientlist_slider'] ) { ?>
+						<div class="ewf-slider" data-slider-mode-fade="<?php echo 'fade' === $fields['slider_transition'] ? 'true' : 'false'; ?>"
+						     data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>"
+						     data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>"
+						     data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>"
+						     data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>"
+						     data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
+							<ul class="ewf-partner-slider__slides">
 
 								<?php } else { ?>
 								<ul class="ewf-partners-list ewf-partners-list--spacing-small ewf-partners-list--columns-6">
@@ -68,10 +73,10 @@ $parent_attr = array(
 										</li>
 									<?php } ?>
 
-									<?php if ( $fields['clientlist_slider'] == '1' || $fields['clientlist_slider'] === 'true' ) { ?>
+									<?php if ( '1' == $fields['clientlist_slider'] || 'true' === $fields['clientlist_slider'] ) { ?>
 								</ul><!-- end .ewf-partner-slider__slides -->
 
-								<div class="ewf-partner-slider__pager">
+								<div class="ewf-slider__pager">
 									<!-- dots will be added here -->
 								</div>
 						</div><!-- end .ewf-partner-slider -->

@@ -726,8 +726,8 @@ class Portum_Repeatable_Sections {
 	private function repeatable_about() {
 		return array(
 			'id'            => 'about',
-			'title'         => esc_html__( 'Alternating image + text', 'portum' ),
-			'description'   => esc_html__( 'Alternating image & text section.', 'portum' ),
+			'title'         => esc_html__( 'Image + text', 'portum' ),
+			'description'   => esc_html__( 'Image & text section.', 'portum' ),
 			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' ),
 			'customization' => array(
 				'enabled' => true,
@@ -980,7 +980,7 @@ class Portum_Repeatable_Sections {
 	private function repeatable_appointment() {
 		$arr = array(
 			'id'            => 'contact',
-			'title'         => esc_html__( 'Contact Form7 Section', 'portum' ),
+			'title'         => esc_html__( 'Contact Section', 'portum' ),
 			'description'   => esc_html__( 'Contact form section. You need to have a working Contact Form 7 form created.', 'portum' ),
 			'integration'   => array(
 				'status' => true,
@@ -2481,25 +2481,59 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'CLIENTS', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'clientlist_grouping'          => array(
-					'label'       => esc_html__( 'Filter shown clients', 'portum' ),
-					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_clients', 'client_title' ),
-					'linking'     => array( 'portum_clients', 'client_title' ),
-					'default'     => array( 'all' ),
-				),
 				'clientlist_slider'            => array(
 					'label'   => esc_html__( 'Enable slider', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => false,
 				),
-				'clientlist_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'portum_clientlists_section',
-					'navigateToLabel' => esc_html__( 'Add/Edit Client Logos &rarr;', 'portum' ),
+				'slider_autostart'             => array(
+					'label'   => esc_html__( 'Autostart', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_infinite'              => array(
+					'label'   => esc_html__( 'Infinite slides', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_pager'                 => array(
+					'label'   => esc_html__( 'Pager', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_controls'              => array(
+					'label'   => esc_html__( 'Controls', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => true,
+				),
+				'slider_transition'            => array(
+					'label'   => esc_html__( 'Transition', 'portum' ),
+					'type'    => 'select',
+					'default' => 'slide',
+					'choices' => array(
+						'fade'  => esc_html__( 'Fade', 'portum' ),
+						'slide' => esc_html__( 'Slide', 'portum' ),
+					),
+				),
+				'client_slider_speed'          => array(
+					'label'   => esc_html__( 'Speed', 'portum' ),
+					'type'    => 'epsilon-slider',
+					'default' => 500,
+					'choices' => array(
+						'min'  => 300,
+						'max'  => 2000,
+						'step' => 100,
+					),
+				),
+				'slides_shown'                 => array(
+					'label'   => esc_html__( 'No. of slides to show', 'portum' ),
+					'type'    => 'epsilon-slider',
+					'default' => 1,
+					'choices' => array(
+						'min'  => 1,
+						'max'  => 5,
+						'step' => 1,
+					),
 				),
 				'clientlist_repeater_field'    => array(
 					'type'    => 'hidden',
@@ -2510,6 +2544,22 @@ class Portum_Repeatable_Sections {
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
 				),
+				'clientlist_grouping'          => array(
+					'label'       => esc_html__( 'Filter shown clients', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_clients', 'client_title' ),
+					'linking'     => array( 'portum_clients', 'client_title' ),
+					'default'     => array( 'all' ),
+				),
+				'clientlist_navigation'        => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'portum_clientlists_section',
+					'navigateToLabel' => esc_html__( 'Add/Edit Client Logos &rarr;', 'portum' ),
+				),
+
 			),
 		);
 	}
