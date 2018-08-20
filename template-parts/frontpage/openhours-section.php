@@ -60,7 +60,7 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 							<div class="col-sm-5">
 								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
 
-									<h4 class="open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></h4>
+									<div class="ewf-like-h4 open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></div>
 
 									<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
 										<div class="open-hours__schedule__container">
@@ -79,7 +79,7 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 							<div class="col-sm-5">
 								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
 
-									<h4 class="open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></h4>
+									<div class="ewf-like-h4 open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></div>
 
 									<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
 										<div class="open-hours__schedule__container">
@@ -111,7 +111,7 @@ $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours
 							<div class="col-sm-12">
 								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
 
-									<h4 class="open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></h4>
+									<div class="ewf-like-h4 open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></div>
 
 									<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
 										<div class="open-hours__schedule__container">

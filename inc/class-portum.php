@@ -253,7 +253,7 @@ class Portum {
 			'epsilon_title_color' => array(
 				'label'       => esc_html__( 'Title Color', 'portum' ),
 				'description' => esc_html__( 'The color used for titles.', 'portum' ),
-				'default'     => '#1a171c',
+				'default'     => '#404044',
 				'section'     => 'colors',
 				'hover-state' => false,
 			),
@@ -261,7 +261,7 @@ class Portum {
 			'epsilon_text_color' => array(
 				'label'       => esc_html__( 'Text Color', 'portum' ),
 				'description' => esc_html__( 'The color used for paragraphs.', 'portum' ),
-				'default'     => '#777777',
+				'default'     => '#8b8b92',
 				'section'     => 'colors',
 				'hover-state' => false,
 			),
@@ -541,6 +541,7 @@ class Portum {
 		 * Register scripts
 		 */
 		wp_register_style( 'font-awesome', get_template_directory_uri() . '/assets/vendors/font-awesome/font-awesome.css' );
+		wp_register_style( 'ion-icons', get_template_directory_uri() . '/assets/vendors/ionicons/ion.css' );
 		wp_register_style( 'owl-carousel', get_template_directory_uri() . '/assets/vendors/owl.slider/owl.carousel.min.css' );
 		wp_register_style( 'plyr', get_template_directory_uri() . '/assets/vendors/plyr/plyr.css' );
 		wp_register_style( 'slick', get_template_directory_uri() . '/assets/vendors/slick/slick.css' );
@@ -575,6 +576,7 @@ class Portum {
 		wp_enqueue_style( 'portum', get_stylesheet_uri() );
 		wp_enqueue_style( 'portum-main', get_template_directory_uri() . '/assets/css/style-portum.css', array(
 			'font-awesome',
+			'ion-icons',
 			'portum',
 		), $theme['Version'] );
 
@@ -654,7 +656,7 @@ class Portum {
 		/**
 		 * Image sizes
 		 */
-		add_image_size( 'portum-blog-section-image', 345, 240, true );
+		add_image_size( 'portum-blog-section-image', 350, 350, true );
 		add_image_size( 'portum-blog-post-image', 520, 345, true );
 		add_image_size( 'portum-blog-post-sticky', 850, 460, true );
 		add_image_size( 'portum-main-slider', 1600, 600, true );

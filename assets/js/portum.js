@@ -226,8 +226,11 @@ var Portum = {
 					}
 
 					slider.slick( {
-						slidesToShow: self.data('slides-shown'),
-						adaptiveHeight: true,
+						lazyLoad: self.data( 'slider-lazyload' ) ? 'ondemand' : false,
+						slidesToShow: self.data( 'slides-shown' ),
+						slidesToScroll: self.data( 'slides-scrolled' ),
+						centerMode: self.data( 'slider-centermode' ),
+						adaptiveHeight: false,
 						fade: self.data( 'slider-mode-fade' ),
 						cssEase: 'linear',
 						speed: self.data( 'slider-speed' ) ? parseInt( self.data( 'slider-speed' ), 10 ) : 500,
@@ -241,33 +244,6 @@ var Portum = {
 						appendDots: self.find( '.ewf-slider__pager' )
 					} );
 
-				} );
-			}
-		},
-		clientList: function() {
-			if ( typeof jQuery.fn.slick !== 'undefined' ) {
-				jQuery( '.ewf-partner-slider .ewf-partner-slider__slides' ).each( function( index, element ) {
-
-					let self = jQuery( element );
-
-					// if slider already initialize go to next;
-					if ( self.hasClass( 'slick-initialized' ) ) {
-						return true;
-					}
-
-					self.slick( {
-						variableWidth: true,
-						autoplay: false,
-						infinite: true,
-						slidesToShow: 6,
-						slidesToScroll: 2,
-						speed: 500,
-						fade: false,
-						cssEase: 'linear',
-						arrows: false,
-						dots: true,
-						appendDots: self.next()
-					} );
 				} );
 			}
 		},

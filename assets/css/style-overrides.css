@@ -29,9 +29,9 @@
  */
 
 
-/* ==========================================================================
-	=Accent colors
-   	========================================================================== */
+	/* ==========================================================================
+		=Accent colors
+		   ========================================================================== */
 
 .text-accent-color {
     color: %1$s;
@@ -43,19 +43,6 @@
     /* epsilon_accent_color_second */
 }
 
-
-/* Advanced Slider, Clients List Slider - Pager */
-
-.ewf-partner-slider__pager .slick-dots li.slick-active button,
-.ewf-slider .ewf-slider__pager .slick-dots li.slick-active button {
-    background-color: %2$s;
-    /* epsilon_accent_color */
-}
-
-.ewf-slider .ewf-slider__arrows a:hover {
-    color: %2$s;
-    /* epsilon_accent_color */
-}
 
 
 /* Hero - Slider */
@@ -148,59 +135,14 @@
 }
 
 
-/* Services */
-
-.services-item--filled-round.services-item--color-accent1 i,
-.services-item--filled-square.services-item--color-accent1 i {
-    background-color: %2$s;
-    border-color: %2$s;
-}
-
-.services-item--filled-round.services-item--color-accent2 i,
-.services-item--filled-square.services-item--color-accent2 i {
-    background-color: %3$s;
-    border-color: %3$s;
-}
-
-.services-item--border-square.services-item--color-accent1 i,
-.services-item--border-round.services-item--color-accent1 i {
-    border-color: %2$s;
-    color: %2$s;
-}
-
-.services-item--border-square.services-item--color-accent2 i,
-.services-item--border-round.services-item--color-accent2 i {
-    border-color: %3$s;
-    color: %3$s;
-}
-
-.services-item--no-border.services-item--color-accent1 i,
-.services-item--no-border.services-item--color-accent1 i {
-    color: %2$s;
-}
-
-.services-item--no-border.services-item--color-accent2 i,
-.services-item--no-border.services-item--color-accent2 i {
-    color: %3$s;
-}
-
 
 /* Counters */
 
-.ewf-counter__icon i {
-    color: %2$s;
-    /*	epsilon_accent_color */
-}
 
 .ewf-counter__odometer,
 .ewf-counter__symbol {
     color: %3$s;
     /* epsilon_accent_color_second */
-}
-
-.ewf-counter__title {
-    color: %4$s;
-    /*	epsilon_text_separator */
 }
 
 
@@ -815,84 +757,4 @@ input[type="button"]:active {
 
 .widget a:active {
     color: %9$s;
-}
-
-
-/* Buttons */
-
-.ewf-btn {
-    background-color: %2$s;
-    /*	epsilon_accent_color */
-    -webkit-box-shadow: inset 0 0 0 2px %2$s;
-    box-shadow: inset 0 0 0 2px %2$s;
-    /*	epsilon_accent_color */
-}
-
-.ewf-btn:focus,
-.ewf-btn:hover {
-    -webkit-box-shadow: inset 0 0 0 2px %3$s;
-    /* epsilon_accent_color_second */
-    box-shadow: inset 0 0 0 2px %3$s;
-    /* epsilon_accent_color_second */
-    background-color: %3$s;
-    /* epsilon_accent_color_second */
-}
-
-.ewf-btn:active {
-    -webkit-box-shadow: inset 0 0 0 2px %2$s;
-    /* epsilon_accent_color */
-    box-shadow: inset 0 0 0 2px %2$s;
-    /* epsilon_accent_color */
-    background-color: %2$s;
-    /* epsilon_accent_color */
-}
-
-body .ewf-btn.ewf-btn--color-default,
-body .ewf-btn.ewf-btn--color-default:active,
-body .ewf-btn.ewf-btn--color-default:hover,
-body .ewf-btn.ewf-btn--color-default:focus {
-    color: #fff;
-	background-color: %6$s;
-	-webkit-box-shadow: inset 0 0 0 2px %6$s;
-	box-shadow: inset 0 0 0 2px %6$s;
-}
-
-body .ewf-btn.ewf-btn--color-accent1,
-body .ewf-btn.ewf-btn--color-accent1:active,
-body .ewf-btn.ewf-btn--color-accent1:hover,
-body .ewf-btn.ewf-btn--color-accent1:focus {
-    color: %6$s;
-	background-color: %2$s;
-	-webkit-box-shadow: inset 0 0 0 2px %2$s;
-	box-shadow: inset 0 0 0 2px %2$s;
-}
-
-body .ewf-btn.ewf-btn--color-accent2,
-body .ewf-btn.ewf-btn--color-accent2:active,
-body .ewf-btn.ewf-btn--color-accent2:hover,
-body .ewf-btn.ewf-btn--color-accent2:focus {
-    color: %6$s;
-	background-color: %3$s;
-	-webkit-box-shadow: inset 0 0 0 2px %3$s;
-	box-shadow: inset 0 0 0 2px %3$s;
-}
-
-body .ewf-btn.ewf-btn--color-accent4,
-body .ewf-btn.ewf-btn--color-accent4:active,
-body .ewf-btn.ewf-btn--color-accent4:hover,
-body .ewf-btn.ewf-btn--color-accent4:focus {
-    color: #FFF;
-    background-color: %3$s;
-    -webkit-box-shadow: inset 0 0 0 2px %3$s;
-    box-shadow: inset 0 0 0 2px %3$s;
-}
-
-body .ewf-btn.ewf-btn--color-accent3,
-body .ewf-btn.ewf-btn--color-accent3:active,
-body .ewf-btn.ewf-btn--color-accent3:hover,
-body .ewf-btn.ewf-btn--color-accent3:focus {
-    color: #FFF;
-    background-color: %2$s;
-    -webkit-box-shadow: inset 0 0 0 2px %2$s;
-    box-shadow: inset 0 0 0 2px %2$s;
 }

@@ -16,16 +16,15 @@ $grouping  = array(
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'team', Portum_Repeatable_Sections::get_instance() );
 
-$fields['members'] = $frontpage->get_repeater_field( $fields['team_repeater_field'], array(), $grouping );
+$fields['members']             = $frontpage->get_repeater_field( $fields['team_repeater_field'], array(), $grouping );
+$fields['team_column_spacing'] = isset( $fields['team_column_spacing'] ) ? $fields['team_column_spacing'] : '';
 
 $parent_attr = array(
 	'id'    => ! empty( $fields['team_section_unique_id'] ) ? array( $fields['team_section_unique_id'] ) : array(),
 	'class' => array( 'section-team', 'ewf-section', 'ewf-section-' . $fields['team_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-$items_count = 0;
-$items_class = null;
+$span        = 12 / absint( $fields['team_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -40,269 +39,73 @@ $items_class = null;
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'team', $fields ) ); ?>">
 
 				<div class="row">
-
-					<?php if ( 'left' === $fields['team_row_title_align'] ) { ?>
-
-						<div class="col-md-6">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
-						</div>
-
-						<div class="col-md-6">
-							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $key => $member ) { ?>
-
-									<?php
-
-									if ( $items_count & 1 ) {
-										$items_class = ( $items_class ? null : ' right' );
-									}
-
-									$items_count++;
-									?>
-
-									<div class="team-members-item team-members-item--full<?php echo esc_attr( $items_class ); ?>">
-										<?php
-										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
-										?>
-										<?php
-										$arr = array(
-											'facebook'  => $member['member_social_facebook'],
-											'twitter'   => $member['member_social_twitter'],
-											'pinterest' => $member['member_social_pinterest'],
-											'linkedin'  => $member['member_social_linkedin'],
-										);
-
-										$arr = array_filter( $arr );
-										?>
-
-
-										<?php if ( $items_count & 1 ) { ?>
-
-											<?php if ( ! empty( $member['member_image'] ) ) { ?>
-												<div class="portrait">
-													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-													<div class="overlay"></div>
-												</div>
-											<?php } ?>
-
-											<div class="details">
-												<?php if ( ! empty( $member['member_title'] ) ) { ?>
-													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-												<?php } ?>
-											</div>
-
-										<?php } else { ?>
-
-											<div class="details">
-												<?php if ( ! empty( $member['member_title'] ) ) { ?>
-													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-												<?php } ?>
-											</div>
-											<?php if ( ! empty( $member['member_image'] ) ) { ?>
-												<div class="portrait">
-													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-													<div class="overlay"></div>
-												</div>
-											<?php } ?>
-
-										<?php } ?>
-
-										<ul class="social-team">
-											<?php foreach ( $arr as $k => $v ) { ?>
-												<li>
-													<a href="<?php echo esc_url( $v ); ?>">
-														<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
-													</a>
-												</li>
-											<?php } ?>
-										</ul>
-
-									</div>
-								<?php }// End foreach(). ?>
-							<?php }// End if(). ?>
-						</div>
-
-					<?php } elseif ( 'right' === $fields['team_row_title_align'] ) { ?>
-
-						<div class="col-md-6">
-							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $key => $member ) { ?>
-
-									<?php
-
-									if ( $items_count & 1 ) {
-										$items_class = ( $items_class ? null : ' right' );
-									}
-
-									$items_count++;
-									?>
-
-									<div class="team-members-item team-members-item--full<?php echo esc_attr( $items_class ); ?>">
-										<?php
-										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
-										?>
-										<?php
-										$arr = array(
-											'facebook'  => $member['member_social_facebook'],
-											'twitter'   => $member['member_social_twitter'],
-											'pinterest' => $member['member_social_pinterest'],
-											'linkedin'  => $member['member_social_linkedin'],
-										);
-
-										$arr = array_filter( $arr );
-										?>
-
-
-										<?php if ( $items_count & 1 ) { ?>
-
-											<?php if ( ! empty( $member['member_image'] ) ) { ?>
-												<div class="portrait">
-													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-													<div class="overlay"></div>
-												</div>
-											<?php } ?>
-
-											<div class="details">
-												<?php if ( ! empty( $member['member_title'] ) ) { ?>
-													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-												<?php } ?>
-											</div>
-
-										<?php } else { ?>
-
-											<div class="details">
-												<?php if ( ! empty( $member['member_title'] ) ) { ?>
-													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-												<?php } ?>
-											</div>
-											<?php if ( ! empty( $member['member_image'] ) ) { ?>
-												<div class="portrait">
-													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-													<div class="overlay"></div>
-												</div>
-											<?php } ?>
-
-										<?php } ?>
-
-										<ul class="social-team">
-											<?php foreach ( $arr as $k => $v ) { ?>
-												<li>
-													<a href="<?php echo esc_url( $v ); ?>">
-														<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
-													</a>
-												</li>
-											<?php } ?>
-										</ul>
-
-									</div>
-								<?php }// End foreach(). ?>
-							<?php }// End if(). ?>
-						</div>
-
-						<div class="col-md-6">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
-						</div>
-
-					<?php } else { ?>
-
-						<div class="col-md-12">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
-						</div>
-
-						<div class="col-md-12">
-							<?php if ( $fields['members'] ) { ?>
-								<?php foreach ( $fields['members'] as $key => $member ) { ?>
-
-									<?php
-
-									if ( 2 === $items_count ) {
-										$items_class = ( $items_class ? null : ' right' );
-
-										$items_count = 0;
-									}
-
-									$items_count++;
-									?>
-
-									<div class="team-members-item<?php echo esc_attr( $items_class ); ?>">
-										<?php
-										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team_members' ), Epsilon_Helper::allowed_kses_pencil() );
-										?>
-										<?php
-										$arr = array(
-											'facebook'  => $member['member_social_facebook'],
-											'twitter'   => $member['member_social_twitter'],
-											'pinterest' => $member['member_social_pinterest'],
-											'linkedin'  => $member['member_social_linkedin'],
-										);
-
-										$arr = array_filter( $arr );
-										?>
-
-
-										<?php if ( $items_class ) { ?>
-
-											<div class="details">
-												<?php if ( ! empty( $member['member_title'] ) ) { ?>
-													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-												<?php } ?>
-											</div>
-											<?php if ( ! empty( $member['member_image'] ) ) { ?>
-												<div class="portrait">
-													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-													<div class="overlay"></div>
-												</div>
-											<?php } ?>
-
-										<?php } else { ?>
-
-											<?php if ( ! empty( $member['member_image'] ) ) { ?>
-												<div class="portrait">
-													<img src="<?php echo esc_url( $member['member_image'] ); ?>" alt="" />
-													<div class="overlay"></div>
-												</div>
-											<?php } ?>
-
-											<div class="details">
-												<?php if ( ! empty( $member['member_title'] ) ) { ?>
-													<h5><?php echo wp_kses_post( $member['member_title'] ); ?></h5>
-													<?php echo wp_kses_post( wpautop( $member['member_text'] ) ); ?>
-
-												<?php } ?>
-											</div>
-
-										<?php } ?>
-
-										<ul class="social-team">
-											<?php foreach ( $arr as $k => $v ) { ?>
-												<li>
-													<a href="<?php echo esc_url( $v ); ?>">
-														<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
-													</a>
-												</li>
-											<?php } ?>
-										</ul>
-
-									</div>
-								<?php }// End foreach(). ?>
-							<?php }// End if(). ?>
-						</div>
-
-					<?php } ?>
+					<div class="col-sm-12">
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['team_subtitle'], $fields['team_title'] ) ); ?>
+					</div>
 				</div>
 
-			</div>
-		</div>
+				<?php if ( ! empty( $fields['members'] ) ) { ?>
+					<div class="row">
+						<div class="ewf-section__team">
+							<?php foreach ( $fields['members'] as $key => $v ) { ?>
 
-	</div>
+								<div class="col-sm-<?php echo esc_attr( $span ); ?> ewf-item__spacing-<?php echo esc_attr( $fields['team_column_spacing'] ); ?>">
+									<div class="ewf-team__container">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_team_members_section', 'portum_team' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+
+										<?php if ( ! empty( $v['member_title'] ) ) { ?>
+											<div class="ewf-team__title">
+												<div class="ewf-like-h5">
+													<?php echo wp_kses_post( $v['member_title'] ); ?>
+												</div>
+											</div>
+										<?php } ?>
+
+
+										<?php if ( ! empty( $v['member_text'] ) ) { ?>
+											<div class="ewf-team__content">
+												<?php echo wp_kses_post( wpautop( $v['member_text'] ) ); ?>
+											</div>
+										<?php } ?>
+
+
+										<?php if ( ! empty( $v['member_image'] ) ) { ?>
+											<div class="ewf-team__thumbnail">
+												<img src="<?php echo esc_url( $v['member_image'] ); ?>" />
+											</div>
+										<?php } ?>
+
+
+										<?php
+										$arr = array(
+											'facebook'  => $v['member_social_facebook'],
+											'twitter'   => $v['member_social_twitter'],
+											'pinterest' => $v['member_social_pinterest'],
+											'linkedin'  => $v['member_social_linkedin'],
+										);
+										$arr = array_filter( $arr );
+
+										if ( ! empty( $arr ) ) {
+
+											?>
+											<ul class="ewf-team__social_links">
+												<?php foreach ( $arr as $k => $v ) { ?>
+													<li>
+														<a href="<?php echo esc_url( $v ); ?>">
+															<i class="fa fa-<?php echo esc_attr( $k ); ?>" aria-hidden="true"></i>
+														</a>
+													</li>
+												<?php } ?>
+											</ul>
+										<?php } // endif ?>
+									</div><!--/.ewf-team__container-->
+								</div><!--/.col-sm-->
+							<?php } // endforeach ?>
+						</div><!--/.ewf-section__team-->
+					</div><!--/.row-->
+				<?php }  // !empty ?>
+
+			</div><!--./ewf-section__content-->
 </section>

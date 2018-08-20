@@ -34,7 +34,7 @@ wp_enqueue_style( 'slick' );
 					<?php } ?>
 					<div class="slider-details">
 						<?php if ( ! empty( $slide['slides_title'] ) ) { ?>
-							<h1><?php echo wp_kses_post( $slide['slides_title'] ); ?></h1>
+							<div class="ewf-like-h1"><?php echo wp_kses_post( $slide['slides_title'] ); ?></div>
 						<?php } ?>
 						<?php if ( ! empty( $slide['slides_description'] ) ) { ?>
 							<span><?php echo wp_kses_post( $slide['slides_description'] ); ?></span>

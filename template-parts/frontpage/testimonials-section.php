@@ -29,10 +29,7 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-$i           = 0;
-$span        = 12 / absint( $fields['testimonials_column_group'] );
-$items_count = 0;
-$items_class = null;
+$span = 12 / absint( $fields['testimonials_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -46,31 +43,51 @@ $items_class = null;
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'testimonials', $fields ) ); ?>">
 
-				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'], array( 'center' => true ) ) ); ?>
+				<div class="row">
+					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'] ) ); ?>
+				</div>
 
 				<?php if ( ! empty( $fields['testimonials'] ) ) { ?>
 					<div class="row">
-						<?php foreach ( $fields['testimonials'] as $key => $v ) { ?>
+						<?php
+						foreach ( $fields['testimonials'] as $key => $v ) {
+							$bg_color = 'background-color: ' . ( ! empty( $v['testimonial_bg_color'] ) ? esc_attr( $v['testimonial_bg_color'] ) : 'transparent' ) . ';';
 
-							<?php $i++; ?>
+							?>
 
 							<div class="col-md-<?php echo esc_attr( $span ); ?>">
-								<div class="testimonial<?php echo ( 1 & $i ) ? ' left' : ' right'; ?>">
+								<div class="testimonial ewf-item__border-dashed-effect" style="<?php echo esc_attr( $bg_color ); ?>">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_testimonials_section', 'portum_testimonials' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
+
+
 									<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
-										<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" alt="<?php echo esc_attr( $v['testimonial_title'] ); ?>">
+										<div class="ewf-testimonial__thumbnail">
+											<img src="<?php echo esc_url( $v['testimonial_image'] ); ?>" />
+										</div>
 									<?php } ?>
+
 
 									<?php if ( ! empty( $v['testimonial_title'] ) ) { ?>
-										<h6><?php echo wp_kses_post( $v['testimonial_title'] ); ?></h6>
+										<div class="ewf-testimonial__title">
+											<div class="ewf-like-h5">
+												<?php echo wp_kses_post( $v['testimonial_title'] ); ?>
+											</div>
+										</div>
 									<?php } ?>
 
-									<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
+
+									<?php if ( ! empty( $v['testimonial_text'] ) ) { ?>
+										<div class="ewf-testimonial__content">
+											<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
+										</div>
+									<?php } ?>
 
 									<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
-										<a href="#"><?php echo wp_kses_post( $v['testimonial_subtitle'] ); ?></a>
+										<div class="ewf-testimonial__by">
+											<?php echo wp_kses_post( $v['testimonial_subtitle'] ); ?>
+										</div>
 									<?php } ?>
 								</div>
 							</div>

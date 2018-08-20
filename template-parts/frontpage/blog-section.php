@@ -12,17 +12,12 @@ $fields    = $frontpage->sections[ $section_id ];
 
 $args  = array(
 	'posts_per_page' => $fields['blog_post_count'],
-	'meta_query'     => array(
-		array(
-			'key' => '_thumbnail_id',
-		),
-	),
 );
 $query = new WP_Query( $args );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'blog', Portum_Repeatable_Sections::get_instance() );
 
-$parent_attr = array(
+$parent_attr      = array(
 	'id'    => ! empty( $fields['blog_section_unique_id'] ) ? array( $fields['blog_section_unique_id'] ) : array(),
 	'class' => array(
 		'section-blog',
@@ -32,6 +27,10 @@ $parent_attr = array(
 	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+$counter          = 0;
+$span             = 12 / absint( $fields['blog_post_count'] );
+$item_style       = ( ! empty( $fields['item_style'] ) ? esc_attr( $fields['item_style'] ) : '' );
+$item_style_color = 'border-color: ' . ( ! empty( $fields['item_style_color_picker'] ) ? esc_attr( $fields['item_style_color_picker'] ) : '' ) . ';'
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -47,51 +46,91 @@ $parent_attr = array(
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'blog', $fields ) ); ?>">
 
 				<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['blog_subtitle'], $fields['blog_title'], array( 'center' => true ) ) ); ?>
-
-				<?php while ( $query->have_posts() ) { ?>
-
+				<div class="row row-eq-height">
+					<?php while ( $query->have_posts() ) { ?>
+					<?php $counter++; ?>
 					<?php $query->the_post(); ?>
 
-					<div class="blog-news-item">
-						<div class="row">
-							<div class="col-md-8 col-sm-6 col-sx-12">
-								<div class="post-details">
-									<h4>
-										<a href="<?php echo esc_url( get_permalink() ); ?>">
-											<?php echo the_title(); ?>
-										</a>
-									</h4>
-
-									<?php echo wpautop( wp_kses_post( wp_trim_words( get_the_content(), 30 ) ) ); ?>
-
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6 col-sx-12">
-								<div class="featured">
+					<div class="col-sm-<?php echo esc_attr( $span ); ?>">
+						<div class="ewf-blog <?php echo esc_attr( $item_style ); ?>" style="<?php echo esc_attr( $item_style_color ); ?>">
+							<?php if ( $fields['blog_show_thumbnail'] ) { ?>
+								<div class="ewf-blog__featured-image">
 									<?php
 									if ( has_post_thumbnail() ) {
 										the_post_thumbnail( 'portum-blog-section-image' );
-									} else {
-										echo '<img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/picture_placeholder.jpg"/>';
 									}
 									?>
-									<div class="overlay"></div>
+								</div><!--/.ewf-blog__featured-image-->
+							<?php }//endif ?>
 
-									<div class="news-category">
-										<strong>
-											<?php $categories = get_the_category(); ?>
-											<a href="<?php echo esc_url( get_category_link( $categories[0] ) ); ?>"><?php echo wp_kses_post( $categories[0]->name ); ?></a>
-										</strong>
-									</div>
+							<div class="ewf-blog__container">
 
-									<div class="news-date">
-										<strong><span><?php echo wp_kses_post( get_the_date() ); ?></span></strong>
+								<div class="ewf-blog__meta">
+									<?php if ( $fields['blog_show_date'] ) { ?>
+										<span class="ewf-blog__news-date"><i class="fa fa-calendar"></i>
+										<a href="<?php echo get_the_permalink(); ?>">
+										<?php echo wp_kses_post( get_the_date() ); ?>
+										</a>
+									</span><!--/.news-date-->
+									<?php }//endif ?>
+
+									<?php if ( $fields['blog_show_author'] ) { ?>
+										<span class="ewf-blog__author"><i class="fa fa-user"></i>
+										<a href="<?php echo get_the_author_link(); ?>">
+										<?php echo wp_kses_post( get_the_author() ); ?>
+										</a>
+									</span><!--/.news-date-->
+									<?php }//endif ?>
+
+									<?php if ( $fields['blog_show_comments'] ) { ?>
+										<span class="ewf-blog__comments">
+										<a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i>
+											<?php echo wp_kses_post( get_comments_number( '0', '1', '%' ) ); ?>
+										</a>
+									</span><!--/.news-date-->
+									<?php }//endif ?>
+								</div><!--/.ewf-blog--meta-->
+
+								<div class="ewf-like-h5">
+									<a href="<?php echo esc_url( get_permalink() ); ?>">
+										<?php echo the_title(); ?>
+									</a>
+								</div><!--/.ewf-like-heading-->
+
+								<?php if ( $fields['blog_post_word_count'] > 0 ) { ?>
+									<div class="ewf-blog__content">
+										<?php echo wp_trim_words( get_the_content(), absint( $fields['blog_post_word_count'] ) ); ?>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php }// End while(). ?>
+								<?php } ?>
+
+							</div><!--/.ewf-blog__content-->
+						</div><!--/.ewf-blog-->
+					</div><!--/.col-->
+					<?php if ( 0 === $counter % ( 12 / $span ) ) { ?>
+				</div><!--/.row-->
+				<div class="row row-eq-height">
+					<?php } ?>
+					<?php }// End while(). ?>
+				</div><!--/.row-->
+
+				<?php if ( $fields['blog_show_read_more'] ) { ?>
+					<?php
+					$button_size             = ! empty( $fields['blog_button_size'] ) ? esc_attr( $fields['blog_button_size'] ) : 'ewf-btn--huge';
+					$button_label            = ! empty( $fields['blog_button_label'] ) ? esc_attr( $fields['blog_button_label'] ) : __( 'Read More', 'portum' );
+					$button_background_color = 'background-color: ' . ( ! empty( $fields['blog_button_background_color'] ) ? esc_attr( $fields['blog_button_background_color'] ) : 'initial' ) . ';';
+					$button_text_color       = 'color: ' . ( ! empty( $fields['blog_button_text_color'] ) ? esc_attr( $fields['blog_button_text_color'] ) : 'initial' ) . ';';
+					$button_border_radius    = 'border-radius: ' . ( ! empty( $fields['blog_button_radius'] ) ? esc_attr( $fields['blog_button_radius'] ) : '0' ) . 'px;';
+					$button_border_color     = 'border-color: ' . ( ! empty( $fields['blog_button_border_color'] ) ? esc_attr( $fields['blog_button_border_color'] ) : 'initial' ) . ';';
+
+					$style = $button_background_color . $button_border_color . $button_border_radius . $button_text_color;
+					?>
+
+					<div class="row">
+						<div class="text-center col-md-12">
+							<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" style="<?php echo esc_attr( $style ); ?>" class="ewf-btn <?php echo esc_attr( $button_size ); ?>"><?php echo esc_html( $button_label ); ?></a>
+						</div><!--/.col-->
+					</div><!--/.row-->
+				<?php } ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
 		</div>

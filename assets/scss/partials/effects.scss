@@ -1,0 +1,40 @@
+/* ----------------------------------- Dashed Border Effect (all around)  ------------------------*/
+.ewf-item__border-dashed-effect {
+	border: 2px dashed $accent-1-color;
+	border-left: 2px solid $accent-1-color;
+	border-bottom: 2px solid $accent-1-color;
+
+	/*
+	&:before,
+	&:after {
+		position: absolute;
+		content: '';
+		background: $accent-1-color;
+	}
+
+	&:before {
+		top: -2px;
+		left: 0;
+		width: 50px;
+		height: 2px;
+	}
+
+	&:after {
+		right: -2px;
+		bottom: 0;
+		width: 2px;
+		height: 80px;
+	}
+	*/
+}
+
+/* ----------------------------------- Box Shadow Effect (below) ------------------------*/
+.ewf-item__shadow-effect {
+	-webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+	box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* ----------------------------------- Simple Border Effect (all around) ------------------------*/
+.ewf-item__simple-border-effect {
+	border: 1px solid $accent-1-color;
+}

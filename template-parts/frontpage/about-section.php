@@ -34,31 +34,37 @@ $parent_attr    = array(
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'about', $fields ) ); ?>">
-				<div class="row">
-					<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
+
+				<?php if ( 'right' === $fields['about_row_title_align'] ) { ?>
+					<div class="row">
 
 						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
 							<div class="col-md-6">
 								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
-							</div>
+							</div><!--/.col-md--6-->
 						<?php } ?>
 
-						<div class="ewf-section-text col-md-<?php echo esc_attr( $section_content_cols ); ?>">
-							<?php
-							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'], array( 'bottom' => true ) ) );
-							?>
-							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
+						<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+							<div class="ewf-section-text">
+								<?php
+								echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) );
+								?>
+								<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
-							<?php if ( $button_primary ) { ?>
-								<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
+								<?php if ( $button_primary ) { ?>
+									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
+										<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?>
+									</a>
+								<?php }; ?>
+							</div><!--/.ewf-section-text-->
+						</div><!--/.col-md-->
+					</div><!--/.row-->
 
-									<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
-							<?php }; ?>
-						</div>
+				<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
+				<div class="row">
 
-					<?php } elseif ( 'left' === $fields['about_row_title_align'] ) { ?>
-
-						<div class="ewf-section-text col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+					<div class="col-md-<?php echo esc_attr( $section_content_cols ); ?>">
+						<div class="ewf-section-text">
 							<?php
 							echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) );
 							?>
@@ -69,33 +75,40 @@ $parent_attr    = array(
 
 									<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
 							<?php }; ?>
+						</div><!--/.ewf-section-text-->
+					</div><!--/.col-md-->
+
+					<?php if ( ! empty( $fields['about_image'] ) ) { ?>
+
+						<div class="col-md-6">
+							<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
 						</div>
+					<?php }//endif ?>
+					<div><!--/.row-->
 
-						<?php if ( ! empty( $fields['about_image'] ) ) { ?>
-							<div class="col-md-6">
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
-							</div>
-						<?php } ?>
+						<?php } else { ?>
 
-					<?php } else { ?>
+							<div class="row">
+								<div class="col-md-12">
+									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
+									<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 
-						<div class="col-md-12">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
-							<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-
-							<?php if ( $button_primary ) { ?>
-								<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
-							<?php }; ?>
+									<?php if ( $button_primary ) { ?>
+										<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?></a>
+									<?php }; ?>
+								</div><!--/.col-md--12-->
+							</div><!--/.row-->
 
 							<?php if ( $fields['about_image'] ) { ?>
-								<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
-							<?php }; ?>
-						</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<img src="<?php echo esc_url( $fields['about_image'] ); ?>" />
+									</div><!--/.col-sm-12-->
+								</div>
 
-					<?php } ?>
-
-				</div>
-			</div>
-		</div>
-	</div>
+							<?php }//endif ?>
+						<?php }//endelse ?>
+					</div>
+				</div><!--/.ewf-section--content-->
+			</div><!--/.attr-helper-->
 </section>

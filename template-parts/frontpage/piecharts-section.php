@@ -75,7 +75,7 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 										</div>
 									</div><!-- end .ewf-pie -->
 									<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
-										<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
+										<div class="ewf-like-h6 ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></div>
 									<?php } ?>
 									<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
 										<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
@@ -110,7 +110,7 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 										</div>
 									</div><!-- end .ewf-pie -->
 									<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
-										<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
+										<div class="ewf-like-h6 ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></div>
 									<?php } ?>
 									<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
 										<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
@@ -152,7 +152,7 @@ $span  = 12 / absint( $fields['piecharts_column_group'] );
 									</div>
 								</div><!-- end .ewf-pie -->
 								<?php if ( ! empty( $piechart['piechart_title'] ) ) { ?>
-									<h6 class="ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></h6>
+									<div class="ewf-like-h6 ewf-pie__title"><?php echo wp_kses_post( $piechart['piechart_title'] ); ?></div>
 								<?php } ?>
 								<?php if ( ! empty( $piechart['piechart_text'] ) ) { ?>
 									<p class="ewf-pie__description"><?php echo wp_kses_post( $piechart['piechart_text'] ); ?> </p>
