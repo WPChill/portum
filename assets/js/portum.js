@@ -175,43 +175,6 @@ var Portum = {
 	 */
 	Plugins: {
 		/**
-		 * Initiate owl slider
-		 */
-		owlSlider: function() {
-			if ( typeof jQuery.fn.owlCarousel !== 'undefined' ) {
-				let owl = jQuery( '.main-slider' );
-				jQuery.each( owl, function( index, element ) {
-					let self = jQuery( element );
-					self.on( 'initialized.owl.carousel', function() {
-						self.parent().find( '.pager-slider' ).addClass( 'active' );
-					} );
-
-					self.owlCarousel( {
-						items: 1,
-						dots: self.data( 'slider-enable-pager' ),
-						mouseDrag: true,
-						navText: '',
-						nav: false,
-						navClass: '',
-						autoplay: self.data( 'slider-autoplay' ),
-						loop: self.data( 'slider-loop' ),
-						lazyLoad: false,
-						autoHeight: true,
-						autoplayTimeout: 5000,
-					} ).on( 'translated.owl.carousel', function( event ) {
-						self.parent().find( '.pager-slider li.active' ).removeClass( 'active' );
-						self.parent().find( '.pager-slider li:eq(' + event.page.index + ')' ).addClass( 'active' );
-					} );
-
-					self.parent().find( '.pager-slider li' ).click( function() {
-						var slideIndex = jQuery( this ).index();
-						self.trigger( 'to.owl.carousel', [ slideIndex, 300 ] );
-						return false;
-					} );
-				} );
-			}
-		},
-		/**
 		 * Initiate Slick slider
 		 */
 		advancedSlider: function() {

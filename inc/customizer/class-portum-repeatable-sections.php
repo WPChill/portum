@@ -535,61 +535,6 @@ class Portum_Repeatable_Sections {
 		return $slider;
 	}
 
-	/**
-	 * Repeatable slider section
-	 *
-	 * @return array
-	 */
-	private function repeatable_slider() {
-		return array(
-			'id'          => 'slider',
-			'title'       => esc_html__( 'Slider', 'portum' ),
-			'description' => esc_html__( 'A slider section. It retrieves content from Theme Content / Slides.', 'portum' ),
-			'image'       => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-hero-pt.png' ),
-			'fields'      => array(
-				'slider_pager'             => array(
-					'label'   => esc_html__( 'Show Numbered Pager', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_autoplay'          => array(
-					'label'   => esc_html__( 'Slider Autoplay', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_loop'              => array(
-					'label'   => esc_html__( 'Slider Loop', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'portum_slides_section',
-					'navigateToLabel' => esc_html__( 'Add/Edit Slides &rarr;', 'portum' ),
-				),
-				'slider_grouping'          => array(
-					'label'       => esc_html__( 'Filter shown slides', 'portum' ),
-					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_slides', 'slides_title' ),
-					'linking'     => array( 'portum_slides', 'slides_title' ),
-					'default'     => array( 'all' ),
-				),
-				'slider_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'portum_slides',
-				),
-				'slider_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'portum' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
-				),
-			),
-		);
-	}
-
 
 	/**
 	 * Repeatable services section

@@ -36,7 +36,6 @@
 		 * Initiate plugins
 		 */
 		try {
-			Portum.Plugins.owlSlider();
 			Portum.Plugins.advancedSlider();
 			Portum.Plugins.video();
 			Portum.Plugins.magnificPopup();
@@ -69,13 +68,12 @@
 		/**
 		 * Initiate plugins
 		 */
-		Portum.Plugins.owlSlider();
 		Portum.Plugins.advancedSlider();
 		Portum.Plugins.video();
 		Portum.Plugins.magnificPopup();
-		//Portum.Plugins.animateCounters();
-		//Portum.Plugins.animateProgress();
-		//Portum.Plugins.animatePieCharts();
+		Portum.Plugins.animateCounters();
+		Portum.Plugins.animateProgress();
+		Portum.Plugins.animatePieCharts();
 		Portum.Plugins.setDimensionsPieCharts();
 
 		/**

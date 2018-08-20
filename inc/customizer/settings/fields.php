@@ -453,39 +453,7 @@ Epsilon_Customizer::add_field( 'portum_testimonials', array(
 		),
 	),
 ) );
-/**
- * Slides
- */
-Epsilon_Customizer::add_field( 'portum_slides', array(
-	'type'         => 'epsilon-repeater',
-	'section'      => 'portum_slides_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Slides', 'portum' ),
-	'button_label' => esc_html__( 'Add new slides', 'portum' ),
-	'row_label'    => array(
-		'type'  => 'field',
-		'field' => 'slides_title',
-	),
-	'fields'       => array(
-		'slides_title'       => array(
-			'label'             => esc_html__( 'Title', 'portum' ),
-			'type'              => 'text',
-			'sanitize_callback' => 'wp_kses_post',
-			'default'           => 'Growing your business',
-		),
-		'slides_description' => array(
-			'label'   => esc_html__( 'Description', 'portum' ),
-			'type'    => 'textarea',
-			'default' => 'FROM ZERO TO HERO ALONG WITH YOU',
-		),
-		'slides_image'       => array(
-			'label'   => esc_html__( 'Portrait', 'portum' ),
-			'type'    => 'epsilon-image',
-			'size'    => 'portum-main-slider',
-			'default' => esc_url( get_template_directory_uri() . '/assets/images/slider-img-01.jpg' ),
-		),
-	),
-) );
+
 /**
  * Services
  */
