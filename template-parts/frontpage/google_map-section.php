@@ -69,10 +69,10 @@ wp_enqueue_script( 'googlemaps' );
 												<?php
 												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
 												?>
-												<h5>
+												<div class="ewf-like-h5">
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 													<?php echo wp_kses_post( $field['contact_title'] ); ?>
-												</h5>
+												</div><!--/.ewf-like--h5-->
 												<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 											</div>
 										</div>
@@ -110,10 +110,10 @@ wp_enqueue_script( 'googlemaps' );
 												<?php
 												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
 												?>
-												<h5>
+												<div class="ewf-like-h5">
 													<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 													<?php echo wp_kses_post( $field['contact_title'] ); ?>
-												</h5>
+												</div><!--/.ewf-like--h5-->
 												<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 											</div>
 										</div>
@@ -158,10 +158,10 @@ wp_enqueue_script( 'googlemaps' );
 											<?php
 											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_contact_section', 'portum_contact_section' ), Epsilon_Helper::allowed_kses_pencil() );
 											?>
-											<h5>
+											<div class="ewf-like-h5">
 												<i class="fa <?php echo esc_attr( $field['contact_icon'] ); ?>" aria-hidden="true"></i>
 												<?php echo wp_kses_post( $field['contact_title'] ); ?>
-											</h5>
+											</div><!--/.ewf-like-h5-->
 											<?php echo wpautop( wp_kses_post( $field['contact_text'] ) ); ?>
 										</div>
 									</div>
@@ -169,10 +169,8 @@ wp_enqueue_script( 'googlemaps' );
 							</div>
 						<?php } ?>
 					</div>
-
 				</div>
 			</div>
-
 		<?php } ?>
 	</div>
 </section>

@@ -289,13 +289,13 @@ class Portum_Helper {
 			$class .= ' headline--xs-bottom';
 		}
 		$html = '<div class="' . $class . '">';
-
-		if ( ! empty( $subtitle ) ) {
-			$html .= '<span>' . $subtitle . '</span>';
-		}
 		if ( ! empty( $title ) ) {
 			$html .= '<h3>' . $title . '</h3>';
 		}
+		if ( ! empty( $subtitle ) ) {
+			$html .= '<span>' . $subtitle . '</span>';
+		}
+
 		$html .= '</div>';
 
 		return $html;
@@ -433,9 +433,6 @@ class Portum_Helper {
 	 */
 	public static function generate_css_color_tabs( $section_id, $key, $fields ) {
 
-		if ( ! is_customize_preview() ) {
-			return;
-		}
 
 		$heading_selectors = array(
 			'h1',
@@ -455,17 +452,20 @@ class Portum_Helper {
 
 		echo '<style type="text/css" media="all">';
 		foreach ( $text_selectors as $text_selector ) {
-			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $text_selector ) . ' ';
-			echo '{ ';
-			echo 'color: ' . esc_attr( $fields[ $key . '_text_color' ] );
-			echo '}';
+			if ( ! empty( $fields[ $key . '_text_color' ] ) ) {
+				echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $text_selector ) . ' ';
+				echo '{ ';
+				echo 'color: ' . esc_attr( $fields[ $key . '_text_color' ] );
+				echo '}';
+			}
 		}
 		foreach ( $heading_selectors as $heading_selector ) {
-			echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $heading_selector ) . ' ';
-			echo '{ ';
-			echo 'color: ' . esc_attr( $fields[ $key . '_heading_color' ] );
-			echo '}';
-
+			if ( ! empty( $fields[ $key . '_heading_color' ] ) ) {
+				echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $heading_selector ) . ' ';
+				echo '{ ';
+				echo 'color: ' . esc_attr( $fields[ $key . '_heading_color' ] );
+				echo '}';
+			}
 		}
 
 		echo '</style>';

@@ -1,127 +1,54 @@
-
 /* ----------------------------------- #07 - TEAM section --------------------------------*/
 
-.team-members-item,
-.team-members-item .portrait,
-.team-members-item .details {
-    float: left;
-    width: 50%;
-    position: relative;
-}
+.ewf-section__team {
 
-.team-members-item {
-    background-color: #fff;
-    transition: 180ms all;
-	overflow:hidden;
+	width: 100%;
 
-	&.team-members-item--full {
-		width:100%;
+	.ewf-team__container {}
+
+	.ewf-team__title {}
+
+	.ewf-team__content {
+		font-size: 14px;
+		line-height: 1.8;
+
+		p {
+			margin: 0 0 0.5em 0;
+			font-size: 0.875em;
+		}
 	}
 
-	.portrait .overlay {
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		box-shadow: inset 0 10px 20px rgba(35, 31, 32, .05);
-		transition:background 150ms;
-		z-index: 99;
-	}
-	
-	.details {
-		padding: 15px 20px 0 20px;
-		box-sizing: border-box;
-		overflow:hidden;
-	}
-	
-	img {
-		display: block;
-		width: 100%;
-		height: auto;
-		z-index: 9;
-		position: relative;
-	}
-	
-	&.right .social-team {
-		left:0;
-	}
-}
-
-
-.social-team {
-    
-	position: absolute;
-	padding: 0;
-	bottom: 0;
-	box-sizing: border-box;
-	width:50%;
-	right:0;
-	padding-left:20px;
-	height:26px;
-	margin-bottom:0;
-	
-	li {
-		list-style-type: none;
-		display: block;
-		margin: 0 15px 0 0;
-		width:16px;
-		height:26px;
-		float:left;
-	}
-	
-	a {
-		color: #dbd8d8;
-		transition: 180ms all;
-	}
-	
-	a:hover {
-		color: #CBCBCB;
-	}
-}
-
-
-@media (max-width: 1024px) {
-
-    .team-members-item {
-        width: 100%;
-		margin-bottom:30px; 
-    
+	.ewf-team__thumbnail {
 		img {
-			object-fit: fill;
-		}
-		
-		.social-team {
-			position:relative;
-			float:right;
-		}
-		
-		&.right .details { 
-			float:right;
+			width: 100%;
 		}
 	}
-}
+	div[class*="ewf-like-"] {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-@media (max-width: 425px) {
-	
-	.team-members-item {
+	.ewf-team__social_links {
+		list-style: none;
+		margin-top: 10px;
 
-		.social-team,
-		.details {
-			width: 70%;
-			float:right;
-		}
+		li {
+			display: inline-block;
 
-		&.right .portrait {
-			float:left;
-		}
-	
-		.portrait {
-			width:30%;
-		}
+			&:last-of-type {
+				margin-right: 0;
+			}
 
-		.details {
-			padding:0 0 0 15px;
+			a {
+				text-decoration: none;
+				font-size: 12px;
+				padding: 2px 6px;
+
+				&:hover {
+					background-color: #333;
+					color: #FFF;
+				}
+			}
 		}
 	}
 }

@@ -53,14 +53,13 @@ $parent_attr         = array(
 								<?php foreach ( $fields['expertise'] as $index => $expertise ) { ?>
 									<div class="expertise-item">
 										<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
-											<h4>
+											<div class="ewf-like-h4">
 												<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
 													<strong><?php echo wp_kses_post( $expertise['expertise_number'] ); ?></strong>
 												<?php } ?>
 
 												<?php echo wp_kses_post( $expertise['expertise_title'] ); ?>
-
-											</h4>
+											</div>
 										<?php } ?>
 
 										<?php echo wp_kses_post( wpautop( $expertise['expertise_description'] ) ); ?>
@@ -91,14 +90,14 @@ $parent_attr         = array(
 								<?php foreach ( $fields['expertise'] as $index => $expertise ) { ?>
 									<div class="expertise-item">
 										<?php if ( ! empty( $expertise['expertise_title'] ) ) { ?>
-											<h4>
+											<div class="ewf-like-h4">
 												<?php if ( ! empty( $expertise['expertise_number'] ) ) { ?>
 													<strong><?php echo wp_kses_post( $expertise['expertise_number'] ); ?></strong>
 												<?php } ?>
 
 												<?php echo wp_kses_post( $expertise['expertise_title'] ); ?>
 
-											</h4>
+											</div>
 										<?php } ?>
 
 										<?php echo wp_kses_post( wpautop( $expertise['expertise_description'] ) ); ?>

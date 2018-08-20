@@ -152,15 +152,14 @@
 
 .ewf-btn {
 	background-color: $accent-1-color;
-	box-shadow: inset 0 0 0 2px $accent-1-color;
+	border: solid 1px;
 	color: #fff;
 	position: relative;
 	background-clip: padding-box;
 	display: inline-block;
 	min-width: 110px;
 	padding: 6px 13px;
-	border-radius: 21px;
-	margin-bottom: 26px;
+	margin-right: 10px;
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
@@ -168,18 +167,15 @@
 	transition: .3s all ease;
 	&:focus,
 	&:hover {
-		box-shadow: inset 0 0 0 2px $accent-2-color;
 		background-color: $accent-2-color;
 		color: #fff;
 	}
 	&:active {
 		background-color: $accent-1-color;
-		box-shadow: inset 0 0 0 2px $accent-1-color;
 		color: #fff;
 	}
 }
 
-.ewf-btn.ewf-btn-color-default,
 .ewf-btn:active,
 .ewf-btn:hover,
 .ewf-btn:focus {
@@ -187,59 +183,12 @@
 }
 
 .ewf-btn,
-.ewf-btn.ewf-btn--color-default,
 .ewf-btn:active,
 .ewf-btn:hover,
 .ewf-btn:focus {
 	color: #fff;
 }
 
-.ewf-btn.ewf-btn--color-accent1,
-.ewf-btn.ewf-btn--color-accent1:active,
-.ewf-btn.ewf-btn--color-accent1:hover,
-.ewf-btn.ewf-btn--color-accent1:focus {
-	color: $accent-1-color;
-}
-
-.ewf-btn.ewf-btn--color-accent2,
-.ewf-btn.ewf-btn--color-accent2:active,
-.ewf-btn.ewf-btn--color-accent2:hover,
-.ewf-btn.ewf-btn--color-accent2:focus {
-	color: $accent-2-color;
-}
-
-.ewf-btn.ewf-btn--color-accent3,
-.ewf-btn.ewf-btn--color-accent3:active,
-.ewf-btn.ewf-btn--color-accent3:hover,
-.ewf-btn.ewf-btn--color-accent3:focus {
-	color: #fff;
-	background-color: $accent-1-color;
-}
-
-.ewf-btn.ewf-btn--color-accent4,
-.ewf-btn.ewf-btn--color-accent4:active,
-.ewf-btn.ewf-btn--color-accent4:hover,
-.ewf-btn.ewf-btn--color-accent4:focus {
-	color: #fff;
-	background-color: $accent-2-color;
-}
-
-.ewf-btn.ewf-btn--inverted {
-	background-color: $accent-2-color;
-	box-shadow: inset 0 0 0 2px $accent-2-color;
-	color: $accent-2-color;;
-	&:focus,
-	&:hover {
-		background-color: $accent-1-color;
-		box-shadow: inset 0 0 0 2px $accent-1-color;
-		color: $accent-1-color;
-	}
-	&:active {
-		background-color: $accent-2-color;
-		box-shadow: inset 0 0 0 2px $accent-2-color;
-		color: $accent-2-color;
-	}
-}
 
 .ewf-btn.ewf-btn--small {
 	padding: 2px 14px;
@@ -259,7 +208,6 @@
 }
 
 .ewf-btn.ewf-btn--secondary {
-	box-shadow: inset 0 0 0 2px $accent-1-color;
 	background-color: transparent;
 	color: $accent-1-color;
 }

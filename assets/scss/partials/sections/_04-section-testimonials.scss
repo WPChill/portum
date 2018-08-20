@@ -1,89 +1,45 @@
 /* ----------------------------------- #04 - TESTIMONIALS section ------------------------*/
 
 .testimonial {
-	background: #fff url("../images/back-quote.png") no-repeat;
 	position: relative;
-	margin-bottom: 75px;
+	margin-top: 55px;
 	min-height: 150px;
-	box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045);
-	padding: 30px 0 40px 0;
+	padding: 50px 30px;
+	text-align: center;
+	color: $text-color;
 
-	&.left {
-		padding-left:95px;
-		padding-right:30px;
-		text-align: left;
-		background-position:top left;
-		
-		img { left: -95px; }
+	.ewf-testimonial__by {
+		font-size: 0.8125em;
+		font-weight: 400;
+		color: lighten($text-color, 40);
 	}
 
-	&.right {
-		padding-right:95px;
-		padding-left:30px;
-		text-align: right;
-		background-position:top right;
-		
-		img { right: -95px; }
-	}
-	
-	h6 {
-		position: relative;
-		z-index: 999;
+	.ewf-testimonial__title {
+		div[class*="ewf-like-"] {
+			color: $accent-1-color;
+		}
 	}
 
 	img {
+		top: -65px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
 		display: block;
 		position: absolute;
-		width: 160px;
-		height: auto;		
-		bottom: -25px;
-		box-shadow: 0 7px 19px 2px rgba(0, 0, 0, .1); 
-	}
-	
-	p {	font-style: italic;	}
-		
-}
-
-
-@media (max-width: 768px) {
-
-	.section-testimonials .comment-hidden-mobile + .show-more-comments {
-		display: block;
-		width: 100%;
-		border-radius: 0 0 20px 20px;
+		max-width: 100px;
+		height: auto;
+		border-radius: 50%;
 	}
 
-	.hidden-testimonial {
-		display: none;
-	}
-
-	.testimonial {
-		margin-bottom: 35px;
-		
-		&.left {
-			padding: 25px 0 25px 35px;
-			
-			img {
-				right: 20px;
-				left: initial;			
-			}
-		}
-
-		&.right {
-			padding: 25px 35px 25px 0;
-			
-			img {
-				left: 20px;
-				right: initial;
-			}
-		}
-		
-		img {
-			width: 65px;
-			top: -20px;
-			bottom: initial;
+	.ewf-testimonial__content {
+		p {
+			font-size: 0.875em;
+			line-height: 1.5em;
 		}
 	}
+
 }
 
 /* ----------------------------------- #04 - TESTIMONIALS section - END -------------------*/

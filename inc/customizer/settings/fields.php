@@ -71,19 +71,18 @@ Epsilon_Customizer::add_field( 'portum_page_layout', array(
 /**
  * Typography section options
  */
+
 Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'type'          => 'epsilon-typography',
 	'transport'     => 'postMessage',
 	'section'       => 'portum_typography_section',
-	'label'         => esc_html__( 'Global font', 'portum' ),
-	'description'   => esc_html__( 'The font that will be applied to the entire document', 'portum' ),
+	'label'         => esc_html__( 'Global theme font', 'portum' ),
+	'description'   => esc_html__( 'The font that will be applied to the entire theme. ', 'portum' ),
 	'stylesheet'    => 'portum-main',
 	'choices'       => array(
 		'font-family',
 		'font-weight',
 		'font-style',
-		'font-size',
-		'line-height',
 		'letter-spacing',
 	),
 	'selectors'     => array(
@@ -92,47 +91,10 @@ Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'font_defaults' => array(
 		'font-family' => 'default_font',
 		'font-size'   => '16',
-		'line-height' => '26',
+		'line-height' => '21',
 	),
 ) );
 
-Epsilon_Customizer::add_field( 'portum_typography_headings', array(
-	'type'          => 'epsilon-typography',
-	'transport'     => 'postMessage',
-	'label'         => esc_html__( 'Headings', 'portum' ),
-	'section'       => 'portum_typography_section',
-	'description'   => esc_html__( 'Note: Current typography controls will only be affecting the blog.', 'portum' ),
-	'stylesheet'    => 'portum-main',
-	'choices'       => array(
-		'font-family',
-		'font-weight',
-		'font-style',
-		'font-size',
-		'line-height',
-		'letter-spacing',
-	),
-	'selectors'     => array(
-		'.post-title',
-		'h1',
-		'h2',
-		'h3',
-		'h4',
-		'h5',
-		'h6',
-		'.pager-slider li strong',
-		'.expertise-item h4 strong',
-		'.pricing-item .plan',
-		'.item-carousel-blog a',
-	),
-	'font_defaults' => array(
-		'font-family'    => 'default_font',
-		'font-size'      => '16',
-		'letter-spacing' => '0',
-		'font-weight'    => 'on',
-		'line-height'    => '22',
-		'font-style'     => '',
-	),
-) );
 
 Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 	'type'          => 'epsilon-typography',
@@ -145,8 +107,6 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 		'font-family',
 		'font-weight',
 		'font-style',
-		'font-size',
-		'line-height',
 		'letter-spacing',
 	),
 	'selectors'     => array(
@@ -154,35 +114,10 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 		'#footer ul.nav',
 	),
 	'font_defaults' => array(
-		'font-family' => '"Hind", sans-serif',
+		'font-family' => 'default_font',
 		'font-weight' => '',
-	),
-) );
-
-Epsilon_Customizer::add_field( 'portum_typography_headline_title', array(
-	'type'          => 'epsilon-typography',
-	'transport'     => 'postMessage',
-	'section'       => 'portum_typography_section',
-	'label'         => esc_html__( 'Headline title', 'portum' ),
-	'stylesheet'    => 'portum-main',
-	'choices'       => array(
-		'font-family',
-		'font-weight',
-		'font-style',
-		'font-size',
-		'line-height',
-		'letter-spacing',
-	),
-	'selectors'     => array(
-		'.headline span',
-	),
-	'font_defaults' => array(
-		'font-family'    => 'default_font',
-		'font-weight'    => 'on',
-		'font-style'     => '',
-		'font-size'      => '16',
-		'line-height'    => '22',
-		'letter-spacing' => '1',
+		'font-size'   => '14',
+		'line-height' => '21',
 	),
 ) );
 
@@ -190,14 +125,12 @@ Epsilon_Customizer::add_field( 'portum_typography_headline_subtitle', array(
 	'type'          => 'epsilon-typography',
 	'transport'     => 'postMessage',
 	'section'       => 'portum_typography_section',
-	'label'         => esc_html__( 'Headline subtitle', 'portum' ),
+	'label'         => esc_html__( 'Section title', 'portum' ),
 	'stylesheet'    => 'portum-main',
 	'choices'       => array(
 		'font-family',
 		'font-weight',
 		'font-style',
-		'font-size',
-		'line-height',
 		'letter-spacing',
 	),
 	'selectors'     => array(
@@ -207,11 +140,37 @@ Epsilon_Customizer::add_field( 'portum_typography_headline_subtitle', array(
 		'font-family'    => 'default_font',
 		'font-weight'    => '',
 		'font-style'     => '',
-		'font-size'      => '30',
-		'line-height'    => '28',
+		'font-size'      => '32',
+		'line-height'    => '40',
 		'letter-spacing' => '0',
 	),
 ) );
+
+Epsilon_Customizer::add_field( 'portum_typography_headline_title', array(
+	'type'          => 'epsilon-typography',
+	'transport'     => 'postMessage',
+	'section'       => 'portum_typography_section',
+	'label'         => esc_html__( 'Section subtitle', 'portum' ),
+	'stylesheet'    => 'portum-main',
+	'choices'       => array(
+		'font-family',
+		'font-weight',
+		'font-style',
+		'letter-spacing',
+	),
+	'selectors'     => array(
+		'.headline span:not(.dashicons)',
+	),
+	'font_defaults' => array(
+		'font-family'    => 'default_font',
+		'font-weight'    => 'on',
+		'font-style'     => '',
+		'font-size'      => '14',
+		'line-height'    => '21',
+		'letter-spacing' => '0',
+	),
+) );
+
 
 /**
  * Blog section options
@@ -257,54 +216,6 @@ Epsilon_Customizer::add_field( 'portum_show_blog_welcome', array(
 	'default'     => false,
 ) );
 
-/**
- * Header section options
- *
- * @todo still needs support
- */
-/*
-Epsilon_Customizer::add_field(
-	'portum_header_top_bar',
-	array(
-		'type'     => 'epsilon-toggle',
-		'label'    => esc_html__( 'Enable header top bar', 'portum' ),
-		'section'  => 'portum_header_section',
-		'default'  => true,
-		'priority' => 0,
-	)
-);
-
-Epsilon_Customizer::add_field(
-	'portum_header_columns',
-	array(
-		'type'            => 'epsilon-layouts',
-		'section'         => 'portum_header_section',
-		'priority'        => 1,
-		'layouts'         => array(
-			1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
-			2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
-			3 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/three-column.png',
-			4 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/four-column.png',
-		),
-		'default'         => array(
-			'columnsCount' => 2,
-			'columns'      => array(
-				array(
-					'index' => 1,
-					'span'  => 6,
-				),
-				array(
-					'index' => 2,
-					'span'  => 6,
-				),
-			),
-		),
-		'min_span'        => 2,
-		'label'           => esc_html__( 'Top Bar Columns', 'portum' ),
-		'active_callback' => array( 'Portum_Customizer', 'header_top_bar_enabled_callback' ),
-	)
-);
-*/
 
 Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 	'type'        => 'epsilon-toggle',
@@ -417,7 +328,7 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
 		),
 		'contact_text'  => array(
 			'label'   => esc_html__( 'Text', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => esc_html__( '176 Westmore Mondaile Street Victorian 887 NYC', 'portum' ),
 		),
 	),
@@ -427,7 +338,7 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
  * Copyright contents
  */
 Epsilon_Customizer::add_field( 'portum_copyright_contents', array(
-	'type'    => 'epsilon-text-editor',
+	'type'    => 'textarea',
 	'default' => 'Colorlib © 2018. All rights reserved.',
 	'label'   => esc_html__( 'Copyright Text', 'portum' ),
 	'section' => 'portum_footer_section',
@@ -459,7 +370,7 @@ Epsilon_Customizer::add_field( 'portum_accordion', array(
 		'accordion_text'   => array(
 			'label'   => esc_html__( 'FAQ Text', 'portum' ),
 			'default' => esc_html__( 'FAQ Text Content goes here', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 		),
 		'accordion_opened' => array(
 			'label'   => esc_html__( 'Opened by default', 'portum' ),
@@ -514,26 +425,31 @@ Epsilon_Customizer::add_field( 'portum_testimonials', array(
 		'field' => 'testimonial_title',
 	),
 	'fields'       => array(
+		'testimonial_bg_color' => array(
+			'label'   => esc_html__( 'Testimonial Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '',
+		),
 		'testimonial_title'    => array(
 			'label'   => esc_html__( 'Title', 'portum' ),
 			'type'    => 'text',
 			'default' => 'Michael Cross',
 		),
 		'testimonial_subtitle' => array(
-			'label'   => esc_html__( 'Position', 'portum' ),
+			'label'   => esc_html__( 'Given by', 'portum' ),
 			'type'    => 'text',
-			'default' => 'CEO @ Hampybrewry',
+			'default' => 'Michael - CEO @ Hampybrewry',
 		),
 		'testimonial_text'     => array(
 			'label'   => esc_html__( 'Text', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => '"Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula Maecenas nec maximus magna. Nullam nec metus ullamcorper, scelerisque nulla vel, amus at fermentum ligula"',
 		),
 		'testimonial_image'    => array(
 			'label'   => esc_html__( 'Portrait', 'portum' ),
 			'type'    => 'epsilon-image',
 			'size'    => 'medium',
-			'default' => esc_url( get_template_directory_uri() . '/assets/images/testimonial-img-01.jpg' ),
+			'default' => esc_url( get_template_directory_uri() . '/assets/images/07_testimonials_01.png' ),
 		),
 	),
 ) );
@@ -559,7 +475,7 @@ Epsilon_Customizer::add_field( 'portum_slides', array(
 		),
 		'slides_description' => array(
 			'label'   => esc_html__( 'Description', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => 'FROM ZERO TO HERO ALONG WITH YOU',
 		),
 		'slides_image'       => array(
@@ -584,44 +500,75 @@ Epsilon_Customizer::add_field( 'portum_services', array(
 		'field' => 'service_title',
 	),
 	'fields'       => array(
-		'service_title'       => array(
+		'services_bg_color'          => array(
+			'label'   => esc_html__( 'Services Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '',
+		),
+		'service_title'              => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Business',
 		),
-		'service_description' => array(
+		'service_description'        => array(
 			'label'             => esc_html__( 'Description', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Consultance',
 		),
-		'service_icon'        => array(
+		'service_icon'               => array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-500px',
 			'groups'  => array( 'general' ),
 		),
-		'service_type'        => array(
-			'label'   => esc_html__( 'Display style', 'portum' ),
-			'type'    => 'select',
-			'default' => 'no-border',
-			'choices' => array(
-				'no-border'     => __( 'No Border', 'portum' ),
-				'border-square' => __( 'Square Border', 'portum' ),
-				'border-round'  => __( 'Round Border', 'portum' ),
-				'filled-square' => __( 'Filled Square', 'portum' ),
-				'filled-round'  => __( 'Filled Round', 'portum' ),
+		'service_icon_color'         => array(
+			'label'   => esc_html__( 'Icon Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '#FFF',
+		),
+		'service_bg_icon_color'      => array(
+			'label'   => esc_html__( 'Icon Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => 'rgba(255, 255, 255, 0)',
+		),
+		'service_border_icon_color'  => array(
+			'label'   => esc_html__( 'Icon Border Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => 'rgba(255, 255, 255, 0)',
+		),
+		'service_border_icon_size'   => array(
+			'label'       => esc_html__( 'Icon Border Size', 'portum' ),
+			'description' => esc_html__( 'Value in pixels.', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 0,
+			'choices'     => array(
+				'min'  => 0,
+				'max'  => 10,
+				'step' => 1,
 			),
 		),
-		'service_type_color'  => array(
-			'label'   => esc_html__( 'Color style', 'portum' ),
-			'type'    => 'select',
-			'default' => 'color-default',
-			'choices' => array(
-				'color-default' => __( 'White', 'portum' ),
-				'color-accent1' => __( 'Color Accent 1', 'portum' ),
-				'color-accent2' => __( 'Color Accent 2', 'portum' ),
+		'service_border_icon_radius' => array(
+			'label'       => esc_html__( 'Icon Border Radius', 'portum' ),
+			'description' => esc_html__( 'Value in pixels.', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 0,
+			'choices'     => array(
+				'min'  => 0,
+				'max'  => 50,
+				'step' => 5,
+			),
+		),
+		'service_icon_size'          => array(
+			'label'       => esc_html__( 'Icon Size', 'portum' ),
+			'description' => esc_html__( 'Value is in pixels', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 36,
+			'choices'     => array(
+				'min'  => 36,
+				'max'  => 96,
+				'step' => 5,
 			),
 		),
 	),
@@ -648,14 +595,14 @@ Epsilon_Customizer::add_field( 'portum_portfolio', array(
 		),
 		'portfolio_description' => array(
 			'label'   => esc_html__( 'Description', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => esc_html__( 'Nullam nec metus ullamcorper, scelerisque null', 'portum' ),
 		),
 		'portfolio_image'       => array(
 			'label'   => esc_html__( 'Image', 'portum' ),
 			'type'    => 'epsilon-image',
 			'size'    => 'portum-portfolio-image',
-			'default' => esc_url( get_template_directory_uri() . '/assets/images/03_projects_01.jpg' ),
+			'default' => esc_url( get_template_directory_uri() . '/assets/images/clean/pink-2569355_640-400x426.jpg' ),
 		),
 		'portfolio_link'        => array(
 			'label'             => esc_html__( 'Portfolio Item URL', 'portum' ),
@@ -693,7 +640,7 @@ Epsilon_Customizer::add_field( 'portum_expertise', array(
 		),
 		'expertise_description' => array(
 			'label'   => esc_html__( 'Description', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta.', 'portum' ),
 		),
 	),
@@ -735,6 +682,22 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-hdd-o',
 			'groups'  => array( 'general' ),
+		),
+		'counter_icon_color'   => array(
+			'label'   => esc_html__( 'Icon Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '#FFF',
+		),
+		'counter_icon_size'    => array(
+			'label'       => esc_html__( 'Icon Size', 'portum' ),
+			'description' => esc_html__( 'Value is in pixels', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 56,
+			'choices'     => array(
+				'min'  => 36,
+				'max'  => 96,
+				'step' => 5,
+			),
 		),
 		'counter_type'         => array(
 			'label'   => esc_html__( 'Counter type', 'portum' ),
@@ -811,7 +774,7 @@ Epsilon_Customizer::add_field( 'portum_pie_charts', array(
 		),
 		'piechart_text'      => array(
 			'label'   => esc_html__( 'Text', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => esc_html__( 'Nullam nec metus ullamcorper, scelerisque null', 'portum' ),
 		),
 		'piechart_value'     => array(
@@ -914,7 +877,7 @@ Epsilon_Customizer::add_field( 'portum_team_members', array(
 		),
 		'member_text'             => array(
 			'label'   => esc_html__( 'Text', 'portum' ),
-			'type'    => 'epsilon-text-editor',
+			'type'    => 'textarea',
 			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta.', 'portum' ),
 		),
 		'member_image'            => array(
@@ -959,50 +922,76 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 		'field' => 'price_box_title',
 	),
 	'fields'       => array(
-		'price_box_title'    => array(
-			'label'             => esc_html__( 'Name', 'portum' ),
+		'price_box_featured'   => array(
+			'type'    => 'epsilon-toggle',
+			'label'   => esc_html__( 'Featured State', 'portum' ),
+			'default' => false,
+		),
+		'price_box_bg_color'   => array(
+			'label'   => esc_html__( 'Pricing Box Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '',
+		),
+		'price_box_icon'       => array(
+			'label'     => esc_html__( 'Pricing Table Icon', 'portum' ),
+			'type'      => 'epsilon-icon-picker',
+			'default'   => 'fa fa-building',
+			'groups'    => array( 'general' ),
+			'condition' => array( 'price_box_icon_display', true ),
+		),
+		'price_box_icon_size'  => array(
+			'label'     => esc_html__( 'Icon size', 'portum' ),
+			'type'      => 'epsilon-slider',
+			'default'   => 36,
+			'choices'   => array(
+				'min'  => 36,
+				'max'  => 96,
+				'step' => 5,
+			),
+			'condition' => array( 'price_box_icon_display', true ),
+		),
+		'price_box_icon_color' => array(
+			'label'     => esc_html__( 'Icon Color', 'portum' ),
+			'type'      => 'epsilon-color-picker',
+			'default'   => 'blue',
+			'condition' => array( 'price_box_icon_display', true ),
+		),
+		'price_box_title'      => array(
+			'label'             => esc_html__( 'Pricing Table Name', 'portum' ),
 			'type'              => 'text',
 			'default'           => esc_html__( 'Standard', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_text'     => array(
-			'label'             => esc_html__( 'Text', 'portum' ),
+		'price_box_text'       => array(
+			'label'             => esc_html__( 'Pricing Table Description', 'portum' ),
 			'type'              => 'text',
 			'default'           => esc_html__( 'Get started now! You have the base!', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_currency' => array(
-			'label'   => esc_html__( 'Currency', 'portum' ),
+		'price_box_amount'     => array(
+			'label'   => esc_html__( 'Pricing Table Amount', 'portum' ),
 			'type'    => 'text',
-			'default' => '$',
+			'default' => '$59 / mo',
 		),
-		'price_box_price'    => array(
-			'label'   => esc_html__( 'Price', 'portum' ),
-			'type'    => 'text',
-			'default' => '59',
-		),
-		'price_box_period'   => array(
-			'label'   => esc_html__( 'Period', 'portum' ),
-			'type'    => 'text',
-			'default' => 'mo',
-		),
-		'price_box_url'      => array(
+		'price_box_url'        => array(
 			'label'             => esc_html__( 'Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_features' => array(
+		'price_box_url_label'  => array(
+			'label'             => esc_html__( 'Button Text', 'portum' ),
+			'type'              => 'text',
+			'default'           => __( 'Purchase', 'portum' ),
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'price_box_features'   => array(
 			'label'             => esc_html__( 'Features', 'portum' ),
-			'type'              => 'epsilon-text-editor',
+			'type'              => 'textarea',
 			'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_featured' => array(
-			'type'    => 'epsilon-toggle',
-			'label'   => esc_html__( 'Featured state', 'portum' ),
-			'default' => false,
-		),
+
 	),
 ) );
 
@@ -1017,57 +1006,66 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		'field' => 'slide_title',
 	),
 	'fields'       => array(
-		'slide_title'               => array(
+		'slide_title'                                 => array(
 			'label'             => esc_html__( 'Slide title', 'portum' ),
+			'description'       => esc_html__( 'Slide title. Use it to add an eye-catching Call To Action.', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
-			'default'           => esc_html__( 'Best Medical Care you can get for you and your family.', 'portum' ),
+			'default'           => esc_html__( 'From zero to hero along with you.', 'portum' ),
 		),
-		'slide_description'         => array(
+		'slide_title_color'                           => array(
+			'label'             => esc_html__( 'Slide Title Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#FFF',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_title_size'                            => array(
+			'label'   => esc_html__( 'Slide Title Font Size', 'portum' ),
+			'type'    => 'epsilon-slider',
+			'default' => 36,
+			'choices' => array(
+				'min'  => 36,
+				'max'  => 126,
+				'step' => 10,
+			),
+		),
+		'slide_description'                           => array(
 			'label'             => esc_html__( 'Slide description', 'portum' ),
-			'type'              => 'epsilon-text-editor',
+			'description'       => esc_html__( 'Slide description. Use it to accompany to your Call To Action message.', 'portum' ),
+			'type'              => 'textarea',
 			'sanitize_callback' => 'wp_kses_post',
-			'default'           => esc_html__( 'More than 3000 specialists are here for you', 'portum' ),
+			'default'           => esc_html__( 'We believe there\'s no other theme like Portum.', 'portum' ),
 		),
-		'slide_background_color'    => array(
-			'label'      => esc_html__( 'Slide Overlay Color', 'portum' ),
-			'type'       => 'epsilon-color-picker',
-			'mode'       => 'rgba',
-			'defaultVal' => '#f9f9fa',
-			'default'    => 'rgba(0,0,0,.1)',
+		'slide_description_size'                      => array(
+			'label'   => esc_html__( 'Slide Description Font Size', 'portum' ),
+			'type'    => 'epsilon-slider',
+			'default' => 16,
+			'choices' => array(
+				'min'  => 12,
+				'max'  => 36,
+				'step' => 1,
+			),
 		),
-		'slide_background'          => array(
-			'label' => esc_html__( 'Background image', 'portum' ),
-			'type'  => 'epsilon-image',
-			'size'  => 'portum-main-slider',
-		),
-		'slide_cta_primary_label'   => array(
-			'label'             => esc_html__( 'Primary Button Text', 'portum' ),
-			'type'              => 'text',
-			'default'           => '',
-			'sanitize_callback' => 'wp_kses_post',
-		),
-		'slide_cta_primary_url'     => array(
-			'label'             => esc_html__( 'Primary Button URL', 'portum' ),
-			'type'              => 'text',
-			'default'           => '#',
+		'slide_description_color'                     => array(
+			'label'             => esc_html__( 'Slide Description Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#FFF',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_secondary_label' => array(
-			'label'             => esc_html__( 'Secondary Button Text', 'portum' ),
-			'type'              => 'text',
-			'default'           => '',
-			'sanitize_callback' => 'wp_kses_post',
+		'slide_content_width'                         => array(
+			'label'       => esc_html__( 'Slide Content Width', 'portum' ),
+			'description' => esc_html__( 'Value increments in %. Minimum is 25%.', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 100,
+			'choices'     => array(
+				'min'  => 25,
+				'max'  => 100,
+				'step' => 5,
+			),
 		),
-		'slide_cta_secondary_url'   => array(
-			'label'             => esc_html__( 'Secondary Button URL', 'portum' ),
-			'type'              => 'text',
-			'default'           => '#',
-			'sanitize_callback' => 'wp_kses_post',
-		),
-		'slide_alignment'           => array(
+		'slide_alignment'                             => array(
 			'type'      => 'epsilon-button-group',
-			'label'     => __( 'Alignment', 'epsilon-framework' ),
+			'label'     => __( 'Slide Content Horizontal Alignment', 'epsilon-framework' ),
 			'group'     => 'layout',
 			'groupType' => 'three',
 			'choices'   => array(
@@ -1086,9 +1084,9 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			),
 			'default'   => 'center',
 		),
-		'slide_vertical_alignment'  => array(
+		'slide_vertical_alignment'                    => array(
 			'type'      => 'epsilon-button-group',
-			'label'     => __( 'Vertical Alignment', 'epsilon-framework' ),
+			'label'     => __( 'Slide Content Vertical Alignment', 'epsilon-framework' ),
 			'group'     => 'layout',
 			'groupType' => 'three',
 			'choices'   => array(
@@ -1107,6 +1105,119 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			),
 			'default'   => 'alignmiddle',
 		),
+		'slide_background_color'                      => array(
+			'label'      => esc_html__( 'Slide Overlay Color', 'portum' ),
+			'type'       => 'epsilon-color-picker',
+			'mode'       => 'rgba',
+			'defaultVal' => '#f9f9fa',
+			'default'    => 'rgba(0,0,0,.1)',
+		),
+		'slide_background'                            => array(
+			'label' => esc_html__( 'Background image', 'portum' ),
+			'type'  => 'epsilon-image',
+			'size'  => 'portum-main-slider',
+		),
+		'slide_cta_primary_label'                     => array(
+			'label'             => esc_html__( 'Primary Button Text', 'portum' ),
+			'type'              => 'text',
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_primary_url'                       => array(
+			'label'             => esc_html__( 'Primary Button URL', 'portum' ),
+			'type'              => 'text',
+			'default'           => '#',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_primary_btn_size'                  => array(
+			'label'   => esc_html__( 'Primary Button Size', 'portum' ),
+			'type'    => 'select',
+			'default' => 'ewf-btn--huge',
+			'choices' => array(
+				'ewf-btn--huge'   => __( 'Huge', 'portum' ),
+				'ewf-btn--medium' => __( 'Medium', 'portum' ),
+				'ewf-btn--small'  => __( 'Small', 'portum' ),
+			),
+		),
+		'slide_cta_primary_btn_radius'                => array(
+			'label'   => esc_html__( 'Primary Button Radius', 'portum' ),
+			'type'    => 'epsilon-slider',
+			'default' => 0,
+			'choices' => array(
+				'min'  => 0,
+				'max'  => 50,
+				'step' => 5,
+			),
+		),
+		'slide_cta_primary_button_background_color'   => array(
+			'label'             => esc_html__( 'Primary Button Bg. Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#000',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_primary_button_text_color'         => array(
+			'label'             => esc_html__( 'Primary Button Text Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#FFF',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_primary_button_border_color'       => array(
+			'label'             => esc_html__( 'Primary Button Border Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#EEE',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_secondary_label'                   => array(
+			'label'             => esc_html__( 'Secondary Button Text', 'portum' ),
+			'type'              => 'text',
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_secondary_url'                     => array(
+			'label'             => esc_html__( 'Secondary Button URL', 'portum' ),
+			'type'              => 'text',
+			'default'           => '#',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_secondary_btn_size'                => array(
+			'label'   => esc_html__( 'Secondary Button Size', 'portum' ),
+			'type'    => 'select',
+			'default' => 'ewf-btn--huge',
+			'choices' => array(
+				'ewf-btn--huge'   => __( 'Huge', 'portum' ),
+				'ewf-btn--medium' => __( 'Medium', 'portum' ),
+				'ewf-btn--small'  => __( 'Small', 'portum' ),
+			),
+		),
+		'slide_cta_secondary_btn_radius'              => array(
+			'label'   => esc_html__( 'Secondary Button Radius', 'portum' ),
+			'type'    => 'epsilon-slider',
+			'default' => 0,
+			'choices' => array(
+				'min'  => 0,
+				'max'  => 50,
+				'step' => 5,
+			),
+		),
+		'slide_cta_secondary_button_background_color' => array(
+			'label'             => esc_html__( 'Secondary Button Bg. Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#333',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_secondary_button_text_color'       => array(
+			'label'             => esc_html__( 'Secondary Button Text Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#FFF',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'slide_cta_secondary_button_border_color'     => array(
+			'label'             => esc_html__( 'Secondary Button Border Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#FFF',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+
 	),
 ) );
 

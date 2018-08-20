@@ -1,79 +1,65 @@
 // Fonts
 //
 $accent-1-font: 'Hind', sans-serif;
-$accent-2-font: 'Poppins', sans-serif;
-
-
+$accent-2-font: 'Hind', sans-serif;
 
 // Accent colors
 //
-$accent-1-color: #0385D0 !default;
-$accent-1-color-rgba: rgba(3, 133, 208, 0.65);
-$accent-2-color: #A1083A !default;
-$accent-2-color-rgba: rgba(161, 8, 58, 0.65);
+$accent-1-color: #0962ea !default;
+$accent-1-color-rgba: rgba(9, 98, 234, 1);
+$accent-2-color: #dbe9fe !default;
+$accent-2-color-rgba: rgba(96, 157, 249, 1);
 $accent-3-color: #172128 !default;
-$accent-3-color-rgba: rgba(21, 28, 31, 0.65);
-
-
+$accent-3-color-rgba: rgba(21, 28, 31, 01);
 
 // Typography
 //
-$headings-color: #1A171C !default; 
-$text-color: #777777 !default;
-$link-color: #0385D0 !default;
-$link-hover-color: #A1083A !default;
+$headings-color: #212529 !default;
+$text-color: #212529 !default;
+$link-color: #0385d0 !default;
+$link-hover-color: #a1083a !default;
 $link-active-color: #172128 !default;
-
-
 
 // Navigation
 //
 $header_background: #151c1f;
 $menu-item-color: #ebebeb !default;
-$menu-item-hover-color: #ffffff !default;
-$menu-item-active-color: #A1083A !default;
+$menu-item-hover-color: #fff !default;
+$menu-item-active-color: #a1083a !default;
 $menu-dropdown-background-color: #a1083a !default;
 $menu-dropdown-hover-background-color: #940534 !default;
-
 
 // Portfolio
 // 
 $color-background-portfolio-overlay: rgba(255, 255, 255, 0.95) !default;
 
-
 // Blog
 //
-$blog-post-background: #ffffff;
-$blog-heading-color: #1A171C !default;
-$blog-text-color: #777777;
-$blog-widgets-links: #0385D0;
-$blog-widgets-title: #0385D0;
-
-
+$blog-post-background: #fff;
+$blog-heading-color: #1a171c !default;
+$blog-text-color: #777;
+$blog-widgets-links: #0385d0;
+$blog-widgets-title: #0385d0;
 
 //Footer
 //
-$footer-contact-color: #0377BB;
+$footer-contact-color: #0377bb;
 
 $footer-background-color: #192229;
-$footer-text-color: #A9AFB1;
-$footer-headings-color: #ffffff;
+$footer-text-color: #a9afb1;
+$footer-headings-color: #fff;
 
-$footer-link-color: #A9AFB1 !default;
-$footer-link-hover-color: #ffffff !default;
-$footer-link-active-color: #A9AFB1 !default;
-
-
+$footer-link-color: #a9afb1 !default;
+$footer-link-hover-color: #fff !default;
+$footer-link-active-color: #a9afb1 !default;
 
 // Forms
 //
 $input-placeholder-color: #ababb2 !default;
 $input-text-color: #ababb2 !default;
 $input-border-color: #ebebeb !default;
-$input-border-focus-color: #cde0e9 !default; 
-$input-border-invalid-color: #ffc3be !default; 
-
-
+$input-border-focus-color: #cde0e9 !default;
+$input-border-invalid-color: #ffc3be !default;
 
 // Misc
 //
@@ -85,27 +71,24 @@ $page-header-overlay-background-color: rgba(187, 217, 228, 0.95) !default;
 
 $border-color: #ebebeb !default; // Borders (Grey)
 
-$contact-ribbon-1-color: #A41342 !default;
-$contact-ribbon-2-color: #232D33 !default;
-$contact-ribbon-3-color: #DFDFDF !default;
-
+$contact-ribbon-1-color: #a41342 !default;
+$contact-ribbon-2-color: #232d33 !default;
+$contact-ribbon-3-color: #dfdfdf !default;
 
 // Contrast Colors
 
-$contrast-text-color: #ffffff !default; // Text color
-$contrast-header-color: #ffffff !default; // Headers
+$contrast-text-color: #fff !default; // Text color
+$contrast-header-color: #fff !default; // Headers
 
-$contrast-link-color: #ffffff !default; // Link color
+$contrast-link-color: #fff !default; // Link color
 $contrast-link-hover-color: #aacfdf !default; // Link :hover / :focus Color
 $contrast-link-active-color: #414444 !default; // Link :active color
 
 $contrast-border-color: rgba(255, 255, 255, 0.25) !default; // border color
 
+// Advanced Slider
 
-// Advanced Slider 
-
-$color-background-slider-overlay: rgb(0,0,0) !default;
-
+$color-background-slider-overlay: rgb(0, 0, 0) !default;
 
 // Spacing
 
@@ -116,26 +99,6 @@ $spacing-medium: 52px !default;
 $spacing-large: 78px !default;
 $spacing-xl-large: 104px !default;
 $spacing-xxl-large: 130px !default;
-
-
-// Portfolio Spacing
-
-$spacing-portfolio-none: 0 !default;
-$spacing-portfolio-small: 1px !default;
-$spacing-portfolio-medium: 13px !default;
-$spacing-portfolio-large: 26px !default;
-
-
-
-// Partner and client list Spacing
-//
-$spacing-partner-none: 0 !default;
-$spacing-partner-line: 1px !default;
-$spacing-partner-small: 10px !default;
-$spacing-partner-medium: 20px !default;
-$spacing-partner-large: 30px !default;
-
-
 
 // Section spacings
 //
