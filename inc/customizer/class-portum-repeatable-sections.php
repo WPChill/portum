@@ -622,28 +622,28 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'services_title'             => array(
+				'services_title'       => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'description'       => esc_html__( 'Section title', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'We offer:' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_subtitle'          => array(
+				'services_subtitle'    => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'description'       => esc_html__( 'Section subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'SERVICES' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_description'       => array(
+				'services_description' => array(
 					'label'             => esc_html__( 'Description', 'portum' ),
 					'description'       => esc_html__( 'This works best in conjuction with left and right content layouts. Use it to shortly describe your services.', 'portum' ),
 					'type'              => 'textarea',
 					'default'           => esc_html__( 'Describe your services.', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				/*
+
 				'services_slider'            => array(
 					'label'   => esc_html__( 'Turn into a slider', 'portum' ),
 					'type'    => 'epsilon-toggle',
@@ -665,6 +665,12 @@ class Portum_Repeatable_Sections {
 					'label'     => esc_html__( 'Navigation Dots', 'portum' ),
 					'type'      => 'epsilon-toggle',
 					'default'   => true,
+					'condition' => array( 'services_slider', true ),
+				),
+				'services_slider_controls'   => array(
+					'label'     => esc_html__( 'Navigation Arrows', 'portum' ),
+					'type'      => 'epsilon-toggle',
+					'default'   => false,
 					'condition' => array( 'services_slider', true ),
 				),
 				'services_slider_speed'      => array(
@@ -703,7 +709,6 @@ class Portum_Repeatable_Sections {
 					),
 					'condition'   => array( 'services_slider', true ),
 				),
-				*/
 				'services_section_unique_id' => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'description'       => esc_html__( 'Section Unique ID. Useful if you are looking to target this particular section with CSS / jQuery. Very useful as well for creating the one-page effect with smooth scrolling to section.', 'portum' ),

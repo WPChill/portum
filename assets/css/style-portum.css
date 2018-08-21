@@ -5736,11 +5736,6 @@ body.ctdw-bar-visible #header.header--over-content
 }
 
 /* ----------------------- SECTIONS ------------------------ */
-.section-grey
-{
-    background-color: #f5f5f5;
-}
-
 /* =Section
    ========================================================================== */
 .ewf-section
@@ -5813,7 +5808,6 @@ body.ctdw-bar-visible #header.header--over-content
 .ewf-section--parallax
 {
     background-attachment: fixed;
-    background-position: top center;
 }
 
 .ewf-section__overlay-color
@@ -5826,42 +5820,10 @@ body.ctdw-bar-visible #header.header--over-content
     left: 0;
 }
 
-.ewf-section__overlay-pattern
-{
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.ewf-section__video-background-yt,
-.ewf-section__video-background-local
-{
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    overflow: hidden;
-
-    width: 100%;
-    height: 100%;
-}
-
-.ewf-section__video-background-local video
-{
-    width: 100%;
-    height: auto;
-}
-
 .ewf-section__content
 {
     position: relative;
-    z-index: 5;
+    z-index: 10;
 
     width: 100%;
 }
@@ -5926,13 +5888,47 @@ body.ctdw-bar-visible #header.header--over-content
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     }
+
+    .ewf-text-align--right .ewf-section__content > div > .row
+    {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+
+    .ewf-text-align--center .ewf-section__content > div > .row
+    {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+
+    .ewf-text-align--right .ewf-section__content > div > .row
+    {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
 }
 /* ----------------------- SECTIONS ----- end ------------------------ */
-.footer-sub
-{
-    padding-top: 25px;
-}
-
 /* =Button
    ========================================================================== */
 .ewf-btn
@@ -6040,7 +6036,10 @@ body.ctdw-bar-visible #header.header--over-content
 {
     position: relative;
 
+    margin: 30px auto;
     padding: 10px 15px;
+
+    list-style: none;
 }
 .services-item i
 {
@@ -7294,7 +7293,13 @@ body.ctdw-bar-visible #header.header--over-content
 {
     position: relative;
 
+    overflow: hidden;
+
     margin: 0 auto;
+}
+.ewf-slider li
+{
+    list-style: none;
 }
 .ewf-slider .ewf-slider__slides
 {
@@ -7311,15 +7316,6 @@ body.ctdw-bar-visible #header.header--over-content
             transition: opacity .5s ease-in-out;
 
     opacity: 1;
-}
-.ewf-slider .ewf-slider__slides img
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
 }
 
 @media (min-width: 768px)
@@ -7427,131 +7423,214 @@ body.ctdw-bar-visible #header.header--over-content
         margin-left: auto;
     }
 }
-.ewf-slider .ewf-slider__pager
+.ewf-advanced-slider .ewf-slider__pager
 {
     position: absolute;
-    top: 95%;
+    top: 90%;
+    right: 0;
+    left: 0;
 
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ewf-advanced-slider .slick-slide
+{
+    -webkit-transition: opacity .5s, -webkit-transform .5s;
+         -o-transition: opacity .5s, transform .5s;
+            transition: opacity .5s, -webkit-transform .5s;
+            transition: opacity .5s, transform .5s;
+            transition: opacity .5s, transform .5s, -webkit-transform .5s;
+}
+.ewf-advanced-slider .slick-slide:focus
+{
+    outline: none;
+}
+.ewf-advanced-slider .slick-slide img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
     width: 100%;
+    height: 100%;
 }
-
-.ewf-slider .ewf-slider__pager .slick-dots
+.ewf-advanced-slider .slick-arrow
 {
-    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 3;
 
-    list-style: none;
-}
-.ewf-slider .ewf-slider__pager .slick-dots:after
-{
-    font-size: 0;
+    position: absolute;
+    z-index: 1;
+    top: 45%;
 
-    display: block;
-    visibility: hidden;
-    clear: both;
-
-    height: 0;
-
-    content: '';
-}
-
-.ewf-slider .ewf-slider__pager.ewf-slider__pager--align-left .slick-dots
-{
-    text-align: left;
-}
-
-.ewf-slider .ewf-slider__pager.ewf-slider__pager--align-center .slick-dots
-{
-    text-align: center;
-}
-
-.ewf-slider .ewf-slider__pager.ewf-slider__pager--align-right .slick-dots
-{
-    text-align: right;
-}
-
-.ewf-slider .ewf-slider__pager .slick-dots li
-{
-    position: relative;
-    z-index: 2;
-
-    display: inline-block;
-
-    margin-right: 3px;
-    padding: 5px;
-
-    border-radius: 50%;
-}
-
-.ewf-slider .ewf-slider__pager .slick-dots li:last-child
-{
-    margin-right: 0;
-}
-
-.ewf-slider .ewf-slider__pager .slick-dots li button
-{
-    font-size: 0;
-    line-height: 0;
-
-    display: block;
-
-    width: 10px;
-    height: 10px;
     padding: 0;
 
     cursor: pointer;
-
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    outline: none;
-    background-color: transparent;
-}
-
-.ewf-slider .ewf-slider__pager .slick-dots li.slick-active button
-{
-    background-color: #fff;
-}
-
-.ewf-slider .ewf-slider__arrows a
-{
-    font-size: 24px;
-
-    position: absolute;
-    top: 45%;
-
-    padding: 10px 15px 10px 10px;
-
-    -webkit-transition: background-color .2s linear;
-       -moz-transition: background-color .2s linear;
-         -o-transition: background-color .2s linear;
-            transition: background-color .2s linear;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+    letter-spacing: .1em;
+    text-transform: uppercase;
 
-    color: #fff !important;
-    background-color: rgba(0, 0, 0, .4);
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
 }
-.ewf-slider .ewf-slider__arrows a.slick-next
+.ewf-advanced-slider .slick-arrow::before
+{
+    position: absolute;
+    bottom: 100%;
+
+    width: 6em;
+    height: 1px;
+
+    content: '';
+
+    background: currentColor;
+}
+.ewf-advanced-slider .slick-arrow--prev
+{
+    left: 2.5%;
+}
+.ewf-advanced-slider .slick-arrow--prev:hover
+{
+    left: 2.6%;
+
+    -webkit-transition: left .3s ease;
+         -o-transition: left .3s ease;
+            transition: left .3s ease;
+
+    opacity: .75;
+}
+.ewf-advanced-slider .slick-arrow--prev::before
 {
     right: 0;
-
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
 }
-.ewf-slider .ewf-slider__arrows a.slick-prev
+.ewf-advanced-slider .slick-arrow--next
+{
+    right: 2.5%;
+}
+.ewf-advanced-slider .slick-arrow--next:hover
+{
+    right: 2.6%;
+
+    -webkit-transition: right .3s ease;
+         -o-transition: right .3s ease;
+            transition: right .3s ease;
+
+    opacity: .75;
+}
+.ewf-advanced-slider .slick-arrow--next::before
 {
     left: 0;
-
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
-.ewf-slider .ewf-slider__arrows:hover a
+.ewf-advanced-slider .slick-arrow[class*='disabled']
 {
-    color: #fff;
-    background-color: rgba(0, 0, 0, .6);
+    opacity: .25;
+}
+.ewf-advanced-slider .slick-dots
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.ewf-advanced-slider .slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    pointer-events: none;
+}
+.ewf-advanced-slider .slick-dots li:not(.slick-active)
+{
+    display: none;
+}
+.ewf-advanced-slider .slick-dots li .slick-dots-current
+{
+    -webkit-animation: slick-dot-opening .5s;
+            animation: slick-dot-opening .5s;
+}
+@-webkit-keyframes slick-dot-opening
+{
+    from
+    {
+        -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+
+        opacity: 0;
+    }
+    to
+    {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+@keyframes slick-dot-opening
+{
+    from
+    {
+        -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+
+        opacity: 0;
+    }
+    to
+    {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+.ewf-advanced-slider .slick-dots-button
+{
+    font-size: 11px;
+
+    padding: 0;
+
+    cursor: pointer;
+    letter-spacing: .2em;
+
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+.ewf-advanced-slider .slick-dots-current,
+.ewf-advanced-slider .slick-dots-total
+{
+    display: inline-block;
+}
+.ewf-advanced-slider .slick-dots-separator
+{
+    position: relative;
+
+    margin: 0 1em;
+}
+.ewf-advanced-slider .slick-dots-separator::after
+{
+    position: absolute;
+    top: 50%;
+    right: 1px;
+
+    width: 1px;
+    height: 2em;
+
+    content: '';
+    -webkit-transform: rotate(7deg) translateY(-50%);
+        -ms-transform: rotate(7deg) translateY(-50%);
+            transform: rotate(7deg) translateY(-50%);
+
+    background: currentColor;
 }
 
 /* ----------------------------------- #17 - Section Advanced Slider - END --------------------------------------- */
@@ -7711,8 +7790,8 @@ body.ctdw-bar-visible #header.header--over-content
 /* ----------------------------------- Box Shadow Effect (below) ------------------------*/
 .ewf-item__shadow-effect
 {
-    -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .08);
-            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .08);
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .08);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .08);
 }
 
 /* ----------------------------------- Simple Border Effect (all around) ------------------------*/

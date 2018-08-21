@@ -89,6 +89,7 @@ if ( $fields['clientlist_slider'] ) {
 								</ul><!-- end .ewf-partner-slider__slides -->
 
 								<div class="ewf-slider__pager"></div>
+								<div class="ewf-slider__arrows"></div>
 						</div><!-- end .ewf-slider -->
 
 						<?php } else { ?>

@@ -1,12 +1,21 @@
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
+.section-services {
+	li {
+
+	}
+}
+
 .services-item {
 	padding: 10px 15px;
 	position: relative;
+	margin: 30px auto;
+	list-style: none;
 	i {
 		display: inline-block;
 		border-style: solid;
 	}
+
 
 	div[class*="ewf-like-"] {
 		color: $text-color;

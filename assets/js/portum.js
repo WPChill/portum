@@ -192,19 +192,34 @@ var Portum = {
 						lazyLoad: self.data( 'slider-lazyload' ) ? 'ondemand' : false,
 						slidesToShow: self.data( 'slides-shown' ),
 						slidesToScroll: self.data( 'slides-scrolled' ),
-						centerMode: self.data( 'slider-centermode' ),
-						adaptiveHeight: false,
+						//centerMode: self.data( 'slides-centermode' ),
+						adaptiveHeight: true,
 						fade: self.data( 'slider-mode-fade' ),
 						cssEase: 'linear',
 						speed: self.data( 'slider-speed' ) ? parseInt( self.data( 'slider-speed' ), 10 ) : 500,
 						autoplay: self.data( 'slider-autoplay' ),
 						infinite: self.data( 'slider-loop' ),
 						arrows: self.data( 'slider-enable-controls' ),
-						prevArrow: '<a class="slick-prev" href="#"><i class="fa fa-angle-left"></i></a>',
-						nextArrow: '<a class="slick-next" href="#"><i class="fa fa-angle-right"></i></a>',
+						prevArrow: '<button type="button" aria-label="Previous" role="button" class="slick-arrow slick-arrow--prev">Prev</button>',
+						nextArrow: '<button type="button" aria-label="Next" role="button" class="slick-arrow slick-arrow--next">Next</button>',
 						appendArrows: self.find( '.ewf-slider__arrows' ),
 						dots: self.data( 'slider-enable-pager' ),
-						appendDots: self.find( '.ewf-slider__pager' )
+						appendDots: self.find( '.ewf-slider__pager' ),
+						customPaging: function( slider, i ) {
+							let current = i + 1;
+							current = current < 10 ? "0" + current : current;
+
+							let total = slider.slideCount;
+							total = total < 10 ? "0" + total : total;
+
+							return (
+								'<button type="button" role="button" tabindex="0" class="slick-dots-button">\
+								<span class="slick-dots-current">' + current + '</span>\
+									<span class="slick-dots-separator"></span>\
+									<span class="slick-dots-total">' + total + '</span>\
+								</button>'
+							);
+						}
 					} );
 
 				} );
