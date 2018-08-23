@@ -465,50 +465,51 @@ class Portum_Repeatable_Sections {
 			'title'       => esc_html__( 'Advanced Slider', 'portum' ),
 			'description' => esc_html__( 'A multi-purpose slider section that you can use through-out your website.', 'portum' ),
 			'fields'      => array(
-				'slider_transition'        => array(
-					'label'   => esc_html__( 'Transition', 'portum' ),
-					'type'    => 'select',
-					'default' => 'slide',
-					'choices' => array(
-						'fade'  => esc_html__( 'Fade', 'portum' ),
-						'slide' => esc_html__( 'Slide', 'portum' ),
+				'slider_autostart'         => array(
+					'label'       => esc_html__( 'Autostart', 'portum' ),
+					'description' => esc_html__( 'Automatically start slider after page has finished loading.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'slider_infinite'          => array(
+					'label'       => esc_html__( 'Loop Slides', 'portum' ),
+					'description' => esc_html__( 'When the slider reaches the last slide, it will automatically start again from the first one.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'slider_pager'             => array(
+					'label'       => esc_html__( 'Navigation Dots', 'portum' ),
+					'description' => esc_html__( 'Show slider navigation dots', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'slider_controls'          => array(
+					'label'       => esc_html__( 'Navigation Arrows', 'portum' ),
+					'description' => esc_html__( 'Show prev/next arrows', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'slider_height'            => array(
+					'label'       => esc_html__( 'Slider Vertical Height', 'portum' ),
+					'description' => esc_html__( 'Value is in %. Where 50, actually means 50% of the entire height of the screen.', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 50,
+					'choices'     => array(
+						'min'  => 30,
+						'max'  => 100,
+						'step' => 5,
 					),
 				),
 				'slider_speed'             => array(
-					'label'   => esc_html__( 'Speed', 'portum' ),
-					'type'    => 'epsilon-slider',
-					'default' => 500,
-					'choices' => array(
+					'label'       => esc_html__( 'Time Between Slides', 'portum' ),
+					'description' => esc_html__( 'The higher the value, the slower the next slide will show.', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 500,
+					'choices'     => array(
 						'min'  => 300,
 						'max'  => 2000,
 						'step' => 100,
 					),
-				),
-				'slider_lazyload'          => array(
-					'label'       => esc_html__( 'LazyLoad Slides', 'portum' ),
-					'description' => esc_html__( 'This helps a lot with initial load times are images are only loaded ondemand', 'portum' ),
-					'type'        => 'epsilon-toggle',
-					'default'     => true,
-				),
-				'slider_autostart'         => array(
-					'label'   => esc_html__( 'Autostart', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_infinite'          => array(
-					'label'   => esc_html__( 'Infinite slides', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_pager'             => array(
-					'label'   => esc_html__( 'Navigation dots', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
-				),
-				'slider_controls'          => array(
-					'label'   => esc_html__( 'Navigation arrows', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => true,
 				),
 				'slider_advanced_grouping' => array(
 					'label'       => esc_html__( 'Filter shown slides', 'portum' ),
@@ -557,6 +558,10 @@ class Portum_Repeatable_Sections {
 					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'fullwidth', 'boxedin' ),
+					),
+					'column-spacing'            => array(
+						'default' => 'lg',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
 					),
 					'row-spacing-top'           => array(
 						'default' => 'md',
@@ -622,21 +627,43 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'services_title'       => array(
+				'services_item_style'              => array(
+					'label'   => esc_html__( 'Style', 'portum' ),
+					'type'    => 'select',
+					'default' => 'ewf-item__no-effect',
+					'choices' => array(
+						'ewf-item__no-effect'            => esc_html__( 'No effect', 'portum' ),
+						'ewf-item__border-dashed-effect' => esc_html__( 'Border Dashed Effect', 'portum' ),
+						'ewf-item__shadow-effect'        => esc_html__( 'Bottom Shadow Effect', 'portum' ),
+						'ewf-item__simple-border-effect' => esc_html__( 'Simple Border Effect', 'portum' ),
+						'ewf-item__dash-of-color'        => esc_html__( 'Dash of Color Effect', 'portum' ),
+					),
+				),
+				'services_item_style_color_picker' => array(
+					'label'     => esc_html__( 'Item Style Color Picker', 'portum' ),
+					'type'      => 'epsilon-color-picker',
+					'default'   => '',
+					'mode'      => 'hex',
+					'condition' => array(
+						'item_style',
+						'ewf-item__border-dashed-effect',
+					),
+				),
+				'services_title'                   => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'description'       => esc_html__( 'Section title', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'We offer:' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_subtitle'    => array(
+				'services_subtitle'                => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'description'       => esc_html__( 'Section subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'SERVICES' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'services_description' => array(
+				'services_description'             => array(
 					'label'             => esc_html__( 'Description', 'portum' ),
 					'description'       => esc_html__( 'This works best in conjuction with left and right content layouts. Use it to shortly describe your services.', 'portum' ),
 					'type'              => 'textarea',
@@ -645,7 +672,7 @@ class Portum_Repeatable_Sections {
 				),
 
 				'services_slider'            => array(
-					'label'   => esc_html__( 'Turn into a slider', 'portum' ),
+					'label'   => esc_html__( 'Turn into a carousel', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => false,
 				),
@@ -1135,25 +1162,37 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-stretch'     => array(
+					'row-title-align'           => array(
+						'default' => 'top',
+						'choices' => array( 'left', 'top', 'right' ),
+					),
+					'column-stretch'            => array(
 						'default' => 'boxedin',
+						'choices' => array( 'fullwidth', 'boxedin' ),
 					),
-					'column-group'       => array(
-						'default' => 4,
-					),
-					'column-spacing'     => array(
-						'default' => 'none',
-					),
-					'row-spacing-top'    => array(
+					'row-spacing-top'           => array(
 						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'row-spacing-bottom' => array(
-						'default' => 'none',
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'column-alignment'   => array(
-						'default' => 'left',
+					'column-spacing'            => array(
+						'default' => 'lg',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
 					),
-					'template-selector'  => array(
+					'column-group'              => array(
+						'default' => 3,
+						'choices' => array( 2, 3, 4 ),
+					),
+					'column-alignment'          => array(
+						'default' => 'center',
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+					),
+					'template-selector'         => array(
 						'default' => 'normal',
 						'choices' => array(
 							array(
@@ -1203,40 +1242,118 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'portfolio_title'             => array(
+				'portfolio_title'                  => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'Check out our latest projects', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'portfolio_subtitle'          => array(
+				'portfolio_subtitle'               => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'PORTFOLIO', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'portfolio_description_below' => array(
+				'portfolio_description_below'      => array(
 					'label'       => esc_html__( 'Details under thumbnail', 'portum' ),
 					'description' => esc_html__( 'Portfolio item description will be under the image', 'portum' ),
 					'type'        => 'epsilon-toggle',
 					'default'     => false,
 				),
-				'portfolio_image_lightbox'    => array(
+				'portfolio_image_lightbox'         => array(
 					'label'       => esc_html__( 'Show items in lightbox', 'portum' ),
 					'description' => esc_html__( 'Toggling this to ON will display all images in a lightbox', 'portum' ),
 					'type'        => 'epsilon-toggle',
 					'default'     => true,
 				),
-				'portfolio_repeater_field'    => array(
+				'portfolio_image_show_description' => array(
+					'label'       => esc_html__( 'Show item description on hover', 'portum' ),
+					'description' => esc_html__( 'Toggling this to ON will display the project description on hover.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+					'condition'   => array( 'portfolio_description_below', false ),
+				),
+				'portfolio_image_show_zoom_icon'   => array(
+					'label'       => esc_html__( 'Show zoom icon on hover', 'portum' ),
+					'description' => esc_html__( 'Toggling this to ON will display the zoom icon on hover.', 'portum' ),
+					'type'        => 'epsilon-toggle',
+					'default'     => true,
+				),
+				'portfolio_slider'                 => array(
+					'label'   => esc_html__( 'Turn into a carousel', 'portum' ),
+					'type'    => 'epsilon-toggle',
+					'default' => false,
+				),
+				'portfolio_slider_autostart'       => array(
+					'label'     => esc_html__( 'Autostart', 'portum' ),
+					'type'      => 'epsilon-toggle',
+					'default'   => true,
+					'condition' => array( 'portfolio_slider', true ),
+				),
+				'portfolio_slider_infinite'        => array(
+					'label'     => esc_html__( 'Infinite slides', 'portum' ),
+					'type'      => 'epsilon-toggle',
+					'default'   => true,
+					'condition' => array( 'portfolio_slider', true ),
+				),
+				'portfolio_slider_pager'           => array(
+					'label'     => esc_html__( 'Navigation Dots', 'portum' ),
+					'type'      => 'epsilon-toggle',
+					'default'   => true,
+					'condition' => array( 'portfolio_slider', true ),
+				),
+				'portfolio_slider_arrows'          => array(
+					'label'     => esc_html__( 'Navigation Arrows', 'portum' ),
+					'type'      => 'epsilon-toggle',
+					'default'   => true,
+					'condition' => array( 'portfolio_slider', true ),
+				),
+				'portfolio_slider_speed'           => array(
+					'label'       => esc_html__( 'Speed', 'portum' ),
+					'description' => esc_html__( 'Carousel speed', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 500,
+					'choices'     => array(
+						'min'  => 300,
+						'max'  => 2000,
+						'step' => 100,
+					),
+					'condition'   => array( 'portfolio_slider', true ),
+				),
+				'portfolio_slides_shown'           => array(
+					'label'       => esc_html__( 'No. of slides to show', 'portum' ),
+					'description' => esc_html__( 'Total number of items to show at a time. ', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 6,
+					'choices'     => array(
+						'min'  => 1,
+						'max'  => 12,
+						'step' => 1,
+					),
+					'condition'   => array( 'portfolio_slider', true ),
+				),
+				'portfolio_slides_scrolled'        => array(
+					'label'       => esc_html__( 'No. of slides to scroll ', 'portum' ),
+					'description' => esc_html__( 'Number of items to scroll at a time. For hero sliders, this is kept at 1 slide at a time.', 'portum' ),
+					'type'        => 'epsilon-slider',
+					'default'     => 1,
+					'choices'     => array(
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+					),
+					'condition'   => array( 'portfolio_slider', true ),
+				),
+				'portfolio_repeater_field'         => array(
 					'type'    => 'hidden',
 					'default' => 'portum_portfolio',
 				),
-				'portfolio_section_unique_id' => array(
+				'portfolio_section_unique_id'      => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
 				),
-				'portfolio_grouping'          => array(
+				'portfolio_grouping'               => array(
 					'label'       => esc_html__( 'Filter shown portfolio items', 'portum' ),
 					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
@@ -1245,7 +1362,7 @@ class Portum_Repeatable_Sections {
 					'linking'     => array( 'portum_portfolio', 'portfolio_title' ),
 					'default'     => array( 'all' ),
 				),
-				'portfolio_navigation'        => array(
+				'portfolio_navigation'             => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_portfolio_section',
@@ -1386,6 +1503,17 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
+					'row-title-align'    => array(
+						'default' => 'top',
+					),
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'fullwidth', 'boxedin' ),
+					),
+					'column-spacing'     => array(
+						'default' => 'lg',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
+					),
 					'row-spacing-top'    => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
@@ -1590,7 +1718,7 @@ class Portum_Repeatable_Sections {
 						'choices' => array( 2, 3, 4, 6 ),
 					),
 					'column-spacing'            => array(
-						'default' => 'none',
+						'default' => 'lg',
 						'choices' => array( 'none', 'sm', 'md', 'lg' ),
 					),
 					'row-spacing-top'           => array(
@@ -1697,29 +1825,36 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-stretch'     => array(
+					'row-title-align'           => array(
+						'default' => 'top',
+					),
+					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'fullwidth', 'boxedin' ),
 					),
-					'column-group'       => array(
-						'default' => 4,
-						'choices' => array( 2, 3, 4, 6 ),
+					'row-spacing-top'           => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'column-spacing'     => array(
-						'default' => 'none',
+					'row-spacing-bottom'        => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'column-group'              => array(
+						'default' => 3,
+						'choices' => array( 2, 3, 4 ),
+					),
+					'column-spacing'            => array(
+						'default' => 'lg',
 						'choices' => array( 'none', 'sm', 'md', 'lg' ),
 					),
-					'row-spacing-top'    => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none' ),
-					),
-					'row-spacing-bottom' => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none' ),
-					),
-					'column-alignment'   => array(
+					'column-alignment'          => array(
 						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right' ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'middle',
+						'choices' => array( 'top', 'middle', 'bottom' ),
 					),
 				),
 				'styling' => array(
@@ -1765,6 +1900,13 @@ class Portum_Repeatable_Sections {
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => esc_html__( 'PRICING', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'pricing_text'              => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'description'       => esc_html__( 'Describe your pricing packages here', 'portum' ),
+					'type'              => 'textarea',
+					'default'           => '',
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'pricing_repeater_field'    => array(
@@ -2145,15 +2287,6 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'CONTACT', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'google_map_grouping'          => array(
-					'label'       => esc_html__( 'Filter shown content', 'portum' ),
-					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering functionality to achieve this.  ', 'portum' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_contact_section', 'contact_title' ),
-					'linking'     => array( 'portum_contact_section', 'contact_title' ),
-					'default'     => array( 'all' ),
-				),
 				'google_map_address'           => array(
 					'label'             => esc_html__( 'Google Maps Street Address', 'portum' ),
 					'description'       => esc_html__( 'Only your street address is required to get Google Maps to work. We\'ve built behind the scenes logic that take a physical address and convert it into lat & long coordinates for Google Maps. ', 'portum' ),
@@ -2202,6 +2335,15 @@ class Portum_Repeatable_Sections {
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
+				),
+				'google_map_grouping'          => array(
+					'label'       => esc_html__( 'Filter shown content', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering functionality to achieve this.  ', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_contact_section', 'contact_title' ),
+					'linking'     => array( 'portum_contact_section', 'contact_title' ),
+					'default'     => array( 'all' ),
 				),
 			),
 		);
@@ -2348,6 +2490,14 @@ class Portum_Repeatable_Sections {
 						'default' => 'boxedin',
 						'choices' => array( 'fullwidth', 'boxedin' ),
 					),
+					'column-spacing'            => array(
+						'default' => 'lg',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
+					),
+					'column-group'              => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4 ),
+					),
 					'row-spacing-top'           => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
@@ -2355,10 +2505,6 @@ class Portum_Repeatable_Sections {
 					'row-spacing-bottom'        => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
-					),
-					'column-group'              => array(
-						'default' => 4,
-						'choices' => array( 2, 3, 4 ),
 					),
 					'column-alignment'          => array(
 						'default' => 'center',
@@ -2414,6 +2560,11 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'PROGRESS BARS', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
+				'progress_section_unique_id'   => array(
+					'label'             => esc_html__( 'Section ID', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
 				'progress_bars_grouping'       => array(
 					'label'       => esc_html__( 'Filter shown content', 'portum' ),
 					'description' => esc_html__( 'Only selected items will be shown in the frontend.', 'portum' ),
@@ -2432,11 +2583,6 @@ class Portum_Repeatable_Sections {
 				'progress_bars_repeater_field' => array(
 					'type'    => 'hidden',
 					'default' => 'portum_progress_bars',
-				),
-				'progress_section_unique_id'   => array(
-					'label'             => esc_html__( 'Section ID', 'portum' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
 				),
 			),
 		);
@@ -2472,17 +2618,19 @@ class Portum_Repeatable_Sections {
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
+					'column-spacing'            => array(
+						'default' => 'md',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
+					),
 					'column-group'              => array(
-						'default' => 3,
+						'default' => 4,
 						'choices' => array( 2, 3, 4 ),
 					),
 					'column-alignment'          => array(
 						'default' => 'center',
-						'choices' => array( 'left', 'center', 'right' ),
 					),
 					'column-vertical-alignment' => array(
-						'default' => 'top',
-						'choices' => array( 'top', 'middle', 'bottom' ),
+						'default' => 'middle',
 					),
 				),
 				'styling' => array(
@@ -2572,29 +2720,37 @@ class Portum_Repeatable_Sections {
 			'customization' => array(
 				'enabled' => true,
 				'layout'  => array(
-					'column-stretch'     => array(
+					'row-title-align'           => array(
+						'default' => 'top',
+						'choices' => array( 'left', 'top', 'right' ),
+					),
+					'column-stretch'            => array(
 						'default' => 'boxedin',
 						'choices' => array( 'fullwidth', 'boxedin' ),
 					),
-					'column-spacing'     => array(
+					'column-spacing'            => array(
 						'default' => 'none',
 						'choices' => array( 'none', 'sm', 'md', 'lg' ),
 					),
-					'column-group'       => array(
-						'default' => 4,
-						'choices' => array( 2, 3, 4 ),
+					'column-group'              => array(
+						'default' => 6,
+						'choices' => array( 2, 3, 4, 6 ),
 					),
-					'row-spacing-top'    => array(
+					'row-spacing-top'           => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'row-spacing-bottom' => array(
+					'row-spacing-bottom'        => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'column-alignment'   => array(
+					'column-alignment'          => array(
 						'default' => 'center',
 						'choices' => array( 'left', 'center', 'right' ),
+					),
+					'column-vertical-alignment' => array(
+						'default' => 'center',
+						'choices' => array( 'top', 'middle', 'bottom' ),
 					),
 				),
 				'styling' => array(
@@ -2643,7 +2799,7 @@ class Portum_Repeatable_Sections {
 					'sanitize_callback' => 'wp_kses_post',
 				),
 				'clientlist_slider'            => array(
-					'label'   => esc_html__( 'Enable slider', 'portum' ),
+					'label'   => esc_html__( 'Turn into a carousel', 'portum' ),
 					'type'    => 'epsilon-toggle',
 					'default' => false,
 				),
@@ -2661,6 +2817,12 @@ class Portum_Repeatable_Sections {
 				),
 				'clientlist_slider_pager'      => array(
 					'label'     => esc_html__( 'Navigation Dots', 'portum' ),
+					'type'      => 'epsilon-toggle',
+					'default'   => true,
+					'condition' => array( 'clientlist_slider', true ),
+				),
+				'clientlist_slider_arrows'     => array(
+					'label'     => esc_html__( 'Navigation Arrows', 'portum' ),
 					'type'      => 'epsilon-toggle',
 					'default'   => true,
 					'condition' => array( 'clientlist_slider', true ),

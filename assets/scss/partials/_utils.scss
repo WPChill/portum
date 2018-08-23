@@ -18,7 +18,7 @@
 
 .container-fluid { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; box-sizing: border-box; }
 
-.row { margin-right: -15px; margin-left: -15px; box-sizing: border-box; }
+.row { margin-right: -15px; margin-left: -15px; box-sizing: border-box; display: flex; flex-wrap: wrap; }
 
 .row:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 
@@ -293,13 +293,6 @@
 	.col-lg-offset-0 {margin-left: 0}
 }
 
-.row-eq-height {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-
 /* =Visibility
  ========================================================================== */
 // Boostrap 3 visibility classes
@@ -470,122 +463,6 @@
 
 }
 
-/* 	=Padding
-   	========================================================================== */
-// Adjust whitespace with horizontal and vertical padding spacing helpers
-
-.ewf-padding-top--none { padding-top: 0 !important; }
-
-.ewf-padding-right--none { padding-right: 0 !important; }
-
-.ewf-padding-bottom--none { padding-bottom: 0 !important; }
-
-.ewf-padding-left--none { padding-left: 0 !important; }
-
-.ewf-padding-vertical--none { padding-top: 0; padding-bottom: 0; }
-
-.ewf-padding-horizontal--none { padding-right: 0; padding-left: 0; }
-
-.ewf-padding-around--none { padding: 0; }
-
-.ewf-padding-top--xx-small { padding-top: $spacing-xx-small; }
-
-.ewf-padding-right--xx-small { padding-right: $spacing-xx-small; }
-
-.ewf-padding-bottom--xx-small { padding-bottom: $spacing-xx-small; }
-
-.ewf-padding-left--xx-small { padding-left: $spacing-xx-small; }
-
-.ewf-padding-vertical--xx-small { padding-top: $spacing-xx-small; padding-bottom: $spacing-xx-small; }
-
-.ewf-padding-horizontal--xx-small { padding-right: $spacing-xx-small; padding-left: $spacing-xx-small; }
-
-.ewf-padding-around--xx-small { padding: $spacing-xx-small; }
-
-.ewf-padding-top--x-small { padding-top: $spacing-x-small; }
-
-.ewf-padding-right--x-small { padding-right: $spacing-x-small; }
-
-.ewf-padding-bottom--x-small { padding-bottom: $spacing-x-small; }
-
-.ewf-padding-left--x-small { padding-left: $spacing-x-small; }
-
-.ewf-padding-vertical--x-small { padding-top: $spacing-x-small; padding-bottom: $spacing-x-small; }
-
-.ewf-padding-horizontal--x-small { padding-right: $spacing-x-small; padding-left: $spacing-x-small; }
-
-.ewf-padding-around--x-small { padding: $spacing-x-small; }
-
-.ewf-padding-top--small { padding-top: $spacing-small; }
-
-.ewf-padding-right--small { padding-right: $spacing-small; }
-
-.ewf-padding-bottom--small { padding-bottom: $spacing-small; }
-
-.ewf-padding-left--small { padding-left: $spacing-small; }
-
-.ewf-padding-vertical--small { padding-top: $spacing-small; padding-bottom: $spacing-small; }
-
-.ewf-padding-horizontal--small { padding-right: $spacing-small; padding-left: $spacing-small; }
-
-.ewf-padding-around--small { padding: $spacing-small; }
-
-.ewf-padding-top--medium { padding-top: $spacing-medium; }
-
-.ewf-padding-right--medium { padding-right: $spacing-medium; }
-
-.ewf-padding-bottom--medium { padding-bottom: $spacing-medium; }
-
-.ewf-padding-left--medium { padding-left: $spacing-medium; }
-
-.ewf-padding-vertical--medium { padding-top: $spacing-medium; padding-bottom: $spacing-medium; }
-
-.ewf-padding-horizontal--medium { padding-right: $spacing-medium; padding-left: $spacing-medium; }
-
-.ewf-padding-around--medium { padding: $spacing-medium; }
-
-.ewf-padding-top--large { padding-top: $spacing-large; }
-
-.ewf-padding-right--large { padding-right: $spacing-large; }
-
-.ewf-padding-bottom--large { padding-bottom: $spacing-large; }
-
-.ewf-padding-left--large { padding-left: $spacing-large; }
-
-.ewf-padding-vertical--large { padding-top: $spacing-large; padding-bottom: $spacing-large; }
-
-.ewf-padding-horizontal--large { padding-right: $spacing-large; padding-left: $spacing-large; }
-
-.ewf-padding-around--large { padding: $spacing-large; }
-
-.ewf-padding-top--x-large { padding-top: $spacing-xl-large; }
-
-.ewf-padding-right--x-large { padding-right: $spacing-xl-large; }
-
-.ewf-padding-bottom--x-large { padding-bottom: $spacing-xl-large; }
-
-.ewf-padding-left--x-large { padding-left: $spacing-xl-large; }
-
-.ewf-padding-vertical--x-large { padding-top: $spacing-xl-large; padding-bottom: $spacing-xl-large; }
-
-.ewf-padding-horizontal--x-large { padding-right: $spacing-xl-large; padding-left: $spacing-xl-large; }
-
-.ewf-padding-around--x-large { padding: $spacing-xl-large; }
-
-.ewf-padding-top--xx-large { padding-top: $spacing-xxl-large; }
-
-.ewf-padding-right--xx-large { padding-right: $spacing-xxl-large; }
-
-.ewf-padding-bottom--xx-large { padding-bottom: $spacing-xxl-large; }
-
-.ewf-padding-left--xx-large { padding-left: $spacing-xxl-large; }
-
-.ewf-padding-vertical--xx-large { padding-top: $spacing-xxl-large; padding-bottom: $spacing-xxl-large; }
-
-.ewf-padding-horizontal--xx-large { padding-right: $spacing-xxl-large; padding-left: $spacing-xxl-large; }
-
-.ewf-padding-around--xx-large { padding: $spacing-xxl-large; }
-
 .section-about .ewf-padding-left--none div[class*="col"],
 .section-about .ewf-padding-right--none div[class*="col"] {
 	padding-left: 0;
@@ -596,6 +473,10 @@
 .ewf-padding-right--none .row {
 	margin-left: 0;
 	margin-right: 0;
+}
+
+.ewf-section-text {
+	margin-bottom: 55px;
 }
 
 .ewf-padding-left--none .ewf-section-text,
@@ -609,10 +490,10 @@
 	padding-right: 0;
 }
 
-	.ewf-item__spacing-none + .ewf-item__spacing-none,
-	.ewf-item__spacing-none:first-child {
-		margin-top: 0;
-	}
+.ewf-item__spacing-none + .ewf-item__spacing-none,
+.ewf-item__spacing-none:first-child {
+	margin-top: 0;
+}
 
 .ewf-item__spacing-sm {
 	padding-left: 1px;
@@ -622,6 +503,7 @@
 .ewf-item__spacing-sm + .ewf-item__spacing-sm,
 .ewf-item__spacing-sm:first-child {
 	margin-top: 1px;
+	margin-bottom: 1px;
 }
 
 .ewf-item__spacing-md {
@@ -632,6 +514,7 @@
 .ewf-item__spacing-md + .ewf-item__spacing-md,
 .ewf-item__spacing-md:first-child {
 	margin-top: 14px;
+	margin-bottom: 14px;
 }
 
 .ewf-item__spacing-lg {
@@ -642,5 +525,13 @@
 .ewf-item__spacing-lg + .ewf-item__spacing-lg,
 .ewf-item__spacing-lg:first-child {
 	margin-top: 26px;
+	margin-bottom: 26px;
 }
 
+.row-flow-reverse {
+	flex-direction: row-reverse;
+}
+
+.row-column-reverse {
+	flex-direction: column-reverse;
+}

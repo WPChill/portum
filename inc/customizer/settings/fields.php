@@ -697,18 +697,6 @@ Epsilon_Customizer::add_field( 'portum_progress_bars', array(
 		'field' => 'progress_bar_title',
 	),
 	'fields'       => array(
-		'progress_bar_title' => array(
-			'label'             => esc_html__( 'Title', 'portum' ),
-			'type'              => 'text',
-			'sanitize_callback' => 'sanitize_text_field',
-			'default'           => 'Satisfaction',
-		),
-		'progress_bar_value' => array(
-			'label'             => esc_html__( 'Number', 'portum' ),
-			'type'              => 'text',
-			'sanitize_callback' => 'absint',
-			'default'           => 55,
-		),
 		'progress_bar_type'  => array(
 			'label'   => esc_html__( 'Type', 'portum' ),
 			'type'    => 'select',
@@ -716,6 +704,22 @@ Epsilon_Customizer::add_field( 'portum_progress_bars', array(
 			'choices' => array(
 				'normal'    => esc_html__( 'Normal', 'portum' ),
 				'alternate' => esc_html__( 'Alternate', 'portum' ),
+			),
+		),
+		'progress_bar_title' => array(
+			'label'             => esc_html__( 'Title', 'portum' ),
+			'type'              => 'text',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => 'Satisfaction',
+		),
+		'progress_bar_value' => array(
+			'label'   => esc_html__( 'Percentage', 'portum' ),
+			'type'    => 'epsilon-slider',
+			'default' => 50,
+			'choices' => array(
+				'min'  => 5,
+				'max'  => 100,
+				'step' => 1,
 			),
 		),
 	),

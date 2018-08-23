@@ -35,9 +35,34 @@ if ( $fields['clientlist_slider'] ) {
 	wp_enqueue_style( 'slick' );
 }
 
+/**
+ * Layout stuff
+ */
+$content_class = '';
+$header_class  = '';
+$row_class     = '';
+$item_spacing  = 'ewf-item__spacing-' . ( isset( $fields['clientlist_column_spacing'] ) ? $fields['clientlist_column_spacing'] : '' );
+
+if ( 'left' == $fields['clientlist_row_title_align'] || 'right' == $fields['clientlist_row_title_align'] ) {
+	$content_class = 'col-sm-8 ewf-content__wrap';
+	$header_class  = 'col-sm-4';
+	if ( 'right' == $fields['clientlist_row_title_align'] ) {
+		$row_class = 'row-flow-reverse';
+	}
+} else {
+	$content_class = 'col-sm-12 ewf-content__wrap';
+	$header_class  = 'col-sm-12';
+	if ( 'bottom' == $fields['clientlist_row_title_align'] ) {
+		$row_class = 'row-column-reverse';
+	}
+}
+$item_class        = 'col-sm-' . ( 12 / absint( $fields['clientlist_column_group'] ) );
+$item_effect_style = ( ! empty( $fields['clientlist_item_style'] ) ? esc_attr( $fields['clientlist_item_style'] ) : 'ewf-item__no-effect' );
+// end layout stuff
+
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'clientlist', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $section_id, 'clientlist', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -46,14 +71,19 @@ if ( $fields['clientlist_slider'] ) {
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'clientlist', $fields ) ); ?>">
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
-				<div class="row">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>
-				</div>
+					<?php if ( ! empty( $fields['clientlist_subtitle'] ) || ! empty( $fields['clientlist_title'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['clientlist_subtitle'], $fields['clientlist_title'] ) ); ?>
+							</div><!--/.ewf-section--text-->
+						</div><!--/.col-->
+					<?php } ?>
 
-				<div class="row">
-					<div class="col-sm-12">
+					<div class="<?php echo esc_attr( $content_class ); ?>">
 						<?php if ( $fields['clientlist_slider'] ) { ?>
+
 						<div class="ewf-slider" data-slider-mode-fade="false"
 						     data-slider-speed="<?php echo ! empty( $fields['clientlist_slider_speed'] ) ? absint( $fields['clientlist_slider_speed'] ) : '500'; ?>"
 						     data-slider-autoplay="<?php echo $fields['clientlist_slider_autostart'] ? 'true' : 'false'; ?>"
@@ -61,7 +91,7 @@ if ( $fields['clientlist_slider'] ) {
 						     data-slides-scrolled="<?php echo $fields['clientlist_slides_scrolled'] ? esc_attr( $fields['clientlist_slides_scrolled'] ) : '1'; ?>"
 						     data-slider-loop="<?php echo $fields['clientlist_slider_infinite'] ? 'true' : 'false'; ?>"
 						     data-slider-enable-pager="<?php echo $fields['clientlist_slider_pager'] ? 'true' : 'false'; ?>"
-						     data-slider-enable-controls="false">
+						     data-slider-enable-controls="<?php echo $fields['clientlist_slider_arrows'] ? 'true' : 'false'; ?>">
 
 							<ul class="ewf-slider__slides">
 
@@ -70,22 +100,25 @@ if ( $fields['clientlist_slider'] ) {
 									<?php } ?>
 
 									<?php foreach ( $fields['clients'] as $key => $client ) { ?>
-										<div class="col-sm-<?php echo esc_attr( $span ); ?> ewf-item__spacing-<?php echo esc_attr( $fields['clientlist_column_spacing'] ); ?>">
+										<div class="<?php echo esc_attr( $item_class ); ?>">
+											<li class="ewf-partner">
+												<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_clientlists_section', 'portum_clients' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-											<li>
-												<div class="ewf-partner">
-													<?php
-													echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_clientlists_section', 'portum_clients' ), Epsilon_Helper::allowed_kses_pencil() );
-													?>
-													<a href="<?php echo ! empty( $client['client_url'] ) ? esc_url( $client['client_url'] ) : '#'; ?>">
-														<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
-													</a>
-												</div><!-- end .ewf-partner -->
-											</li>
+											<?php if ( ! empty( $client['client_url'] ) ) { ?>
+												<a href="<?php echo $client['client_url']; ?>">
+											<?php } ?>
+
+											<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
+
+											<?php if ( ! empty( $client['client_url'] ) ) { ?>
+												</a>
+											<?php } ?>
+
+											</li><!-- end .ewf-partner -->
 										</div><!--/.col-sm-->
 									<?php } ?>
 
-									<?php if ( '1' == $fields['clientlist_slider'] || 'true' === $fields['clientlist_slider'] ) { ?>
+									<?php if ( $fields['clientlist_slider'] ) { ?>
 								</ul><!-- end .ewf-partner-slider__slides -->
 
 								<div class="ewf-slider__pager"></div>
@@ -97,10 +130,10 @@ if ( $fields['clientlist_slider'] ) {
 						</ul><!-- end .ewf-partners-list -->
 
 						<?php } ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+					</div><!-- content class -->
+				</div><!--row class-->
+			</div><!-- container class -->
+		</div><!--/.ewf-section--content-->
+	</div><!--/ generate attr -->
 </section>
 

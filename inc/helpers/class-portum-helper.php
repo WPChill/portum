@@ -431,7 +431,7 @@ class Portum_Helper {
 	 * @param $key
 	 * @param $fields
 	 */
-	public static function generate_css_color_tabs( $section_id, $key, $fields ) {
+	public static function generate_inline_css( $section_id, $key, $fields ) {
 
 
 		$heading_selectors = array(
@@ -471,4 +471,6 @@ class Portum_Helper {
 		echo '</style>';
 
 	}
+
+
 }

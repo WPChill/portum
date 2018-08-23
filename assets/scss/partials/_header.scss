@@ -20,6 +20,10 @@
     }
 }
 
+.header--over-content + section > .section-video {
+	margin-top: -90px;
+}
+
 body.admin-bar #header.header--over-content {
     top: 32px;
 }

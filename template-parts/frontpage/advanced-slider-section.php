@@ -30,16 +30,15 @@ if ( is_customize_preview() ) {
 }
 $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array(), $grouping );
 
+
 wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );
 ?>
-<div data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 
 	<div class="ewf-advanced-slider <?php echo 'ewf-section-' . $fields['advanced-slider_section_visibility']; ?> ewf-slider"
-	     data-slider-mode-fade="<?php echo 'fade' === $fields['slider_transition'] ? 'true' : 'false'; ?>"
 	     data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>"
 	     data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>"
-	     data-slider-lazyload="<?php echo $fields['slider_lazyload'] ? 'true' : 'false'; ?>"
 	     data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
@@ -50,20 +49,35 @@ wp_enqueue_style( 'slick' );
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
 
 				<?php
-
-				$css_overlay = '';
+				$style         = array(
+					'background-image' => ! empty( $slide['slide_background'] ) ? $slide['slide_background'] : '',
+					'height'           => ( ! empty( $fields['slider_height'] ) ? esc_attr( $fields['slider_height'] ) : '30' ) . 'vh;',
+				);
+				$css           = 'style="';
+				$style         = array_filter( $style );
+				$style_overlay = array(
+					'background-color' => ! empty( $slide['slide_background_color'] ) ? $slide['slide_background_color'] : '',
+				);
+				$css_overlay   = '';
 				if ( ! empty( $slide['slide_background_color'] ) ) {
 					$css_overlay = ' style="background-color:' . esc_attr( $slide['slide_background_color'] ) . '" ';
 				}
-
+				foreach ( $style as $k => $v ) {
+					if ( 'background-image' === $k ) {
+						$css .= esc_attr( $k ) . ':url(' . esc_url( $v ) . ');';
+					} else {
+						$css .= esc_attr( $k ) . ':' . esc_attr( $v ) . ';';
+					}
+				}
+				$css      .= '"';
 				$captions = array(
-					'ewf-slider-slide__content'                => true,
-					'ewf-slider-slide__content--valign-top'    => 'aligntop' === $slide['slide_vertical_alignment'] ? true : false,
-					'ewf-slider-slide__content--valign-middle' => 'alignmiddle' === $slide['slide_vertical_alignment'] ? true : false,
-					'ewf-slider-slide__content--valign-bottom' => 'alignbottom' === $slide['slide_vertical_alignment'] ? true : false,
-					'ewf-slider-slide__content--align-left'    => 'left' === $slide['slide_alignment'] ? true : false,
-					'ewf-slider-slide__content--align-center'  => 'center' === $slide['slide_alignment'] ? true : false,
-					'ewf-slider-slide__content--align-right'   => 'right' === $slide['slide_alignment'] ? true : false,
+					'ewf-slider-slide__content' => true,
+					'ewf-valign--top'           => 'aligntop' === $slide['slide_vertical_alignment'] ? true : false,
+					'ewf-valign--middle'        => 'alignmiddle' === $slide['slide_vertical_alignment'] ? true : false,
+					'ewf-valign--bottom'        => 'alignbottom' === $slide['slide_vertical_alignment'] ? true : false,
+					'ewf-text-align--left'      => 'left' === $slide['slide_alignment'] ? true : false,
+					'ewf-text-align--center'    => 'center' === $slide['slide_alignment'] ? true : false,
+					'ewf-text-align--right'     => 'right' === $slide['slide_alignment'] ? true : false,
 				);
 				$captions = array_filter( $captions );
 
@@ -92,12 +106,7 @@ wp_enqueue_style( 'slick' );
 				$slide_description_size        = 'font-size: ' . ( ! empty( $slide['slide_description_size'] ) ? esc_attr( $slide['slide_description_size'] . 'px;' ) : 'initial;' );
 				$slide_description_line_height = 'line-height: ' . ( ! empty( $slide['slide_description_size'] ) ? esc_attr( $slide['slide_description_size'] * 1.75 . 'px;' ) : 'initial;' );
 				?>
-				<li>
-					<?php if ( $fields['slider_lazyload'] ) { ?>
-						<img data-lazy="<?php echo esc_url( $slide['slide_background'] ); ?>" />
-					<?php } else { ?>
-						<img src="<?php echo esc_url( $slide['slide_background'] ); ?>" />
-					<?php } ?>
+				<li <?php echo $css; ?>>
 					<div class="ewf-slider-slide__overlay"<?php echo $css_overlay; ?>></div>
 
 					<div class="<?php echo esc_attr( implode( ' ', array_keys( $captions ) ) ); ?>">
@@ -130,5 +139,5 @@ wp_enqueue_style( 'slick' );
 		<div class="ewf-slider__arrows"></div>
 
 	</div><!-- end .advanced-slider -->
-</div>
+</section>
 
