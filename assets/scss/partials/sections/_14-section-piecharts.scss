@@ -3,7 +3,6 @@
 
 .ewf-pie {
 	position: relative;
-	text-align: center;
   
 	&:after {
 		visibility: hidden;
@@ -49,5 +48,6 @@
 }
 
 .ewf-pie__description {
-  text-align: center;
+  font-size: 13px;
+	line-height: 1.25;
 }

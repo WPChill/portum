@@ -1,15 +1,14 @@
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 
-.section-services {
-	li {
-
+.ewf-slider {
+	.services-item {
+		margin: 30px auto;
 	}
 }
 
 .services-item {
-	padding: 10px 15px;
+	padding: 25px;
 	position: relative;
-	margin: 30px auto;
 	list-style: none;
 	i {
 		display: inline-block;

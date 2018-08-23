@@ -38,7 +38,36 @@ if ( $fields['portfolio_image_lightbox'] ) {
 	wp_enqueue_script( 'magnificPopup' );
 }
 
-$span = 12 / absint( $fields['portfolio_column_group'] );
+if ( $fields['portfolio_slider'] ) {
+	wp_enqueue_script( 'slick' );
+	wp_enqueue_style( 'slick' );
+}
+
+
+/**
+ * Layout stuff
+ */
+$content_class = '';
+$header_class  = '';
+$row_class     = '';
+$item_spacing  = 'ewf-item__spacing-' . ( isset( $fields['portfolio_column_spacing'] ) ? $fields['portfolio_column_spacing'] : '' );
+
+if ( 'left' == $fields['portfolio_row_title_align'] || 'right' == $fields['portfolio_row_title_align'] ) {
+	$content_class = 'col-sm-8 ewf-content__wrap';
+	$header_class  = 'col-sm-4';
+	if ( 'right' == $fields['portfolio_row_title_align'] ) {
+		$row_class = 'row-flow-reverse';
+	}
+} else {
+	$content_class = 'col-sm-12 ewf-content__wrap';
+	$header_class  = 'col-sm-12';
+	if ( 'bottom' == $fields['portfolio_row_title_align'] ) {
+		$row_class = 'row-column-reverse';
+	}
+}
+$item_class        = 'col-sm-' . ( 12 / absint( $fields['portfolio_column_group'] ) );
+$item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $fields['portfolio_item_style'] ) : 'ewf-item__no-effect' );
+// end layout stuff
 
 ?>
 
@@ -52,73 +81,110 @@ $span = 12 / absint( $fields['portfolio_column_group'] );
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">
 
-				<div class="row">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
-				</div>
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
-				<div class="row">
-					<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
+					<?php if ( ! empty( $fields['portfolio_title'] ) || ! empty( $fields['portfolio_subtitle'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['portfolio_subtitle'], $fields['portfolio_title'] ) ); ?>
+							</div><!--/.ewf-section--text-->
+						</div><!--/.header class-->
+					<?php } ?>
 
-						<ul class="ewf-portfolio">
+					<div class="<?php echo esc_attr( $content_class ); ?>">
+						<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
+
+							<?php if ( $fields['portfolio_slider'] ) { ?>
+
+								<div class="ewf-slider"
+								data-slider-speed="<?php echo ! empty( $fields['portfolio_slider_speed'] ) ? absint( $fields['portfolio_slider_speed'] ) : '500'; ?>"
+								data-slider-autoplay="<?php echo $fields['portfolio_slider_autostart'] ? 'true' : 'false'; ?>"
+								data-slides-shown="<?php echo $fields['portfolio_slides_shown'] ? esc_attr( $fields['portfolio_slides_shown'] ) : '1'; ?>"
+								data-slides-scrolled="<?php echo $fields['portfolio_slides_scrolled'] ? esc_attr( $fields['portfolio_slides_scrolled'] ) : '1'; ?>"
+								data-slider-loop="<?php echo $fields['portfolio_slider_infinite'] ? 'true' : 'false'; ?>"
+								data-slider-enable-pager="<?php echo $fields['portfolio_slider_pager'] ? 'true' : 'false'; ?>"
+								data-slider-enable-controls="<?php echo $fields['portfolio_slider_arrows'] ? 'true' : 'false'; ?>">
+
+								<ul class="ewf-slider__slides">
+							<?php } ?>
+
 							<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
-								<div class="col-sm-<?php echo esc_attr( $span ); ?> ewf-item__spacing-<?php echo esc_attr( $fields['portfolio_column_spacing'] ); ?>">
+							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
+							<?php if ( $fields['portfolio_description_below'] ) { ?>
+							<div class="ewf-portfolio-item ewf-portfolio__has-description-below ewf-item__shadow-effect <?php echo esc_attr( $item_effect_style ); ?>">
+								<?php } else { ?>
+								<div class="ewf-portfolio-item ewf-item__shadow-effect <?php echo esc_attr( $item_effect_style ); ?>">
+									<?php } ?>
 									<li>
-										<div class="ewf-portfolio-item">
-											<?php
-											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_portfolio_section', 'portum_portfolio' ), Epsilon_Helper::allowed_kses_pencil() );
-											?>
-											<div class="ewf-portfolio-item__thumbnail">
-												<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
-													<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt="" />
-												<?php } ?>
-
-												<div class="ewf-portfolio-item__overlay">
-
-													<?php if ( 'false' === $fields['portfolio_description_below'] || null == $fields['portfolio_description_below'] ) { ?>
-														<div class="ewf-portfolio-item__details">
-															<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
-																<div class="ewf-like-h5">
-																	<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
-																</div>
-															<?php } ?>
-
-															<?php echo '<div class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</div>'; ?>
-														</div><!-- ewf-portfolio-item__details -->
-													<?php } ?>
-													<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
-
-													<?php if ( $fields['portfolio_image_lightbox'] ) { ?>
-														<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
-															<i class="fa fa-eye"></i>
-														</a>
-													<?php } else { ?>
-														<a class="ewf-portfolio-item__control-zoom" href="<?php echo esc_url( $item['portfolio_link'] ); ?>">
-															<i class="fa fa-eye"></i>
-														</a>
-													<?php } ?>
-
-												</div><!-- ewf-portfolio-item__overlay -->
-
-											</div><!-- ewf-portfolio-item__thumbnail -->
-
-											<?php if ( null != $fields['portfolio_description_below'] && 'false' !== $fields['portfolio_description_below'] ) { ?>
-												<div class="ewf-portfolio-item__details">
-													<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
-														<div class="ewf-like-h5">
-															<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
-														</div>
-													<?php } ?>
-
-													<?php echo '<div class="ewf-portfolio-item__description">' . wp_kses_post( $item['portfolio_description'] ) . '</div>'; ?>
-												</div><!-- ewf-portfolio-item__details -->
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_portfolio_section', 'portum_portfolio' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+										<div class="ewf-portfolio-item__thumbnail">
+											<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
+												<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt="" />
 											<?php } ?>
 
-										</div><!-- ewf-portfolio-item -->
+											<div class="ewf-portfolio-item__overlay">
+
+												<?php if ( ! $fields['portfolio_description_below'] && $fields['portfolio_image_show_description'] ) { ?>
+													<div class="ewf-portfolio-item__details">
+														<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
+															<div class="ewf-like-h6">
+																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
+															</div><!--/.ewf-like-h6-->
+														<?php } ?>
+
+														<div class="ewf-portfolio-item__description">
+															<?php echo wp_kses_post( $item['portfolio_description'] ); ?>
+														</div><!--/.ewf-portfolio-item__description-->¬
+													</div><!-- /.ewf-portfolio-item__details -->
+												<?php } ?>
+
+												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
+
+												<?php if ( $fields['portfolio_image_lightbox'] ) { ?>
+													<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
+														<?php if ( $fields['portfolio_image_show_zoom_icon'] ) { ?>
+															<i class="fa fa-eye"></i>
+														<?php } ?>
+													</a><!--/.ewf-portfolio-item__control-zoom magnific-link-->
+												<?php } else { ?>
+													<a class="ewf-portfolio-item__control-zoom" href="<?php echo esc_url( $item['portfolio_link'] ); ?>">
+														<?php if ( $fields['portfolio_image_show_zoom_icon'] ) { ?>
+															<i class="fa fa-eye"></i>
+														<?php } ?>
+													</a><!--/.ewf-portfolio-item__control-zoom-->
+												<?php } ?>
+
+											</div><!-- ewf-portfolio-item__overlay -->
+
+										</div><!-- ewf-portfolio-item__thumbnail -->
+
+										<?php if ( $fields['portfolio_description_below'] && ! $fields['portfolio_image_show_description'] ) { ?>
+											<div class="ewf-portfolio-item__details">
+												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
+													<div class="ewf-like-h6">
+														<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
+													</div><!--/.ewf-like-h6-->
+												<?php } ?>
+
+												<div class="ewf-portfolio-item__description">
+													<?php echo wp_kses_post( $item['portfolio_description'] ); ?>
+												</div><!--/.ewf-portfolio-item__description-->
+											</div><!-- ewf-portfolio-item__details -->
+										<?php } ?>
 									</li>
-								</div><!--/.col-md-->
+								</div><!-- ewf-portfolio-item -->
+							</div><!--/.itemclass item spacing-->
+						<?php } ?>
+							<?php if ( $fields['portfolio_slider'] ) { ?>
+								</ul>
+								<div class="ewf-slider__pager"></div>
+								<div class="ewf-slider__arrows"></div>
+								</div><!--/.ewf-slider-->
 							<?php } ?>
-						</ul><!--/.ewf-portfolio-->
-					<?php } ?>
+						<?php } ?>
+					</div><!--/.content class-->
 				</div><!--/.row-->
 			</div><!--/.class-attr-->
 		</div><!--/.ewf-section__content-->

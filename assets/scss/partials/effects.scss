@@ -1,15 +1,14 @@
 /* ----------------------------------- Dashed Border Effect (all around)  ------------------------*/
 .ewf-item__border-dashed-effect {
-	border: 2px dashed $accent-1-color;
-	border-left: 2px solid $accent-1-color;
-	border-bottom: 2px solid $accent-1-color;
+	border: 2px dashed #9de3cc;
+	border-left: 2px solid #9de3cc;
+	border-bottom: 2px solid #9de3cc;
 
-	/*
 	&:before,
 	&:after {
 		position: absolute;
 		content: '';
-		background: $accent-1-color;
+		background: #9de3cc;
 	}
 
 	&:before {
@@ -25,7 +24,6 @@
 		width: 2px;
 		height: 80px;
 	}
-	*/
 }
 
 /* ----------------------------------- Box Shadow Effect (below) ------------------------*/
@@ -36,5 +34,72 @@
 
 /* ----------------------------------- Simple Border Effect (all around) ------------------------*/
 .ewf-item__simple-border-effect {
-	border: 1px solid $accent-1-color;
+	border: 1px solid #9de3cc;
 }
+
+.ewf-item__dash-of-color > i,
+.ewf-item__dash-of-color > div > i {
+	position: relative;
+	z-index: 2;
+}
+
+.ewf-item__dash-of-color > div > i:after,
+.ewf-item__dash-of-color > i:after {
+	position: absolute;
+	content: "";
+	left: -10px;
+	top: 5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #9de3cc;
+	z-index: -1;
+}
+
+.ewf-item__spacing-none {
+
+	// Simple Border Effect Adjustments
+	.ewf-item__simple-border-effect {
+		border-right-width: 0;
+	}
+
+	&:last-of-type > .ewf-item__simple-border-effect {
+		border-right-width: 1px;
+	}
+
+	// Dashed Border Effect Adjustments
+	.ewf-item__border-dashed-effect {
+		border-right-width: 0;
+		border-left-style: dashed;
+
+		&:before,
+		&:after {
+			width: 0;
+			height: 0;
+		}
+	}
+
+	&:first-of-type > .ewf-item__border-dashed-effect {
+		border-right-style: dashed;
+		border-left-style: solid;
+	}
+
+	&:last-of-type > .ewf-item__border-dashed-effect {
+		border-right-style: solid;
+		border-right-width: 2px;
+	}
+
+	// Shadow Effet
+	.ewf-item__shadow-effect {
+		box-shadow: 0 10px 20px -6px rgba(0, 0, 0, .02);
+	}
+
+	&:first-of-type > .ewf-item__shadow-effect {
+		box-shadow: -10px 10px 20px -6px rgba(0, 0, 0, .02);
+	}
+
+	&:last-of-type > .ewf-item__shadow-effect {
+		box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, .02);
+	}
+}
+

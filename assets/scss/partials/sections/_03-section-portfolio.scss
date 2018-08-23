@@ -5,6 +5,16 @@
 
 .ewf-portfolio-item {
 	position: relative;
+	height: 100%;
+	margin: 15px auto;
+
+	li {
+		list-style: none;
+	}
+
+	&.ewf-portfolio__has-description-below {
+		height: auto !important;
+	}
 
 	&:after {
 		visibility: hidden;
@@ -19,9 +29,11 @@
 .ewf-portfolio-item__thumbnail {
 	position: relative;
 	overflow: hidden;
+	height: 100%;
 
 	img {
 		width: 100%;
+		height: 100%;
 		display: inline-block;
 		transition: all 0.25s;
 	}
@@ -85,7 +97,10 @@
 	margin-bottom: 0;
 }
 
-.ewf-portfolio-item__description {}
+.ewf-portfolio-item__description {
+	font-size: 13px;
+	line-height: 1.25;
+}
 
 .ewf-portfolio-item__overlay .ewf-portfolio-item__details {
 	position: absolute;
@@ -133,6 +148,7 @@
 .ewf-portfolio {
 	list-style: none;
 	position: relative;
+	width: 100%;
 
 	:after {
 		visibility: hidden;

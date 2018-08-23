@@ -33,7 +33,7 @@ $span = 12 / absint( $fields['testimonials_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'testimonials', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $section_id, 'testimonials', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'testimonials' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -44,7 +44,9 @@ $span = 12 / absint( $fields['testimonials_column_group'] );
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'testimonials', $fields ) ); ?>">
 
 				<div class="row">
-					<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'] ) ); ?>
+					<div class="ewf-section-text">
+						<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['testimonials_subtitle'], $fields['testimonials_title'] ) ); ?>
+					</div>
 				</div>
 
 				<?php if ( ! empty( $fields['testimonials'] ) ) { ?>
@@ -56,7 +58,7 @@ $span = 12 / absint( $fields['testimonials_column_group'] );
 							?>
 
 							<div class="col-md-<?php echo esc_attr( $span ); ?>">
-								<div class="testimonial ewf-item__border-dashed-effect" style="<?php echo esc_attr( $bg_color ); ?>">
+								<div class="testimonial ewf-item__no-effect" style="<?php echo esc_attr( $bg_color ); ?>">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_testimonials_section', 'portum_testimonials' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>

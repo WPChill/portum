@@ -189,12 +189,12 @@ var Portum = {
 					}
 
 					slider.slick( {
-						lazyLoad: self.data( 'slider-lazyload' ) ? 'ondemand' : false,
+						//lazyLoad: self.data( 'slider-lazyload' ) ? 'ondemand' : false,
 						slidesToShow: self.data( 'slides-shown' ),
 						slidesToScroll: self.data( 'slides-scrolled' ),
 						//centerMode: self.data( 'slides-centermode' ),
-						adaptiveHeight: true,
-						fade: self.data( 'slider-mode-fade' ),
+						adaptiveHeight: false,
+						fade: false,
 						cssEase: 'linear',
 						speed: self.data( 'slider-speed' ) ? parseInt( self.data( 'slider-speed' ), 10 ) : 500,
 						autoplay: self.data( 'slider-autoplay' ),
@@ -206,6 +206,7 @@ var Portum = {
 						dots: self.data( 'slider-enable-pager' ),
 						appendDots: self.find( '.ewf-slider__pager' ),
 						customPaging: function( slider, i ) {
+
 							let current = i + 1;
 							current = current < 10 ? "0" + current : current;
 
@@ -219,6 +220,7 @@ var Portum = {
 									<span class="slick-dots-total">' + total + '</span>\
 								</button>'
 							);
+
 						}
 					} );
 

@@ -28,119 +28,82 @@ $parent_attr = array(
 
 $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours_button_primary_url'];
 
+
+/**
+ * Layout stuff
+ */
+$content_class = '';
+$header_class  = '';
+$row_class     = '';
+
+
+if ( 'left' == $fields['openhours_row_title_align'] || 'right' == $fields['openhours_row_title_align'] ) {
+	$content_class = 'col-sm-8 ewf-content__wrap';
+	$header_class  = 'col-sm-4';
+	if ( 'right' == $fields['openhours_row_title_align'] ) {
+		$row_class = 'row-flow-reverse';
+	}
+} else {
+	$content_class = 'col-sm-12 ewf-content__wrap';
+	$header_class  = 'col-sm-12';
+	if ( 'bottom' == $fields['openhours_row_title_align'] ) {
+		$row_class = 'row-column-reverse';
+	}
+}
+
+// end layout stuff
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'openhours', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $section_id, 'openhours', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'openhours' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'openhours', $fields ) ); ?>">
 
-				<div class="row row-eq-height">
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
-					<?php if ( 'left' === $fields['openhours_row_title_align'] ) { ?>
-						<div class="col-sm-7">
+					<?php if ( ! empty( $fields['openhours_title'] ) || ! empty( $fields['openhours_subtitle'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
 							<div class="open-hours-section-info">
 								<div class="ewf-section-text">
 									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => false ) ) ); ?>
 									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
-								</div>
+								</div><!--/.ewf-section-text-->
 								<?php if ( $button_primary ) { ?>
 									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
-								<?php }; ?>
-							</div>
-
-						</div><!--/.col-sm-7-->
-						<?php if ( ! empty( $fields['openhours'] ) ) { ?>
-							<div class="col-sm-5">
-								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
-
-									<div class="ewf-like-h4 open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></div>
-
-									<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
-										<div class="open-hours__schedule__container">
-											<?php
-											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_schedule_section', 'portum_schedule' ), Epsilon_Helper::allowed_kses_pencil() );
-											?>
-											<p class="open-hours__schedule_days text-uppercase"><?php echo wp_kses_post( $schedule['schedule_days'] ); ?></p>
-											<p class="open_hours__schedule_hours"><?php echo wp_kses_post( $schedule['schedule_hours'] ); ?></p>
-										</div>
-									<?php } ?>
-								</div><!--/.open-hours-->
-							</div><!--/.col-sm-5-->
-						<?php } ?>
-					<?php } elseif ( 'right' === $fields['openhours_row_title_align'] ) { ?>
-						<?php if ( ! empty( $fields['openhours'] ) ) { ?>
-							<div class="col-sm-5">
-								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
-
-									<div class="ewf-like-h4 open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></div>
-
-									<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
-										<div class="open-hours__schedule__container">
-											<?php
-											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_schedule_section', 'portum_schedule' ), Epsilon_Helper::allowed_kses_pencil() );
-											?>
-											<p class="open-hours__schedule_days text-uppercase"><?php echo wp_kses_post( $schedule['schedule_days'] ); ?></p>
-											<p class="open_hours__schedule_hours"><?php echo wp_kses_post( $schedule['schedule_hours'] ); ?></p>
-										</div>
-									<?php } ?>
-								</div><!--/.open-hours-->
-							</div><!--/.col-sm-5-->
-						<?php } ?>
-						<div class="col-sm-7">
-							<div class="open-hours-section-info">
-								<div class="ewf-section-text">
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => false ) ) ); ?>
-									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
-								</div>
-								<?php if ( $button_primary ) { ?>
-									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
-								<?php }; ?>
-							</div>
-
-						</div><!--/.col-sm-7-->
-					<?php } else { ?>
-						<?php if ( ! empty( $fields['openhours'] ) ) { ?>
-
-							<div class="col-sm-12">
-								<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
-
-									<div class="ewf-like-h4 open-hours__heading"><?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?></div>
-
-									<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
-										<div class="open-hours__schedule__container">
-											<?php
-											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_schedule_section', 'portum_schedule' ), Epsilon_Helper::allowed_kses_pencil() );
-											?>
-											<p class="open-hours__schedule_days text-uppercase"><?php echo wp_kses_post( $schedule['schedule_days'] ); ?></p>
-											<p class="open_hours__schedule_hours"><?php echo wp_kses_post( $schedule['schedule_hours'] ); ?></p>
-										</div>
-									<?php } ?>
-
-								</div><!--/.open-hours-->
-							</div><!--/.col-sm-12-->
-						<?php } ?>
-
-						<div class="col-sm-12">
-							<div class="open-hours-section-info">
-								<div class="ewf-section-text">
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['openhours_title'], $fields['openhours_subtitle'], array( 'center' => false ) ) ); ?>
-									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
-								</div>
-								<?php if ( $button_primary ) { ?>
-									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
-								<?php }; ?>
-							</div>
-
-						</div><!--/.col-sm-12-->
+								<?php } ?>
+							</div><!--/.open-hours-section-info-->
+						</div><!-- header class -->
 					<?php } ?>
 
+					<?php if ( ! empty( $fields['openhours'] ) ) { ?>
+						<div class="<?php echo esc_attr( $content_class ); ?>">
+							<div class="open-hours" style="background-color: <?php echo esc_attr( $fields['openhours_color'] ); ?>">
+
+								<?php if ( ! empty( $fields['openhours_schedule_title'] ) ) { ?>
+									<div class="ewf-like-h4 open-hours__heading">
+										<?php echo wp_kses_post( $fields['openhours_schedule_title'] ); ?>
+									</div><!--/.ewf-like-h4 open-hours__heading-->
+								<?php } ?>
+
+								<?php foreach ( $fields['openhours'] as $key => $schedule ) { ?>
+									<div class="open-hours__schedule__container">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_schedule_section', 'portum_schedule' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+										<p class="open-hours__schedule_days text-uppercase">
+											<?php echo wp_kses_post( $schedule['schedule_days'] ); ?>
+										</p><!--/.open-hours__schedule_days text-uppercase-->
+										<p class="open_hours__schedule_hours">
+											<?php echo wp_kses_post( $schedule['schedule_hours'] ); ?>
+										</p><!--/.open_hours__schedule_hours-->
+									</div><!--/.open-hours__schedule__container-->
+								<?php } ?>
+							</div><!--/.open-hours-->
+						</div><!--/.col-sm-5-->
+					<?php } ?>
 				</div><!--/.row-eq-height-->
 			</div><!--/.-ewf-section__content-->
 </section>

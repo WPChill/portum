@@ -28,116 +28,54 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-$span = 12 / absint( $fields['progress_column_group'] );
+/**
+ * Layout stuff
+ */
+$content_class = '';
+$header_class  = '';
+$row_class     = '';
+$item_spacing  = 'ewf-item__spacing-' . ( isset( $fields['progress_column_spacing'] ) ? $fields['progress_column_spacing'] : '' );
+
+if ( 'left' == $fields['progress_row_title_align'] || 'right' == $fields['progress_row_title_align'] ) {
+	$content_class = 'col-sm-8 ewf-content__wrap';
+	$header_class  = 'col-sm-4';
+	if ( 'right' == $fields['progress_row_title_align'] ) {
+		$row_class = 'row-flow-reverse';
+	}
+} else {
+	$content_class = 'col-sm-12 ewf-content__wrap';
+	$header_class  = 'col-sm-12';
+	if ( 'bottom' == $fields['progress_row_title_align'] ) {
+		$row_class = 'row-column-reverse';
+	}
+}
+$item_class        = 'col-sm-' . ( 12 / absint( $fields['progress_column_group'] ) );
+$item_effect_style = ( ! empty( $fields['progress_item_style'] ) ? esc_attr( $fields['progress_item_style'] ) : 'ewf-item__no-effect' );
+// end layout stuff
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_css_color_tabs( $section_id, 'progress', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $section_id, 'progress', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'progress' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-		<?php
-		$attr_helper->generate_color_overlay();
-
-		$span = 12 / absint( $fields['progress_column_group'] );
-
-		$section_item_columns  = 12 / intval( $fields['progress_column_group'] );
-		$section_items_content = 12 - $section_item_columns;
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'progress', $fields ) ); ?>">
 
-				<?php if ( 'left' === $fields['progress_row_title_align'] ) { ?>
-					<div class="row">
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
-						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
-						</div>
-
-						<div class="col-md-<?php echo $section_items_content; ?> col-sm-8">
-							<div class="row">
-								<?php foreach ( $fields['progress_bars'] as $key => $progress ) { ?>
-									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
-										<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-											<?php
-											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
-											?>
-											<div class="ewf-like-h6 ewf-progress__title">
-												<?php
-												if ( ! empty( $progress['progress_bar_title'] ) ) {
-													?>
-													<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
-
-													<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
-														<span><?php echo $progress['progress_bar_value']; ?>%</span>
-													<?php } ?>
-
-												<?php } ?>
-											</div><!-- end .ewf-progress__title -->
-
-											<div class="ewf-progress__bar">
-												<div class="ewf-progress__bar-liniar-wrap">
-													<div class="ewf-progress__bar-liniar" data-value="<?php echo ! empty( $progress['progress_bar_value'] ) ? esc_attr( $progress['progress_bar_value'] ) : 85; ?>"></div>
-												</div>
-											</div><!-- end .ewf-progress__bar -->
-
-										</div><!-- end .ewf-progress -->
-									</div>
-								<?php } ?>
+					<?php if ( ! empty( $fields['progress_bars_subtitle'] ) || ! empty( $fields['progress_bars_title'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
 							</div>
 						</div>
-					</div>
-				<?php } elseif ( 'right' === $fields['progress_row_title_align'] ) { ?>
-					<div class="row">
+					<?php }//endif !empty ?>
 
-						<div class="col-md-<?php echo esc_attr( $section_items_content ); ?> col-sm-8">
-							<div class="row">
-								<?php foreach ( $fields['progress_bars'] as $key => $progress ) { ?>
-									<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
-										<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
-											<?php
-											echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
-											?>
-											<div class="ewf-like-h6 ewf-progress__title">
-												<?php
-												if ( ! empty( $progress['progress_bar_title'] ) ) {
-													?>
-													<?php echo wp_kses_post( $progress['progress_bar_title'] ); ?>
-
-													<?php if ( ! empty( $progress['progress_bar_value'] ) ) { ?>
-														<span><?php echo $progress['progress_bar_value']; ?>%</span>
-													<?php } ?>
-
-												<?php } ?>
-											</div><!-- end .ewf-progress__title -->
-
-											<div class="ewf-progress__bar">
-												<div class="ewf-progress__bar-liniar-wrap">
-													<div class="ewf-progress__bar-liniar" data-value="<?php echo ! empty( $progress['progress_bar_value'] ) ? esc_attr( $progress['progress_bar_value'] ) : 85; ?>"></div>
-												</div>
-											</div><!-- end .ewf-progress__bar -->
-
-										</div><!-- end .ewf-progress -->
-									</div>
-								<?php } ?>
-							</div>
-						</div>
-
-						<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?> col-sm-4">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'], array( 'bottom' => true ) ) ); ?>
-						</div>
-					</div>
-				<?php } else { ?>
-
-					<div class="row">
-						<div class="col-md-12">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['progress_bars_subtitle'], $fields['progress_bars_title'] ) ); ?>
-						</div>
-					</div>
-
-					<div class="row">
+					<div class="<?php echo esc_attr( $content_class ); ?> ">
 						<?php foreach ( $fields['progress_bars'] as $key => $progress ) { ?>
-							<div class="col-md-<?php echo esc_attr( $section_item_columns ); ?>">
+							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
 								<div class="ewf-progress <?php echo 'alternate' === $progress['progress_bar_type'] ? 'ewf-progress--alternative-modern' : ''; ?>">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_progress_bars_section', 'portum_progress_bars' ), Epsilon_Helper::allowed_kses_pencil() );
@@ -158,16 +96,15 @@ $span = 12 / absint( $fields['progress_column_group'] );
 									<div class="ewf-progress__bar">
 										<div class="ewf-progress__bar-liniar-wrap">
 											<div class="ewf-progress__bar-liniar" data-value="<?php echo ! empty( $progress['progress_bar_value'] ) ? esc_attr( $progress['progress_bar_value'] ) : 85; ?>"></div>
-										</div>
+										</div><!-- ewf-progress__bar-liniar-wrap-->
 									</div><!-- end .ewf-progress__bar -->
 
 								</div><!-- end .ewf-progress -->
-							</div>
-						<?php } ?>
-					</div>
-				<?php } ?>
-
-			</div>
-		</div>
-	</div>
+							</div><!-- col -->
+						<?php }//end foreach ?>
+					</div><!-- content class -->
+				</div><!--/.row-->
+			</div><!-- container class-->
+		</div><!--/.ewf=section__content-->
+	</div><!-- attr helper class -->
 </section>
