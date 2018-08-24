@@ -39,6 +39,8 @@ wp_enqueue_style( 'slick' );
 	<div class="ewf-advanced-slider <?php echo 'ewf-section-' . $fields['advanced-slider_section_visibility']; ?> ewf-slider"
 	     data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>"
 	     data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>"
+	     data-slides-shown="<?php echo $fields['slider_slides_shown'] ? esc_attr( $fields['slider_slides_shown'] ) : '1'; ?>"
+	     data-slides-scrolled="<?php echo $fields['slider_slides_scrolled'] ? esc_attr( $fields['slider_slides_scrolled'] ) : '1'; ?>"
 	     data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">

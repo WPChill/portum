@@ -489,6 +489,26 @@ class Portum_Repeatable_Sections {
 					'type'        => 'epsilon-toggle',
 					'default'     => true,
 				),
+				'slider_slides_shown'      => array(
+					'label'   => esc_html__( 'Show this many slides', 'portum' ),
+					'type'    => 'epsilon-slider',
+					'default' => 1,
+					'choices' => array(
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+					),
+				),
+				'slider_slides_scrolled'   => array(
+					'label'   => esc_html__( 'Slide this many items at once', 'portum' ),
+					'type'    => 'epsilon-slider',
+					'default' => 1,
+					'choices' => array(
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+					),
+				),
 				'slider_height'            => array(
 					'label'       => esc_html__( 'Slider Vertical Height', 'portum' ),
 					'description' => esc_html__( 'Value is in %. Where 50, actually means 50% of the entire height of the screen.', 'portum' ),
@@ -1372,122 +1392,6 @@ class Portum_Repeatable_Sections {
 		);
 	}
 
-	/**
-	 * Repeatable expertise section
-	 *
-	 * @return array
-	 */
-	private function repeatable_expertise() {
-		return array(
-			'id'            => 'expertise',
-			'title'         => esc_html__( 'Expertise', 'portum' ),
-			'description'   => esc_html__( 'Expertise section. It retrieves content from Theme Content / Portfolio', 'portum' ),
-			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-expertise-pt.png' ),
-			'customization' => array(
-				'enabled' => true,
-				'layout'  => array(
-					'row-title-align'           => array(
-						'default' => 'left',
-					),
-					'column-stretch'            => array(
-						'default' => 'boxedin',
-						'choices' => array( 'fullwidth', 'boxedin' ),
-					),
-					'row-spacing-top'           => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none' ),
-					),
-					'row-spacing-bottom'        => array(
-						'default' => 'md',
-						'choices' => array( 'lg', 'md', 'sm', 'none' ),
-					),
-					'column-alignment'          => array(
-						'default' => 'left',
-						'choices' => array( 'left', 'center', 'right' ),
-					),
-					'column-vertical-alignment' => array(
-						'default' => 'middle',
-						'choices' => array( 'top', 'middle', 'bottom' ),
-					),
-				),
-				'styling' => array(
-					'background-color'    => array(
-						'default' => false,
-					),
-					'background-image'    => array(
-						'default' => false,
-					),
-					'background-position' => array(
-						'default' => 'center',
-					),
-					'background-size'     => array(
-						'default' => 'initial',
-					),
-					'background-repeat'   => array(
-						'default' => 'repeat',
-					),
-					'background-parallax' => array(
-						'default' => false,
-					),
-
-				),
-				'colors'  => array(
-					'heading-color' => array(
-						'selectors' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
-						'default'   => '',
-					),
-					'text-color'    => array(
-						'selectors' => array( 'p' ),
-						'default'   => '',
-					),
-				),
-			),
-			'fields'        => array(
-				'expertise_title'             => array(
-					'label'             => esc_html__( 'Title', 'portum' ),
-					'type'              => 'text',
-					'default'           => esc_html__( 'We can take your business to the next level', 'portum' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
-				'expertise_subtitle'          => array(
-					'label'             => esc_html__( 'Subtitle', 'portum' ),
-					'type'              => 'text',
-					'default'           => esc_html__( 'OUR EXPERTISE', 'portum' ),
-					'sanitize_callback' => 'wp_kses_post',
-				),
-				'expertise_image'             => array(
-					'label'   => esc_html__( 'Section Image', 'portum' ),
-					'type'    => 'epsilon-image',
-					'size'    => 'original',
-					'default' => esc_url( get_template_directory_uri() . '/assets/images/expertise-img-01.jpg' ),
-				),
-				'expertise_grouping'          => array(
-					'label'       => esc_html__( 'Filter shown items', 'portum' ),
-					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
-					'type'        => 'selectize',
-					'multiple'    => true,
-					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_expertise', 'expertise_title' ),
-					'linking'     => array( 'portum_expertise', 'expertise_title' ),
-					'default'     => array( 'all' ),
-				),
-				'expertise_navigation'        => array(
-					'type'            => 'epsilon-customizer-navigation',
-					'opensDoubled'    => true,
-					'navigateToId'    => 'portum_expertise_section',
-					'navigateToLabel' => esc_html__( 'Add/Edit Expertise &rarr;', 'portum' ),
-				),
-				'expertise_repeater_field'    => array(
-					'type'    => 'hidden',
-					'default' => 'portum_expertise',
-				),
-				'expertise_section_unique_id' => array(
-					'label'             => esc_html__( 'Section ID', 'portum' ),
-					'type'              => 'text',
-					'sanitize_callback' => 'sanitize_key',
-				),
-			),
-		);
-	}
 
 	/**
 	 * Repeatable map section
@@ -1696,7 +1600,7 @@ class Portum_Repeatable_Sections {
 	}
 
 	/**
-	 * Repeatable expertise section
+	 * Repeatable team section
 	 *
 	 * @return array
 	 */

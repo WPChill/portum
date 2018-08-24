@@ -212,15 +212,6 @@ $sections = array(
 		),
 	),
 	array(
-		'id'   => 'portum_expertise_section',
-		'args' => array(
-			'title'    => esc_html__( 'Expertise', 'portum' ),
-			'panel'    => 'portum_panel_section_content',
-			'priority' => 6,
-			'type'     => 'epsilon-section-doubled',
-		),
-	),
-	array(
 		'id'   => 'portum_team_members_section',
 		'args' => array(
 			'title'    => esc_html__( 'Team Members', 'portum' ),
