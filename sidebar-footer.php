@@ -36,10 +36,12 @@ if ( ! is_array( $footer_layout ) ) {
 	$footer_layout = json_decode( $footer_layout, true );
 }
 
+$footer_width = ( get_theme_mod( 'portum_footer_width', false ) ? 'container-fluid' : 'container' );
+
 ?>
 
 <div id="footer">
-	<div class="container">
+	<div class="<?php echo esc_attr( $footer_width ); ?>">
 
 		<?php if ( ! empty( $sidebars ) ) { ?>
 			<div class="row">

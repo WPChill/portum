@@ -234,7 +234,6 @@ Epsilon_Customizer::add_field( 'portum_header_width', array(
 ) );
 
 
-
 Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'type'        => 'epsilon-toggle',
 	'label'       => esc_html__( 'Set header over content', 'portum' ),
@@ -262,6 +261,16 @@ Epsilon_Customizer::add_field( 'portum_enable_go_top', array(
 /**
  * Footer section options
  */
+
+Epsilon_Customizer::add_field( 'portum_footer_width', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Fullwidth Footer Area', 'portum' ),
+	'description' => esc_html__( 'Toggling this to on will make your footer stretch to the full-width of your screen.', 'portum' ),
+	'section'     => 'portum_footer_section',
+	'default'     => false,
+) );
+
+
 Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	'type'     => 'epsilon-layouts',
 	'section'  => 'portum_footer_section',
@@ -271,6 +280,7 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 		2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
 		3 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/three-column.png',
 		4 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/four-column.png',
+		6 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/six-column.png',
 	),
 	'default'  => array(
 		'columnsCount' => 4,
@@ -290,6 +300,10 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 			array(
 				'index' => 4,
 				'span'  => 3,
+			),
+			array(
+				'index' => 6,
+				'span'  => 2,
 			),
 		),
 	),
