@@ -225,6 +225,15 @@ Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 	'default'     => true,
 ) );
 
+Epsilon_Customizer::add_field( 'portum_header_width', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Fullwidth Header Menu', 'portum' ),
+	'description' => esc_html__( 'Toggling this to on will make your header stretch to the full-width of your screen.', 'portum' ),
+	'section'     => 'portum_header_section',
+	'default'     => false,
+) );
+
+
 
 Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'type'        => 'epsilon-toggle',

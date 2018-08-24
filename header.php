@@ -16,16 +16,17 @@
 
 <?php
 $header_class  = get_theme_mod( 'portum_header_over_content', false ) ? 'header--over-content ' : '';
-$header_class .= get_theme_mod( 'portum_header_shadow', true ) ? '' : 'header--no-shadow ';
+$header_class  .= get_theme_mod( 'portum_header_shadow', true ) ? '' : 'header--no-shadow ';
 $header_sticky = get_theme_mod( 'portum_header_sticky', true );
+
+$header_width = ( get_theme_mod( 'portum_header_width', false ) ? 'container-fluid' : 'container' );
 ?>
 
 <body <?php ( $header_sticky ) === true ? body_class( 'sticky-header' ) : ''; ?>>
 <div id="wrap">
 
 	<div id="header" class="<?php echo esc_attr( $header_class ); ?>">
-		<!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-		<div class="container">
+		<div class="<?php echo esc_attr( $header_width ); ?>">
 			<div class="row">
 				<?php
 				get_template_part( 'template-parts/misc/logo' );
@@ -33,5 +34,4 @@ $header_sticky = get_theme_mod( 'portum_header_sticky', true );
 				?>
 			</div><!-- end .row -->
 		</div><!-- end .container -->
-		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	</div>
