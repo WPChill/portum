@@ -14,6 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Portum_Sidebars
  */
 class Portum_Sidebars {
+
 	/**
 	 * Holds the
 	 *
@@ -115,6 +116,22 @@ class Portum_Sidebars {
 			array(
 				'id'            => 'footer-sidebar-4',
 				'name'          => __( '[Footer] Sidebar #4', 'portum' ),
+				'before_title'  => '<h4 class="widget-title">',
+				'after_title'   => '</h4>',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			),
+			array(
+				'id'            => 'footer-sidebar-5',
+				'name'          => __( '[Footer] Sidebar #5', 'portum' ),
+				'before_title'  => '<h4 class="widget-title">',
+				'after_title'   => '</h4>',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			),
+			array(
+				'id'            => 'footer-sidebar-6',
+				'name'          => __( '[Footer] Sidebar #6', 'portum' ),
 				'before_title'  => '<h4 class="widget-title">',
 				'after_title'   => '</h4>',
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
