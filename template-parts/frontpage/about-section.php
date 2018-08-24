@@ -19,7 +19,9 @@ $parent_attr    = array(
 	'class' => array( 'section-about', 'section', 'ewf-section', 'ewf-section-' . $fields['about_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
+/**
+ * Layout Stuff
+ */
 $content_class = '';
 $header_class  = '';
 $row_class     = '';
@@ -37,6 +39,7 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 		$row_class = 'row-column-reverse';
 	}
 }
+//end layout stuff
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $section_id, 'about', $fields ); ?>

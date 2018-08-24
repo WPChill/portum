@@ -1610,6 +1610,10 @@ del {
 .row-column-reverse {
   flex-direction: column-reverse;
 }
+.row-column-reverse .ewf-section-text {
+  margin-bottom: 0;
+  margin-top: 55px;
+}
 
 /* ==========================================================================
    =Forms
