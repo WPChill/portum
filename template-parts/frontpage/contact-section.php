@@ -21,65 +21,54 @@ $parent_attr = array(
 	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+
+/**
+ * Layout Stuff
+ */
+$content_class = '';
+$header_class  = '';
+$row_class     = '';
+
+if ( 'left' == $fields['contact_row_title_align'] || 'right' == $fields['contact_row_title_align'] ) {
+	$content_class = 'col-md-7';
+	$header_class  = 'col-md-5';
+	if ( 'right' == $fields['contact_row_title_align'] ) {
+		$row_class = 'row-flow-reverse';
+	}
+} else {
+	$content_class = 'col-md-12';
+	$header_class  = 'col-md-12';
+	if ( 'bottom' == $fields['contact_row_title_align'] ) {
+		$row_class = 'row-column-reverse';
+	}
+}
+//end layout stuff
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $section_id, 'contact', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'contact' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'contact', $fields ) ); ?>">
-				<div class="row row-eq-height">
-					<?php if ( 'left' === $fields['contact_row_title_align'] ) { ?>
-						<div class="col-sm-5">
-							<div class="ewf-section-text">
-								<?php if ( ! empty( $fields['contact_title'] ) ) { ?>
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['contact_title'], $fields['contact_subtitle'] ) ); ?>
-								<?php } ?>
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
+					<?php if ( ! empty( $fields['contact_title'] ) || ! empty( $fields['contact_subtitle'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['contact_title'], $fields['contact_subtitle'] ) ); ?>
 								<?php echo wpautop( wp_kses_post( $fields['contact_text'] ) ); ?>
 							</div><!--/.ewf-section-text-->
-						</div><!--/.col-sm-4-->
-						<div class="col-sm-7">
-							<?php if ( ! empty( $fields['contact_form'] ) ) { ?>
-								<?php echo do_shortcode( '[contact-form-7 id="' . absint( $fields['contact_form'] ) . '"]' ); ?>
-							<?php } ?>
-						</div><!--/.col-sm-8-->
-					<?php } elseif ( 'right' === $fields['contact_row_title_align'] ) { ?>
-						<div class="col-sm-7">
-							<?php if ( ! empty( $fields['contact_form'] ) ) { ?>
-								<?php echo do_shortcode( '[contact-form-7 id="' . absint( $fields['contact_form'] ) . '"]' ); ?>
-							<?php } ?>
-						</div><!--/.col-sm-8-->
-						<div class="col-sm-5">
-							<div class="ewf-section-text">
-								<?php if ( ! empty( $fields['contact_title'] ) ) { ?>
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['contact_title'], $fields['contact_subtitle'] ) ); ?>
-								<?php } ?>
+						</div><!--/header class-->
+					<?php }//endif ?>
 
-								<?php echo wpautop( wp_kses_post( $fields['contact_text'] ) ); ?>
-							</div><!--/.ewf-section-text-->
-						</div><!--/.col-sm-4-->
-					<?php } else { ?>
-						<div class="col-sm-12">
-							<div class="ewf-section-text">
-								<?php if ( ! empty( $fields['contact_title'] ) ) { ?>
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['contact_title'], $fields['contact_subtitle'] ) ); ?>
-								<?php } ?>
+					<div class="<?php echo esc_attr( $content_class ); ?>">
+						<?php if ( ! empty( $fields['contact_form'] ) ) { ?>
+							<?php echo do_shortcode( '[contact-form-7 id="' . absint( $fields['contact_form'] ) . '"]' ); ?>
+						<?php } ?>
+					</div><!--/.content class-->
 
-								<?php echo wpautop( wp_kses_post( $fields['contact_text'] ) ); ?>
-							</div><!--/.ewf-section-text-->
-						</div><!--/.col-sm-4-->
-						<div class="col-sm-12">
-							<?php if ( ! empty( $fields['contact_form'] ) ) { ?>
-								<?php echo do_shortcode( '[contact-form-7 id="' . absint( $fields['contact_form'] ) . '"]' ); ?>
-							<?php } ?>
-						</div><!--/.col-sm-8-->
-					<?php } ?>
-				</div>
-			</div>
-		</div>
+				</div><!--/.row-->
+			</div><!--/.ewf-section__content-->
+		</div><!-- generate attr-->
 </section>
