@@ -4816,7 +4816,6 @@ body.ctdw-bar-visible #header.header--over-content {
    ========================================================================== */
 .ewf-counter {
   position: relative;
-  text-align: center;
 }
 .ewf-counter:after {
   visibility: hidden;

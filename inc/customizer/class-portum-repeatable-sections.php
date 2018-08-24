@@ -2514,6 +2514,14 @@ class Portum_Repeatable_Sections {
 						'default' => 'boxedin',
 						'choices' => array( 'fullwidth', 'boxedin' ),
 					),
+					'column-spacing'            => array(
+						'default' => 'lg',
+						'choices' => array( 'none', 'sm', 'md', 'lg' ),
+					),
+					'column-group'              => array(
+						'default' => 4,
+						'choices' => array( 2, 3, 4 ),
+					),
 					'row-spacing-top'           => array(
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
@@ -2522,19 +2530,13 @@ class Portum_Repeatable_Sections {
 						'default' => 'md',
 						'choices' => array( 'lg', 'md', 'sm', 'none' ),
 					),
-					'column-spacing'            => array(
-						'default' => 'md',
-						'choices' => array( 'none', 'sm', 'md', 'lg' ),
-					),
-					'column-group'              => array(
-						'default' => 4,
-						'choices' => array( 2, 3, 4 ),
-					),
 					'column-alignment'          => array(
 						'default' => 'center',
+						'choices' => array( 'left', 'center', 'right' ),
 					),
 					'column-vertical-alignment' => array(
-						'default' => 'middle',
+						'default' => 'top',
+						'choices' => array( 'top', 'middle', 'bottom' ),
 					),
 				),
 				'styling' => array(
