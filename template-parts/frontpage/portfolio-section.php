@@ -111,9 +111,9 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 							<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
 							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
 							<?php if ( $fields['portfolio_description_below'] ) { ?>
-							<div class="ewf-portfolio-item ewf-portfolio__has-description-below ewf-item__shadow-effect <?php echo esc_attr( $item_effect_style ); ?>">
+							<div class="ewf-portfolio-item ewf-portfolio__has-description-below <?php echo esc_attr( $item_effect_style ); ?>">
 								<?php } else { ?>
-								<div class="ewf-portfolio-item ewf-item__shadow-effect <?php echo esc_attr( $item_effect_style ); ?>">
+								<div class="ewf-portfolio-item <?php echo esc_attr( $item_effect_style ); ?>">
 									<?php } ?>
 									<li>
 										<?php
