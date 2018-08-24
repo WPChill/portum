@@ -17,7 +17,27 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+/**
+ * Layout Stuff
+ */
+$content_class = '';
+$header_class  = '';
+$row_class     = '';
 
+if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_title_align'] ) {
+	$content_class = 'col-md-6';
+	$header_class  = 'col-md-6';
+	if ( 'right' == $fields['cta_row_title_align'] ) {
+		$row_class = 'row-flow-reverse';
+	}
+} else {
+	$content_class = 'col-md-12';
+	$header_class  = 'col-md-12';
+	if ( 'bottom' == $fields['cta_row_title_align'] ) {
+		$row_class = 'row-column-reverse';
+	}
+}
+//end layout stuff
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -51,77 +71,37 @@ $parent_attr = array(
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'cta', $fields ) ); ?>">
 
-				<div class="row row-eq-height">
-					<?php if ( $button_primary . $button_secondary ) { ?>
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
-						<?php if ( 'right' === $fields['cta_row_title_align'] ) { ?>
-
-							<div class="col-sm-5 ewf-text-align--left">
-								<?php
-								if ( $button_primary ) {
-									echo '<a class="ewf-btn ' . esc_attr( $btn_1_size ) . '" style="' . esc_attr( $btn_1_css ) . '" href="' . esc_attr( $fields['cta_button_primary_url'] ) . '">' . wp_kses_post( $fields['cta_button_primary_label'] ) . '</a>';
-								}
-								?>
-
-								<?php
-								if ( $button_secondary ) {
-									echo '<a class="ewf-btn ' . esc_attr( $btn_2_size ) . '" style="' . esc_attr( $btn_2_css ) . '" href="' . esc_attr( $fields['cta_button_secondary_url'] ) . '">' . wp_kses_post( $fields['cta_button_secondary_label'] ) . '</a>';
-								}
-								?>
-							</div>
-							<div class="col-sm-7">
+					<?php if ( ! empty( $fields['cta_description'] ) || ! empty( $fields['cta_title'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
 								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_description'], $fields['cta_title'] ) ); ?>
-							</div>
-
-						<?php } elseif ( 'top' === $fields['cta_row_title_align'] ) { ?>
-
-							<div class="col-sm-12">
-
-								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_description'], $fields['cta_title'] ) ); ?>
-
-								<?php
-								if ( $button_primary ) {
-									echo '<a class="ewf-btn ' . esc_attr( $btn_1_size ) . '" style="' . esc_attr( $btn_1_css ) . '" href="' . esc_attr( $fields['cta_button_primary_url'] ) . '">' . wp_kses_post( $fields['cta_button_primary_label'] ) . '</a>';
-								}
-								?>
-
-								<?php
-								if ( $button_secondary ) {
-									echo '<a class="ewf-btn ' . esc_attr( $btn_2_size ) . '" style="' . esc_attr( $btn_2_css ) . '" href="' . esc_attr( $fields['cta_button_secondary_url'] ) . '">' . wp_kses_post( $fields['cta_button_secondary_label'] ) . '</a>';
-								}
-								?>
-
-							</div>
-
-						<?php } else { ?>
-
-							<div class="col-sm-7">
-								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_title'], $fields['cta_description'] ) ); ?>
-							</div>
-							<div class="col-sm-5 ewf-text-align--right">
-								<?php
-								if ( $button_primary ) {
-									echo '<a class="ewf-btn ' . esc_attr( $btn_1_size ) . '" style="' . esc_attr( $btn_1_css ) . '" href="' . esc_attr( $fields['cta_button_primary_url'] ) . '">' . wp_kses_post( $fields['cta_button_primary_label'] ) . '</a>';
-								}
-								?>
-
-								<?php
-								if ( $button_secondary ) {
-									echo '<a class="ewf-btn ' . esc_attr( $btn_2_size ) . '" style="' . esc_attr( $btn_2_css ) . '" href="' . esc_attr( $fields['cta_button_secondary_url'] ) . '">' . wp_kses_post( $fields['cta_button_secondary_label'] ) . '</a>';
-								}
-								?>
-							</div>
-
-						<?php } ?>
-
-					<?php } else { ?>
-						<div class="col-sm-12">
-							<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['cta_description'], $fields['cta_title'] ) ); ?>
-						</div>
-
+							</div><!--/.ewf-section--text-->
+						</div><!--/ header class-->
 					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+					<?php if ( ! empty( $button_primary ) || ! empty( $button_secondary ) ) { ?>
+
+						<div class="<?php echo esc_attr( $content_class ); ?>">
+
+							<?php
+							if ( ! empty( $button_primary ) ) {
+								echo '<a class="ewf-btn ' . esc_attr( $btn_1_size ) . '" style="' . esc_attr( $btn_1_css ) . '" href="' . esc_attr( $fields['cta_button_primary_url'] ) . '">' . wp_kses_post( $fields['cta_button_primary_label'] ) . '</a>';
+							}
+							?>
+
+							<?php
+							if ( ! empty( $button_secondary ) ) {
+								echo '<a class="ewf-btn ' . esc_attr( $btn_2_size ) . '" style="' . esc_attr( $btn_2_css ) . '" href="' . esc_attr( $fields['cta_button_secondary_url'] ) . '">' . wp_kses_post( $fields['cta_button_secondary_label'] ) . '</a>';
+							}
+							?>
+						</div><!-- content class -->
+					<?php }//endif button check ?>
+
+				</div><!--/.row-->
+			</div><!-- container class -->
+		</div><!-- ewf-section__content-->
+	</div><!-- attr generator-->
 </section>
