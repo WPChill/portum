@@ -580,39 +580,7 @@ Epsilon_Customizer::add_field( 'portum_portfolio', array(
 		),
 	),
 ) );
-/**
- * Expertise
- */
-Epsilon_Customizer::add_field( 'portum_expertise', array(
-	'type'         => 'epsilon-repeater',
-	'section'      => 'portum_expertise_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Expertise Items', 'portum' ),
-	'button_label' => esc_html__( 'Add new items', 'portum' ),
-	'row_label'    => array(
-		'type'  => 'field',
-		'field' => 'expertise_title',
-	),
-	'fields'       => array(
-		'expertise_number'      => array(
-			'label'             => esc_html__( 'Number', 'portum' ),
-			'type'              => 'text',
-			'sanitize_callback' => 'sanitize_text_field',
-			'default'           => '01',
-		),
-		'expertise_title'       => array(
-			'label'             => esc_html__( 'Title', 'portum' ),
-			'type'              => 'text',
-			'sanitize_callback' => 'wp_kses_post',
-			'default'           => esc_html__( 'We can improve your business', 'portum' ),
-		),
-		'expertise_description' => array(
-			'label'   => esc_html__( 'Description', 'portum' ),
-			'type'    => 'textarea',
-			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta.', 'portum' ),
-		),
-	),
-) );
+
 /**
  * Counter boxes
  */
@@ -994,11 +962,11 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		'slide_title_size'                            => array(
 			'label'   => esc_html__( 'Slide Title Font Size', 'portum' ),
 			'type'    => 'epsilon-slider',
-			'default' => 36,
+			'default' => 16,
 			'choices' => array(
-				'min'  => 36,
+				'min'  => 1,
 				'max'  => 126,
-				'step' => 10,
+				'step' => 1,
 			),
 		),
 		'slide_description'                           => array(
@@ -1013,7 +981,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			'type'    => 'epsilon-slider',
 			'default' => 16,
 			'choices' => array(
-				'min'  => 12,
+				'min'  => 1,
 				'max'  => 36,
 				'step' => 1,
 			),
