@@ -13,6 +13,8 @@ $mysidebars = array(
 	'footer-sidebar-2',
 	'footer-sidebar-3',
 	'footer-sidebar-4',
+	'footer-sidebar-5',
+	'footer-sidebar-6',
 );
 
 /**
