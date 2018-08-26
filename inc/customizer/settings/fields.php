@@ -258,6 +258,18 @@ Epsilon_Customizer::add_field( 'portum_enable_go_top', array(
 	'default'     => true,
 ) );
 
+Epsilon_Customizer::add_field( 'portum_header_layout', array(
+	'type'        => 'select',
+	'label'       => esc_html__( 'Header Layout', 'portum' ),
+	'description' => esc_html__( 'Select the type of header you want to use.', 'portum' ),
+	'section'     => 'portum_header_section',
+	'default'     => 'portum-classic',
+	'choices'     => array(
+		'portum-classic' => esc_html__( 'Classic position', 'portum' ),
+		'portum-sidebar' => esc_html__( 'Fixed left side', 'portum' ),
+	),
+) );
+
 /**
  * Footer section options
  */
