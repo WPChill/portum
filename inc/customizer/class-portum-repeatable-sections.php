@@ -786,6 +786,154 @@ class Portum_Repeatable_Sections {
 	}
 
 	/**
+	 * Repeatable features section
+	 *
+	 * @return array
+	 */
+	private function repeatable_features() {
+		return array(
+			'id'            => 'features',
+			'title'         => esc_html__( 'Features', 'portum' ),
+			'description'   => esc_html__( 'Features section. It retrieves content from Theme Content / features', 'portum' ),
+			'image'         => esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-features-pt.png' ),
+			'customization' => array(
+				'enabled' => true,
+				'layout'  => array(
+					'column-stretch'     => array(
+						'default' => 'boxedin',
+						'choices' => array( 'fullwidth', 'boxedin' ),
+					),
+					'row-spacing-top'    => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+					'row-spacing-bottom' => array(
+						'default' => 'md',
+						'choices' => array( 'lg', 'md', 'sm', 'none' ),
+					),
+				),
+				'styling' => array(
+					'background-color'    => array(
+						'default' => false,
+					),
+					'background-image'    => array(
+						'default' => false,
+					),
+					'background-position' => array(
+						'default' => 'center',
+					),
+					'background-size'     => array(
+						'default' => 'initial',
+					),
+					'background-repeat'   => array(
+						'default' => 'repeat',
+					),
+					'background-parallax' => array(
+						'default' => false,
+					),
+
+				),
+				'colors'  => array(
+					'heading-color' => array(
+						'selectors' => array(
+							'h1',
+							'h2',
+							'h3',
+							'h4',
+							'h5',
+							'h6',
+							'.headline span:not(.dashicons)',
+							'.headline h3',
+							'.features-item span:not(.dashicons)',
+						),
+						'default'   => '',
+					),
+					'text-color'    => array(
+						'selectors' => array( 'p' ),
+						'default'   => '',
+					),
+				),
+			),
+			'fields'        => array(
+				'features_item_style'              => array(
+					'label'   => esc_html__( 'Style', 'portum' ),
+					'type'    => 'select',
+					'default' => 'ewf-item__no-effect',
+					'choices' => array(
+						'ewf-item__no-effect'            => esc_html__( 'No effect', 'portum' ),
+						'ewf-item__border-dashed-effect' => esc_html__( 'Border Dashed Effect', 'portum' ),
+						'ewf-item__shadow-effect'        => esc_html__( 'Bottom Shadow Effect', 'portum' ),
+						'ewf-item__simple-border-effect' => esc_html__( 'Simple Border Effect', 'portum' ),
+						'ewf-item__dash-of-color'        => esc_html__( 'Dash of Color Effect', 'portum' ),
+					),
+				),
+				'features_item_style_color_picker' => array(
+					'label'     => esc_html__( 'Item Style Color Picker', 'portum' ),
+					'type'      => 'epsilon-color-picker',
+					'default'   => '',
+					'mode'      => 'hex',
+					'condition' => array(
+						'item_style',
+						'ewf-item__border-dashed-effect',
+					),
+				),
+				'features_title'                   => array(
+					'label'             => esc_html__( 'Title', 'portum' ),
+					'description'       => esc_html__( 'Section title', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'We offer:' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'features_subtitle'                => array(
+					'label'             => esc_html__( 'Subtitle', 'portum' ),
+					'description'       => esc_html__( 'Section subtitle', 'portum' ),
+					'type'              => 'text',
+					'default'           => wp_kses_post( 'features' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'features_description'             => array(
+					'label'             => esc_html__( 'Description', 'portum' ),
+					'description'       => esc_html__( 'This works best in conjuction with left and right content layouts. Use it to shortly describe your features.', 'portum' ),
+					'type'              => 'textarea',
+					'default'           => esc_html__( 'Describe your features.', 'portum' ),
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'features_image'                   => array(
+					'label'             => esc_html__( 'Main Image', 'portum' ),
+					'description'       => esc_html__( 'This is the image that will be displaye between the icons.', 'portum' ),
+					'type'              => 'epsilon-image',
+					'sanitize_callback' => 'wp_kses_post',
+				),
+				'features_section_unique_id'       => array(
+					'label'             => esc_html__( 'Section ID', 'portum' ),
+					'description'       => esc_html__( 'Section Unique ID. Useful if you are looking to target this particular section with CSS / jQuery. Very useful as well for creating the one-page effect with smooth scrolling to section.', 'portum' ),
+					'type'              => 'text',
+					'sanitize_callback' => 'sanitize_key',
+				),
+				'features_grouping'                => array(
+					'label'       => esc_html__( 'Filter shown features', 'portum' ),
+					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
+					'type'        => 'selectize',
+					'multiple'    => true,
+					'choices'     => Portum_Helper::get_group_values_from_meta( 'portum_features', 'service_title' ),
+					'linking'     => array( 'portum_features', 'service_title' ),
+					'default'     => array( 'all' ),
+				),
+				'features_navigation'              => array(
+					'type'            => 'epsilon-customizer-navigation',
+					'opensDoubled'    => true,
+					'navigateToId'    => 'portum_features_section',
+					'navigateToLabel' => esc_html__( 'Add/Edit features &rarr;', 'portum' ),
+				),
+				'features_repeater_field'          => array(
+					'type'    => 'hidden',
+					'default' => 'portum_features',
+				),
+			),
+		);
+	}
+
+	/**
 	 * Repeatable about section
 	 *
 	 * @return array

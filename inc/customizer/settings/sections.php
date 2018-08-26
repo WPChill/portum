@@ -274,6 +274,15 @@ $sections = array(
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
+	array(
+		'id'   => 'portum_features_section',
+		'args' => array(
+			'title'    => esc_html__( 'Features', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 14,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
 );
 
 $visible_recommended = get_option( 'portum_recommended_actions', false );
