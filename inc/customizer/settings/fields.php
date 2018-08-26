@@ -240,6 +240,7 @@ Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'description' => esc_html__( 'This will set header over slider, using colors you can make the header transparent.', 'portum' ),
 	'section'     => 'portum_header_section',
 	'default'     => false,
+	'condition'   => array( 'portum_header_layout', 'portum-classic' ),
 ) );
 
 Epsilon_Customizer::add_field( 'portum_header_shadow', array(
@@ -576,6 +577,95 @@ Epsilon_Customizer::add_field( 'portum_services', array(
 		),
 	),
 ) );
+
+/**
+ * features
+ */
+Epsilon_Customizer::add_field( 'portum_features', array(
+	'type'         => 'epsilon-repeater',
+	'section'      => 'portum_features_section',
+	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'        => esc_html__( 'features', 'portum' ),
+	'button_label' => esc_html__( 'Add new feature', 'portum' ),
+	'row_label'    => array(
+		'type'  => 'field',
+		'field' => 'feature_title',
+	),
+	'fields'       => array(
+		'features_bg_color'          => array(
+			'label'   => esc_html__( 'features Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '',
+		),
+		'feature_title'              => array(
+			'label'             => esc_html__( 'Title', 'portum' ),
+			'type'              => 'text',
+			'sanitize_callback' => 'wp_kses_post',
+			'default'           => 'Business',
+		),
+		'feature_description'        => array(
+			'label'             => esc_html__( 'Description', 'portum' ),
+			'type'              => 'text',
+			'sanitize_callback' => 'wp_kses_post',
+			'default'           => 'Consultance',
+		),
+		'feature_icon'               => array(
+			'label'   => esc_html__( 'Icon', 'portum' ),
+			'type'    => 'epsilon-icon-picker',
+			'default' => 'fa fa-500px',
+			'groups'  => array( 'general' ),
+		),
+		'feature_icon_color'         => array(
+			'label'   => esc_html__( 'Icon Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '#FFF',
+		),
+		'feature_bg_icon_color'      => array(
+			'label'   => esc_html__( 'Icon Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => 'rgba(255, 255, 255, 0)',
+		),
+		'feature_border_icon_color'  => array(
+			'label'   => esc_html__( 'Icon Border Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => 'rgba(255, 255, 255, 0)',
+		),
+		'feature_border_icon_size'   => array(
+			'label'       => esc_html__( 'Icon Border Size', 'portum' ),
+			'description' => esc_html__( 'Value in pixels.', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 0,
+			'choices'     => array(
+				'min'  => 0,
+				'max'  => 10,
+				'step' => 1,
+			),
+		),
+		'feature_border_icon_radius' => array(
+			'label'       => esc_html__( 'Icon Border Radius', 'portum' ),
+			'description' => esc_html__( 'Value in pixels.', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 0,
+			'choices'     => array(
+				'min'  => 0,
+				'max'  => 50,
+				'step' => 5,
+			),
+		),
+		'feature_icon_size'          => array(
+			'label'       => esc_html__( 'Icon Size', 'portum' ),
+			'description' => esc_html__( 'Value is in pixels', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 36,
+			'choices'     => array(
+				'min'  => 36,
+				'max'  => 96,
+				'step' => 5,
+			),
+		),
+	),
+) );
+
 /**
  * Portfolio Items
  */
