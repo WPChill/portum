@@ -22,7 +22,6 @@
 	 * Window resize event
 	 */
 	$( window ).resize( function() {
-		Portum.Mobile.menu();
 		Portum.Plugins.animatePieCharts();
 		Portum.Plugins.setDimensionsPieCharts();
 		Portum.Theme.header();
@@ -49,16 +48,11 @@
 			 */
 			Portum.Theme.header();
 			Portum.Theme.map();
-			Portum.Theme.menu();
 			Portum.Theme.backTop();
 			Portum.Theme.hideBackTop();
 			Portum.Theme.smoothScroll();
 			Portum.Theme.handleAccordions();
 
-			/**
-			 * Mobile functions
-			 */
-			Portum.Mobile.menu();
 		} catch ( error ) {
 			console.log( error );
 		}
