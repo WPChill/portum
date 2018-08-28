@@ -2507,28 +2507,6 @@ body.ctdw-bar-visible #header.header--over-content
     top: 40px;
 }
 
-@media (min-width: 768px) and (max-width: 991px)
-{
-    #header
-    {
-        position: relative;
-
-        padding-bottom: 45px;
-
-        background-color: #0b0b0b;
-    }
-}
-@media (max-width: 767px)
-{
-    #header
-    {
-        position: relative;
-
-        padding-bottom: 45px;
-
-        background-color: #0b0b0b;
-    }
-}
 /* ==========================================================================
     =Logo
     ========================================================================= */
@@ -2558,19 +2536,6 @@ body.ctdw-bar-visible #header.header--over-content
             transition: width .3s;
 }
 
-@media (max-width: 767px)
-{
-    /**
-     * 1. on mobile devices logo padding right needs to be the width of the
-     *	  mobile menu trigger + some spacing so as to not let the logo <a>
-     *    overlap the mobile menu trigger
-     */
-    #logo
-    {
-        padding-right: 50px;
-        /* 1 */
-    }
-}
 /* ==========================================================================
     =Sticky Header
     ========================================================================= */
@@ -2600,15 +2565,6 @@ body.ctdw-bar-visible #header.header--over-content
     {
         max-width: 80%;
     }
-    #header.stuck .sf-menu > li > a,
-    #header.stuck .sf-menu > li.dropdown > a
-    {
-        padding: 26px 15px 36px;
-    }
-    #header.stuck .sf-arrows .sf-with-ul:after
-    {
-        margin-top: -1px;
-    }
     #header.stuck #custom-search-button
     {
         top: 23px;
@@ -2624,111 +2580,339 @@ body.ctdw-bar-visible #header.header--over-content
         top: 32px;
     }
 }
-@media (min-width: 1200px)
-{
-    #header.stuck .sf-menu > li > a,
-    #header.stuck .sf-menu > li.dropdown > a
-    {
-        padding: 26px 25px 36px;
-    }
-}
-@media (max-width: 991px)
-{
-    #header
-    {
-        padding: 0;
-    }
-
-    #mobile-menu-trigger
-    {
-        position: absolute;
-        top: 13px;
-        right: 0;
-
-        display: block !important;
-
-        margin: 0;
-        padding: 10px;
-    }
-
-    .small-arrow > a::before
-    {
-        display: none;
-    }
-
-    #header
-    {
-        background-color: rgba(53, 68, 78, .9);
-    }
-
-    #mobile-menu
-    {
-        padding: 0;
-    }
-
-    #mobile-menu li > a:hover
-    {
-        background-color: #a1083a;
-    }
-}
 /* ==========================================================================
    =Menu
    ========================================================================== */
 #header
 {
-    line-height: 100px;
+    line-height: 60px;
 }
-#header .portum-menu
-{
-    list-style: none;
-}
-#header .portum-menu li
-{
-    display: inline-block;
-
-    margin-right: 20px;
-}
-#header .portum-menu .sub-menu
+#header .portum-menu-btn
 {
     display: none;
 }
-#header.portum-sidebar
-{
-    position: fixed;
-    z-index: 999;
-    left: 0;
-
-    width: 15%;
-    height: 100vh;
-}
-#header.portum-sidebar + #wrap
+#header ul
 {
     position: relative;
-    left: 15%;
 
-    max-width: 85%;
+    float: right;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
 }
-#header.portum-sidebar nav ul li
+#header ul a
+{
+    display: block;
+
+    padding: 0 15px;
+
+    text-decoration: none;
+}
+#header ul a:hover
+{
+    color: #0962ea;
+}
+#header ul li
+{
+    position: relative;
+
+    float: left;
+
+    margin: 0;
+    padding: 0;
+}
+#header ul li.menu-item-has-children
+{
+    margin-right: 15px;
+    padding-right: 5px;
+}
+#header ul li.menu-item-has-children:after
+{
+    font-family: 'fontawesome';
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    content: '\f107';
+    text-transform: none;
+
+    speak: none;
+}
+#header ul li.current-menu-item
+{
+    position: relative;
+}
+#header ul li.current-menu-item a
+{
+    color: #0962ea;
+}
+#header ul li:hover
+{
+    position: relative;
+}
+#header ul li:hover > ul
+{
+    display: block;
+}
+#header ul ul
+{
+    position: absolute;
+    top: 80%;
+    left: 20%;
+
+    display: none;
+
+    width: 200px;
+    padding: 0;
+
+    border: 1px solid #ddd;
+    background: #fff;
+}
+#header ul ul li
+{
+    position: relative;
+
+    float: none;
+
+    width: 100%;
+}
+#header ul ul li.menu-item-has-children
 {
     line-height: 1;
 
-    display: block;
-
-    width: 100%;
-    margin: 20px 0 0 0;
-    padding: 0;
-
-    text-align: center;
+    margin-right: 0;
+    padding-right: 0;
 }
-#header nav
+#header ul ul li.menu-item-has-children:after
 {
-    text-align: right;
+    bottom: 0;
+
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
 }
-#header #mobile-menu-trigger
+#header ul ul li:hover
 {
-    display: none;
+    background-color: #eee;
+}
+#header ul ul a
+{
+    font-size: 14px;
+    line-height: 1.2;
+
+    padding: 8px 10px;
+}
+#header ul ul ul
+{
+    top: 0;
+    left: 100%;
 }
 
+/* 48em = 768px */
+@media (max-width: 48em)
+{
+    #header
+    {
+        text-align: center;
+
+        border-bottom: 0 !important;
+        /* menu icon */
+        /* menu btn */
+    }
+    #header ul a
+    {
+        position: relative;
+        z-index: 2;
+
+        padding-right: 0;
+    }
+    #header .portum-menu-icon
+    {
+        position: relative;
+
+        display: inline-block;
+        float: right;
+
+        padding: 28px 20px;
+
+        cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+    }
+    #header .portum-menu-icon .portum-navicon
+    {
+        position: relative;
+
+        display: block;
+
+        width: 18px;
+        height: 2px;
+
+        -webkit-transition: background .2s ease-out;
+             -o-transition: background .2s ease-out;
+                transition: background .2s ease-out;
+
+        background: #333;
+    }
+    #header .portum-menu-icon .portum-navicon:before,
+    #header .portum-menu-icon .portum-navicon:after
+    {
+        position: absolute;
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        content: '';
+        -webkit-transition: all .2s ease-out;
+             -o-transition: all .2s ease-out;
+                transition: all .2s ease-out;
+
+        background: #333;
+    }
+    #header .portum-menu-icon .portum-navicon:before
+    {
+        top: 5px;
+    }
+    #header .portum-menu-icon .portum-navicon:after
+    {
+        top: -5px;
+    }
+    #header .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon
+    {
+        background: transparent;
+    }
+    #header .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon:before
+    {
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+    }
+    #header .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon:after
+    {
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+    #header .portum-menu-btn:checked ~ .portum-menu-icon:not(.steps) .portum-navicon:before,
+    #header .portum-menu-btn:checked ~ .portum-menu-icon:not(.steps) .portum-navicon:after
+    {
+        top: 0;
+    }
+    #header .container,
+    #header .row,
+    #header div[class*='col-']
+    {
+        margin: 0;
+        padding: 0;
+    }
+    #header .portum-menu
+    {
+        visibility: hidden;
+
+        width: 100%;
+        height: 0;
+        max-height: none;
+
+        text-align: left;
+
+        opacity: 0;
+        border-right: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        border-left: 1px solid #eee;
+        background-color: #fafafa;
+    }
+    #header .portum-menu li
+    {
+        display: block;
+        float: none !important;
+
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+
+        border-top: 1px solid #eee;
+    }
+    #header .portum-menu li.menu-item-has-children
+    {
+        line-height: 50px;
+    }
+    #header .portum-menu li.menu-item-has-children:after
+    {
+        width: 50px;
+
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        text-align: center;
+
+        border-left: 1px solid #eee;
+    }
+    #header .portum-menu li.menu-item-has-children:after:hover > ul
+    {
+        display: block;
+    }
+    #header ul ul ul
+    {
+        line-height: 50px;
+
+        position: static;
+
+        display: block;
+
+        width: 100%;
+
+        background-color: #ededed;
+    }
+    #header ul ul
+    {
+        line-height: 50px;
+
+        position: static;
+
+        float: none;
+
+        width: 100%;
+    }
+    #header ul ul li
+    {
+        padding-left: 5px;
+    }
+    #header ul ul li a
+    {
+        line-height: 50px;
+
+        padding: 0 0 0 5px;
+    }
+    #header .portum-menu-icon
+    {
+        float: none;
+
+        margin: 0;
+        padding: 20px;
+    }
+    #header .portum-menu-btn:checked ~ .portum-menu
+    {
+        visibility: visible;
+
+        height: auto;
+
+        -webkit-transition: opacity .3s ease-in-out;
+             -o-transition: opacity .3s ease-in-out;
+                transition: opacity .3s ease-in-out;
+
+        opacity: 1;
+    }
+}
 .intro-item
 {
     position: relative;
