@@ -140,7 +140,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_repeatable_section',
 		'args' => array(
-			'title'    => esc_html__( 'Alpha Page Builder', 'portum' ),
+			'title'    => esc_html__( 'Epsilon Page Builder', 'portum' ),
 			'priority' => 0,
 		),
 	),

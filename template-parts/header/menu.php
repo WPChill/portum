@@ -10,6 +10,10 @@
 ?>
 
 <nav>
+	<input class="portum-menu-btn" type="checkbox" id="portum-menu-btn" />
+	<label class="portum-menu-icon" for="portum-menu-btn">
+		<span class="portum-navicon"></span>
+	</label>
 	<?php
 	$header_bg = get_theme_mod( 'portum_header_background', false );
 	$class     = ! $header_bg ? 'portum-menu fixed' : 'portum-menu fixed header-background';
@@ -22,6 +26,4 @@
 		'menu_class'     => $class,
 	) );
 	?>
-	<!-- /// Mobile Menu Trigger //////// -->
-	<button id="mobile-menu-trigger"><i class="fa fa-bars"></i></button><!-- end #mobile-menu-trigger -->
 </nav>

@@ -3,50 +3,277 @@
    ========================================================================== */
 
 #header {
+	line-height: 60px;
 
-	line-height: 100px;
+	.portum-menu-btn {
+		display: none;
+	}
 
-	.portum-menu {
+	ul {
 		list-style: none;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		float: right;
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 0 15px;
+
+			&:hover {
+				color: $accent-1-color;
+			}
+		}
 
 		li {
-			display: inline-block;
-			margin-right: 20px;
-		}
-
-		.sub-menu {
-			display: none;
-		}
-	}
-
-	&.portum-sidebar {
-		position: fixed;
-		left: 0;
-		width: 15%;
-		height: 100vh;
-		z-index: 999;
-
-		& + #wrap {
-			max-width: 85%;
 			position: relative;
-			left: 15%;
-		}
-
-		nav ul li {
-			display: block;
-			width: 100%;
-			text-align: center;
-			margin: 20px 0 0 0;
+			float: left;
+			margin: 0;
 			padding: 0;
-			line-height: 1;
+
+			&.menu-item-has-children {
+				&:after {
+					position: absolute;
+					top: 0;
+					right: 0;
+					font-size: 11px;
+					content: "\f107";
+					font-family: 'fontawesome';
+					speak: none;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					text-transform: none;
+				}
+				margin-right: 15px;
+				padding-right: 5px;
+			}
+
+			&.current-menu-item {
+				position: relative;
+
+				a {
+					color: $accent-1-color;
+				}
+
+			}
+
+			&:hover {
+				position: relative;
+			}
+
+			&:hover > ul {
+				display: block
+			}
+		}
+
+		ul {
+			display: none;
+			position: absolute;
+			top: 80%;
+			left: 20%;
+			background: #fff;
+			padding: 0;
+			width: 200px;
+			border: 1px solid #ddd;
+
+			li {
+				float: none;
+				width: 100%;
+				position: relative;
+				&.menu-item-has-children {
+					line-height: 1;
+					padding-right: 0;
+					margin-right: 0;
+
+					&:after {
+						bottom: 0;
+						transform: rotate(-90deg);
+					}
+				}
+
+				&:hover {
+					background-color: #eee;
+				}
+			}
+
+			a {
+				line-height: 1.2;
+				padding: 8px 10px;
+				font-size: 14px;
+			}
+
+			ul {
+				top: 0;
+				left: 100%
+			}
 		}
 	}
+}
 
-	nav {
-		text-align: right;
-	}
+/* 48em = 768px */
 
-	#mobile-menu-trigger {
-		display: none;
+@media (max-width: 48em) {
+
+	#header {
+		text-align: center;
+		border-bottom: 0 !important;
+
+		ul {
+			a {
+				position: relative;
+				z-index: 2;
+				padding-right: 0;
+			}
+		}
+
+		/* menu icon */
+
+		.portum-menu-icon {
+			cursor: pointer;
+			display: inline-block;
+			float: right;
+			padding: 28px 20px;
+			position: relative;
+			user-select: none;
+
+			.portum-navicon {
+				background: #333;
+				display: block;
+				height: 2px;
+				position: relative;
+				transition: background .2s ease-out;
+				width: 18px;
+
+				&:before,
+				&:after {
+					background: #333;
+					content: '';
+					display: block;
+					height: 100%;
+					position: absolute;
+					transition: all .2s ease-out;
+					width: 100%;
+				}
+
+				&:before {
+					top: 5px;
+				}
+
+				&:after {
+					top: -5px;
+				}
+			}
+		}
+
+		/* menu btn */
+		.portum-menu-btn {
+
+			&:checked ~ .portum-menu-icon {
+				.portum-navicon {
+					background: transparent;
+
+					&:before {
+						transform: rotate(-45deg);
+					}
+
+					&:after {
+						transform: rotate(45deg);
+					}
+				}
+			}
+
+			&:checked ~ .portum-menu-icon {
+				&:not(.steps) {
+					.portum-navicon {
+						&:before,
+						&:after {
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.container,
+		.row,
+		div[class*='col-'] {
+			padding: 0;
+			margin: 0;
+		}
+
+		.portum-menu {
+			max-height: none;
+			visibility: hidden;
+			opacity: 0;
+			height: 0;
+			width: 100%;
+			text-align: left;
+			background-color: #fafafa;
+			border-bottom: 1px solid #eee;
+			border-left: 1px solid #eee;
+			border-right: 1px solid #eee;
+
+			li {
+				float: none !important;
+				display: block;
+				border-top: 1px solid #eee;
+				margin-right: 0 !important;
+				padding-right: 0 !important;
+
+				&.menu-item-has-children {
+					line-height: 50px;
+					&:after {
+						width: 50px;
+						text-align: center;
+						border-left: 1px solid #eee;
+						transform: none;
+
+						&:hover > ul {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+
+		ul ul ul {
+			display: block;
+			background-color: darken(#FAFAFA, 5%);
+			position: static;
+			width: 100%;
+			line-height: 50px;
+
+		}
+
+		ul ul {
+			position: static;
+			width: 100%;
+			line-height: 50px;
+			float: none;
+
+			li {
+				padding-left: 5px;
+
+				a {
+					line-height: 50px;
+					padding: 0 0 0 5px;
+				}
+			}
+
+		}
+		.portum-menu-icon {
+			float: none;
+			padding: 20px;
+			margin: 0;
+		}
+
+		.portum-menu-btn:checked ~ .portum-menu {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 0.3s ease-in-out;
+			height: auto;
+		}
 	}
 }
