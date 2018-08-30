@@ -310,69 +310,61 @@
 	}
 }
 
-#header {
-
-	&.portum-offcanvas {
-
-		+ #wrap {
-			transition: right 0.3s ease;
-			position: relative;
-		}
-
-
-		#portum-site-wrapper {
-			position: fixed;
-			overflow: hidden;
-			height: 100vh; /* Temp: Simulates a tall page. */
-			width: 200px;
-			right: 0;
-		}
-		#portum-site-canvas {
-			width: 100%;
-			height: 100%;
-			position: relative;
-			-webkit-transform: translateX(0);
-			transform: translateX(0);
-			-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-			-webkit-transition: 300ms ease all;
-			transition: 300ms ease all;
-			-webkit-backface-visibility: hidden;
-			backface-visibility: hidden;
-		}
-		.portum-closed-nav #portum-site-canvas {
-			-webkit-transform: translateX(200px);
-			transform: translateX(200px);
-			-webkit-transform: translate3d(200px, 0, 0);
-			transform: translate3d(200px, 0, 0);
-		}
-
-		.portum-show-nav #portum-site-menu {
-			width: 200px;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			right: 0;
-			background-color: #fff;
-			z-index: 99999;
-		}
-
-		#portum-site-menu nav ul,
-		#portum-site-menu nav ul li {
-			float: none;
-		}
-
-		#portum-site-menu {
-			line-height: 40px;
-		}
-
-		#portum-site-menu nav {
-			margin-top: 50px;
-		}
-
-		&.portum-show-nav + #wrap {
-			right: 200px;
-		}
+.portum-offcanvas {
+	#portum-site-wrapper {
+		position: fixed;
+		overflow: hidden;
+		height: 100vh; /* Temp: Simulates a tall page. */
+		width: 200px;
+		right: 0;
+		z-index: 9999999999;
 	}
+	#portum-site-canvas {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		-webkit-transition: 300ms ease all;
+		transition: 300ms ease all;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	.portum-closed-nav #portum-site-canvas {
+		-webkit-transform: translateX(200px);
+		transform: translateX(200px);
+		-webkit-transform: translate3d(200px, 0, 0);
+		transform: translate3d(200px, 0, 0);
+	}
+
+	.portum-show-nav #portum-site-canvas {
+		-webkit-transform: translateX(-200px);
+		transform: translateX(-200px);
+		-webkit-transform: translate3d(-200px, 0, 0);
+		transform: translate3d(-200px, 0, 0);
+	}
+
+	#portum-site-menu {
+		width: 200px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: -200px;
+		background-color: #fff;
+		z-index: 99999;
+		padding: 15px;
+	}
+
+	#portum-site-menu nav ul,
+	#portum-site-menu nav ul li {
+		float: none;
+	}
+
+	#portum-site-menu {
+		line-height: 40px;
+	}
+
+	#portum-site-menu nav {
+		margin-top: 50px;
+	}
+
 }
 
