@@ -608,7 +608,23 @@ var Portum = {
 	/**
 	 * Javascript events in the theme
 	 */
-	Events: {},
+	Events: {
+		OffCanvasMenu: function() {
+
+			jQuery( '.portum-toggle-nav' ).on( 'click', function( e ) {
+
+				e.preventDefault();
+
+				if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-show-nav' ) ) {
+					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).removeClass( 'portum-show-nav' );
+					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).addClass( 'portum-closed-nav' );
+				} else if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-closed-nav' ) ) {
+					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).removeClass( 'portum-closed-nav' );
+					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).addClass( 'portum-show-nav' );
+				}
+			} );
+		}
+	},
 	/**
 	 * Helper functions
 	 */
