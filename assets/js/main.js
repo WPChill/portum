@@ -53,6 +53,11 @@
 			Portum.Theme.smoothScroll();
 			Portum.Theme.handleAccordions();
 
+			/**
+			 * Initiate Event related functions
+			 */
+			Portum.Events.OffCanvasMenu();
+
 		} catch ( error ) {
 			console.log( error );
 		}
@@ -75,6 +80,11 @@
 		 */
 		Portum.Theme.map();
 		Portum.Theme.header();
+
+		/**
+		 * Initiate Event related functions
+		 */
+		Portum.Events.OffCanvasMenu();
 
 	} );
 

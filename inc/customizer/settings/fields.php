@@ -266,8 +266,9 @@ Epsilon_Customizer::add_field( 'portum_header_layout', array(
 	'section'     => 'portum_header_section',
 	'default'     => 'portum-classic',
 	'choices'     => array(
-		'portum-classic' => esc_html__( 'Classic position', 'portum' ),
-		'portum-sidebar' => esc_html__( 'Fixed left side', 'portum' ),
+		'portum-classic'   => esc_html__( 'Classic position', 'portum' ),
+		'portum-sidebar'   => esc_html__( 'Fixed left side', 'portum' ),
+		'portum-offcanvas' => esc_html__( 'Off Canvas Menu', 'portum' ),
 	),
 ) );
 

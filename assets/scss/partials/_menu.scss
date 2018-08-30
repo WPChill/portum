@@ -71,6 +71,7 @@
 		ul {
 			display: none;
 			position: absolute;
+			z-index: 3;
 			top: 80%;
 			left: 20%;
 			background: #fff;
@@ -240,11 +241,10 @@
 
 		ul ul ul {
 			display: block;
-			background-color: darken(#FAFAFA, 5%);
+			background-color: darken(#fafafa, 5%);
 			position: static;
 			width: 100%;
 			line-height: 50px;
-
 		}
 
 		ul ul {
@@ -277,3 +277,102 @@
 		}
 	}
 }
+
+#header {
+
+	&.portum-sidebar {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 200px;
+		z-index: 9999;
+		line-height: 40px;
+		text-align: center;
+
+		+ #wrap {
+			max-width: calc(100% - 200px);
+			left: 200px;
+			position: relative;
+		}
+
+		#logo {
+			padding: 50px 0;
+		}
+
+		ul {
+			float: none;
+
+			> li {
+				float: none;
+			}
+		}
+	}
+}
+
+#header {
+
+	&.portum-offcanvas {
+
+		+ #wrap {
+			transition: right 0.3s ease;
+			position: relative;
+		}
+
+
+		#portum-site-wrapper {
+			position: fixed;
+			overflow: hidden;
+			height: 100vh; /* Temp: Simulates a tall page. */
+			width: 200px;
+			right: 0;
+		}
+		#portum-site-canvas {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			-webkit-transition: 300ms ease all;
+			transition: 300ms ease all;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+		.portum-closed-nav #portum-site-canvas {
+			-webkit-transform: translateX(200px);
+			transform: translateX(200px);
+			-webkit-transform: translate3d(200px, 0, 0);
+			transform: translate3d(200px, 0, 0);
+		}
+
+		.portum-show-nav #portum-site-menu {
+			width: 200px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: #fff;
+			z-index: 99999;
+		}
+
+		#portum-site-menu nav ul,
+		#portum-site-menu nav ul li {
+			float: none;
+		}
+
+		#portum-site-menu {
+			line-height: 40px;
+		}
+
+		#portum-site-menu nav {
+			margin-top: 50px;
+		}
+
+		&.portum-show-nav + #wrap {
+			right: 200px;
+		}
+	}
+}
+
