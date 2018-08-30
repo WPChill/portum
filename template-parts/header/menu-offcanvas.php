@@ -25,7 +25,3 @@
 		</div><!--/#site-menu-->
 	</div>
 </div>
-
-<button class="portum-toggle-nav">
-	<i class="fa fa-bars"></i>Toggle nav
-</button>

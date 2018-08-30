@@ -616,11 +616,11 @@ var Portum = {
 				e.preventDefault();
 
 				if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-show-nav' ) ) {
-					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).removeClass( 'portum-show-nav' );
-					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).addClass( 'portum-closed-nav' );
+					jQuery( '#portum-site-wrapper, #offcanvas' ).removeClass( 'portum-show-nav' );
+					jQuery( '#portum-site-wrapper, #offcanvas' ).addClass( 'portum-closed-nav' );
 				} else if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-closed-nav' ) ) {
-					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).removeClass( 'portum-closed-nav' );
-					jQuery( '#portum-site-wrapper, .portum-offcanvas' ).addClass( 'portum-show-nav' );
+					jQuery( '#portum-site-wrapper, #offcanvas' ).removeClass( 'portum-closed-nav' );
+					jQuery( '#portum-site-wrapper, #offcanvas' ).addClass( 'portum-show-nav' );
 				}
 			} );
 		}
