@@ -1,0 +1,135 @@
+#offcanvas {
+	#portum-site-wrapper {
+		position: fixed;
+		overflow: hidden;
+		height: 100vh;
+		width: 200px;
+		right: 0;
+		z-index: 9999999999;
+	}
+	#portum-site-canvas {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		-webkit-transition: 300ms ease all;
+		transition: 300ms ease all;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	.portum-closed-nav #portum-site-canvas {
+		-webkit-transform: translateX(200px);
+		transform: translateX(200px);
+		-webkit-transform: translate3d(200px, 0, 0);
+		transform: translate3d(200px, 0, 0);
+	}
+
+	.portum-show-nav #portum-site-canvas {
+		-webkit-transform: translateX(-200px);
+		transform: translateX(-200px);
+		-webkit-transform: translate3d(-200px, 0, 0);
+		transform: translate3d(-200px, 0, 0);
+	}
+
+	#portum-site-menu {
+		width: 200px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: -200px;
+		background-color: #fff;
+		z-index: 99999;
+		padding: 15px;
+	}
+
+	#portum-site-menu nav ul,
+	#portum-site-menu nav ul li {
+		float: none;
+	}
+
+	#portum-site-menu {
+		line-height: 40px;
+	}
+
+	#portum-site-menu nav {
+		margin-top: 50px;
+	}
+}
+
+.portum-offcanvas {
+
+	.portum-toggle-nav {
+		border: 0;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		.portum-menu-icon {
+			cursor: pointer;
+			display: inline-block;
+			float: right;
+			position: relative;
+			user-select: none;
+
+			.portum-navicon {
+				background: #333;
+				display: block;
+				height: 2px;
+				position: relative;
+				transition: background .2s ease-out;
+				width: 18px;
+
+				&:before,
+				&:after {
+					background: #333;
+					content: '';
+					display: block;
+					height: 100%;
+					position: absolute;
+					transition: all .2s ease-out;
+					width: 100%;
+				}
+
+				&:before {
+					top: 5px;
+				}
+
+				&:after {
+					top: -5px;
+				}
+			}
+		}
+
+		.portum-menu-btn {
+
+			&:checked ~ .portum-menu-icon {
+				.portum-navicon {
+					background: transparent;
+
+					&:before {
+						transform: rotate(-45deg);
+					}
+
+					&:after {
+						transform: rotate(45deg);
+					}
+				}
+			}
+
+			&:checked ~ .portum-menu-icon {
+				&:not(.steps) {
+					.portum-navicon {
+						&:before,
+						&:after {
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

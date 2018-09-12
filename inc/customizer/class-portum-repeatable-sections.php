@@ -61,6 +61,7 @@ class Portum_Repeatable_Sections {
 		$this->sections = apply_filters( 'portum_section_collection', $this->sections );
 	}
 
+
 	/**
 	 * Create a repeatable section that renders the page content
 	 *
@@ -411,24 +412,48 @@ class Portum_Repeatable_Sections {
 				),
 			),
 			'fields'        => array(
-				'testimonials_title'             => array(
+				'testimonials_margins_device_setter' => array(
+					'label'   => esc_html__( 'Section margins' ),
+					'type'    => 'select',
+					'choices' => array(
+						'desktop' => 'Desktop',
+						'mobile'  => 'Mobile',
+					),
+				),
+				'testimonials_margins'               => array(
+					'label'     => '',
+					'type'      => 'epsilon-margins-paddings',
+					'condition' => array(
+						'testimonials_margins_device_setter',
+						'desktop',
+					),
+				),
+				'testimonials_paddings'              => array(
+					'label'     => '',
+					'type'      => 'epsilon-margins-paddings',
+					'condition' => array(
+						'testimonials_margins_device_setter',
+						'mobile',
+					),
+				),
+				'testimonials_title'                 => array(
 					'label'             => esc_html__( 'Title', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'Why Choose us?' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'testimonials_subtitle'          => array(
+				'testimonials_subtitle'              => array(
 					'label'             => esc_html__( 'Subtitle', 'portum' ),
 					'type'              => 'text',
 					'default'           => wp_kses_post( 'testimonials' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-				'testimonials_section_unique_id' => array(
+				'testimonials_section_unique_id'     => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
 				),
-				'testimonials_grouping'          => array(
+				'testimonials_grouping'              => array(
 					'label'       => esc_html__( 'Filter shown testimonials', 'portum' ),
 					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
@@ -437,13 +462,13 @@ class Portum_Repeatable_Sections {
 					'linking'     => array( 'portum_testimonials', 'testimonial_title' ),
 					'default'     => array( 'all' ),
 				),
-				'testimonials_navigation'        => array(
+				'testimonials_navigation'            => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_testimonials_section',
 					'navigateToLabel' => esc_html__( 'Add/Edit Testimonials &rarr;', 'portum' ),
 				),
-				'testimonials_repeater_field'    => array(
+				'testimonials_repeater_field'        => array(
 					'type'    => 'hidden',
 					'default' => 'portum_testimonials',
 				),
@@ -690,79 +715,28 @@ class Portum_Repeatable_Sections {
 					'default'           => esc_html__( 'Describe your services.', 'portum' ),
 					'sanitize_callback' => 'wp_kses_post',
 				),
-
-				'services_slider'            => array(
-					'label'   => esc_html__( 'Turn into a carousel', 'portum' ),
-					'type'    => 'epsilon-toggle',
-					'default' => false,
-				),
-				'services_slider_autostart'  => array(
-					'label'     => esc_html__( 'Autostart', 'portum' ),
-					'type'      => 'epsilon-toggle',
-					'default'   => true,
-					'condition' => array( 'services_slider', true ),
-				),
-				'services_slider_infinite'   => array(
-					'label'     => esc_html__( 'Infinite slides', 'portum' ),
-					'type'      => 'epsilon-toggle',
-					'default'   => true,
-					'condition' => array( 'services_slider', true ),
-				),
-				'services_slider_pager'      => array(
-					'label'     => esc_html__( 'Navigation Dots', 'portum' ),
-					'type'      => 'epsilon-toggle',
-					'default'   => true,
-					'condition' => array( 'services_slider', true ),
-				),
-				'services_slider_controls'   => array(
-					'label'     => esc_html__( 'Navigation Arrows', 'portum' ),
-					'type'      => 'epsilon-toggle',
-					'default'   => false,
-					'condition' => array( 'services_slider', true ),
-				),
-				'services_slider_speed'      => array(
-					'label'       => esc_html__( 'Speed', 'portum' ),
-					'description' => esc_html__( 'Carousel speed', 'portum' ),
-					'type'        => 'epsilon-slider',
-					'default'     => 500,
-					'choices'     => array(
-						'min'  => 300,
-						'max'  => 2000,
-						'step' => 100,
+				'services_upsell'                  => array(
+					'type'               => 'epsilon-upsell',
+					'label'              => esc_html__( 'Turn into a carousel', 'portum' ),
+					'features'           => array(
+						array(
+							'option' => esc_html__( 'Turn this section into a carousel with the PRO version', 'portum' ),
+							'help'   => esc_html__( 'Combine layout options with the possibility of turning this section into a carousel one with the purchase of PRO version. ', 'portum' ),
+						),
 					),
-					'condition'   => array( 'services_slider', true ),
+					'button_text'        => esc_html__( 'See more', 'portum' ),
+					'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+					'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+					'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+					'separator'          => esc_html__( 'or' ),
 				),
-				'services_slides_shown'      => array(
-					'label'       => esc_html__( 'No. of slides to show', 'portum' ),
-					'description' => esc_html__( 'Total number of items to show at a time. ', 'portum' ),
-					'type'        => 'epsilon-slider',
-					'default'     => 6,
-					'choices'     => array(
-						'min'  => 1,
-						'max'  => 12,
-						'step' => 1,
-					),
-					'condition'   => array( 'services_slider', true ),
-				),
-				'services_slides_scrolled'   => array(
-					'label'       => esc_html__( 'No. of slides to scroll ', 'portum' ),
-					'description' => esc_html__( 'Number of items to scroll at a time. For hero sliders, this is kept at 1 slide at a time.', 'portum' ),
-					'type'        => 'epsilon-slider',
-					'default'     => 1,
-					'choices'     => array(
-						'min'  => 1,
-						'max'  => 6,
-						'step' => 1,
-					),
-					'condition'   => array( 'services_slider', true ),
-				),
-				'services_section_unique_id' => array(
+				'services_section_unique_id'       => array(
 					'label'             => esc_html__( 'Section ID', 'portum' ),
 					'description'       => esc_html__( 'Section Unique ID. Useful if you are looking to target this particular section with CSS / jQuery. Very useful as well for creating the one-page effect with smooth scrolling to section.', 'portum' ),
 					'type'              => 'text',
 					'sanitize_callback' => 'sanitize_key',
 				),
-				'services_grouping'          => array(
+				'services_grouping'                => array(
 					'label'       => esc_html__( 'Filter shown services', 'portum' ),
 					'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 					'type'        => 'selectize',
@@ -771,13 +745,13 @@ class Portum_Repeatable_Sections {
 					'linking'     => array( 'portum_services', 'service_title' ),
 					'default'     => array( 'all' ),
 				),
-				'services_navigation'        => array(
+				'services_navigation'              => array(
 					'type'            => 'epsilon-customizer-navigation',
 					'opensDoubled'    => true,
 					'navigateToId'    => 'portum_services_section',
 					'navigateToLabel' => esc_html__( 'Add/Edit Services &rarr;', 'portum' ),
 				),
-				'services_repeater_field'    => array(
+				'services_repeater_field'          => array(
 					'type'    => 'hidden',
 					'default' => 'portum_services',
 				),
