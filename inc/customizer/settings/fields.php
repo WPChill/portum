@@ -371,15 +371,7 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
 	),
 ) );
 
-/**
- * Copyright contents
- */
-Epsilon_Customizer::add_field( 'portum_copyright_contents', array(
-	'type'    => 'textarea',
-	'default' => 'Colorlib © 2018. All rights reserved.',
-	'label'   => esc_html__( 'Copyright Text', 'portum' ),
-	'section' => 'portum_footer_section',
-) );
+
 /**
  * Theme Content
  */
