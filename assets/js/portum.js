@@ -623,6 +623,16 @@ var Portum = {
 					jQuery( '#portum-site-wrapper, #offcanvas' ).addClass( 'portum-show-nav' );
 				}
 			} );
+
+			jQuery( '.menu-item-has-children' ).on( 'click', function( e ) {
+				e.preventDefault();
+
+				jQuery( this ).toggleClass( 'is-active' ).children( 'ul' ).toggleClass( 'is-visible' );
+			} );
+
+			jQuery( '.menu-item-has-children' ).on( 'click', '*', function( e ) {
+				e.stopPropagation();
+			} );
 		}
 	},
 	/**

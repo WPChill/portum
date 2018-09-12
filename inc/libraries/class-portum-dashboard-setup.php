@@ -99,13 +99,11 @@ class Portum_Dashboard_Setup {
 			$this->notice .= '<p><a href="' . esc_url( admin_url( '?page=epsilon-onboarding' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'portum' ), $this->theme['theme-name'] ) . '</a></p>';
 		}
 		$notifications = Epsilon_Notifications::get_instance();
-		$notifications->add_notice(
-			array(
-				'id'      => 'notification_testing',
-				'type'    => 'notice epsilon-big',
-				'message' => $this->notice,
-			)
-		);
+		$notifications->add_notice( array(
+			'id'      => 'notification_testing',
+			'type'    => 'notice epsilon-big',
+			'message' => $this->notice,
+		) );
 	}
 
 	/**
@@ -257,11 +255,11 @@ class Portum_Dashboard_Setup {
 				'recommended' => false,
 			),
 
-			'modula-best-grid-gallery'  => array(
+			'modula-best-grid-gallery' => array(
 				'integration' => false,
 				'recommended' => true,
 			),
-			'colorlib-login-customizer' => array(
+			'simple-author-box'        => array(
 				'integration' => false,
 				'recommended' => true,
 			),

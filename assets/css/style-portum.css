@@ -2671,10 +2671,15 @@ body.ctdw-bar-visible #header.header--over-content
     display: none;
 
     width: 200px;
-    padding: 0;
+    padding: .833em;
 
-    border: 1px solid #ddd;
-    background: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    border-radius: 6px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
 }
 #header ul ul li
 {
@@ -2716,7 +2721,6 @@ body.ctdw-bar-visible #header.header--over-content
     left: 100%;
 }
 
-/* 48em = 768px */
 @media (max-width: 48em)
 {
     #header
@@ -2724,8 +2728,6 @@ body.ctdw-bar-visible #header.header--over-content
         text-align: center;
 
         border-bottom: 0 !important;
-        /* menu icon */
-        /* menu btn */
     }
     #header ul a
     {
@@ -2733,6 +2735,10 @@ body.ctdw-bar-visible #header.header--over-content
         z-index: 2;
 
         padding-right: 0;
+    }
+    #header ul.is-visible
+    {
+        display: block;
     }
     #header .portum-menu-icon
     {
@@ -2883,6 +2889,7 @@ body.ctdw-bar-visible #header.header--over-content
         float: none;
 
         width: 100%;
+        padding: 0;
     }
     #header ul ul li
     {
@@ -2914,6 +2921,161 @@ body.ctdw-bar-visible #header.header--over-content
         opacity: 1;
     }
 }
+#offcanvas #portum-site-wrapper
+{
+    position: fixed;
+    z-index: 9999999999;
+    right: 0;
+
+    overflow: hidden;
+
+    width: 200px;
+    height: 100vh;
+}
+#offcanvas #portum-site-canvas
+{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: 300ms ease all;
+         -o-transition: 300ms ease all;
+            transition: 300ms ease all;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+#offcanvas .portum-closed-nav #portum-site-canvas
+{
+    -webkit-transform: translateX(200px);
+    -webkit-transform: translate3d(200px, 0, 0);
+        -ms-transform: translateX(200px);
+            transform: translateX(200px);
+            transform: translate3d(200px, 0, 0);
+}
+#offcanvas .portum-show-nav #portum-site-canvas
+{
+    -webkit-transform: translateX(-200px);
+    -webkit-transform: translate3d(-200px, 0, 0);
+        -ms-transform: translateX(-200px);
+            transform: translateX(-200px);
+            transform: translate3d(-200px, 0, 0);
+}
+#offcanvas #portum-site-menu
+{
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: -200px;
+
+    width: 200px;
+    height: 100%;
+    padding: 15px;
+
+    background-color: #fff;
+}
+#offcanvas #portum-site-menu nav ul,
+#offcanvas #portum-site-menu nav ul li
+{
+    float: none;
+}
+#offcanvas #portum-site-menu
+{
+    line-height: 40px;
+}
+#offcanvas #portum-site-menu nav
+{
+    margin-top: 50px;
+}
+
+.portum-offcanvas .portum-toggle-nav
+{
+    border: 0;
+}
+.portum-offcanvas .portum-toggle-nav:hover
+{
+    cursor: pointer;
+}
+.portum-offcanvas .portum-toggle-nav:focus
+{
+    outline: none;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-icon
+{
+    position: relative;
+
+    display: inline-block;
+    float: right;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon
+{
+    position: relative;
+
+    display: block;
+
+    width: 18px;
+    height: 2px;
+
+    -webkit-transition: background .2s ease-out;
+         -o-transition: background .2s ease-out;
+            transition: background .2s ease-out;
+
+    background: #333;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:before,
+.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:after
+{
+    position: absolute;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    -webkit-transition: all .2s ease-out;
+         -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+
+    background: #333;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:before
+{
+    top: 5px;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:after
+{
+    top: -5px;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon
+{
+    background: transparent;
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon:before
+{
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon:after
+{
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+.portum-offcanvas .portum-toggle-nav .portum-menu-btn:checked ~ .portum-menu-icon:not(.steps) .portum-navicon:before,
+.portum-offcanvas .portum-toggle-nav .portum-menu-btn:checked ~ .portum-menu-icon:not(.steps) .portum-navicon:after
+{
+    top: 0;
+}
+
 #header.portum-sidebar
 {
     line-height: 40px;
@@ -2946,75 +3108,6 @@ body.ctdw-bar-visible #header.header--over-content
 #header.portum-sidebar ul > li
 {
     float: none;
-}
-
-.portum-offcanvas #portum-site-wrapper
-{
-    position: fixed;
-    z-index: 9999999999;
-    right: 0;
-
-    overflow: hidden;
-    /* Temp: Simulates a tall page. */
-
-    width: 200px;
-    height: 100vh;
-}
-.portum-offcanvas #portum-site-canvas
-{
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    -webkit-transition: 300ms ease all;
-         -o-transition: 300ms ease all;
-            transition: 300ms ease all;
-
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-}
-.portum-offcanvas .portum-closed-nav #portum-site-canvas
-{
-    -webkit-transform: translateX(200px);
-    -webkit-transform: translate3d(200px, 0, 0);
-        -ms-transform: translateX(200px);
-            transform: translateX(200px);
-            transform: translate3d(200px, 0, 0);
-}
-.portum-offcanvas .portum-show-nav #portum-site-canvas
-{
-    -webkit-transform: translateX(-200px);
-    -webkit-transform: translate3d(-200px, 0, 0);
-        -ms-transform: translateX(-200px);
-            transform: translateX(-200px);
-            transform: translate3d(-200px, 0, 0);
-}
-.portum-offcanvas #portum-site-menu
-{
-    position: absolute;
-    z-index: 99999;
-    top: 0;
-    right: -200px;
-
-    width: 200px;
-    height: 100%;
-    padding: 15px;
-
-    background-color: #fff;
-}
-.portum-offcanvas #portum-site-menu nav ul,
-.portum-offcanvas #portum-site-menu nav ul li
-{
-    float: none;
-}
-.portum-offcanvas #portum-site-menu
-{
-    line-height: 40px;
-}
-.portum-offcanvas #portum-site-menu nav
-{
-    margin-top: 50px;
 }
 
 .intro-item
