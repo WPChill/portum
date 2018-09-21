@@ -2602,6 +2602,10 @@ body.ctdw-bar-visible #header.header--over-content
 
     list-style: none;
 }
+#header ul.is-visible
+{
+    display: block;
+}
 #header ul a
 {
     display: block;
@@ -2622,11 +2626,6 @@ body.ctdw-bar-visible #header.header--over-content
 
     margin: 0;
     padding: 0;
-}
-#header ul li.menu-item-has-children
-{
-    margin-right: 15px;
-    padding-right: 5px;
 }
 #header ul li.menu-item-has-children:after
 {
@@ -2656,10 +2655,6 @@ body.ctdw-bar-visible #header.header--over-content
 #header ul li:hover
 {
     position: relative;
-}
-#header ul li:hover > ul
-{
-    display: block;
 }
 #header ul ul
 {
@@ -2735,10 +2730,6 @@ body.ctdw-bar-visible #header.header--over-content
         z-index: 2;
 
         padding-right: 0;
-    }
-    #header ul.is-visible
-    {
-        display: block;
     }
     #header .portum-menu-icon
     {
@@ -2874,8 +2865,6 @@ body.ctdw-bar-visible #header.header--over-content
 
         position: static;
 
-        display: block;
-
         width: 100%;
 
         background-color: #ededed;
@@ -2920,6 +2909,67 @@ body.ctdw-bar-visible #header.header--over-content
 
         opacity: 1;
     }
+}
+@media all and (min-width: 769px)
+{
+    #header.portum-classic ul li:hover > ul
+    {
+        display: block;
+    }
+}
+#offcanvas ul a
+{
+    padding: 0;
+}
+#offcanvas ul li.menu-item-has-children > a
+{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+#offcanvas ul li.menu-item-has-children > a + a
+{
+    border-top: 0;
+}
+#offcanvas ul li.menu-item-has-children:after
+{
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    content: '+';
+    text-transform: none;
+
+    speak: none;
+}
+#offcanvas ul ul
+{
+    position: static;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    width: 200px;
+    padding: 0;
+
+    border-width: 0;
+    border-style: none;
+    border-color: transparent;
+    border-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+#offcanvas ul ul li.menu-item-has-children:after
+{
+    top: 10px;
+
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
 }
 #offcanvas #portum-site-wrapper
 {
@@ -2971,7 +3021,6 @@ body.ctdw-bar-visible #header.header--over-content
 
     width: 200px;
     height: 100%;
-    padding: 15px;
 
     background-color: #fff;
 }
@@ -2992,6 +3041,7 @@ body.ctdw-bar-visible #header.header--over-content
 .portum-offcanvas .portum-toggle-nav
 {
     border: 0;
+    background: transparent;
 }
 .portum-offcanvas .portum-toggle-nav:hover
 {

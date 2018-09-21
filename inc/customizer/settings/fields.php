@@ -11,66 +11,28 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Register customizer fields
- */
-
-
-/**
- * General section options
- */
-
-/**
- * Layout section options
- */
-Epsilon_Customizer::add_field( 'portum_layout', array(
-	'type'     => 'epsilon-layouts',
-	'section'  => 'portum_layout_section',
-	'layouts'  => array(
-		1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
-		2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
-	),
-	'default'  => array(
-		'columnsCount' => 2,
-		'columns'      => array(
-			1 => array(
-				'index' => 1,
-				'span'  => 8,
-			),
-			2 => array(
-				'index' => 2,
-				'span'  => 4,
-			),
-		),
-	),
-	'min_span' => 4,
-	'label'    => esc_html__( 'Blog Layout', 'portum' ),
-) );
-Epsilon_Customizer::add_field( 'portum_page_layout', array(
-	'type'     => 'epsilon-layouts',
-	'section'  => 'portum_layout_section',
-	'layouts'  => array(
-		1 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
-		2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
-	),
-	'default'  => array(
-		'columnsCount' => 2,
-		'columns'      => array(
-			1 => array(
-				'index' => 1,
-				'span'  => 8,
-			),
-			2 => array(
-				'index' => 2,
-				'span'  => 4,
-			),
-		),
-	),
-	'min_span' => 4,
-	'label'    => esc_html__( 'Page Layout', 'portum' ),
-) );
-/**
  * Typography section options
  */
+Epsilon_Customizer::add_field( 'portum_typography_upsell', array(
+	'type'               => 'epsilon-upsell',
+	'transport'          => 'postMessage',
+	'section'            => 'portum_typography_section',
+	'label'              => esc_html__( 'Get more control', 'portum' ),
+	'options'            => array(
+		esc_html__( 'More Typography Controls', 'portum' ),
+		esc_html__( 'Advanced Typography Controls', 'portum' ),
+	),
+	'requirements'       => array(
+		esc_html__( 'In the PRO version of Portum, you can control headings (h1-h6), site paragraphs & footer font styles', 'portum' ),
+		esc_html__( 'Control letter spacing, font-size & line-heights with the PRO version.', 'portum' ),
+	),
+	'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=portum-welcome&tab=features' ),
+	'button_text'        => esc_html__( 'See comparison', 'portum' ),
+	'second_button_url'  => '#',
+	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+	'separator'          => 'or',
+) );
+
 
 Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'type'          => 'epsilon-typography',
@@ -83,7 +45,6 @@ Epsilon_Customizer::add_field( 'portum_typography_global', array(
 		'font-family',
 		'font-weight',
 		'font-style',
-		'letter-spacing',
 	),
 	'selectors'     => array(
 		'body',
@@ -107,7 +68,6 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 		'font-family',
 		'font-weight',
 		'font-style',
-		'letter-spacing',
 	),
 	'selectors'     => array(
 		'#menu li a',
@@ -118,56 +78,6 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 		'font-weight' => '',
 		'font-size'   => '14',
 		'line-height' => '21',
-	),
-) );
-
-Epsilon_Customizer::add_field( 'portum_typography_headline_subtitle', array(
-	'type'          => 'epsilon-typography',
-	'transport'     => 'postMessage',
-	'section'       => 'portum_typography_section',
-	'label'         => esc_html__( 'Section title', 'portum' ),
-	'stylesheet'    => 'portum-main',
-	'choices'       => array(
-		'font-family',
-		'font-weight',
-		'font-style',
-		'letter-spacing',
-	),
-	'selectors'     => array(
-		'.headline h3',
-	),
-	'font_defaults' => array(
-		'font-family'    => 'default_font',
-		'font-weight'    => '',
-		'font-style'     => '',
-		'font-size'      => '32',
-		'line-height'    => '40',
-		'letter-spacing' => '0',
-	),
-) );
-
-Epsilon_Customizer::add_field( 'portum_typography_headline_title', array(
-	'type'          => 'epsilon-typography',
-	'transport'     => 'postMessage',
-	'section'       => 'portum_typography_section',
-	'label'         => esc_html__( 'Section subtitle', 'portum' ),
-	'stylesheet'    => 'portum-main',
-	'choices'       => array(
-		'font-family',
-		'font-weight',
-		'font-style',
-		'letter-spacing',
-	),
-	'selectors'     => array(
-		'.headline span:not(.dashicons)',
-	),
-	'font_defaults' => array(
-		'font-family'    => 'default_font',
-		'font-weight'    => 'on',
-		'font-style'     => '',
-		'font-size'      => '14',
-		'line-height'    => '21',
-		'letter-spacing' => '0',
 	),
 ) );
 
@@ -275,16 +185,6 @@ Epsilon_Customizer::add_field( 'portum_header_layout', array(
 /**
  * Footer section options
  */
-
-Epsilon_Customizer::add_field( 'portum_footer_width', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Fullwidth Footer Area', 'portum' ),
-	'description' => esc_html__( 'Toggling this to on will make your footer stretch to the full-width of your screen.', 'portum' ),
-	'section'     => 'portum_footer_section',
-	'default'     => false,
-) );
-
-
 Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	'type'     => 'epsilon-layouts',
 	'section'  => 'portum_footer_section',
@@ -294,7 +194,6 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 		2 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/two-column.png',
 		3 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/three-column.png',
 		4 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/four-column.png',
-		6 => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/six-column.png',
 	),
 	'default'  => array(
 		'columnsCount' => 4,
@@ -314,10 +213,6 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 			array(
 				'index' => 4,
 				'span'  => 3,
-			),
-			array(
-				'index' => 6,
-				'span'  => 2,
 			),
 		),
 	),
