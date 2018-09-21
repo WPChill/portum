@@ -82,54 +82,28 @@ $item_effect_style = ( ! empty( $fields['clientlist_item_style'] ) ? esc_attr( $
 					<?php } ?>
 
 					<div class="<?php echo esc_attr( $content_class ); ?>">
-						<?php if ( $fields['clientlist_slider'] ) { ?>
 
-						<div class="ewf-slider" data-slider-mode-fade="false"
-						     data-slider-speed="<?php echo ! empty( $fields['clientlist_slider_speed'] ) ? absint( $fields['clientlist_slider_speed'] ) : '500'; ?>"
-						     data-slider-autoplay="<?php echo $fields['clientlist_slider_autostart'] ? 'true' : 'false'; ?>"
-						     data-slides-shown="<?php echo $fields['clientlist_slides_shown'] ? esc_attr( $fields['clientlist_slides_shown'] ) : '1'; ?>"
-						     data-slides-scrolled="<?php echo $fields['clientlist_slides_scrolled'] ? esc_attr( $fields['clientlist_slides_scrolled'] ) : '1'; ?>"
-						     data-slider-loop="<?php echo $fields['clientlist_slider_infinite'] ? 'true' : 'false'; ?>"
-						     data-slider-enable-pager="<?php echo $fields['clientlist_slider_pager'] ? 'true' : 'false'; ?>"
-						     data-slider-enable-controls="<?php echo $fields['clientlist_slider_arrows'] ? 'true' : 'false'; ?>">
+						<ul class="ewf-partners-list">
 
-							<ul class="ewf-slider__slides">
+							<?php foreach ( $fields['clients'] as $key => $client ) { ?>
+								<div class="<?php echo esc_attr( $item_class ); ?>">
+									<li class="ewf-partner">
+										<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_clientlists_section', 'portum_clients' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-								<?php } else { ?>
-								<ul class="ewf-partners-list">
-									<?php } ?>
-
-									<?php foreach ( $fields['clients'] as $key => $client ) { ?>
-										<div class="<?php echo esc_attr( $item_class ); ?>">
-											<li class="ewf-partner">
-												<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_clientlists_section', 'portum_clients' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
-
-											<?php if ( ! empty( $client['client_url'] ) ) { ?>
-												<a href="<?php echo $client['client_url']; ?>">
+										<?php if ( ! empty( $client['client_url'] ) ) { ?>
+										<a href="<?php echo $client['client_url']; ?>">
 											<?php } ?>
 
 											<img src="<?php echo esc_url( $client['client_logo'] ); ?>" alt="<?php esc_attr( $client['client_title'] ); ?>">
 
 											<?php if ( ! empty( $client['client_url'] ) ) { ?>
-												</a>
-											<?php } ?>
-
-											</li><!-- end .ewf-partner -->
-										</div><!--/.col-sm-->
+										</a>
 									<?php } ?>
 
-									<?php if ( $fields['clientlist_slider'] ) { ?>
-								</ul><!-- end .ewf-partner-slider__slides -->
-
-								<div class="ewf-slider__pager"></div>
-								<div class="ewf-slider__arrows"></div>
-						</div><!-- end .ewf-slider -->
-
-						<?php } else { ?>
-
+									</li><!-- end .ewf-partner -->
+								</div><!--/.col-sm-->
+							<?php } ?>
 						</ul><!-- end .ewf-partners-list -->
-
-						<?php } ?>
 					</div><!-- content class -->
 				</div><!--row class-->
 			</div><!-- container class -->

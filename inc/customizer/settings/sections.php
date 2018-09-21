@@ -20,10 +20,9 @@ $panels = array(
 	array(
 		'id'   => 'portum_panel_general',
 		'args' => array(
-			'priority'       => 24,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
-			'title'          => esc_html__( 'General options', 'portum' ),
+			'title'          => esc_html__( 'Homepage Options', 'portum' ),
 		),
 	),
 
@@ -33,22 +32,10 @@ $panels = array(
 	array(
 		'id'   => 'portum_panel_colors',
 		'args' => array(
-			'priority'       => 29,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'title'          => esc_html__( 'Colors', 'portum' ),
-		),
-	),
-	/**
-	 * Customization panel
-	 */
-	array(
-		'id'   => 'portum_panel_customization',
-		'args' => array(
-			'priority'       => 28,
-			'capability'     => 'edit_theme_options',
-			'theme_supports' => '',
-			'title'          => esc_html__( 'Customization', 'portum' ),
+			'priority'       => 6,
 		),
 	),
 
@@ -96,42 +83,30 @@ $sections = array(
 		'id'   => 'portum_header_section',
 		'args' => array(
 			'title'    => esc_html__( 'Header', 'portum' ),
-			'panel'    => 'portum_panel_general',
-			'priority' => 1,
+			'priority' => 3,
+		),
+	),
+	array(
+		'id'   => 'portum_footer_section',
+		'args' => array(
+			'title'    => esc_html__( 'Footer', 'portum' ),
+			'priority' => 4,
 		),
 	),
 	array(
 		'id'   => 'portum_typography_section',
 		'args' => array(
 			'title'    => esc_html__( 'Typography', 'portum' ),
-			'panel'    => 'portum_panel_customization',
-			'priority' => 2,
-		),
-	),
-	array(
-		'id'   => 'portum_layout_section',
-		'args' => array(
-			'title'    => esc_html__( 'Layout', 'portum' ),
-			'panel'    => 'portum_panel_customization',
-			'priority' => 3,
+			'priority' => 5,
 		),
 	),
 
 	array(
-		'id'   => 'portum_footer_section',
-		'args' => array(
-			'title'    => esc_html__( 'Footer', 'portum' ),
-			'panel'    => 'portum_panel_general',
-			'priority' => 50,
-		),
-	),
-	array(
 		'id'   => 'portum_misc_section',
 		'args' => array(
-			'title'    => esc_html__( 'Integrations', 'portum' ),
-			'panel'    => 'portum_panel_general',
-			'priority' => 60,
-			'type'     => 'outer',
+			'title' => esc_html__( 'Integrations', 'portum' ),
+			'panel' => 'portum_panel_general',
+			'type'  => 'outer',
 		),
 	),
 	/**

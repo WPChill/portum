@@ -93,23 +93,8 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 
 					<div class="<?php echo esc_attr( $content_class ); ?>">
 						<?php if ( ! empty( $fields['portfolio_items'] ) ) { ?>
-
-							<?php if ( $fields['portfolio_slider'] ) { ?>
-
-								<div class="ewf-slider"
-								data-slider-speed="<?php echo ! empty( $fields['portfolio_slider_speed'] ) ? absint( $fields['portfolio_slider_speed'] ) : '500'; ?>"
-								data-slider-autoplay="<?php echo $fields['portfolio_slider_autostart'] ? 'true' : 'false'; ?>"
-								data-slides-shown="<?php echo $fields['portfolio_slides_shown'] ? esc_attr( $fields['portfolio_slides_shown'] ) : '1'; ?>"
-								data-slides-scrolled="<?php echo $fields['portfolio_slides_scrolled'] ? esc_attr( $fields['portfolio_slides_scrolled'] ) : '1'; ?>"
-								data-slider-loop="<?php echo $fields['portfolio_slider_infinite'] ? 'true' : 'false'; ?>"
-								data-slider-enable-pager="<?php echo $fields['portfolio_slider_pager'] ? 'true' : 'false'; ?>"
-								data-slider-enable-controls="<?php echo $fields['portfolio_slider_arrows'] ? 'true' : 'false'; ?>">
-
-								<ul class="ewf-slider__slides">
-							<?php } ?>
-
-							<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
-							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
+						<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
+						<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
 							<?php if ( $fields['portfolio_description_below'] ) { ?>
 							<div class="ewf-portfolio-item ewf-portfolio__has-description-below <?php echo esc_attr( $item_effect_style ); ?>">
 								<?php } else { ?>
@@ -144,20 +129,15 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 
 												<?php if ( $fields['portfolio_image_lightbox'] ) { ?>
 													<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
-														<?php if ( $fields['portfolio_image_show_zoom_icon'] ) { ?>
-															<i class="fa fa-eye"></i>
-														<?php } ?>
+														<i class="fa fa-eye"></i>
 													</a><!--/.ewf-portfolio-item__control-zoom magnific-link-->
 												<?php } else { ?>
 													<a class="ewf-portfolio-item__control-zoom" href="<?php echo esc_url( $item['portfolio_link'] ); ?>">
-														<?php if ( $fields['portfolio_image_show_zoom_icon'] ) { ?>
-															<i class="fa fa-eye"></i>
-														<?php } ?>
+														<i class="fa fa-eye"></i>
 													</a><!--/.ewf-portfolio-item__control-zoom-->
 												<?php } ?>
 
 											</div><!-- ewf-portfolio-item__overlay -->
-
 										</div><!-- ewf-portfolio-item__thumbnail -->
 
 										<?php if ( $fields['portfolio_description_below'] && ! $fields['portfolio_image_show_description'] ) { ?>
@@ -176,17 +156,11 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 									</li>
 								</div><!-- ewf-portfolio-item -->
 							</div><!--/.itemclass item spacing-->
-						<?php } ?>
-							<?php if ( $fields['portfolio_slider'] ) { ?>
-								</ul>
-								<div class="ewf-slider__pager"></div>
-								<div class="ewf-slider__arrows"></div>
-								</div><!--/.ewf-slider-->
 							<?php } ?>
-						<?php } ?>
-					</div><!--/.content class-->
-				</div><!--/.row-->
-			</div><!--/.class-attr-->
-		</div><!--/.ewf-section__content-->
-	</div><!--/.parent-attr-->
+							<?php } ?>
+						</div><!--/.content class-->
+					</div><!--/.row-->
+				</div><!--/.class-attr-->
+			</div><!--/.ewf-section__content-->
+		</div><!--/.parent-attr-->
 </section>

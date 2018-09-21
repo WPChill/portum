@@ -57,7 +57,7 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
 								<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
 								<?php if ( $button_primary ) { ?>
-									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['about_button_primary_color'] ) ? $fields['about_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
+									<a class="ewf-btn ewf-btn--huge" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
 										<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?>
 									</a><!--/.ewf-btn-->
 								<?php }//endif button_primary ?>

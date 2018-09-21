@@ -624,10 +624,9 @@ var Portum = {
 				}
 			} );
 
-			jQuery( '.menu-item-has-children' ).on( 'click', function( e ) {
+			jQuery( '.menu-item-has-children a' ).on( 'click', function( e ) {
 				e.preventDefault();
-
-				jQuery( this ).toggleClass( 'is-active' ).children( 'ul' ).toggleClass( 'is-visible' );
+				jQuery( this ).toggleClass( 'is-active' ).next().toggleClass( 'is-visible' );
 			} );
 
 			jQuery( '.menu-item-has-children' ).on( 'click', '*', function( e ) {

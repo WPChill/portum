@@ -1,4 +1,66 @@
 #offcanvas {
+
+	ul {
+
+		a {
+			padding: 0;
+		}
+
+		li {
+
+			&.menu-item-has-children {
+
+				& > a {
+					border-top: 1px solid #eee;
+					border-bottom: 1px solid #eee;
+
+					& + a {
+						border-top: 0;
+					}
+				}
+
+				&:after {
+					position: absolute;
+					top: 0;
+					right: 10px;
+					content: "+";
+					speak: none;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					text-transform: none;
+				}
+			}
+
+		}
+
+		ul {
+			position: static;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 200px;
+			background-color: #fff;
+			border-radius: 0;
+			border-width: 0;
+			border-style: none;
+			border-color: transparent;
+			box-shadow: none;
+			padding: 0;
+
+			li {
+				&.menu-item-has-children {
+					&:after {
+						top: 10px;
+						-webkit-transform: rotate(0);
+						-ms-transform: rotate(0);
+						transform: rotate(0);
+					}
+				}
+			}
+		}
+	}
+
 	#portum-site-wrapper {
 		position: fixed;
 		overflow: hidden;
@@ -38,7 +100,6 @@
 		right: -200px;
 		background-color: #fff;
 		z-index: 99999;
-		padding: 15px;
 	}
 
 	#portum-site-menu nav ul,
@@ -59,7 +120,7 @@
 
 	.portum-toggle-nav {
 		border: 0;
-
+		background: transparent;
 		&:hover {
 			cursor: pointer;
 		}
