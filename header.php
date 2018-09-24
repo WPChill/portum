@@ -34,7 +34,7 @@ $header_width  = get_theme_mod( 'portum_header_width', false ) ? 'container-flui
 					<?php get_template_part( 'template-parts/misc/logo' ); ?>
 				</div>
 
-				<div class="col-xs-12 col-md-9 text-right">
+				<div class="col-xs-12 col-md-9 text-lg-right text-sm-center">
 					<button class="portum-toggle-nav">
 						<label class="portum-menu-icon" for="portum-menu-btn">
 							<span class="portum-navicon"></span>
