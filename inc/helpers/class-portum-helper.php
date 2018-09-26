@@ -432,8 +432,6 @@ class Portum_Helper {
 	 * @param $fields
 	 */
 	public static function generate_inline_css( $section_id, $key, $fields ) {
-
-
 		$heading_selectors = array(
 			'h1',
 			'h2',
