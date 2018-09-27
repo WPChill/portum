@@ -57,8 +57,8 @@ $item_class = 'col-sm-' . 12 / absint( $fields['blog_post_count'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_inline_css( $section_id, 'blog', $fields ); ?>
-	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+	<?php //Portum_Helper::generate_inline_css( $section_id, 'blog', $fields ); ?>
+	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_color_overlay();
