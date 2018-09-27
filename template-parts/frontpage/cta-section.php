@@ -41,8 +41,8 @@ if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_tit
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_inline_css( $section_id, 'cta', $fields ); ?>
-	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+	<?php //Portum_Helper::generate_inline_css( $section_id, 'cta', $fields ); ?>
+	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 
 		<?php

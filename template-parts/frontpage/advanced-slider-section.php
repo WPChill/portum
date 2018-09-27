@@ -45,7 +45,7 @@ wp_enqueue_style( 'slick' );
 	     data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
 
-		<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+		<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 		<ul class="ewf-slider__slides">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
