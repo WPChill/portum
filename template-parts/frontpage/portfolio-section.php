@@ -33,12 +33,12 @@ $parent_attr = array(
 );
 
 // only load scripts if we're viewing images in a lightbox
-if ( $fields['portfolio_image_lightbox'] ) {
+if ( ! empty( $fields['portfolio_image_lightbox'] ) ) {
 	wp_enqueue_style( 'magnificPopup' );
 	wp_enqueue_script( 'magnificPopup' );
 }
 
-if ( $fields['portfolio_slider'] ) {
+if ( ! empty( $fields['portfolio_slider'] ) ) {
 	wp_enqueue_script( 'slick' );
 	wp_enqueue_style( 'slick' );
 }
@@ -52,19 +52,22 @@ $header_class  = '';
 $row_class     = '';
 $item_spacing  = 'ewf-item__spacing-' . ( isset( $fields['portfolio_column_spacing'] ) ? $fields['portfolio_column_spacing'] : '' );
 
-if ( 'left' == $fields['portfolio_row_title_align'] || 'right' == $fields['portfolio_row_title_align'] ) {
-	$content_class = 'col-sm-8 ewf-content__wrap';
-	$header_class  = 'col-sm-4';
-	if ( 'right' == $fields['portfolio_row_title_align'] ) {
-		$row_class = 'row-flow-reverse';
-	}
-} else {
-	$content_class = 'col-sm-12 ewf-content__wrap';
-	$header_class  = 'col-sm-12';
-	if ( 'bottom' == $fields['portfolio_row_title_align'] ) {
-		$row_class = 'row-column-reverse';
+if ( ! empty( $fields['portfolio_row_title_align'] ) ) {
+	if ( 'left' == $fields['portfolio_row_title_align'] || 'right' == $fields['portfolio_row_title_align'] ) {
+		$content_class = 'col-sm-8 ewf-content__wrap';
+		$header_class  = 'col-sm-4';
+		if ( 'right' == $fields['portfolio_row_title_align'] ) {
+			$row_class = 'row-flow-reverse';
+		}
+	} else {
+		$content_class = 'col-sm-12 ewf-content__wrap';
+		$header_class  = 'col-sm-12';
+		if ( 'bottom' == $fields['portfolio_row_title_align'] ) {
+			$row_class = 'row-column-reverse';
+		}
 	}
 }
+
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['portfolio_column_group'] ) );
 $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $fields['portfolio_item_style'] ) : 'ewf-item__no-effect' );
 // end layout stuff
@@ -106,12 +109,12 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 										?>
 										<div class="ewf-portfolio-item__thumbnail">
 											<?php if ( ! empty( $item['portfolio_image'] ) ) { ?>
-												<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt="" />
+												<img src="<?php echo esc_url( $item['portfolio_image'] ); ?>" alt=""/>
 											<?php } ?>
 
 											<div class="ewf-portfolio-item__overlay">
 
-												<?php if ( ! $fields['portfolio_description_below'] && $fields['portfolio_image_show_description'] ) { ?>
+												<?php if ( empty( $fields['portfolio_description_below'] ) && ! empty( $fields['portfolio_image_show_description'] ) ) { ?>
 													<div class="ewf-portfolio-item__details">
 														<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 															<div class="ewf-like-h6">
@@ -127,7 +130,7 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 
 												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
 
-												<?php if ( $fields['portfolio_image_lightbox'] ) { ?>
+												<?php if ( ! empty( $fields['portfolio_image_lightbox'] ) ) { ?>
 													<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
 														<i class="fa fa-eye"></i>
 													</a><!--/.ewf-portfolio-item__control-zoom magnific-link-->
@@ -140,7 +143,7 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 											</div><!-- ewf-portfolio-item__overlay -->
 										</div><!-- ewf-portfolio-item__thumbnail -->
 
-										<?php if ( $fields['portfolio_description_below'] && ! $fields['portfolio_image_show_description'] ) { ?>
+										<?php if ( ! empty( $fields['portfolio_description_below'] ) && empty( $fields['portfolio_image_show_description'] ) ) { ?>
 											<div class="ewf-portfolio-item__details">
 												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 													<div class="ewf-like-h6">

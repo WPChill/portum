@@ -19,12 +19,13 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'team', Portum_Repeatab
 $fields['members']             = $frontpage->get_repeater_field( $fields['team_repeater_field'], array(), $grouping );
 $fields['team_column_spacing'] = isset( $fields['team_column_spacing'] ) ? $fields['team_column_spacing'] : '';
 
-$parent_attr = array(
+$parent_attr                 = array(
 	'id'    => ! empty( $fields['team_section_unique_id'] ) ? array( $fields['team_section_unique_id'] ) : array(),
 	'class' => array( 'section-team', 'ewf-section', 'ewf-section-' . $fields['team_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-$span        = 12 / absint( $fields['team_column_group'] );
+$fields['team_column_group'] = empty( $fields['team_column_group'] ) ? 2 : $fields['team_column_group'];
+$span                        = 12 / absint( $fields['team_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
@@ -73,7 +74,7 @@ $span        = 12 / absint( $fields['team_column_group'] );
 
 										<?php if ( ! empty( $v['member_image'] ) ) { ?>
 											<div class="ewf-team__thumbnail">
-												<img src="<?php echo esc_url( $v['member_image'] ); ?>" />
+												<img src="<?php echo esc_url( $v['member_image'] ); ?>"/>
 											</div>
 										<?php } ?>
 

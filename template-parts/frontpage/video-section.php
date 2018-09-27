@@ -7,10 +7,10 @@
  * @package Portum
  */
 
-$frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
-$fields    = $frontpage->sections[ $section_id ];
-$video     = Portum_Helper::video_type( $fields['video_id'] );
-
+$frontpage   = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields      = $frontpage->sections[ $section_id ];
+$video       = Portum_Helper::video_type( $fields['video_id'] );
+$row_class   = '';
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'video', Portum_Repeatable_Sections::get_instance() );
 
 $parent_attr = array(
@@ -72,15 +72,14 @@ if ( 'left' == $fields['video_row_title_align'] || 'right' == $fields['video_row
 					<?php if ( ! empty( $fields['video_subtitle'] ) || ! empty( $fields['video-title'] ) ) { ?>
 						<div class="<?php echo esc_attr( $header_class ); ?>">
 							<div class="ewf-section-text">
-								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?>
-								<?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
 							</div><!--/.ewf-section--text-->
 						</div><!--/.col-->
 					<?php } ?>
 
 					<?php if ( 'none' !== $video['video_type'] ) { ?>
 						<div class="<?php echo esc_attr( $header_class ); ?>">
-							<div class="portum-video-area" style="overflow: hidden; max-height: <?php echo $fields['video_max_height'] ? absint( $fields['video_max_height'] ) . 'vh' : '100vh'; ?>">
+							<div class="portum-video-area" style="overflow: hidden; max-height: <?php echo ! empty( $fields['video_max_height'] ) ? absint( $fields['video_max_height'] ) . 'vh' : '100vh'; ?>">
 								<div data-plyr-provider="<?php echo esc_attr( $video['video_type'] ); ?>" data-plyr-embed-id="<?php echo esc_attr( $video['video_id'] ); ?>" data-plyr-config="<?php echo esc_attr( json_encode( $plyr_config ) ); ?>"></div>
 							</div><!--/.portum-video-area-->
 						</div><!--/.col--->

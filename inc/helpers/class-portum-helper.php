@@ -20,18 +20,18 @@ class Portum_Helper {
 	 */
 	public static function get_header_default() {
 		return wp_json_encode( array(
-			'columnsCount' => 2,
-			'columns'      => array(
-				array(
-					'index' => 1,
-					'span'  => 6,
-				),
-				array(
-					'index' => 2,
-					'span'  => 6,
-				),
-			),
-		) );
+			                       'columnsCount' => 2,
+			                       'columns'      => array(
+				                       array(
+					                       'index' => 1,
+					                       'span'  => 6,
+				                       ),
+				                       array(
+					                       'index' => 2,
+					                       'span'  => 6,
+				                       ),
+			                       ),
+		                       ) );
 	}
 
 	/**
@@ -39,26 +39,26 @@ class Portum_Helper {
 	 */
 	public static function get_footer_default() {
 		return wp_json_encode( array(
-			'columnsCount' => 4,
-			'columns'      => array(
-				array(
-					'index' => 1,
-					'span'  => 3,
-				),
-				array(
-					'index' => 2,
-					'span'  => 3,
-				),
-				array(
-					'index' => 3,
-					'span'  => 3,
-				),
-				array(
-					'index' => 4,
-					'span'  => 3,
-				),
-			),
-		) );
+			                       'columnsCount' => 4,
+			                       'columns'      => array(
+				                       array(
+					                       'index' => 1,
+					                       'span'  => 3,
+				                       ),
+				                       array(
+					                       'index' => 2,
+					                       'span'  => 3,
+				                       ),
+				                       array(
+					                       'index' => 3,
+					                       'span'  => 3,
+				                       ),
+				                       array(
+					                       'index' => 4,
+					                       'span'  => 3,
+				                       ),
+			                       ),
+		                       ) );
 	}
 
 	/**
@@ -66,18 +66,18 @@ class Portum_Helper {
 	 */
 	public static function get_blog_default() {
 		return wp_json_encode( array(
-			'columnsCount' => 2,
-			'columns'      => array(
-				1 => array(
-					'index' => 1,
-					'span'  => 8,
-				),
-				2 => array(
-					'index' => 2,
-					'span'  => 4,
-				),
-			),
-		) );
+			                       'columnsCount' => 2,
+			                       'columns'      => array(
+				                       1 => array(
+					                       'index' => 1,
+					                       'span'  => 8,
+				                       ),
+				                       2 => array(
+					                       'index' => 2,
+					                       'span'  => 4,
+				                       ),
+			                       ),
+		                       ) );
 	}
 
 	/**
@@ -159,6 +159,10 @@ class Portum_Helper {
 			'boxedcenter' => 'container container-boxedcenter',
 			'fullwidth'   => 'container-fluid ewf-padding-right--none ewf-padding-left--none',
 		);
+
+		if ( ! isset( $fields[ $key . '_column_stretch' ] ) ) {
+			return $class['boxedin'];
+		}
 
 		if ( $fields[ $key . '_column_stretch' ] == 'boxedin' ) {
 			return $class['boxedin'];
@@ -277,10 +281,12 @@ class Portum_Helper {
 	 *
 	 * @return string;
 	 */
-	public static function generate_section_title( $subtitle = '', $title = '', $args = array(
+	public static function generate_section_title(
+		$subtitle = '', $title = '', $args = array(
 		'bottom' => false,
 		'center' => false,
-	) ) {
+	)
+	) {
 		$class = 'headline';
 		if ( ! empty( $args['center'] ) ) {
 			$class .= ' text-center';
