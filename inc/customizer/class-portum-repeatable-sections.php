@@ -73,4 +73,82 @@ class Portum_Repeatable_Sections {
 
 		return $section();
 	}
+
+	/**
+	 * Repeatable advanced slider section
+	 *
+	 * @return array
+	 */
+	private function repeatable_advanced_slider() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/advanced-slider.php';
+
+		$section = new Repeatable_Section_Advanced_Slider;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable content section
+	 *
+	 * @return array
+	 */
+	private function repeatable_content() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/content.php';
+
+		$section = new Repeatable_Section_Content;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable instagram section
+	 *
+	 * @return array
+	 */
+	private function repeatable_instagram() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/instagram.php';
+
+		$section = new Repeatable_Section_Instagram;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable openhours section
+	 *
+	 * @return array
+	 */
+	private function repeatable_openhours() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/openhours.php';
+
+		$section = new Repeatable_Section_Openhours;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable testimonials section
+	 *
+	 * @return array
+	 */
+	private function repeatable_testimonials() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/testimonials.php';
+
+		$section = new Repeatable_Section_Testimonials;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable testimonials section
+	 *
+	 * @return array
+	 */
+	private function repeatable_accordion() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/accordion.php';
+
+		$section = new Repeatable_Section_Accordion;
+
+		return $section();
+	}
 }
