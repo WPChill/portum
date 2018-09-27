@@ -45,6 +45,13 @@ class Repeatable_Section_Instagram extends Repeatable_Section {
 	}
 
 	/**
+	 * Upsell
+	 */
+	public function set_upsell() {
+		$this->upsell = true;
+	}
+
+	/**
 	 * Creates groups
 	 */
 	public function create_groups() {

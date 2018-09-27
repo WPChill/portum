@@ -42,6 +42,16 @@ abstract class Repeatable_Section {
 	 * @var string
 	 */
 	public $description = '';
+	/**
+	 * @var boolean
+	 */
+	public $upsell = false;
+	/**
+	 * Integrations
+	 *
+	 * @var array
+	 */
+	public $integrations = array();
 
 	/**
 	 * Repeatable_Section constructor.
@@ -53,6 +63,8 @@ abstract class Repeatable_Section {
 		$this->set_image();
 		$this->set_title();
 		$this->set_description();
+		$this->set_upsell();
+		$this->set_integrations();
 	}
 
 	/**
@@ -68,6 +80,8 @@ abstract class Repeatable_Section {
 				'image'       => $this->image,
 				'title'       => $this->title,
 				'description' => $this->description,
+				'upsell'      => $this->upsell,
+				// 'integration' => $this->integrations
 			)
 		);
 	}
@@ -106,6 +120,18 @@ abstract class Repeatable_Section {
 	 * Sets description
 	 */
 	public function set_description() {
+	}
+
+	/**
+	 * Sets upsell
+	 */
+	public function set_upsell() {
+	}
+
+	/**
+	 * Sets integrations
+	 */
+	public function set_integrations() {
 	}
 
 	/**
