@@ -68,7 +68,7 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 //end layout stuff
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_inline_css( $section_id, 'about', $fields ); ?>
+	<?php //Portum_Helper::generate_inline_css( $section_id, 'about', $fields ); ?>
 	<?php echo Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'upsell' ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>

@@ -52,8 +52,8 @@ $item_class = 'col-sm-' . 12 / intval( $fields['accordion_column_group'] );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php Portum_Helper::generate_inline_css( $section_id, 'accordion', $fields ); ?>
-	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'accordion' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+	<?php //Portum_Helper::generate_inline_css( $section_id, 'accordion', $fields ); ?>
+	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'accordion' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
 		<div class="ewf-section__content">
