@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_About
  */
 class Repeatable_Section_About extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -72,12 +73,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -99,7 +95,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
 			'about_column_stretch'            => array(
 				'id'          => 'about_column_stretch',
@@ -139,7 +135,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
 					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
 			'about_column_alignment'          => array(
 				'id'          => 'about_column_alignment',
@@ -152,7 +148,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
 			'about_column_vertical_alignment' => array(
 				'id'          => 'about_column_vertical_alignment',
@@ -165,7 +161,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
 	}
@@ -179,24 +175,30 @@ class Repeatable_Section_About extends Repeatable_Section {
 		$sizes = Epsilon_Helper::get_image_sizes();
 
 		return array(
-			'about_background_type'     => array(
+			'about_background_type'        => array(
 				'id'      => 'about_background_type',
 				'label'   => esc_html__( 'Background Type', 'epsilon-framework' ),
-				'default' => false,
-				'type'    => 'epsilon-toggle',
+				'type'    => 'select',
+				'choices' => array(
+					'bgimage' => __( 'Image', 'epsilon-framework' ),
+					'bgcolor' => __( 'Solid Color', 'epsilon-framework' ),
+				),
 				'group'   => 'background',
 			),
-			'about_background_color'    => array(
+			'about_background_color'       => array(
 				'id'         => 'about_background_color',
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
-				//'description' => esc_html__( 'Setting a value for this field will create a color overlay on top of background image/videos.', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
-				'mode'       => 'rgba',
-				'defaultVal' => '',
+				'mode'       => 'rgb',
+				'defaultVal' => '#EEE',
 				'group'      => 'background',
+				'condition'  => array(
+					'about_background_type',
+					'bgcolor',
+				),
 			),
-			'about_background_image'    => array(
+			'about_background_image'       => array(
 				'id'          => 'about_background_image',
 				'label'       => esc_html__( 'Background Image', 'epsilon-framework' ),
 				'description' => esc_html__( 'Use this field to set a background image. Content will overlay on top of the image.', 'epsilon-framework' ),
@@ -206,12 +208,29 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'size'        => 'full',
 				'sizeArray'   => $sizes,
 				'mode'        => 'url',
+				'condition'   => array(
+					'about_background_type',
+					'bgimage',
+				),
 			),
-			'about_background_position' => array(
+			'about_background_image_color' => array(
+				'id'         => 'about_background_color',
+				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
+				'default'    => '',
+				'type'       => 'epsilon-color-picker',
+				'mode'       => 'rgb',
+				'defaultVal' => '',
+				'group'      => 'background',
+				'condition'  => array(
+					'about_background_type',
+					'bgimage',
+				),
+			),
+			'about_background_position'    => array(
 				'id'          => 'about_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
-				'default'     => '',
+				'default'     => 'center',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -225,12 +244,16 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'bottom'      => __( 'Bottom', 'epsilon-framework' ),
 					'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'about_background_type',
+					'bgimage',
+				),
 			),
-			'about_background_size'     => array(
+			'about_background_size'        => array(
 				'id'          => 'about_background_size',
 				'label'       => esc_html__( 'Background Stretch', 'epsilon-framework' ),
 				'description' => esc_html__( 'We usually recommend using cover as a default option.', 'epsilon-framework' ),
-				'default'     => '',
+				'default'     => 'cover',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -238,12 +261,17 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'contain' => __( 'Contain', 'epsilon-framework' ),
 					'initial' => __( 'Initial', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'about_background_type',
+					'bgimage',
+				),
+
 			),
-			'about_background_repeat'   => array(
+			'about_background_repeat'      => array(
 				'id'          => 'about_background_repeat',
 				'label'       => esc_html__( 'Background Repeat', 'epsilon-framework' ),
 				'description' => esc_html__( 'Set to background-repeat if you are using patterns. For parallax, we recommend setting to no-repeat.', 'epsilon-framework' ),
-				'default'     => '',
+				'default'     => 'no-repeat',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -252,15 +280,24 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'repeat-y'  => __( 'Repeat Y', 'epsilon-framework' ),
 					'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'about_background_type',
+					'bgimage',
+				),
 			),
-			'about_background_parallax' => array(
+			'about_background_parallax'    => array(
 				'id'          => 'about_background_parallax',
 				'label'       => esc_html__( 'Background Parallax', 'epsilon-framework' ),
 				'description' => esc_html__( 'Toggling this to ON will enable the parallax effect. Make sure you have a  background image set before enabling it.', 'epsilon-framework' ),
 				'default'     => false,
 				'type'        => 'epsilon-toggle',
 				'group'       => 'background',
+				'condition'   => array(
+					'about_background_type',
+					'bgimage',
+				),
 			),
+
 		);
 	}
 

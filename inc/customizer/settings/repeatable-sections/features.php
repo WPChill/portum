@@ -145,7 +145,7 @@ class Repeatable_Section_Features extends Repeatable_Section {
 				//'description' => esc_html__( 'Setting a value for this field will create a color overlay on top of background image/videos.', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
-				'mode'       => 'rgba',
+				'mode'       => 'rgb',
 				'defaultVal' => '',
 				'group'      => 'background',
 			),
