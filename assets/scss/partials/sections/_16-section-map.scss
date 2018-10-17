@@ -44,16 +44,6 @@
 
 }
 
-.ewf-section--spacing-sm-top .map-info-wrapper { padding-top: $spacing-section-small; }
-.ewf-section--spacing-md-top .map-info-wrapper { padding-top: $spacing-section-medium; }
-.ewf-section--spacing-lg-top .map-info-wrapper { padding-top: $spacing-section-large; }
-.ewf-section--spacing-none-top .map-info-wrapper { padding-top: 0; }
-
-.ewf-section--spacing-sm-bottom .map-info-wrapper { padding-bottom: $spacing-section-small; }
-.ewf-section--spacing-md-bottom .map-info-wrapper { padding-bottom: $spacing-section-medium; }
-.ewf-section--spacing-lg-bottom .map-info-wrapper { padding-bottom: $spacing-section-large; }
-.ewf-section--spacing-none-bottom .map-info-wrapper { padding-bottom: 0; }
-
 .map-info-wrapper {
   padding: 0 75px;
   background-color: #fff;

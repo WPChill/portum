@@ -15,6 +15,8 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Portum_Helper {
 
+	public static $section_ids = array();
+
 	/**
 	 * Create a "default" value for the header layout
 	 */
@@ -80,6 +82,21 @@ class Portum_Helper {
 		                       ) );
 	}
 
+	public static function generate_section_id( $key ){
+
+		$random = rand(1, 999999);
+		$id = $key . '-' . $random;
+
+		while ( in_array( $id, self::$section_ids ) ) {
+			$random = rand(1, 999999);
+			$id = $key . '-' . $random;
+		}
+
+		self::$section_ids[] = $id;
+		return $id;
+
+	}
+
 	/**
 	 * Generate a set of classes to be applied on a section
 	 *
@@ -89,12 +106,6 @@ class Portum_Helper {
 	 */
 	public static function generate_section_class( $key, $fields ) {
 		$additional = '';
-		if ( ! empty( $fields[ $key . '_row_spacing_top' ] ) ) {
-			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_top' ] . '-top';
-		}
-		if ( ! empty( $fields[ $key . '_row_spacing_bottom' ] ) ) {
-			$additional .= ' ewf-section--spacing-' . $fields[ $key . '_row_spacing_bottom' ] . '-bottom';
-		}
 		if ( ! empty( $fields[ $key . '_background_parallax' ] ) && 'false' != $fields[ $key . '_background_parallax' ] ) {
 			$additional .= ' ewf-section--parallax';
 		}
@@ -128,7 +139,6 @@ class Portum_Helper {
 
 		echo $style;
 	}
-
 
 	/**
 	 * Generates overlay attr
@@ -438,39 +448,87 @@ class Portum_Helper {
 	 * @param $fields
 	 */
 	public static function generate_inline_css( $section_id, $key, $fields ) {
-		$heading_selectors = array(
-			'h1',
-			'h2',
-			'h3',
-			'h4',
-			'h5',
-			'h6',
-			'.headline span:not(.dashicons)',
+		$defaults = array(
+			'top'    => 0,
+			'right'  => 0,
+			'bottom' => 0,
+			'left'   => 0,
+			'unit'   => 'px'
 		);
 
-		$text_selectors = array(
-			'p',
-			'ul li',
-			'span:not(.dashicons)',
+		$desktop = array(
+			$key . '_margins_desktop' => 'margin',
+			$key . '_paddings_desktop' => 'padding',
+		);
+
+		$mobile = array(
+			$key . '_paddings_mobile' => 'padding',
+			$key . '_margins_mobile' => 'margin',
+		);
+
+		$keys = array(
+			$key . '_margins_tablet' => 'margin',
+			$key . '_paddings_tablet' => 'padding',
 		);
 
 		echo '<style type="text/css" media="all">';
-		foreach ( $text_selectors as $text_selector ) {
-			if ( ! empty( $fields[ $key . '_text_color' ] ) ) {
-				echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $text_selector ) . ' ';
-				echo '{ ';
-				echo 'color: ' . esc_attr( $fields[ $key . '_text_color' ] );
-				echo '}';
-			}
+		
+		// Desktop CSS
+		$desktop_style = array();
+		if ( isset( $fields[ $key . '_margins_desktop' ] ) && '' !=  $fields[ $key . '_margins_desktop' ] ) {
+			$margins_desktop = wp_parse_args( json_decode( $fields[ $key . '_margins_desktop' ] ), $defaults );
+			$desktop_style[] = 'margin:' . $margins_desktop['top'] . $margins_desktop['unit'] . ' ' . $margins_desktop['right'] . $margins_desktop['unit'] . ' ' . $margins_desktop['bottom'] . $margins_desktop['unit'] . ' ' . $margins_desktop['left'] . $margins_desktop['unit'];
 		}
-		foreach ( $heading_selectors as $heading_selector ) {
-			if ( ! empty( $fields[ $key . '_heading_color' ] ) ) {
-				echo '[data-section="' . esc_attr( $section_id ) . '"] ' . esc_attr( $heading_selector ) . ' ';
-				echo '{ ';
-				echo 'color: ' . esc_attr( $fields[ $key . '_heading_color' ] );
-				echo '}';
-			}
+
+		if ( isset( $fields[ $key . '_paddings_desktop' ] ) && '' !=  $fields[ $key . '_paddings_desktop' ] ) {
+			$paddings_desktop = wp_parse_args( json_decode( $fields[ $key . '_paddings_desktop' ] ), $defaults );
+			$desktop_style[] = 'padding:' . $paddings_desktop['top'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['right'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['bottom'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['left'] . $paddings_desktop['unit'];
 		}
+
+		if ( ! empty( $desktop_style ) ) {
+			echo '#' . $section_id . '{' . implode( ';', $desktop_style ) . '}';
+		}
+
+
+		// Tablet CSS
+		echo '@media (max-width: 768px) {';
+		
+		$tablet_style = array();
+		if ( isset( $fields[ $key . '_margins_tablet' ] ) && '' !=  $fields[ $key . '_margins_tablet' ] ) {
+			$margins_tablet = wp_parse_args( json_decode( $fields[ $key . '_margins_tablet' ] ), $defaults );
+			$tablet_style[] = 'margin:' . $margins_tablet['top'] . $margins_tablet['unit'] . ' ' . $margins_tablet['right'] . $margins_tablet['unit'] . ' ' . $margins_tablet['bottom'] . $margins_tablet['unit'] . ' ' . $margins_tablet['left'] . $margins_tablet['unit'];
+		}
+
+		if ( isset( $fields[ $key . '_paddings_tablet' ] ) && '' !=  $fields[ $key . '_paddings_desktop' ] ) {
+			$paddings_tablet = wp_parse_args( json_decode( $fields[ $key . '_paddings_tablet' ] ), $defaults );
+			$tablet_style[] = 'padding:' . $paddings_tablet['top'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['right'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['bottom'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['left'] . $paddings_tablet['unit'];
+		}
+
+		if ( ! empty( $tablet_style ) ) {
+			echo '#' . $section_id . '{' . implode( ';', $tablet_style ) . '}';
+		}
+
+		echo '}';
+
+		// Mobile CSS
+		echo '@media (max-width: 576px) {';
+
+		$mobile_style = array();
+		if ( isset( $fields[ $key . '_margins_mobile' ] ) && '' !=  $fields[ $key . '_margins_mobile' ] ) {
+			$margins_mobile = wp_parse_args( json_decode( $fields[ $key . '_margins_mobile' ] ), $defaults );
+			$mobile_style[] = 'margin:' . $margins_mobile['top'] . $margins_mobile['unit'] . ' ' . $margins_mobile['right'] . $margins_mobile['unit'] . ' ' . $margins_mobile['bottom'] . $margins_mobile['unit'] . ' ' . $margins_mobile['left'] . $margins_mobile['unit'];
+		}
+
+		if ( isset( $fields[ $key . '_paddings_mobile' ] ) && '' !=  $fields[ $key . '_paddings_mobile' ] ) {
+			$paddings_mobile = wp_parse_args( json_decode( $fields[ $key . '_paddings_mobile' ] ), $defaults );
+			$mobile_style[] = 'padding:' . $paddings_mobile['top'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['right'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['bottom'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['left'] . $paddings_mobile['unit'];
+		}
+
+		if ( ! empty( $mobile_style ) ) {
+			echo '#' . $section_id . '{' . implode( ';', $mobile_style ) . '}';
+		}
+
+		echo '}';
 
 		echo '</style>';
 

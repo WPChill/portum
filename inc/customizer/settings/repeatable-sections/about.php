@@ -82,7 +82,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 	 * @return array
 	 */
 	public function layout_fields() {
-		return array(
+		$custom_fields = array(
 			'about_row_title_align'           => array(
 				'id'          => 'about_row_title_align',
 				'type'        => 'select',
@@ -108,34 +108,6 @@ class Repeatable_Section_About extends Repeatable_Section {
 					'boxedin'   => esc_html__( 'Contained (1170px width)', 'epsilon-framework' ),
 				),
 				'default'     => 'boxedin',
-			),
-			'about_row_spacing_top'           => array(
-				'id'          => 'about_row_spacing_top',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Padding Top', 'epsilon-framework' ),
-				'description' => esc_html__( 'Adds padding top. ', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
-					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
-					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
-					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
-					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
-				),
-				'default'     => '',
-			),
-			'about_row_spacing_bottom'        => array(
-				'id'          => 'about_row_spacing_bottom',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Padding Bottom', 'epsilon-framework' ),
-				'description' => esc_html__( 'Adds padding bottom.', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
-					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
-					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
-					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
-					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
-				),
-				'default'     => '',
 			),
 			'about_column_alignment'          => array(
 				'id'          => 'about_column_alignment',
@@ -164,6 +136,8 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'default'     => 'middle',
 			),
 		);
+
+		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
 	}
 
 	/**
@@ -308,7 +282,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 	 */
 	public function color_fields() {
 		return array(
-			'about_heading_color' => array(
+			'about_title_misc_font_color' => array(
 				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -319,7 +293,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'about_text_color'    => array(
+			'about_text_misc_font_color'    => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',

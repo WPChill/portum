@@ -14,8 +14,11 @@ $fields    = $frontpage->sections[ $section_id ];
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'about', Portum_Repeatable_Sections::get_instance() );
 
 $button_primary = $fields['about_button_primary_label'] . $fields['about_button_primary_url'];
+if ( empty( $fields['about_section_unique_id'] ) ) {
+	$fields['about_section_unique_id'] = Portum_Helper::generate_section_id( 'about' );
+}
 $parent_attr    = array(
-	'id'    => ! empty( $fields['about_section_unique_id'] ) ? array( $fields['about_section_unique_id'] ) : array(),
+	'id'    => array( $fields['about_section_unique_id'] ),
 	'class' => array( 'section-about', 'section', 'ewf-section', 'ewf-section-' . $fields['about_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
@@ -39,10 +42,13 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 		$row_class = 'row-column-reverse';
 	}
 }
+	
+print_r( $fields );
+
 //end layout stuff
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'about', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['about_section_unique_id'], 'about', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>

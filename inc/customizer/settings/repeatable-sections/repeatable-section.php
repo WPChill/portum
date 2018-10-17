@@ -47,6 +47,14 @@ abstract class Repeatable_Section {
 	 */
 	public $upsell = false;
 	/**
+	 * @var string
+	 */
+	public $upsell_text = '';
+	/**
+	 * @var string
+	 */
+	public $upsell_url = '';
+	/**
 	 * Integrations
 	 *
 	 * @var array
@@ -81,8 +89,100 @@ abstract class Repeatable_Section {
 				'title'       => $this->title,
 				'description' => $this->description,
 				'upsell'      => $this->upsell,
+				'upsell_text' => $this->upsell_text,
+				'upsell_url'  => $this->upsell_url,
 				// 'integration' => $this->integrations
 			)
+		);
+	}
+
+	/**
+	 * Creates the margin fields
+	 */
+	public function create_margin_fields() {
+		return array(
+			$this->id . '_margins_device_setter' => array(
+				'label'   => esc_html__( 'Section margins' ),
+				'type'    => 'select',
+				'group'     => 'layout',
+				'choices' => array(
+					'desktop' => esc_html__( 'Desktop', 'epsilon-framework' ),
+					'tablet'  => esc_html__( 'Tablet', 'epsilon-framework' ),
+					'mobile'  => esc_html__( 'Mobile', 'epsilon-framework' ),
+				),
+			),
+			$this->id . '_margins_desktop' => array(
+				'label'     => '',
+				'type'      => 'epsilon-margins-paddings',
+				'group'     => 'layout',
+				'condition' => array(
+					$this->id . '_margins_device_setter',
+					'desktop',
+				),
+			),
+			$this->id . '_margins_tablet' => array(
+				'label'     => '',
+				'type'      => 'epsilon-margins-paddings',
+				'group'     => 'layout',
+				'condition' => array(
+					$this->id . '_margins_device_setter',
+					'tablet',
+				),
+			),
+			$this->id . '_margins_mobile' => array(
+				'label'     => '',
+				'type'      => 'epsilon-margins-paddings',
+				'group'     => 'layout',
+				'condition' => array(
+					$this->id . '_margins_device_setter',
+					'mobile',
+				),
+			),
+		);
+	}
+
+	/**
+	 * Creates the padding fields
+	 */
+	public function create_padding_fields() {
+		return array(
+			$this->id . '_paddings_device_setter' => array(
+				'label'   => esc_html__( 'Section paddings' ),
+				'type'    => 'select',
+				'group'   => 'layout',
+				'choices' => array(
+					'desktop' => esc_html__( 'Desktop', 'epsilon-framework' ),
+					'tablet'  => esc_html__( 'Tablet', 'epsilon-framework' ),
+					'mobile'  => esc_html__( 'Mobile', 'epsilon-framework' ),
+				),
+			),
+			$this->id . '_paddings_desktop' => array(
+				'label'     => '',
+				'type'      => 'epsilon-margins-paddings',
+				'group'     => 'layout',
+				'condition' => array(
+					$this->id . '_paddings_device_setter',
+					'desktop',
+				),
+			),
+			$this->id . '_paddings_tablet' => array(
+				'label'     => '',
+				'type'      => 'epsilon-margins-paddings',
+				'group'     => 'layout',
+				'condition' => array(
+					$this->id . '_paddings_device_setter',
+					'tablet',
+				),
+			),
+			$this->id . '_paddings_mobile' => array(
+				'label'     => '',
+				'type'      => 'epsilon-margins-paddings',
+				'group'     => 'layout',
+				'condition' => array(
+					$this->id . '_paddings_device_setter',
+					'mobile',
+				),
+			),
 		);
 	}
 

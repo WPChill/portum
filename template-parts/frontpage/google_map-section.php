@@ -20,9 +20,12 @@ $span                    = 12 / absint( $fields['google_map_column_group'] );
 $api                     = get_theme_mod( 'portum_google_api_key', '' );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'google_map', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['google_map_section_unique_id'] ) ) {
+	$fields['google_map_section_unique_id'] = Portum_Helper::generate_section_id( 'google_map' );
+}
 
 $parent_attr = array(
-	'id'    => array(),
+	'id'    => array( $fields['google_map_section_unique_id'] ),
 	'class' => array( 'section-map', 'ewf-section', 'ewf-section-' . $fields['google_map_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
@@ -31,11 +34,21 @@ $style_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+$adress = '';
+
+if ( '' != $fields['google_map_address'] ) {
+	$adress = urlencode( $fields['google_map_address'] );
+}
+
+if ( '' != $fields['google_map_lat_long'] ) {
+	$adress = $fields['google_map_lat_long'];
+}
+
 wp_enqueue_script( 'googlemaps' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" class="google-map-section" <?php echo ! empty( $fields['google_map_section_unique_id'] ) ? 'id="' . $fields['google_map_section_unique_id'] . '"' : ''; ?>>
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'google_map', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['google_map_section_unique_id'], 'google_map', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'google_map' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?> >
 
@@ -52,9 +65,9 @@ wp_enqueue_script( 'googlemaps' );
 
 					<div class="row">
 						<div class="col-md-6">
-							<?php if ( ! empty( $api ) ) : ?>
-								<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
-							<?php endif; ?>
+							<?php if ( '' != $adress ): ?>
+								<iframe class="portum-map" src="https://maps.google.com/maps?q=<?php echo esc_attr( $adress ); ?>&hl=en&z=<?php echo esc_attr( $fields['google_map_zoom'] ); ?>&amp;output=embed" width="100%" height="<?php echo $fields['google_map_height']; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
+							<?php endif ?>
 						</div>
 
 						<div class="col-md-6">
@@ -128,9 +141,9 @@ wp_enqueue_script( 'googlemaps' );
 							</div>
 						</div>
 						<div class="col-md-6">
-							<?php if ( ! empty( $api ) ) : ?>
-								<div class="map-canvas map-canvas-side" style="height:<?php echo esc_attr( $fields['google_map_height'] ); ?>px;" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
-							<?php endif; ?>
+							<?php if ( '' != $adress ): ?>
+								<iframe class="portum-map" src="https://maps.google.com/maps?q=<?php echo esc_attr( $adress ); ?>&hl=en&z=<?php echo esc_attr( $fields['google_map_zoom'] ); ?>&amp;output=embed" width="100%" height="<?php echo $fields['google_map_height']; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
+							<?php endif ?>
 						</div>
 					</div>
 
@@ -139,14 +152,15 @@ wp_enqueue_script( 'googlemaps' );
 
 		<?php } else { ?>
 
-			<?php if ( ! empty( $api ) ) : ?>
-				<div class="map-overlay"></div>
-				<div class="map-canvas" data-mapheight="<?php echo esc_attr( $fields['google_map_height'] ); ?>" data-zoom="<?php echo esc_attr( $fields['google_map_zoom'] ); ?>" data-address="<?php echo esc_attr( $fields['google_map_address'] ); ?>"></div>
-			<?php endif; ?>
+			<?php if ( '' != $adress ): ?>
+				<iframe class="portum-map map-canvas" src="https://maps.google.com/maps?q=<?php echo esc_attr( $adress ); ?>&hl=en&z=<?php echo esc_attr( $fields['google_map_zoom'] ); ?>&amp;output=embed" width="100%" height="<?php echo $fields['google_map_height']; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<?php endif ?>
 
-			<div class="ewf-section__content">
+			<div class="ewf-section__content ewf-section__map">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
 
+					
+					
 					<div class="map-info-wrapper" <?php $attr_helper->generate_attributes( $style_attr ); ?>>
 
 						<?php

@@ -21,8 +21,11 @@ $fields['portfolio_column_group']      = isset( $fields['portfolio_column_group'
 $fields['portfolio_description_below'] = isset( $fields['portfolio_description_below'] ) ? $fields['portfolio_description_below'] : '';
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'portfolio', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['portfolio_section_unique_id'] ) ) {
+	$fields['portfolio_section_unique_id'] = Portum_Helper::generate_section_id( 'portfolio' );
+}
 $parent_attr = array(
-	'id'    => ! empty( $fields['portfolio_section_unique_id'] ) ? array( $fields['portfolio_section_unique_id'] ) : array(),
+	'id'    => array( $fields['portfolio_section_unique_id'] ),
 	'class' => array(
 		'section-portfolio',
 		'section',
@@ -69,13 +72,31 @@ if ( ! empty( $fields['portfolio_row_title_align'] ) ) {
 }
 
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['portfolio_column_group'] ) );
-$item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $fields['portfolio_item_style'] ) : 'ewf-item__no-effect' );
+
+/**
+ * Item Style
+ */
+$item_element_class = '';
+$item_style         = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_element_class = $fields['item_style'];
+}else{
+	$item_element_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+	
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
 // end layout stuff
-
 ?>
-
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['portfolio_section_unique_id'], 'portfolio', $fields ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
 		$attr_helper->generate_color_overlay();
@@ -99,11 +120,10 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 						<?php foreach ( $fields['portfolio_items'] as $key => $item ) { ?>
 						<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
 							<?php if ( $fields['portfolio_description_below'] ) { ?>
-							<div class="ewf-portfolio-item ewf-portfolio__has-description-below <?php echo esc_attr( $item_effect_style ); ?>">
-								<?php } else { ?>
-								<div class="ewf-portfolio-item <?php echo esc_attr( $item_effect_style ); ?>">
-									<?php } ?>
-									<li>
+								<div class="ewf-portfolio-item ewf-portfolio__has-description-below <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+							<?php } else { ?>
+								<div class="ewf-portfolio-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+							<?php } ?>
 										<?php
 										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_portfolio_section', 'portum_portfolio' ), Epsilon_Helper::allowed_kses_pencil() );
 										?>
@@ -114,17 +134,19 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 
 											<div class="ewf-portfolio-item__overlay">
 
-												<?php if ( empty( $fields['portfolio_description_below'] ) && ! empty( $fields['portfolio_image_show_description'] ) ) { ?>
+												<?php if ( empty( $fields['portfolio_description_below'] ) ) { ?>
 													<div class="ewf-portfolio-item__details">
 														<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 															<div class="ewf-like-h6">
 																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
 															</div><!--/.ewf-like-h6-->
 														<?php } ?>
-
-														<div class="ewf-portfolio-item__description">
-															<?php echo wp_kses_post( $item['portfolio_description'] ); ?>
-														</div><!--/.ewf-portfolio-item__description-->¬
+														<?php if ( ! empty( $fields['portfolio_image_show_description'] ) && ! empty( $item['portfolio_description'] ) ): ?>
+															<div class="ewf-portfolio-item__description">
+																<?php echo wp_kses_post( $item['portfolio_description'] ); ?>
+															</div><!--/.ewf-portfolio-item__description-->
+														<?php endif ?>
+														
 													</div><!-- /.ewf-portfolio-item__details -->
 												<?php } ?>
 
@@ -143,7 +165,7 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 											</div><!-- ewf-portfolio-item__overlay -->
 										</div><!-- ewf-portfolio-item__thumbnail -->
 
-										<?php if ( ! empty( $fields['portfolio_description_below'] ) && empty( $fields['portfolio_image_show_description'] ) ) { ?>
+										<?php if ( ! empty( $fields['portfolio_description_below'] ) ) { ?>
 											<div class="ewf-portfolio-item__details">
 												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 													<div class="ewf-like-h6">
@@ -156,7 +178,6 @@ $item_effect_style = ( ! empty( $fields['portfolio_item_style'] ) ? esc_attr( $f
 												</div><!--/.ewf-portfolio-item__description-->
 											</div><!-- ewf-portfolio-item__details -->
 										<?php } ?>
-									</li>
 								</div><!-- ewf-portfolio-item -->
 							</div><!--/.itemclass item spacing-->
 							<?php } ?>

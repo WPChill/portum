@@ -261,7 +261,7 @@ class Portum {
 			'epsilon_text_color' => array(
 				'label'       => esc_html__( 'Text Color', 'portum' ),
 				'description' => esc_html__( 'The color used for paragraphs.', 'portum' ),
-				'default'     => '#8b8b92',
+				'default'     => '#212529',
 				'section'     => 'colors',
 				'hover-state' => false,
 			),

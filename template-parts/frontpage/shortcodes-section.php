@@ -17,8 +17,12 @@ $class = array(
 );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'shortcodes', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['shortcodes_section_unique_id'] ) ) {
+	$fields['shortcodes_section_unique_id'] = Portum_Helper::generate_section_id( 'shortcodes' );
+}
+
 $parent_attr = array(
-	'id'    => ! empty( $fields['shortcodes_section_unique_id'] ) ? array( $fields['shortcodes_section_unique_id'] ) : array(),
+	'id'    => array( $fields['shortcodes_section_unique_id'] ),
 	'class' => array(
 		'section-shortcodes',
 		'section',
@@ -31,7 +35,7 @@ $parent_attr = array(
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'shortcodes', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['shortcodes_section_unique_id'], 'shortcodes', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'shortcodes' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 

@@ -15,11 +15,14 @@ $grouping  = array(
 );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'testimonials', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['testimonials_section_unique_id'] ) ) {
+	$fields['testimonials_section_unique_id'] = Portum_Helper::generate_section_id( 'testimonials' );
+}
 
 $fields['testimonials'] = $frontpage->get_repeater_field( $fields['testimonials_repeater_field'], array(), $grouping );
 
 $parent_attr = array(
-	'id'    => ! empty( $fields['testimonials_section_unique_id'] ) ? array( $fields['testimonials_section_unique_id'] ) : array(),
+	'id'    => array( $fields['testimonials_section_unique_id'] ),
 	'class' => array(
 		'section-testimonials',
 		'section',
@@ -30,9 +33,30 @@ $parent_attr = array(
 );
 
 $span = 12 / absint( $fields['testimonials_column_group'] );
+
+/**
+ * Item Style
+ */
+$item_element_class = '';
+$item_style         = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_element_class = $fields['item_style'];
+}else{
+	$item_element_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+	
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_inline_css( $fields['testimonials_section_unique_id'], 'testimonials', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'testimonials' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -52,12 +76,12 @@ $span = 12 / absint( $fields['testimonials_column_group'] );
 					<div class="row">
 						<?php
 						foreach ( $fields['testimonials'] as $key => $v ) {
-							$bg_color = 'background-color: ' . ( ! empty( $v['testimonial_bg_color'] ) ? esc_attr( $v['testimonial_bg_color'] ) : 'transparent' ) . ';';
+							$item_style[] = 'background-color: ' . ( ! empty( $v['testimonial_bg_color'] ) ? esc_attr( $v['testimonial_bg_color'] ) : 'transparent' ) . ';';
 
 							?>
 
 							<div class="col-md-<?php echo esc_attr( $span ); ?>">
-								<div class="testimonial ewf-item__no-effect" style="<?php echo esc_attr( $bg_color ); ?>">
+								<div class="testimonial <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>;">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_testimonials_section', 'portum_testimonials' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>

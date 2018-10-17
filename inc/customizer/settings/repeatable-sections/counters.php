@@ -41,7 +41,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 	 * Sets section image
 	 */
 	public function set_image() {
-		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-map-pt.png' );
+		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-piechart-pt.png' );
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 	 * @return array
 	 */
 	public function layout_fields() {
-		return array(
+		$custom_fields = array(
 			'counters_row_title_align'           => array(
 				'id'          => 'counters_row_title_align',
 				'type'        => 'select',
@@ -115,53 +115,16 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 			),
 			'counters_column_group'              => array(
 				'id'          => 'counters_column_group',
-				'type'        => 'epsilon-button-group',
+				'type'        => 'select',
 				'label'       => __( 'Item Group', 'epsilon-framework' ),
 				'description' => __( 'Number of items to display at once. Example: 2, 3 or 4 pricing tables. The width of the content will be equally split among the number of elements you select.', 'epsilon-framework' ),
 				'group'       => 'layout',
 				'default' => 4,
 				'choices' => array(
-					2 => array(
-						'value' => 2,
-						'png'   => EPSILON_URI . '/assets/img/two-column.png',
-					),
-					3 => array(
-						'value' => 3,
-						'png'   => EPSILON_URI . '/assets/img/three-column.png',
-					),
-					4 => array(
-						'value' => 4,
-						'png'   => EPSILON_URI . '/assets/img/four-column.png',
-					),
+					2   => esc_html__( '2 column', 'epsilon-framework' ),
+					3   => esc_html__( '3 column', 'epsilon-framework' ),
+					4   => esc_html__( '4 column', 'epsilon-framework' ),
 				),
-			),
-			'counters_row_spacing_top'           => array(
-				'id'          => 'counters_row_spacing_top',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Padding Top', 'epsilon-framework' ),
-				'description' => esc_html__( 'Adds padding top. ', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
-					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
-					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
-					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
-					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
-				),
-				'default'     => '',
-			),
-			'counters_row_spacing_bottom'        => array(
-				'id'          => 'counters_row_spacing_bottom',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Padding Bottom', 'epsilon-framework' ),
-				'description' => esc_html__( 'Adds padding bottom.', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
-					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
-					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
-					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
-					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
-				),
-				'default'     => ''
 			),
 			'counters_column_alignment'          => array(
 				'id'          => 'counters_column_alignment',
@@ -190,6 +153,9 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'default'     => 'middle'
 			),
 		);
+
+		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
+		
 	}
 
 	/**
@@ -201,17 +167,30 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 		$sizes = Epsilon_Helper::get_image_sizes();
 
 		return array(
-			'counters_background_color'    => array(
+			'counters_background_type'        => array(
+				'id'      => 'counters_background_type',
+				'label'   => esc_html__( 'Background Type', 'epsilon-framework' ),
+				'type'    => 'select',
+				'choices' => array(
+					'bgimage' => __( 'Image', 'epsilon-framework' ),
+					'bgcolor' => __( 'Solid Color', 'epsilon-framework' ),
+				),
+				'group'   => 'background',
+			),
+			'counters_background_color'       => array(
 				'id'         => 'counters_background_color',
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
-				//'description' => esc_html__( 'Setting a value for this field will create a color overlay on top of background image/videos.', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
 				'mode'       => 'rgb',
-				'defaultVal' => '',
+				'defaultVal' => '#EEE',
 				'group'      => 'background',
+				'condition'  => array(
+					'counters_background_type',
+					'bgcolor',
+				),
 			),
-			'counters_background_image'    => array(
+			'counters_background_image'       => array(
 				'id'          => 'counters_background_image',
 				'label'       => esc_html__( 'Background Image', 'epsilon-framework' ),
 				'description' => esc_html__( 'Use this field to set a background image. Content will overlay on top of the image.', 'epsilon-framework' ),
@@ -221,12 +200,29 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'size'        => 'full',
 				'sizeArray'   => $sizes,
 				'mode'        => 'url',
+				'condition'   => array(
+					'counters_background_type',
+					'bgimage',
+				),
 			),
-			'counters_background_position' => array(
+			'counters_background_image_color' => array(
+				'id'         => 'counters_background_color',
+				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
+				'default'    => '',
+				'type'       => 'epsilon-color-picker',
+				'mode'       => 'rgb',
+				'defaultVal' => '',
+				'group'      => 'background',
+				'condition'  => array(
+					'counters_background_type',
+					'bgimage',
+				),
+			),
+			'counters_background_position'    => array(
 				'id'          => 'counters_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
-				'default'     => '',
+				'default'     => 'center',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -240,12 +236,16 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 					'bottom'      => __( 'Bottom', 'epsilon-framework' ),
 					'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'counters_background_type',
+					'bgimage',
+				),
 			),
-			'counters_background_size'     => array(
+			'counters_background_size'        => array(
 				'id'          => 'counters_background_size',
 				'label'       => esc_html__( 'Background Stretch', 'epsilon-framework' ),
 				'description' => esc_html__( 'We usually recommend using cover as a default option.', 'epsilon-framework' ),
-				'default'     => '',
+				'default'     => 'cover',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -253,12 +253,17 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 					'contain' => __( 'Contain', 'epsilon-framework' ),
 					'initial' => __( 'Initial', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'counters_background_type',
+					'bgimage',
+				),
+
 			),
-			'counters_background_repeat'   => array(
+			'counters_background_repeat'      => array(
 				'id'          => 'counters_background_repeat',
 				'label'       => esc_html__( 'Background Repeat', 'epsilon-framework' ),
 				'description' => esc_html__( 'Set to background-repeat if you are using patterns. For parallax, we recommend setting to no-repeat.', 'epsilon-framework' ),
-				'default'     => '',
+				'default'     => 'no-repeat',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -267,15 +272,24 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 					'repeat-y'  => __( 'Repeat Y', 'epsilon-framework' ),
 					'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'counters_background_type',
+					'bgimage',
+				),
 			),
-			'counters_background_parallax' => array(
+			'counters_background_parallax'    => array(
 				'id'          => 'counters_background_parallax',
 				'label'       => esc_html__( 'Background Parallax', 'epsilon-framework' ),
 				'description' => esc_html__( 'Toggling this to ON will enable the parallax effect. Make sure you have a  background image set before enabling it.', 'epsilon-framework' ),
 				'default'     => false,
 				'type'        => 'epsilon-toggle',
 				'group'       => 'background',
+				'condition'   => array(
+					'counters_background_type',
+					'bgimage',
+				),
 			),
+
 		);
 	}
 
@@ -286,7 +300,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 	 */
 	public function color_fields() {
 		return array(
-			'counters_heading_color' => array(
+			'counters_title_misc_font_color' => array(
 				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -297,7 +311,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'counters_text_color'    => array(
+			'counters_text_misc_font_color'  => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -331,6 +345,54 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'type'              => 'text',
 				'default'           => esc_html__( 'COUNTERS', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
+			),
+			'item_style'                   => array(
+				'label'   => esc_html__( 'Item Style', 'portum' ),
+				'type'    => 'select',
+				'default' => 'ewf-item__no-effect',
+				'choices' => array(
+					'ewf-item__no-effect'     => esc_html__( 'No effect', 'portum' ),
+					'ewf-item__border'        => esc_html__( 'Border Effect', 'portum' ),
+					'ewf-item__shadow-effect' => esc_html__( 'Shadow Effect', 'portum' ),
+				),
+			),
+			'item_border_style'                   => array(
+				'label'   => esc_html__( 'Item Border Style', 'portum' ),
+				'type'    => 'select',
+				'default' => 'ewf-item__simple-border-effect',
+				'choices' => array(
+					'ewf-item__border-dashed-effect' => esc_html__( 'Dashed Border Effect', 'portum' ),
+					'ewf-item__simple-border-effect' => esc_html__( 'Simple Border Effect', 'portum' ),
+				),
+				'condition' => array(
+					'item_style',
+					'ewf-item__border',
+				),
+			),
+			'item_border_color'      => array(
+				'label'     => esc_html__( 'Item Border Color Picker', 'portum' ),
+				'type'      => 'epsilon-color-picker',
+				'default'   => '',
+				'mode'      => 'hex',
+				'condition' => array(
+					array(
+						'item_style',
+						'ewf-item__border',
+					)
+				),
+			),
+			'item_border_width'              => array(
+				'label'       => esc_html__( 'Item Border Width', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 1,
+				'choices'     => array(
+					'min' => 1,
+					'max' => 10,
+				),
+				'condition' => array(
+					'item_style',
+					'ewf-item__border',
+				),
 			),
 			'counters_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),

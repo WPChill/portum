@@ -16,9 +16,12 @@ $args  = array(
 $query = new WP_Query( $args );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'blog', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['blog_section_unique_id'] ) ) {
+	$fields['blog_section_unique_id'] = Portum_Helper::generate_section_id( 'blog' );
+}
 
 $parent_attr = array(
-	'id'    => ! empty( $fields['blog_section_unique_id'] ) ? array( $fields['blog_section_unique_id'] ) : array(),
+	'id'    => array( $fields['blog_section_unique_id'] ),
 	'class' => array(
 		'section-blog',
 		'section',
@@ -29,9 +32,25 @@ $parent_attr = array(
 );
 $counter     = 0;
 
-$item_style       = ( ! empty( $fields['item_style'] ) ? esc_attr( $fields['item_style'] ) : '' );
-$item_style_color = 'border-color: ' . ( ! empty( $fields['item_style_color_picker'] ) ? esc_attr( $fields['item_style_color_picker'] ) : '' ) . ';';
-$item_spacing     = 'ewf-item__spacing-' . ( isset( $fields['blog_column_spacing'] ) ? $fields['blog_column_spacing'] : '' );
+$item_style           = array();
+$item_class           = '';
+$item_container_class = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_class = $fields['item_style'];
+}else{
+	$item_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+	
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
+
+$item_container_class[] = 'ewf-item__spacing-' . ( isset( $fields['blog_column_spacing'] ) ? $fields['blog_column_spacing'] : '' );
 /**
  * Layout stuff
  */
@@ -52,12 +71,12 @@ if ( 'left' == $fields['blog_row_title_align'] || 'right' == $fields['blog_row_t
 		$row_class = 'row-column-reverse';
 	}
 }
-$item_class = 'col-sm-' . 12 / absint( $fields['blog_post_count'] );
+$item_container_class[] = 'col-sm-' . 12 / absint( $fields['blog_post_count'] );
 // end layout stuff
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'blog', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['blog_section_unique_id'], 'blog', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'blog' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -83,8 +102,8 @@ $item_class = 'col-sm-' . 12 / absint( $fields['blog_post_count'] );
 							<?php $counter++; ?>
 							<?php $query->the_post(); ?>
 
-							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-								<div class="ewf-blog <?php echo esc_attr( $item_style ); ?>" style="<?php echo esc_attr( $item_style_color ); ?>">
+							<div class="<?php echo esc_attr( implode( ' ', $item_container_class ) ); ?>">
+								<div class="ewf-blog <?php echo esc_attr( $item_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 									<?php if ( $fields['blog_show_thumbnail'] ) { ?>
 										<div class="ewf-blog__featured-image">
 											<?php
@@ -108,10 +127,8 @@ $item_class = 'col-sm-' . 12 / absint( $fields['blog_post_count'] );
 
 											<?php if ( $fields['blog_show_author'] ) { ?>
 												<span class="ewf-blog__author"><i class="fa fa-user"></i>
-										<a href="<?php echo get_the_author_link(); ?>">
-										<?php echo wp_kses_post( get_the_author() ); ?>
-										</a>
-									</span><!--/.news-date-->
+													<?php echo get_the_author_link(); ?>
+												</span><!--/.news-date-->
 											<?php }//endif ?>
 
 											<?php if ( $fields['blog_show_comments'] ) { ?>

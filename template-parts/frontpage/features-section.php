@@ -15,12 +15,15 @@ $grouping           = array(
 );
 $fields['features'] = $frontpage->get_repeater_field( $fields['features_repeater_field'], array(), $grouping );
 
-$attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'services', Portum_Repeatable_Sections::get_instance() );
+$attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'features', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['features_section_unique_id'] ) ) {
+	$fields['features_section_unique_id'] = Portum_Helper::generate_section_id( 'features' );
+}
 
 $parent_attr = array(
-	'id'    => $fields['features_section_unique_id'] ? array( $fields['features_section_unique_id'] ) : array(),
+	'id'    => array( $fields['features_section_unique_id'] ),
 	'class' => array(
-		'section-services',
+		'section-features',
 		'section',
 		'ewf-section',
 		'contrast',
@@ -29,6 +32,9 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 $counter     = 1;
+
+$array_left = array();
+$array_right = array();
 
 foreach ( $fields['features'] as $key => $feature ) {
 	if ( $counter <= 3 ) {
@@ -45,13 +51,13 @@ foreach ( $fields['features'] as $key => $feature ) {
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'services', $fields ); ?>
-	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'services' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['features_section_unique_id'], 'features', $fields ); ?>
+	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'features' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
 
 		<div class="ewf-section__content">
-			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'services', $fields ) ); ?>">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'features', $fields ) ); ?>">
 
 				<div class="row">
 
@@ -86,7 +92,7 @@ foreach ( $fields['features'] as $key => $feature ) {
 
 							<div class="features-left features-item">
 								<?php
-								echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_features_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
+								echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_features_section', 'portum_features' ), Epsilon_Helper::allowed_kses_pencil() );
 								?>
 								<?php if ( ! empty( $feature['feature_icon'] ) ) { ?>
 									<i class="<?php echo esc_attr( $feature['feature_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
@@ -113,9 +119,7 @@ foreach ( $fields['features'] as $key => $feature ) {
 					</div>
 
 					<div class="col-xs-12 col-sm-4">
-						<?php foreach ( $array_right
-
-						as $key => $feature ) { ?>
+						<?php foreach ( $array_right as $key => $feature ) { ?>
 						<?php
 						$icon_style = 'color: ' . ( ! empty( $feature['feature_icon_color'] ) ? esc_attr( $feature['feature_icon_color'] ) : 'inherit' ) . ';';
 						$icon_style .= 'background-color: ' . ( ! empty( $feature['feature_bg_icon_color'] ) ? esc_attr( $feature['feature_bg_icon_color'] ) : 'inherit' ) . ';';
@@ -132,7 +136,7 @@ foreach ( $fields['features'] as $key => $feature ) {
 						<div class="features-right features-item"
 						">
 						<?php
-						echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_features_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
+						echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_features_section', 'portum_features' ), Epsilon_Helper::allowed_kses_pencil() );
 						?>
 						<?php if ( ! empty( $feature['feature_icon'] ) ) { ?>
 							<i class="<?php echo esc_attr( $feature['feature_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>

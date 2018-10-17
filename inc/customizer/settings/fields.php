@@ -126,6 +126,38 @@ Epsilon_Customizer::add_field( 'portum_show_blog_welcome', array(
 	'default'     => false,
 ) );
 
+Epsilon_Customizer::add_field( 'portum_header_upsell', array(
+	'type'               => 'epsilon-upsell',
+	'transport'          => 'postMessage',
+	'section'            => 'portum_header_section',
+	'label'              => esc_html__( 'More header controls', 'portum' ),
+	'options'            => array(
+		esc_html__( 'Fullwidth Header Menu', 'portum' ),
+		esc_html__( '2 more header layouts', 'portum' ),
+	),
+	'requirements'       => array(
+		esc_html__( 'This will make your header stretch to the full-width of your screen.', 'portum' ),
+		esc_html__( 'In the PRO version of Portum you will have 2 more header layout : Fixed left side & Off Canvas Menu', 'portum' ),
+	),
+	'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=portum-welcome&tab=features' ),
+	'button_text'        => esc_html__( 'Lite VS PRO', 'portum' ),
+	'second_button_url'  => '#',
+	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+	'separator'          => 'or',
+) );
+
+Epsilon_Customizer::add_field( 'portum_header_layout', array(
+	'type'        => 'select',
+	'label'       => esc_html__( 'Header Layout', 'portum' ),
+	'description' => esc_html__( 'Select the type of header you want to use.', 'portum' ),
+	'section'     => 'portum_header_section',
+	'default'     => 'portum-classic',
+	'choices'     => array(
+		'portum-classic'   => esc_html__( 'Classic position', 'portum' ),
+		'portum-sidebar'   => esc_html__( '[PRO] Fixed left side', 'portum' ),
+		'portum-offcanvas' => esc_html__( '[PRO] Off Canvas Menu', 'portum' ),
+	),
+) );
 
 Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 	'type'        => 'epsilon-toggle',
@@ -134,15 +166,6 @@ Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 	'section'     => 'portum_header_section',
 	'default'     => true,
 ) );
-
-Epsilon_Customizer::add_field( 'portum_header_width', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Fullwidth Header Menu', 'portum' ),
-	'description' => esc_html__( 'Toggling this to on will make your header stretch to the full-width of your screen.', 'portum' ),
-	'section'     => 'portum_header_section',
-	'default'     => false,
-) );
-
 
 Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'type'        => 'epsilon-toggle',
@@ -167,19 +190,6 @@ Epsilon_Customizer::add_field( 'portum_enable_go_top', array(
 	'description' => esc_html__( 'Toggle the display of the go to top button.', 'portum' ),
 	'section'     => 'portum_header_section',
 	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_header_layout', array(
-	'type'        => 'select',
-	'label'       => esc_html__( 'Header Layout', 'portum' ),
-	'description' => esc_html__( 'Select the type of header you want to use.', 'portum' ),
-	'section'     => 'portum_header_section',
-	'default'     => 'portum-classic',
-	'choices'     => array(
-		'portum-classic'   => esc_html__( 'Classic position', 'portum' ),
-		'portum-sidebar'   => esc_html__( 'Fixed left side', 'portum' ),
-		'portum-offcanvas' => esc_html__( 'Off Canvas Menu', 'portum' ),
-	),
 ) );
 
 /**
@@ -473,7 +483,7 @@ Epsilon_Customizer::add_field( 'portum_features', array(
 	'type'         => 'epsilon-repeater',
 	'section'      => 'portum_features_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'features', 'portum' ),
+	'label'        => esc_html__( 'Features', 'portum' ),
 	'button_label' => esc_html__( 'Add new feature', 'portum' ),
 	'row_label'    => array(
 		'type'  => 'field',
@@ -481,7 +491,7 @@ Epsilon_Customizer::add_field( 'portum_features', array(
 	),
 	'fields'       => array(
 		'features_bg_color'          => array(
-			'label'   => esc_html__( 'features Background Color', 'portum' ),
+			'label'   => esc_html__( 'Background Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '',
 		),

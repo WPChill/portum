@@ -11,6 +11,9 @@ $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' 
 $fields    = $frontpage->sections[ $section_id ];
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'contact', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['contact_section_unique_id'] ) ) {
+	$fields['contact_section_unique_id'] = Portum_Helper::generate_section_id( 'contact' );
+}
 $parent_attr = array(
 	'id'    => ! empty( $fields['contact_section_unique_id'] ) ? array( $fields['contact_section_unique_id'] ) : array(),
 	'class' => array(
@@ -45,7 +48,7 @@ if ( 'left' == $fields['contact_row_title_align'] || 'right' == $fields['contact
 //end layout stuff
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'contact', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['contact_section_unique_id'], 'contact', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'contact' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>

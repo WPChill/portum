@@ -16,9 +16,12 @@ $grouping           = array(
 $fields['services'] = $frontpage->get_repeater_field( $fields['services_repeater_field'], array(), $grouping );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'services', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['services_section_unique_id'] ) ) {
+	$fields['services_section_unique_id'] = Portum_Helper::generate_section_id( 'services' );
+}
 
 $parent_attr = array(
-	'id'    => $fields['services_section_unique_id'] ? array( $fields['services_section_unique_id'] ) : array(),
+	'id'    => array( $fields['services_section_unique_id'] ),
 	'class' => array(
 		'section-services',
 		'section',
@@ -52,6 +55,26 @@ if ( 'left' == $fields['services_row_title_align'] || 'right' == $fields['servic
 }
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['services_column_group'] ) );
 $item_effect_style = ( ! empty( $fields['services_item_style'] ) ? esc_attr( $fields['services_item_style'] ) : 'ewf-item__no-effect' );
+
+/**
+ * Item Style
+ */
+$item_element_class = '';
+$item_style         = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_element_class = $fields['item_style'];
+}else{
+	$item_element_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+	
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
 // end layout stuff
 
 
@@ -62,7 +85,7 @@ if ( ! empty( $fields['services_slider'] ) ) {
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'services', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['services_section_unique_id'], 'services', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'services' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
@@ -106,11 +129,11 @@ if ( ! empty( $fields['services_slider'] ) ) {
 											$icon_style .= 'padding: ' . esc_attr( $service['service_icon_size'] / 3 . 'px;' );
 										}
 
-										$item_style = 'background-color: ' . ( ! empty( $service['services_bg_color'] ) ? esc_attr( $service['services_bg_color'] ) : '' );
+										$item_style[] = 'background-color: ' . ( ! empty( $service['services_bg_color'] ) ? esc_attr( $service['services_bg_color'] ) : '' );
 										?>
 
 										<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-											<li class="services-item <?php echo esc_attr( $item_effect_style ); ?>" style="<?php echo esc_attr( $item_style ); ?>">
+											<li class="services-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 												<?php
 												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
 												?>

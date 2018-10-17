@@ -16,9 +16,12 @@ $grouping           = array(
 $fields['counters'] = $frontpage->get_repeater_field( $fields['counters_repeater_field'], array(), $grouping );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'counters', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['counters_section_unique_id'] ) ) {
+	$fields['counters_section_unique_id'] = Portum_Helper::generate_section_id( 'counters' );
+}
 
 $parent_attr = array(
-	'id'    => ! empty( $fields['counters_section_unique_id'] ) ? array( $fields['counters_section_unique_id'] ) : array(),
+	'id'    => array( $fields['counters_section_unique_id'] ),
 	'class' => array(
 		'section-counters',
 		'section',
@@ -51,13 +54,33 @@ if ( 'left' == $fields['counters_row_title_align'] || 'right' == $fields['counte
 }
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['counters_column_group'] ) );
 $item_effect_style = ( ! empty( $fields['counters_item_style'] ) ? esc_attr( $fields['counters_item_style'] ) : 'ewf-item__no-effect' );
+
+/**
+ * Item Style
+ */
+$item_element_class = '';
+$item_style         = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_element_class = $fields['item_style'];
+}else{
+	$item_element_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+	
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
 // end layout stuff
 
 wp_enqueue_script( 'odometer' );
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'counters', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['counters_section_unique_id'], 'counters', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
@@ -88,7 +111,7 @@ wp_enqueue_script( 'odometer' );
 							?>
 
 							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-								<div class="ewf-counter">
+								<div class="ewf-counter <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_counters_section', 'portum_counter_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>

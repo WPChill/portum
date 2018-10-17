@@ -4,7 +4,7 @@
 	%3$s - epsilon_accent_color_second - #a1083a
 	%4$s - epsilon_text_separator - 
 	%5$s - epsilon_title_color - #1a171c
-	%6$s - epsilon_text_color - #777777
+	%6$s - epsilon_text_color - #212529
 	%7$s - epsilon_link_color - #0385d0
 	%8$s - epsilon_link_hover_color - #a1083a
 	%9$s - epsilon_link_active_color - #333333
@@ -34,12 +34,12 @@
 		   ========================================================================== */
 
 .text-accent-color {
-    color: %1$s;
+    color:  %2$s;
     /*	epsilon_accent_color */
 }
 
 .text-accent-color-2 {
-    color: %2$s;
+    color: %3$s;
     /* epsilon_accent_color_second */
 }
 
@@ -48,12 +48,12 @@
 /* Hero - Slider */
 
 .section-slider .pager-slider li {
-    background: %2$s;
+    background: %3$s;
     /* epsilon_accent_color_second */
 }
 
 .section-slider .pager-slider li.active {
-    background: %3$s;
+    background: %2$s;
     /*	epsilon_accent_color */
 }
 
@@ -81,7 +81,7 @@
 }
 
 .blog-news-item .news-category strong:hover {
-    background: %3$s;
+    background: %2$s;
     /*	epsilon_accent_color */
 }
 
@@ -160,12 +160,12 @@
 
 /*
 	.ewf-progress__bar-liniar-wrap {
-		background-color: %2$s;
+		background-color: %3$s;
 	}
 	*/
 
 .ewf-progress__bar-liniar {
-    background-color: %2$s;
+    background-color: %3$s;
     /* epsilon_accent_color_second */
 }
 
@@ -217,28 +217,37 @@
     /* epsilon_menu_item_hover_color */
 }
 
-.sf-menu a {
+.sf-menu a,
+#header ul a {
     color: %16$s;
     /* epsilon_menu_item_color */
 }
 
-.sf-menu>li:hover.arrow:before {
+.sf-menu>li:hover.arrow:before,
+#header ul li.menu-item-has-children:hover:after {
     /* epsilon_menu_item_hover_color */
     color: %17$s;
 }
 
-.sf-menu>li.arrow:before {
+.sf-menu>li.arrow:before,
+#header ul li.menu-item-has-children:after {
     color: %16$s;
     /* epsilon_menu_item_color */
 }
 
 .sf-menu a:hover,
-.sf-menu a:focus {
+.sf-menu a:focus,
+#header ul a:hover,
+#header ul a:focus,
+#header ul li.menu-item-has-children:hover > a,
+#header ul li.menu-item-has-children:hover > a:hover {
     color: %17$s;
     /* epsilon_menu_item_hover_color */
 }
 
-.sf-menu a:active {
+.sf-menu a:active,
+#header ul li.current-menu-item > a,
+#header ul li.current-menu-item:after {
     color: %18$s;
     /* epsilon_menu_item_active_color */
 }
@@ -275,7 +284,8 @@
     /* epsilon_menu_item_hover_color */
 }
 
-.sf-menu li.dropdown ul {
+.sf-menu li.dropdown ul,
+#header ul ul {
     background-color: %14$s;
     /* epsilon_menu_background */
 }
@@ -287,7 +297,8 @@
     /* epsilon_menu_item_color */
 }
 
-.dropdown li:hover {
+.dropdown li:hover,
+#header ul ul li:hover {
     background: %15$s;
 }
 
@@ -401,8 +412,8 @@ select {
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-    border-color: %2$s;
-    background-color: %2$s;
+    border-color: %3$s;
+    background-color: %3$s;
 }
 
 input[type="reset"]:hover,
@@ -418,8 +429,8 @@ input[type="button"]:focus {
 input[type="reset"]:active,
 input[type="submit"]:active,
 input[type="button"]:active {
-    border-color: %2$s;
-    background-color: %2$s;
+    border-color: %3$s;
+    background-color: %3$s;
 }
 
 
@@ -499,7 +510,7 @@ input[type="button"]:active {
    	========================================================================== */
 
 #back-to-top {
-    background-color: %2$s;
+    background-color: %3$s;
 }
 
 #back-to-top:hover {
@@ -513,7 +524,7 @@ input[type="button"]:active {
 
 /*
 	.sticky .post-thumbnail:after {
-		color: %2$s;
+		color: %3$s;
 	}
 	*/
 
@@ -574,11 +585,11 @@ input[type="button"]:active {
 }
 
 .post-format {
-    color: %2$s;
+    color: %3$s;
 }
 
 .pagination .page-numbers.current {
-    border-bottom-color: %2$s;
+    border-bottom-color: %3$s;
 }
 
 .pagination .page-numbers:hover {
@@ -668,7 +679,7 @@ input[type="button"]:active {
 }
 
 #wp-calendar tbody td a {
-    background-color: %2$s;
+    background-color: %3$s;
     color: #ffffff;
 }
 
@@ -683,7 +694,7 @@ input[type="button"]:active {
 }
 
 #wp-calendar #prev a:before {
-    color: %2$s;
+    color: %3$s;
 }
 
 #wp-calendar #prev a:hover:before {
@@ -691,7 +702,7 @@ input[type="button"]:active {
 }
 
 #wp-calendar #next a:before {
-    color: %2$s;
+    color: %3$s;
 }
 
 #wp-calendar #next a:hover:before {
@@ -720,7 +731,7 @@ input[type="button"]:active {
 .widget_search .search-submit {
     background-color: #ffffff;
     border-color: #ebebeb;
-    color: %2$s;
+    color: %3$s;
 }
 
 .widget_search .search-submit:hover,

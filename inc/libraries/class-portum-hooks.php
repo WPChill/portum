@@ -45,6 +45,11 @@ class Portum_Hooks {
 		 * Override text domain for the framework
 		 */
 		add_filter( 'override_load_textdomain', array( $this, 'override_load_textdomain' ), 10, 2 );
+
+
+		// Template hooks
+		require_once get_template_directory() . '/inc/template-functions.php';
+		add_action( 'portum_header', 'portum_classic_header', 10 );
 	}
 
 	/**
@@ -110,6 +115,12 @@ class Portum_Hooks {
 		// Adds a class of hfeed to non-singular pages.
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
+		}
+
+		// Add sticky class to body.
+		$header_sticky = get_theme_mod( 'portum_header_sticky', true );
+		if ( $header_sticky ) {
+			$classes[] = 'sticky-header';
 		}
 
 		return $classes;

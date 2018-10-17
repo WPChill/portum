@@ -86,7 +86,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 	 * @return array
 	 */
 	public function layout_fields() {
-		return array(
+		$custom_fields = array(
 			'openhours_row_title_align'           => array(
 				'id'          => 'openhours_row_title_align',
 				'type'        => 'select',
@@ -112,34 +112,6 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'boxedin'   => esc_html__( 'Contained (1170px width)', 'epsilon-framework' ),
 				),
 				'default'     => 'boxedin',
-			),
-			'openhours_row_spacing_top'           => array(
-				'id'          => 'openhours_row_spacing_top',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Padding Top', 'epsilon-framework' ),
-				'description' => esc_html__( 'Adds padding top. ', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
-					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
-					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
-					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
-					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
-				),
-				'default'     => '',
-			),
-			'openhours_row_spacing_bottom'        => array(
-				'id'          => 'openhours_row_spacing_bottom',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Padding Bottom', 'epsilon-framework' ),
-				'description' => esc_html__( 'Adds padding bottom.', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
-					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
-					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
-					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
-					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
-				),
-				'default'     => ''
 			),
 			'openhours_column_alignment'          => array(
 				'id'          => 'openhours_column_alignment',
@@ -168,6 +140,9 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 				'default'     => 'middle'
 			),
 		);
+
+		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
+		
 	}
 
 	/**
@@ -179,17 +154,30 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 		$sizes = Epsilon_Helper::get_image_sizes();
 
 		return array(
-			'openhours_background_color'    => array(
+			'openhours_background_type'        => array(
+				'id'      => 'openhours_background_type',
+				'label'   => esc_html__( 'Background Type', 'epsilon-framework' ),
+				'type'    => 'select',
+				'choices' => array(
+					'bgimage' => __( 'Image', 'epsilon-framework' ),
+					'bgcolor' => __( 'Solid Color', 'epsilon-framework' ),
+				),
+				'group'   => 'background',
+			),
+			'openhours_background_color'       => array(
 				'id'         => 'openhours_background_color',
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
-				//'description' => esc_html__( 'Setting a value for this field will create a color overlay on top of background image/videos.', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
 				'mode'       => 'rgb',
-				'defaultVal' => '',
+				'defaultVal' => '#EEE',
 				'group'      => 'background',
+				'condition'  => array(
+					'openhours_background_type',
+					'bgcolor',
+				),
 			),
-			'openhours_background_image'    => array(
+			'openhours_background_image'       => array(
 				'id'          => 'openhours_background_image',
 				'label'       => esc_html__( 'Background Image', 'epsilon-framework' ),
 				'description' => esc_html__( 'Use this field to set a background image. Content will overlay on top of the image.', 'epsilon-framework' ),
@@ -199,12 +187,29 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 				'size'        => 'full',
 				'sizeArray'   => $sizes,
 				'mode'        => 'url',
+				'condition'   => array(
+					'openhours_background_type',
+					'bgimage',
+				),
 			),
-			'openhours_background_position' => array(
+			'openhours_background_image_color' => array(
+				'id'         => 'openhours_background_color',
+				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
+				'default'    => '',
+				'type'       => 'epsilon-color-picker',
+				'mode'       => 'rgb',
+				'defaultVal' => '',
+				'group'      => 'background',
+				'condition'  => array(
+					'openhours_background_type',
+					'bgimage',
+				),
+			),
+			'openhours_background_position'    => array(
 				'id'          => 'openhours_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
-				'default'     => '',
+				'default'     => 'center',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -218,12 +223,16 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'bottom'      => __( 'Bottom', 'epsilon-framework' ),
 					'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'openhours_background_type',
+					'bgimage',
+				),
 			),
-			'openhours_background_size'     => array(
+			'openhours_background_size'        => array(
 				'id'          => 'openhours_background_size',
 				'label'       => esc_html__( 'Background Stretch', 'epsilon-framework' ),
 				'description' => esc_html__( 'We usually recommend using cover as a default option.', 'epsilon-framework' ),
-				'default'     => '',
+				'default'     => 'cover',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -231,12 +240,17 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'contain' => __( 'Contain', 'epsilon-framework' ),
 					'initial' => __( 'Initial', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'openhours_background_type',
+					'bgimage',
+				),
+
 			),
-			'openhours_background_repeat'   => array(
+			'openhours_background_repeat'      => array(
 				'id'          => 'openhours_background_repeat',
 				'label'       => esc_html__( 'Background Repeat', 'epsilon-framework' ),
 				'description' => esc_html__( 'Set to background-repeat if you are using patterns. For parallax, we recommend setting to no-repeat.', 'epsilon-framework' ),
-				'default'     => '',
+				'default'     => 'no-repeat',
 				'type'        => 'select',
 				'group'       => 'background',
 				'choices'     => array(
@@ -245,15 +259,24 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'repeat-y'  => __( 'Repeat Y', 'epsilon-framework' ),
 					'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 				),
+				'condition'   => array(
+					'openhours_background_type',
+					'bgimage',
+				),
 			),
-			'openhours_background_parallax' => array(
+			'openhours_background_parallax'    => array(
 				'id'          => 'openhours_background_parallax',
 				'label'       => esc_html__( 'Background Parallax', 'epsilon-framework' ),
 				'description' => esc_html__( 'Toggling this to ON will enable the parallax effect. Make sure you have a  background image set before enabling it.', 'epsilon-framework' ),
 				'default'     => false,
 				'type'        => 'epsilon-toggle',
 				'group'       => 'background',
+				'condition'   => array(
+					'openhours_background_type',
+					'bgimage',
+				),
 			),
+
 		);
 	}
 
@@ -264,7 +287,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 	 */
 	public function color_fields() {
 		return array(
-			'openhours_heading_color' => array(
+			'openhours_title_misc_font_color' => array(
 				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -275,7 +298,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'openhours_text_color'    => array(
+			'openhours_text_misc_font_color'    => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -329,6 +352,12 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 				'type'              => 'text',
 				'default'           => esc_html__( 'CTA button', 'portum' ),
 				'sanitize_callback' => 'sanitize_textfield',
+			),
+			'openhours_button_primary_url'   => array(
+				'label'             => esc_html__( 'Button URL', 'portum' ),
+				'type'              => 'text',
+				'default'           => esc_url( 'https://google.com' ),
+				'sanitize_callback' => 'esc_url_raw',
 			),
 			'openhours_grouping'             => array(
 				'label'       => esc_html__( 'Filter shown open hours schedule', 'portum' ),

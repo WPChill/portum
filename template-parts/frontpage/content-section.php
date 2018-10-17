@@ -23,15 +23,18 @@ $pages = new WP_Query( array(
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'content', Portum_Repeatable_Sections::get_instance() );
 
+if ( empty( $fields['content_section_unique_id'] ) ) {
+	$fields['content_section_unique_id'] = Portum_Helper::generate_section_id( 'content' );
+}
 $parent_attr = array(
-	'id'    => ! empty( $fields['content_section_unique_id'] ) ? array( $fields['content_section_unique_id'] ) : array(),
+	'id'    => array( $fields['content_section_unique_id'] ),
 	'class' => array( 'ewf-section', 'ewf-section-' . $fields['content_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 ?>
 
 <section class="content content-section" data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'content', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['content_section_unique_id'], 'content', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'content' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php

@@ -11,8 +11,13 @@ $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' 
 $fields    = $frontpage->sections[ $section_id ];
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'cta', Portum_Repeatable_Sections::get_instance() );
+
+if ( empty( $fields['cta_section_unique_id'] ) ) {
+	$fields['cta_section_unique_id'] = Portum_Helper::generate_section_id( 'cta' );
+}
+
 $parent_attr = array(
-	'id'    => ! empty( $fields['cta_section_unique_id'] ) ? array( $fields['cta_section_unique_id'] ) : array(),
+	'id'    => array( $fields['cta_section_unique_id'] ),
 	'class' => array( 'section-cta', 'section', 'ewf-section', 'ewf-section-' . $fields['cta_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
@@ -41,7 +46,7 @@ if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_tit
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'cta', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['cta_section_unique_id'], 'cta', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 

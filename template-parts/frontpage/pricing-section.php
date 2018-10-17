@@ -18,8 +18,12 @@ $span      = 12 / absint( $fields['pricing_column_group'] );
 $fields['pricing_boxes']          = $frontpage->get_repeater_field( $fields['pricing_repeater_field'], array(), $grouping );
 $fields['pricing_column_spacing'] = isset( $fields['pricing_column_spacing'] ) ? $fields['pricing_column_spacing'] : '';
 $attr_helper                      = new Epsilon_Section_Attr_Helper( $fields, 'pricing', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['pricing_section_unique_id'] ) ) {
+	$fields['pricing_section_unique_id'] = Portum_Helper::generate_section_id( 'pricing' );
+}
+
 $parent_attr                      = array(
-	'id'    => ! empty( $fields['pricing_section_unique_id'] ) ? array( $fields['pricing_section_unique_id'] ) : array(),
+	'id'    => array( $fields['pricing_section_unique_id'] ),
 	'class' => array(
 		'section-pricing',
 		'section',
@@ -55,7 +59,7 @@ $item_class = 'col-sm-' . ( 12 / absint( $fields['pricing_column_group'] ) );
 
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'pricing', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['pricing_section_unique_id'], 'pricing', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'pricing' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php

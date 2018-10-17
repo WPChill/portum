@@ -17,9 +17,12 @@ $grouping  = array(
 $fields['clients']                   = $frontpage->get_repeater_field( $fields['clientlist_repeater_field'], array(), $grouping );
 $attr_helper                         = new Epsilon_Section_Attr_Helper( $fields, 'clientlist', Portum_Repeatable_Sections::get_instance() );
 $fields['clientlist_column_spacing'] = isset( $fields['clientlist_column_spacing'] ) ? $fields['clientlist_column_spacing'] : '';
+if ( empty( $fields['clientlist_section_unique_id'] ) ) {
+	$fields['clientlist_section_unique_id'] = Portum_Helper::generate_section_id( 'clientlist' );
+}
 
 $parent_attr = array(
-	'id'    => ! empty( $fields['clientlist_section_unique_id'] ) ? array( $fields['clientlist_section_unique_id'] ) : array(),
+	'id'    => array( $fields['clientlist_section_unique_id'] ),
 	'class' => array(
 		'section-clientlist',
 		'section',
@@ -29,11 +32,6 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 $span        = 12 / absint( $fields['clientlist_column_group'] );
-
-if ( $fields['clientlist_slider'] ) {
-	wp_enqueue_script( 'slick' );
-	wp_enqueue_style( 'slick' );
-}
 
 /**
  * Layout stuff
@@ -58,11 +56,31 @@ if ( 'left' == $fields['clientlist_row_title_align'] || 'right' == $fields['clie
 }
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['clientlist_column_group'] ) );
 $item_effect_style = ( ! empty( $fields['clientlist_item_style'] ) ? esc_attr( $fields['clientlist_item_style'] ) : 'ewf-item__no-effect' );
+
+/**
+ * Item Style
+ */
+$item_element_class = '';
+$item_style         = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_element_class = $fields['item_style'];
+}else{
+	$item_element_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+	
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
 // end layout stuff
 
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'clientlist', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['clientlist_section_unique_id'], 'clientlist', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
@@ -87,7 +105,7 @@ $item_effect_style = ( ! empty( $fields['clientlist_item_style'] ) ? esc_attr( $
 
 							<?php foreach ( $fields['clients'] as $key => $client ) { ?>
 								<div class="<?php echo esc_attr( $item_class ); ?>">
-									<li class="ewf-partner">
+									<li class="ewf-partner <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 										<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_clientlists_section', 'portum_clients' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 										<?php if ( ! empty( $client['client_url'] ) ) { ?>

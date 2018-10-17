@@ -183,6 +183,11 @@ var Portum = {
 					let self = jQuery( element );
 
 					let slider = self.find( '.ewf-slider__slides' );
+					let slides = slider.children().length;
+					let slidesToShow = self.data( 'slides-shown' );
+					if ( slidesToShow > slides ) {
+						slidesToShow = slides;
+					}
 
 					if ( slider.hasClass( 'slick-initialized' ) ) {
 						return true;
@@ -190,7 +195,7 @@ var Portum = {
 
 					slider.slick( {
 						//lazyLoad: self.data( 'slider-lazyload' ) ? 'ondemand' : false,
-						slidesToShow: self.data( 'slides-shown' ),
+						slidesToShow: slidesToShow,
 						slidesToScroll: self.data( 'slides-scrolled' ),
 						//centerMode: self.data( 'slides-centermode' ),
 						adaptiveHeight: false,
@@ -615,6 +620,8 @@ var Portum = {
 
 				e.preventDefault();
 
+				jQuery(this).toggleClass( 'is-opened' );
+
 				if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-show-nav' ) ) {
 					jQuery( '#portum-site-wrapper, #offcanvas' ).removeClass( 'portum-show-nav' );
 					jQuery( '#portum-site-wrapper, #offcanvas' ).addClass( 'portum-closed-nav' );
@@ -624,13 +631,11 @@ var Portum = {
 				}
 			} );
 
-			jQuery( '.menu-item-has-children a' ).on( 'click', function( e ) {
-				e.preventDefault();
-				jQuery( this ).toggleClass( 'is-active' ).next().toggleClass( 'is-visible' );
-			} );
-
-			jQuery( '.menu-item-has-children' ).on( 'click', '*', function( e ) {
-				e.stopPropagation();
+			jQuery( '.menu-item-has-children' ).click( function( e ) {
+				if ( 'a' != e.target.tagName.toLowerCase() ) {
+					e.preventDefault();
+					jQuery( this ).find( '> a' ).toggleClass( 'is-active' ).next().toggleClass( 'is-visible' );
+				}
 			} );
 		}
 	},

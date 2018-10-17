@@ -15,8 +15,12 @@ $grouping            = array(
 $fields['openhours'] = $frontpage->get_repeater_field( $fields['openhours_repeater_field'], array(), $grouping );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'openhours', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['openhours_section_unique_id'] ) ) {
+	$fields['openhours_section_unique_id'] = Portum_Helper::generate_section_id( 'openhours' );
+}
+
 $parent_attr = array(
-	'id'    => ! empty( $fields['openhours_section_unique_id'] ) ? array( $fields['openhours_section_unique_id'] ) : array(),
+	'id'    => array( $fields['openhours_section_unique_id'] ),
 	'class' => array(
 		'section-openhours',
 		'section',
@@ -55,7 +59,7 @@ if ( 'left' == $fields['openhours_row_title_align'] || 'right' == $fields['openh
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
-	<?php //Portum_Helper::generate_inline_css( $section_id, 'openhours', $fields ); ?>
+	<?php Portum_Helper::generate_inline_css( $fields['openhours_section_unique_id'], 'openhours', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'openhours' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>

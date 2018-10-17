@@ -12,9 +12,12 @@ $fields      = $frontpage->sections[ $section_id ];
 $video       = Portum_Helper::video_type( $fields['video_id'] );
 $row_class   = '';
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'video', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['video_section_unique_id'] ) ) {
+	$fields['video_section_unique_id'] = Portum_Helper::generate_section_id( 'video' );
+}
 
 $parent_attr = array(
-	'id'    => ! empty( $fields['video_section_unique_id'] ) ? array( $fields['video_section_unique_id'] ) : array(),
+	'id'    => array( $fields['video_section_unique_id'] ),
 	'class' => array( 'section-video', 'section', 'ewf-section', 'ewf-section-' . $fields['video_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
@@ -59,6 +62,7 @@ if ( 'left' == $fields['video_row_title_align'] || 'right' == $fields['video_row
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_inline_css( $fields['video_section_unique_id'], 'video', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
