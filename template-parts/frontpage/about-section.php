@@ -42,8 +42,6 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 		$row_class = 'row-column-reverse';
 	}
 }
-	
-print_r( $fields );
 
 //end layout stuff
 ?>
