@@ -13,35 +13,36 @@ if ( ! defined( 'WPINC' ) ) {
 require_once dirname( __FILE__ ) . '/repeatable-section.php';
 
 /**
- * Class Repeatable_Section_Video
+ * Class Repeatable_Section_Newsletter
  */
-class Repeatable_Section_Video extends Repeatable_Section {
+class Repeatable_Section_Newsletter extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
 	public function set_id() {
-		$this->id = 'video';
+		$this->id = 'newsletter';
 	}
 
 	/**
 	 * Sets section title
 	 */
 	public function set_title() {
-		$this->title = esc_html__( 'Video', 'portum' );
+		$this->title = esc_html__( 'Newsletter', 'portum' );
 	}
 
 	/**
 	 * Description
 	 */
 	public function set_description() {
-		$this->description = esc_html__( 'A section witch allows you to add a video', 'portum' );
+		$this->description = esc_html__( 'Add a MailChimp form.', 'portum' );
 	}
 
 	/**
 	 * Sets section image
 	 */
 	public function set_image() {
-		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' );
+		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-about-pt.png' );
 	}
 
 	/**
@@ -81,12 +82,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -96,8 +92,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function layout_fields() {
 		$custom_fields = array(
-			'video_row_title_align'           => array(
-				'id'          => 'video_row_title_align',
+			'newsletter_row_title_align'           => array(
+				'id'          => 'newsletter_row_title_align',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Layout', 'epsilon-framework' ),
 				'description' => esc_html__( 'All sections support an alternating layout. The layout changes based on a section\'s title position. Currently available options are: title left / content right -- title center / content center -- title right / content left ', 'epsilon-framework' ),
@@ -108,10 +104,10 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
-			'video_column_stretch'            => array(
-				'id'          => 'video_column_stretch',
+			'newsletter_column_stretch'            => array(
+				'id'          => 'newsletter_column_stretch',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Width', 'epsilon-framework' ),
 				'description' => esc_html__( 'Make the section stretch to full-width. Contained is default. There\'s also the option of boxed center. ', 'epsilon-framework' ),
@@ -122,8 +118,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				),
 				'default'     => 'boxedin',
 			),
-			'video_column_alignment'          => array(
-				'id'          => 'video_column_alignment',
+			'newsletter_column_alignment'          => array(
+				'id'          => 'newsletter_column_alignment',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Horizontal Alignment', 'epsilon-framework' ),
 				'description' => esc_html__( 'Center/Left/Right align all of a sections content.', 'epsilon-framework' ),
@@ -133,10 +129,10 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
-			'video_column_vertical_alignment' => array(
-				'id'          => 'video_column_vertical_alignment',
+			'newsletter_column_vertical_alignment' => array(
+				'id'          => 'newsletter_column_vertical_alignment',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Vertical Alignment', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend leaving this to center, but feel free to experiment with the options. Top/Bottom align can be useful when you have a layout of text + image on the same line.', 'epsilon-framework' ),
@@ -146,12 +142,11 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
 
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
 	}
 
 	/**
@@ -163,8 +158,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 		$sizes = Epsilon_Helper::get_image_sizes();
 
 		return array(
-			'video_background_type'        => array(
-				'id'      => 'video_background_type',
+			'newsletter_background_type'        => array(
+				'id'      => 'newsletter_background_type',
 				'label'   => esc_html__( 'Background Type', 'epsilon-framework' ),
 				'type'    => 'select',
 				'choices' => array(
@@ -173,8 +168,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				),
 				'group'   => 'background',
 			),
-			'video_background_color'       => array(
-				'id'         => 'video_background_color',
+			'newsletter_background_color'       => array(
+				'id'         => 'newsletter_background_color',
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
@@ -182,12 +177,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'defaultVal' => '#EEE',
 				'group'      => 'background',
 				'condition'  => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgcolor',
 				),
 			),
-			'video_background_image'       => array(
-				'id'          => 'video_background_image',
+			'newsletter_background_image'       => array(
+				'id'          => 'newsletter_background_image',
 				'label'       => esc_html__( 'Background Image', 'epsilon-framework' ),
 				'description' => esc_html__( 'Use this field to set a background image. Content will overlay on top of the image.', 'epsilon-framework' ),
 				'type'        => 'epsilon-image',
@@ -197,12 +192,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'sizeArray'   => $sizes,
 				'mode'        => 'url',
 				'condition'   => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_image_color' => array(
-				'id'         => 'video_background_color',
+			'newsletter_background_image_color' => array(
+				'id'         => 'newsletter_background_color',
 				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
@@ -210,12 +205,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'defaultVal' => '',
 				'group'      => 'background',
 				'condition'  => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_position'    => array(
-				'id'          => 'video_background_position',
+			'newsletter_background_position'    => array(
+				'id'          => 'newsletter_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
 				'default'     => 'center',
@@ -233,12 +228,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_size'        => array(
-				'id'          => 'video_background_size',
+			'newsletter_background_size'        => array(
+				'id'          => 'newsletter_background_size',
 				'label'       => esc_html__( 'Background Stretch', 'epsilon-framework' ),
 				'description' => esc_html__( 'We usually recommend using cover as a default option.', 'epsilon-framework' ),
 				'default'     => 'cover',
@@ -250,13 +245,13 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'initial' => __( 'Initial', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgimage',
 				),
 
 			),
-			'video_background_repeat'      => array(
-				'id'          => 'video_background_repeat',
+			'newsletter_background_repeat'      => array(
+				'id'          => 'newsletter_background_repeat',
 				'label'       => esc_html__( 'Background Repeat', 'epsilon-framework' ),
 				'description' => esc_html__( 'Set to background-repeat if you are using patterns. For parallax, we recommend setting to no-repeat.', 'epsilon-framework' ),
 				'default'     => 'no-repeat',
@@ -269,19 +264,19 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_parallax'    => array(
-				'id'          => 'video_background_parallax',
+			'newsletter_background_parallax'    => array(
+				'id'          => 'newsletter_background_parallax',
 				'label'       => esc_html__( 'Background Parallax', 'epsilon-framework' ),
 				'description' => esc_html__( 'Toggling this to ON will enable the parallax effect. Make sure you have a  background image set before enabling it.', 'epsilon-framework' ),
 				'default'     => false,
 				'type'        => 'epsilon-toggle',
 				'group'       => 'background',
 				'condition'   => array(
-					'video_background_type',
+					'newsletter_background_type',
 					'bgimage',
 				),
 			),
@@ -296,7 +291,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function color_fields() {
 		return array(
-			'video_title_misc_font_color' => array(
+			'newsletter_title_misc_font_color' => array(
 				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -307,7 +302,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'video_text_misc_font_color'    => array(
+			'newsletter_text_misc_font_color'    => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -328,70 +323,23 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function normal_fields() {
 		return array(
-			'video_id'                => array(
-				'label'             => esc_html__( 'Video URL', 'portum' ),
-				'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
-				'type'              => 'text',
-				'default'           => 'https://vimeo.com/104779334',
-				'sanitize_callback' => 'esc_url_raw',
-			),
-			'video_show_controls'     => array(
-				'label'       => esc_html__( 'Show video controls', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will show video controls like: play, pause, stop, etc.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => false,
-			),
-			'video_auto_loop'         => array(
-				'label'       => esc_html__( 'Video loop', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will make your video run on repeat mode. Goes great with muted videos that you want looped.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => true,
-			),
-			'video_mute_mode'         => array(
-				'label'       => esc_html__( 'Video muted', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will make your video run muted aka with no sound. This works great for videos you want looped.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => true,
-			),
-			'video_autoplay'          => array(
-				'label'       => esc_html__( 'Video Autoplay', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will make your video autoplay.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => true,
-			),
-			'video_max_height'        => array(
-				'label'       => esc_html__( 'Max Video Section Height', 'portum' ),
-				'description' => esc_html__( 'Very useful when displaying videos in full-width mode. Height is in %', 'portum' ),
-				'type'        => 'epsilon-slider',
-				'default'     => 500,
-				'choices'     => array(
-					'min'  => 10,
-					'max'  => 100,
-					'step' => 5,
-				),
-			),
-			'video_title'             => array(
+			'newsletter_title'                => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => esc_html__( 'Let\'s stay in touch', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'video_subtitle'          => array(
-				'label'             => esc_html__( 'Description', 'portum' ),
+			'newsletter_subtitle'             => array(
+				'label'             => esc_html__( 'Subtitle', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => wp_kses_post( 'SUBSCRIBE' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'video_text'              => array(
-				'label'             => esc_html__( 'Information', 'portum' ),
-				'type'              => 'textarea',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'video_section_unique_id' => array(
-				'label'             => esc_html__( 'Section ID', 'portum' ),
+			'newsletter_list'                 => array(
+				'label'             => esc_html__( 'MailChimp Action URL', 'portum' ),
 				'type'              => 'text',
-				'sanitize_callback' => 'sanitize_key',
+				'description'       => sprintf( __( 'The newsletter form use MailChimp, please follow %sthis guide%s to know how to get MailChimp Action URL. Example %s//machothemes.us8.list-manage.com/subscribe/post?u=5fbef7ba912fe9223dc3da15b&amp;id=27b882f32d%s', 'portum' ), '<a target="_blank" href="https://wpexplorer-themes.com/total/docs/mailchimp-form-action-url/">', '</a>', '<i>', '</i>' ),
+				'sanitize_callback' => 'esc_url',
 			),
 		);
 	}

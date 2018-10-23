@@ -110,9 +110,9 @@ if ( ! empty( $fields['services_slider'] ) ) {
 					<div class="<?php echo esc_attr( $content_class ); ?>">
 
 						<?php if ( ! empty( $fields['services_slider'] ) ) { ?>
-						<div class="ewf-slider" data-slider-mode-fade="false" data-slider-speed="<?php echo ! empty( $fields['services_slider_speed'] ) ? absint( $fields['services_slider_speed'] ) : '500'; ?>" data-slider-autoplay="<?php echo $fields['services_slider_autostart'] ? 'true' : 'false'; ?>" data-slides-shown="<?php echo $fields['services_slides_shown'] ? esc_attr( $fields['services_slides_shown'] ) : '1'; ?>" data-slides-scrolled="<?php echo $fields['services_slides_scrolled'] ? esc_attr( $fields['services_slides_scrolled'] ) : '1'; ?>" data-slides-centermode="<?php echo $fields['services_slides_centermode'] ? esc_attr( $fields['services_slides_centermode'] ) : '1'; ?>" data-slider-loop="<?php echo $fields['services_slider_infinite'] ? 'true' : 'false'; ?>" data-slider-enable-pager="<?php echo $fields['services_slider_pager'] ? 'true' : 'false'; ?>" data-slider-enable-controls="<?php echo $fields['services_slider_controls'] ? 'true' : 'false'; ?>">
+						<div class="ewf-slider" data-slider-mode-fade="false" data-slider-speed="<?php echo ! empty( $fields['services_slider_speed'] ) ? absint( $fields['services_slider_speed'] ) : '500'; ?>" data-slider-autoplay="<?php echo $fields['services_slider_autostart'] ? 'true' : 'false'; ?>" data-slides-shown="<?php echo $fields['services_slides_shown'] ? esc_attr( $fields['services_slides_shown'] ) : '1'; ?>" data-slides-scrolled="<?php echo $fields['services_slides_scrolled'] ? esc_attr( $fields['services_slides_scrolled'] ) : '1'; ?>" data-slider-loop="<?php echo $fields['services_slider_infinite'] ? 'true' : 'false'; ?>" data-slider-enable-pager="<?php echo $fields['services_slider_pager'] ? 'true' : 'false'; ?>" data-slider-enable-controls="<?php echo $fields['services_slider_controls'] ? 'true' : 'false'; ?>">
 
-							<ul class="ewf-slider__slides">
+							<div class="ewf-slider__slides">
 								<?php } ?>
 
 								<?php if ( empty( $fields['services_slider'] ) ) { ?>
@@ -133,7 +133,7 @@ if ( ! empty( $fields['services_slider'] ) ) {
 										?>
 
 										<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-											<li class="services-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+											<div class="services-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 												<?php
 												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
 												?>
@@ -150,13 +150,13 @@ if ( ! empty( $fields['services_slider'] ) ) {
 												<?php if ( ! empty( $service['service_description'] ) ) { ?>
 													<p><?php echo wp_kses_post( $service['service_description'] ); ?></p>
 												<?php } ?>
-											</li><!--/.services-item-->
+											</div><!--/.services-item-->
 										</div><!--/.col-sm-->
 
 									<?php }//end foreach ?>
 
 									<?php if ( ! empty( $fields['services_slider'] ) ) { ?>
-							</ul><!--/.ewf-slider__slides-->
+							</div><!--/.ewf-slider__slides-->
 							<div class="ewf-slider__pager"></div>
 							<div class="ewf-slider__arrows"></div>
 						</div><!--/.ewf-slider-->

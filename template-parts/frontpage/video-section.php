@@ -7,6 +7,10 @@
  * @package Portum
  */
 
+if ( ! is_customize_preview() && ! defined( 'EPSILON_FRAMEWORK_PRO_VERSION' ) ) {
+	return;
+}
+
 $frontpage   = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields      = $frontpage->sections[ $section_id ];
 $video       = Portum_Helper::video_type( $fields['video_id'] );
@@ -68,7 +72,7 @@ if ( 'left' == $fields['video_row_title_align'] || 'right' == $fields['video_row
 		<?php
 		$attr_helper->generate_color_overlay();
 		?>
-
+		<div class="upsell-section">
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'video', $fields ) ); ?>">
 
@@ -92,5 +96,6 @@ if ( 'left' == $fields['video_row_title_align'] || 'right' == $fields['video_row
 				</div><!--/.row-->
 			</div><!--/.container-class-->
 		</div><!--/.ewf-section__content-->
+		</div>
 	</div><!--/.generate-attribute-->
 </section><!--/.video-section-->

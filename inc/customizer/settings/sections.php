@@ -177,6 +177,7 @@ $sections = array(
 			'type'     => 'epsilon-section-doubled',
 		),
 	),
+
 	array(
 		'id'   => 'portum_portfolio_section',
 		'args' => array(
@@ -255,6 +256,15 @@ $sections = array(
 			'title'    => esc_html__( 'Features', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
 			'priority' => 14,
+			'type'     => 'epsilon-section-doubled',
+		),
+	),
+	array(
+		'id'   => 'portum_iconboxes_section',
+		'args' => array(
+			'title'    => esc_html__( 'Icons', 'portum' ),
+			'panel'    => 'portum_panel_section_content',
+			'priority' => 15,
 			'type'     => 'epsilon-section-doubled',
 		),
 	),

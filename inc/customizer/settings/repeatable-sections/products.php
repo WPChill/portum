@@ -13,44 +13,35 @@ if ( ! defined( 'WPINC' ) ) {
 require_once dirname( __FILE__ ) . '/repeatable-section.php';
 
 /**
- * Class Repeatable_Section_Video
+ * Class Repeatable_Section_Products
  */
-class Repeatable_Section_Video extends Repeatable_Section {
+class Repeatable_Section_Products extends Repeatable_Section {
 	/**
 	 * Sets the section id
 	 */
 	public function set_id() {
-		$this->id = 'video';
+		$this->id = 'products';
 	}
 
 	/**
 	 * Sets section title
 	 */
 	public function set_title() {
-		$this->title = esc_html__( 'Video', 'portum' );
+		$this->title = esc_html__( 'Products', 'portum' );
 	}
 
 	/**
 	 * Description
 	 */
 	public function set_description() {
-		$this->description = esc_html__( 'A section witch allows you to add a video', 'portum' );
+		$this->description = esc_html__( 'Products Section', 'portum' );
 	}
 
 	/**
 	 * Sets section image
 	 */
 	public function set_image() {
-		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-video-pt.png' );
-	}
-
-	/**
-	 * Upsell
-	 */
-	public function set_upsell() {
-		$this->upsell = true;
-		$this->upsell_url = '#';
-		$this->upsell_text = 'See PRO';
+		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-blog.jpg' );
 	}
 
 	/**
@@ -96,8 +87,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function layout_fields() {
 		$custom_fields = array(
-			'video_row_title_align'           => array(
-				'id'          => 'video_row_title_align',
+			'products_row_title_align'           => array(
+				'id'          => 'products_row_title_align',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Layout', 'epsilon-framework' ),
 				'description' => esc_html__( 'All sections support an alternating layout. The layout changes based on a section\'s title position. Currently available options are: title left / content right -- title center / content center -- title right / content left ', 'epsilon-framework' ),
@@ -110,8 +101,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				),
 				'default'     => ''
 			),
-			'video_column_stretch'            => array(
-				'id'          => 'video_column_stretch',
+			'products_column_stretch'            => array(
+				'id'          => 'products_column_stretch',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Width', 'epsilon-framework' ),
 				'description' => esc_html__( 'Make the section stretch to full-width. Contained is default. There\'s also the option of boxed center. ', 'epsilon-framework' ),
@@ -122,31 +113,31 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				),
 				'default'     => 'boxedin',
 			),
-			'video_column_alignment'          => array(
-				'id'          => 'video_column_alignment',
+			'products_column_group'              => array(
+				'id'          => 'products_column_group',
 				'type'        => 'select',
-				'label'       => esc_html__( 'Horizontal Alignment', 'epsilon-framework' ),
-				'description' => esc_html__( 'Center/Left/Right align all of a sections content.', 'epsilon-framework' ),
+				'label'       => __( 'Item Group', 'epsilon-framework' ),
+				'description' => __( 'Number of items to display at once. Example: 2, 3 or 4 pricing tables. The width of the content will be equally split among the number of elements you select.', 'epsilon-framework' ),
 				'group'       => 'layout',
-				'choices'     => array(
-					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
-					'center' => esc_html__( 'Center', 'epsilon-framework' ),
-					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
+				'default' => 3,
+				'choices' => array(
+					2   => esc_html__( '2 columns', 'epsilon-framework' ),
+					3   => esc_html__( '3 columns', 'epsilon-framework' ),
+					4   => esc_html__( '4 columns', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
 			),
-			'video_column_vertical_alignment' => array(
-				'id'          => 'video_column_vertical_alignment',
+			'products_column_spacing'           => array(
+				'id'          => 'products_column_spacing',
 				'type'        => 'select',
-				'label'       => esc_html__( 'Vertical Alignment', 'epsilon-framework' ),
-				'description' => esc_html__( 'We recommend leaving this to center, but feel free to experiment with the options. Top/Bottom align can be useful when you have a layout of text + image on the same line.', 'epsilon-framework' ),
+				'label'       => esc_html__( 'Item Spacing', 'epsilon-framework' ),
 				'group'       => 'layout',
 				'choices'     => array(
-					'top'    => esc_html__( 'Top', 'epsilon-framework' ),
-					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
-					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
+					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
+					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
+					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
+					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'lg',
 			),
 		);
 
@@ -163,8 +154,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 		$sizes = Epsilon_Helper::get_image_sizes();
 
 		return array(
-			'video_background_type'        => array(
-				'id'      => 'video_background_type',
+			'products_background_type'        => array(
+				'id'      => 'products_background_type',
 				'label'   => esc_html__( 'Background Type', 'epsilon-framework' ),
 				'type'    => 'select',
 				'choices' => array(
@@ -173,8 +164,8 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				),
 				'group'   => 'background',
 			),
-			'video_background_color'       => array(
-				'id'         => 'video_background_color',
+			'products_background_color'       => array(
+				'id'         => 'products_background_color',
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
@@ -182,12 +173,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'defaultVal' => '#EEE',
 				'group'      => 'background',
 				'condition'  => array(
-					'video_background_type',
+					'products_background_type',
 					'bgcolor',
 				),
 			),
-			'video_background_image'       => array(
-				'id'          => 'video_background_image',
+			'products_background_image'       => array(
+				'id'          => 'products_background_image',
 				'label'       => esc_html__( 'Background Image', 'epsilon-framework' ),
 				'description' => esc_html__( 'Use this field to set a background image. Content will overlay on top of the image.', 'epsilon-framework' ),
 				'type'        => 'epsilon-image',
@@ -197,12 +188,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'sizeArray'   => $sizes,
 				'mode'        => 'url',
 				'condition'   => array(
-					'video_background_type',
+					'products_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_image_color' => array(
-				'id'         => 'video_background_color',
+			'products_background_image_color' => array(
+				'id'         => 'products_background_color',
 				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
@@ -210,12 +201,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'defaultVal' => '',
 				'group'      => 'background',
 				'condition'  => array(
-					'video_background_type',
+					'products_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_position'    => array(
-				'id'          => 'video_background_position',
+			'products_background_position'    => array(
+				'id'          => 'products_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
 				'default'     => 'center',
@@ -233,12 +224,12 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'video_background_type',
+					'products_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_size'        => array(
-				'id'          => 'video_background_size',
+			'products_background_size'        => array(
+				'id'          => 'products_background_size',
 				'label'       => esc_html__( 'Background Stretch', 'epsilon-framework' ),
 				'description' => esc_html__( 'We usually recommend using cover as a default option.', 'epsilon-framework' ),
 				'default'     => 'cover',
@@ -250,13 +241,13 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'initial' => __( 'Initial', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'video_background_type',
+					'products_background_type',
 					'bgimage',
 				),
 
 			),
-			'video_background_repeat'      => array(
-				'id'          => 'video_background_repeat',
+			'products_background_repeat'      => array(
+				'id'          => 'products_background_repeat',
 				'label'       => esc_html__( 'Background Repeat', 'epsilon-framework' ),
 				'description' => esc_html__( 'Set to background-repeat if you are using patterns. For parallax, we recommend setting to no-repeat.', 'epsilon-framework' ),
 				'default'     => 'no-repeat',
@@ -269,19 +260,19 @@ class Repeatable_Section_Video extends Repeatable_Section {
 					'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'video_background_type',
+					'products_background_type',
 					'bgimage',
 				),
 			),
-			'video_background_parallax'    => array(
-				'id'          => 'video_background_parallax',
+			'products_background_parallax'    => array(
+				'id'          => 'products_background_parallax',
 				'label'       => esc_html__( 'Background Parallax', 'epsilon-framework' ),
 				'description' => esc_html__( 'Toggling this to ON will enable the parallax effect. Make sure you have a  background image set before enabling it.', 'epsilon-framework' ),
 				'default'     => false,
 				'type'        => 'epsilon-toggle',
 				'group'       => 'background',
 				'condition'   => array(
-					'video_background_type',
+					'products_background_type',
 					'bgimage',
 				),
 			),
@@ -296,7 +287,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function color_fields() {
 		return array(
-			'video_title_misc_font_color' => array(
+			'products_title_misc_font_color' => array(
 				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -307,7 +298,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'video_text_misc_font_color'    => array(
+			'products_text_misc_font_color'    => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',
@@ -328,67 +319,29 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function normal_fields() {
 		return array(
-			'video_id'                => array(
-				'label'             => esc_html__( 'Video URL', 'portum' ),
-				'description'       => esc_html__( 'Paste the URL of your video ( YouTube or Vimeo )', 'portum' ),
-				'type'              => 'text',
-				'default'           => 'https://vimeo.com/104779334',
-				'sanitize_callback' => 'esc_url_raw',
-			),
-			'video_show_controls'     => array(
-				'label'       => esc_html__( 'Show video controls', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will show video controls like: play, pause, stop, etc.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => false,
-			),
-			'video_auto_loop'         => array(
-				'label'       => esc_html__( 'Video loop', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will make your video run on repeat mode. Goes great with muted videos that you want looped.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => true,
-			),
-			'video_mute_mode'         => array(
-				'label'       => esc_html__( 'Video muted', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will make your video run muted aka with no sound. This works great for videos you want looped.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => true,
-			),
-			'video_autoplay'          => array(
-				'label'       => esc_html__( 'Video Autoplay', 'portum' ),
-				'description' => esc_html__( 'Turning this to ON will make your video autoplay.', 'portum' ),
-				'type'        => 'epsilon-toggle',
-				'default'     => true,
-			),
-			'video_max_height'        => array(
-				'label'       => esc_html__( 'Max Video Section Height', 'portum' ),
-				'description' => esc_html__( 'Very useful when displaying videos in full-width mode. Height is in %', 'portum' ),
-				'type'        => 'epsilon-slider',
-				'default'     => 500,
-				'choices'     => array(
-					'min'  => 10,
-					'max'  => 100,
-					'step' => 5,
-				),
-			),
-			'video_title'             => array(
+			'title'                   => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => esc_html__( 'Find out the latest products?', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'video_subtitle'          => array(
-				'label'             => esc_html__( 'Description', 'portum' ),
+			'subtitle'                => array(
+				'label'             => esc_html__( 'Subtitle', 'portum' ),
 				'type'              => 'text',
-				'default'           => '',
+				'default'           => esc_html__( 'Products', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'video_text'              => array(
-				'label'             => esc_html__( 'Information', 'portum' ),
-				'type'              => 'textarea',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
+			'products_count'     => array(
+				'label'       => esc_html__( 'Products Count', 'portum' ),
+				'description' => esc_html__( 'Only products with featured image are loaded', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 3,
+				'choices'     => array(
+					'min' => 1,
+					'max' => 10,
+				),
 			),
-			'video_section_unique_id' => array(
+			'section_unique_id'       => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',

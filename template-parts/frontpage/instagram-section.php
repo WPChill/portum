@@ -10,29 +10,6 @@
 if ( ! is_customize_preview() && ! defined( 'EPSILON_FRAMEWORK_PRO_VERSION' ) ) {
 	return;
 }
-?>
-<style>
-	.upsell-section::before {
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		width: 300px;
-		content: 'Only in Pro';
-		color: #fff;
-		background-color: red;
-		text-align: center;
-	}
-</style>
-
-<?php
-/**
- * Template part for displaying a frontpage section
- *
- * @link    https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Portum
- */
-
 
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
@@ -75,7 +52,7 @@ if ( 'left' == $fields['instagram_row_title_align'] || 'right' == $fields['insta
 	<?php echo Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'upsell' ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<div class="upsell-section" style="position:relative">
+		<div class="upsell-section">
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'instagram', $fields ) ); ?>">
 

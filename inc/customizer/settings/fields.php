@@ -477,6 +477,51 @@ Epsilon_Customizer::add_field( 'portum_services', array(
 ) );
 
 /**
+ * Icons
+ */
+Epsilon_Customizer::add_field( 'portum_icons', array(
+	'type'         => 'epsilon-repeater',
+	'section'      => 'portum_iconboxes_section',
+	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'        => esc_html__( 'Icons', 'portum' ),
+	'button_label' => esc_html__( 'Add new icon', 'portum' ),
+	'row_label'    => array(
+		'type'  => 'field',
+		'field' => 'icon_title',
+	),
+	'fields'       => array(
+		'icon_title'              => array(
+			'label'             => esc_html__( 'Title', 'portum' ),
+			'type'              => 'text',
+			'sanitize_callback' => 'wp_kses_post',
+			'default'           => 'Business',
+		),
+		'icon'               => array(
+			'label'   => esc_html__( 'Icon', 'portum' ),
+			'type'    => 'epsilon-icon-picker',
+			'default' => 'fa fa-500px',
+			'groups'  => array( 'general' ),
+		),
+		'icon_color'         => array(
+			'label'   => esc_html__( 'Icon Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '#FFF',
+		),
+		'icon_size'          => array(
+			'label'       => esc_html__( 'Icon Size', 'portum' ),
+			'description' => esc_html__( 'Value is in pixels', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 36,
+			'choices'     => array(
+				'min'  => 36,
+				'max'  => 96,
+				'step' => 5,
+			),
+		),
+	),
+) );
+
+/**
  * features
  */
 Epsilon_Customizer::add_field( 'portum_features', array(

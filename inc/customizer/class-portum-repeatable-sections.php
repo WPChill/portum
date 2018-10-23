@@ -334,4 +334,43 @@ class Portum_Repeatable_Sections {
 		return $section();
 	}
 
+	/**
+	 * Repeatable product section
+	 *
+	 * @return array
+	 */
+	private function repeatable_products() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/products.php';
+
+		$section = new Repeatable_Section_Products;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable product section
+	 *
+	 * @return array
+	 */
+	private function repeatable_icon_boxes() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/icon.php';
+
+		$section = new Repeatable_Section_Icon_Boxes;
+
+		return $section();
+	}
+
+	/**
+	 * Repeatable newsletter section
+	 *
+	 * @return array
+	 */
+	private function repeatable_newsletter() {
+		require_once dirname( __FILE__ ) . '/settings/repeatable-sections/newsletter.php';
+
+		$section = new Repeatable_Section_Newsletter;
+
+		return $section();
+	}
+
 }

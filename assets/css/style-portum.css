@@ -7779,3 +7779,82 @@ body.ctdw-bar-visible #header.header--over-content
 {
     display: block !important;
 }
+
+/* Icon Boxes */
+.inconboxes-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inconboxes-item .ewf-like-h3 {
+    margin: 0;
+}
+.inconboxes-item.icon-left > i {
+    margin-right: 15px;
+}
+.inconboxes-item.icon-right > i {
+    margin-left: 15px;
+}
+.inconboxes-item.icon-top > i {
+    margin-bottom: 15px;
+}
+.inconboxes-item.icon-right {
+    flex-direction: row-reverse;
+}
+.inconboxes-item.icon-top {
+    flex-direction: column;
+}
+
+/* WooCommerce */
+.ewf-section__content .woocommerce-loop-product__title {
+    font-size: 32px;
+    line-height: 40px;
+    line-height: 1.25;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+.woocommerce-loop-product__link:after {
+    content: "";
+    display: block;
+    clear: both
+}
+.ewf-section__content .product .button {
+    margin-top: 12px;
+}
+
+#mc_embed_signup #mc_embed_signup_scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#mc_embed_signup #mc_embed_signup_scroll .mc-field-group {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 10px;
+}
+#mc_embed_signup #mc_embed_signup_scroll .mc-field-group input {
+    width: 100%;
+    margin-bottom: 0;
+    height: 42px;
+    line-height: 32px;
+}
+
+#mc_embed_signup #mc_embed_signup_scroll .mc-button-contianer input {
+    margin-bottom: 0;
+}
+
+/* Upsell */
+.upsell-section {
+    position: relative;
+}
+.upsell-section::before {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 300px;
+    content: 'Only in Pro';
+    color: #fff;
+    background-color: red;
+    text-align: center;
+}
