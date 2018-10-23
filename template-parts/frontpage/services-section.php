@@ -98,7 +98,7 @@ if ( ! empty( $fields['services_slider'] ) ) {
 					<!-- Check if we have a title/subtitle -->
 					<?php if ( ! empty( $fields['services_subtitle'] ) || ! empty( $fields['services_title'] ) ) { ?>
 						<div class="<?php echo esc_attr( $header_class ); ?>">
-							<div class="efw-section-text">
+							<div class="ewf-section-text">
 								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['services_subtitle'], $fields['services_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['services_description'] ) ); ?>
 							</div><!--/.ewf-section-text-->
 						</div><!--/.col-->

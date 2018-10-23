@@ -66,7 +66,7 @@ $item_class = 'col-sm-' . 12 / intval( $fields['accordion_column_group'] );
 
 					<?php if ( ! empty( $fields['accordion_title'] ) || ! empty( $fields['accordion_subtitle'] ) ) { ?>
 						<div class="<?php echo esc_attr( $header_class ); ?>">
-							<div class="efw-section-text">
+							<div class="ewf-section-text">
 								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['accordion_title'], $fields['accordion_subtitle'] ) ); ?>
 								<?php echo wpautop( wp_kses_post( $fields['accordion_text'] ) ); ?>
 							</div><!--/.ewf-section--text-->
