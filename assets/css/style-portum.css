@@ -6452,6 +6452,8 @@ body.ctdw-bar-visible #header.header--over-content
 .ewf-pricing__item-container ul
 {
     padding: 30px;
+
+    list-style: none;
 }
 .ewf-pricing__item-container ul li
 {
@@ -6461,7 +6463,7 @@ body.ctdw-bar-visible #header.header--over-content
 {
     margin-right: 10px;
 
-    content: 'Γ£ô';
+    content: '✓';
 
     color: #0962ea;
 }

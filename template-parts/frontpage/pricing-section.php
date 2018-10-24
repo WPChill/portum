@@ -55,6 +55,7 @@ if ( 'left' == $fields['pricing_row_title_align'] || 'right' == $fields['pricing
 	}
 }
 $item_class = 'col-sm-' . ( 12 / absint( $fields['pricing_column_group'] ) );
+
 /**
  * Item Style
  */
@@ -75,8 +76,6 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 	}
 }
 // end layout stuff
-// end layout stuff
-
 ?>
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $fields['pricing_section_unique_id'], 'pricing', $fields ); ?>
@@ -113,7 +112,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 									</div><!--/.pricing featured-->
 								<?php }//endif true check ?>
 
-								<div style="<?php echo esc_attr( $bg_color ); ?>" class="ewf-pricing__item-container <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+								<div style="<?php echo esc_attr( $bg_color ) . esc_attr( implode( ';', $item_style ) ); ?>" class="ewf-pricing__item-container <?php echo esc_attr( $item_element_class ); ?>">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_pricing_section', 'portum_price_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
