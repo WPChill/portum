@@ -1,0 +1,25 @@
+.ewf-section__content {
+	.woocommerce-loop-product__title {
+	    font-size: 32px;
+	    line-height: 40px;
+	    line-height: 1.25;
+	    margin-top: 32px;
+	    margin-bottom: 12px;
+	}
+
+	.ewf-section__content {
+		.product {
+			.button {
+			    margin-top: 12px;
+			}
+		}
+	}
+
+	.woocommerce-loop-product__link {
+		&:after {
+			content: "";
+		    display: block;
+		    clear: both
+		}
+	}
+}

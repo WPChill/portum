@@ -1,6 +1,6 @@
 .portum-menu-icon {
 	cursor: pointer;
-	display: inline-block;
+	display: none;
 	float: right;
 	position: relative;
 	user-select: none;
@@ -46,21 +46,23 @@
 		li {
 
 			&.menu-item-has-children {
+				border-top: 1px solid #eee;
+				border-bottom: 1px solid #eee;
 
-				& > a {
-					border-top: 1px solid #eee;
-					border-bottom: 1px solid #eee;
+				& > a + a {
+					width: calc( 100% - 20px );
 
 					& + a {
-						border-top: 0;
+						
 					}
 				}
 
 				&:after {
 					position: absolute;
 					top: 0;
-					right: 10px;
-					content: "+";
+					right: 0;
+				    width: 20px;
+				    text-align: center;
 					speak: none;
 					font-style: normal;
 					font-weight: normal;
@@ -153,7 +155,7 @@
 	}
 }
 
-.portum-offcanvas {
+#header.portum-offcanvas {
 
 	.portum-toggle-nav {
 		border: 0;
@@ -171,6 +173,10 @@
 			display: inline-block;
 			float: right;
 			position: relative;
+			width: 18px;
+		    height: 16px;
+		    box-sizing: border-box;
+		    padding-top: 7px;
 			user-select: none;
 
 			.portum-navicon {
@@ -202,9 +208,9 @@
 			}
 		}
 
-		.portum-menu-btn {
+		&.is-opened {
 
-			&:checked ~ .portum-menu-icon {
+			.portum-menu-icon {
 				.portum-navicon {
 					background: transparent;
 
@@ -218,7 +224,7 @@
 				}
 			}
 
-			&:checked ~ .portum-menu-icon {
+			.portum-menu-icon {
 				&:not(.steps) {
 					.portum-navicon {
 						&:before,

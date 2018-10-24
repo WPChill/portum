@@ -20,7 +20,9 @@
 @import "partials/headers/offcanvas";
 @import "partials/headers/sidebar";
 @import "partials/blog";
+@import "partials/woocommerce";
 @import "partials/back-top";
+@import "partials/upsell";
 @import "partials/sections/base";
 @import "partials/sections/02-section-services";
 @import "partials/sections/03-section-portfolio";
@@ -42,6 +44,8 @@
 @import "partials/sections/19-section-about.scss";
 @import "partials/sections/20-section-openhours.scss";
 @import "partials/sections/21-section-accordion.scss";
+@import "partials/sections/22-section-iconboxes.scss";
+@import "partials/sections/23-section-newsletter.scss";
 @import "partials/effects";
 
 .page {

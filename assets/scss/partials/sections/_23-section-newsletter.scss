@@ -1,0 +1,33 @@
+/* =Newsletter
+   ========================================================================== */
+
+#mc_embed_signup {
+	#mc_embed_signup_scroll {
+	    display: flex;
+	    flex-wrap: wrap;
+	    align-items: center;
+	    justify-content: center;
+
+	    .mc-field-group {
+		    max-width: 300px;
+		    width: 100%;
+		    margin-right: 10px;
+
+		    input {
+			    width: 100%;
+			    margin-bottom: 0;
+			    height: 42px;
+			    line-height: 32px;
+			}
+		}
+
+		.mc-button-contianer {
+			input {
+			    margin-bottom: 0;
+			}
+		}
+	}
+}
+
+/* = END Newsletter Section
+   ========================================================================== */

@@ -21,13 +21,16 @@
     }
     ul.nav {
         float: right;
-        margin: 0 0 25px 0;
+        margin: 0;
         li {
             display: inline-block;
         }
         a {
             padding: 0 10px;
         }
+    }
+    #footer-bottom {
+        padding: 15px 0;
     }
 }
 

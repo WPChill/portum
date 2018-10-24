@@ -4,7 +4,7 @@
 	position: relative;
 
 	&.ewf-section.ewf-section--title-top {
-		padding: 450px 0 0 0;
+		padding: 0;
 
 		.map-canvas {
 			background-color: #F5F5F5;
@@ -13,6 +13,20 @@
 			left: 0;
 			bottom: 0;
 			right: 0;
+		}
+
+		.ewf-section__map {
+			position: absolute;
+		    bottom: 0;
+		    left: 0;
+		}
+	}
+
+	&.ewf-section.ewf-section--title-bottom {
+		.ewf-section__map {
+			position: absolute;
+		    bottom: 0;
+		    left: 0;
 		}
 	}
 
@@ -24,7 +38,9 @@
 		}
 	}
 
-
+	.map-canvas {
+	    display: block;
+	}
 
 	.map-canvas-side {
 		box-shadow: 0 0 8px 2px rgba(0, 0, 0, .045);
@@ -35,7 +51,7 @@
 		width: 100%;
 		height: 50px;
 		background: url("../images/back-section-shadow.png") repeat-x left top;
-		position: Absolute;
+		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 999;
@@ -49,6 +65,7 @@
   background-color: #fff;
   box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
   position: relative;
+  overflow: hidden;
   box-sizing: border-box;
 }
 

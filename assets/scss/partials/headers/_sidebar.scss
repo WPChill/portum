@@ -10,6 +10,10 @@
 		line-height: 40px;
 		text-align: center;
 
+		.portum-menu-icon {
+		    display: block;
+		}
+
 		+ #wrap {
 			max-width: calc(100% - 200px);
 			left: 200px;

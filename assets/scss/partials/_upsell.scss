@@ -1,0 +1,14 @@
+.upsell-section {
+    position: relative;
+
+    &:before {
+	    position: absolute;
+	    top: 15px;
+	    left: 15px;
+	    width: 300px;
+	    content: 'Only in Pro';
+	    color: #fff;
+	    background-color: red;
+	    text-align: center;
+	}
+}

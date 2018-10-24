@@ -1,0 +1,35 @@
+/* =Icon Boxes
+   ========================================================================== */
+
+.inconboxes-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ewf-like-h3 {
+	    margin: 0;
+	}
+
+	&.icon-left > i {
+	    margin-right: 15px;
+	}
+
+	&.icon-right {
+		flex-direction: row-reverse;
+		> i {
+		    margin-left: 15px;
+		}
+	}
+
+	&.icon-top {
+		flex-direction: column;
+
+		> i {
+		    margin-bottom: 15px;
+		}
+	}
+
+}
+
+/* = END Icon Boxes Section
+   ========================================================================== */

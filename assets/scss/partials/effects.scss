@@ -3,27 +3,6 @@
 	border: 2px dashed #9de3cc;
 	border-left: 2px solid #9de3cc;
 	border-bottom: 2px solid #9de3cc;
-
-	&:before,
-	&:after {
-		position: absolute;
-		content: '';
-		background: #9de3cc;
-	}
-
-	&:before {
-		top: -2px;
-		left: 0;
-		width: 50px;
-		height: 2px;
-	}
-
-	&:after {
-		right: -2px;
-		bottom: 0;
-		width: 2px;
-		height: 80px;
-	}
 }
 
 /* ----------------------------------- Box Shadow Effect (below) ------------------------*/
