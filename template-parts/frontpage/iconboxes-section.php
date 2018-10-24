@@ -11,9 +11,9 @@ if ( ! is_customize_preview() && ! defined( 'EPSILON_FRAMEWORK_PRO_VERSION' ) ) 
 	return;
 }
 
-$frontpage          = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
-$fields             = $frontpage->sections[ $section_id ];
-$grouping           = array(
+$frontpage            = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields               = $frontpage->sections[ $section_id ];
+$grouping             = array(
 	'values'   => $fields['inconboxes_grouping'],
 	'group_by' => 'icon_title',
 );
@@ -59,41 +59,41 @@ $item_style         = array();
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
 		<div class="upsell-section">
-		<div class="ewf-section__content">
-			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'inconboxes', $fields ) ); ?>">
+			<div class="ewf-section__content">
+				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'inconboxes', $fields ) ); ?>">
 
-				<div class="row">
+					<div class="row">
 
-					<!-- Check if we have values in our field repeater -->
-					<?php if ( ! empty( $fields['inconboxes'] ) ) { ?>
-					<div class="col-md-12">
-						<?php foreach ( $fields['inconboxes'] as $key => $icon ) { ?><?php
-							$icon_style = 'color: ' . ( ! empty( $icon['icon_color'] ) ? esc_attr( $icon['icon_color'] ) : 'inherit' ) . ';';
-							$icon_style .= 'font-size: ' . ( ! empty( $icon['icon_size'] ) ? esc_attr( $icon['icon_size'] ) : 'inherit' ) . 'px;';
-							?>
+						<!-- Check if we have values in our field repeater -->
+						<?php if ( ! empty( $fields['inconboxes'] ) ) { ?>
+						<div class="col-md-12">
+							<?php foreach ( $fields['inconboxes'] as $key => $icon ) { ?><?php
+								$icon_style = 'color: ' . ( ! empty( $icon['icon_color'] ) ? esc_attr( $icon['icon_color'] ) : 'inherit' ) . ';';
+								$icon_style .= 'font-size: ' . ( ! empty( $icon['icon_size'] ) ? esc_attr( $icon['icon_size'] ) : 'inherit' ) . 'px;';
+								?>
 
-							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-								<div class="inconboxes-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
-									<?php
-									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_inconboxes_section', 'portum_inconboxes' ), Epsilon_Helper::allowed_kses_pencil() );
-									?>
-									<?php if ( ! empty( $icon['icon'] ) ) { ?>
-										<i class="<?php echo esc_attr( $icon['icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
-									<?php } ?>
+								<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
+									<div class="inconboxes-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+										<?php
+										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_inconboxes_section', 'portum_inconboxes' ), Epsilon_Helper::allowed_kses_pencil() );
+										?>
+										<?php if ( ! empty( $icon['icon'] ) ) { ?>
+											<i class="<?php echo esc_attr( $icon['icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
+										<?php } ?>
 
-									<?php if ( ! empty( $icon['icon_title'] ) ) { ?>
-										<div class="ewf-like-h3">
-											<?php echo wp_kses_post( $icon['icon_title'] ); ?>
-										</div><!--/.ewf-like-h6-->
-									<?php } ?>
-								</div><!--/.inconboxes-item-->
-							</div><!--/.col-sm-->
-						<?php }//end foreach ?>
-					</div><!--/.col-sm--->
-				</div><!--/.row-->
-				<?php } ?>
+										<?php if ( ! empty( $icon['icon_title'] ) ) { ?>
+											<div class="ewf-like-h3">
+												<?php echo wp_kses_post( $icon['icon_title'] ); ?>
+											</div><!--/.ewf-like-h6-->
+										<?php } ?>
+									</div><!--/.inconboxes-item-->
+								</div><!--/.col-sm-->
+							<?php }//end foreach ?>
+						</div><!--/.col-sm--->
+					</div><!--/.row-->
+					<?php } ?>
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 </section>

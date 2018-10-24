@@ -490,24 +490,24 @@ Epsilon_Customizer::add_field( 'portum_icons', array(
 		'field' => 'icon_title',
 	),
 	'fields'       => array(
-		'icon_title'              => array(
+		'icon_title' => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Business',
 		),
-		'icon'               => array(
+		'icon'       => array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-500px',
 			'groups'  => array( 'general' ),
 		),
-		'icon_color'         => array(
+		'icon_color' => array(
 			'label'   => esc_html__( 'Icon Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '#FFF',
 		),
-		'icon_size'          => array(
+		'icon_size'  => array(
 			'label'       => esc_html__( 'Icon Size', 'portum' ),
 			'description' => esc_html__( 'Value is in pixels', 'portum' ),
 			'type'        => 'epsilon-slider',
@@ -930,24 +930,24 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 		'field' => 'price_box_title',
 	),
 	'fields'       => array(
-		'price_box_featured'   => array(
+		'price_box_featured'     => array(
 			'type'    => 'epsilon-toggle',
 			'label'   => esc_html__( 'Featured State', 'portum' ),
 			'default' => false,
 		),
-		'price_box_bg_color'   => array(
-			'label'   => esc_html__( 'Pricing Box Background Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => '',
+		'price_box_icon_display' => array(
+			'type'    => 'epsilon-toggle',
+			'label'   => esc_html__( 'Pricing Table Icon Display', 'portum' ),
+			'default' => false,
 		),
-		'price_box_icon'       => array(
+		'price_box_icon'         => array(
 			'label'     => esc_html__( 'Pricing Table Icon', 'portum' ),
 			'type'      => 'epsilon-icon-picker',
 			'default'   => 'fa fa-building',
 			'groups'    => array( 'general' ),
 			'condition' => array( 'price_box_icon_display', true ),
 		),
-		'price_box_icon_size'  => array(
+		'price_box_icon_size'    => array(
 			'label'     => esc_html__( 'Icon size', 'portum' ),
 			'type'      => 'epsilon-slider',
 			'default'   => 36,
@@ -958,42 +958,47 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 			),
 			'condition' => array( 'price_box_icon_display', true ),
 		),
-		'price_box_icon_color' => array(
+		'price_box_icon_color'   => array(
 			'label'     => esc_html__( 'Icon Color', 'portum' ),
 			'type'      => 'epsilon-color-picker',
 			'default'   => 'blue',
 			'condition' => array( 'price_box_icon_display', true ),
 		),
-		'price_box_title'      => array(
+		'price_box_bg_color'     => array(
+			'label'   => esc_html__( 'Pricing Box Background Color', 'portum' ),
+			'type'    => 'epsilon-color-picker',
+			'default' => '',
+		),
+		'price_box_title'        => array(
 			'label'             => esc_html__( 'Pricing Table Name', 'portum' ),
 			'type'              => 'text',
 			'default'           => esc_html__( 'Standard', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_text'       => array(
+		'price_box_text'         => array(
 			'label'             => esc_html__( 'Pricing Table Description', 'portum' ),
 			'type'              => 'text',
 			'default'           => esc_html__( 'Get started now! You have the base!', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_amount'     => array(
+		'price_box_amount'       => array(
 			'label'   => esc_html__( 'Pricing Table Amount', 'portum' ),
 			'type'    => 'text',
 			'default' => '$59 / mo',
 		),
-		'price_box_url'        => array(
+		'price_box_url'          => array(
 			'label'             => esc_html__( 'Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_url_label'  => array(
+		'price_box_url_label'    => array(
 			'label'             => esc_html__( 'Button Text', 'portum' ),
 			'type'              => 'text',
 			'default'           => __( 'Purchase', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_features'   => array(
+		'price_box_features'     => array(
 			'label'             => esc_html__( 'Features', 'portum' ),
 			'type'              => 'textarea',
 			'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',

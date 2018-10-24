@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_About
  */
 class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -48,8 +49,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 * Upsell
 	 */
 	public function set_upsell() {
-		$this->upsell = true;
-		$this->upsell_url = '#';
+		$this->upsell      = true;
+		$this->upsell_url  = '#';
 		$this->upsell_text = 'See PRO';
 	}
 
@@ -77,11 +78,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -104,17 +101,30 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				'default'     => 'boxedin',
 			),
 			'inconboxes_column_group'              => array(
-				'id'          => 'pricing_column_group',
+				'id'          => 'iconboxes_column_group',
 				'type'        => 'select',
 				'label'       => __( 'Item Group', 'epsilon-framework' ),
 				'description' => __( 'Number of items to display at once. Example: 2, 3 or 4 pricing tables. The width of the content will be equally split among the number of elements you select.', 'epsilon-framework' ),
 				'group'       => 'layout',
-				'default' => 3,
-				'choices' => array(
-					2   => esc_html__( '2 columns', 'epsilon-framework' ),
-					3   => esc_html__( '3 columns', 'epsilon-framework' ),
-					4   => esc_html__( '4 columns', 'epsilon-framework' ),
+				'default'     => 3,
+				'choices'     => array(
+					2 => esc_html__( '2 columns', 'epsilon-framework' ),
+					3 => esc_html__( '3 columns', 'epsilon-framework' ),
+					4 => esc_html__( '4 columns', 'epsilon-framework' ),
 				),
+			),
+			'inconboxes_column_spacing'            => array(
+				'id'      => 'inconboxes_column_spacing',
+				'type'    => 'select',
+				'label'   => esc_html__( 'Item Spacing', 'epsilon-framework' ),
+				'group'   => 'layout',
+				'choices' => array(
+					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
+					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
+					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
+					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
+				),
+				'default' => 'lg',
 			),
 			'inconboxes_column_alignment'          => array(
 				'id'          => 'inconboxes_column_alignment',
@@ -127,7 +137,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
 			'inconboxes_column_vertical_alignment' => array(
 				'id'          => 'inconboxes_column_vertical_alignment',
@@ -140,12 +150,12 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
 
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
+
 	}
 
 	/**
@@ -290,17 +300,17 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 */
 	public function normal_fields() {
 		return array(
-			'icon_position' => array(
-				'type'        => 'select',
-				'label'       => esc_html__( 'Icon Position', 'epsilon-framework' ),
-				'choices'     => array(
+			'icon_position'                => array(
+				'type'    => 'select',
+				'label'   => esc_html__( 'Icon Position', 'epsilon-framework' ),
+				'choices' => array(
 					'top'   => esc_html__( 'Top', 'epsilon-framework' ),
 					'left'  => esc_html__( 'Left', 'epsilon-framework' ),
 					'right' => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'left'
+				'default' => 'left',
 			),
-			'inconboxes_section_unique_id'    => array(
+			'inconboxes_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',

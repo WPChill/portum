@@ -22,7 +22,7 @@ if ( empty( $fields['pricing_section_unique_id'] ) ) {
 	$fields['pricing_section_unique_id'] = Portum_Helper::generate_section_id( 'pricing' );
 }
 
-$parent_attr                      = array(
+$parent_attr = array(
 	'id'    => array( $fields['pricing_section_unique_id'] ),
 	'class' => array(
 		'section-pricing',
@@ -55,6 +55,26 @@ if ( 'left' == $fields['pricing_row_title_align'] || 'right' == $fields['pricing
 	}
 }
 $item_class = 'col-sm-' . ( 12 / absint( $fields['pricing_column_group'] ) );
+/**
+ * Item Style
+ */
+$item_element_class = '';
+$item_style         = array();
+
+if ( 'ewf-item__border' != $fields['item_style'] ) {
+	$item_element_class = $fields['item_style'];
+} else {
+	$item_element_class = $fields['item_border_style'];
+
+	if ( ! empty( $fields['item_border_color'] ) ) {
+		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
+	}
+
+	if ( ! empty( $fields['item_border_width'] ) ) {
+		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
+	}
+}
+// end layout stuff
 // end layout stuff
 
 ?>
@@ -95,12 +115,12 @@ $item_class = 'col-sm-' . ( 12 / absint( $fields['pricing_column_group'] ) );
 									</div><!--/.pricing featured-->
 								<?php }//endif true check ?>
 
-								<div style="<?php echo esc_attr( $bg_color ); ?>" class="ewf-pricing__item-container ewf-item__simple-border-effect">
+								<div style="<?php echo esc_attr( $bg_color ); ?>" class="ewf-pricing__item-container <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_pricing_section', 'portum_price_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
 
-									<?php if ( ! empty( $pricing_box['price_box_icon'] ) ) { ?>
+									<?php if ( $pricing_box['price_box_icon_display'] && ! empty( $pricing_box['price_box_icon'] ) ) { ?>
 										<div class="ewf-pricing__icon">
 											<i style="<?php echo $style; ?>" class="<?php echo esc_attr( $pricing_box['price_box_icon'] ); ?>"></i>
 										</div><!--/.ewf-pricing__icon-->
