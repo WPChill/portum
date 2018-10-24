@@ -362,10 +362,7 @@ blockquote {
     /* epsilon_title_color */
 }
 
-.headline span:not(.dashicons) {
-    color: %5$s;
-    /* epsilon_title_color */
-}
+
 
 a {
     color: %7$s;

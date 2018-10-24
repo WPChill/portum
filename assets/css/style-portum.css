@@ -6245,10 +6245,6 @@ body.ctdw-bar-visible #header.header--over-content
 
     color: #7e8b98;
 }
-.testimonial .ewf-testimonial__title div[class*='ewf-like-']
-{
-    color: #0962ea;
-}
 .testimonial img
 {
     position: absolute;
