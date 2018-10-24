@@ -2148,8 +2148,15 @@ del
     font-style: italic !important;
 }
 
-.section-about .ewf-padding-left--none div[class*='col'],
-.section-about .ewf-padding-right--none div[class*='col']
+.container-fluid.ewf-padding-left--none,
+.container-fluid.ewf-padding-right--none
+{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ewf-padding-left--none div[class*='col'],
+.ewf-padding-right--none div[class*='col']
 {
     padding-right: 0;
     padding-left: 0;
@@ -2171,7 +2178,8 @@ del
 .ewf-padding-right--none .ewf-section-text
 {
     max-width: 40%;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .ewf-item__spacing-none
