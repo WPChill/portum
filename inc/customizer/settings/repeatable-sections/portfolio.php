@@ -304,7 +304,7 @@ class Repeatable_Section_Portfolio extends Repeatable_Section {
 	public function color_fields() {
 		return array(
 			'portfolio_title_misc_font_color' => array(
-				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ),
+				'selectors'     => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.headline span' ),
 				'css-attribute' => 'color',
 				'default'       => '',
 				'label'         => __( 'Section Title Color', 'epsilon-framework' ),

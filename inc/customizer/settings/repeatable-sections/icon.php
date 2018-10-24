@@ -42,7 +42,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 * Sets section image
 	 */
 	public function set_image() {
-		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-inconboxes.jpg' );
+		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-iconboxes.jpg' );
 	}
 
 	/**
@@ -88,8 +88,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 */
 	public function layout_fields() {
 		$custom_fields = array(
-			'inconboxes_column_stretch'            => array(
-				'id'          => 'inconboxes_column_stretch',
+			'iconboxes_column_stretch'            => array(
+				'id'          => 'iconboxes_column_stretch',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Width', 'epsilon-framework' ),
 				'description' => esc_html__( 'Make the section stretch to full-width. Contained is default. There\'s also the option of boxed center. ', 'epsilon-framework' ),
@@ -100,7 +100,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				),
 				'default'     => 'boxedin',
 			),
-			'inconboxes_column_group'              => array(
+			'iconboxes_column_group'              => array(
 				'id'          => 'iconboxes_column_group',
 				'type'        => 'select',
 				'label'       => __( 'Item Group', 'epsilon-framework' ),
@@ -113,8 +113,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 					4 => esc_html__( '4 columns', 'epsilon-framework' ),
 				),
 			),
-			'inconboxes_column_spacing'            => array(
-				'id'      => 'inconboxes_column_spacing',
+			'iconboxes_column_spacing'            => array(
+				'id'      => 'iconboxes_column_spacing',
 				'type'    => 'select',
 				'label'   => esc_html__( 'Item Spacing', 'epsilon-framework' ),
 				'group'   => 'layout',
@@ -126,8 +126,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				),
 				'default' => 'lg',
 			),
-			'inconboxes_column_alignment'          => array(
-				'id'          => 'inconboxes_column_alignment',
+			'iconboxes_column_alignment'          => array(
+				'id'          => 'iconboxes_column_alignment',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Horizontal Alignment', 'epsilon-framework' ),
 				'description' => esc_html__( 'Center/Left/Right align all of a sections content.', 'epsilon-framework' ),
@@ -139,8 +139,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				),
 				'default'     => 'center',
 			),
-			'inconboxes_column_vertical_alignment' => array(
-				'id'          => 'inconboxes_column_vertical_alignment',
+			'iconboxes_column_vertical_alignment' => array(
+				'id'          => 'iconboxes_column_vertical_alignment',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Vertical Alignment', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend leaving this to center, but feel free to experiment with the options. Top/Bottom align can be useful when you have a layout of text + image on the same line.', 'epsilon-framework' ),
@@ -167,8 +167,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 		$sizes = Epsilon_Helper::get_image_sizes();
 
 		return array(
-			'inconboxes_background_type'        => array(
-				'id'      => 'inconboxes_background_type',
+			'iconboxes_background_type'        => array(
+				'id'      => 'iconboxes_background_type',
 				'label'   => esc_html__( 'Background Type', 'epsilon-framework' ),
 				'type'    => 'select',
 				'choices' => array(
@@ -177,8 +177,8 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				),
 				'group'   => 'background',
 			),
-			'inconboxes_background_color'       => array(
-				'id'         => 'inconboxes_background_color',
+			'iconboxes_background_color'       => array(
+				'id'         => 'iconboxes_background_color',
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
@@ -186,12 +186,12 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				'defaultVal' => '#EEE',
 				'group'      => 'background',
 				'condition'  => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgcolor',
 				),
 			),
-			'inconboxes_background_image'       => array(
-				'id'          => 'inconboxes_background_image',
+			'iconboxes_background_image'       => array(
+				'id'          => 'iconboxes_background_image',
 				'label'       => esc_html__( 'Background Image', 'epsilon-framework' ),
 				'description' => esc_html__( 'Use this field to set a background image. Content will overlay on top of the image.', 'epsilon-framework' ),
 				'type'        => 'epsilon-image',
@@ -201,12 +201,12 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				'sizeArray'   => $sizes,
 				'mode'        => 'url',
 				'condition'   => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgimage',
 				),
 			),
-			'inconboxes_background_image_color' => array(
-				'id'         => 'inconboxes_background_color',
+			'iconboxes_background_image_color' => array(
+				'id'         => 'iconboxes_background_color',
 				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
@@ -214,12 +214,12 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				'defaultVal' => '',
 				'group'      => 'background',
 				'condition'  => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgimage',
 				),
 			),
-			'inconboxes_background_position'    => array(
-				'id'          => 'inconboxes_background_position',
+			'iconboxes_background_position'    => array(
+				'id'          => 'iconboxes_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
 				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
 				'default'     => 'center',
@@ -237,12 +237,12 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 					'bottomright' => __( 'Bottom Right', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgimage',
 				),
 			),
-			'inconboxes_background_size'        => array(
-				'id'          => 'inconboxes_background_size',
+			'iconboxes_background_size'        => array(
+				'id'          => 'iconboxes_background_size',
 				'label'       => esc_html__( 'Background Stretch', 'epsilon-framework' ),
 				'description' => esc_html__( 'We usually recommend using cover as a default option.', 'epsilon-framework' ),
 				'default'     => 'cover',
@@ -254,13 +254,13 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 					'initial' => __( 'Initial', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgimage',
 				),
 
 			),
-			'inconboxes_background_repeat'      => array(
-				'id'          => 'inconboxes_background_repeat',
+			'iconboxes_background_repeat'      => array(
+				'id'          => 'iconboxes_background_repeat',
 				'label'       => esc_html__( 'Background Repeat', 'epsilon-framework' ),
 				'description' => esc_html__( 'Set to background-repeat if you are using patterns. For parallax, we recommend setting to no-repeat.', 'epsilon-framework' ),
 				'default'     => 'no-repeat',
@@ -273,19 +273,19 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 					'repeat-x'  => __( 'Repeat X', 'epsilon-framework' ),
 				),
 				'condition'   => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgimage',
 				),
 			),
-			'inconboxes_background_parallax'    => array(
-				'id'          => 'inconboxes_background_parallax',
+			'iconboxes_background_parallax'    => array(
+				'id'          => 'iconboxes_background_parallax',
 				'label'       => esc_html__( 'Background Parallax', 'epsilon-framework' ),
 				'description' => esc_html__( 'Toggling this to ON will enable the parallax effect. Make sure you have a  background image set before enabling it.', 'epsilon-framework' ),
 				'default'     => false,
 				'type'        => 'epsilon-toggle',
 				'group'       => 'background',
 				'condition'   => array(
-					'inconboxes_background_type',
+					'iconboxes_background_type',
 					'bgimage',
 				),
 			),
@@ -310,12 +310,12 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				),
 				'default' => 'left',
 			),
-			'inconboxes_section_unique_id' => array(
+			'iconboxes_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',
 			),
-			'inconboxes_grouping'          => array(
+			'iconboxes_grouping'          => array(
 				'label'       => esc_html__( 'Filter shown icon boxes', 'portum' ),
 				'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 				'type'        => 'selectize',
@@ -324,7 +324,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				'linking'     => array( 'portum_icons', 'icon_title' ),
 				'default'     => array( 'all' ),
 			),
-			'inconboxes_navigation'        => array(
+			'iconboxes_navigation'        => array(
 				'type'            => 'epsilon-customizer-navigation',
 				'opensDoubled'    => true,
 				'navigateToId'    => 'portum_iconboxes_section',
