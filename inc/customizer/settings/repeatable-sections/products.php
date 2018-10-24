@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_Products
  */
 class Repeatable_Section_Products extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -72,12 +73,7 @@ class Repeatable_Section_Products extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -87,7 +83,7 @@ class Repeatable_Section_Products extends Repeatable_Section {
 	 */
 	public function layout_fields() {
 		$custom_fields = array(
-			'products_row_title_align'           => array(
+			'products_row_title_align' => array(
 				'id'          => 'products_row_title_align',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Layout', 'epsilon-framework' ),
@@ -99,9 +95,9 @@ class Repeatable_Section_Products extends Repeatable_Section {
 					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
-			'products_column_stretch'            => array(
+			'products_column_stretch'  => array(
 				'id'          => 'products_column_stretch',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Width', 'epsilon-framework' ),
@@ -113,36 +109,36 @@ class Repeatable_Section_Products extends Repeatable_Section {
 				),
 				'default'     => 'boxedin',
 			),
-			'products_column_group'              => array(
+			'products_column_group'    => array(
 				'id'          => 'products_column_group',
 				'type'        => 'select',
 				'label'       => __( 'Item Group', 'epsilon-framework' ),
 				'description' => __( 'Number of items to display at once. Example: 2, 3 or 4 pricing tables. The width of the content will be equally split among the number of elements you select.', 'epsilon-framework' ),
 				'group'       => 'layout',
-				'default' => 3,
-				'choices' => array(
-					2   => esc_html__( '2 columns', 'epsilon-framework' ),
-					3   => esc_html__( '3 columns', 'epsilon-framework' ),
-					4   => esc_html__( '4 columns', 'epsilon-framework' ),
+				'default'     => 3,
+				'choices'     => array(
+					2 => esc_html__( '2 columns', 'epsilon-framework' ),
+					3 => esc_html__( '3 columns', 'epsilon-framework' ),
+					4 => esc_html__( '4 columns', 'epsilon-framework' ),
 				),
 			),
-			'products_column_spacing'           => array(
-				'id'          => 'products_column_spacing',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Item Spacing', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
+			'products_column_spacing'  => array(
+				'id'      => 'products_column_spacing',
+				'type'    => 'select',
+				'label'   => esc_html__( 'Item Spacing', 'epsilon-framework' ),
+				'group'   => 'layout',
+				'choices' => array(
 					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
 					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
 					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
 					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
 				),
-				'default'     => 'lg',
+				'default' => 'lg',
 			),
 		);
 
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
+
 	}
 
 	/**
@@ -294,18 +290,18 @@ class Repeatable_Section_Products extends Repeatable_Section {
 				'label'         => __( 'Section Title Color', 'epsilon-framework' ),
 				'description'   => '',
 				'type'          => 'epsilon-color-picker',
-				'mode'          => 'hex',
+				'mode'          => 'rgba',
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'products_text_misc_font_color'    => array(
+			'products_text_misc_font_color'  => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',
 				'label'         => __( 'Section Paragraph Color', 'epsilon-framework' ),
 				'description'   => '',
 				'type'          => 'epsilon-color-picker',
-				'mode'          => 'hex',
+				'mode'          => 'rgba',
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
@@ -319,19 +315,19 @@ class Repeatable_Section_Products extends Repeatable_Section {
 	 */
 	public function normal_fields() {
 		return array(
-			'title'                   => array(
+			'title'             => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'default'           => esc_html__( 'Find out the latest products?', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'subtitle'                => array(
+			'subtitle'          => array(
 				'label'             => esc_html__( 'Subtitle', 'portum' ),
 				'type'              => 'text',
 				'default'           => esc_html__( 'Products', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'products_count'     => array(
+			'products_count'    => array(
 				'label'       => esc_html__( 'Products Count', 'portum' ),
 				'description' => esc_html__( 'Only products with featured image are loaded', 'portum' ),
 				'type'        => 'epsilon-slider',
@@ -341,7 +337,7 @@ class Repeatable_Section_Products extends Repeatable_Section {
 					'max' => 10,
 				),
 			),
-			'section_unique_id'       => array(
+			'section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',

@@ -307,7 +307,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'label'         => __( 'Section Title Color', 'epsilon-framework' ),
 				'description'   => '',
 				'type'          => 'epsilon-color-picker',
-				'mode'          => 'hex',
+				'mode'          => 'rgba',
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
@@ -318,7 +318,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'label'         => __( 'Section Paragraph Color', 'epsilon-framework' ),
 				'description'   => '',
 				'type'          => 'epsilon-color-picker',
-				'mode'          => 'hex',
+				'mode'          => 'rgba',
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
@@ -373,7 +373,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'label'     => esc_html__( 'Item Border Color Picker', 'portum' ),
 				'type'      => 'epsilon-color-picker',
 				'default'   => '',
-				'mode'      => 'hex',
+				'mode'      => 'rgba',
 				'condition' => array(
 					array(
 						'item_style',

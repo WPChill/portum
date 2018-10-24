@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_Testimonials
  */
 class Repeatable_Section_Testimonials extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -72,12 +73,7 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -105,11 +101,11 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 				'label'       => __( 'Item Group', 'epsilon-framework' ),
 				'description' => __( 'Number of items to display at once. Example: 2, 3 or 4 pricing tables. The width of the content will be equally split among the number of elements you select.', 'epsilon-framework' ),
 				'group'       => 'layout',
-				'default' => 3,
-				'choices' => array(
-					2   => esc_html__( '2 columns', 'epsilon-framework' ),
-					3   => esc_html__( '3 columns', 'epsilon-framework' ),
-					4   => esc_html__( '4 columns', 'epsilon-framework' ),
+				'default'     => 3,
+				'choices'     => array(
+					2 => esc_html__( '2 columns', 'epsilon-framework' ),
+					3 => esc_html__( '3 columns', 'epsilon-framework' ),
+					4 => esc_html__( '4 columns', 'epsilon-framework' ),
 				),
 			),
 			'testimonials_column_alignment'          => array(
@@ -123,7 +119,7 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
 			'testimonials_column_vertical_alignment' => array(
 				'id'          => 'testimonials_column_vertical_alignment',
@@ -136,7 +132,7 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
 
@@ -292,18 +288,18 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 				'label'         => __( 'Section Title Color', 'epsilon-framework' ),
 				'description'   => '',
 				'type'          => 'epsilon-color-picker',
-				'mode'          => 'hex',
+				'mode'          => 'rgba',
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'testimonials_text_misc_font_color'    => array(
+			'testimonials_text_misc_font_color'  => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',
 				'label'         => __( 'Section Paragraph Color', 'epsilon-framework' ),
 				'description'   => '',
 				'type'          => 'epsilon-color-picker',
-				'mode'          => 'hex',
+				'mode'          => 'rgba',
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
@@ -317,19 +313,19 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 	 */
 	public function normal_fields() {
 		return array(
-			'testimonials_title'                 => array(
+			'testimonials_title'             => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'default'           => wp_kses_post( 'Why Choose us?' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'testimonials_subtitle'              => array(
+			'testimonials_subtitle'          => array(
 				'label'             => esc_html__( 'Subtitle', 'portum' ),
 				'type'              => 'text',
 				'default'           => wp_kses_post( 'testimonials' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'item_style'                   => array(
+			'item_style'                     => array(
 				'label'   => esc_html__( 'Item Style', 'portum' ),
 				'type'    => 'select',
 				'default' => 'ewf-item__no-effect',
@@ -339,11 +335,11 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 					'ewf-item__shadow-effect' => esc_html__( 'Shadow Effect', 'portum' ),
 				),
 			),
-			'item_border_style'                   => array(
-				'label'   => esc_html__( 'Item Border Style', 'portum' ),
-				'type'    => 'select',
-				'default' => 'ewf-item__simple-border-effect',
-				'choices' => array(
+			'item_border_style'              => array(
+				'label'     => esc_html__( 'Item Border Style', 'portum' ),
+				'type'      => 'select',
+				'default'   => 'ewf-item__simple-border-effect',
+				'choices'   => array(
 					'ewf-item__border-dashed-effect' => esc_html__( 'Dashed Border Effect', 'portum' ),
 					'ewf-item__simple-border-effect' => esc_html__( 'Simple Border Effect', 'portum' ),
 				),
@@ -352,21 +348,21 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 					'ewf-item__border',
 				),
 			),
-			'item_border_color'      => array(
+			'item_border_color'              => array(
 				'label'     => esc_html__( 'Item Border Color Picker', 'portum' ),
 				'type'      => 'epsilon-color-picker',
 				'default'   => '',
-				'mode'      => 'hex',
+				'mode'      => 'rgba',
 				'condition' => array(
 					'item_style',
 					'ewf-item__border',
 				),
 			),
 			'item_border_width'              => array(
-				'label'       => esc_html__( 'Item Border Width', 'portum' ),
-				'type'        => 'epsilon-slider',
-				'default'     => 1,
-				'choices'     => array(
+				'label'     => esc_html__( 'Item Border Width', 'portum' ),
+				'type'      => 'epsilon-slider',
+				'default'   => 1,
+				'choices'   => array(
 					'min' => 1,
 					'max' => 10,
 				),
@@ -375,12 +371,12 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 					'ewf-item__border',
 				),
 			),
-			'testimonials_section_unique_id'     => array(
+			'testimonials_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',
 			),
-			'testimonials_grouping'              => array(
+			'testimonials_grouping'          => array(
 				'label'       => esc_html__( 'Filter shown testimonials', 'portum' ),
 				'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),
 				'type'        => 'selectize',
@@ -389,13 +385,13 @@ class Repeatable_Section_Testimonials extends Repeatable_Section {
 				'linking'     => array( 'portum_testimonials', 'testimonial_title' ),
 				'default'     => array( 'all' ),
 			),
-			'testimonials_navigation'            => array(
+			'testimonials_navigation'        => array(
 				'type'            => 'epsilon-customizer-navigation',
 				'opensDoubled'    => true,
 				'navigateToId'    => 'portum_testimonials_section',
 				'navigateToLabel' => esc_html__( 'Add/Edit Testimonials &rarr;', 'portum' ),
 			),
-			'testimonials_repeater_field'        => array(
+			'testimonials_repeater_field'    => array(
 				'type'    => 'hidden',
 				'default' => 'portum_testimonials',
 			),

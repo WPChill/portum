@@ -463,7 +463,6 @@
 
 }
 
-
 .text-left {
 	text-align: left !important;
 }
@@ -552,8 +551,14 @@
 	font-style: italic !important;
 }
 
-.section-about .ewf-padding-left--none div[class*="col"],
-.section-about .ewf-padding-right--none div[class*="col"] {
+.container-fluid.ewf-padding-left--none,
+.container-fluid.ewf-padding-right--none {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.ewf-padding-left--none div[class*="col"],
+.ewf-padding-right--none div[class*="col"] {
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -571,7 +576,8 @@
 .ewf-padding-left--none .ewf-section-text,
 .ewf-padding-right--none .ewf-section-text {
 	max-width: 70%;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .ewf-item__spacing-none {

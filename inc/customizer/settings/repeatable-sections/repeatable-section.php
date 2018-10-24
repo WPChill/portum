@@ -14,6 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Class Repeatable_Section
  */
 abstract class Repeatable_Section {
+
 	/**
 	 * Section fields
 	 *
@@ -79,9 +80,7 @@ abstract class Repeatable_Section {
 	 * Invoking function
 	 */
 	public function __invoke() {
-		return apply_filters(
-			'portum_section_' . $this->id,
-			array(
+		return apply_filters( 'portum_section_' . $this->id, array(
 				'id'          => $this->id,
 				'fields'      => $this->fields,
 				'groups'      => $this->groups,
@@ -92,8 +91,7 @@ abstract class Repeatable_Section {
 				'upsell_text' => $this->upsell_text,
 				'upsell_url'  => $this->upsell_url,
 				// 'integration' => $this->integrations
-			)
-		);
+			) );
 	}
 
 	/**
@@ -104,14 +102,14 @@ abstract class Repeatable_Section {
 			$this->id . '_margins_device_setter' => array(
 				'label'   => esc_html__( 'Section margins' ),
 				'type'    => 'select',
-				'group'     => 'layout',
+				'group'   => 'layout',
 				'choices' => array(
 					'desktop' => esc_html__( 'Desktop', 'epsilon-framework' ),
 					'tablet'  => esc_html__( 'Tablet', 'epsilon-framework' ),
 					'mobile'  => esc_html__( 'Mobile', 'epsilon-framework' ),
 				),
 			),
-			$this->id . '_margins_desktop' => array(
+			$this->id . '_margins_desktop'       => array(
 				'label'     => '',
 				'type'      => 'epsilon-margins-paddings',
 				'group'     => 'layout',
@@ -120,7 +118,7 @@ abstract class Repeatable_Section {
 					'desktop',
 				),
 			),
-			$this->id . '_margins_tablet' => array(
+			$this->id . '_margins_tablet'        => array(
 				'label'     => '',
 				'type'      => 'epsilon-margins-paddings',
 				'group'     => 'layout',
@@ -129,7 +127,7 @@ abstract class Repeatable_Section {
 					'tablet',
 				),
 			),
-			$this->id . '_margins_mobile' => array(
+			$this->id . '_margins_mobile'        => array(
 				'label'     => '',
 				'type'      => 'epsilon-margins-paddings',
 				'group'     => 'layout',
@@ -156,7 +154,7 @@ abstract class Repeatable_Section {
 					'mobile'  => esc_html__( 'Mobile', 'epsilon-framework' ),
 				),
 			),
-			$this->id . '_paddings_desktop' => array(
+			$this->id . '_paddings_desktop'       => array(
 				'label'     => '',
 				'type'      => 'epsilon-margins-paddings',
 				'group'     => 'layout',
@@ -165,7 +163,7 @@ abstract class Repeatable_Section {
 					'desktop',
 				),
 			),
-			$this->id . '_paddings_tablet' => array(
+			$this->id . '_paddings_tablet'        => array(
 				'label'     => '',
 				'type'      => 'epsilon-margins-paddings',
 				'group'     => 'layout',
@@ -174,7 +172,7 @@ abstract class Repeatable_Section {
 					'tablet',
 				),
 			),
-			$this->id . '_paddings_mobile' => array(
+			$this->id . '_paddings_mobile'        => array(
 				'label'     => '',
 				'type'      => 'epsilon-margins-paddings',
 				'group'     => 'layout',

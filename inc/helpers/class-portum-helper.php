@@ -22,18 +22,18 @@ class Portum_Helper {
 	 */
 	public static function get_header_default() {
 		return wp_json_encode( array(
-			                       'columnsCount' => 2,
-			                       'columns'      => array(
-				                       array(
-					                       'index' => 1,
-					                       'span'  => 6,
-				                       ),
-				                       array(
-					                       'index' => 2,
-					                       'span'  => 6,
-				                       ),
-			                       ),
-		                       ) );
+			'columnsCount' => 2,
+			'columns'      => array(
+				array(
+					'index' => 1,
+					'span'  => 6,
+				),
+				array(
+					'index' => 2,
+					'span'  => 6,
+				),
+			),
+		) );
 	}
 
 	/**
@@ -41,26 +41,26 @@ class Portum_Helper {
 	 */
 	public static function get_footer_default() {
 		return wp_json_encode( array(
-			                       'columnsCount' => 4,
-			                       'columns'      => array(
-				                       array(
-					                       'index' => 1,
-					                       'span'  => 3,
-				                       ),
-				                       array(
-					                       'index' => 2,
-					                       'span'  => 3,
-				                       ),
-				                       array(
-					                       'index' => 3,
-					                       'span'  => 3,
-				                       ),
-				                       array(
-					                       'index' => 4,
-					                       'span'  => 3,
-				                       ),
-			                       ),
-		                       ) );
+			'columnsCount' => 4,
+			'columns'      => array(
+				array(
+					'index' => 1,
+					'span'  => 3,
+				),
+				array(
+					'index' => 2,
+					'span'  => 3,
+				),
+				array(
+					'index' => 3,
+					'span'  => 3,
+				),
+				array(
+					'index' => 4,
+					'span'  => 3,
+				),
+			),
+		) );
 	}
 
 	/**
@@ -68,31 +68,32 @@ class Portum_Helper {
 	 */
 	public static function get_blog_default() {
 		return wp_json_encode( array(
-			                       'columnsCount' => 2,
-			                       'columns'      => array(
-				                       1 => array(
-					                       'index' => 1,
-					                       'span'  => 8,
-				                       ),
-				                       2 => array(
-					                       'index' => 2,
-					                       'span'  => 4,
-				                       ),
-			                       ),
-		                       ) );
+			'columnsCount' => 2,
+			'columns'      => array(
+				1 => array(
+					'index' => 1,
+					'span'  => 8,
+				),
+				2 => array(
+					'index' => 2,
+					'span'  => 4,
+				),
+			),
+		) );
 	}
 
-	public static function generate_section_id( $key ){
+	public static function generate_section_id( $key ) {
 
-		$random = rand(1, 999999);
-		$id = $key . '-' . $random;
+		$random = rand( 1, 999999 );
+		$id     = $key . '-' . $random;
 
 		while ( in_array( $id, self::$section_ids ) ) {
-			$random = rand(1, 999999);
-			$id = $key . '-' . $random;
+			$random = rand( 1, 999999 );
+			$id     = $key . '-' . $random;
 		}
 
 		self::$section_ids[] = $id;
+
 		return $id;
 
 	}
@@ -148,7 +149,7 @@ class Portum_Helper {
 	 */
 	public static function generate_color_overlay( $key, $fields ) {
 		if ( ! empty( $fields[ $key . '_background_color' ] ) ) {
-			echo '<div class="ewf-section__overlay-color" style="background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . '; opacity: ' . esc_attr( $fields[ $key . '_background_color_opacity' ] ) . '"></div>';
+			echo '<div class="ewf-section__overlay-color" style="background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . ';"></div>';
 		}
 
 		echo '';
@@ -291,12 +292,10 @@ class Portum_Helper {
 	 *
 	 * @return string;
 	 */
-	public static function generate_section_title(
-		$subtitle = '', $title = '', $args = array(
+	public static function generate_section_title( $subtitle = '', $title = '', $args = array(
 		'bottom' => false,
 		'center' => false,
-	)
-	) {
+	) ) {
 		$class = 'headline';
 		if ( ! empty( $args['center'] ) ) {
 			$class .= ' text-center';
@@ -453,36 +452,36 @@ class Portum_Helper {
 			'right'  => 0,
 			'bottom' => 0,
 			'left'   => 0,
-			'unit'   => 'px'
+			'unit'   => 'px',
 		);
 
 		$desktop = array(
-			$key . '_margins_desktop' => 'margin',
+			$key . '_margins_desktop'  => 'margin',
 			$key . '_paddings_desktop' => 'padding',
 		);
 
 		$mobile = array(
 			$key . '_paddings_mobile' => 'padding',
-			$key . '_margins_mobile' => 'margin',
+			$key . '_margins_mobile'  => 'margin',
 		);
 
 		$keys = array(
-			$key . '_margins_tablet' => 'margin',
+			$key . '_margins_tablet'  => 'margin',
 			$key . '_paddings_tablet' => 'padding',
 		);
 
 		echo '<style type="text/css" media="all">';
-		
+
 		// Desktop CSS
 		$desktop_style = array();
-		if ( isset( $fields[ $key . '_margins_desktop' ] ) && '' !=  $fields[ $key . '_margins_desktop' ] ) {
+		if ( isset( $fields[ $key . '_margins_desktop' ] ) && '' != $fields[ $key . '_margins_desktop' ] ) {
 			$margins_desktop = wp_parse_args( json_decode( $fields[ $key . '_margins_desktop' ] ), $defaults );
 			$desktop_style[] = 'margin:' . $margins_desktop['top'] . $margins_desktop['unit'] . ' ' . $margins_desktop['right'] . $margins_desktop['unit'] . ' ' . $margins_desktop['bottom'] . $margins_desktop['unit'] . ' ' . $margins_desktop['left'] . $margins_desktop['unit'];
 		}
 
-		if ( isset( $fields[ $key . '_paddings_desktop' ] ) && '' !=  $fields[ $key . '_paddings_desktop' ] ) {
+		if ( isset( $fields[ $key . '_paddings_desktop' ] ) && '' != $fields[ $key . '_paddings_desktop' ] ) {
 			$paddings_desktop = wp_parse_args( json_decode( $fields[ $key . '_paddings_desktop' ] ), $defaults );
-			$desktop_style[] = 'padding:' . $paddings_desktop['top'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['right'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['bottom'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['left'] . $paddings_desktop['unit'];
+			$desktop_style[]  = 'padding:' . $paddings_desktop['top'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['right'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['bottom'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['left'] . $paddings_desktop['unit'];
 		}
 
 		if ( ! empty( $desktop_style ) ) {
@@ -492,16 +491,16 @@ class Portum_Helper {
 
 		// Tablet CSS
 		echo '@media (max-width: 768px) {';
-		
+
 		$tablet_style = array();
-		if ( isset( $fields[ $key . '_margins_tablet' ] ) && '' !=  $fields[ $key . '_margins_tablet' ] ) {
+		if ( isset( $fields[ $key . '_margins_tablet' ] ) && '' != $fields[ $key . '_margins_tablet' ] ) {
 			$margins_tablet = wp_parse_args( json_decode( $fields[ $key . '_margins_tablet' ] ), $defaults );
 			$tablet_style[] = 'margin:' . $margins_tablet['top'] . $margins_tablet['unit'] . ' ' . $margins_tablet['right'] . $margins_tablet['unit'] . ' ' . $margins_tablet['bottom'] . $margins_tablet['unit'] . ' ' . $margins_tablet['left'] . $margins_tablet['unit'];
 		}
 
-		if ( isset( $fields[ $key . '_paddings_tablet' ] ) && '' !=  $fields[ $key . '_paddings_desktop' ] ) {
+		if ( isset( $fields[ $key . '_paddings_tablet' ] ) && '' != $fields[ $key . '_paddings_desktop' ] ) {
 			$paddings_tablet = wp_parse_args( json_decode( $fields[ $key . '_paddings_tablet' ] ), $defaults );
-			$tablet_style[] = 'padding:' . $paddings_tablet['top'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['right'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['bottom'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['left'] . $paddings_tablet['unit'];
+			$tablet_style[]  = 'padding:' . $paddings_tablet['top'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['right'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['bottom'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['left'] . $paddings_tablet['unit'];
 		}
 
 		if ( ! empty( $tablet_style ) ) {
@@ -514,14 +513,14 @@ class Portum_Helper {
 		echo '@media (max-width: 576px) {';
 
 		$mobile_style = array();
-		if ( isset( $fields[ $key . '_margins_mobile' ] ) && '' !=  $fields[ $key . '_margins_mobile' ] ) {
+		if ( isset( $fields[ $key . '_margins_mobile' ] ) && '' != $fields[ $key . '_margins_mobile' ] ) {
 			$margins_mobile = wp_parse_args( json_decode( $fields[ $key . '_margins_mobile' ] ), $defaults );
 			$mobile_style[] = 'margin:' . $margins_mobile['top'] . $margins_mobile['unit'] . ' ' . $margins_mobile['right'] . $margins_mobile['unit'] . ' ' . $margins_mobile['bottom'] . $margins_mobile['unit'] . ' ' . $margins_mobile['left'] . $margins_mobile['unit'];
 		}
 
-		if ( isset( $fields[ $key . '_paddings_mobile' ] ) && '' !=  $fields[ $key . '_paddings_mobile' ] ) {
+		if ( isset( $fields[ $key . '_paddings_mobile' ] ) && '' != $fields[ $key . '_paddings_mobile' ] ) {
 			$paddings_mobile = wp_parse_args( json_decode( $fields[ $key . '_paddings_mobile' ] ), $defaults );
-			$mobile_style[] = 'padding:' . $paddings_mobile['top'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['right'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['bottom'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['left'] . $paddings_mobile['unit'];
+			$mobile_style[]  = 'padding:' . $paddings_mobile['top'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['right'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['bottom'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['left'] . $paddings_mobile['unit'];
 		}
 
 		if ( ! empty( $mobile_style ) ) {
