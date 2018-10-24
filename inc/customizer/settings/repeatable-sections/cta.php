@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_Call_To_Action
  */
 class Repeatable_Section_Call_To_Action extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -72,12 +73,7 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -99,7 +95,7 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
 			'cta_column_stretch'            => array(
 				'id'          => 'cta_column_stretch',
@@ -124,7 +120,7 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
 			'cta_column_vertical_alignment' => array(
 				'id'          => 'cta_column_vertical_alignment',
@@ -137,12 +133,12 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
 
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
+
 	}
 
 	/**
@@ -169,7 +165,7 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
-				'mode'       => 'rgb',
+				'mode'       => 'rgba',
 				'defaultVal' => '#EEE',
 				'group'      => 'background',
 				'condition'  => array(
@@ -197,7 +193,7 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
-				'mode'       => 'rgb',
+				'mode'       => 'rgba',
 				'defaultVal' => '',
 				'group'      => 'background',
 				'condition'  => array(
@@ -298,7 +294,7 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'cta_text_misc_font_color'   => array(
+			'cta_text_misc_font_color'  => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',

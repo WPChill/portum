@@ -164,7 +164,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'label'      => esc_html__( 'Background Color', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
-				'mode'       => 'rgb',
+				'mode'       => 'rgba',
 				'defaultVal' => '#EEE',
 				'group'      => 'background',
 				'condition'  => array(
@@ -192,7 +192,7 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'label'      => esc_html__( 'Background Image Color Overlay', 'epsilon-framework' ),
 				'default'    => '',
 				'type'       => 'epsilon-color-picker',
-				'mode'       => 'rgb',
+				'mode'       => 'rgba',
 				'defaultVal' => '',
 				'group'      => 'background',
 				'condition'  => array(

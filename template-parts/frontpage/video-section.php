@@ -75,7 +75,7 @@ if ( 'left' == $fields['video_row_title_align'] || 'right' == $fields['video_row
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'video', $fields ) ); ?>">
 
 					<div class="row <?php echo esc_attr( $row_class ); ?>">
-						<?php if ( ! empty( $fields['video_subtitle'] ) || ! empty( $fields['video-title'] ) ) { ?>
+						<?php if ( ! empty( $fields['video_subtitle'] ) || ! empty( $fields['video_title'] ) ) { ?>
 							<div class="<?php echo esc_attr( $header_class ); ?>">
 								<div class="ewf-section-text">
 									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>

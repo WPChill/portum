@@ -46,6 +46,7 @@ $item_spacing  = 'ewf-item__spacing-' . ( isset( $fields['inconboxes_column_spac
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['inconboxes_column_group'] ) );
 $item_effect_style = ( ! empty( $fields['inconboxes_item_style'] ) ? esc_attr( $fields['inconboxes_item_style'] ) : 'ewf-item__no-effect' );
 
+
 /**
  * Item Style
  */
@@ -82,9 +83,9 @@ $item_style         = array();
 										<?php } ?>
 
 										<?php if ( ! empty( $icon['icon_title'] ) ) { ?>
-											<div class="ewf-like-h3">
+											<div class="ewf-like-h5">
 												<?php echo wp_kses_post( $icon['icon_title'] ); ?>
-											</div><!--/.ewf-like-h6-->
+											</div><!--/.ewf-like-h5-->
 										<?php } ?>
 									</div><!--/.inconboxes-item-->
 								</div><!--/.col-sm-->
