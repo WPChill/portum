@@ -30,6 +30,10 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+if ( 'bgcolor' == $fields['openhours_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours_button_primary_url'];
 
 

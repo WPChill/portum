@@ -25,6 +25,9 @@ $parent_attr = array(
 	'class' => array( 'section-video', 'section', 'ewf-section', 'ewf-section-' . $fields['video_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+if ( 'bgcolor' == $fields['video_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
 $controls    = isset( $fields['video_show_controls'] ) ? $fields['video_show_controls'] : 1;
 $plyr_config = array(
 	'controls' => $controls ? array(

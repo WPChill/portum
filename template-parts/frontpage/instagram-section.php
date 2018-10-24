@@ -25,6 +25,11 @@ $parent_attr    = array(
 	'class' => array( 'section-instagram', 'section', 'ewf-section', 'ewf-section-' . $fields['instagram_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+
+if ( 'bgcolor' == $fields['instagram_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 /**
  * Layout Stuff
  */

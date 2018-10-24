@@ -27,6 +27,9 @@ $parent_attr                 = array(
 	'class' => array( 'section-team', 'ewf-section', 'ewf-section-' . $fields['team_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+if ( 'bgcolor' == $fields['team_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
 $fields['team_column_group'] = empty( $fields['team_column_group'] ) ? 2 : $fields['team_column_group'];
 $span                        = 12 / absint( $fields['team_column_group'] );
 

@@ -35,6 +35,10 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+if ( 'bgcolor' == $fields['portfolio_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 // only load scripts if we're viewing images in a lightbox
 if ( ! empty( $fields['portfolio_image_lightbox'] ) ) {
 	wp_enqueue_style( 'magnificPopup' );

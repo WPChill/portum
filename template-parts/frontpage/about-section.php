@@ -22,6 +22,11 @@ $parent_attr    = array(
 	'class' => array( 'section-about', 'section', 'ewf-section', 'ewf-section-' . $fields['about_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+
+if ( 'bgcolor' == $fields['about_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 /**
  * Layout Stuff
  */

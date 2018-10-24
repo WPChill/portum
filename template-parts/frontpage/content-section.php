@@ -31,6 +31,11 @@ $parent_attr = array(
 	'class' => array( 'ewf-section', 'ewf-section-' . $fields['content_section_visibility'] ),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
+
+if ( 'bgcolor' == $fields['content_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 ?>
 
 <section class="content content-section" data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">

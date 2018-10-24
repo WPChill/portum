@@ -32,6 +32,10 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+if ( 'bgcolor' == $fields['testimonials_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 $span = 12 / absint( $fields['testimonials_column_group'] );
 
 /**

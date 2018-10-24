@@ -31,6 +31,10 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+if ( 'bgcolor' == $fields['counters_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 /**
  * Layout stuff
  */

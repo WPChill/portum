@@ -30,6 +30,10 @@ $parent_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
+if ( 'bgcolor' == $fields['accordion_background_type'] ) {
+	$parent_attr['style'] = array( 'background-color' );
+}
+
 $content_class = '';
 $header_class  = '';
 $row_class     = '';
