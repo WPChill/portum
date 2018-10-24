@@ -42,13 +42,13 @@ $item_style         = array();
 
 if ( 'ewf-item__border' != $fields['item_style'] ) {
 	$item_element_class = $fields['item_style'];
-}else{
+} else {
 	$item_element_class = $fields['item_border_style'];
 
 	if ( ! empty( $fields['item_border_color'] ) ) {
 		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
 	}
-	
+
 	if ( ! empty( $fields['item_border_width'] ) ) {
 		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
 	}
@@ -59,9 +59,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 	<?php Portum_Helper::generate_inline_css( $fields['testimonials_section_unique_id'], 'testimonials', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'testimonials' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'testimonials', $fields ) ); ?>">

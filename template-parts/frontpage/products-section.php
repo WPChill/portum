@@ -11,8 +11,8 @@ $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' 
 $fields    = $frontpage->sections[ $section_id ];
 
 $args  = array(
-	'post_status' => 'publish',
-	'post_type' => 'product',
+	'post_status'    => 'publish',
+	'post_type'      => 'product',
 	'posts_per_page' => $fields['products_count'],
 );
 $query = new WP_Query( $args );
@@ -67,11 +67,8 @@ $item_container_class[] = 'col-sm-' . 12 / absint( $fields['products_column_grou
 	<?php Portum_Helper::generate_inline_css( $fields['section_unique_id'], 'products', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'products' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
-
-		<div class="ewf-section__content">
+		<?php $attr_helper->generate_color_overlay(); ?>
+		<div class="ewf-section__content ewf-text-align--center">
 
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'products', $fields ) ); ?>">
 
@@ -91,8 +88,8 @@ $item_container_class[] = 'col-sm-' . 12 / absint( $fields['products_column_grou
 							<?php $query->the_post(); ?>
 
 							<div class="<?php echo esc_attr( implode( ' ', $item_container_class ) ); ?>">
-								<div class="ewf-products <?php echo esc_attr( $item_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
-									<?php get_template_part( 'template-parts/product/section', 'product' ) ?>
+								<div class="ewf-products">
+									<?php get_template_part( 'template-parts/product/section', 'product' ); ?>
 								</div><!--/.ewf-products-->
 							</div><!--/.col-->
 

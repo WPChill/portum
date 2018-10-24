@@ -33,7 +33,7 @@ $parent_attr = array(
 );
 $counter     = 1;
 
-$array_left = array();
+$array_left  = array();
 $array_right = array();
 
 foreach ( $fields['features'] as $key => $feature ) {
@@ -119,7 +119,9 @@ foreach ( $fields['features'] as $key => $feature ) {
 					</div>
 
 					<div class="col-xs-12 col-sm-4">
-						<?php foreach ( $array_right as $key => $feature ) { ?>
+						<?php foreach ( $array_right
+
+						as $key => $feature ) { ?>
 						<?php
 						$icon_style = 'color: ' . ( ! empty( $feature['feature_icon_color'] ) ? esc_attr( $feature['feature_icon_color'] ) : 'inherit' ) . ';';
 						$icon_style .= 'background-color: ' . ( ! empty( $feature['feature_bg_icon_color'] ) ? esc_attr( $feature['feature_bg_icon_color'] ) : 'inherit' ) . ';';

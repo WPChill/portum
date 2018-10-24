@@ -37,9 +37,7 @@ $parent_attr = array(
 	<?php Portum_Helper::generate_inline_css( $fields['content_section_unique_id'], 'content', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'content' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'content', $fields ) ); ?>">
 

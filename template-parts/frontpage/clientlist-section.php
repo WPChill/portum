@@ -83,9 +83,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 	<?php Portum_Helper::generate_inline_css( $fields['clientlist_section_unique_id'], 'clientlist', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'clientlist' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'clientlist', $fields ) ); ?>">

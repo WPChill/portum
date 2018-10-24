@@ -98,9 +98,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<?php Portum_Helper::generate_inline_css( $fields['portfolio_section_unique_id'], 'portfolio', $fields ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
-		<?php
-		$attr_helper->generate_color_overlay();
-		?>
+		<?php $attr_helper->generate_color_overlay(); ?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'portfolio', $fields ) ); ?>">

@@ -30,7 +30,7 @@ $parent_attr = array(
 		'section-inconboxes',
 		'section',
 		'ewf-section',
-		'contrast',
+		$fields['iconbox_section_visibility'],
 	),
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
