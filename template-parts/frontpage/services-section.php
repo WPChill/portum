@@ -68,13 +68,13 @@ $item_style         = array();
 
 if ( 'ewf-item__border' != $fields['item_style'] ) {
 	$item_element_class = $fields['item_style'];
-}else{
+} else {
 	$item_element_class = $fields['item_border_style'];
 
 	if ( ! empty( $fields['item_border_color'] ) ) {
 		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
 	}
-	
+
 	if ( ! empty( $fields['item_border_width'] ) ) {
 		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
 	}
@@ -111,64 +111,64 @@ if ( ! empty( $fields['services_slider'] ) ) {
 
 					<!-- Check if we have values in our field repeater -->
 					<?php if ( ! empty( $fields['services'] ) ) { ?>
-					<div class="<?php echo esc_attr( $content_class ); ?>">
+						<div class="<?php echo esc_attr( $content_class ); ?>">
 
-						<?php if ( ! empty( $fields['services_slider'] ) ) { ?>
-						<div class="ewf-slider" data-slider-mode-fade="false" data-slider-speed="<?php echo ! empty( $fields['services_slider_speed'] ) ? absint( $fields['services_slider_speed'] ) : '500'; ?>" data-slider-autoplay="<?php echo $fields['services_slider_autostart'] ? 'true' : 'false'; ?>" data-slides-shown="<?php echo $fields['services_slides_shown'] ? esc_attr( $fields['services_slides_shown'] ) : '1'; ?>" data-slides-scrolled="<?php echo $fields['services_slides_scrolled'] ? esc_attr( $fields['services_slides_scrolled'] ) : '1'; ?>" data-slider-loop="<?php echo $fields['services_slider_infinite'] ? 'true' : 'false'; ?>" data-slider-enable-pager="<?php echo $fields['services_slider_pager'] ? 'true' : 'false'; ?>" data-slider-enable-controls="<?php echo $fields['services_slider_controls'] ? 'true' : 'false'; ?>">
+							<?php if ( ! empty( $fields['services_slider'] ) ) { ?>
+							<div class="ewf-slider" data-slider-mode-fade="false" data-slider-speed="<?php echo ! empty( $fields['services_slider_speed'] ) ? absint( $fields['services_slider_speed'] ) : '500'; ?>" data-slider-autoplay="<?php echo $fields['services_slider_autostart'] ? 'true' : 'false'; ?>" data-slides-shown="<?php echo $fields['services_slides_shown'] ? esc_attr( $fields['services_slides_shown'] ) : '1'; ?>" data-slides-scrolled="<?php echo $fields['services_slides_scrolled'] ? esc_attr( $fields['services_slides_scrolled'] ) : '1'; ?>" data-slider-loop="<?php echo $fields['services_slider_infinite'] ? 'true' : 'false'; ?>" data-slider-enable-pager="<?php echo $fields['services_slider_pager'] ? 'true' : 'false'; ?>" data-slider-enable-controls="<?php echo $fields['services_slider_controls'] ? 'true' : 'false'; ?>">
 
-							<div class="ewf-slider__slides">
-								<?php } ?>
-
-								<?php if ( empty( $fields['services_slider'] ) ) { ?>
-								<div class="row">
+								<div class="ewf-slider__slides">
 									<?php } ?>
-									<?php foreach ( $fields['services'] as $key => $service ) { ?><?php
-										$icon_style = 'color: ' . ( ! empty( $service['service_icon_color'] ) ? esc_attr( $service['service_icon_color'] ) : 'inherit' ) . ';';
-										$icon_style .= 'background-color: ' . ( ! empty( $service['service_bg_icon_color'] ) ? esc_attr( $service['service_bg_icon_color'] ) : 'inherit' ) . ';';
-										$icon_style .= 'border-color: ' . ( ! empty( $service['service_border_icon_color'] ) ? esc_attr( $service['service_border_icon_color'] ) : 'inherit' ) . ';';
-										$icon_style .= 'font-size: ' . ( ! empty( $service['service_icon_size'] ) ? esc_attr( $service['service_icon_size'] ) : 'inherit' ) . 'px;';
-										$icon_style .= 'border-width: ' . ( ! empty( $service['service_border_icon_size'] ) ? esc_attr( $service['service_border_icon_size'] ) : '0' ) . 'px;';
-										$icon_style .= 'border-radius: ' . ( ! empty( $service['service_border_icon_radius'] ) ? esc_attr( $service['service_border_icon_radius'] ) : '0' ) . 'px;';
-										if ( ! empty( $service['service_icon_size'] ) && ! empty( $service['service_border_icon_size'] ) ) {
-											$icon_style .= 'padding: ' . esc_attr( $service['service_icon_size'] / 3 . 'px;' );
-										}
 
-										$item_style[] = 'background-color: ' . ( ! empty( $service['services_bg_color'] ) ? esc_attr( $service['services_bg_color'] ) : '' );
-										?>
+									<?php if ( empty( $fields['services_slider'] ) ) { ?>
+									<div class="row">
+										<?php } ?>
+										<?php foreach ( $fields['services'] as $key => $service ) { ?><?php
+											$icon_style = 'color: ' . ( ! empty( $service['service_icon_color'] ) ? esc_attr( $service['service_icon_color'] ) : 'inherit' ) . ';';
+											$icon_style .= 'background-color: ' . ( ! empty( $service['service_bg_icon_color'] ) ? esc_attr( $service['service_bg_icon_color'] ) : 'inherit' ) . ';';
+											$icon_style .= 'border-color: ' . ( ! empty( $service['service_border_icon_color'] ) ? esc_attr( $service['service_border_icon_color'] ) : 'inherit' ) . ';';
+											$icon_style .= 'font-size: ' . ( ! empty( $service['service_icon_size'] ) ? esc_attr( $service['service_icon_size'] ) : 'inherit' ) . 'px;';
+											$icon_style .= 'border-width: ' . ( ! empty( $service['service_border_icon_size'] ) ? esc_attr( $service['service_border_icon_size'] ) : '0' ) . 'px;';
+											$icon_style .= 'border-radius: ' . ( ! empty( $service['service_border_icon_radius'] ) ? esc_attr( $service['service_border_icon_radius'] ) : '0' ) . 'px;';
+											if ( ! empty( $service['service_icon_size'] ) && ! empty( $service['service_border_icon_size'] ) ) {
+												$icon_style .= 'padding: ' . esc_attr( $service['service_icon_size'] / 3 . 'px;' );
+											}
 
-										<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-											<div class="services-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
-												<?php
-												echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
-												?>
-												<?php if ( ! empty( $service['service_icon'] ) ) { ?>
-													<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
-												<?php } ?>
+											$item_style[] = 'background-color: ' . ( ! empty( $service['services_bg_color'] ) ? esc_attr( $service['services_bg_color'] ) : '' );
+											?>
 
-												<?php if ( ! empty( $service['service_title'] ) ) { ?>
-													<div class="ewf-like-h6">
-														<?php echo wp_kses_post( $service['service_title'] ); ?>
-													</div><!--/.ewf-like-h6-->
-												<?php } ?>
+											<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
+												<div class="services-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+													<?php
+													echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
+													?>
+													<?php if ( ! empty( $service['service_icon'] ) ) { ?>
+														<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
+													<?php } ?>
 
-												<?php if ( ! empty( $service['service_description'] ) ) { ?>
-													<p><?php echo wp_kses_post( $service['service_description'] ); ?></p>
-												<?php } ?>
-											</div><!--/.services-item-->
-										</div><!--/.col-sm-->
+													<?php if ( ! empty( $service['service_title'] ) ) { ?>
+														<div class="ewf-like-h6">
+															<?php echo wp_kses_post( $service['service_title'] ); ?>
+														</div><!--/.ewf-like-h6-->
+													<?php } ?>
 
-									<?php }//end foreach ?>
+													<?php if ( ! empty( $service['service_description'] ) ) { ?>
+														<p><?php echo wp_kses_post( $service['service_description'] ); ?></p>
+													<?php } ?>
+												</div><!--/.services-item-->
+											</div><!--/.col-sm-->
 
-									<?php if ( ! empty( $fields['services_slider'] ) ) { ?>
-							</div><!--/.ewf-slider__slides-->
-							<div class="ewf-slider__pager"></div>
-							<div class="ewf-slider__arrows"></div>
-						</div><!--/.ewf-slider-->
-					<?php }// end if ?>
-					</div><!--/.col-sm--->
-				</div><!--/.row-->
-				<?php } ?>
+										<?php }//end foreach ?>
+
+										<?php if ( ! empty( $fields['services_slider'] ) ) { ?>
+									</div><!--/.ewf-slider__slides-->
+									<div class="ewf-slider__pager"></div>
+									<div class="ewf-slider__arrows"></div>
+								</div><!--/.ewf-slider-->
+								<?php }// end if ?>
+							</div><!--/.col-sm--->
+						</div><!--/.row-->
+					<?php } ?>
+				</div>
 			</div>
 		</div>
-	</div>
 </section>
