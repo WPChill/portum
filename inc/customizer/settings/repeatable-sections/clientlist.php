@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_Client_List
  */
 class Repeatable_Section_Client_List extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -72,12 +73,7 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -99,7 +95,7 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
 			'clientlist_column_stretch'            => array(
 				'id'          => 'clientlist_column_stretch',
@@ -119,26 +115,26 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 				'label'       => __( 'Item Group', 'epsilon-framework' ),
 				'description' => __( 'Number of items to display at once. Example: 2, 3 or 4 pricing tables. The width of the content will be equally split among the number of elements you select.', 'epsilon-framework' ),
 				'group'       => 'layout',
-				'default' => 3,
-				'choices' => array(
-					2   => esc_html__( '2 columns', 'epsilon-framework' ),
-					3   => esc_html__( '3 columns', 'epsilon-framework' ),
-					4   => esc_html__( '4 columns', 'epsilon-framework' ),
+				'default'     => 3,
+				'choices'     => array(
+					2 => esc_html__( '2 columns', 'epsilon-framework' ),
+					3 => esc_html__( '3 columns', 'epsilon-framework' ),
+					4 => esc_html__( '4 columns', 'epsilon-framework' ),
 				),
 			),
-			'clientlist_column_spacing'           => array(
-				'id'          => 'clientlist_column_spacing',
-				'type'        => 'select',
-				'label'       => esc_html__( 'Item Spacing', 'epsilon-framework' ),
+			'clientlist_column_spacing'            => array(
+				'id'      => 'clientlist_column_spacing',
+				'type'    => 'select',
+				'label'   => esc_html__( 'Item Spacing', 'epsilon-framework' ),
 				// 'description' => esc_html__( 'Adds padding top. ', 'epsilon-framework' ),
-				'group'       => 'layout',
-				'choices'     => array(
+				'group'   => 'layout',
+				'choices' => array(
 					'lg'   => esc_html__( 'Large (105px)', 'epsilon-framework' ),
 					'md'   => esc_html__( 'Medium (75px)', 'epsilon-framework' ),
 					'sm'   => esc_html__( 'Small (35px)', 'epsilon-framework' ),
 					'none' => esc_html__( 'None (0px)', 'epsilon-framework' ),
 				),
-				'default'     => 'lg',
+				'default' => 'lg',
 			),
 			'clientlist_column_alignment'          => array(
 				'id'          => 'clientlist_column_alignment',
@@ -151,7 +147,7 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
 			'clientlist_column_vertical_alignment' => array(
 				'id'          => 'clientlist_column_vertical_alignment',
@@ -164,12 +160,12 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
-		
+
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
+
 	}
 
 	/**
@@ -368,11 +364,11 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 					'ewf-item__shadow-effect' => esc_html__( 'Shadow Effect', 'portum' ),
 				),
 			),
-			'item_border_style'                   => array(
-				'label'   => esc_html__( 'Item Border Style', 'portum' ),
-				'type'    => 'select',
-				'default' => 'ewf-item__simple-border-effect',
-				'choices' => array(
+			'item_border_style'            => array(
+				'label'     => esc_html__( 'Item Border Style', 'portum' ),
+				'type'      => 'select',
+				'default'   => 'ewf-item__simple-border-effect',
+				'choices'   => array(
 					'ewf-item__border-dashed-effect' => esc_html__( 'Dashed Border Effect', 'portum' ),
 					'ewf-item__simple-border-effect' => esc_html__( 'Simple Border Effect', 'portum' ),
 				),
@@ -381,7 +377,7 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 					'ewf-item__border',
 				),
 			),
-			'item_border_color'      => array(
+			'item_border_color'            => array(
 				'label'     => esc_html__( 'Item Border Color Picker', 'portum' ),
 				'type'      => 'epsilon-color-picker',
 				'default'   => '',
@@ -390,14 +386,14 @@ class Repeatable_Section_Client_List extends Repeatable_Section {
 					array(
 						'item_style',
 						'ewf-item__border',
-					)
+					),
 				),
 			),
-			'item_border_width'              => array(
-				'label'       => esc_html__( 'Item Border Width', 'portum' ),
-				'type'        => 'epsilon-slider',
-				'default'     => 1,
-				'choices'     => array(
+			'item_border_width'            => array(
+				'label'     => esc_html__( 'Item Border Width', 'portum' ),
+				'type'      => 'epsilon-slider',
+				'default'   => 1,
+				'choices'   => array(
 					'min' => 1,
 					'max' => 10,
 				),

@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_Advanced_Slider
  */
 class Repeatable_Section_Advanced_Slider extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -81,6 +82,33 @@ class Repeatable_Section_Advanced_Slider extends Repeatable_Section {
 				'description' => esc_html__( 'Show prev/next arrows', 'portum' ),
 				'type'        => 'epsilon-toggle',
 				'default'     => true,
+			),
+			'slider_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Slider Controls', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Control how many slides to display at once', 'portum' ),
+						'help'   => esc_html__( 'Choose to display 2 or 3 slides at once for a magazine-like website.', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Control how many slides to change at once', 'portum' ),
+						'help'   => esc_html__( 'No more one slide after the other, slide 3,4 or even more at a time.', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Control Slider Height', 'portum' ),
+						'help'   => esc_html__( 'Turn your slider into a full-height one with the PRO version.', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Control Slider Transition Time', 'portum' ),
+						'help'   => esc_html__( 'Change the slider transition time.', 'portum' ),
+					),
+				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
 			),
 			'slider_advanced_grouping' => array(
 				'label'       => esc_html__( 'Filter shown slides', 'portum' ),

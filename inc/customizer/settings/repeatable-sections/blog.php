@@ -83,7 +83,7 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 	 */
 	public function layout_fields() {
 		$custom_fields = array(
-			'blog_row_title_align'           => array(
+			'blog_row_title_align' => array(
 				'id'          => 'blog_row_title_align',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Layout', 'epsilon-framework' ),
@@ -97,7 +97,7 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 				),
 				'default'     => '',
 			),
-			'blog_column_stretch'            => array(
+			'blog_column_stretch'  => array(
 				'id'          => 'blog_column_stretch',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Width', 'epsilon-framework' ),
@@ -109,7 +109,7 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 				),
 				'default'     => 'boxedin',
 			),
-			'blog_column_spacing'            => array(
+			'blog_column_spacing'  => array(
 				'id'      => 'blog_column_spacing',
 				'type'    => 'select',
 				'label'   => esc_html__( 'Item Spacing', 'epsilon-framework' ),
@@ -303,19 +303,19 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 	 */
 	public function normal_fields() {
 		return array(
-			'blog_title'                   => array(
+			'blog_title'             => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
 				'default'           => esc_html__( 'Find out the latest news?', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'blog_subtitle'                => array(
+			'blog_subtitle'          => array(
 				'label'             => esc_html__( 'Subtitle', 'portum' ),
 				'type'              => 'text',
 				'default'           => esc_html__( 'BLOG', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'item_style'                   => array(
+			'item_style'             => array(
 				'label'   => esc_html__( 'Item Style', 'portum' ),
 				'type'    => 'select',
 				'default' => 'ewf-item__no-effect',
@@ -325,7 +325,7 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 					'ewf-item__shadow-effect' => esc_html__( 'Shadow Effect', 'portum' ),
 				),
 			),
-			'item_border_style'            => array(
+			'item_border_style'      => array(
 				'label'     => esc_html__( 'Item Border Style', 'portum' ),
 				'type'      => 'select',
 				'default'   => 'ewf-item__simple-border-effect',
@@ -338,7 +338,7 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 					'ewf-item__border',
 				),
 			),
-			'item_border_color'            => array(
+			'item_border_color'      => array(
 				'label'     => esc_html__( 'Item Border Color Picker', 'portum' ),
 				'type'      => 'epsilon-color-picker',
 				'default'   => '',
@@ -350,7 +350,7 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 					),
 				),
 			),
-			'item_border_width'            => array(
+			'item_border_width'      => array(
 				'label'     => esc_html__( 'Item Border Width', 'portum' ),
 				'type'      => 'epsilon-slider',
 				'default'   => 1,
@@ -363,103 +363,37 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 					'ewf-item__border',
 				),
 			),
-			'blog_post_count'              => array(
-				'label'       => esc_html__( 'Post Count', 'portum' ),
-				'description' => esc_html__( 'Only posts with featured image are loaded', 'portum' ),
-				'type'        => 'epsilon-slider',
-				'default'     => 3,
-				'choices'     => array(
-					'min' => 1,
-					'max' => 10,
+			'blog_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Blog Section Controls', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Blog Post count', 'portum' ),
+						'help'   => esc_html__( 'Choose to display as many blog posts at once you want.', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Blog Post Excerpt Count', 'portum' ),
+						'help'   => esc_html__( 'Control excerpt count. Drag to 0 to hide it completely.', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Control Blog Post Meta', 'portum' ),
+						'help'   => esc_html__( 'Decide if you want to show: blog post date, author or comment number', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Show/hide featured image', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Show read more button', 'portum' ),
+						'help'   => esc_html__( 'Display a button you can link to your blogs\'s archive.', 'portum' ),
+					),
 				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
 			),
-			'blog_post_word_count'         => array(
-				'label'       => esc_html__( 'Post Excerpt Word Count', 'portum' ),
-				'description' => esc_html__( 'You can control the word count of the post excerpt from here. ', 'portum' ),
-				'type'        => 'epsilon-slider',
-				'default'     => 30,
-				'choices'     => array(
-					'min'  => 0,
-					'max'  => 150,
-					'step' => 5,
-				),
-			),
-			'blog_show_date'               => array(
-				'label'   => esc_html__( 'Show Post Date Meta', 'portum' ),
-				'type'    => 'epsilon-toggle',
-				'default' => true,
-			),
-			'blog_show_author'             => array(
-				'label'   => esc_html__( 'Show Post Author Meta', 'portum' ),
-				'type'    => 'epsilon-toggle',
-				'default' => true,
-			),
-			'blog_show_comments'           => array(
-				'label'   => esc_html__( 'Show Post Comments Meta', 'portum' ),
-				'type'    => 'epsilon-toggle',
-				'default' => true,
-			),
-			'blog_show_thumbnail'          => array(
-				'label'   => esc_html__( 'Show Post Thumbnail Meta', 'portum' ),
-				'type'    => 'epsilon-toggle',
-				'default' => true,
-			),
-			'blog_show_read_more'          => array(
-				'label'   => esc_html__( 'Show Read More Button', 'portum' ),
-				'type'    => 'epsilon-toggle',
-				'default' => true,
-			),
-			'blog_button_label'            => array(
-				'label'             => esc_html__( 'Read More Label', 'portum' ),
-				'type'              => 'text',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-				'condition'         => array( 'blog_show_read_more', true ),
-			),
-			'blog_button_size'             => array(
-				'label'     => esc_html__( 'Primary Button Size', 'portum' ),
-				'type'      => 'select',
-				'default'   => 'ewf-btn--huge',
-				'choices'   => array(
-					'ewf-btn--huge'   => __( 'Huge', 'portum' ),
-					'ewf-btn--medium' => __( 'Medium', 'portum' ),
-					'ewf-btn--small'  => __( 'Small', 'portum' ),
-				),
-				'condition' => array( 'blog_show_read_more', true ),
-			),
-			'blog_button_radius'           => array(
-				'label'     => esc_html__( 'Read More Button Radius', 'portum' ),
-				'type'      => 'epsilon-slider',
-				'default'   => 0,
-				'choices'   => array(
-					'min'  => 0,
-					'max'  => 50,
-					'step' => 5,
-				),
-				'condition' => array( 'blog_show_read_more', true ),
-			),
-			'blog_button_background_color' => array(
-				'label'             => esc_html__( 'Read More Button Bg. Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#000',
-				'sanitize_callback' => 'wp_kses_post',
-				'condition'         => array( 'blog_show_read_more', true ),
-			),
-			'blog_button_text_color'       => array(
-				'label'             => esc_html__( 'Read More Button Text Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#FFF',
-				'sanitize_callback' => 'wp_kses_post',
-				'condition'         => array( 'blog_show_read_more', true ),
-			),
-			'blog_button_border_color'     => array(
-				'label'             => esc_html__( 'Read More Button Border Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#EEE',
-				'sanitize_callback' => 'wp_kses_post',
-				'condition'         => array( 'blog_show_read_more', true ),
-			),
-			'blog_section_unique_id'       => array(
+			'blog_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',
