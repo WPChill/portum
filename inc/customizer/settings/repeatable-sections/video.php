@@ -50,7 +50,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 	 */
 	public function set_upsell() {
 		$this->upsell      = true;
-		$this->upsell_url  = '#';
+		$this->upsell_url = 'https://www.machothemes.com/portum-pro/';
 		$this->upsell_text = 'See PRO';
 	}
 

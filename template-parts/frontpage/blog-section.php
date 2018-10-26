@@ -75,7 +75,7 @@ if ( 'left' == $fields['blog_row_title_align'] || 'right' == $fields['blog_row_t
 		$row_class = 'row-column-reverse';
 	}
 }
-$item_container_class[] = 'col-sm-3';
+$item_container_class[] = 'col-sm-4';
 // end layout stuff
 ?>
 
