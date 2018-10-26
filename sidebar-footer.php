@@ -43,23 +43,25 @@ $footer_width = ( get_theme_mod( 'portum_footer_width', false ) ? 'container-flu
 ?>
 
 <div id="footer">
-	<div class="<?php echo esc_attr( $footer_width ); ?>">
+	<div id="footer-widgets">
+		<div class="<?php echo esc_attr( $footer_width ); ?>">
 
-		<?php if ( ! empty( $sidebars ) ) { ?>
-			<div class="row">
-				<?php foreach ( $footer_layout['columns'] as $sidebar ) : ?>
+			<?php if ( ! empty( $sidebars ) ) { ?>
+				<div class="row">
+					<?php foreach ( $footer_layout['columns'] as $sidebar ) : ?>
 
-					<?php if ( is_active_sidebar( 'footer-sidebar-' . $sidebar['index'] ) ) { ?>
-						<div id="footer-widget-area-<?php echo esc_attr( $sidebar['index'] ); ?>" class="col-sm-<?php echo esc_attr( $sidebar['span'] ); ?>">
-							<?php dynamic_sidebar( 'footer-sidebar-' . $sidebar['index'] ); ?>
-						</div>
-					<?php } ?>
+						<?php if ( is_active_sidebar( 'footer-sidebar-' . $sidebar['index'] ) ) { ?>
+							<div id="footer-widget-area-<?php echo esc_attr( $sidebar['index'] ); ?>" class="col-sm-<?php echo esc_attr( $sidebar['span'] ); ?>">
+								<?php dynamic_sidebar( 'footer-sidebar-' . $sidebar['index'] ); ?>
+							</div>
+						<?php } ?>
 
-				<?php endforeach; ?>
-			</div><!--.row-->
-		<?php } ?>
+					<?php endforeach; ?>
+				</div><!--.row-->
+			<?php } ?>
 
-	</div>
+		</div>
+	</div><!--/#footer-widgets-->
 	<?php get_template_part( 'template-parts/footer/copyright' ); ?>
 </div>
 
