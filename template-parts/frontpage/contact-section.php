@@ -37,13 +37,13 @@ $header_class  = '';
 $row_class     = '';
 
 if ( 'left' == $fields['contact_row_title_align'] || 'right' == $fields['contact_row_title_align'] ) {
-	$content_class = 'col-md-7';
-	$header_class  = 'col-md-5';
+	$content_class = 'col-md-6';
+	$header_class  = 'col-md-6';
 	if ( 'right' == $fields['contact_row_title_align'] ) {
 		$row_class = 'row-flow-reverse';
 	}
 } else {
-	$content_class = 'col-md-12';
+	$content_class = 'col-md-6';
 	$header_class  = 'col-md-12';
 	if ( 'bottom' == $fields['contact_row_title_align'] ) {
 		$row_class = 'row-column-reverse';

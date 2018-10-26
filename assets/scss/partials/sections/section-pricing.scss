@@ -5,6 +5,9 @@
 	color: #fff;
 	padding: 8px;
 	border-bottom: 2px solid transparent;
+	position: absolute;
+	top: 0;
+	width: calc(100% - 16px);
 }
 
 .ewf-pricing__item-container {

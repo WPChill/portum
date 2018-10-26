@@ -2270,7 +2270,7 @@ label
 }
 
 /**
- * 1. IE input fix. 
+ * 1. IE input fix.
  */
 input[type='text'],
 input[type='password'],
@@ -2288,26 +2288,31 @@ input[type='url'],
 input[type='color'],
 textarea
 {
-    font-family: inherit;
-    font-size: inherit;
-
-    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
 
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    height: 37px;
-    margin-bottom: 25px;
-    /* 1 */
-    padding: 5px 12px;
+    max-width: 100%;
+    padding: 10px;
 
-    color: #212529;
-    border: 1px solid #ebebeb;
-    background-color: #fff;
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+         -o-transition: all .2s linear;
+            transition: all .2s linear;
 
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    color: #000;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+       -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+
+         -o-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
 }
 
 input[type='text']:focus,
@@ -2560,8 +2565,8 @@ input[type='button']:active
 }
 
 /**
- 	 * Placeholder text color -- selectors need to be separate to work.
- 	 */
+  * Placeholder text color -- selectors need to be separate to work.
+  */
 ::-webkit-input-placeholder
 {
     color: #ababb2;
@@ -2573,8 +2578,8 @@ input[type='button']:active
 }
 
 /**
- 	 * 1. Since FF19 lowers the opacity of the placeholder by default
- 	 */
+  * 1. Since FF19 lowers the opacity of the placeholder by default
+  */
 ::-moz-placeholder
 {
     opacity: 1;
@@ -6379,6 +6384,10 @@ body.ctdw-bar-visible #header.header--over-content
 /* ----------------------------------- #08 - PRICING section --------------------------------*/
 .ewf-pricing__featured
 {
+    position: absolute;
+    top: 0;
+
+    width: calc(100% - 16px);
     padding: 8px;
 
     color: #fff;

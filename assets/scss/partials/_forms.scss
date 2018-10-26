@@ -2,264 +2,273 @@
    =Forms
    ========================================================================== */
 
-	form {}
-	
-	fieldset { display: block; }
+form {}
 
-	fieldset legend {}
-	
-	label { display: block; }
-	
-	/**
-	 * 1. IE input fix. 
-	 */
-	
-	input[type="text"],
-	input[type="password"],
-	input[type="date"],
-	input[type="datetime"],
-	input[type="datetime-local"],
-	input[type="month"],
-	input[type="week"],
-	input[type="email"],
-	input[type="number"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="time"],
-	input[type="url"],
-	input[type="color"],
-	textarea {
-		display: block;
-	    box-sizing: border-box;
-		width: 100%;
-		height: 37px; /* 1 */	
-		padding: 5px 12px;
-		border: 1px solid $border-color;
-		margin-bottom: 25px;
-		background-color: #ffffff;
-		color: $text-color;
-		font-family:inherit;
-		font-size:inherit;
-		appearance: none;
-	}
+fieldset { display: block; }
 
-	input[type="text"]:focus,
-	input[type="password"]:focus,
-	input[type="date"]:focus,
-	input[type="datetime"]:focus,
-	input[type="datetime-local"]:focus,
-	input[type="month"]:focus,
-	input[type="week"]:focus,
-	input[type="email"]:focus,
-	input[type="number"]:focus,
-	input[type="search"]:focus,
-	input[type="tel"]:focus,
-	input[type="time"]:focus,
-	input[type="url"]:focus,
-	input[type="color"]:focus,
-	textarea:focus {
-		border-color: $input-border-focus-color;
-		outline: none;
-	}
+fieldset legend {}
 
-	input[type="text"]:disabled,
-	input[type="password"]:disabled,
-	input[type="date"]:disabled,
-	input[type="datetime"]:disabled,
-	input[type="datetime-local"]:disabled,
-	input[type="month"]:disabled,
-	input[type="week"]:disabled,
-	input[type="email"]:disabled,
-	input[type="number"]:disabled,
-	input[type="search"]:disabled,
-	input[type="tel"]:disabled,
-	input[type="time"]:disabled,
-	input[type="url"]:disabled,
-	input[type="color"]:disabled,
-	textarea:disabled {
-		cursor: not-allowed;
-		background-color: $background-color;
-	}
-	
-	input[type="text"]:invalid,
-	input[type="password"]:invalid,
-	input[type="date"]:invalid,
-	input[type="datetime"]:invalid,
-	input[type="datetime-local"]:invalid,
-	input[type="month"]:invalid,
-	input[type="week"]:invalid,
-	input[type="email"]:invalid,
-	input[type="number"]:invalid,
-	input[type="search"]:invalid,
-	input[type="tel"]:invalid,
-	input[type="time"]:invalid,
-	input[type="url"]:invalid,
-	input[type="color"]:invalid,
-	textarea:invalid {
-		border-color: $input-border-invalid-color;
-	}
+label { display: block; }
 
-	input[type="text"][disabled],
-	input[type="text"][readonly],
-	fieldset[disabled] input[type="text"],
-	input[type="password"][disabled],
-	input[type="password"][readonly],
-	fieldset[disabled] input[type="password"],
-	input[type="date"][disabled],
-	input[type="date"][readonly],
-	fieldset[disabled] input[type="date"],
-	input[type="datetime"][disabled],
-	input[type="datetime"][readonly],
-	fieldset[disabled] input[type="datetime"],
-	input[type="datetime-local"][disabled],
-	input[type="datetime-local"][readonly],
-	fieldset[disabled] input[type="datetime-local"],
-	input[type="month"][disabled],
-	input[type="month"][readonly],
-	fieldset[disabled] input[type="month"],
-	input[type="week"][disabled],
-	input[type="week"][readonly],
-	fieldset[disabled] input[type="week"],
-	input[type="email"][disabled],
-	input[type="email"][readonly],
-	fieldset[disabled] input[type="email"],
-	input[type="number"][disabled],
-	input[type="number"][readonly],
-	fieldset[disabled] input[type="number"],
-	input[type="search"][disabled],
-	input[type="search"][readonly],
-	fieldset[disabled] input[type="search"],
-	input[type="tel"][disabled],
-	input[type="tel"][readonly],
-	fieldset[disabled] input[type="tel"],
-	input[type="time"][disabled],
-	input[type="time"][readonly],
-	fieldset[disabled] input[type="time"],
-	input[type="url"][disabled],
-	input[type="url"][readonly],
-	fieldset[disabled] input[type="url"],
-	input[type="color"][disabled],
-	input[type="color"][readonly],
-	fieldset[disabled] input[type="color"],
-	textarea[disabled],
-	textarea[readonly],
-	fieldset[disabled] textarea {
-		cursor: not-allowed;
-		background-color: $background-color;
-	}
+/**
+ * 1. IE input fix.
+ */
 
-	textarea[rows] { height: auto; }
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	max-width: 100%;
+	border: 0;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 22px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+	-o-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
+	transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #fff;
+	box-sizing: border-box;
+	color: #000;
+	border-bottom: 1px solid #fff;
+}
 
-	/**
-	 *  1. Disallow resize out of parent
-	 */
-	
-	textarea { max-width: 100%; /* 1 */ }
-	
-	/**
-	 * 1. IE input fix.
-	 */
-	
-	select {
-	    box-sizing: border-box;
-		width: 100%;
-		height: 37px; /* 1 */
-		padding: 5px 12px;
-		border: 1px solid $border-color;
-		margin-bottom: 25px;
-		background-color: #ffffff;
-		color: $text-color;
-		font:inherit;
-		appearance: none;
-	}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	border-color: $input-border-focus-color;
+	outline: none;
+}
 
-	select[multiple] { 
-		height: auto;
-		padding: 12px 12px;
-		@include line-height(14,25);	
-	}
-	
-	select:disabled { cursor: not-allowed; }
-	
-	select:focus { border-color: $input-border-focus-color; }
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="date"]:disabled,
+input[type="datetime"]:disabled,
+input[type="datetime-local"]:disabled,
+input[type="month"]:disabled,
+input[type="week"]:disabled,
+input[type="email"]:disabled,
+input[type="number"]:disabled,
+input[type="search"]:disabled,
+input[type="tel"]:disabled,
+input[type="time"]:disabled,
+input[type="url"]:disabled,
+input[type="color"]:disabled,
+textarea:disabled {
+	cursor: not-allowed;
+	background-color: $background-color;
+}
 
-	input[type="range"] { width: 50%; }
-	
-	/**
-	 * 1. Firefox fix for size. or else it overflows on 320px
-	 */
-	
-	input[type="file"]{
-		font-size: 13px; /* 1 */
-		height: auto;
-		width: 100%;
-		margin-bottom: 25px;
-	}
-	
-	input[type="checkbox"],
-	input[type="radio"] {
-		margin-bottom: 0;
-	}
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="date"]:invalid,
+input[type="datetime"]:invalid,
+input[type="datetime-local"]:invalid,
+input[type="month"]:invalid,
+input[type="week"]:invalid,
+input[type="email"]:invalid,
+input[type="number"]:invalid,
+input[type="search"]:invalid,
+input[type="tel"]:invalid,
+input[type="time"]:invalid,
+input[type="url"]:invalid,
+input[type="color"]:invalid,
+textarea:invalid {
+	border-color: $input-border-invalid-color;
+}
 
-	input[type="checkbox"] + label,
-	input[type="radio"] + label {
-		margin-right: 12px;
-		margin-bottom: 12px;
-		vertical-align: baseline;
-	}
+input[type="text"][disabled],
+input[type="text"][readonly],
+fieldset[disabled] input[type="text"],
+input[type="password"][disabled],
+input[type="password"][readonly],
+fieldset[disabled] input[type="password"],
+input[type="date"][disabled],
+input[type="date"][readonly],
+fieldset[disabled] input[type="date"],
+input[type="datetime"][disabled],
+input[type="datetime"][readonly],
+fieldset[disabled] input[type="datetime"],
+input[type="datetime-local"][disabled],
+input[type="datetime-local"][readonly],
+fieldset[disabled] input[type="datetime-local"],
+input[type="month"][disabled],
+input[type="month"][readonly],
+fieldset[disabled] input[type="month"],
+input[type="week"][disabled],
+input[type="week"][readonly],
+fieldset[disabled] input[type="week"],
+input[type="email"][disabled],
+input[type="email"][readonly],
+fieldset[disabled] input[type="email"],
+input[type="number"][disabled],
+input[type="number"][readonly],
+fieldset[disabled] input[type="number"],
+input[type="search"][disabled],
+input[type="search"][readonly],
+fieldset[disabled] input[type="search"],
+input[type="tel"][disabled],
+input[type="tel"][readonly],
+fieldset[disabled] input[type="tel"],
+input[type="time"][disabled],
+input[type="time"][readonly],
+fieldset[disabled] input[type="time"],
+input[type="url"][disabled],
+input[type="url"][readonly],
+fieldset[disabled] input[type="url"],
+input[type="color"][disabled],
+input[type="color"][readonly],
+fieldset[disabled] input[type="color"],
+textarea[disabled],
+textarea[readonly],
+fieldset[disabled] textarea {
+	cursor: not-allowed;
+	background-color: $background-color;
+}
 
-	input[type="reset"],
-	input[type="submit"],
-	input[type="button"]{
-		position: relative;
-		background-clip: padding-box;
-		display: inline-block;
-		border-radius:35px;
-		padding: 9px 22px;	
-		margin-bottom: 25px;
-		font:inherit;
-		border:none;
-		background-color: $accent-1-color;
-		color: #ffffff;
-		text-align: center;
-		text-decoration: none;
-		cursor: pointer;
-		appearance: none;
-		min-width:150px;
-	} 
-	
-	input[type="reset"]:hover,
-	input[type="submit"]:hover,
-	input[type="button"]:hover,
-	input[type="reset"]:focus,
-	input[type="submit"]:focus,
-	input[type="button"]:focus {
-		background-color: $accent-2-color;
-		color: #ffffff;
-	}
-	
-	input[type="reset"]:active,
-	input[type="submit"]:active,
-	input[type="button"]:active {
-		background-color: $accent-2-color;
-		color: #ffffff;
-	}		
+textarea[rows] { height: auto; }
 
-	/**
- 	 * Placeholder text color -- selectors need to be separate to work.
- 	 */
-	 
-	::-webkit-input-placeholder { color: $input-placeholder-color; }
+/**
+ *  1. Disallow resize out of parent
+ */
 
-	:-moz-placeholder { color: $input-placeholder-color; }
+textarea { max-width: 100%; /* 1 */
+}
 
-	/**
- 	 * 1. Since FF19 lowers the opacity of the placeholder by default
- 	 */
-	 
-	::-moz-placeholder {
-		color: $input-placeholder-color;
-		opacity: 1; /* 1 */
-	}
+/**
+ * 1. IE input fix.
+ */
 
-	:-ms-input-placeholder {	color: $input-placeholder-color; }
+select {
+	box-sizing: border-box;
+	width: 100%;
+	height: 37px; /* 1 */
+	padding: 5px 12px;
+	border: 1px solid $border-color;
+	margin-bottom: 25px;
+	background-color: #fff;
+	color: $text-color;
+	font: inherit;
+	appearance: none;
+}
+
+select[multiple] {
+	height: auto;
+	padding: 12px 12px;
+	@include line-height(14, 25);
+}
+
+select:disabled { cursor: not-allowed; }
+
+select:focus { border-color: $input-border-focus-color; }
+
+input[type="range"] { width: 50%; }
+
+/**
+ * 1. Firefox fix for size. or else it overflows on 320px
+ */
+
+input[type="file"] {
+	font-size: 13px; /* 1 */
+	height: auto;
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-bottom: 0;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+	margin-right: 12px;
+	margin-bottom: 12px;
+	vertical-align: baseline;
+}
+
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+	position: relative;
+	background-clip: padding-box;
+	display: inline-block;
+	border-radius: 35px;
+	padding: 9px 22px;
+	margin-bottom: 25px;
+	font: inherit;
+	border: none;
+	background-color: $accent-1-color;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	appearance: none;
+	min-width: 150px;
+}
+
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus {
+	background-color: $accent-2-color;
+	color: #fff;
+}
+
+input[type="reset"]:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+	background-color: $accent-2-color;
+	color: #fff;
+}
+
+/**
+  * Placeholder text color -- selectors need to be separate to work.
+  */
+
+::-webkit-input-placeholder { color: $input-placeholder-color; }
+
+:-moz-placeholder { color: $input-placeholder-color; }
+
+/**
+  * 1. Since FF19 lowers the opacity of the placeholder by default
+  */
+
+::-moz-placeholder {
+	color: $input-placeholder-color;
+	opacity: 1; /* 1 */
+}
+
+:-ms-input-placeholder { color: $input-placeholder-color; }

@@ -110,13 +110,15 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 							?>
 
 							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-								<?php if ( true === $pricing_box['price_box_featured'] ) { ?>
-									<div class="ewf-pricing__featured">
-										<?php echo esc_html__( 'Most Popular', 'portum' ); ?>
-									</div><!--/.pricing featured-->
-								<?php }//endif true check ?>
+
 
 								<div style="<?php echo esc_attr( $bg_color ) . esc_attr( implode( ';', $item_style ) ); ?>" class="ewf-pricing__item-container <?php echo esc_attr( $item_element_class ); ?>">
+									<?php if ( true === $pricing_box['price_box_featured'] ) { ?>
+										<div class="ewf-pricing__featured">
+											<?php echo esc_html__( 'Most Popular', 'portum' ); ?>
+										</div><!--/.pricing featured-->
+									<?php }//endif true check ?>
+
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_pricing_section', 'portum_price_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
