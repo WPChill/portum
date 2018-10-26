@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_About
  */
 class Repeatable_Section_Openhours extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -42,6 +43,15 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 	 */
 	public function set_image() {
 		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-openhours.png' );
+	}
+
+	/**
+	 * Upsell
+	 */
+	public function set_upsell() {
+		$this->upsell      = true;
+		$this->upsell_url  = '#';
+		$this->upsell_text = 'See PRO';
 	}
 
 	/**
@@ -72,12 +82,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -99,7 +104,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'left'   => esc_html__( 'Left', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => ''
+				'default'     => '',
 			),
 			'openhours_column_stretch'            => array(
 				'id'          => 'openhours_column_stretch',
@@ -124,7 +129,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'center' => esc_html__( 'Center', 'epsilon-framework' ),
 					'right'  => esc_html__( 'Right', 'epsilon-framework' ),
 				),
-				'default'     => 'center'
+				'default'     => 'center',
 			),
 			'openhours_column_vertical_alignment' => array(
 				'id'          => 'openhours_column_vertical_alignment',
@@ -137,12 +142,12 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 					'middle' => esc_html__( 'Middle', 'epsilon-framework' ),
 					'bottom' => esc_html__( 'Bottom', 'epsilon-framework' ),
 				),
-				'default'     => 'middle'
+				'default'     => 'middle',
 			),
 		);
 
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
+
 	}
 
 	/**
@@ -298,7 +303,7 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'openhours_text_misc_font_color'    => array(
+			'openhours_text_misc_font_color'  => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',

@@ -75,7 +75,7 @@ if ( 'left' == $fields['blog_row_title_align'] || 'right' == $fields['blog_row_t
 		$row_class = 'row-column-reverse';
 	}
 }
-$item_container_class[] = 'col-sm-' . 12 / absint( $fields['blog_post_count'] );
+$item_container_class[] = 'col-sm-3';
 // end layout stuff
 ?>
 

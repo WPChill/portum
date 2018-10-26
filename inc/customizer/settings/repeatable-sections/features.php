@@ -16,6 +16,7 @@ require_once dirname( __FILE__ ) . '/repeatable-section.php';
  * Class Repeatable_Section_Features
  */
 class Repeatable_Section_Features extends Repeatable_Section {
+
 	/**
 	 * Sets the section id
 	 */
@@ -41,7 +42,16 @@ class Repeatable_Section_Features extends Repeatable_Section {
 	 * Sets section image
 	 */
 	public function set_image() {
-		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-features-pt.png' );
+		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-features-pt.jpg' );
+	}
+
+	/**
+	 * Upsell
+	 */
+	public function set_upsell() {
+		$this->upsell      = true;
+		$this->upsell_url  = '#';
+		$this->upsell_text = 'See PRO';
 	}
 
 	/**
@@ -72,12 +82,7 @@ class Repeatable_Section_Features extends Repeatable_Section {
 	 * Creates the section fields
 	 */
 	public function create_fields() {
-		$this->fields = array_merge(
-			$this->layout_fields(),
-			$this->background_fields(),
-			$this->color_fields(),
-			$this->normal_fields()
-		);
+		$this->fields = array_merge( $this->layout_fields(), $this->background_fields(), $this->color_fields(), $this->normal_fields() );
 	}
 
 	/**
@@ -87,7 +92,7 @@ class Repeatable_Section_Features extends Repeatable_Section {
 	 */
 	public function layout_fields() {
 		$custom_fields = array(
-			'features_column_stretch'            => array(
+			'features_column_stretch' => array(
 				'id'          => 'features_column_stretch',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Section Width', 'epsilon-framework' ),
@@ -102,7 +107,7 @@ class Repeatable_Section_Features extends Repeatable_Section {
 		);
 
 		return array_merge( $this->create_margin_fields(), $this->create_padding_fields(), $custom_fields );
-		
+
 	}
 
 	/**
@@ -248,7 +253,7 @@ class Repeatable_Section_Features extends Repeatable_Section {
 	public function color_fields() {
 		return array(
 			'features_title_misc_font_color' => array(
-				'selectors' => array(
+				'selectors'     => array(
 					'h1',
 					'h2',
 					'h3',
@@ -268,7 +273,7 @@ class Repeatable_Section_Features extends Repeatable_Section {
 				'defaultVal'    => '',
 				'group'         => 'colors',
 			),
-			'features_text_misc_font_color'    => array(
+			'features_text_misc_font_color'  => array(
 				'selectors'     => array( 'p' ),
 				'css-attribute' => 'color',
 				'default'       => '',

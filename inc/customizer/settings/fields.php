@@ -681,28 +681,6 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '',
 		),
-		'counter_icon'         => array(
-			'label'   => esc_html__( 'Icon', 'portum' ),
-			'type'    => 'epsilon-icon-picker',
-			'default' => 'fa fa-hdd-o',
-			'groups'  => array( 'general' ),
-		),
-		'counter_icon_color'   => array(
-			'label'   => esc_html__( 'Icon Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => '#FFF',
-		),
-		'counter_icon_size'    => array(
-			'label'       => esc_html__( 'Icon Size', 'portum' ),
-			'description' => esc_html__( 'Value is in pixels', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 56,
-			'choices'     => array(
-				'min'  => 36,
-				'max'  => 96,
-				'step' => 5,
-			),
-		),
 		'counter_type'         => array(
 			'label'   => esc_html__( 'Counter type', 'portum' ),
 			'type'    => 'select',
@@ -715,7 +693,32 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
 		'counter_icon_display' => array(
 			'label'   => esc_html__( 'Display icon?', 'portum' ),
 			'type'    => 'epsilon-toggle',
-			'default' => true,
+			'default' => false,
+		),
+		'counter_icon'         => array(
+			'label'     => esc_html__( 'Icon', 'portum' ),
+			'type'      => 'epsilon-icon-picker',
+			'default'   => 'fa fa-hdd-o',
+			'groups'    => array( 'general' ),
+			'condition' => array( 'counter_icon_display', true ),
+		),
+		'counter_icon_color'   => array(
+			'label'     => esc_html__( 'Icon Color', 'portum' ),
+			'type'      => 'epsilon-color-picker',
+			'default'   => '#FFF',
+			'condition' => array( 'counter_icon_display', true ),
+		),
+		'counter_icon_size'    => array(
+			'label'       => esc_html__( 'Icon Size', 'portum' ),
+			'description' => esc_html__( 'Value is in pixels', 'portum' ),
+			'type'        => 'epsilon-slider',
+			'default'     => 56,
+			'choices'     => array(
+				'min'  => 36,
+				'max'  => 96,
+				'step' => 5,
+			),
+			'condition'   => array( 'counter_icon_display', true ),
 		),
 	),
 ) );

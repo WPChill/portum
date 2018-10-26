@@ -42,7 +42,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 * Sets section image
 	 */
 	public function set_image() {
-		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-iconboxes.jpg' );
+		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-clients.png' );
 	}
 
 	/**
