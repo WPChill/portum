@@ -503,7 +503,6 @@ class Portum {
 		$setup['actions'] = $dashboard->get_actions();
 		$setup['tabs']    = $dashboard->get_tabs( $setup );
 		$setup['plugins'] = $dashboard->get_plugins();
-		$setup['privacy'] = $dashboard->get_privacy_options();
 
 		$setup['edd'] = $dashboard->get_edd( $setup );
 
@@ -526,7 +525,6 @@ class Portum {
 
 		$setup['steps']   = $dashboard->get_steps();
 		$setup['plugins'] = $dashboard->get_plugins( true );
-		$setup['privacy'] = $dashboard->get_privacy_options();
 
 		return $setup;
 	}

@@ -190,57 +190,17 @@ class Portum_Dashboard_Setup {
 				'content'  => array(
 					'paragraphs' => array(
 						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'portum' ),
-						__( 'Allow Colorlib to track theme usage.', 'portum' ),
-						$this->get_permission_content(),
 					),
 				),
 				'progress' => __( 'Finished', 'portum' ),
 				'buttons'  => array(
 					'next' => array(
 						'action' => 'customizer',
-						'label'  => __( 'Allow & Finish', 'portum' ),
+						'label'  => __( 'Finish', 'portum' ),
 					),
 				),
 			),
 		);
-	}
-
-	/**
-	 * Returns a html string
-	 *
-	 * @return string
-	 */
-	public function get_permission_content() {
-		$html = '<div class="permission-request">';
-		$html .= '<a href="#hidden-permissions" id="hidden-permissions-toggle"> ' . __( 'What permissions are being granted', 'portum' ) . ' <span class="dashicons dashicons-arrow-down"></span></a>';
-		$html .= '<div id="hidden-permissions" >
-			<ul>
-				<li>
-					<span class="dashicons dashicons-admin-users"></span>
-					<span class="content">
-						<strong>' . __( 'YOUR PROFILE OVERVIEW', 'portum' ) . '</strong>
-						<small>' . __( 'Name and email address', 'portum' ) . '</small>		
-					</span>
-				</li>
-				<li>
-					<span class="dashicons dashicons-admin-settings"></span>
-					<span class="content">
-						<strong>' . __( 'YOUR SITE OVERVIEW', 'portum' ) . '</strong>
-						<small>' . __( 'Site URL, WP Version, PHP Version, plugins and themes', 'portum' ) . '</small>		
-					</span>
-				</li>
-				<li>
-					<span class="dashicons dashicons-admin-plugins"></span>
-					<span class="content">
-						<strong>' . __( 'CURRENT PLUGIN EVENTS', 'portum' ) . '</strong>
-						<small>' . __( 'Activation, deactivation and uninstall', 'portum' ) . '</small>		
-					</span>
-				</li>
-			</ul>
-			</div>
-		</div>';
-
-		return $html;
 	}
 
 	/**
@@ -397,26 +357,5 @@ class Portum_Dashboard_Setup {
 				'type'   => 'plugins',
 			)
 		);
-	}
-
-	/**
-	 * Return privacy options
-	 *
-	 * @return array
-	 */
-	public function get_privacy_options() {
-		$arr = array(
-			//$this->theme['theme-slug'] . '_recommended_actions' => get_option( $this->theme['theme-slug'] . '_recommended_actions', false ),
-			//$this->theme['theme-slug'] . '_recommended_plugins' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
-			//$this->theme['theme-slug'] . '_lite_vs_pro'         => get_option( $this->theme['theme-slug'] . '_lite_vs_pro', 'NA' ),
-			//$this->theme['theme-slug'] . '_theme_upsells'       => get_option( $this->theme['theme-slug'] . '_theme_upsells', 'NA' ),
-			$this->theme['theme-slug'] . '_tracking_enable' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
-		);
-
-		foreach ( $arr as $id => $val ) {
-			$arr[ $id ] = empty( $val ) ? false : true;
-		}
-
-		return $arr;
 	}
 }
