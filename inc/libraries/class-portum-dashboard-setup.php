@@ -395,30 +395,7 @@ class Portum_Dashboard_Setup {
 				'title'  => esc_html__( 'Recommended Plugins', 'portum' ),
 				'hidden' => $this->theme['theme-slug'] . '_recommended_plugins',
 				'type'   => 'plugins',
-			),
-			array(
-				'id'      => 'epsilon-privacy',
-				'title'   => esc_html__( 'Privacy', 'portum' ),
-				'type'    => 'option-page',
-				'hidden'  => false,
-				'content' => array(
-					'title'      => esc_html__( 'We believe in a better and streamlined user experiences', 'portum' ),
-					'paragraphs' => array(
-						wp_kses_post( __( 'By turning any or all of the toggles below to the <span style="color: green;">ON</span> position you\'ll be able
-		to hide all upsells & recommended plugin discovery sections & actions.', 'portum' ) ),
-					),
-				),
-				'fields'  => array(
-					array(
-						'id'      => $this->theme['theme-slug'] . '_tracking_enable',
-						'value'   => true,
-						'label'   => esc_html__( 'Allow Theme Tracking', 'portum' ),
-						'type'    => 'epsilon-toggle',
-						'checked' => get_option( $this->theme['theme-slug'] . '_tracking_enable', false ),
-					),
-
-				),
-			),
+			)
 		);
 	}
 

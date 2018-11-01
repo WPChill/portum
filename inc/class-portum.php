@@ -474,7 +474,6 @@ class Portum {
 			'theme'    => array(
 				'download-id' => '212499',
 			),
-			'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
 		) );
 
 		$dashboard = Portum_Dashboard_Setup::get_instance();
