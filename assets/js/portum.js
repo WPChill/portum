@@ -511,8 +511,10 @@ var Portum = {
 
 				if ( h >= Portum.sticky_point ) {
 					jQuery( '#header' ).addClass( 'stuck' );
+					jQuery( 'body' ).css( { marginTop: Portum.sticky_point } );
 				} else {
 					jQuery( '#header' ).removeClass( 'stuck' );
+					jQuery( 'body' ).css( { marginTop: "" } );
 				}
 				e = false;
 			}
