@@ -181,6 +181,13 @@ class Portum {
 	}
 
 	/**
+	 * Initiate Woocommerce class
+	 */
+	public function init_woocommerce() {
+		new Portum_Woocommerce();
+	}
+
+	/**
 	 * Initiate the user profiles
 	 */
 	public function init_user_profile() {
