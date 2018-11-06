@@ -4,34 +4,43 @@
 	position: relative;
 	margin-top: 55px;
 	min-height: 150px;
-	padding: 50px 30px;
+	padding: 40px 12px 40px;
 	text-align: center;
-	color: $text-color;
+	//color: $text-color;
+
+	img {
+		margin: 0 auto;
+		border-radius: 50%;
+		max-width: 55px;
+		border: 3px solid #fff;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+		display: block;
+	}
+
+	.ewf-testimonial__title {
+		margin-bottom: 0px;
+	}
 
 	.ewf-testimonial__by {
 		font-size: 0.8125em;
 		font-weight: 400;
-		color: lighten($text-color, 40);
-
-	}
-
-	img {
-		top: -65px;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-		position: absolute;
-		max-width: 100px;
-		height: auto;
-		border-radius: 50%;
+		color: lighten($text-color, 60);
 	}
 
 	.ewf-testimonial__content {
+
+		&:before {
+			content: "\f10e";
+			font-family: "fontawesome";
+			font-weight: 400;
+			font-size: 0.7em;
+			color: lighten($text-color, 60);
+			display: block;
+			margin-bottom: 20px;
+		}
+
 		p {
-			font-size: 0.875em;
-			line-height: 1.5em;
+			margin-top: 0;
 		}
 	}
 

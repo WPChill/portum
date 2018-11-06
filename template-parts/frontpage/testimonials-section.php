@@ -88,6 +88,11 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_testimonials_section', 'portum_testimonials' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
 
+									<?php if ( ! empty( $v['testimonial_text'] ) ) { ?>
+										<blockquote class="ewf-testimonial__content">
+											<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
+										</blockquote>
+									<?php } ?>
 
 									<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>
 										<div class="ewf-testimonial__thumbnail">
@@ -95,20 +100,10 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 										</div>
 									<?php } ?>
 
-
 									<?php if ( ! empty( $v['testimonial_title'] ) ) { ?>
-										<div class="ewf-testimonial__title">
-											<div class="ewf-like-h5">
-												<?php echo wp_kses_post( $v['testimonial_title'] ); ?>
-											</div>
-										</div>
-									<?php } ?>
-
-
-									<?php if ( ! empty( $v['testimonial_text'] ) ) { ?>
-										<div class="ewf-testimonial__content">
-											<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
-										</div>
+										<h6 class="ewf-testimonial__title">
+											<?php echo wp_kses_post( $v['testimonial_title'] ); ?>
+										</h6>
 									<?php } ?>
 
 									<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
