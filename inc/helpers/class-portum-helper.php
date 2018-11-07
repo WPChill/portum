@@ -198,32 +198,35 @@ class Portum_Helper {
 		$layout = empty( $option ) ? get_theme_mod( 'portum_layout', false ) : get_theme_mod( $option, false );
 
 		if ( ! $layout ) {
-			$layout = Portum_Helper::get_blog_default();
+			$layout = 'narrow';
 		}
+		
+		switch ( $layout ) :
+			case 'narrow':
+				$layout = array();
+				$layout['type'] = 'narrow';
+				$layout['columns']['content'] = array( 'index' => 1, 'span'  => 8, 'class' => 'col-sm-8 col-sm-offset-2' );
+				break;
+			case 'right-sidebar':
+				$layout = array();
+				$layout['type'] = 'right-sidebar';
+				$layout['columns']['content'] = array( 'index' => 1, 'span'  => 8, 'class' => 'col-sm-8' );
+				$layout['columns']['sidebar'] = array( 'index' => 2, 'span'  => 4 );
+				break;
+			case 'left-sidebar':
+				$layout = array();
+				$layout['type'] = 'left-sidebar';
+				$layout['columns']['content'] = array( 'index' => 1, 'span'  => 8, 'class' => 'col-sm-8' );
+				$layout['columns']['sidebar'] = array( 'index' => 2, 'span'  => 4 );
+				break;
+			case 'fullwidth':
+				$layout = array();
+				$layout['type'] = 'fullwidth';
+				$layout['columns']['content'] = array( 'index' => 1, 'span'  => 12, 'class' => 'col-sm-12' );
+				break;
+		endswitch;
 
-		if ( ! is_array( $layout ) ) {
-			$layout = json_decode( $layout, true );
-		}
-
-		$layout['type'] = 'right-sidebar';
-
-		$layout['columns']['content'] = isset( $layout['columns'][1] ) ? $layout['columns'][1] : null;
-		$layout['columns']['sidebar'] = isset( $layout['columns'][2] ) ? $layout['columns'][2] : null;
-
-		unset( $layout['columns'][1] );
-		unset( $layout['columns'][2] );
-
-		if ( $layout['columns']['content']['span'] < $layout['columns']['sidebar']['span'] ) {
-			$layout['type'] = 'left-sidebar';
-			$temp           = $layout['columns']['content']['span'];
-
-			$layout['columns']['content']['span'] = $layout['columns']['sidebar']['span'];
-			$layout['columns']['sidebar']['span'] = $temp;
-		}
-
-		if ( 1 === $layout['columnsCount'] ) {
-			$layout['type'] = 'fullwidth';
-		}
+		$layout['columnsCount'] = count( $layout['columns'] );
 
 		return $layout;
 	}

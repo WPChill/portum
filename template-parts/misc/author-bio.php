@@ -15,7 +15,7 @@ $curauth = get_userdata( $post->post_author );
 <div class="author-bio">
 	<div class="author-bio-avatar">
 		<!-- Avatar -->
-		<?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?>
+		<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 	</div><!-- end .author-bio-avatar -->
 
 	<div class="author-bio-info">

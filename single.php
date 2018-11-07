@@ -7,47 +7,24 @@
 
 get_header();
 
-/**
- * Custom Image handling
- */
-$img = get_custom_header();
-$img = $img->url;
-
-$layout       = Portum_Helper::get_layout();
-$show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
+$layout = Portum_Helper::get_layout( 'portum_blog_layout' );
 
 ?>
 <div id="content">
-	<div class="custom-header">
-		<img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
-	</div>
 
+	<?php get_template_part( 'template-parts/blog/title-area' ); ?>
 
-	<div class="container">
-
-		<?php
-
-		if ( $show_welcome ) {
-			get_template_part( 'template-parts/blog/welcome' );
-		}
-
-		?>
+	<div class="container main-container">
 
 		<div class="row">
-			<?php
-			if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
-				?>
-				<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
-					<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
-					<?php dynamic_sidebar( 'sidebar' ); ?>
-					<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-				</div>
-				<?php
-			}
-			?>
 
-			<div class="<?php echo ( 1 === $layout['columnsCount'] && ! is_active_sidebar( 'sidebar' ) ) ? 'col-sm-12' : 'col-sm-' . esc_attr( $layout['columns']['content']['span'] ); ?>">
-				<!-- /// MAIN CONTENT  ////////////////////////////////////////////////////////////////////////////////////// -->
+			<?php if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) : ?>
+				<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
+					<?php dynamic_sidebar( 'sidebar' ); ?>
+				</div>
+			<?php endif; ?>
+			 
+			<div class="<?php echo esc_attr( $layout['columns']['content']['class'] ); ?>">
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) :
@@ -65,21 +42,20 @@ $show_welcome = get_theme_mod( 'portum_show_blog_welcome', false );
 					)
 				);
 				?>
-				<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 			</div>
 
-			<?php
-			if ( 'right-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) {
-				?>
+			<?php if ( 'right-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) : ?>
 				<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
-					<!-- /// SIDEBAR CONTENT  /////////////////////////////////////////////////////////////////////////////////// -->
 					<?php dynamic_sidebar( 'sidebar' ); ?>
-					<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				</div>
-				<?php
-			}
-			?>
+			<?php endif; ?>
+
 		</div>
 	</div>
+
+	<?php if ( comments_open( get_the_ID() ) || get_comments_number( get_the_ID() ) ) : ?>
+		<?php comments_template(); ?>
+	<?php endif; ?>
+
 </div>
 <?php get_footer(); ?>

@@ -19,6 +19,7 @@
 @import "partials/menu";
 @import "partials/headers/offcanvas";
 @import "partials/headers/sidebar";
+@import "partials/title-area";
 @import "partials/sections/blog";
 @import "partials/woocommerce";
 @import "partials/back-top";
@@ -105,4 +106,8 @@
 
 .efw-section-visible {
 	display: block !important;
+}
+
+.main-container {
+	padding: 60px 0;
 }

@@ -22,13 +22,13 @@ if ( post_password_required() ) {
 <div class="comments-wrap">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-sm-8 col-sm-offset-2">
 				<div id="comments" class="comments-area">
 					<?php
 					if ( have_comments() ) :
 						?>
 						<h3 class="comments-title">
-							<span> <?php echo esc_html__( 'Comments', 'portum' ); ?></span>
+							<?php echo esc_html__( 'Comments', 'portum' ); ?>
 						</h3>
 
 						<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -49,7 +49,7 @@ if ( post_password_required() ) {
 								array(
 									'style'       => 'ol',
 									'short_ping'  => true,
-									'avatar_size' => 64,
+									'avatar_size' => 60,
 								)
 							);
 							?>

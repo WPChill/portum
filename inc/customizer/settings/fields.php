@@ -85,27 +85,56 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 /**
  * Blog section options
  */
-Epsilon_Customizer::add_field( 'portum_show_single_post_thumbnail', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Thumbnail in content', 'portum' ),
-	'description' => esc_html__( 'This option will disable the post thumbnail from the beginning of the post content.', 'portum' ),
+Epsilon_Customizer::add_field( 'portum_blog_layout', array(
+	'type'        => 'select',
+	'label'       => esc_html__( 'Blog Layout', 'portum' ),
+	'description' => esc_html__( 'Select the layout that will be used for the blog.', 'portum' ),
 	'section'     => 'header_image',
-	'default'     => true,
+	'default'     => 'narrow',
+	'choices'     => array(
+		'narrow'        => esc_html__( 'narrow, no sidebar', 'portum' ),
+		'right-sidebar' => esc_html__( 'right sidebar', 'portum' ),
+		'left-sidebar'  => esc_html__( 'left sidebar', 'portum' ),
+		'fullwidth'     => esc_html__( 'full width, no sidebar', 'portum' ),
+	), 
 ) );
 
 Epsilon_Customizer::add_field( 'portum_show_single_post_categories', array(
 	'type'        => 'epsilon-toggle',
 	'label'       => esc_html__( 'Post Meta: Categories', 'portum' ),
-	'description' => esc_html__( 'This will disable the category section at the beggining of the post.', 'portum' ),
+	'description' => esc_html__( 'This will disable the categories displayed at the beginning of each post.', 'portum' ),
 	'section'     => 'header_image',
 	'default'     => true,
 ) );
 
-
-Epsilon_Customizer::add_field( 'portum_enable_author_box', array(
+Epsilon_Customizer::add_field( 'portum_show_single_post_excerpt', array(
 	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post meta: Author', 'portum' ),
-	'description' => esc_html__( 'Toggle the display of the author box, at the left side of the post. Will only display if the author has a description defined.', 'portum' ),
+	'label'       => esc_html__( 'Post Meta: Excerpt', 'portum' ),
+	'description' => esc_html__( 'This will disable the excerpt displayed at the beginning of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_author', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Author', 'portum' ),
+	'description' => esc_html__( 'This will disable the author being displayed at the beginning of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_date', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Date', 'portum' ),
+	'description' => esc_html__( 'This will disable the date being displayed at the beginning of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_comments', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Comments', 'portum' ),
+	'description' => esc_html__( 'This will disable the comments number being displayed at the beginning of each post.', 'portum' ),
 	'section'     => 'header_image',
 	'default'     => true,
 ) );
@@ -114,6 +143,14 @@ Epsilon_Customizer::add_field( 'portum_show_single_post_tags', array(
 	'type'        => 'epsilon-toggle',
 	'label'       => esc_html__( 'Post Meta: Tags', 'portum' ),
 	'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_enable_author_box', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Author Box', 'portum' ),
+	'description' => esc_html__( 'Toggle the display of the author box, at the end of each post.', 'portum' ),
 	'section'     => 'header_image',
 	'default'     => true,
 ) );
