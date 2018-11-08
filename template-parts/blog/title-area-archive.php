@@ -10,7 +10,6 @@ elseif ( has_header_image() ) :
 	$title_area_class = 'title-area--has-bg';
 	$title_area_style = 'style="background-image:url(' . esc_url( $custom_header->url ) . ');"';
 endif;
-
 ?>
 
 <?php if ( have_posts() ) : ?>
@@ -25,8 +24,14 @@ endif;
 				<div class="col-md-8 col-md-offset-2">
 
 					<div class="ewf-like-h5">
-						<?php echo esc_html( __( 'Latest from the Blog:', 'portum' ) ); ?>
-					</div>	
+						<?php if ( is_category() ) : ?>
+							<?php printf( esc_html__( 'Latest post in %s:', 'portum' ), single_cat_title( '', false ) ); ?>
+						<?php elseif ( is_author() ) : ?>
+							<?php printf( esc_html__( 'Latest post by %s:', 'portum' ), get_the_author() ); ?>
+						<?php elseif ( is_tag() ) : ?>
+							<?php printf( esc_html__( 'Tag Archives: %s', 'portum' ), single_tag_title( '',false ) ); ?>
+						<?php endif; ?>  
+					</div>
 
 					<h1 class="page-title">
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>">

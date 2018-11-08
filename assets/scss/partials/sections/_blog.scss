@@ -63,30 +63,61 @@
   ========================================================================== */
 
 .post {
-  position: relative;
-  //background-color: $blog-post-background;
-  //box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-  color: $blog-text-color;
-  &:last-of-type {
-    margin-bottom: 55px;
-  }
+	margin-bottom: 30px;
 }
 
-.post + .post {
-  margin-top: 55px;
+.post--loop {
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+	//color: $blog-text-color;
+	//background-color: $blog-post-background;
 }
 
-@media (max-width: 991px) {
-	.post {
-		//box-shadow:0 0 20px 3px rgba(35, 31, 32, .05);
+.post--loop.format-image {
+
+	.post-content-wrap {
+		background-size: cover;
+		background-position: center;
 	}
+
+	a {
+		color: #fff;
+	}
+
+	.post-content {
+		color: #b3b3b3;
+		min-height:200px;
+	}
+}
+
+/* =Post Content Wrap
+========================================================================== */
+.post-content-wrap {
+	padding: 30px;
+	border-radius: inherit;
+}
+
+.post-content-wrap__overlay {
+	background-color: #000;
+	opacity: 0.6;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
 }
 
 /* =Post Header
 ========================================================================== */
 
-.post-header { padding:30px 40px 10px 40px; }
-.post.sticky .post-header { padding-top:10px; }
+.post-header { 
+	//padding:30px 40px 10px 40px; 
+}
+.post.sticky .post-header { 
+	//padding-top:10px; 
+}
 .post-content.has-post-thumbnail .post-header { }
 
 
@@ -101,11 +132,8 @@
    ========================================================================== */
 
 .post-content {
+	position: relative;
   //padding: 15px 40px 35px 40px;
-}
-
-.post-content.has-post-thumbnail {
-  min-height: 135px;
 }
 
 /*
@@ -137,6 +165,11 @@
   display: block;
   width: 100%;
   z-index: 0;
+}
+
+.post-thumbnail img {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .post-thumbnail-preloader {
@@ -358,16 +391,12 @@
    ========================================================================== */
 .post-title {
   margin: 0;
+  font-weight: 700;
+  position: relative;
 }
 
 .post-title a {
   color: $blog-heading-color;
-}
-
-.post.sticky .post-title a {
-  color: #fff;
-  vertical-align: bottom;
-  line-height: 30px; 
 }
 
 .post-title a:focus,
@@ -375,32 +404,8 @@
   color: $accent-2-color;
 }
 
-.post.sticky .post-header {
-	background-color: rgba(0, 0, 0, 0.6);
-	overflow: hidden;
-}
-
-.post.sticky .post-title {
-  display: block;
-}
 
 @media (max-width: 425px) {
-
-  .post.sticky .post-header {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    top: auto;
-
-  }
-
-  .post.sticky .post-title {
-    margin: 0;
-    padding: 15px 40px;
-    width: 100%;
-    box-sizing: border-box;
-  }
 
   .post.sticky .post-title,
   .post.sticky .post-title a {
@@ -749,15 +754,54 @@
   height: 0;
 }
 
+.post-navigation .nav-previous a{
+	padding-left:46px;
+	position: relative;
+	display: inline-block;
+}
+
+.post-navigation .nav-next a{
+	padding-right:46px;
+	position: relative;
+	display: inline-block;
+}
+
+.post-navigation .nav-previous a:before,
+.post-navigation .nav-next a:before {
+	top:0;
+	background-color: #fff;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	position: absolute;
+	font-family: 'fontawesome';
+	text-align: center;
+	display: inline-block;
+	border-radius: 50%;
+	box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+	margin-top:-7px;
+}
+
+.post-navigation .nav-previous a:before {
+	left: 0;
+	content:'\f104';
+}
+
+.post-navigation .nav-next a:before {
+	content:'\f105';
+	right: 0;
+}
+
+
 @media (min-width: 768px) {
   .post-navigation .nav-previous {
     float: left;
-    width: 50%;
+	width: 50%;
   }
   .post-navigation .nav-next {
     float: right;
     text-align: right;
-    width: 50%;
+	width: 50%;
   }
 }
 
@@ -1062,6 +1106,10 @@
 
 .comment-form p:not(.comment-notes):not(.logged-in-as) {
   margin-bottom: 0;
+}
+
+.comment-form .form-submit input[type=submit] {
+	margin-top: 1em;
 }
 
 .comment-form .logged-in-as,

@@ -10,10 +10,9 @@ elseif ( has_header_image() ) :
 	$title_area_class = 'title-area--has-bg';
 	$title_area_style = 'style="background-image:url(' . esc_url( $custom_header->url ) . ');"';
 endif;
-
 ?>
 
-<?php if ( have_posts() ) : ?>
+<?php while ( have_posts() ) : ?>
 	<?php the_post(); ?>
 
 	<div class="title-area <?php echo esc_attr( $title_area_class ); ?>" <?php echo $title_area_style; ?>>
@@ -24,14 +23,14 @@ endif;
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 
-					<div class="ewf-like-h5">
-						<?php echo esc_html( __( 'Latest from the Blog:', 'portum' ) ); ?>
-					</div>	
+					<?php if ( get_theme_mod( 'portum_show_single_post_categories', true ) ) : ?>
+						<div class="page-cat-links">
+							<?php echo wp_kses_post( get_the_category_list( ' ' ) ); ?>
+						</div>
+					<?php endif; ?>
 
 					<h1 class="page-title">
-						<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-							<?php echo esc_html( get_the_title() ); ?>
-						</a>
+						<?php echo esc_html( get_the_title() ); ?>
 					</h1><!-- end .page-title -->
 
 					<?php if ( get_theme_mod( 'portum_show_single_post_excerpt', true ) && has_excerpt() ) : ?>
@@ -45,7 +44,7 @@ endif;
 						<?php if ( get_theme_mod( 'portum_show_single_post_author', true ) ) : ?>
 							<span class="page-meta__author">
 								<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
-								<a class="post-author" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">admin</a>
+								<a class="post-author" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_the_author(); ?></a>
 							</span>
 						<?php endif; ?>
 
@@ -70,4 +69,4 @@ endif;
 		</div><!-- end .title-area__content -->
 	</div><!-- end .title-area -->
 
-<?php endif; ?>
+<?php endwhile; ?>

@@ -13,7 +13,7 @@ $layout = Portum_Helper::get_layout( 'portum_blog_layout' );
 
 <div id="content">
 
-	<?php get_template_part( 'template-parts/blog/title-area' ); ?>
+	<?php get_template_part( 'template-parts/blog/title-area', 'search' ); ?>
 
 	<div class="container main-container">
 

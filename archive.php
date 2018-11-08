@@ -13,7 +13,7 @@ $layout = Portum_Helper::get_layout( 'portum_blog_layout' );
 
 <div id="content">
 
-	<?php get_template_part( 'template-parts/blog/title-area' ); ?>
+	<?php get_template_part( 'template-parts/blog/title-area', 'archive' ); ?>
 
 	<div class="container main-container">
 
@@ -40,8 +40,6 @@ $layout = Portum_Helper::get_layout( 'portum_blog_layout' );
 								<?php get_template_part( 'template-parts/content/content', get_post_format() ); ?>
 							</div>	
 						<?php endwhile; ?>
-					<?php else : ?>
-						<?php get_template_part( 'template-parts/content/content', 'none' ); ?>
 					<?php endif; ?>
 				</div>
 

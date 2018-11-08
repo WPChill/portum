@@ -1,5 +1,4 @@
 .title-area {
-	height:85vh;
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -16,9 +15,9 @@
 
 .title-area__content {
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
 	text-align: center;
+	padding-top: 180px;
+	padding-bottom: 180px;
 
 	h1 {
 		margin: 0 0 30px;
@@ -68,6 +67,10 @@
 
 		h1 {
 			color: #fff;
+
+			a {
+				color: inherit;
+			}
 		}
 
 		a {

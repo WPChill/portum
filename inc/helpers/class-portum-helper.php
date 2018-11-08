@@ -200,7 +200,11 @@ class Portum_Helper {
 		if ( ! $layout ) {
 			$layout = 'narrow';
 		}
-		
+
+		if ( is_home() || is_search() || is_author() || is_archive() ) {
+			$layout = 'fullwidth';
+		}
+	
 		switch ( $layout ) :
 			case 'narrow':
 				$layout = array();

@@ -11,21 +11,21 @@ $class = 'post--loop';
 if ( is_sticky() ) {
 	$class .= ' sticky';
 }
+
+$post_content_wrap_style = '';
+if ( has_post_thumbnail() ) {
+	$post_content_wrap_style = 'style="background-image:url(' . esc_url( get_the_post_thumbnail_url( null, 'large' ) ) . ');"';
+}
+
 ?>
 
 <div class="row">
 	<div class="col-md-12">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
 	
-			<?php if ( has_post_thumbnail() ) : ?>
-				<div class="post-thumbnail">
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php the_post_thumbnail( 'portum-blog-post-sticky' ); ?>
-					</a>
-				</div>
-			<?php endif; ?>
+			<div class="post-content-wrap" <?php echo $post_content_wrap_style; ?>>
 
-			<div class="post-content-wrap">
+				<div class="post-content-wrap__overlay"></div>
 
 				<div class="post-header">
 					<h5 class="post-title">

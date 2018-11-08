@@ -37,7 +37,7 @@
 
 		</div><!-- .post-meta -->
 	</div><!-- .post-footer -->
-	
+
 </article>
 
 <?php
