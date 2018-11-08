@@ -77,6 +77,30 @@ class Portum_Customizer {
 		$wp_customize->get_section( 'header_image' )->title        = esc_html__( 'Blog', 'portum' );
 		$wp_customize->get_control( 'page_on_front' )->description = esc_html__( 'If you have front-end sections, those will be displayed instead. Consider adding a "Content Section" if you need to display the page content as well.', 'portum' );
 
+
+		/**
+		 * Add another logo control for the sticky header.
+		 */
+ 		$wp_customize->add_setting( 'portum_logo_sticky' , array(
+			'default' => '',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'portum_logo_sticky',
+			array(
+				'label'       => __( 'Logo Sticky', 'portum' ),
+				'description' => esc_html__( 'The logo that will be displayed when the header is sticky.', 'portum' ),
+				'section'     => 'title_tagline',
+				'settings'    => 'portum_logo_sticky',
+				'priority'    => 8,
+				'width'       => '150',
+				'height'      => '150',
+				'flex_width'  => true,
+				'flex_height' => true,
+			)
+		)); 
+
 		if ( ! isset( $wp_customize->selective_refresh ) ) {
 			return;
 		}

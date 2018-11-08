@@ -277,4 +277,14 @@ wp.customize.bind( 'ready', function() {
 
   //Portum.Customizer.handleActiveCallback( activeCallbacked );
   Portum.Customizer.handleAwfulSorting();
+
+	// hide/show sticky logo control, depending on the sticky header setting.   
+	wp.customize( 'portum_header_sticky', function( setting ) {
+		wp.customize.control('portum_logo_sticky').toggle( setting.get() );
+		setting.bind( function( value ) {
+			wp.customize.control('portum_logo_sticky').toggle( value );
+		});
+	});
+
+
 } );

@@ -90,3 +90,17 @@ body.ctdw-bar-visible #header.header--over-content {
 	}
 }
 
+/* ==========================================================================
+    =Sticky header logo 
+    ========================================================================= */
+img.custom-logo--sticky {
+	display: none;
+
+	#header.stuck & {
+		display: inline;
+	}
+}
+
+#header.stuck.header--has-sticky-logo .custom-logo {
+	display: none;
+}
