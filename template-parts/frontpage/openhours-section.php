@@ -80,7 +80,17 @@ if ( 'left' == $fields['openhours_row_title_align'] || 'right' == $fields['openh
 									<?php echo wpautop( wp_kses_post( $fields['openhours_text'] ) ); ?>
 								</div><!--/.ewf-section-text-->
 								<?php if ( $button_primary ) { ?>
-									<a class="ewf-btn ewf-btn--huge <?php echo esc_attr( isset( $fields['openhours_button_primary_color'] ) ? $fields['openhours_button_primary_color'] : '' ); ?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
+
+									<?php $button_primary_class  = ''; ?>
+									<?php $button_primary_class .= ! empty( $fields['openhours_button_primary_size'] ) ? esc_attr( $fields['openhours_button_primary_size'] ) : 'ewf-btn--huge'; ?>
+
+									<?php $button_primary_style  = ''; ?>
+									<?php $button_primary_style .= 'background-color: ' . ( ! empty( $fields['openhours_button_primary_background_color'] ) ? esc_attr( $fields['openhours_button_primary_background_color'] ) : 'inherit' ) . ';'; ?>
+									<?php $button_primary_style .= 'color: ' . ( ! empty( $fields['openhours_button_primary_text_color'] ) ? esc_attr( $fields['openhours_button_primary_text_color'] ) : 'inherit' ) . ';'; ?>
+									<?php $button_primary_style .= 'border-color: ' . ( ! empty( $fields['openhours_button_primary_border_color'] ) ? esc_attr( $fields['openhours_button_primary_border_color'] ) : 'inherit' ) . ';'; ?>
+									<?php $button_primary_style .= 'border-radius: ' . ( ! empty( $fields['openhours_button_primary_radius'] ) ? esc_attr( $fields['openhours_button_primary_radius'] ) : '0' ) . 'px;'; ?>
+
+									<a class="ewf-btn <?php echo esc_attr( $button_primary_class );?>" style="<?php echo esc_attr( $button_primary_style );?>" href="<?php echo esc_url( $fields['openhours_button_primary_url'] ); ?>"><?php echo wp_kses_post( $fields['openhours_button_primary_label'] ); ?></a>
 								<?php } ?>
 							</div><!--/.open-hours-section-info-->
 						</div><!-- header class -->

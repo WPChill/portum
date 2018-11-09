@@ -364,6 +364,47 @@ class Repeatable_Section_Openhours extends Repeatable_Section {
 				'default'           => esc_url( 'https://google.com' ),
 				'sanitize_callback' => 'esc_url_raw',
 			),
+			'openhours_button_primary_size'  => array(
+				'label'     => esc_html__( 'Button Size', 'portum' ),
+				'type'      => 'select',
+				'default'   => 'ewf-btn--huge',
+				'choices'   => array(
+					'ewf-btn--huge'   => __( 'Huge', 'portum' ),
+					'ewf-btn--medium' => __( 'Medium', 'portum' ),
+					'ewf-btn--small'  => __( 'Small', 'portum' ),
+				),
+			),
+			'openhours_button_primary_radius' => array(
+				'label'     => esc_html__( 'Button Radius', 'portum' ),
+				'type'      => 'epsilon-slider',
+				'default'   => 0,
+				'choices'   => array(
+					'min'  => 0,
+					'max'  => 50,
+					'step' => 5,
+				),
+			),
+			'openhours_button_primary_background_color'   => array(
+				'label'             => esc_html__( 'Button Bg. Color', 'portum' ),
+				'type'              => 'epsilon-color-picker',
+				'default'           => '#000',
+				'mode'              => 'rgba',
+				'sanitize_callback' => 'wp_kses_post',
+			),
+			'openhours_button_primary_text_color'         => array(
+				'label'             => esc_html__( 'Button Text Color', 'portum' ),
+				'type'              => 'epsilon-color-picker',
+				'default'           => '#FFF',
+				'mode'              => 'rgba',
+				'sanitize_callback' => 'wp_kses_post',
+			),
+			'openhours_button_primary_border_color'       => array(
+				'label'             => esc_html__( 'Button Border Color', 'portum' ),
+				'type'              => 'epsilon-color-picker',
+				'default'           => '#EEE',
+				'mode'              => 'rgba',
+				'sanitize_callback' => 'wp_kses_post',
+			),
 			'openhours_grouping'             => array(
 				'label'       => esc_html__( 'Filter shown open hours schedule', 'portum' ),
 				'description' => esc_html__( 'The items you select in here are the only ones which will be displayed on this page. Think of the information you create in a section similar to a blog post. They are all created in a single place, but filtered by category. If you want to use multiple sections and display different information in each of them, use the filtering. ', 'portum' ),

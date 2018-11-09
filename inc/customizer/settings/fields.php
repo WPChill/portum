@@ -1026,6 +1026,12 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 			'type'    => 'text',
 			'default' => '$59 / mo',
 		),
+		'price_box_features'     => array(
+			'label'             => esc_html__( 'Features', 'portum' ),
+			'type'              => 'textarea',
+			'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',
+			'sanitize_callback' => 'wp_kses_post',
+		),
 		'price_box_url'          => array(
 			'label'             => esc_html__( 'Button URL', 'portum' ),
 			'type'              => 'text',
@@ -1038,13 +1044,47 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 			'default'           => __( 'Purchase', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_features'     => array(
-			'label'             => esc_html__( 'Features', 'portum' ),
-			'type'              => 'textarea',
-			'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',
+		'price_box_button_size' => array(
+			'label'     => esc_html__( 'Button Size', 'portum' ),
+			'type'      => 'select',
+			'default'   => 'ewf-btn--huge',
+			'choices'   => array(
+				'ewf-btn--huge'   => __( 'Huge', 'portum' ),
+				'ewf-btn--medium' => __( 'Medium', 'portum' ),
+				'ewf-btn--small'  => __( 'Small', 'portum' ),
+			),
+		),
+		'price_box_button_radius' => array(
+			'label'     => esc_html__( 'Button Radius', 'portum' ),
+			'type'      => 'epsilon-slider',
+			'default'   => 0,
+			'choices'   => array(
+				'min'  => 0,
+				'max'  => 50,
+				'step' => 5,
+			),
+		),
+		'price_box_button_background_color'   => array(
+			'label'             => esc_html__( 'Button Bg. Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#000',
+			'mode'              => 'rgba',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-
+		'price_box_button_text_color'         => array(
+			'label'             => esc_html__( 'Button Text Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#FFF',
+			'mode'              => 'rgba',
+			'sanitize_callback' => 'wp_kses_post',
+		),
+		'price_box_button_border_color'       => array(
+			'label'             => esc_html__( 'Button Border Color', 'portum' ),
+			'type'              => 'epsilon-color-picker',
+			'default'           => '#EEE',
+			'mode'              => 'rgba',
+			'sanitize_callback' => 'wp_kses_post',
+		),
 	),
 ) );
 

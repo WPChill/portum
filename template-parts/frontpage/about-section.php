@@ -65,11 +65,21 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 							<div class="ewf-section-text">
 								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['about_subtitle'], $fields['about_title'] ) ); ?>
 								<?php echo wpautop( wp_kses_post( $fields['about_text'] ) ); ?>
-								<?php if ( $button_primary ) { ?>
-									<a class="ewf-btn ewf-btn--huge" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
+								<?php if ( $button_primary ) : ?>
+
+									<?php $primary_button_class  = ''; ?>
+									<?php $primary_button_class .= ! empty( $fields['about_primary_button_size'] ) ? esc_attr( $fields['about_primary_button_size'] ) : 'ewf-btn--huge'; ?>
+
+									<?php $primary_button_style  = ''; ?>
+									<?php $primary_button_style .= 'background-color: ' . ( ! empty( $fields['about_primary_button_background_color'] ) ? esc_attr( $fields['about_primary_button_background_color'] ) : 'inherit' ) . ';'; ?>
+									<?php $primary_button_style .= 'color: ' . ( ! empty( $fields['about_primary_button_text_color'] ) ? esc_attr( $fields['about_primary_button_text_color'] ) : 'inherit' ) . ';'; ?>
+									<?php $primary_button_style .= 'border-color: ' . ( ! empty( $fields['about_primary_button_border_color'] ) ? esc_attr( $fields['about_primary_button_border_color'] ) : 'inherit' ) . ';'; ?>
+									<?php $primary_button_style .= 'border-radius: ' . ( ! empty( $fields['about_primary_button_radius'] ) ? esc_attr( $fields['about_primary_button_radius'] ) : '0' ) . 'px;'; ?>
+
+									<a class="ewf-btn <?php echo esc_attr( $primary_button_class ); ?>" style="<?php echo esc_attr( $primary_button_style ); ?>" href="<?php echo esc_url( $fields['about_button_primary_url'] ); ?>">
 										<?php echo wp_kses_post( $fields['about_button_primary_label'] ); ?>
 									</a><!--/.ewf-btn-->
-								<?php }//endif button_primary ?>
+								<?php endif; ?>
 							</div><!--/.ewf-section-text-->
 						</div><!--/.col-md-->
 					<?php } // end if _subtitle, _title // ?>
