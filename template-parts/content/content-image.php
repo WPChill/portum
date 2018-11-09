@@ -14,7 +14,7 @@ if ( is_sticky() ) {
 
 $post_content_wrap_style = '';
 if ( has_post_thumbnail() ) {
-	$post_content_wrap_style = 'style="background-image:url(' . esc_url( get_the_post_thumbnail_url( null, 'large' ) ) . ');"';
+	$post_content_wrap_style = 'style="background-image:url(' . esc_url( get_the_post_thumbnail_url( null, 'medium_large' ) ) . ');"';
 }
 
 ?>

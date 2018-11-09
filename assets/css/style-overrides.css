@@ -75,6 +75,11 @@
 
 /* Blog */
 
+.title-area .page-cat-links a {
+	background-color: %2$s;
+    /*	epsilon_accent_color */
+}
+
 .blog-news-item .news-category strong {
     background: %2$s;
     /*	epsilon_accent_color */

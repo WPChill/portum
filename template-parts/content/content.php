@@ -20,7 +20,7 @@ if ( is_sticky() ) {
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="post-thumbnail">
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php the_post_thumbnail( 'portum-blog-post-sticky' ); ?>
+						<?php the_post_thumbnail( 'medium_large' ); ?>
 					</a>
 				</div>
 			<?php endif; ?>
