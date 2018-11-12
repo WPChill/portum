@@ -633,11 +633,10 @@ var Portum = {
 				}
 			} );
 
-			jQuery( '.menu-item-has-children' ).click( function( e ) {
-				if ( 'a' != e.target.tagName.toLowerCase() ) {
-					e.preventDefault();
-					jQuery( this ).find( '> a' ).toggleClass( 'is-active' ).next().toggleClass( 'is-visible' );
-				}
+			jQuery( '.menu-item-has-children' ).append('<div class="arrow"></div>');
+			jQuery( '.menu-item-has-children > .arrow' ).click( function( e ) {
+				jQuery( this ).toggleClass( 'is-active' );
+				jQuery( this ).siblings( '.sub-menu' ).toggleClass( 'is-visible' );
 			} );
 		}
 	},

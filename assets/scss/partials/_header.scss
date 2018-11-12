@@ -7,6 +7,8 @@
 	position: relative;
 	z-index: 50;
 	background-color: $header_background;
+	line-height: 60px;
+	
 	&.sticky--top-bar {
 		top: 40px;
 	}
@@ -41,6 +43,9 @@ body.ctdw-bar-visible #header.header--over-content {
 	 *    we add max-width:100% to tell it not that it shouldn't extend beyond the size of it's
 	 *    parent if it's child is very large eg a 1000x1000 logo img
 	 */
+#logo {
+	float:left;
+}
 
 #logo a {
 	display: inline-block;
