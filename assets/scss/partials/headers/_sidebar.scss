@@ -1,34 +1,57 @@
-#header {
+#header.portum-sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 200px;
+	z-index: 9999;
+	line-height: 40px;
+	text-align: center;
 
-	&.portum-sidebar {
-		position: fixed;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 200px;
-		z-index: 9999;
-		line-height: 40px;
-		text-align: center;
+	+ #wrap {
+		max-width: calc(100% - 200px);
+		left: 200px;
+		position: relative;
+	}
 
-		.portum-menu-icon {
-		    display: block;
-		}
+	#logo {
+		margin: 50px 0;
+		float: none;
+	}
 
-		+ #wrap {
-			max-width: calc(100% - 200px);
-			left: 200px;
-			position: relative;
-		}
+	.portum-menu {
+		float: none;
 
-		#logo {
-			padding: 50px 0;
-		}
-
-		ul {
+		li {
 			float: none;
 
-			> li {
-				float: none;
+			&.menu-item-has-children {
+				.arrow {
+					width: 30px;
+					padding: 17px 0;
+					color: #212121; 
+					font-size: 1em;
+					cursor: pointer;
+					line-height: normal;
+				}
+				> a {
+					//width: calc( 100% - 50px - 30px );
+				}
+			}
+		}
+
+		a {
+			line-height: normal;
+			padding: 12px 15px;
+		}
+
+		.sub-menu {
+			max-height: 0;
+			overflow: hidden;
+
+			&.is-visible {
+				transition: max-height 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+				max-height: 5000px;
 			}
 		}
 	}
