@@ -99,6 +99,26 @@ Epsilon_Customizer::add_field( 'portum_blog_layout', array(
 	), 
 ) );
 
+Epsilon_Customizer::add_field( 'portum_blog_upsell', array(
+	'type'               => 'epsilon-upsell',
+	'transport'          => 'postMessage',
+	'section'            => 'header_image',
+	'label'              => esc_html__( 'More blog controls', 'portum' ),
+	'options'            => array(
+		esc_html__( 'Post meta controls', 'portum' ),
+		esc_html__( 'Author Box', 'portum' ),
+	),
+	'requirements'       => array(
+		esc_html__( 'Toggle the display of post meta: date, author, categories, tags, comments.', 'portum' ),
+		esc_html__( 'Toggle the display of the author box', 'portum' ),
+	),
+	'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=portum-welcome&tab=features' ),
+	'button_text'        => esc_html__( 'Lite VS PRO', 'portum' ),
+	'second_button_url'  => '#',
+	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+	'separator'          => 'or',
+) );
+
 Epsilon_Customizer::add_field( 'portum_header_upsell', array(
 	'type'               => 'epsilon-upsell',
 	'transport'          => 'postMessage',
