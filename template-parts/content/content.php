@@ -39,11 +39,9 @@ if ( is_sticky() ) {
 
 				<div class="post-footer">
 					<div class="post-meta">
-						<a class="posted-on" href="#"><?php echo get_the_date(); ?></a>
-
+						<?php Portum_Helper::posted_on( 'date' ); ?>
 						<?php Portum_Helper::posted_on( 'author' ); ?>
 						<?php Portum_Helper::posted_on( 'comments' ); ?>
-
 					</div><!-- .post-meta -->
 				</div><!-- .post-footer -->
 

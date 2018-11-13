@@ -261,7 +261,20 @@ class Portum_Helper {
 		$comments = wp_count_comments( get_the_ID() );
 
 		switch ( $element ) {
+			case 'date':
+				if ( false == get_theme_mod( 'portum_show_single_post_date', true ) ) {
+					return;
+				}
+
+				$html = '<a class="posted-on" href="#">' . get_the_date() . '</a>';
+
+				echo wp_kses_post( $html );
+				break;
 			case 'author':
+				if ( false == get_theme_mod( 'portum_show_single_post_author', true ) ) {
+					return;
+				}
+
 				$html = '<span class="byline">' . esc_html_e( 'by ', 'portum' );
 				$html .= '<a class="post-author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a>';
 				$html .= '</span>';
@@ -276,9 +289,16 @@ class Portum_Helper {
 				echo wp_kses_post( $html );
 				break;
 			case 'comments':
+				if ( false == get_theme_mod( 'portum_show_single_post_comments', true ) ) {
+					return;
+				}
+
 				echo ' <span class="comments-link"><a title="' . esc_attr__( 'Comment on Post', 'portum' ) . '" href="' . esc_url( get_the_permalink( get_the_ID() ) ) . '#comments">' . esc_html( $comments->approved ) . '</a></span>';
 				break;
 			case 'tags':
+				if ( false == get_theme_mod( 'portum_show_single_post_tags', true ) ) {
+					return;
+				}
 				$html = '<div class="tags-links">';
 				$html .= get_the_tag_list( '', ' ' );
 				$html .= '</div><!-- .tags-links -->';

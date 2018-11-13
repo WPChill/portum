@@ -28,22 +28,12 @@
 
 	<div class="post-footer">
 		<div class="post-meta">
-
-			<?php
-			if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
-				Portum_Helper::posted_on( 'tags' );
-			}
-			?>
-
+			<?php Portum_Helper::posted_on( 'tags' ); ?>
 		</div><!-- .post-meta -->
 	</div><!-- .post-footer -->
 
 </article>
 
-<?php
-if ( get_theme_mod( 'portum_enable_author_box', true ) ) {
-	get_template_part( 'template-parts/misc/author-bio' );
-}
-?>
+<?php get_template_part( 'template-parts/misc/author-bio' ); ?>
 
 <?php the_post_navigation(); ?>

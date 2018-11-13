@@ -142,6 +142,20 @@ h6,
 }
 
 /* ==========================================================================
+  =Blockquotes
+  ========================================================================== */
+blockquote
+{
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1.3;
+
+    margin: 0;
+
+    color: #212121;
+}
+
+/* ==========================================================================
    =Formatting
    ========================================================================== */
 hr
@@ -2257,6 +2271,91 @@ del
 }
 
 /* ==========================================================================
+   =Buttons
+   ========================================================================== */
+.ewf-btn
+{
+    position: relative;
+
+    display: inline-block;
+
+    min-width: 110px;
+    margin-right: 10px;
+    padding: 6px 13px;
+
+    cursor: pointer;
+    -webkit-transition: .3s all ease;
+         -o-transition: .3s all ease;
+            transition: .3s all ease;
+    text-align: center;
+    text-decoration: none;
+
+    color: #fff;
+    border: solid 1px transparent;
+    background-color: #0962ea;
+    background-clip: padding-box;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.ewf-btn:focus,
+.ewf-btn:hover
+{
+    color: #fff;
+    background-color: #dbe9fe;
+}
+.ewf-btn:active
+{
+    color: #fff;
+    background-color: #0962ea;
+}
+
+.ewf-btn:active,
+.ewf-btn:hover,
+.ewf-btn:focus
+{
+    color: #fff;
+}
+
+.ewf-btn,
+.ewf-btn:active,
+.ewf-btn:hover,
+.ewf-btn:focus
+{
+    color: #fff;
+}
+
+.ewf-btn.ewf-btn--small
+{
+    padding: 2px 14px;
+
+    border-radius: 18px;
+}
+
+.ewf-btn.ewf-btn--large
+{
+    padding: 9px 21px;
+
+    border-radius: 24px;
+}
+
+.ewf-btn.ewf-btn--huge
+{
+    font-weight: bold;
+
+    padding: 16px 29px;
+
+    border-radius: 32px;
+}
+
+.ewf-btn.ewf-btn--secondary
+{
+    color: #0962ea;
+    background-color: transparent;
+}
+
+/* ==========================================================================
    =Forms
    ========================================================================== */
 fieldset
@@ -2288,6 +2387,7 @@ input[type=url],
 input[type=color],
 textarea
 {
+    font-family: inherit;
     font-size: 15px;
     font-weight: 400;
     line-height: 22px;
@@ -2299,7 +2399,6 @@ textarea
     padding: 10px;
 
     -webkit-transition: all .2s linear;
-       -moz-transition: all .2s linear;
          -o-transition: all .2s linear;
             transition: all .2s linear;
 
@@ -2309,10 +2408,7 @@ textarea
     border-bottom: 1px solid #fff;
     background-color: #f2f2f2;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
-       -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
             box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
-
-         -o-box-shadow: 0 1px 2px rgba(0, 0, 0, .12) inset;
 }
 
 input[type=text]:focus,
@@ -2597,6 +2693,8 @@ input[type=button]:active
     ========================================================================= */
 #header
 {
+    line-height: 60px;
+
     position: relative;
     z-index: 50;
 
@@ -2644,6 +2742,11 @@ body.ctdw-bar-visible #header.header--over-content
 	 *    we add max-width:100% to tell it not that it shouldn't extend beyond the size of it's
 	 *    parent if it's child is very large eg a 1000x1000 logo img
 	 */
+#logo
+{
+    float: left;
+}
+
 #logo a
 {
     font-size: 24px;
@@ -2710,17 +2813,26 @@ body.ctdw-bar-visible #header.header--over-content
     }
 }
 /* ==========================================================================
-   =Menu
-   ========================================================================== */
-#header
-{
-    line-height: 60px;
-}
-#header .portum-menu-btn
+    =Sticky header logo 
+    ========================================================================= */
+img.custom-logo--sticky
 {
     display: none;
 }
-#header ul
+#header.stuck img.custom-logo--sticky
+{
+    display: inline;
+}
+
+#header.stuck.header--has-sticky-logo .custom-logo
+{
+    display: none;
+}
+
+/* ==========================================================================
+   =Menu
+   ========================================================================== */
+.portum-menu
 {
     position: relative;
 
@@ -2731,14 +2843,14 @@ body.ctdw-bar-visible #header.header--over-content
 
     list-style: none;
 }
-#header ul.is-visible
+.portum-menu.is-visible
 {
     display: block;
     visibility: visible;
 
     opacity: 1;
 }
-#header ul a
+.portum-menu a
 {
     display: block;
 
@@ -2746,11 +2858,11 @@ body.ctdw-bar-visible #header.header--over-content
 
     text-decoration: none;
 }
-#header ul a:hover
+.portum-menu a:hover
 {
     color: #0962ea;
 }
-#header ul li
+.portum-menu li
 {
     position: relative;
 
@@ -2759,11 +2871,13 @@ body.ctdw-bar-visible #header.header--over-content
     margin: 0;
     padding: 0;
 
-    -webkit-transition: all .6s cubic-bezier(.165, .84, .44, 1);
-         -o-transition: all .6s cubic-bezier(.165, .84, .44, 1);
-            transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    list-style: none;
+
+    -webkit-transition: all .1s cubic-bezier(.86, 0, .07, 1);
+         -o-transition: all .1s cubic-bezier(.86, 0, .07, 1);
+            transition: all .1s cubic-bezier(.86, 0, .07, 1);
 }
-#header ul li.menu-item-has-children:after
+.portum-menu li.menu-item-has-children .arrow
 {
     font-family: 'fontawesome';
     font-size: 11px;
@@ -2775,298 +2889,66 @@ body.ctdw-bar-visible #header.header--over-content
     top: 0;
     right: 0;
 
-    content: '';
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.86, 0, .07, 1);
+         -o-transition:         transform .6s cubic-bezier(.86, 0, .07, 1);
+            transition: -webkit-transform .6s cubic-bezier(.86, 0, .07, 1);
+            transition:         transform .6s cubic-bezier(.86, 0, .07, 1);
+            transition:         transform .6s cubic-bezier(.86, 0, .07, 1), -webkit-transform .6s cubic-bezier(.86, 0, .07, 1);
     text-transform: none;
 
-    speak: none;
+    color: #212121;
 }
-#header ul li.current-menu-item
+.portum-menu li.menu-item-has-children .arrow:after
+{
+    content: '';
+}
+.portum-menu li.menu-item-has-children .arrow.is-active
+{
+    -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+}
+.portum-menu li.current-menu-item
 {
     position: relative;
 }
-#header ul li.current-menu-item > a
+.portum-menu li.current-menu-item > a
 {
     color: #0962ea;
 }
-#header ul li:hover
+.portum-menu li:hover
 {
     position: relative;
 }
-#header ul ul
+.portum-menu .sub-menu
 {
-    position: absolute;
-    z-index: 3;
-    top: 100%;
-    left: 0;
+    margin: 0;
 
-    visibility: hidden;
-
-    width: 200px;
-
-    -webkit-transition: opacity .4s cubic-bezier(.165, .84, .44, 1);
-         -o-transition: opacity .4s cubic-bezier(.165, .84, .44, 1);
-            transition: opacity .4s cubic-bezier(.165, .84, .44, 1);
-
-    opacity: 0;
     background-color: #fff;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
 }
-#header ul ul li
+.portum-menu .sub-menu li
 {
+    line-height: normal;
+
     position: relative;
 
     float: none;
 
     width: 100%;
 }
-#header ul ul li.menu-item-has-children
-{
-    line-height: 1;
-
-    margin-right: 0;
-    padding-right: 0;
-}
-#header ul ul li.menu-item-has-children:after
-{
-    bottom: 0;
-
-    -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-}
-#header ul ul li:hover
+.portum-menu .sub-menu li:hover
 {
     background-color: #eee;
 }
-#header ul ul a
-{
-    font-size: 14px;
-    line-height: 1.2;
 
-    padding: 12px 15px;
-}
-#header ul ul ul
-{
-    top: 0;
-    left: 100%;
-}
-
-@media (max-width: 48em)
-{
-    #header
-    {
-        text-align: center;
-
-        border-bottom: 0 !important;
-    }
-    #header ul a
-    {
-        position: relative;
-        z-index: 2;
-
-        padding-right: 0;
-    }
-    #header .portum-menu-icon
-    {
-        position: relative;
-
-        display: inline-block;
-        float: right;
-
-        padding: 28px 20px;
-
-        cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-    }
-    #header .portum-menu-icon .portum-navicon
-    {
-        position: relative;
-
-        display: block;
-
-        width: 18px;
-        height: 2px;
-
-        -webkit-transition: background .2s ease-out;
-             -o-transition: background .2s ease-out;
-                transition: background .2s ease-out;
-
-        background: #333;
-    }
-    #header .portum-menu-icon .portum-navicon:before,
-    #header .portum-menu-icon .portum-navicon:after
-    {
-        position: absolute;
-
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        content: '';
-        -webkit-transition: all .2s ease-out;
-             -o-transition: all .2s ease-out;
-                transition: all .2s ease-out;
-
-        background: #333;
-    }
-    #header .portum-menu-icon .portum-navicon:before
-    {
-        top: 5px;
-    }
-    #header .portum-menu-icon .portum-navicon:after
-    {
-        top: -5px;
-    }
-    #header .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon
-    {
-        background: transparent;
-    }
-    #header .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon:before
-    {
-        -webkit-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-    }
-    #header .portum-menu-btn:checked ~ .portum-menu-icon .portum-navicon:after
-    {
-        -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-    }
-    #header .portum-menu-btn:checked ~ .portum-menu-icon:not(.steps) .portum-navicon:before,
-    #header .portum-menu-btn:checked ~ .portum-menu-icon:not(.steps) .portum-navicon:after
-    {
-        top: 0;
-    }
-    #header .container,
-    #header .row,
-    #header div[class*=col-]
-    {
-        margin: 0;
-        padding: 0;
-    }
-    #header .portum-menu
-    {
-        visibility: hidden;
-
-        width: 100%;
-        height: 0;
-        max-height: none;
-
-        text-align: left;
-
-        opacity: 0;
-        border-right: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        border-left: 1px solid #eee;
-        background-color: #fafafa;
-    }
-    #header .portum-menu li
-    {
-        display: block;
-        float: none !important;
-
-        margin-right: 0 !important;
-        padding-right: 0 !important;
-
-        border-top: 1px solid #eee;
-    }
-    #header .portum-menu li.menu-item-has-children
-    {
-        line-height: 50px;
-    }
-    #header .portum-menu li.menu-item-has-children:after
-    {
-        width: 50px;
-
-        -webkit-transform: none;
-            -ms-transform: none;
-                transform: none;
-        text-align: center;
-
-        border-left: 1px solid #eee;
-    }
-    #header .portum-menu li.menu-item-has-children:after:hover > ul
-    {
-        display: block;
-    }
-    #header .portum-menu li.menu-item-has-children > a
-    {
-        width: calc( 100% - 50px );
-    }
-    #header ul ul ul
-    {
-        line-height: 50px;
-
-        position: static;
-
-        width: 100%;
-
-        background-color: #ededed;
-    }
-    #header ul ul
-    {
-        line-height: 50px;
-
-        position: static;
-
-        display: none;
-        float: none;
-
-        width: 100%;
-        padding: 0;
-    }
-    #header ul ul li
-    {
-        padding-left: 5px;
-    }
-    #header ul ul li a
-    {
-        line-height: 50px;
-
-        padding: 0 0 0 5px;
-    }
-    #header .portum-menu-icon
-    {
-        display: inline-block;
-        float: none;
-
-        margin: 0;
-        padding: 20px;
-    }
-    #header .portum-menu-btn:checked ~ .portum-menu
-    {
-        visibility: visible;
-
-        height: auto;
-
-        -webkit-transition: opacity .3s ease-in-out;
-             -o-transition: opacity .3s ease-in-out;
-                transition: opacity .3s ease-in-out;
-
-        opacity: 1;
-    }
-}
-@media all and (min-width: 769px)
-{
-    #header.portum-classic ul li:hover > ul
-    {
-        visibility: visible;
-
-        opacity: 1;
-    }
-}
 .portum-menu-icon
 {
     position: relative;
 
-    display: none;
     float: right;
+
+    margin: 0 -15px 0 0;
+    padding: 28px 15px;
 
     cursor: pointer;
     -webkit-user-select: none;
@@ -3083,11 +2965,11 @@ body.ctdw-bar-visible #header.header--over-content
     width: 18px;
     height: 2px;
 
-    -webkit-transition: background .2s ease-out;
-         -o-transition: background .2s ease-out;
-            transition: background .2s ease-out;
+    -webkit-transition: background-color .6s cubic-bezier(.86, 0, .07, 1);
+         -o-transition: background-color .6s cubic-bezier(.86, 0, .07, 1);
+            transition: background-color .6s cubic-bezier(.86, 0, .07, 1);
 
-    background: #333;
+    background-color: #212121;
 }
 .portum-menu-icon .portum-navicon:before,
 .portum-menu-icon .portum-navicon:after
@@ -3097,239 +2979,189 @@ body.ctdw-bar-visible #header.header--over-content
     display: block;
 
     width: 100%;
-    height: 100%;
+    height: 2px;
 
     content: '';
-    -webkit-transition: all .2s ease-out;
-         -o-transition: all .2s ease-out;
-            transition: all .2s ease-out;
+    -webkit-transition: all .6s cubic-bezier(.86, 0, .07, 1);
+         -o-transition: all .6s cubic-bezier(.86, 0, .07, 1);
+            transition: all .6s cubic-bezier(.86, 0, .07, 1);
 
-    background: #333;
+    background-color: #212121;
 }
 .portum-menu-icon .portum-navicon:before
 {
-    top: 5px;
+    top: 6px;
 }
 .portum-menu-icon .portum-navicon:after
 {
-    top: -5px;
+    top: -6px;
 }
 
-#offcanvas ul a
+.portum-menu-icon--open .portum-navicon
 {
-    padding: 0;
+    background: transparent !important;
 }
-#offcanvas ul li.menu-item-has-children
+.portum-menu-icon--open .portum-navicon:before
 {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-#offcanvas ul li.menu-item-has-children > a + a
-{
-    width: calc( 100% - 20px );
-}
-#offcanvas ul li.menu-item-has-children:after
-{
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-
-    position: absolute;
     top: 0;
-    right: 0;
 
-    width: 20px;
-
-    text-align: center;
-    text-transform: none;
-
-    speak: none;
-}
-#offcanvas ul ul
-{
-    position: static;
-    z-index: 1;
-    top: 0;
-    left: 0;
-
-    width: 200px;
-    padding: 0;
-
-    border-width: 0;
-    border-style: none;
-    border-color: transparent;
-    border-radius: 0;
-    background-color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-}
-#offcanvas ul ul li.menu-item-has-children:after
-{
-    top: 10px;
-
-    -webkit-transform: rotate(0);
-        -ms-transform: rotate(0);
-            transform: rotate(0);
-}
-#offcanvas #portum-site-wrapper
-{
-    position: fixed;
-    z-index: 9999999999;
-    right: 0;
-
-    overflow: hidden;
-
-    width: 200px;
-    height: 100vh;
-}
-#offcanvas #portum-site-canvas
-{
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    -webkit-transition: 300ms ease all;
-         -o-transition: 300ms ease all;
-            transition: 300ms ease all;
-
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-}
-#offcanvas .portum-closed-nav #portum-site-canvas
-{
-    -webkit-transform: translateX(200px);
-    -webkit-transform: translate3d(200px, 0, 0);
-        -ms-transform: translateX(200px);
-            transform: translateX(200px);
-            transform: translate3d(200px, 0, 0);
-}
-#offcanvas .portum-show-nav #portum-site-canvas
-{
-    -webkit-transform: translateX(-200px);
-    -webkit-transform: translate3d(-200px, 0, 0);
-        -ms-transform: translateX(-200px);
-            transform: translateX(-200px);
-            transform: translate3d(-200px, 0, 0);
-}
-#offcanvas #portum-site-menu
-{
-    position: absolute;
-    z-index: 99999;
-    top: 0;
-    right: -200px;
-
-    width: 200px;
-    height: 100%;
-
-    background-color: #fff;
-}
-#offcanvas #portum-site-menu nav ul,
-#offcanvas #portum-site-menu nav ul li
-{
-    float: none;
-}
-#offcanvas #portum-site-menu
-{
-    line-height: 40px;
-}
-#offcanvas #portum-site-menu nav
-{
-    margin-top: 50px;
-}
-
-#header.portum-offcanvas .portum-toggle-nav
-{
-    border: 0;
-    background: transparent;
-}
-#header.portum-offcanvas .portum-toggle-nav:hover
-{
-    cursor: pointer;
-}
-#header.portum-offcanvas .portum-toggle-nav:focus
-{
-    outline: none;
-}
-#header.portum-offcanvas .portum-toggle-nav .portum-menu-icon
-{
-    position: relative;
-
-    display: inline-block;
-    float: right;
-
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 18px;
-    height: 16px;
-    padding-top: 7px;
-
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
-#header.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon
-{
-    position: relative;
-
-    display: block;
-
-    width: 18px;
-    height: 2px;
-
-    -webkit-transition: background .2s ease-out;
-         -o-transition: background .2s ease-out;
-            transition: background .2s ease-out;
-
-    background: #333;
-}
-#header.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:before,
-#header.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:after
-{
-    position: absolute;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    content: '';
-    -webkit-transition: all .2s ease-out;
-         -o-transition: all .2s ease-out;
-            transition: all .2s ease-out;
-
-    background: #333;
-}
-#header.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:before
-{
-    top: 5px;
-}
-#header.portum-offcanvas .portum-toggle-nav .portum-menu-icon .portum-navicon:after
-{
-    top: -5px;
-}
-#header.portum-offcanvas .portum-toggle-nav.is-opened .portum-menu-icon .portum-navicon
-{
-    background: transparent;
-}
-#header.portum-offcanvas .portum-toggle-nav.is-opened .portum-menu-icon .portum-navicon:before
-{
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }
-#header.portum-offcanvas .portum-toggle-nav.is-opened .portum-menu-icon .portum-navicon:after
+.portum-menu-icon--open .portum-navicon:after
 {
+    top: 0;
+
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-#header.portum-offcanvas .portum-toggle-nav.is-opened .portum-menu-icon:not(.steps) .portum-navicon:before,
-#header.portum-offcanvas .portum-toggle-nav.is-opened .portum-menu-icon:not(.steps) .portum-navicon:after
+
+@media (max-width: 768px)
 {
-    top: 0;
+    .portum-menu li
+    {
+        line-height: normal;
+
+        display: block;
+        float: none;
+    }
+    .portum-menu li.menu-item-has-children .arrow
+    {
+        font-size: 1em;
+
+        width: 50px;
+        padding: 17px 0;
+
+        cursor: pointer;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        text-align: center;
+    }
+    .portum-menu li.menu-item-has-children > a
+    {
+        width: calc( 100% - 50px - 30px );
+    }
+    .portum-menu a
+    {
+        position: relative;
+        z-index: 2;
+
+        padding: 15px;
+    }
+    .portum-menu .sub-menu
+    {
+        position: static;
+
+        display: block;
+        visibility: visible;
+        overflow: hidden;
+
+        width: 100%;
+        max-height: 0;
+        margin: 0;
+    }
+    .portum-menu .sub-menu.is-visible
+    {
+        max-height: 5000px;
+
+        -webkit-transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+             -o-transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+                transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+    }
+    .portum-menu .sub-menu a
+    {
+        font-size: inherit;
+
+        padding: 15px;
+    }
+}
+@media (min-width: 769px)
+{
+    #header.portum-classic .portum-menu-icon
+    {
+        display: none;
+    }
+    #header.portum-classic .portum-menu .sub-menu
+    {
+        position: absolute;
+        z-index: 3;
+        top: 100%;
+        left: 0;
+
+        visibility: hidden;
+
+        width: 200px;
+        margin: 1px 0 0;
+
+        opacity: 0;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    }
+    #header.portum-classic .portum-menu .sub-menu a
+    {
+        font-size: 14px;
+
+        padding: 12px 15px;
+    }
+    #header.portum-classic .portum-menu .sub-menu .menu-item-has-children .arrow
+    {
+        top: 15px;
+        right: 3px;
+
+        -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+    }
+    #header.portum-classic .portum-menu .sub-menu .sub-menu
+    {
+        top: 0;
+        left: 100%;
+
+        margin: 0;
+    }
+    #header.portum-classic .portum-menu li:hover > .sub-menu
+    {
+        visibility: visible;
+
+        -webkit-transition: opacity .4s cubic-bezier(.86, 0, .07, 1);
+             -o-transition: opacity .4s cubic-bezier(.86, 0, .07, 1);
+                transition: opacity .4s cubic-bezier(.86, 0, .07, 1);
+
+        opacity: 1;
+    }
+}
+@media (max-width: 768px)
+{
+    #header.portum-classic .portum-menu
+    {
+        left: 15px;
+
+        overflow: hidden;
+
+        width: calc(100% + 30px);
+        max-height: 0;
+
+        text-align: left;
+    }
+    #header.portum-classic .portum-menu li
+    {
+        border-top: 1px solid #eee;
+    }
+    #header.portum-classic .portum-menu.menu-item-has-children > a
+    {
+        border-right: 1px solid #eee;
+    }
+    #header.portum-classic .portum-menu--visible
+    {
+        max-height: 5000px;
+
+        -webkit-transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+             -o-transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+                transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+    }
 }
 
 #header.portum-sidebar
@@ -3346,10 +3178,6 @@ body.ctdw-bar-visible #header.header--over-content
 
     text-align: center;
 }
-#header.portum-sidebar .portum-menu-icon
-{
-    display: block;
-}
 #header.portum-sidebar + #wrap
 {
     position: relative;
@@ -3359,98 +3187,235 @@ body.ctdw-bar-visible #header.header--over-content
 }
 #header.portum-sidebar #logo
 {
-    padding: 50px 0;
+    float: none;
+
+    margin: 50px 0;
 }
-#header.portum-sidebar ul
+#header.portum-sidebar .portum-menu
 {
     float: none;
 }
-#header.portum-sidebar ul > li
+#header.portum-sidebar .portum-menu li
 {
     float: none;
+}
+#header.portum-sidebar .portum-menu li.menu-item-has-children .arrow
+{
+    font-size: 1em;
+    line-height: normal;
+
+    width: 30px;
+    padding: 17px 0;
+
+    cursor: pointer;
+}
+#header.portum-sidebar .portum-menu a
+{
+    line-height: normal;
+
+    padding: 12px 15px;
+}
+#header.portum-sidebar .portum-menu .sub-menu
+{
+    overflow: hidden;
+
+    max-height: 0;
+}
+#header.portum-sidebar .portum-menu .sub-menu.is-visible
+{
+    max-height: 5000px;
+
+    -webkit-transition: max-height 2s cubic-bezier(.645, .045, .355, 1);
+         -o-transition: max-height 2s cubic-bezier(.645, .045, .355, 1);
+            transition: max-height 2s cubic-bezier(.645, .045, .355, 1);
 }
 
-.intro-item
+#header.portum-offcanvas .offcanvas
+{
+    position: fixed;
+    z-index: 9999999999;
+    right: 0;
+
+    overflow: hidden;
+
+    width: 250px;
+    height: 100vh;
+
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.86, 0, .07, 1);
+         -o-transition:         transform .6s cubic-bezier(.86, 0, .07, 1);
+            transition: -webkit-transform .6s cubic-bezier(.86, 0, .07, 1);
+            transition:         transform .6s cubic-bezier(.86, 0, .07, 1);
+            transition:         transform .6s cubic-bezier(.86, 0, .07, 1), -webkit-transform .6s cubic-bezier(.86, 0, .07, 1);
+    -webkit-transform: translateX(250px);
+        -ms-transform: translateX(250px);
+            transform: translateX(250px);
+
+    background-color: #111;
+}
+#header.portum-offcanvas .offcanvas--visible
+{
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+}
+#header.portum-offcanvas .offcanvas__content
 {
     position: relative;
-    z-index: 99;
 
-    height: 190px;
-    margin: -100px 0 60px 0;
-
-    text-align: center;
-
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-            box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
-}
-.intro-item h4
-{
-    font-size: 30px;
-    font-weight: 400;
-
-    position: absolute;
-    z-index: 99;
-    top: 50%;
-    left: 50%;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     width: 100%;
-    margin: 0;
-    padding: 0;
-
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    height: 100%;
 }
-.intro-item span
+#header.portum-offcanvas .offcanvas__content .portum-menu-icon
 {
-    font-family: 'Hind', sans-serif;
-    font-size: 160px;
-    font-weight: 700;
-    line-height: 206px;
+    margin: 0;
+}
+#header.portum-offcanvas .portum-menu
+{
+    float: none;
 
+    margin-top: 61px;
+}
+#header.portum-offcanvas .portum-menu li
+{
+    line-height: normal;
+
+    float: none;
+}
+#header.portum-offcanvas .portum-menu li.menu-item-has-children .arrow
+{
+    font-size: 1em;
+
+    width: 50px;
+    padding: 13px 0;
+
+    cursor: pointer;
+    text-align: center;
+}
+#header.portum-offcanvas .portum-menu li.menu-item-has-children > a
+{
+    width: calc( 100% - 50px - 70px );
+}
+#header.portum-offcanvas .portum-menu a
+{
+    padding: 8px 35px;
+}
+#header.portum-offcanvas .portum-menu .sub-menu
+{
+    overflow: hidden;
+
+    max-height: 0;
+}
+#header.portum-offcanvas .portum-menu .sub-menu.is-visible
+{
+    max-height: 5000px;
+
+    -webkit-transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+         -o-transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+            transition: max-height 2s cubic-bezier(.86, 0, .07, 1);
+}
+
+.title-area
+{
+    position: relative;
+
+    background-position: center;
+    background-size: cover;
+}
+
+.title-area__overlay
+{
     position: absolute;
     top: 0;
     left: 0;
 
-    display: block;
-
     width: 100%;
+    height: 100%;
 
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    text-align: Center;
-
-    color: #f9f9f9;
+    background-color: #f6f6f6;
 }
-.intro-item .actions
-{
-    position: absolute;
-    bottom: 25px;
-    left: 75px;
 
-    -webkit-transition: color 120ms;
-         -o-transition: color 120ms;
-            transition: color 120ms;
+.title-area__content
+{
+    position: relative;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    text-align: center;
 }
-.intro-item .actions a
+.title-area__content h1
 {
-    font-size: 12px;
+    font-weight: 700;
 
-    display: inline-block;
-
-    margin-right: 15px;
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    color: #333;
+    margin: 0 0 30px;
 }
-.intro-item .actions a:hover
+.title-area__content .page-cat-links
 {
-    color: #a1083a;
+    margin-bottom: 30px;
+}
+.title-area__content .page-cat-links a
+{
+    font-size: .9em;
+
+    margin: 0 12px;
+    padding: 0 8px;
+
+    color: #fff;
+    border-radius: 4px;
+    background-color: #0962ea;
+}
+.title-area__content .page-excerpt
+{
+    font-size: 1.2em;
+    font-weight: 300;
+
+    margin-bottom: 30px;
+}
+.title-area__content .page-meta > span
+{
+    margin: 0 20px;
+}
+.title-area__content .page-meta .page-meta__author img
+{
+    width: 40px;
+    height: 40px;
+
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+}
+.title-area__content .col-md-8 > :last-child
+{
+    margin-bottom: 0;
+}
+
+.title-area--has-bg .title-area__overlay
+{
+    opacity: .5;
+    background-color: #000;
+}
+.title-area--has-bg .title-area__content
+{
+    padding-top: 180px;
+    padding-bottom: 180px;
+
+    color: #e8e8e8;
+}
+.title-area--has-bg .title-area__content h1
+{
+    color: #fff;
+}
+.title-area--has-bg .title-area__content h1 a
+{
+    color: inherit;
+}
+.title-area--has-bg .title-area__content .page-meta a
+{
+    color: #e8e8e8;
 }
 
 /*==========================================================================
@@ -3458,60 +3423,66 @@ body.ctdw-bar-visible #header.header--over-content
   ========================================================================== */
 .post
 {
+    margin-bottom: 30px;
+}
+
+.post--loop
+{
     position: relative;
 
-    color: #777;
-    background-color: #fff;
+    border-radius: 5px;
     -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
             box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
 }
-.post:last-of-type
+
+.post--loop.format-image .post-content-wrap
 {
-    margin-bottom: 55px;
+    background-position: center;
+    background-size: cover;
+}
+.post--loop.format-image a
+{
+    color: #fff;
+}
+.post--loop.format-image .post-content
+{
+    min-height: 200px;
+
+    color: #b3b3b3;
 }
 
-.post + .post
+/* =Post Content Wrap
+========================================================================== */
+.post-content-wrap
 {
-    margin-top: 55px;
+    padding: 30px;
+
+    border-radius: inherit;
 }
 
-@media (max-width: 991px)
+.post-content-wrap__overlay
 {
-    .post
-    {
-        -webkit-box-shadow: 0 0 20px 3px rgba(35, 31, 32, .05);
-                box-shadow: 0 0 20px 3px rgba(35, 31, 32, .05);
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: .6;
+    border-radius: inherit;
+    background-color: #000;
 }
+
 /* =Post Header
 ========================================================================== */
-.post-header
-{
-    padding: 30px 40px 10px 40px;
-}
-
-.post.sticky .post-header
-{
-    padding-top: 10px;
-}
-
 /* =Post Content
 ========================================================================== */
-.post-footer
-{
-    padding: 0 40px 10px 40px;
-}
-
 /* =Post Content
    ========================================================================== */
 .post-content
 {
-    padding: 15px 40px 35px 40px;
-}
-
-.post-content.has-post-thumbnail
-{
-    min-height: 135px;
+    position: relative;
 }
 
 /*
@@ -3552,6 +3523,14 @@ body.ctdw-bar-visible #header.header--over-content
     display: block;
 
     width: 100%;
+}
+
+.post-thumbnail img
+{
+    width: 100%;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .post-thumbnail-preloader
@@ -3995,6 +3974,10 @@ body.ctdw-bar-visible #header.header--over-content
    ========================================================================== */
 .post-title
 {
+    font-weight: 700;
+
+    position: relative;
+
     margin: 0;
 }
 
@@ -4003,53 +3986,14 @@ body.ctdw-bar-visible #header.header--over-content
     color: #1a171c;
 }
 
-.post.sticky .post-title a
-{
-    line-height: 30px;
-
-    vertical-align: bottom;
-
-    color: #fff;
-}
-
 .post-title a:focus,
 .post-title a:hover
 {
     color: #dbe9fe;
 }
 
-.post.sticky .post-header
-{
-    overflow: hidden;
-
-    background-color: rgba(0, 0, 0, .6);
-}
-
-.post.sticky .post-title
-{
-    display: block;
-}
-
 @media (max-width: 425px)
 {
-    .post.sticky .post-header
-    {
-        position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-    }
-
-    .post.sticky .post-title
-    {
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        width: 100%;
-        margin: 0;
-        padding: 15px 40px;
-    }
-
     .post.sticky .post-title,
     .post.sticky .post-title a
     {
@@ -4079,7 +4023,6 @@ body.ctdw-bar-visible #header.header--over-content
     margin-right: 15px;
 
     letter-spacing: 1px;
-    text-transform: uppercase;
 
     color: #212529;
 }
@@ -4121,6 +4064,8 @@ body.ctdw-bar-visible #header.header--over-content
 
 .tags-links a
 {
+    font-weight: 700;
+
     display: inline-block;
 
     margin: 0 5px 5px 0;
@@ -4493,6 +4438,61 @@ body.ctdw-bar-visible #header.header--over-content
     content: ' ';
 }
 
+.post-navigation .nav-previous a
+{
+    position: relative;
+
+    display: inline-block;
+
+    padding-left: 46px;
+}
+
+.post-navigation .nav-next a
+{
+    position: relative;
+
+    display: inline-block;
+
+    padding-right: 46px;
+}
+
+.post-navigation .nav-previous a:before,
+.post-navigation .nav-next a:before
+{
+    font-family: 'fontawesome';
+    line-height: 36px;
+
+    position: absolute;
+    top: 0;
+
+    display: inline-block;
+
+    width: 36px;
+    height: 36px;
+    margin-top: -7px;
+
+    text-align: center;
+
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+            box-shadow: 0 0 40px 4px rgba(35, 31, 32, .07);
+}
+
+.post-navigation .nav-previous a:before
+{
+    left: 0;
+
+    content: '';
+}
+
+.post-navigation .nav-next a:before
+{
+    right: 0;
+
+    content: '';
+}
+
 @media (min-width: 768px)
 {
     .post-navigation .nav-previous
@@ -4566,12 +4566,13 @@ body.ctdw-bar-visible #header.header--over-content
 
 .author-bio-avatar img
 {
-    border-radius: 50%;
-}
+    width: 50px;
+    height: 50px;
 
-.author-bio-info h5
-{
-    margin: 0;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
 .author-bio-social
@@ -4605,7 +4606,7 @@ body.ctdw-bar-visible #header.header--over-content
 
     .author-bio-avatar + .author-bio-info
     {
-        padding-left: 108px;
+        padding-left: 100px;
     }
 }
 .author-bio-info *:last-child
@@ -4616,6 +4617,18 @@ body.ctdw-bar-visible #header.header--over-content
 /* ==========================================================================
    =Comments, Pingbacks and Trackbacks
    ========================================================================== */
+.comments-wrap
+{
+    padding: 40px 0;
+
+    background-color: #f6f6f6;
+}
+
+.comments-title
+{
+    font-weight: 700;
+}
+
 /*
 	 * 1. Clearfix hack 
 	 */
@@ -4682,8 +4695,13 @@ body.ctdw-bar-visible #header.header--over-content
     top: -14px;
     left: -84px;
 
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
+
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
 @media (max-width: 480px)
@@ -4704,6 +4722,11 @@ body.ctdw-bar-visible #header.header--over-content
 .comment-author .says
 {
     display: none;
+}
+
+.comment-author cite
+{
+    font-style: normal;
 }
 
 .comment-metadata > a
@@ -4847,6 +4870,8 @@ body.ctdw-bar-visible #header.header--over-content
 
 .comment-reply-title
 {
+    font-weight: 700;
+
     margin-bottom: 0;
 }
 
@@ -4875,6 +4900,11 @@ body.ctdw-bar-visible #header.header--over-content
 .comment-form p:not(.comment-notes):not(.logged-in-as)
 {
     margin-bottom: 0;
+}
+
+.comment-form .form-submit input[type=submit]
+{
+    margin-top: 1em;
 }
 
 .comment-form .logged-in-as,
@@ -5909,90 +5939,6 @@ body.ctdw-bar-visible #header.header--over-content
     }
 }
 /* ----------------------- SECTIONS ----- end ------------------------ */
-/* =Button
-   ========================================================================== */
-.ewf-btn
-{
-    position: relative;
-
-    display: inline-block;
-
-    min-width: 110px;
-    margin-right: 10px;
-    padding: 6px 13px;
-
-    cursor: pointer;
-    -webkit-transition: .3s all ease;
-         -o-transition: .3s all ease;
-            transition: .3s all ease;
-    text-align: center;
-    text-decoration: none;
-
-    color: #fff;
-    border: solid 1px;
-    background-color: #0962ea;
-    background-clip: padding-box;
-
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-}
-.ewf-btn:focus,
-.ewf-btn:hover
-{
-    color: #fff;
-    background-color: #dbe9fe;
-}
-.ewf-btn:active
-{
-    color: #fff;
-    background-color: #0962ea;
-}
-
-.ewf-btn:active,
-.ewf-btn:hover,
-.ewf-btn:focus
-{
-    color: #fff;
-}
-
-.ewf-btn,
-.ewf-btn:active,
-.ewf-btn:hover,
-.ewf-btn:focus
-{
-    color: #fff;
-}
-
-.ewf-btn.ewf-btn--small
-{
-    padding: 2px 14px;
-
-    border-radius: 18px;
-}
-
-.ewf-btn.ewf-btn--large
-{
-    padding: 9px 21px;
-
-    border-radius: 24px;
-}
-
-.ewf-btn.ewf-btn--huge
-{
-    font-weight: bold;
-
-    padding: 16px 29px;
-
-    border-radius: 32px;
-}
-
-.ewf-btn.ewf-btn--secondary
-{
-    color: #0962ea;
-    background-color: transparent;
-}
-
 /* ----------------------------------- #02 - SERVICES section --------------------------------*/
 .ewf-slider .services-item
 {
@@ -6245,39 +6191,50 @@ body.ctdw-bar-visible #header.header--over-content
 
     min-height: 150px;
     margin-top: 55px;
-    padding: 50px 30px;
+    padding: 40px 12px 40px;
 
     text-align: center;
+}
+.testimonial img
+{
+    display: block;
 
-    color: #212529;
+    max-width: 55px;
+    margin: 0 auto;
+
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+}
+.testimonial .ewf-testimonial__title
+{
+    margin-bottom: 0;
 }
 .testimonial .ewf-testimonial__by
 {
     font-size: .8125em;
     font-weight: 400;
 
-    color: #7e8b98;
+    color: #b7bec5;
 }
-.testimonial img
+.testimonial .ewf-testimonial__content:before
 {
-    position: absolute;
-    top: -65px;
-    right: 0;
-    left: 0;
+    font-family: 'fontawesome';
+    font-size: .7em;
+    font-weight: 400;
 
     display: block;
 
-    max-width: 100px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
+    margin-bottom: 20px;
 
-    border-radius: 50%;
+    content: '';
+
+    color: #b7bec5;
 }
 .testimonial .ewf-testimonial__content p
 {
-    font-size: .875em;
-    line-height: 1.5em;
+    margin-top: 0;
 }
 
 /* ----------------------------------- #04 - TESTIMONIALS section - END -------------------*/
@@ -7939,4 +7896,10 @@ body.ctdw-bar-visible #header.header--over-content
 .efw-section-visible
 {
     display: block !important;
+}
+
+.main-container
+{
+    padding-top: 60px;
+    padding-bottom: 60px;
 }

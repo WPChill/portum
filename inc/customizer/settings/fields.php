@@ -99,62 +99,6 @@ Epsilon_Customizer::add_field( 'portum_blog_layout', array(
 	), 
 ) );
 
-Epsilon_Customizer::add_field( 'portum_show_single_post_categories', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Categories', 'portum' ),
-	'description' => esc_html__( 'This will disable the categories displayed at the beginning of each post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_show_single_post_excerpt', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Excerpt', 'portum' ),
-	'description' => esc_html__( 'This will disable the excerpt displayed at the beginning of each post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_show_single_post_author', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Author', 'portum' ),
-	'description' => esc_html__( 'This will disable the author being displayed at the beginning of each post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_show_single_post_date', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Date', 'portum' ),
-	'description' => esc_html__( 'This will disable the date being displayed at the beginning of each post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_show_single_post_comments', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Comments', 'portum' ),
-	'description' => esc_html__( 'This will disable the comments number being displayed at the beginning of each post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_show_single_post_tags', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Post Meta: Tags', 'portum' ),
-	'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
-Epsilon_Customizer::add_field( 'portum_enable_author_box', array(
-	'type'        => 'epsilon-toggle',
-	'label'       => esc_html__( 'Author Box', 'portum' ),
-	'description' => esc_html__( 'Toggle the display of the author box, at the end of each post.', 'portum' ),
-	'section'     => 'header_image',
-	'default'     => true,
-) );
-
 Epsilon_Customizer::add_field( 'portum_header_upsell', array(
 	'type'               => 'epsilon-upsell',
 	'transport'          => 'postMessage',

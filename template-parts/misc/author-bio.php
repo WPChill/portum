@@ -10,6 +10,11 @@
 ?>
 
 <?php
+
+if ( ! get_theme_mod( 'portum_enable_author_box', true ) ) {
+	return;
+}
+
 $curauth = get_userdata( $post->post_author );
 ?>
 <div class="author-bio">
