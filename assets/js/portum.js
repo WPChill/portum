@@ -530,6 +530,50 @@ var Portum = {
 			}
 		},
 
+		menu: function() {
+
+			jQuery( '.menu-item-has-children' ).append( '<div class="arrow"></div>' );
+			jQuery( '.menu-item-has-children > .arrow' ).on( 'click', function( e ) {
+				jQuery( this ).toggleClass( 'is-active' );
+				jQuery( this ).siblings( '.sub-menu' ).toggleClass( 'is-visible' );
+			} );
+
+		},
+
+		classicMenu: function() {
+
+			if ( ! jQuery( '#header.portum-classic' ).length ) {
+				return;
+			}
+
+			jQuery( '.portum-menu-icon' ).on( 'click', function( e ) {
+				e.preventDefault();
+				jQuery( '.portum-menu-icon' ).toggleClass( 'portum-menu-icon--open' );
+				jQuery( '.portum-menu' ).toggleClass( 'portum-menu--visible' );
+			} );
+		},
+
+		offCanvasMenu: function() {
+
+			if ( ! jQuery( '#header.portum-offcanvas' ).length ) {
+				return;
+			}
+
+			jQuery( '.portum-menu-icon' ).on( 'click', function( e ) {
+				e.preventDefault();
+
+				if ( ! jQuery( '.offcanvas' ).hasClass( 'offcanvas--visible' ) ) {
+					jQuery( '.offcanvas' ).addClass( 'offcanvas--visible' );
+					jQuery( '.portum-menu-icon' ).addClass( 'portum-menu-icon--open' );
+				}
+				else {
+					jQuery( '.offcanvas' ).removeClass( 'offcanvas--visible' );
+					jQuery( '.portum-menu-icon' ).removeClass( 'portum-menu-icon--open' );
+				}
+			} );
+
+		},
+
 		/**
 		 * Back to top function
 		 */
@@ -615,31 +659,7 @@ var Portum = {
 	/**
 	 * Javascript events in the theme
 	 */
-	Events: {
-		OffCanvasMenu: function() {
-
-			jQuery( '.portum-toggle-nav' ).on( 'click', function( e ) {
-
-				e.preventDefault();
-
-				jQuery(this).toggleClass( 'is-opened' );
-
-				if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-show-nav' ) ) {
-					jQuery( '#portum-site-wrapper, #offcanvas' ).removeClass( 'portum-show-nav' );
-					jQuery( '#portum-site-wrapper, #offcanvas' ).addClass( 'portum-closed-nav' );
-				} else if ( jQuery( '#portum-site-wrapper' ).hasClass( 'portum-closed-nav' ) ) {
-					jQuery( '#portum-site-wrapper, #offcanvas' ).removeClass( 'portum-closed-nav' );
-					jQuery( '#portum-site-wrapper, #offcanvas' ).addClass( 'portum-show-nav' );
-				}
-			} );
-
-			jQuery( '.menu-item-has-children' ).append('<div class="arrow"></div>');
-			jQuery( '.menu-item-has-children > .arrow' ).click( function( e ) {
-				jQuery( this ).toggleClass( 'is-active' );
-				jQuery( this ).siblings( '.sub-menu' ).toggleClass( 'is-visible' );
-			} );
-		}
-	},
+	Events: {},
 	/**
 	 * Helper functions
 	 */

@@ -47,16 +47,14 @@
 			 * Initiate Theme related functions
 			 */
 			Portum.Theme.header();
+			Portum.Theme.menu();
+			Portum.Theme.classicMenu();
+			Portum.Theme.offCanvasMenu();
 			Portum.Theme.map();
 			Portum.Theme.backTop();
 			Portum.Theme.hideBackTop();
 			Portum.Theme.smoothScroll();
 			Portum.Theme.handleAccordions();
-
-			/**
-			 * Initiate Event related functions
-			 */
-			Portum.Events.OffCanvasMenu();
 
 		} catch ( error ) {
 			console.log( error );
@@ -80,11 +78,13 @@
 		 */
 		Portum.Theme.map();
 		Portum.Theme.header();
+		Portum.Theme.menu();
+		Portum.Theme.classicMenu();
+		Portum.Theme.offCanvasMenu();
 
 		/**
 		 * Initiate Event related functions
 		 */
-		Portum.Events.OffCanvasMenu();
 
 	} );
 

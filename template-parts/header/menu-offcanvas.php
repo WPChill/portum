@@ -8,20 +8,21 @@
  */
 
 ?>
-<div id="portum-site-wrapper" class="portum-closed-nav text-center">
-	<div id="portum-site-canvas">
-		<div id="portum-site-menu">
-			<nav>
-				<?php
-				wp_nav_menu( array(
-					'menu'           => 'primary',
-					'theme_location' => 'primary',
-					'container'      => '',
-					'menu_id'        => 'menu',
+<div class="offcanvas">
+	<div class="offcanvas__content">
 
-				) );
-				?>
-			</nav>
-		</div><!--/#site-menu-->
+		<div class="portum-menu-icon portum-menu-icon--open">
+			<div class="portum-navicon"></div>
+		</div>
+		
+		<?php
+		wp_nav_menu( array(
+			'menu'           => 'primary',
+			'theme_location' => 'primary',
+			'container'      => '',
+			'menu_id'        => 'menu',
+			'menu_class'     => 'portum-menu',	
+		) );
+		?>
 	</div>
 </div>

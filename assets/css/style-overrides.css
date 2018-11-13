@@ -223,9 +223,17 @@
 }
 
 .sf-menu a,
-#header ul a {
+#header ul a,
+.portum-menu li.menu-item-has-children .arrow {
     color: %16$s;
     /* epsilon_menu_item_color */
+}
+
+.portum-menu-icon .portum-navicon,
+.portum-menu-icon .portum-navicon:before,
+.portum-menu-icon .portum-navicon:after {
+	background-color: %16$s;
+	/* epsilon_menu_item_color */
 }
 
 .sf-menu>li:hover.arrow:before,
