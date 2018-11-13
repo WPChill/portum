@@ -17,12 +17,6 @@ $layout = Portum_Helper::get_layout( 'portum_blog_layout' );
 
 	<div class="container main-container">
 
-		<?php
-		if ( get_theme_mod( 'portum_show_blog_welcome', false ) ) {
-			get_template_part( 'template-parts/blog/welcome' );
-		}
-		?>
-
 		<div class="row">
 			<?php if ( 'left-sidebar' === $layout['type'] && is_active_sidebar( 'sidebar' ) ) : ?>
 				<div class="col-sm-<?php echo esc_attr( $layout['columns']['sidebar']['span'] ); ?>">
