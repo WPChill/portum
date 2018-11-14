@@ -4,9 +4,8 @@
 	position: relative;
 	margin-top: 55px;
 	min-height: 150px;
-	padding: 40px 12px 40px;
+	padding: 40px 20px;
 	text-align: center;
-	//color: $text-color;
 
 	img {
 		margin: 0 auto;
@@ -33,7 +32,7 @@
 			content: "\f10e";
 			font-family: "fontawesome";
 			font-weight: 400;
-			font-size: 0.7em;
+			font-size: 1.2em;
 			color: lighten($text-color, 60);
 			display: block;
 			margin-bottom: 20px;

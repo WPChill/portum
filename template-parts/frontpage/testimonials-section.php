@@ -89,9 +89,9 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 									?>
 
 									<?php if ( ! empty( $v['testimonial_text'] ) ) { ?>
-										<blockquote class="ewf-testimonial__content">
+										<div class="ewf-testimonial__content">
 											<?php echo wp_kses_post( wpautop( $v['testimonial_text'] ) ); ?>
-										</blockquote>
+										</div>
 									<?php } ?>
 
 									<?php if ( ! empty( $v['testimonial_image'] ) ) { ?>

@@ -6191,7 +6191,7 @@ img.custom-logo--sticky
 
     min-height: 150px;
     margin-top: 55px;
-    padding: 40px 12px 40px;
+    padding: 40px 20px;
 
     text-align: center;
 }
@@ -6221,7 +6221,7 @@ img.custom-logo--sticky
 .testimonial .ewf-testimonial__content:before
 {
     font-family: 'fontawesome';
-    font-size: .7em;
+    font-size: 1.2em;
     font-weight: 400;
 
     display: block;
