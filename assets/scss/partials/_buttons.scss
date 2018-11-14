@@ -17,11 +17,13 @@
 	cursor: pointer;
 	appearance: none;
 	transition: .3s all ease;
+
 	&:focus,
 	&:hover {
 		background-color: $accent-2-color;
 		color: #fff;
 	}
+
 	&:active {
 		background-color: $accent-1-color;
 		color: #fff;

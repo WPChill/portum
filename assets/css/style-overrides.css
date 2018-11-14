@@ -1,14 +1,14 @@
 /**
-	%1$s - epsilon_general_separator - 
+	%1$s - epsilon_general_separator -
 	%2$s - epsilon_accent_color - #0385d0
 	%3$s - epsilon_accent_color_second - #a1083a
-	%4$s - epsilon_text_separator - 
+	%4$s - epsilon_text_separator -
 	%5$s - epsilon_title_color - #1a171c
 	%6$s - epsilon_text_color - #212529
 	%7$s - epsilon_link_color - #0385d0
 	%8$s - epsilon_link_hover_color - #a1083a
 	%9$s - epsilon_link_active_color - #333333
-	%10$s - epsilon_menu_separator - 
+	%10$s - epsilon_menu_separator -
 	%11$s - epsilon_header_background - #151c1f
 	%12$s - epsilon_header_background_sticky - rgba(255,255,255,.3)
 	%13$s - epsilon_header_background_border_bot - rgba(255,255,255,.1)
@@ -334,7 +334,6 @@
 
 #mobile-menu .mobile-menu-submenu-arrow:hover {
     background-color: %15$s;
-    ;
 }
 
 #mobile-menu-trigger {
@@ -418,28 +417,27 @@ select {
     /* epsilon_text_color */
 }
 
+.ewf-btn,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
-    border-color: %3$s;
-    background-color: %3$s;
+    background-color: %2$s;
 }
 
+.ewf-btn:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 input[type="button"]:focus {
-    border-color: %3$s;
     background-color: %3$s;
 }
 
 input[type="reset"]:active,
 input[type="submit"]:active,
 input[type="button"]:active {
-    border-color: %3$s;
-    background-color: %3$s;
+    background-color: %2$s;
 }
 
 
