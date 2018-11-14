@@ -160,23 +160,11 @@ $item_container_class[] = 'col-sm-4';
 
 						<?php }// End while(). ?>
 					</div><!--/.content class-->
-					<?php if ( $fields['blog_show_read_more'] ) { ?>
-						<?php
-						$button_size             = ! empty( $fields['blog_button_size'] ) ? esc_attr( $fields['blog_button_size'] ) : 'ewf-btn--huge';
-						$button_label            = ! empty( $fields['blog_button_label'] ) ? esc_attr( $fields['blog_button_label'] ) : __( 'Read More', 'portum' );
-						$button_background_color = 'background-color: ' . ( ! empty( $fields['blog_button_background_color'] ) ? esc_attr( $fields['blog_button_background_color'] ) : 'initial' ) . ';';
-						$button_text_color       = 'color: ' . ( ! empty( $fields['blog_button_text_color'] ) ? esc_attr( $fields['blog_button_text_color'] ) : 'initial' ) . ';';
-						$button_border_radius    = 'border-radius: ' . ( ! empty( $fields['blog_button_radius'] ) ? esc_attr( $fields['blog_button_radius'] ) : '0' ) . 'px;';
-						$button_border_color     = 'border-color: ' . ( ! empty( $fields['blog_button_border_color'] ) ? esc_attr( $fields['blog_button_border_color'] ) : 'initial' ) . ';';
-
-						$style = $button_background_color . $button_border_color . $button_border_radius . $button_text_color;
-						?>
-
+					<?php if ( ! empty( $fields['blog_button_label'] ) ) : ?>
 						<div class="text-center col-sm-12">
-							<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" style="<?php echo esc_attr( $style ); ?>" class="ewf-btn <?php echo esc_attr( $button_size ); ?>"><?php echo esc_html( $button_label ); ?></a>
+							<?php Portum_Helper::render_button( $fields, 'blog_button', get_permalink( get_option( 'page_for_posts' ) ) ); ?>
 						</div><!--/.col-->
-
-					<?php } ?>
+					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>
 				</div><!--/.row-->
 			</div><!--/. container class -->
