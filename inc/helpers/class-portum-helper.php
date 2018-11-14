@@ -310,6 +310,25 @@ class Portum_Helper {
 		}
 	}
 
+	public static function render_button( $fields, $name ) {
+
+		if ( empty( $fields[ $name . '_label' ] ) ) {
+			return;
+		}
+
+		$button_class  = 'ewf-btn ';
+		$button_class .= ! empty( $fields[ $name . '_size' ] ) ? esc_attr( $fields[ $name . '_size' ] ) : 'ewf-btn--huge';
+
+		$button_style  = ''; 
+		$button_style .= ! empty( $fields[ $name . '_background_color' ] ) ? 'background-color:' . esc_attr( $fields[ $name . '_background_color' ] ) . ';'  : '';
+		$button_style .= ! empty( $fields[ $name . '_text_color' ] ) ? 'color:' . esc_attr( $fields[ $name . '_text_color' ] ) . ';'  : '';
+		$button_style .= ! empty( $fields[ $name . '_border_color' ] ) ? 'border-color:' . esc_attr( $fields[ $name . '_border_color' ] ) . ';'  : '';
+		$button_style .= ! empty( $fields[ $name . '_radius' ] ) ? 'border-radius:' . esc_attr( $fields[ $name . '_radius' ] ) . 'px;'  : '';	
+		?>
+			<a class="<?php echo esc_attr( $button_class ); ?>" style="<?php echo esc_attr( $button_style ); ?>" href="<?php echo esc_attr( $fields[ $name . '_url' ] ); ?>"><?php echo wp_kses_post( $fields[ $name . '_label' ] );  ?></a>
+		<?php
+	}
+
 	/**
 	 * Generates the section title properly formatted
 	 *

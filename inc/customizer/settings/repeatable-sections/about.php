@@ -350,44 +350,6 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'default'           => esc_url( 'https://google.com' ),
 				'sanitize_callback' => 'esc_url_raw',
 			),
-			'about_primary_button_size' => array(
-				'label'   => esc_html__( 'Primary Button Size', 'portum' ),
-				'type'    => 'select',
-				'default' => 'ewf-btn--huge',
-				'choices' => array(
-					'ewf-btn--huge'   => __( 'Huge', 'portum' ),
-					'ewf-btn--medium' => __( 'Medium', 'portum' ),
-					'ewf-btn--small'  => __( 'Small', 'portum' ),
-				),
-			),
-			'about_primary_button_radius' => array(
-				'label'   => esc_html__( 'Primary Button Radius', 'portum' ),
-				'type'    => 'epsilon-slider',
-				'default' => 0,
-				'choices' => array(
-					'min'  => 0,
-					'max'  => 50,
-					'step' => 1,
-				),
-			),
-			'about_primary_button_background_color'   => array(
-				'label'             => esc_html__( 'Primary Button Bg. Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#212121',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'about_primary_button_text_color' => array(
-				'label'             => esc_html__( 'Primary Button Text Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#fff',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'about_primary_button_border_color'       => array(
-				'label'             => esc_html__( 'Primary Button Border Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '',
-				'sanitize_callback' => 'wp_kses_post',
-			),
 			'about_section_unique_id'    => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',

@@ -58,25 +58,7 @@ if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_tit
 		<?php
 		$attr_helper->generate_color_overlay();
 
-		$button_primary   = $fields['cta_button_1_enable'];
-		$button_secondary = $fields['cta_button_2_enable'];
-
-		$btn_1_css = 'background-color: ' . ( ! empty( $fields['cta_primary_button_background_color'] ) ? esc_attr( $fields['cta_primary_button_background_color'] ) : 'inherit' ) . ';';
-		$btn_1_css .= 'color: ' . ( ! empty( $fields['cta_primary_button_text_color'] ) ? esc_attr( $fields['cta_primary_button_text_color'] ) : 'inherit' ) . ';';
-		$btn_1_css .= 'border-color: ' . ( ! empty( $fields['cta_primary_button_border_color'] ) ? esc_attr( $fields['cta_primary_button_border_color'] ) : 'inherit' ) . ';';
-		$btn_1_css .= 'border-radius: ' . ( ! empty( $fields['cta_primary_btn_radius'] ) ? esc_attr( $fields['cta_primary_btn_radius'] ) : '0' ) . 'px;';
-
-
-		$btn_1_size = ! empty( $fields['cta_primary_btn_size'] ) ? esc_attr( $fields['cta_primary_btn_size'] ) : 'ewf-btn--huge';
-
-		$btn_2_css = 'background-color: ' . ( ! empty( $fields['cta_secondary_button_background_color'] ) ? esc_attr( $fields['cta_secondary_button_background_color'] ) : 'inherit' ) . ';';
-		$btn_2_css .= 'color: ' . ( ! empty( $fields['cta_secondary_button_text_color'] ) ? esc_attr( $fields['cta_secondary_button_text_color'] ) : 'inherit' ) . ';';
-		$btn_2_css .= 'border-color: ' . ( ! empty( $fields['cta_secondary_button_border_color'] ) ? esc_attr( $fields['cta_secondary_button_border_color'] ) : 'inherit' ) . ';';
-		$btn_2_css .= 'border-radius: ' . ( ! empty( $fields['cta_secondary_btn_radius'] ) ? esc_attr( $fields['cta_secondary_btn_radius'] ) : '0' ) . 'px;';
-
-		$btn_2_size = ! empty( $fields['cta_secondary_btn_size'] ) ? esc_attr( $fields['cta_secondary_btn_size'] ) : 'ewf-btn--huge';
-
-
+	
 		?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'cta', $fields ) ); ?>">
@@ -91,22 +73,13 @@ if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_tit
 						</div><!--/ header class-->
 					<?php } ?>
 
-
-					<?php if ( ! empty( $button_primary ) || ! empty( $button_secondary ) ) { ?>
+					<?php if ( ! empty( $fields[ 'cta_button_primary_label' ] ) || ! empty( $fields[ 'cta_button_secondary_label' ] ) ) { ?>
 
 						<div class="<?php echo esc_attr( $content_class ); ?>">
 
-							<?php
-							if ( ! empty( $button_primary ) ) {
-								echo '<a class="ewf-btn ' . esc_attr( $btn_1_size ) . '" style="' . esc_attr( $btn_1_css ) . '" href="' . esc_attr( $fields['cta_button_primary_url'] ) . '">' . wp_kses_post( $fields['cta_button_primary_label'] ) . '</a>';
-							}
-							?>
-
-							<?php
-							if ( ! empty( $button_secondary ) ) {
-								echo '<a class="ewf-btn ' . esc_attr( $btn_2_size ) . '" style="' . esc_attr( $btn_2_css ) . '" href="' . esc_attr( $fields['cta_button_secondary_url'] ) . '">' . wp_kses_post( $fields['cta_button_secondary_label'] ) . '</a>';
-							}
-							?>
+							<?php Portum_Helper::render_button( $fields, 'cta_button_primary' ); ?>
+							<?php Portum_Helper::render_button( $fields, 'cta_button_secondary' ); ?>
+								
 						</div><!-- content class -->
 					<?php }//endif button check ?>
 

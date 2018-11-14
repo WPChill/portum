@@ -364,47 +364,6 @@ class Repeatable_Section_Instagram extends Repeatable_Section {
 				'default'           => esc_url( 'https://google.com' ),
 				'sanitize_callback' => 'esc_url_raw',
 			),
-			'instagram_button_primary_size' => array(
-				'label'     => esc_html__( 'Primary Button Size', 'portum' ),
-				'type'      => 'select',
-				'default'   => 'ewf-btn--huge',
-				'choices'   => array(
-					'ewf-btn--huge'   => __( 'Huge', 'portum' ),
-					'ewf-btn--medium' => __( 'Medium', 'portum' ),
-					'ewf-btn--small'  => __( 'Small', 'portum' ),
-				),
-			),
-			'instagram_button_primary_radius'                => array(
-				'label'     => esc_html__( 'Primary Button Radius', 'portum' ),
-				'type'      => 'epsilon-slider',
-				'default'   => 0,
-				'choices'   => array(
-					'min'  => 0,
-					'max'  => 50,
-					'step' => 5,
-				),
-			),
-			'instagram_button_primary_background_color'   => array(
-				'label'             => esc_html__( 'Primary Button Bg. Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#000',
-				'mode'              => 'rgba',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'instagram_button_primary_text_color'         => array(
-				'label'             => esc_html__( 'Primary Button Text Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#FFF',
-				'mode'              => 'rgba',
-				'sanitize_callback' => 'wp_kses_post',
-			),
-			'instagram_button_primary_border_color'       => array(
-				'label'             => esc_html__( 'Primary Button Border Color', 'portum' ),
-				'type'              => 'epsilon-color-picker',
-				'default'           => '#EEE',
-				'mode'              => 'rgba',
-				'sanitize_callback' => 'wp_kses_post',
-			),
 			'instagram_section_unique_id'    => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',

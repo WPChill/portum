@@ -146,21 +146,10 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 										<?php echo wp_kses_post( $pricing_box['price_box_features'] ); ?>
 									<?php }//endif !empty ?>
 
-									<?php if ( ! empty( $pricing_box['price_box_url'] ) ) { ?>
+										
+									<?php if ( ! empty( $pricing_box['price_box_button_label'] ) ) { ?>
 										<div class="ewf-pricing__button-wrapper">
-
-											<?php $button_class  = ''; ?>
-											<?php $button_class .= ! empty( $pricing_box['price_box_button_size'] ) ? esc_attr( $pricing_box['price_box_button_size'] ) : 'ewf-btn--huge'; ?>
-
-											<?php $button_style  = ''; ?>
-											<?php $button_style .= 'background-color: ' . ( ! empty( $pricing_box['price_box_button_background_color'] ) ? esc_attr( $pricing_box['price_box_button_background_color'] ) : 'inherit' ) . ';'; ?>
-											<?php $button_style .= 'color: ' . ( ! empty( $pricing_box['price_box_button_text_color'] ) ? esc_attr( $pricing_box['price_box_button_text_color'] ) : 'inherit' ) . ';'; ?>
-											<?php $button_style .= 'border-color: ' . ( ! empty( $pricing_box['price_box_button_border_color'] ) ? esc_attr( $pricing_box['price_box_button_border_color'] ) : 'inherit' ) . ';'; ?>
-											<?php $button_style .= 'border-radius: ' . ( ! empty( $pricing_box['price_box_button_radius'] ) ? esc_attr( $pricing_box['price_box_button_radius'] ) : '0' ) . 'px;'; ?>
-
-											<a class="ewf-btn <?php echo esc_attr( $button_class ); ?>" style="<?php echo esc_attr( $button_style ); ?>" href="<?php echo esc_url( $pricing_box['price_box_url'] ); ?>">
-												<?php echo empty( $pricing_box['price_box_url_label'] ) ? esc_html__( 'Purchase', 'portum' ) : wp_kses_post( $pricing_box['price_box_url_label'] ); ?>
-											</a><!--/.ewf-btn-->
+											<?php Portum_Helper::render_button( $pricing_box, 'price_box_button' ); ?>
 										</div><!--/.ewf-pricing__button-wrapper-->
 									<?php }//endif !empty ?>
 
