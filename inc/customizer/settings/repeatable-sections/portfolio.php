@@ -44,7 +44,7 @@ class Repeatable_Section_Portfolio extends Repeatable_Section {
 	public function create_groups() {
 		$this->groups = array(
 			'regular'    => array(
-				'icon'  => 'dashicons dashicons-welcome-write-blog',
+				'icon'  => 'dashicons dashicons-edit',
 				'label' => esc_html__( 'Content', 'epsilon-framework' ),
 			),
 			'background' => array(
@@ -52,7 +52,7 @@ class Repeatable_Section_Portfolio extends Repeatable_Section {
 				'label' => esc_html__( 'Background', 'epsilon-framework' ),
 			),
 			'layout'     => array(
-				'icon'  => 'dashicons dashicons-layout',
+				'icon'  => 'dashicons dashicons-align-left',
 				'label' => esc_html__( 'Layout', 'epsilon-framework' ),
 			),
 			'colors'     => array(
