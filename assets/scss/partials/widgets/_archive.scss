@@ -1,0 +1,24 @@
+.widget_archive ul {
+    list-style: none;
+}
+
+.widget_archive li {
+    padding: 6.25px 0;
+}
+
+.widget_archive li:first-child {
+    padding-top: 0;
+}
+
+.widget_archive li:last-child {
+    border-bottom: 0;
+}
+
+.widget_archive li span {
+    float: right;
+    display: none;
+}
+
+.widget_archive select {
+    margin-bottom: 0;
+}

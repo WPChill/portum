@@ -12,6 +12,7 @@
 */
 @import "variables/variables";
 @import "mixins/mixins";
+
 @import "partials/typography";
 @import "partials/utils";
 @import "partials/buttons";
@@ -26,6 +27,21 @@
 @import "partials/woocommerce";
 @import "partials/back-top";
 @import "partials/upsell";
+
+@import "partials/widgets/base";
+@import "partials/widgets/archive";
+@import "partials/widgets/calendar";
+@import "partials/widgets/categories";
+@import "partials/widgets/meta";
+@import "partials/widgets/nav-menu";
+@import "partials/widgets/pages";
+@import "partials/widgets/recent-comments";
+@import "partials/widgets/recent-posts";
+@import "partials/widgets/rss";
+@import "partials/widgets/search";
+@import "partials/widgets/tag-cloud";
+@import "partials/widgets/text";
+
 @import "partials/sections/base";
 @import "partials/sections/section-services";
 @import "partials/sections/section-portfolio";
@@ -49,15 +65,9 @@
 @import "partials/sections/section-accordion";
 @import "partials/sections/section-iconboxes";
 @import "partials/sections/section-newsletter";
+
 @import "partials/effects";
 
-.page {
-	.widget {
-		&:first-of-type {
-			margin-top: 45px;
-		}
-	}
-}
 
 @include media('<=768px') {
 	.bni-rsp {

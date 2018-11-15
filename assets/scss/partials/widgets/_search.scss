@@ -1,0 +1,23 @@
+.widget_search {
+
+	.searchform {
+		position: relative;
+		max-width: 400px;
+	}
+
+	input[type="text"] {
+		border-color: transparent;
+		border-radius: 35px;
+		padding-left: 15px;
+	}
+
+	input[type="submit"] {
+	 	position: absolute;
+		top: 0px;
+		right: -1px;
+		padding: 10px 25px;
+		margin: 0;
+		min-width: initial;
+	}
+
+}

@@ -1,0 +1,19 @@
+.widget_nav_menu ul {
+    list-style: none;
+}
+
+.widget_nav_menu li {
+    padding: 3.25px 0;
+}
+
+.widget_nav_menu li:first-child {
+    padding-top: 0;
+}
+
+.widget_nav_menu li:last-child {
+    margin-bottom: 0;
+}
+
+.widget_nav_menu li a {
+    display: inline-block;
+}

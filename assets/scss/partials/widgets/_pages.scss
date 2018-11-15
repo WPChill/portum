@@ -1,0 +1,15 @@
+.widget_pages ul {
+    list-style: none;
+}
+
+.widget_pages li {
+    padding: 3.25px 0;
+}
+
+.widget_pages li:first-child {
+    padding-top: 0;
+}
+
+.widget_pages li:last-child {
+    margin-bottom: 0;
+}

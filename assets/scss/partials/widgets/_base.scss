@@ -1,0 +1,90 @@
+.widget {
+    margin-bottom: 50px;
+}
+
+/*
+.widget ul li:before {
+color: inherit;
+content: "\f0da";
+display: inline-block;
+font-family: "FontAwesome";
+margin-left: 0;
+transition: padding 250ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+width: 15px;
+}
+*/
+
+.widget.widget_rss ul li:before,
+.widget.widget_recent_entries ul li:before {
+    content: "";
+    display: inline;
+    width: auto;
+}
+
+.widget ul li:before:hover {
+    padding-left: 5px;
+}
+
+#footer .widget,
+#footer-bottom .widget {
+    //margin-bottom: 25px;
+}
+
+#header-widget-area .widget:last-child {
+    margin-bottom: 0;
+}
+
+#footer-bottom [class*=col]:last-child .widget:last-child,
+#footer [class*=col]:last-child .widget:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .widget:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+/**
+* 1. The last element of every widget shouldn't have a margin bottom. used for spacing purposes
+*/
+.widget>*:last-child {
+    margin-bottom: 0;
+    /* 1 */
+}
+
+.widget .widget-title a {
+    color: $blog-widgets-title;
+}
+
+#footer .widget .widget-title,
+#footer .widget .widget-title a {
+    color: $footer-headings-color;
+}
+
+.widget-title {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: $blog-widgets-title;
+}
+
+.widget-title img {
+    width: auto;
+    max-width: auto;
+}
+
+/* =Widget Links
+========================================================================== */
+
+.widget a {
+    color: $blog-widgets-links;
+}
+
+.widget a:hover,
+.widget a:focus {
+    color: $accent-2-color;
+}
+
+.widget a:active {
+    color: $accent-3-color;
+}

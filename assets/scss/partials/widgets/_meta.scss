@@ -1,0 +1,15 @@
+.widget_meta ul {
+    list-style: none;
+}
+
+.widget_meta li {
+    padding: 6.25px 0;
+}
+
+.widget_meta li:first-child {
+    padding-top: 0;
+}
+
+.widget_meta li:last-child {
+    margin-bottom: 0;
+}

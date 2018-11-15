@@ -1,0 +1,15 @@
+.widget_recent_comments ul {
+    list-style: none;
+}
+
+.widget_recent_comments li {
+    padding: 3.25px 0;
+}
+
+.widget_recent_comments li:first-child {
+    padding-top: 0;
+}
+
+.widget_recent_comments li:last-child {
+    margin-bottom: 0;
+}

@@ -4183,7 +4183,7 @@ img.custom-logo--sticky
 }
 
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .pagination:after
 {
@@ -4422,7 +4422,7 @@ img.custom-logo--sticky
 }
 
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .post-navigation:after
 {
@@ -4548,7 +4548,7 @@ img.custom-logo--sticky
 }
 
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .author-bio:after
 {
@@ -4630,7 +4630,7 @@ img.custom-logo--sticky
 }
 
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .comments-area:after,
 .comment-list:after .comment:after
@@ -4786,7 +4786,7 @@ img.custom-logo--sticky
 }
 
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .comment-navigation:after
 {
@@ -4852,7 +4852,7 @@ img.custom-logo--sticky
    =Comments Form
    ========================================================================== */
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .comment-respond:after
 {
@@ -4881,7 +4881,7 @@ img.custom-logo--sticky
 }
 
 /*
-	 * 1. Clearfix hack 
+	 * 1. Clearfix hack
 	 */
 .comment-form:after
 {
@@ -4932,648 +4932,6 @@ img.custom-logo--sticky
         width: 33.33333333%;
     }
 }
-/* ==========================================================================
-   =Widgets: Default WordPress Widgets
-   ========================================================================== */
-.widget
-{
-    margin-bottom: 50px;
-}
-
-/*
-.widget ul li:before {
-  color: inherit;
-  content: "\f0da";
-  display: inline-block;
-  font-family: "FontAwesome";
-  margin-left: 0;
-  transition: padding 250ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-  width: 15px;
-}
-*/
-.widget.widget_rss ul li:before,
-.widget.widget_recent_entries ul li:before
-{
-    display: inline;
-
-    width: auto;
-
-    content: '';
-}
-
-.widget ul li:before:hover
-{
-    padding-left: 5px;
-}
-
-#footer .widget,
-#footer-bottom .widget
-{
-    margin-bottom: 25px;
-}
-
-#header-widget-area .widget:last-child
-{
-    margin-bottom: 0;
-}
-
-#footer-bottom [class*=col]:last-child .widget:last-child,
-#footer [class*=col]:last-child .widget:last-child
-{
-    margin-bottom: 0;
-}
-
-@media (min-width: 768px)
-{
-    .widget:last-child
-    {
-        margin-bottom: 0 !important;
-    }
-}
-/**
-	 * 1. The last element of every widget shouldn't have a margin bottom. used for spacing purposes
-	 */
-.widget > *:last-child
-{
-    margin-bottom: 0;
-    /* 1 */
-}
-
-.widget .widget-title a
-{
-    color: #0385d0;
-}
-
-#footer .widget .widget-title,
-#footer .widget .widget-title a
-{
-    color: #fff;
-}
-
-.widget-title
-{
-    font-weight: bold;
-
-    margin-bottom: 12px;
-    margin-bottom: 25px;
-    padding-bottom: 5px;
-
-    color: #0385d0;
-    border-bottom: 1px solid rgba(255, 255, 255, .3);
-}
-
-.widget-title img
-{
-    width: auto;
-    max-width: auto;
-}
-
-/* =Widget Links
-   ========================================================================== */
-.widget a
-{
-    color: #0385d0;
-}
-
-.widget a:hover,
-.widget a:focus
-{
-    color: #dbe9fe;
-}
-
-.widget a:active
-{
-    color: #172128;
-}
-
-/* =Calendar Widget
-   ========================================================================== */
-#calendar_wrap table
-{
-    position: relative;
-
-    border-spacing: 4px;
-    border-collapse: separate;
-}
-
-#calendar_wrap table,
-#calendar_wrap th,
-#calendar_wrap td
-{
-    padding: 0;
-
-    text-align: center;
-
-    border: 0;
-}
-
-#footer #wp-calendar caption,
-#footer #wp-calendar th
-{
-    color: inherit;
-}
-
-#wp-calendar caption
-{
-    font-weight: 700;
-
-    margin-bottom: 0;
-    padding-bottom: 15px;
-
-    text-align: center;
-    text-transform: uppercase;
-
-    color: #212529;
-}
-
-#wp-calendar th
-{
-    font-size: .9em;
-    font-weight: normal;
-
-    color: inherit;
-    color: #212529;
-}
-
-#wp-calendar tbody td:not(.pad)
-{
-    /*
-  border: 1px solid #ebebeb;
-  */
-    font-size: .9em;
-    line-height: 30px;
-
-    background-color: #fafafa;
-}
-
-#wp-calendar tbody td a
-{
-    line-height: 30px;
-
-    display: block;
-
-    margin: 0;
-
-    text-align: center;
-
-    color: #fff;
-    background-color: #0962ea;
-}
-#wp-calendar tbody td a:hover
-{
-    background-color: #dbe9fe;
-}
-#wp-calendar tbody td a:active
-{
-    background-color: #172128;
-}
-
-#wp-calendar tfoot
-{
-    float: left;
-
-    height: 0;
-}
-
-#wp-calendar #prev a,
-#wp-calendar #next a
-{
-    font-size: 0;
-    line-height: 26px;
-
-    position: absolute;
-    top: 0;
-    right: 5px;
-
-    display: inline-block;
-
-    width: 26px;
-    height: 26px;
-
-    text-align: center;
-
-    border-radius: 25px;
-}
-
-#wp-calendar #prev a
-{
-    left: 5px;
-}
-
-#wp-calendar #prev a,
-#wp-calendar #next a
-{
-    color: #212529;
-    border: 1px solid #212529;
-}
-
-#wp-calendar #prev a:hover,
-#wp-calendar #prev a:focus,
-#wp-calendar #next a:hover,
-#wp-calendar #next a:focus
-{
-    color: #fff;
-    border: 1px solid #dbe9fe;
-    background-color: #dbe9fe;
-}
-
-#wp-calendar #prev a:active,
-#wp-calendar #next a:active
-{
-    color: #fff;
-    border: 1px solid #172128;
-    background-color: #172128;
-}
-
-#wp-calendar #next a:before,
-#wp-calendar #prev a:before
-{
-    font-family: 'FontAwesome';
-    font-size: 14px;
-    line-height: 26px;
-
-    position: relative;
-
-    display: inline-block;
-
-    padding: 0 1px 0 0;
-
-    content: '';
-    text-align: center;
-    text-align: center;
-
-    color: inherit;
-}
-
-#wp-calendar #next a:before
-{
-    padding: 0 0 0 3px;
-
-    content: ' ';
-}
-
-#wp-calendar #prev a:hover:before,
-#wp-calendar #prev a:focus:before,
-#wp-calendar #next a:hover:before,
-#wp-calendar #next a:focus:before
-{
-    color: #fff;
-}
-
-/* footer */
-#footer #wp-calendar #prev a,
-#footer #wp-calendar #next a
-{
-    color: #a9afb1;
-    border: 1px solid #a9afb1;
-}
-
-#footer #wp-calendar #prev a:hover,
-#footer #wp-calendar #prev a:focus,
-#footer #wp-calendar #next a:hover,
-#footer #wp-calendar #next a:focus
-{
-    color: #fff;
-    border: 1px solid #fff;
-    background-color: #fff;
-}
-
-#footer #wp-calendar #prev a:active,
-#footer #wp-calendar #next a:active
-{
-    color: #fff;
-    border: 1px solid #a9afb1;
-    background-color: #a9afb1;
-}
-
-/* =Archive Widget
-   ========================================================================== */
-.widget_archive ul
-{
-    list-style: none;
-}
-
-.widget_archive li
-{
-    padding: 6.25px 0;
-}
-
-.widget_archive li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_archive li:last-child
-{
-    border-bottom: 0;
-}
-
-.widget_archive li span
-{
-    display: none;
-    float: right;
-}
-
-.widget_archive select
-{
-    margin-bottom: 0;
-}
-
-/* =Categories Widget
-   ========================================================================== */
-.widget_categories ul
-{
-    list-style: none;
-}
-
-.widget_categories ul ul
-{
-    margin-bottom: 0;
-}
-
-.widget_categories li
-{
-    padding: 6.25px 0;
-    /*
-  border-bottom: 1px solid #ebebeb;
-  */
-}
-
-.widget_categories li ul li
-{
-    border-bottom: 0;
-}
-
-.widget_categories li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_categories li:last-child
-{
-    border-bottom: 0;
-}
-
-.widget_categories li ul li:last-child
-{
-    padding-bottom: 0;
-}
-
-.widget_categories li span
-{
-    display: none;
-    float: right;
-}
-
-.widget_categories select
-{
-    margin-bottom: 0;
-}
-
-/* =Pages Widget
-   ========================================================================== */
-.widget_pages ul
-{
-    list-style: none;
-}
-
-.widget_pages li
-{
-    padding: 3.25px 0;
-}
-
-.widget_pages li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_pages li:last-child
-{
-    margin-bottom: 0;
-}
-
-/* =Meta Widget
-   ========================================================================== */
-.widget_meta ul
-{
-    list-style: none;
-}
-
-.widget_meta li
-{
-    padding: 6.25px 0;
-}
-
-.widget_meta li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_meta li:last-child
-{
-    margin-bottom: 0;
-}
-
-/* =Recent Comments Widget
-   ========================================================================== */
-.widget_recent_comments ul
-{
-    list-style: none;
-}
-
-.widget_recent_comments li
-{
-    padding: 3.25px 0;
-}
-
-.widget_recent_comments li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_recent_comments li:last-child
-{
-    margin-bottom: 0;
-}
-
-/* =Recent Entries Widget
-   ========================================================================== */
-.widget_recent_entries ul
-{
-    list-style: none;
-}
-
-.widget_recent_entries ul li
-{
-    position: relative;
-
-    padding: 12.5px 0;
-
-    border-bottom: 1px solid #ebebeb;
-}
-
-.widget_recent_entries ul li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_recent_entries ul li:last-child
-{
-    border-bottom: 0;
-}
-
-.widget_recent_entries ul li a
-{
-    display: block;
-}
-
-.widget_recent_entries ul li .post-date
-{
-    display: block;
-}
-
-/* =RSS Widget
-   ========================================================================== */
-.widget_rss ul
-{
-    margin: 0;
-
-    list-style: none;
-}
-
-.widget_rss li
-{
-    margin-bottom: 25px;
-}
-
-.widget_rss ul:last-child,
-.widget_rss li:last-child
-{
-    margin-bottom: 0;
-}
-
-.widget_rss .rssSummary
-{
-    color: inherit;
-}
-
-.widget_rss ul li a.rsswidget
-{
-    font-weight: bold;
-
-    margin-top: 5px;
-    margin-bottom: 25px;
-}
-
-.widget_rss .rsswidget img
-{
-    margin-top: -5px;
-}
-
-.widget_rss .rss-date,
-.widget_rss cite
-{
-    font-size: .9em;
-
-    display: block;
-
-    color: #414444;
-}
-
-/* =Search Widget
-   ========================================================================== */
-.widget_search .search-form
-{
-    position: relative;
-}
-
-.widget_search .search-field
-{
-    font-family: 'Hind', sans-serif;
-    font-size: 14px;
-
-    width: 100%;
-    height: 39px;
-    padding-left: 25px;
-
-    color: #a8a8a8;
-    border-color: transparent;
-    border-radius: 19px 20px 20px 19px/20px 20px 19px 19px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 19px 2px rgba(35, 31, 32, .07);
-            box-shadow: 0 0 19px 2px rgba(35, 31, 32, .07);
-}
-
-.widget_search .search-submit
-{
-    position: absolute;
-    top: 0;
-    right: -1px;
-
-    min-width: 100px;
-    margin: 0;
-    padding: 6.5px 25px;
-}
-
-/* =Text Widget
-   ========================================================================== */
-/**
-	 * 1. The last element inside text widget shouldn't have margin bottom
-	 */
-.textwidget > *:last-child
-{
-    margin-bottom: 0;
-    /* 1 */
-}
-
-/* =Tag Cloud Widget
-   ========================================================================== */
-.widget_tag_cloud a
-{
-    font-size: .9em;
-
-    display: inline-block;
-
-    margin: 0 5px 5px 0;
-    padding: 0 2px;
-
-    text-transform: uppercase;
-
-    color: #212529;
-}
-
-.widget_tag_cloud a:hover
-{
-    color: #dbe9fe;
-}
-
-/* =Nav Menu Widget
-   ========================================================================== */
-.widget_nav_menu ul
-{
-    list-style: none;
-}
-
-.widget_nav_menu li
-{
-    padding: 3.25px 0;
-}
-
-.widget_nav_menu li:first-child
-{
-    padding-top: 0;
-}
-
-.widget_nav_menu li:last-child
-{
-    margin-bottom: 0;
-}
-
-.widget_nav_menu li a
-{
-    display: inline-block;
-}
-
 /* =Captions
 ========================================================================== */
 .wp-caption
@@ -5800,6 +5158,599 @@ img.custom-logo--sticky
 
     color: #fff;
     background-color: red;
+}
+
+.widget
+{
+    margin-bottom: 50px;
+}
+
+/*
+.widget ul li:before {
+color: inherit;
+content: "\f0da";
+display: inline-block;
+font-family: "FontAwesome";
+margin-left: 0;
+transition: padding 250ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+width: 15px;
+}
+*/
+.widget.widget_rss ul li:before,
+.widget.widget_recent_entries ul li:before
+{
+    display: inline;
+
+    width: auto;
+
+    content: '';
+}
+
+.widget ul li:before:hover
+{
+    padding-left: 5px;
+}
+
+#header-widget-area .widget:last-child
+{
+    margin-bottom: 0;
+}
+
+#footer-bottom [class*=col]:last-child .widget:last-child,
+#footer [class*=col]:last-child .widget:last-child
+{
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px)
+{
+    .widget:last-child
+    {
+        margin-bottom: 0 !important;
+    }
+}
+/**
+* 1. The last element of every widget shouldn't have a margin bottom. used for spacing purposes
+*/
+.widget > *:last-child
+{
+    margin-bottom: 0;
+    /* 1 */
+}
+
+.widget .widget-title a
+{
+    color: #0385d0;
+}
+
+#footer .widget .widget-title,
+#footer .widget .widget-title a
+{
+    color: #fff;
+}
+
+.widget-title
+{
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    color: #0385d0;
+}
+
+.widget-title img
+{
+    width: auto;
+    max-width: auto;
+}
+
+/* =Widget Links
+========================================================================== */
+.widget a
+{
+    color: #0385d0;
+}
+
+.widget a:hover,
+.widget a:focus
+{
+    color: #dbe9fe;
+}
+
+.widget a:active
+{
+    color: #172128;
+}
+
+.widget_archive ul
+{
+    list-style: none;
+}
+
+.widget_archive li
+{
+    padding: 6.25px 0;
+}
+
+.widget_archive li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_archive li:last-child
+{
+    border-bottom: 0;
+}
+
+.widget_archive li span
+{
+    display: none;
+    float: right;
+}
+
+.widget_archive select
+{
+    margin-bottom: 0;
+}
+
+#calendar_wrap table
+{
+    position: relative;
+
+    border-spacing: 4px;
+    border-collapse: separate;
+}
+
+#calendar_wrap table,
+#calendar_wrap th,
+#calendar_wrap td
+{
+    padding: 0;
+
+    text-align: center;
+
+    border: 0;
+}
+
+#footer #wp-calendar caption,
+#footer #wp-calendar th
+{
+    color: inherit;
+}
+
+#wp-calendar caption
+{
+    font-weight: 700;
+
+    margin-bottom: 0;
+    padding-bottom: 15px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #212529;
+}
+
+#wp-calendar th
+{
+    font-size: .9em;
+    font-weight: normal;
+
+    color: inherit;
+    color: #212529;
+}
+
+#wp-calendar tbody td:not(.pad)
+{
+    /*
+  border: 1px solid #ebebeb;
+  */
+    font-size: .9em;
+    line-height: 30px;
+
+    background-color: #fafafa;
+}
+
+#wp-calendar tbody td a
+{
+    line-height: 30px;
+
+    display: block;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #0962ea;
+}
+#wp-calendar tbody td a:hover
+{
+    background-color: #dbe9fe;
+}
+#wp-calendar tbody td a:active
+{
+    background-color: #172128;
+}
+
+#wp-calendar tfoot
+{
+    float: left;
+
+    height: 0;
+}
+
+#wp-calendar #prev a,
+#wp-calendar #next a
+{
+    font-size: 0;
+    line-height: 26px;
+
+    position: absolute;
+    top: 0;
+    right: 5px;
+
+    display: inline-block;
+
+    width: 26px;
+    height: 26px;
+
+    text-align: center;
+
+    border-radius: 25px;
+}
+
+#wp-calendar #prev a
+{
+    left: 5px;
+}
+
+#wp-calendar #prev a,
+#wp-calendar #next a
+{
+    color: #212529;
+    border: 1px solid #212529;
+}
+
+#wp-calendar #prev a:hover,
+#wp-calendar #prev a:focus,
+#wp-calendar #next a:hover,
+#wp-calendar #next a:focus
+{
+    color: #fff;
+    border: 1px solid #dbe9fe;
+    background-color: #dbe9fe;
+}
+
+#wp-calendar #prev a:active,
+#wp-calendar #next a:active
+{
+    color: #fff;
+    border: 1px solid #172128;
+    background-color: #172128;
+}
+
+#wp-calendar #next a:before,
+#wp-calendar #prev a:before
+{
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    line-height: 26px;
+
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0 1px 0 0;
+
+    content: '';
+    text-align: center;
+    text-align: center;
+
+    color: inherit;
+}
+
+#wp-calendar #next a:before
+{
+    padding: 0 0 0 3px;
+
+    content: ' ';
+}
+
+#wp-calendar #prev a:hover:before,
+#wp-calendar #prev a:focus:before,
+#wp-calendar #next a:hover:before,
+#wp-calendar #next a:focus:before
+{
+    color: #fff;
+}
+
+/* footer */
+#footer #wp-calendar #prev a,
+#footer #wp-calendar #next a
+{
+    color: #a9afb1;
+    border: 1px solid #a9afb1;
+}
+
+#footer #wp-calendar #prev a:hover,
+#footer #wp-calendar #prev a:focus,
+#footer #wp-calendar #next a:hover,
+#footer #wp-calendar #next a:focus
+{
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+
+#footer #wp-calendar #prev a:active,
+#footer #wp-calendar #next a:active
+{
+    color: #fff;
+    border: 1px solid #a9afb1;
+    background-color: #a9afb1;
+}
+
+.widget_categories ul
+{
+    list-style: none;
+}
+
+.widget_categories ul ul
+{
+    margin-bottom: 0;
+}
+
+.widget_categories li
+{
+    padding: 6.25px 0;
+    /*
+  border-bottom: 1px solid #ebebeb;
+  */
+}
+
+.widget_categories li ul li
+{
+    border-bottom: 0;
+}
+
+.widget_categories li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_categories li:last-child
+{
+    border-bottom: 0;
+}
+
+.widget_categories li ul li:last-child
+{
+    padding-bottom: 0;
+}
+
+.widget_categories li span
+{
+    display: none;
+    float: right;
+}
+
+.widget_categories select
+{
+    margin-bottom: 0;
+}
+
+.widget_meta ul
+{
+    list-style: none;
+}
+
+.widget_meta li
+{
+    padding: 6.25px 0;
+}
+
+.widget_meta li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_meta li:last-child
+{
+    margin-bottom: 0;
+}
+
+.widget_nav_menu ul
+{
+    list-style: none;
+}
+
+.widget_nav_menu li
+{
+    padding: 3.25px 0;
+}
+
+.widget_nav_menu li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_nav_menu li:last-child
+{
+    margin-bottom: 0;
+}
+
+.widget_nav_menu li a
+{
+    display: inline-block;
+}
+
+.widget_pages ul
+{
+    list-style: none;
+}
+
+.widget_pages li
+{
+    padding: 3.25px 0;
+}
+
+.widget_pages li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_pages li:last-child
+{
+    margin-bottom: 0;
+}
+
+.widget_recent_comments ul
+{
+    list-style: none;
+}
+
+.widget_recent_comments li
+{
+    padding: 3.25px 0;
+}
+
+.widget_recent_comments li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_recent_comments li:last-child
+{
+    margin-bottom: 0;
+}
+
+.widget_recent_entries ul
+{
+    list-style: none;
+}
+
+.widget_recent_entries ul li
+{
+    position: relative;
+
+    padding: 12.5px 0;
+
+    border-bottom: 1px solid #ebebeb;
+}
+
+.widget_recent_entries ul li:first-child
+{
+    padding-top: 0;
+}
+
+.widget_recent_entries ul li:last-child
+{
+    border-bottom: 0;
+}
+
+.widget_recent_entries ul li a
+{
+    display: block;
+}
+
+.widget_recent_entries ul li .post-date
+{
+    display: block;
+}
+
+.widget_rss ul
+{
+    margin: 0;
+
+    list-style: none;
+}
+
+.widget_rss li
+{
+    margin-bottom: 25px;
+}
+
+.widget_rss ul:last-child,
+.widget_rss li:last-child
+{
+    margin-bottom: 0;
+}
+
+.widget_rss .rssSummary
+{
+    color: inherit;
+}
+
+.widget_rss ul li a.rsswidget
+{
+    font-weight: bold;
+
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.widget_rss .rsswidget img
+{
+    margin-top: -5px;
+}
+
+.widget_rss .rss-date,
+.widget_rss cite
+{
+    font-size: .9em;
+
+    display: block;
+
+    color: #414444;
+}
+
+.widget_search .searchform
+{
+    position: relative;
+
+    max-width: 400px;
+}
+.widget_search input[type=text]
+{
+    padding-left: 15px;
+
+    border-color: transparent;
+    border-radius: 35px;
+}
+.widget_search input[type=submit]
+{
+    position: absolute;
+    top: 0;
+    right: -1px;
+
+    min-width: initial;
+    margin: 0;
+    padding: 10px 25px;
+}
+
+.widget_tag_cloud a
+{
+    font-size: .9em;
+
+    display: inline-block;
+
+    margin: 0 5px 5px 0;
+    padding: 0 2px;
+
+    text-transform: uppercase;
+
+    color: #212529;
+}
+
+.widget_tag_cloud a:hover
+{
+    color: #dbe9fe;
+}
+
+.textwidget > *:last-child
+{
+    margin-bottom: 0;
 }
 
 /* ----------------------- SECTIONS ------------------------ */
@@ -6639,7 +6590,7 @@ img.custom-logo--sticky
 }
 #footer #footer-widgets
 {
-    padding-bottom: 30px;
+    padding: 70px 0;
 }
 #footer #footer-bottom
 {
@@ -7825,11 +7776,6 @@ img.custom-logo--sticky
 {
     -webkit-box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, .02);
             box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, .02);
-}
-
-.page .widget:first-of-type
-{
-    margin-top: 45px;
 }
 
 @media (max-width: 768px)
