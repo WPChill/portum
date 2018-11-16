@@ -1,33 +1,24 @@
-/* =Newsletter
-   ========================================================================== */
+.section-newsletter {
 
-#mc_embed_signup {
-	#mc_embed_signup_scroll {
-	    display: flex;
-	    flex-wrap: wrap;
+	form {
+ 	    display: flex;
+	    flex-wrap: nowrap;
 	    align-items: center;
-	    justify-content: center;
+		justify-content: center;
 
-	    .mc-field-group {
-		    max-width: 300px;
-		    width: 100%;
-		    margin-right: 10px;
-
-		    input {
-			    width: 100%;
-			    margin-bottom: 0;
-			    height: 42px;
-			    line-height: 32px;
-			}
+		input[type=email] {
+			max-width: 300px;
+			width: 100%;
+			margin-right:-60px;
+			border-radius: 35px;
+			padding-left: 15px;
+			border: none;
 		}
 
-		.mc-button-contianer {
-			input {
-			    margin-bottom: 0;
-			}
+		input[type=submit] {
+			min-width: 120px;
+			margin: 0;
 		}
 	}
-}
 
-/* = END Newsletter Section
-   ========================================================================== */
+}

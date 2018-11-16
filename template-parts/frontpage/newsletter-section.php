@@ -52,6 +52,7 @@ if ( 'left' == $fields['newsletter_row_title_align'] || 'right' == $fields['news
 
 //end layout stuff
 ?>
+
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $fields['newsletter_section_unique_id'], 'newsletter', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'newsletter' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
@@ -71,22 +72,14 @@ if ( 'left' == $fields['newsletter_row_title_align'] || 'right' == $fields['news
 							</div><!--/.col-md-->
 						<?php } // end if _subtitle, _title // ?>
 
-						<?php if ( ! empty( $fields['newsletter_list'] ) ) { ?>
+						<?php if ( ! empty( $fields['newsletter_list'] ) ) : ?>
 							<div class="<?php echo esc_attr( $content_class ); ?>">
-								<div id="mc_embed_signup">
-									<form action="<?php echo esc_url( $fields['newsletter_list'] ) ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-										<div id="mc_embed_signup_scroll">
-											<div class="mc-field-group">
-												<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="<?php echo esc_html__( 'Your email..', 'portum' ) ?>">
-											</div>
-											<div class="mc-button-contianer">
-												<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="ewf-btn ewf-btn--huge">
-											</div>
-										</div>
-									</form>
-								</div>
-							</div><!--/.col-md--6-->
-						<?php }//endif !empty ?>
+								<form action="<?php echo esc_url( $fields['newsletter_list'] ); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+									<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="<?php echo esc_html__( 'Your email..', 'portum') ?>">
+									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="ewf-btn">
+								</form>
+							</div>
+						<?php endif; ?>
 
 					</div><!--/.row-->
 				</div><!--/.container class-->

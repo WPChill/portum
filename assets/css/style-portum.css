@@ -7650,16 +7650,14 @@ width: 15px;
 
 /* = END Icon Boxes Section
    ========================================================================== */
-/* =Newsletter
-   ========================================================================== */
-#mc_embed_signup #mc_embed_signup_scroll
+.section-newsletter form
 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -7667,27 +7665,22 @@ width: 15px;
     -ms-flex-pack: center;
     justify-content: center;
 }
-#mc_embed_signup #mc_embed_signup_scroll .mc-field-group
+.section-newsletter form input[type=email]
 {
     width: 100%;
     max-width: 300px;
-    margin-right: 10px;
-}
-#mc_embed_signup #mc_embed_signup_scroll .mc-field-group input
-{
-    line-height: 32px;
+    margin-right: -60px;
+    padding-left: 15px;
 
-    width: 100%;
-    height: 42px;
-    margin-bottom: 0;
+    border: none;
+    border-radius: 35px;
 }
-#mc_embed_signup #mc_embed_signup_scroll .mc-button-contianer input
+.section-newsletter form input[type=submit]
 {
-    margin-bottom: 0;
+    min-width: 120px;
+    margin: 0;
 }
 
-/* = END Newsletter Section
-   ========================================================================== */
 /* ----------------------------------- Dashed Border Effect (all around)  ------------------------*/
 .ewf-item__border-dashed-effect
 {
