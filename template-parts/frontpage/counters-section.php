@@ -94,10 +94,9 @@ wp_enqueue_script( 'odometer' );
 									<?php
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_counters_section', 'portum_counter_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
+
 									<?php if ( ! empty( $counter['counter_icon'] ) && $counter['counter_icon_display'] ) { ?>
-										<div class="ewf-counter__icon">
-											<i style="<?php echo $style; ?>" class="<?php echo esc_attr( $counter['counter_icon'] ); ?>"></i>
-										</div>
+										<?php Portum_Helper::render_icon( $counter, 'counter_icon' ); ?>
 									<?php } ?>
 
 									<div class="ewf-counter__content">

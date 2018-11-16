@@ -78,26 +78,13 @@ foreach ( $fields['features'] as $key => $feature ) {
 					<div class="col-xs-12 col-sm-4 ">
 
 						<?php foreach ( $array_left as $key => $feature ) { ?>
-							<?php
-							$icon_style = 'color: ' . ( ! empty( $feature['feature_icon_color'] ) ? esc_attr( $feature['feature_icon_color'] ) : 'inherit' ) . ';';
-							$icon_style .= 'background-color: ' . ( ! empty( $feature['feature_bg_icon_color'] ) ? esc_attr( $feature['feature_bg_icon_color'] ) : 'inherit' ) . ';';
-							$icon_style .= 'border-color: ' . ( ! empty( $feature['feature_border_icon_color'] ) ? esc_attr( $feature['feature_border_icon_color'] ) : 'inherit' ) . ';';
-							$icon_style .= 'font-size: ' . ( ! empty( $feature['feature_icon_size'] ) ? esc_attr( $feature['feature_icon_size'] ) : 'inherit' ) . 'px;';
-							$icon_style .= 'border-width: ' . ( ! empty( $feature['feature_border_icon_size'] ) ? esc_attr( $feature['feature_border_icon_size'] ) : '0' ) . 'px;';
-							$icon_style .= 'border-radius: ' . ( ! empty( $feature['feature_border_icon_radius'] ) ? esc_attr( $feature['feature_border_icon_radius'] ) : '0' ) . 'px;';
-							if ( ! empty( $feature['feature_icon_size'] ) && ! empty( $feature['feature_border_icon_size'] ) ) {
-								$icon_style .= 'padding: ' . esc_attr( $feature['feature_icon_size'] / 3 . 'px;' );
-							}
-
-							?>
 
 							<div class="features-left features-item">
 								<?php
 								echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_features_section', 'portum_features' ), Epsilon_Helper::allowed_kses_pencil() );
 								?>
-								<?php if ( ! empty( $feature['feature_icon'] ) ) { ?>
-									<i class="<?php echo esc_attr( $feature['feature_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
-								<?php } ?>
+
+								<?php Portum_Helper::render_icon( $feature, 'feature_icon' ); ?>
 
 								<?php if ( ! empty( $feature['feature_title'] ) ) { ?>
 									<div class="ewf-like-h6">
@@ -123,27 +110,14 @@ foreach ( $fields['features'] as $key => $feature ) {
 						<?php foreach ( $array_right
 
 						as $key => $feature ) { ?>
-						<?php
-						$icon_style = 'color: ' . ( ! empty( $feature['feature_icon_color'] ) ? esc_attr( $feature['feature_icon_color'] ) : 'inherit' ) . ';';
-						$icon_style .= 'background-color: ' . ( ! empty( $feature['feature_bg_icon_color'] ) ? esc_attr( $feature['feature_bg_icon_color'] ) : 'inherit' ) . ';';
-						$icon_style .= 'border-color: ' . ( ! empty( $feature['feature_border_icon_color'] ) ? esc_attr( $feature['feature_border_icon_color'] ) : 'inherit' ) . ';';
-						$icon_style .= 'font-size: ' . ( ! empty( $feature['feature_icon_size'] ) ? esc_attr( $feature['feature_icon_size'] ) : 'inherit' ) . 'px;';
-						$icon_style .= 'border-width: ' . ( ! empty( $feature['feature_border_icon_size'] ) ? esc_attr( $feature['feature_border_icon_size'] ) : '0' ) . 'px;';
-						$icon_style .= 'border-radius: ' . ( ! empty( $feature['feature_border_icon_radius'] ) ? esc_attr( $feature['feature_border_icon_radius'] ) : '0' ) . 'px;';
-						if ( ! empty( $feature['feature_icon_size'] ) && ! empty( $feature['feature_border_icon_size'] ) ) {
-							$icon_style .= 'padding: ' . esc_attr( $feature['feature_icon_size'] / 3 . 'px;' );
-						}
-
-						?>
 
 						<div class="features-right features-item"
 						">
 						<?php
 						echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_features_section', 'portum_features' ), Epsilon_Helper::allowed_kses_pencil() );
 						?>
-						<?php if ( ! empty( $feature['feature_icon'] ) ) { ?>
-							<i class="<?php echo esc_attr( $feature['feature_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
-						<?php } ?>
+
+						<?php Portum_Helper::render_icon( $feature, 'feature_icon' ); ?>
 
 						<?php if ( ! empty( $feature['feature_title'] ) ) { ?>
 							<div class="ewf-like-h6">

@@ -96,7 +96,7 @@ Epsilon_Customizer::add_field( 'portum_blog_layout', array(
 		'right-sidebar' => esc_html__( 'right sidebar', 'portum' ),
 		'left-sidebar'  => esc_html__( 'left sidebar', 'portum' ),
 		'fullwidth'     => esc_html__( 'full width, no sidebar', 'portum' ),
-	), 
+	),
 ) );
 
 Epsilon_Customizer::add_field( 'portum_blog_upsell', array(
@@ -231,7 +231,7 @@ Epsilon_Customizer::add_field( 'portum_google_api_key', array(
 	'sanitize_callback' => 'sanitize_text_field',
 	'label'             => esc_html__( 'Google API KEY', 'portum' ),
 	/* Translators: Explanation re. Google Maps API Key billing requirements */
-	'description'       => sprintf( __( 'You need to make sure you have enabled billing on your Google account, otherwise your Google Maps API Key will not work. 
+	'description'       => sprintf( __( 'You need to make sure you have enabled billing on your Google account, otherwise your Google Maps API Key will not work.
 	This is a recent change Google introduced and not related to the theme itself. Please use <a href="%s" target="_blank">this link to get your API key</a>', 'portum' ), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ) ),
 ) );
 
@@ -423,49 +423,7 @@ Epsilon_Customizer::add_field( 'portum_services', array(
 			'type'    => 'epsilon-color-picker',
 			'default' => '#FFF',
 		),
-		'service_bg_icon_color'      => array(
-			'label'   => esc_html__( 'Icon Background Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => 'rgba(255, 255, 255, 0)',
-		),
-		'service_border_icon_color'  => array(
-			'label'   => esc_html__( 'Icon Border Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => 'rgba(255, 255, 255, 0)',
-		),
-		'service_border_icon_size'   => array(
-			'label'       => esc_html__( 'Icon Border Size', 'portum' ),
-			'description' => esc_html__( 'Value in pixels.', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 0,
-			'choices'     => array(
-				'min'  => 0,
-				'max'  => 10,
-				'step' => 1,
-			),
-		),
-		'service_border_icon_radius' => array(
-			'label'       => esc_html__( 'Icon Border Radius', 'portum' ),
-			'description' => esc_html__( 'Value in pixels.', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 0,
-			'choices'     => array(
-				'min'  => 0,
-				'max'  => 50,
-				'step' => 5,
-			),
-		),
-		'service_icon_size'          => array(
-			'label'       => esc_html__( 'Icon Size', 'portum' ),
-			'description' => esc_html__( 'Value is in pixels', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 36,
-			'choices'     => array(
-				'min'  => 36,
-				'max'  => 96,
-				'step' => 5,
-			),
-		),
+
 	),
 ) );
 
@@ -499,17 +457,6 @@ Epsilon_Customizer::add_field( 'portum_icons', array(
 			'label'   => esc_html__( 'Icon Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '#FFF',
-		),
-		'icon_size'  => array(
-			'label'       => esc_html__( 'Icon Size', 'portum' ),
-			'description' => esc_html__( 'Value is in pixels', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 36,
-			'choices'     => array(
-				'min'  => 36,
-				'max'  => 96,
-				'step' => 5,
-			),
 		),
 	),
 ) );
@@ -555,49 +502,6 @@ Epsilon_Customizer::add_field( 'portum_features', array(
 			'label'   => esc_html__( 'Icon Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '#FFF',
-		),
-		'feature_bg_icon_color'      => array(
-			'label'   => esc_html__( 'Icon Background Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => 'rgba(255, 255, 255, 0)',
-		),
-		'feature_border_icon_color'  => array(
-			'label'   => esc_html__( 'Icon Border Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => 'rgba(255, 255, 255, 0)',
-		),
-		'feature_border_icon_size'   => array(
-			'label'       => esc_html__( 'Icon Border Size', 'portum' ),
-			'description' => esc_html__( 'Value in pixels.', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 0,
-			'choices'     => array(
-				'min'  => 0,
-				'max'  => 10,
-				'step' => 1,
-			),
-		),
-		'feature_border_icon_radius' => array(
-			'label'       => esc_html__( 'Icon Border Radius', 'portum' ),
-			'description' => esc_html__( 'Value in pixels.', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 0,
-			'choices'     => array(
-				'min'  => 0,
-				'max'  => 50,
-				'step' => 5,
-			),
-		),
-		'feature_icon_size'          => array(
-			'label'       => esc_html__( 'Icon Size', 'portum' ),
-			'description' => esc_html__( 'Value is in pixels', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 36,
-			'choices'     => array(
-				'min'  => 36,
-				'max'  => 96,
-				'step' => 5,
-			),
 		),
 	),
 ) );
@@ -700,18 +604,6 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
 			'type'      => 'epsilon-color-picker',
 			'default'   => '#FFF',
 			'condition' => array( 'counter_icon_display', true ),
-		),
-		'counter_icon_size'    => array(
-			'label'       => esc_html__( 'Icon Size', 'portum' ),
-			'description' => esc_html__( 'Value is in pixels', 'portum' ),
-			'type'        => 'epsilon-slider',
-			'default'     => 56,
-			'choices'     => array(
-				'min'  => 36,
-				'max'  => 96,
-				'step' => 5,
-			),
-			'condition'   => array( 'counter_icon_display', true ),
 		),
 	),
 ) );
@@ -937,21 +829,10 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 			'default' => false,
 		),
 		'price_box_icon'         => array(
-			'label'     => esc_html__( 'Pricing Table Icon', 'portum' ),
+			'label'     => esc_html__( 'Icon', 'portum' ),
 			'type'      => 'epsilon-icon-picker',
 			'default'   => 'fa fa-building',
 			'groups'    => array( 'general' ),
-			'condition' => array( 'price_box_icon_display', true ),
-		),
-		'price_box_icon_size'    => array(
-			'label'     => esc_html__( 'Icon size', 'portum' ),
-			'type'      => 'epsilon-slider',
-			'default'   => 36,
-			'choices'   => array(
-				'min'  => 36,
-				'max'  => 96,
-				'step' => 5,
-			),
 			'condition' => array( 'price_box_icon_display', true ),
 		),
 		'price_box_icon_color'   => array(
@@ -959,11 +840,6 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 			'type'      => 'epsilon-color-picker',
 			'default'   => 'blue',
 			'condition' => array( 'price_box_icon_display', true ),
-		),
-		'price_box_bg_color'     => array(
-			'label'   => esc_html__( 'Pricing Box Background Color', 'portum' ),
-			'type'    => 'epsilon-color-picker',
-			'default' => '',
 		),
 		'price_box_title'        => array(
 			'label'             => esc_html__( 'Pricing Table Name', 'portum' ),

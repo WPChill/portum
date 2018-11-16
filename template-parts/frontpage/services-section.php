@@ -117,28 +117,17 @@ if ( ! empty( $fields['services_slider'] ) ) {
 									<?php if ( empty( $fields['services_slider'] ) ) { ?>
 									<div class="row">
 										<?php } ?>
-										<?php foreach ( $fields['services'] as $key => $service ) { ?><?php
-											$icon_style = 'color: ' . ( ! empty( $service['service_icon_color'] ) ? esc_attr( $service['service_icon_color'] ) : 'inherit' ) . ';';
-											$icon_style .= 'background-color: ' . ( ! empty( $service['service_bg_icon_color'] ) ? esc_attr( $service['service_bg_icon_color'] ) : 'inherit' ) . ';';
-											$icon_style .= 'border-color: ' . ( ! empty( $service['service_border_icon_color'] ) ? esc_attr( $service['service_border_icon_color'] ) : 'inherit' ) . ';';
-											$icon_style .= 'font-size: ' . ( ! empty( $service['service_icon_size'] ) ? esc_attr( $service['service_icon_size'] ) : 'inherit' ) . 'px;';
-											$icon_style .= 'border-width: ' . ( ! empty( $service['service_border_icon_size'] ) ? esc_attr( $service['service_border_icon_size'] ) : '0' ) . 'px;';
-											$icon_style .= 'border-radius: ' . ( ! empty( $service['service_border_icon_radius'] ) ? esc_attr( $service['service_border_icon_radius'] ) : '0' ) . 'px;';
-											if ( ! empty( $service['service_icon_size'] ) && ! empty( $service['service_border_icon_size'] ) ) {
-												$icon_style .= 'padding: ' . esc_attr( $service['service_icon_size'] / 3 . 'px;' );
-											}
+										<?php foreach ( $fields['services'] as $key => $service ) { ?>
 
-											$item_style[] = 'background-color: ' . ( ! empty( $service['services_bg_color'] ) ? esc_attr( $service['services_bg_color'] ) : '' );
-											?>
+											<?php $item_style[] = 'background-color: ' . ( ! empty( $service['services_bg_color'] ) ? esc_attr( $service['services_bg_color'] ) : '' ); ?>
 
 											<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
 												<div class="services-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
 													<?php
 													echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_services_section', 'portum_services' ), Epsilon_Helper::allowed_kses_pencil() );
 													?>
-													<?php if ( ! empty( $service['service_icon'] ) ) { ?>
-														<i class="<?php echo esc_attr( $service['service_icon'] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
-													<?php } ?>
+
+													<?php Portum_Helper::render_icon( $service, 'service_icon' ); ?>
 
 													<?php if ( ! empty( $service['service_title'] ) ) { ?>
 														<div class="ewf-like-h6">

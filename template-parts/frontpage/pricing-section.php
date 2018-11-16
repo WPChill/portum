@@ -98,10 +98,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 						<?php
 						foreach ( $fields['pricing_boxes'] as $key => $pricing_box ) {
 
-							$style    = 'color: ' . ( ! empty( $pricing_box['price_box_icon_color'] ) ? esc_attr( $pricing_box['price_box_icon_color'] ) : 'inherit' ) . ';';
-							$style    .= 'font-size: ' . ( ! empty( $pricing_box['price_box_icon_size'] ) ? esc_attr( $pricing_box['price_box_icon_size'] ) : '56' ) . 'px;';
 							$bg_color = 'background-color: ' . ( ! empty( $pricing_box['price_box_bg_color'] ) ? esc_attr( $pricing_box['price_box_bg_color'] ) : 'transparent' ) . ';';
-
 							?>
 
 							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
@@ -118,11 +115,9 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 									echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_pricing_section', 'portum_price_boxes' ), Epsilon_Helper::allowed_kses_pencil() );
 									?>
 
-									<?php if ( $pricing_box['price_box_icon_display'] && ! empty( $pricing_box['price_box_icon'] ) ) { ?>
-										<div class="ewf-pricing__icon">
-											<i style="<?php echo $style; ?>" class="<?php echo esc_attr( $pricing_box['price_box_icon'] ); ?>"></i>
-										</div><!--/.ewf-pricing__icon-->
-									<?php }//endif !empty ?>
+									<?php if ( $pricing_box['price_box_icon_display'] && ! empty( $pricing_box['price_box_icon'] ) ) : ?>
+										<?php Portum_Helper::render_icon( $pricing_box, 'price_box_icon' ); ?>
+									<?php endif; ?>
 
 									<div class="ewf-pricing__details">
 										<div class="ewf-pricing__content">

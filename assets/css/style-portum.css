@@ -2689,6 +2689,19 @@ input[type=button]:active
 }
 
 /* ==========================================================================
+   =Icons
+   ========================================================================== */
+.ewf-icon
+{
+    font-size: 36px;
+
+    display: inline-block;
+
+    border-width: 0;
+    border-style: solid;
+}
+
+/* ==========================================================================
     =Header
     ========================================================================= */
 #header
@@ -5905,12 +5918,6 @@ width: 15px;
 
     list-style: none;
 }
-.services-item i
-{
-    display: inline-block;
-
-    border-style: solid;
-}
 .services-item div[class*=ewf-like-]
 {
     color: #212529;
@@ -6198,12 +6205,6 @@ width: 15px;
 
     list-style: none;
 }
-.features-item i
-{
-    display: inline-block;
-
-    border-style: solid;
-}
 .features-item div[class*=ewf-like-]
 {
     color: #212529;
@@ -6324,8 +6325,7 @@ width: 15px;
 .ewf-pricing__item-container .ewf-pricing__content,
 .ewf-pricing__item-container .ewf-pricing__plan,
 .ewf-pricing__item-container .ewf-pricing__details,
-.ewf-pricing__item-container .ewf-pricing__button-wrapper,
-.ewf-pricing__item-container .ewf-pricing__icon
+.ewf-pricing__item-container .ewf-pricing__button-wrapper
 {
     padding-right: 30px;
     padding-left: 30px;

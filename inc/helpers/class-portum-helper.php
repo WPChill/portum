@@ -333,6 +333,26 @@ class Portum_Helper {
 		<?php
 	}
 
+	public static function render_icon( $fields, $id ) {
+
+		if ( empty( $fields[ $id ] ) ) {
+			return;
+		}
+
+		$icon_style  = '';
+		$icon_style .= isset( $fields[ $id . '_color' ] ) ? 'color:' . esc_attr( $fields[ $id . '_color' ] ) . ';' : '';
+		$icon_style .= isset( $fields[ $id . '_size' ] ) ? 'font-size:' . esc_attr( $fields[ $id . '_size' ] ) . 'px;' : '';
+		$icon_style .= isset( $fields[ $id . '_background_color' ] ) ? 'background-color:' . esc_attr( $fields[ $id . '_background_color' ] ) . ';' : '';
+		$icon_style .= isset( $fields[ $id . '_border_color' ] ) ? 'border-color:' . esc_attr( $fields[ $id . '_border_color' ] ) . ';' : '';
+		$icon_style .= isset( $fields[ $id . '_border_size' ] ) ? 'border-width:' . esc_attr( $fields[ $id . '_border_size' ] ) . 'px;' : '';
+		$icon_style .= isset( $fields[ $id . '_radius' ] ) ? 'border-radius:' . esc_attr( $fields[ $id . '_radius' ] ) . 'px;' : '';
+		$icon_style .= isset( $fields[ $id . '_padding' ] ) ? 'padding:' . esc_attr( $fields[ $id . '_padding' ] ) . 'px;' : '';
+
+		?>
+			<i class="ewf-icon <?php echo esc_attr( $fields[ $id ] ); ?>" style="<?php echo esc_attr( $icon_style ); ?>"></i>
+		<?php
+	}
+
 	/**
 	 * Generates the section title properly formatted
 	 *
