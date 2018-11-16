@@ -30,12 +30,8 @@ $parent_attr = array(
 		'ewf-section',
 		'woocommerce',
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-if ( 'bgcolor' == $fields['products_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 $counter     = 0;
 

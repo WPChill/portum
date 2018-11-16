@@ -29,12 +29,8 @@ $parent_attr = array(
 		'contrast',
 		'ewf-section-' . $fields['features_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-if ( 'bgcolor' == $fields['features_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 $counter     = 1;
 

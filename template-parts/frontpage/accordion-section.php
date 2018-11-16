@@ -27,12 +27,7 @@ $parent_attr = array(
 		'ewf-section',
 		'ewf-section-' . $fields['accordion_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['accordion_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 $content_class = '';
 $header_class  = '';

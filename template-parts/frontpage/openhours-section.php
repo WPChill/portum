@@ -27,12 +27,7 @@ $parent_attr = array(
 		'ewf-section',
 		'ewf-section-' . $fields['openhours_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['openhours_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 $button_primary = $fields['openhours_button_primary_label'] . $fields['openhours_button_primary_url'];
 
@@ -81,7 +76,7 @@ if ( 'left' == $fields['openhours_row_title_align'] || 'right' == $fields['openh
 								</div><!--/.ewf-section-text-->
 
 								<?php Portum_Helper::render_button( $fields, 'openhours_button_primary' ); ?>
-								
+
 							</div><!--/.open-hours-section-info-->
 						</div><!-- header class -->
 					<?php } ?>

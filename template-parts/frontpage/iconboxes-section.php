@@ -32,12 +32,7 @@ $parent_attr = array(
 		'ewf-section',
 		$fields['iconbox_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['iconboxes_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout stuff

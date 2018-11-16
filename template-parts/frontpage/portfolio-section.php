@@ -32,12 +32,7 @@ $parent_attr = array(
 		'ewf-section',
 		'ewf-section-' . $fields['portfolio_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['portfolio_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 // only load scripts if we're viewing images in a lightbox
 if ( ! empty( $fields['portfolio_image_lightbox'] ) ) {
@@ -91,7 +86,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 	if ( ! empty( $fields['item_border_color'] ) ) {
 		$item_style[] = 'border-color: ' . esc_attr( $fields['item_border_color'] ) . ';';
 	}
-	
+
 	if ( ! empty( $fields['item_border_width'] ) ) {
 		$item_style[] = 'border-width: ' . esc_attr( $fields['item_border_width'] ) . 'px;';
 	}
@@ -148,7 +143,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 																<?php echo wp_kses_post( $item['portfolio_description'] ); ?>
 															</div><!--/.ewf-portfolio-item__description-->
 														<?php endif ?>
-														
+
 													</div><!-- /.ewf-portfolio-item__details -->
 												<?php } ?>
 

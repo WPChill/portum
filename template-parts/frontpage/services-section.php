@@ -29,12 +29,7 @@ $parent_attr = array(
 		'contrast',
 		'ewf-section-' . $fields['services_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['services_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout stuff

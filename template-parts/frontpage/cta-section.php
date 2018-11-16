@@ -19,12 +19,8 @@ if ( empty( $fields['cta_section_unique_id'] ) ) {
 $parent_attr = array(
 	'id'    => array( $fields['cta_section_unique_id'] ),
 	'class' => array( 'section-cta', 'section', 'ewf-section', 'ewf-section-' . $fields['cta_section_visibility'] ),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-if ( 'bgcolor' == $fields['cta_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout Stuff
@@ -54,12 +50,6 @@ if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_tit
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'cta' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-
-		<?php
-		$attr_helper->generate_color_overlay();
-
-	
-		?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'cta', $fields ) ); ?>">
 
@@ -79,7 +69,7 @@ if ( 'left' == $fields['cta_row_title_align'] || 'right' == $fields['cta_row_tit
 
 							<?php Portum_Helper::render_button( $fields, 'cta_button_primary' ); ?>
 							<?php Portum_Helper::render_button( $fields, 'cta_button_secondary' ); ?>
-								
+
 						</div><!-- content class -->
 					<?php }//endif button check ?>
 

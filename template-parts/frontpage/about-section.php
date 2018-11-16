@@ -10,7 +10,6 @@
 
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
-
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'about', Portum_Repeatable_Sections::get_instance() );
 
 if ( empty( $fields['about_section_unique_id'] ) ) {
@@ -19,12 +18,7 @@ if ( empty( $fields['about_section_unique_id'] ) ) {
 $parent_attr    = array(
 	'id'    => array( $fields['about_section_unique_id'] ),
 	'class' => array( 'section-about', 'section', 'ewf-section', 'ewf-section-' . $fields['about_section_visibility'] ),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['about_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout Stuff

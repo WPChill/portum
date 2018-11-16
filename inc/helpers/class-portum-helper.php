@@ -579,6 +579,31 @@ class Portum_Helper {
 
 		echo '}';
 
+		// section general styles.
+ 		echo '#' . $section_id . '{';
+
+		switch ( $fields[ $key . '_background_type' ] ) {
+			case 'bgcolor':
+				if( empty( $fields[ $key . '_background_color' ] ) ) {
+					continue;
+				}
+
+				echo 'background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . ';';
+				break;
+			case 'bgimage':
+				if( empty( $fields[ $key . '_background_image' ] ) ) {
+					continue;
+				}
+
+				echo 'background-image:url('. esc_url( $fields[ $key . '_background_image' ] ) .');';
+				echo 'background-position:'. esc_attr( $fields[ $key . '_background_position' ] ) .';';
+				echo 'background-size:'. esc_attr( $fields[ $key . '_background_size' ] ) .';';
+				echo 'background-repeat:'. esc_attr( $fields[ $key . '_background_repeat' ] ) .';';
+				break;
+		}
+
+		echo '}';
+
 		echo '</style>';
 
 	}

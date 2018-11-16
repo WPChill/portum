@@ -30,12 +30,7 @@ $parent_attr = array(
 		'ewf-section',
 		'ewf-section-' . $fields['pricing_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['pricing_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout stuff
@@ -146,7 +141,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 										<?php echo wp_kses_post( $pricing_box['price_box_features'] ); ?>
 									<?php }//endif !empty ?>
 
-										
+
 									<?php if ( ! empty( $pricing_box['price_box_button_label'] ) ) { ?>
 										<div class="ewf-pricing__button-wrapper">
 											<?php Portum_Helper::render_button( $pricing_box, 'price_box_button' ); ?>

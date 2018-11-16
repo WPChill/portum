@@ -23,12 +23,7 @@ $button_primary = $fields['instagram_button_primary_label'] . $fields['instagram
 $parent_attr    = array(
 	'id'    => array( $fields['instagram_section_unique_id'] ),
 	'class' => array( 'section-instagram', 'section', 'ewf-section', 'ewf-section-' . $fields['instagram_section_visibility'] ),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['instagram_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout Stuff

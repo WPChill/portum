@@ -27,12 +27,7 @@ if ( empty( $fields['google_map_section_unique_id'] ) ) {
 $parent_attr = array(
 	'id'    => array( $fields['google_map_section_unique_id'] ),
 	'class' => array( 'section-map', 'ewf-section', 'ewf-section-' . $fields['google_map_section_visibility'] ),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['google_map_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 $style_attr = array(
 	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
@@ -163,8 +158,8 @@ wp_enqueue_script( 'googlemaps' );
 			<div class="ewf-section__content ewf-section__map">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'google_map', $fields ) ); ?>">
 
-					
-					
+
+
 					<div class="map-info-wrapper" <?php $attr_helper->generate_attributes( $style_attr ); ?>>
 
 						<?php

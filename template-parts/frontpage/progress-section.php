@@ -28,12 +28,7 @@ $parent_attr = array(
 		'ewf-section',
 		'ewf-section-' . $fields['progress_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
-
-if ( 'bgcolor' == $fields['progress_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 /**
  * Layout stuff

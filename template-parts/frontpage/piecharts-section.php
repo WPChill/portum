@@ -28,12 +28,8 @@ $parent_attr = array(
 		'ewf-section',
 		'ewf-section-' . $fields['piecharts_section_visibility'],
 	),
-	'style' => array( 'background-image', 'background-position', 'background-size', 'background-repeat' ),
 );
 
-if ( 'bgcolor' == $fields['piecharts_background_type'] ) {
-	$parent_attr['style'] = array( 'background-color' );
-}
 
 wp_enqueue_script( 'easypiechart' );
 $color = get_theme_mod( 'epsilon_accent_color', '#cc263d' );
