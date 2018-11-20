@@ -328,7 +328,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 				'type'            => 'epsilon-customizer-navigation',
 				'opensDoubled'    => true,
 				'navigateToId'    => 'portum_iconboxes_section',
-				'navigateToLabel' => esc_html__( 'Add/Edit Services &rarr;', 'portum' ),
+				'navigateToLabel' => esc_html__( 'Add/Edit Icons &rarr;', 'portum' ),
 			),
 		);
 	}

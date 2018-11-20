@@ -63,31 +63,24 @@ $item_style         = array();
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'iconboxes', $fields ) ); ?>">
 
 					<div class="row">
-
-						<!-- Check if we have values in our field repeater -->
-						<?php if ( ! empty( $fields['iconboxes'] ) ) { ?>
-						<div class="col-md-12">
-							<?php foreach ( $fields['iconboxes'] as $key => $icon ) { ?>
+						<?php if ( ! empty( $fields['iconboxes'] ) ) : ?>
+							<?php foreach ( $fields['iconboxes'] as $key => $icon ) : ?>
 								<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
 									<div class="iconboxes-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
-
-										<?php
-										echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_iconboxes_section', 'portum_iconboxes' ), Epsilon_Helper::allowed_kses_pencil() );
-										?>
+										<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_iconboxes_section', 'portum_iconboxes' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 										<?php Portum_Helper::render_icon( $icon, 'icon' ); ?>
 
 										<?php if ( ! empty( $icon['icon_title'] ) ) { ?>
-											<div class="ewf-like-h5">
+											<div class="ewf-like-h6">
 												<?php echo wp_kses_post( $icon['icon_title'] ); ?>
-											</div><!--/.ewf-like-h5-->
+											</div><!--/.ewf-like-h6-->
 										<?php } ?>
 									</div><!--/.iconboxes-item-->
 								</div><!--/.col-sm-->
-							<?php }//end foreach ?>
-						</div><!--/.col-sm--->
+							<?php endforeach; ?>
+						<?php endif; ?>
 					</div><!--/.row-->
-					<?php } ?>
 				</div>
 			</div>
 		</div>

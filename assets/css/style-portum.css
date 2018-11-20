@@ -7602,7 +7602,7 @@ width: 15px;
    ========================================================================== */
 /* =Icon Boxes
    ========================================================================== */
-.inconboxes-item
+.iconboxes-item
 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7615,15 +7615,15 @@ width: 15px;
     -ms-flex-pack: center;
     justify-content: center;
 }
-.inconboxes-item .ewf-like-h3
+.iconboxes-item .ewf-like-h6
 {
     margin: 0;
 }
-.inconboxes-item.icon-left > i
+.iconboxes-item.icon-left > i
 {
     margin-right: 15px;
 }
-.inconboxes-item.icon-right
+.iconboxes-item.icon-right
 {
         flex-direction: row-reverse;
 
@@ -7631,11 +7631,11 @@ width: 15px;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
 }
-.inconboxes-item.icon-right > i
+.iconboxes-item.icon-right > i
 {
     margin-left: 15px;
 }
-.inconboxes-item.icon-top
+.iconboxes-item.icon-top
 {
         flex-direction: column;
 
@@ -7643,7 +7643,7 @@ width: 15px;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
 }
-.inconboxes-item.icon-top > i
+.iconboxes-item.icon-top i
 {
     margin-bottom: 15px;
 }
