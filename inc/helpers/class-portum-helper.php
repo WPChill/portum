@@ -517,6 +517,9 @@ class Portum_Helper {
 	 * @param $fields
 	 */
 	public static function generate_inline_css( $section_id, $key, $fields ) {
+
+		$main_css = array();
+
 		$defaults = array(
 			'top'    => 0,
 			'right'  => 0,
@@ -540,91 +543,79 @@ class Portum_Helper {
 			$key . '_paddings_tablet' => 'padding',
 		);
 
-		echo '<style type="text/css" media="all">';
-
-		// Desktop CSS
-		$desktop_style = array();
+		// section CSS.
+		$css = array();
 		if ( isset( $fields[ $key . '_margins_desktop' ] ) && '' != $fields[ $key . '_margins_desktop' ] ) {
 			$margins_desktop = wp_parse_args( json_decode( $fields[ $key . '_margins_desktop' ] ), $defaults );
-			$desktop_style[] = 'margin:' . $margins_desktop['top'] . $margins_desktop['unit'] . ' ' . $margins_desktop['right'] . $margins_desktop['unit'] . ' ' . $margins_desktop['bottom'] . $margins_desktop['unit'] . ' ' . $margins_desktop['left'] . $margins_desktop['unit'];
+			$css[] = 'margin:' . $margins_desktop['top'] . $margins_desktop['unit'] . ' ' . $margins_desktop['right'] . $margins_desktop['unit'] . ' ' . $margins_desktop['bottom'] . $margins_desktop['unit'] . ' ' . $margins_desktop['left'] . $margins_desktop['unit'];
 		}
 
 		if ( isset( $fields[ $key . '_paddings_desktop' ] ) && '' != $fields[ $key . '_paddings_desktop' ] ) {
 			$paddings_desktop = wp_parse_args( json_decode( $fields[ $key . '_paddings_desktop' ] ), $defaults );
-			$desktop_style[]  = 'padding:' . $paddings_desktop['top'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['right'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['bottom'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['left'] . $paddings_desktop['unit'];
+			$css[]  = 'padding:' . $paddings_desktop['top'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['right'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['bottom'] . $paddings_desktop['unit'] . ' ' . $paddings_desktop['left'] . $paddings_desktop['unit'];
 		}
 
-		if ( ! empty( $desktop_style ) ) {
-			echo '#' . $section_id . '{' . implode( ';', $desktop_style ) . '}';
+		switch ( $fields[ $key . '_background_type' ] ) {
+			case 'bgcolor':
+				if ( empty( $fields[ $key . '_background_color' ] ) ) {
+					continue;
+				}
+
+				$css[] = 'background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . ';';
+				break;
+			case 'bgimage':
+				if ( empty( $fields[ $key . '_background_image' ] ) ) {
+					continue;
+				}
+
+				$css[] = 'background-image:url(' . esc_url( $fields[ $key . '_background_image' ] );
+				$css[] = 'background-position:' . esc_attr( $fields[ $key . '_background_position' ] );
+				$css[] = 'background-size:' . esc_attr( $fields[ $key . '_background_size' ] );
+				$css[] = 'background-repeat:' . esc_attr( $fields[ $key . '_background_repeat' ] );
+				break;
 		}
 
+		if ( ! empty( $css ) ) {
+			$main_css[] = '#' . $section_id . '{' . implode( ';', $css ) . '}';
+		}
 
 		// Tablet CSS
-		echo '@media (max-width: 768px) {';
-
-		$tablet_style = array();
+		$css = array();
 		if ( isset( $fields[ $key . '_margins_tablet' ] ) && '' != $fields[ $key . '_margins_tablet' ] ) {
 			$margins_tablet = wp_parse_args( json_decode( $fields[ $key . '_margins_tablet' ] ), $defaults );
-			$tablet_style[] = 'margin:' . $margins_tablet['top'] . $margins_tablet['unit'] . ' ' . $margins_tablet['right'] . $margins_tablet['unit'] . ' ' . $margins_tablet['bottom'] . $margins_tablet['unit'] . ' ' . $margins_tablet['left'] . $margins_tablet['unit'];
+			$css[] = 'margin:' . $margins_tablet['top'] . $margins_tablet['unit'] . ' ' . $margins_tablet['right'] . $margins_tablet['unit'] . ' ' . $margins_tablet['bottom'] . $margins_tablet['unit'] . ' ' . $margins_tablet['left'] . $margins_tablet['unit'];
 		}
 
 		if ( isset( $fields[ $key . '_paddings_tablet' ] ) && '' != $fields[ $key . '_paddings_desktop' ] ) {
 			$paddings_tablet = wp_parse_args( json_decode( $fields[ $key . '_paddings_tablet' ] ), $defaults );
-			$tablet_style[]  = 'padding:' . $paddings_tablet['top'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['right'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['bottom'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['left'] . $paddings_tablet['unit'];
+			$css[]  = 'padding:' . $paddings_tablet['top'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['right'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['bottom'] . $paddings_tablet['unit'] . ' ' . $paddings_tablet['left'] . $paddings_tablet['unit'];
 		}
 
-		if ( ! empty( $tablet_style ) ) {
-			echo '#' . $section_id . '{' . implode( ';', $tablet_style ) . '}';
+		if ( ! empty( $css ) ) {
+			$main_css[] = '@media (max-width: 768px) {#' . $section_id . '{' . implode( ';', $css ) . '}}';
 		}
 
-		echo '}';
 
 		// Mobile CSS
-		echo '@media (max-width: 576px) {';
-
-		$mobile_style = array();
+		$css = array();
 		if ( isset( $fields[ $key . '_margins_mobile' ] ) && '' != $fields[ $key . '_margins_mobile' ] ) {
 			$margins_mobile = wp_parse_args( json_decode( $fields[ $key . '_margins_mobile' ] ), $defaults );
-			$mobile_style[] = 'margin:' . $margins_mobile['top'] . $margins_mobile['unit'] . ' ' . $margins_mobile['right'] . $margins_mobile['unit'] . ' ' . $margins_mobile['bottom'] . $margins_mobile['unit'] . ' ' . $margins_mobile['left'] . $margins_mobile['unit'];
+			$css[] = 'margin:' . $margins_mobile['top'] . $margins_mobile['unit'] . ' ' . $margins_mobile['right'] . $margins_mobile['unit'] . ' ' . $margins_mobile['bottom'] . $margins_mobile['unit'] . ' ' . $margins_mobile['left'] . $margins_mobile['unit'];
 		}
 
 		if ( isset( $fields[ $key . '_paddings_mobile' ] ) && '' != $fields[ $key . '_paddings_mobile' ] ) {
 			$paddings_mobile = wp_parse_args( json_decode( $fields[ $key . '_paddings_mobile' ] ), $defaults );
-			$mobile_style[]  = 'padding:' . $paddings_mobile['top'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['right'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['bottom'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['left'] . $paddings_mobile['unit'];
+			$css[]  = 'padding:' . $paddings_mobile['top'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['right'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['bottom'] . $paddings_mobile['unit'] . ' ' . $paddings_mobile['left'] . $paddings_mobile['unit'];
 		}
 
-		if ( ! empty( $mobile_style ) ) {
-			echo '#' . $section_id . '{' . implode( ';', $mobile_style ) . '}';
+		if ( ! empty( $css ) ) {
+			$main_css[] = '@media (max-width: 576px) {#' . $section_id . '{' . implode( ';', $css ) . '}}';
 		}
 
-		echo '}';
-
-		// section general styles.
- 		echo '#' . $section_id . '{';
-
-		switch ( $fields[ $key . '_background_type' ] ) {
-			case 'bgcolor':
-				if( empty( $fields[ $key . '_background_color' ] ) ) {
-					continue;
-				}
-
-				echo 'background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . ';';
-				break;
-			case 'bgimage':
-				if( empty( $fields[ $key . '_background_image' ] ) ) {
-					continue;
-				}
-
-				echo 'background-image:url('. esc_url( $fields[ $key . '_background_image' ] ) .');';
-				echo 'background-position:'. esc_attr( $fields[ $key . '_background_position' ] ) .';';
-				echo 'background-size:'. esc_attr( $fields[ $key . '_background_size' ] ) .';';
-				echo 'background-repeat:'. esc_attr( $fields[ $key . '_background_repeat' ] ) .';';
-				break;
+		if ( ! empty( $main_css ) ) {
+			echo '<style type="text/css" media="all">' . implode( '', $main_css ) . '</style>';
 		}
 
-		echo '}';
-
-		echo '</style>';
 
 	}
 
