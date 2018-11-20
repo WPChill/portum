@@ -353,6 +353,21 @@ class Repeatable_Section_Call_To_Action extends Repeatable_Section {
 				'default'           => esc_url( 'https://google.com' ),
 				'sanitize_callback' => 'esc_url_raw',
 			),
+			'cta_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Controls in Portum PRO', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Button Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the color, border color, size, radius, background color, text color, border color of buttons.', 'portum' ),
+					),
+				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
+			),
 			'cta_section_unique_id'                 => array(
 				'label'             => esc_html__( 'Unique Section ID', 'portum' ),
 				'description'       => esc_html__( 'Section Unique ID. Useful if you are looking to target this particular section with CSS / jQuery. Very useful as well for creating the one-page effect with smooth scrolling to section.', 'portum' ),

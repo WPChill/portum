@@ -372,21 +372,6 @@ class Repeatable_Section_Services extends Repeatable_Section {
 				'default'           => esc_html__( 'Describe your services.', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'services_upsell'            => array(
-				'type'               => 'epsilon-upsell',
-				'label'              => esc_html__( 'Turn into a carousel', 'portum' ),
-				'features'           => array(
-					array(
-						'option' => esc_html__( 'Turn this section into a carousel with the PRO version', 'portum' ),
-						'help'   => esc_html__( 'Combine layout options with the possibility of turning this section into a carousel one with the purchase of PRO version. ', 'portum' ),
-					),
-				),
-				'button_text'        => esc_html__( 'See more', 'portum' ),
-				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
-				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
-				'separator'          => esc_html__( 'or' ),
-			),
 			'item_style'                 => array(
 				'label'   => esc_html__( 'Item Style', 'portum' ),
 				'type'    => 'select',
@@ -432,6 +417,25 @@ class Repeatable_Section_Services extends Repeatable_Section {
 					'item_style',
 					'ewf-item__border',
 				),
+			),
+			'services_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Controls in Portum PRO', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Turn into a carousel', 'portum' ),
+						'help'   => esc_html__( 'Combine layout options with the possibility of turning this section into a carousel one with the purchase of PRO version. ', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Icon Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the size, border size, radius, padding, background and border colors of icons.', 'portum' ),
+					),
+				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
 			),
 			'services_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),

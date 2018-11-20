@@ -355,6 +355,23 @@ class Repeatable_Section_About extends Repeatable_Section {
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_key',
 			),
+			'about_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Controls in Portum PRO', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Button Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the color, border color, size, radius, background color, text color, border color of buttons.', 'portum' ),
+					),
+				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
+			),
+
+
 		);
 	}
 }

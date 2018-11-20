@@ -342,6 +342,21 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'default'           => esc_html__( 'COUNTERS', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
+			'counters_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Controls in Portum PRO', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Icon Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the size, border size, radius, padding, background and border colors of icons.', 'portum' ),
+					),
+				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
+			),
 			'counters_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'description'       => esc_html__( 'Section Unique ID. Useful if you are looking to target this particular section with CSS / jQuery. Very useful as well for creating the one-page effect with smooth scrolling to section.', 'portum' ),
@@ -367,6 +382,9 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'type'    => 'hidden',
 				'default' => 'portum_counter_boxes',
 			),
+
+
+
 		);
 	}
 }

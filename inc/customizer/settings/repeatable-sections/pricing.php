@@ -411,6 +411,25 @@ class Repeatable_Section_Pricing extends Repeatable_Section {
 				'type'    => 'hidden',
 				'default' => 'portum_price_boxes',
 			),
+			'pricing_upsell'            => array(
+				'type'               => 'epsilon-upsell',
+				'label'              => esc_html__( 'More Controls in Portum PRO', 'portum' ),
+				'features'           => array(
+					array(
+						'option' => esc_html__( 'Button Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the color, border color, size, radius, background color, text color, border color of buttons.', 'portum' ),
+					),
+					array(
+						'option' => esc_html__( 'Icon Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the size, border size, radius, padding, background and border colors of icons.', 'portum' ),
+					),
+				),
+				'button_text'        => esc_html__( 'See more', 'portum' ),
+				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
+				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
+				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
+				'separator'          => esc_html__( 'or' ),
+			),
 			'pricing_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',

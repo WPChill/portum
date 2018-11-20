@@ -386,6 +386,10 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 						'option' => esc_html__( 'Show read more button', 'portum' ),
 						'help'   => esc_html__( 'Display a button you can link to your blogs\'s archive.', 'portum' ),
 					),
+					array(
+						'option' => esc_html__( 'Button Controls', 'portum' ),
+						'help'   => esc_html__( 'Control the size, radius, background color, text color, border color of buttons.', 'portum' ),
+					),
 				),
 				'button_text'        => esc_html__( 'See more', 'portum' ),
 				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
