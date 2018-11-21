@@ -331,31 +331,32 @@ class Repeatable_Section_Instagram extends Repeatable_Section {
 			'instagram_title'                => array(
 				'label'             => esc_html__( 'Title', 'portum' ),
 				'type'              => 'text',
-				'default'           => esc_html__( 'Learn more instagram us and how can we help you:', 'portum' ),
+				'default'           => esc_html__( 'Our Instagram Feed', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'instagram_subtitle'             => array(
 				'label'             => esc_html__( 'Subtitle', 'portum' ),
 				'type'              => 'text',
-				'default'           => wp_kses_post( 'ABOUT' ),
+				'default'           => esc_html__( 'Check out our photos', 'portum' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'instagram_text'                 => array(
 				'label'             => esc_html__( 'Information', 'portum' ),
 				'type'              => 'textarea',
-				'default'           => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia velit quis sem dignissim porta. Aliquam risus lorem, ornare sed diam at, ultrices vehicula enim. Morbi pharetra ligula nulla, non blandit velit tempor vel.', 'portum' ),
+				'default'           => '',
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'instagram_image'                => array(
-				'label'   => esc_html__( 'Image', 'portum' ),
-				'type'    => 'epsilon-image',
-				'size'    => 'original',
-				'default' => esc_url( get_template_directory_uri() . '/assets/images/01_instagram.png' ),
+			'instagram_access_token'           => array(
+				'label'             => esc_html__( 'Instagram Access Token', 'portum' ),
+				'type'              => 'text',
+				'description'       => sprintf( __( 'You can easily get an instagram access token using this <a href="%s" target="_blank">link</a>. A new Instagram tab will open where you may need to enter your Instagram login credentials. Once your token has been generated, paste it in the field below.', 'portum' ), esc_url( 'https://api.instagram.com/oauth/authorize/?client_id=a9b30e28899a454eb013caa97b3308d4&redirect_uri=https://www.machothemes.com/instagram-access-token/&response_type=token' ) ),
+				'description_type'  => 'standard',
+				'sanitize_callback' => 'sanitize_text_field',
 			),
 			'instagram_button_primary_label' => array(
 				'label'             => esc_html__( 'Primary button label', 'portum' ),
 				'type'              => 'text',
-				'default'           => esc_html__( 'Primary button', 'portum' ),
+				'default'           => '',
 				'sanitize_callback' => 'sanitize_textfield',
 			),
 			'instagram_button_primary_url'   => array(

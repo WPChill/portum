@@ -47,15 +47,15 @@ if ( 'left' == $fields['instagram_row_title_align'] || 'right' == $fields['insta
 }
 //end layout stuff
 ?>
+
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $fields['instagram_section_unique_id'], 'instagram', $fields ); ?>
-	<?php echo Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'upsell' ); ?>
+	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'instagram' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
 		<div class="upsell-section">
 			<div class="ewf-section__content">
 				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'instagram', $fields ) ); ?>">
-
 					<div class="row <?php echo esc_attr( $row_class ); ?>">
 
 						<?php if ( ! empty( $fields['instagram_subtitle'] ) || ! empty( $fields['instagram_title'] ) || ! empty( $fields['instagram_text'] ) ) { ?>
@@ -68,16 +68,33 @@ if ( 'left' == $fields['instagram_row_title_align'] || 'right' == $fields['insta
 							</div><!--/.col-md-->
 						<?php } // end if _subtitle, _title // ?>
 
-						<?php if ( ! empty( $fields['instagram_image'] ) ) { ?>
-							<div class="<?php echo esc_attr( $content_class ); ?>">
-								<img src="<?php echo esc_url( $fields['instagram_image'] ); ?>" />
-							</div><!--/.col-md--6-->
-						<?php }//endif !empty ?>
-
 					</div><!--/.row-->
 				</div><!--/.container class-->
 			</div><!--/.ewf-section--content-->
-		</div><!--/.upsell-->
+
+			<?php
+			$data = get_transient( 'portum_instagram_' . $fields['instagram_access_token'] );
+			if( $data === false ) {
+				$response = wp_remote_get( "https://api.instagram.com/v1/users/self/media/recent/?access_token={$fields['instagram_access_token']}&count=6" );
+				$data = json_decode( $response['body'] );
+			}
+			$photos = $data->data;
+			?>
+
+			<?php if ( $photos ) : ?>
+				<div class="container-fluid section-instagram__images">
+					<div class="row">
+						<?php foreach ( $photos as $photo ) : ?>
+							<?php $image_url = $photo->images->standard_resolution->url; ?>
+							<div class="col-md-2 col-sm-3 col-xs-4 ewf-item__spacing-none">
+								<a href="<?php echo esc_url( $photo->link ); ?>" rel="nofollow" target="_blank" style="background-image:url(<?php echo esc_url( $image_url ); ?>);"></a>
+							</div>
+						<?php endforeach; ?>
+					</div><!--/.row-->
+				</div><!--/.container-fluid-->
+				<?php set_transient( 'portum_instagram_' . $fields['instagram_access_token'], $data, 12 * HOUR_IN_SECONDS ); ?>
+			<?php endif; ?>
+		</div><!--/.upsell-section-->
 	</div><!--/.attr-helper-->
 </section>
 
