@@ -53,48 +53,47 @@ if ( 'left' == $fields['instagram_row_title_align'] || 'right' == $fields['insta
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'instagram' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<div class="upsell-section">
-			<div class="ewf-section__content">
-				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'instagram', $fields ) ); ?>">
-					<div class="row <?php echo esc_attr( $row_class ); ?>">
+		<?php Portum_Helper::render_upsell_label(); ?>
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'instagram', $fields ) ); ?>">
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
 
-						<?php if ( ! empty( $fields['instagram_subtitle'] ) || ! empty( $fields['instagram_title'] ) || ! empty( $fields['instagram_text'] ) ) { ?>
-							<div class="<?php echo esc_attr( $header_class ); ?>">
-								<div class="ewf-section-text">
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['instagram_subtitle'], $fields['instagram_title'] ) ); ?>
-									<?php echo wpautop( wp_kses_post( $fields['instagram_text'] ) ); ?>
-									<?php Portum_Helper::render_button( $fields, 'instagram_button_primary' ); ?>
-								</div><!--/.ewf-section-text-->
-							</div><!--/.col-md-->
-						<?php } // end if _subtitle, _title // ?>
+					<?php if ( ! empty( $fields['instagram_subtitle'] ) || ! empty( $fields['instagram_title'] ) || ! empty( $fields['instagram_text'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['instagram_subtitle'], $fields['instagram_title'] ) ); ?>
+								<?php echo wpautop( wp_kses_post( $fields['instagram_text'] ) ); ?>
+								<?php Portum_Helper::render_button( $fields, 'instagram_button_primary' ); ?>
+							</div><!--/.ewf-section-text-->
+						</div><!--/.col-md-->
+					<?php } // end if _subtitle, _title // ?>
 
-					</div><!--/.row-->
-				</div><!--/.container class-->
-			</div><!--/.ewf-section--content-->
+				</div><!--/.row-->
+			</div><!--/.container class-->
+		</div><!--/.ewf-section--content-->
 
-			<?php
-			$data = get_transient( 'portum_instagram_' . $fields['instagram_access_token'] );
-			if( $data === false ) {
-				$response = wp_remote_get( "https://api.instagram.com/v1/users/self/media/recent/?access_token={$fields['instagram_access_token']}&count=6" );
-				$data = json_decode( $response['body'] );
-			}
-			$photos = $data->data;
-			?>
+		<?php
+		$data = get_transient( 'portum_instagram_' . $fields['instagram_access_token'] );
+		if( $data === false ) {
+			$response = wp_remote_get( "https://api.instagram.com/v1/users/self/media/recent/?access_token={$fields['instagram_access_token']}&count=6" );
+			$data = json_decode( $response['body'] );
+		}
+		$photos = $data->data;
+		?>
 
-			<?php if ( $photos ) : ?>
-				<div class="container-fluid section-instagram__images">
-					<div class="row">
-						<?php foreach ( $photos as $photo ) : ?>
-							<?php $image_url = $photo->images->standard_resolution->url; ?>
-							<div class="col-md-2 col-sm-3 col-xs-4 ewf-item__spacing-none">
-								<a href="<?php echo esc_url( $photo->link ); ?>" rel="nofollow" target="_blank" style="background-image:url(<?php echo esc_url( $image_url ); ?>);"></a>
-							</div>
-						<?php endforeach; ?>
-					</div><!--/.row-->
-				</div><!--/.container-fluid-->
-				<?php set_transient( 'portum_instagram_' . $fields['instagram_access_token'], $data, 12 * HOUR_IN_SECONDS ); ?>
-			<?php endif; ?>
-		</div><!--/.upsell-section-->
+		<?php if ( $photos ) : ?>
+			<div class="container-fluid section-instagram__images">
+				<div class="row">
+					<?php foreach ( $photos as $photo ) : ?>
+						<?php $image_url = $photo->images->standard_resolution->url; ?>
+						<div class="col-md-2 col-sm-3 col-xs-4 ewf-item__spacing-none">
+							<a href="<?php echo esc_url( $photo->link ); ?>" rel="nofollow" target="_blank" style="background-image:url(<?php echo esc_url( $image_url ); ?>);"></a>
+						</div>
+					<?php endforeach; ?>
+				</div><!--/.row-->
+			</div><!--/.container-fluid-->
+			<?php set_transient( 'portum_instagram_' . $fields['instagram_access_token'], $data, 12 * HOUR_IN_SECONDS ); ?>
+		<?php endif; ?>
 	</div><!--/.attr-helper-->
 </section>
 

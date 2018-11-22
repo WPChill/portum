@@ -58,30 +58,29 @@ $item_style         = array();
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'iconboxes' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<div class="upsell-section">
-			<div class="ewf-section__content">
-				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'iconboxes', $fields ) ); ?>">
+		<?php Portum_Helper::render_upsell_label(); ?>
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'iconboxes', $fields ) ); ?>">
 
-					<div class="row">
-						<?php if ( ! empty( $fields['iconboxes'] ) ) : ?>
-							<?php foreach ( $fields['iconboxes'] as $key => $icon ) : ?>
-								<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
-									<div class="iconboxes-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
-										<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_iconboxes_section', 'portum_iconboxes' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+				<div class="row">
+					<?php if ( ! empty( $fields['iconboxes'] ) ) : ?>
+						<?php foreach ( $fields['iconboxes'] as $key => $icon ) : ?>
+							<div class="<?php echo esc_attr( $item_class . ' ' . $item_spacing ); ?>">
+								<div class="iconboxes-item <?php echo esc_attr( $item_element_class ); ?>" style="<?php echo esc_attr( implode( ';', $item_style ) ); ?>">
+									<?php echo wp_kses( Epsilon_Helper::generate_field_repeater_pencil( $key, 'portum_iconboxes_section', 'portum_iconboxes' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
-										<?php Portum_Helper::render_icon( $icon, 'icon' ); ?>
+									<?php Portum_Helper::render_icon( $icon, 'icon' ); ?>
 
-										<?php if ( ! empty( $icon['icon_title'] ) ) { ?>
-											<div class="ewf-like-h6">
-												<?php echo wp_kses_post( $icon['icon_title'] ); ?>
-											</div><!--/.ewf-like-h6-->
-										<?php } ?>
-									</div><!--/.iconboxes-item-->
-								</div><!--/.col-sm-->
-							<?php endforeach; ?>
-						<?php endif; ?>
-					</div><!--/.row-->
-				</div>
+									<?php if ( ! empty( $icon['icon_title'] ) ) { ?>
+										<div class="ewf-like-h6">
+											<?php echo wp_kses_post( $icon['icon_title'] ); ?>
+										</div><!--/.ewf-like-h6-->
+									<?php } ?>
+								</div><!--/.iconboxes-item-->
+							</div><!--/.col-sm-->
+						<?php endforeach; ?>
+					<?php endif; ?>
+				</div><!--/.row-->
 			</div>
 		</div>
 	</div>

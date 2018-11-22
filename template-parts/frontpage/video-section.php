@@ -75,30 +75,29 @@ if ( 'left' == $fields['video_row_title_align'] || 'right' == $fields['video_row
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'video' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<div class="upsell-section">
-			<div class="ewf-section__content">
-				<div class="<?php echo esc_attr( Portum_Helper::container_class( 'video', $fields ) ); ?>">
+		<?php Portum_Helper::render_upsell_label(); ?>
+		<div class="ewf-section__content">
+			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'video', $fields ) ); ?>">
 
-					<div class="row <?php echo esc_attr( $row_class ); ?>">
-						<?php if ( ! empty( $fields['video_subtitle'] ) || ! empty( $fields['video_title'] ) ) { ?>
-							<div class="<?php echo esc_attr( $header_class ); ?>">
-								<div class="ewf-section-text">
-									<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
-								</div><!--/.ewf-section--text-->
-							</div><!--/.col-->
-						<?php } ?>
+				<div class="row <?php echo esc_attr( $row_class ); ?>">
+					<?php if ( ! empty( $fields['video_subtitle'] ) || ! empty( $fields['video_title'] ) ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="ewf-section-text">
+								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['video_subtitle'], $fields['video_title'] ) ); ?><?php echo wpautop( wp_kses_post( $fields['video_text'] ) ); ?>
+							</div><!--/.ewf-section--text-->
+						</div><!--/.col-->
+					<?php } ?>
 
-						<?php if ( 'none' !== $video['video_type'] ) { ?>
-							<div class="<?php echo esc_attr( $header_class ); ?>">
-								<div class="portum-video-area" style="overflow: hidden; max-height: <?php echo ! empty( $fields['video_max_height'] ) ? absint( $fields['video_max_height'] ) . 'vh' : '100vh'; ?>">
-									<div data-plyr-provider="<?php echo esc_attr( $video['video_type'] ); ?>" data-plyr-embed-id="<?php echo esc_attr( $video['video_id'] ); ?>" data-plyr-config="<?php echo esc_attr( json_encode( $plyr_config ) ); ?>"></div>
-								</div><!--/.portum-video-area-->
-							</div><!--/.col--->
-						<?php }//end if ?>
+					<?php if ( 'none' !== $video['video_type'] ) { ?>
+						<div class="<?php echo esc_attr( $header_class ); ?>">
+							<div class="portum-video-area" style="overflow: hidden; max-height: <?php echo ! empty( $fields['video_max_height'] ) ? absint( $fields['video_max_height'] ) . 'vh' : '100vh'; ?>">
+								<div data-plyr-provider="<?php echo esc_attr( $video['video_type'] ); ?>" data-plyr-embed-id="<?php echo esc_attr( $video['video_id'] ); ?>" data-plyr-config="<?php echo esc_attr( json_encode( $plyr_config ) ); ?>"></div>
+							</div><!--/.portum-video-area-->
+						</div><!--/.col--->
+					<?php }//end if ?>
 
-					</div><!--/.row-->
-				</div><!--/.container-class-->
-			</div><!--/.ewf-section__content-->
-		</div>
+				</div><!--/.row-->
+			</div><!--/.container-class-->
+		</div><!--/.ewf-section__content-->
 	</div><!--/.generate-attribute-->
 </section><!--/.video-section-->

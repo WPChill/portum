@@ -353,6 +353,20 @@ class Portum_Helper {
 		<?php
 	}
 
+	public static function render_upsell_label() {
+
+		if( ! is_customize_preview() ) {
+			return;
+		}
+
+		?>
+			<div class="ewf-section__upsell-label">
+				<i class="fa fa-exclamation"></i><?php esc_html_e('Only in Pro'); ?>
+			</div>
+		<?php
+
+	}
+
 	/**
 	 * Generates the section title properly formatted
 	 *

@@ -39,6 +39,7 @@ $parent_attr = array(
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 
 		<?php $attr_helper->generate_color_overlay(); ?>
+		<?php Portum_Helper::render_upsell_label(); ?>
 
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'shortcodes', $fields ) ); ?>">
