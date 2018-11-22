@@ -67,7 +67,9 @@ class Portum {
 		 */
 		add_filter( 'epsilon-dashboard-setup', array( $this, 'epsilon_dashboard' ) );
 		add_filter( 'epsilon-onboarding-setup', array( $this, 'epsilon_onboarding' ) );
-
+		/**
+		 * Customizer styling
+		 */
 		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_styles' ), 99 );
 		/**
 		 * Grab all class methods and initiate automatically

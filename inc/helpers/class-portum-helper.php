@@ -510,6 +510,18 @@ class Portum_Helper {
 	}
 
 	/**
+	 * @param $section_id
+	 * @param $key
+	 * @param $fields
+	 *
+	 * @return string
+	 */
+	public static function generate_color_styles( $section_id, $key, $fields ) {
+		$obj = Epsilon_Section_Styling::get_instance( 'portum-main', 'portum_frontpage_sections_', Portum_Repeatable_Sections::get_instance() );
+		return $obj->gather_static_options( $fields );
+	}
+
+	/**
 	 * Static method used to generate the corresponding CSS for the Colors Tab
 	 *
 	 * @param $section_id
@@ -611,6 +623,8 @@ class Portum_Helper {
 		if ( ! empty( $css ) ) {
 			$main_css[] = '@media (max-width: 576px) {#' . $section_id . '{' . implode( ';', $css ) . '}}';
 		}
+
+		echo '<style type="text/css">' . Portum_Helper::generate_color_styles( $section_id, $key, $fields ) . '</style>';
 
 		if ( ! empty( $main_css ) ) {
 			echo '<style type="text/css" media="all">' . implode( '', $main_css ) . '</style>';
