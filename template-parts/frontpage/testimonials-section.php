@@ -103,9 +103,9 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 									<?php } ?>
 
 									<?php if ( ! empty( $v['testimonial_subtitle'] ) ) { ?>
-										<div class="ewf-testimonial__by">
+										<p class="ewf-testimonial__by">
 											<?php echo wp_kses_post( $v['testimonial_subtitle'] ); ?>
-										</div>
+										</p>
 									<?php } ?>
 								</div>
 							</div>
