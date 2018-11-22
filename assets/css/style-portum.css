@@ -7504,6 +7504,20 @@ width: 15px;
         margin-bottom: 0;
     }
 }
+@media (min-width: 992px)
+{
+    .section-cta.ewf-section--title-left .headline h3,
+    .section-cta.ewf-section--title-right .headline h3
+    {
+        margin-top: 0;
+    }
+
+    .section-cta.ewf-section--title-left .ewf-section-text,
+    .section-cta.ewf-section--title-right .ewf-section-text
+    {
+        margin-bottom: 0;
+    }
+}
 /* ----------------------------------- #18 - Section CTA - END --------------------------------------- */
 /* ----------------------------------- #19 - Section About --------------------------------------------- */
 .section-about .container-fluid img
