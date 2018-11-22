@@ -906,7 +906,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 		'slide_title_size'                            => array(
 			'label'   => esc_html__( 'Slide Title Font Size', 'portum' ),
 			'type'    => 'epsilon-slider',
-			'default' => 16,
+			'default' => 48,
 			'choices' => array(
 				'min'  => 1,
 				'max'  => 126,
