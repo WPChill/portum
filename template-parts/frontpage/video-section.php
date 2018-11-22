@@ -25,9 +25,14 @@ $parent_attr = array(
 	'class' => array( 'section-video', 'section', 'ewf-section', 'ewf-section-' . $fields['video_section_visibility'] ),
 );
 
-$controls    = isset( $fields['video_show_controls'] ) ? $fields['video_show_controls'] : 1;
+$fields['video_show_controls']  = (boolean) json_decode( strtolower( $fields['video_show_controls'] ) );
+$fields['video_auto_loop']  = (boolean) json_decode( strtolower( $fields['video_auto_loop'] ) );
+$fields['video_mute_mode']  = (boolean) json_decode( strtolower( $fields['video_mute_mode'] ) );
+$fields['video_autoplay']  = (boolean) json_decode( strtolower( $fields['video_autoplay'] ) );
+
+
 $plyr_config = array(
-	'controls' => $controls ? array(
+	'controls' => $fields['video_show_controls'] ? array(
 		'play-large',
 		'play',
 		'progress',
@@ -41,10 +46,10 @@ $plyr_config = array(
 		'fullscreen',
 	) : array(),
 	'loop'     => array(
-		'active' => isset( $fields['video_auto_loop'] ) ? $fields['video_auto_loop'] : 1,
+		'active' => $fields['video_auto_loop'],
 	),
-	'muted'    => isset( $fields['video_mute_mode'] ) ? $fields['video_mute_mode'] : 1,
-	'autoplay' => isset( $fields['video_autoplay'] ) ? $fields['video_autoplay'] : 0,
+	'muted'    => $fields['video_mute_mode'],
+	'autoplay' => $fields['video_autoplay'],
 );
 
 wp_enqueue_style( 'plyr' );

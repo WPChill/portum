@@ -18,7 +18,10 @@ $fields['portfolio_items']             = $frontpage->get_repeater_field( $fields
 $fields['portfolio_items']             = isset( $fields['portfolio_items'] ) ? $fields['portfolio_items'] : '';
 $fields['portfolio_column_spacing']    = isset( $fields['portfolio_column_spacing'] ) ? $fields['portfolio_column_spacing'] : '';
 $fields['portfolio_column_group']      = isset( $fields['portfolio_column_group'] ) ? $fields['portfolio_column_group'] : '';
-$fields['portfolio_description_below'] = isset( $fields['portfolio_description_below'] ) ? $fields['portfolio_description_below'] : '';
+$fields['portfolio_description_below'] = (boolean) json_decode( strtolower( $fields['portfolio_description_below'] ) );
+$fields['portfolio_image_lightbox']    = (boolean) json_decode( strtolower( $fields['portfolio_image_lightbox'] ) );
+$fields['portfolio_image_show_description'] = (boolean) json_decode( strtolower( $fields['portfolio_image_show_description'] ) );
+
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'portfolio', Portum_Repeatable_Sections::get_instance() );
 if ( empty( $fields['portfolio_section_unique_id'] ) ) {
@@ -35,7 +38,7 @@ $parent_attr = array(
 );
 
 // only load scripts if we're viewing images in a lightbox
-if ( ! empty( $fields['portfolio_image_lightbox'] ) ) {
+if ( $fields['portfolio_image_lightbox'] ) {
 	wp_enqueue_style( 'magnificPopup' );
 	wp_enqueue_script( 'magnificPopup' );
 }
@@ -131,14 +134,14 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 
 											<div class="ewf-portfolio-item__overlay">
 
-												<?php if ( empty( $fields['portfolio_description_below'] ) ) { ?>
+												<?php if ( ! $fields['portfolio_description_below'] ) { ?>
 													<div class="ewf-portfolio-item__details">
 														<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 															<div class="ewf-like-h6">
 																<a href="<?php echo esc_url( $item['portfolio_link'] ); ?>"><?php echo wp_kses_post( $item['portfolio_title'] ); ?></a>
 															</div><!--/.ewf-like-h6-->
 														<?php } ?>
-														<?php if ( ! empty( $fields['portfolio_image_show_description'] ) && ! empty( $item['portfolio_description'] ) ): ?>
+														<?php if ( $fields['portfolio_image_show_description'] && ! empty( $item['portfolio_description'] ) ): ?>
 															<div class="ewf-portfolio-item__description">
 																<?php echo wp_kses_post( $item['portfolio_description'] ); ?>
 															</div><!--/.ewf-portfolio-item__description-->
@@ -149,7 +152,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 
 												<?php // the str_replace below is used to remove the image size from the lightbox image; defined by: 'size'    => 'portum-portfolio-image' in fields.php ?>
 
-												<?php if ( ! empty( $fields['portfolio_image_lightbox'] ) ) { ?>
+												<?php if ( $fields['portfolio_image_lightbox'] ) { ?>
 													<a class="ewf-portfolio-item__control-zoom magnific-link" href="<?php echo esc_url( str_replace( '-400x450', '', $item['portfolio_image'] ) ); ?>">
 														<i class="fa fa-eye"></i>
 													</a><!--/.ewf-portfolio-item__control-zoom magnific-link-->
@@ -162,7 +165,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 											</div><!-- ewf-portfolio-item__overlay -->
 										</div><!-- ewf-portfolio-item__thumbnail -->
 
-										<?php if ( ! empty( $fields['portfolio_description_below'] ) ) { ?>
+										<?php if ( $fields['portfolio_description_below'] ) { ?>
 											<div class="ewf-portfolio-item__details">
 												<?php if ( ! empty( $item['portfolio_title'] ) ) { ?>
 													<div class="ewf-like-h6">

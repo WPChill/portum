@@ -13,23 +13,12 @@ $grouping  = array(
 	'values'   => $fields['slider_advanced_grouping'],
 	'group_by' => 'slide_title',
 );
-
-$arr = array(
-	'slider_autostart',
-	'slider_infinite',
-	'slider_pager',
-	'slider_controls',
-);
-if ( is_customize_preview() ) {
-	foreach ( $arr as $k ) {
-		if ( is_bool( $fields[ $k ] ) ) {
-			continue;
-		}
-		$fields[ $k ] = is_string( $fields[ $k ] ) && 'true' === $fields[ $k ] ? true : false;
-	}
-}
 $fields['slides'] = $frontpage->get_repeater_field( $fields['slider_repeater_field'], array(), $grouping );
 
+$fields['slider_autostart']  = (boolean) json_decode( strtolower( $fields['slider_autostart'] ) );
+$fields['slider_infinite']  = (boolean) json_decode( strtolower( $fields['slider_infinite'] ) );
+$fields['slider_pager']  = (boolean) json_decode( strtolower( $fields['slider_pager'] ) );
+$fields['slider_controls']  = (boolean) json_decode( strtolower( $fields['slider_controls'] ) );
 
 wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );

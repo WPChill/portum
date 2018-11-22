@@ -580,7 +580,7 @@ class Portum_Helper {
 					continue;
 				}
 
-				$css[] = 'background-image:url(' . esc_url( $fields[ $key . '_background_image' ] );
+				$css[] = 'background-image:url(' . esc_url( $fields[ $key . '_background_image' ] ) . ')';
 				$css[] = 'background-position:' . esc_attr( $fields[ $key . '_background_position' ] );
 				$css[] = 'background-size:' . esc_attr( $fields[ $key . '_background_size' ] );
 				$css[] = 'background-repeat:' . esc_attr( $fields[ $key . '_background_repeat' ] );
