@@ -23,7 +23,7 @@ $fields['slider_controls']  = (boolean) json_decode( strtolower( $fields['slider
 wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );
 ?>
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="slider">
 
 	<div class="ewf-advanced-slider <?php echo 'ewf-section-' . $fields['advanced-slider_section_visibility']; ?> ewf-slider"
 	     data-slider-speed="500"

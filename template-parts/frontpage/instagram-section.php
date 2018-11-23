@@ -48,7 +48,7 @@ if ( 'left' == $fields['instagram_row_title_align'] || 'right' == $fields['insta
 //end layout stuff
 ?>
 
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="instagram">
 	<?php Portum_Helper::generate_inline_css( $fields['instagram_section_unique_id'], 'instagram', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'instagram' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>

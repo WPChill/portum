@@ -36,8 +36,7 @@ Epsilon_Customizer::add_field( 'portum_typography_upsell', array(
 
 Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'type'          => 'epsilon-typography',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
+	'transport'     => 'postMessage',
 	'section'       => 'portum_typography_section',
 	'label'         => esc_html__( 'Global theme font', 'portum' ),
 	'description'   => esc_html__( 'The font that will be applied to the entire theme. ', 'portum' ),
@@ -88,8 +87,6 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
  */
 Epsilon_Customizer::add_field( 'portum_blog_layout', array(
 	'type'        => 'select',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Blog Layout', 'portum' ),
 	'description' => esc_html__( 'Select the layout that will be used for the blog.', 'portum' ),
 	'section'     => 'header_image',
@@ -144,8 +141,6 @@ Epsilon_Customizer::add_field( 'portum_header_upsell', array(
 
 Epsilon_Customizer::add_field( 'portum_header_layout', array(
 	'type'        => 'select',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Header Layout', 'portum' ),
 	'description' => esc_html__( 'Select the type of header you want to use.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -159,8 +154,6 @@ Epsilon_Customizer::add_field( 'portum_header_layout', array(
 
 Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 	'type'        => 'epsilon-toggle',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Sticky Header', 'portum' ),
 	'description' => esc_html__( 'This will make the header stick to the top of the page.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -169,8 +162,6 @@ Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 
 Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'type'        => 'epsilon-toggle',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Set header over content', 'portum' ),
 	'description' => esc_html__( 'This will set header over slider, using colors you can make the header transparent.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -180,8 +171,6 @@ Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 
 Epsilon_Customizer::add_field( 'portum_header_shadow', array(
 	'type'        => 'epsilon-toggle',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Header shadow', 'portum' ),
 	'description' => esc_html__( 'This will add or remove header shadow.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -201,8 +190,6 @@ Epsilon_Customizer::add_field( 'portum_enable_go_top', array(
  */
 Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	'type'     => 'epsilon-layouts',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
 	'section'  => 'portum_footer_section',
 	'priority' => 0,
 	'layouts'  => array(
@@ -235,24 +222,36 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	'min_span' => 2,
 	'label'    => esc_html__( 'Footer Columns', 'portum' ),
 ) );
+/**
+ * Google Api KEY
+ */
+Epsilon_Customizer::add_field( 'portum_google_api_key', array(
+	'type'              => 'text',
+	'section'           => 'portum_misc_section',
+	'sanitize_callback' => 'sanitize_text_field',
+	'label'             => esc_html__( 'Google API KEY', 'portum' ),
+	/* Translators: Explanation re. Google Maps API Key billing requirements */
+	'description'       => sprintf( __( 'You need to make sure you have enabled billing on your Google account, otherwise your Google Maps API Key will not work.
+	This is a recent change Google introduced and not related to the theme itself. Please use <a href="%s" target="_blank">this link to get your API key</a>', 'portum' ), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ) ),
+) );
 
 
 /**
  * Contact boxes
  */
 Epsilon_Customizer::add_field( 'portum_contact_section', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_contact_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Contact Columns', 'portum' ),
-	'button_label' => esc_html__( 'Add new boxes', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_contact_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Contact Columns', 'portum' ),
+	'button_label'      => esc_html__( 'Add new boxes', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'contact_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'contact_title' => array(
 			'label'   => esc_html__( 'Title', 'portum' ),
 			'type'    => 'text',
@@ -282,18 +281,18 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
  * Accordion General Information
  */
 Epsilon_Customizer::add_field( 'portum_accordion', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_accordion_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'General Information', 'portum' ),
-	'button_label' => esc_html__( 'Add/edit new entries', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_accordion_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'General Information', 'portum' ),
+	'button_label'      => esc_html__( 'Add/edit new entries', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'accordion_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'accordion_title'  => array(
 			'label'   => esc_html__( 'FAQ Title', 'portum' ),
 			'default' => esc_html__( 'FAQ Title', 'portum' ),
@@ -316,18 +315,18 @@ Epsilon_Customizer::add_field( 'portum_accordion', array(
  * Schedule
  */
 Epsilon_Customizer::add_field( 'portum_schedule', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_schedule_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Schedule', 'portum' ),
-	'button_label' => esc_html__( 'Add new entries', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_schedule_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Schedule', 'portum' ),
+	'button_label'      => esc_html__( 'Add new entries', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'schedule_days',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'schedule_days'  => array(
 			'label'             => esc_html__( 'Days', 'portum' ),
 			'description'       => esc_html__( 'e.g. Monday - Thursday', 'portum' ),
@@ -349,18 +348,18 @@ Epsilon_Customizer::add_field( 'portum_schedule', array(
  * Testimonials
  */
 Epsilon_Customizer::add_field( 'portum_testimonials', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_testimonials_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Testimonials', 'portum' ),
-	'button_label' => esc_html__( 'Add new entries', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_testimonials_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'label'             => esc_html__( 'Testimonials', 'portum' ),
+	'button_label'      => esc_html__( 'Add new entries', 'portum' ),
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'testimonial_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'testimonial_bg_color' => array(
 			'label'   => esc_html__( 'Testimonial Background Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
@@ -394,42 +393,42 @@ Epsilon_Customizer::add_field( 'portum_testimonials', array(
  * Services
  */
 Epsilon_Customizer::add_field( 'portum_services', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_services_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Services', 'portum' ),
-	'button_label' => esc_html__( 'Add new service', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_services_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Services', 'portum' ),
+	'button_label'      => esc_html__( 'Add new service', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'service_title',
 	),
-	'fields'       => array(
-		'services_bg_color'          => array(
+	'fields'            => array(
+		'services_bg_color'   => array(
 			'label'   => esc_html__( 'Services Background Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '',
 		),
-		'service_title'              => array(
+		'service_title'       => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Business',
 		),
-		'service_description'        => array(
+		'service_description' => array(
 			'label'             => esc_html__( 'Description', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Consultance',
 		),
-		'service_icon'               => array(
+		'service_icon'        => array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-500px',
 			'groups'  => array( 'general' ),
 		),
-		'service_icon_color'         => array(
+		'service_icon_color'  => array(
 			'label'   => esc_html__( 'Icon Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '#FFF',
@@ -442,18 +441,18 @@ Epsilon_Customizer::add_field( 'portum_services', array(
  * Icons
  */
 Epsilon_Customizer::add_field( 'portum_icons', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_iconboxes_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Icons', 'portum' ),
-	'button_label' => esc_html__( 'Add new icon', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_iconboxes_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Icons', 'portum' ),
+	'button_label'      => esc_html__( 'Add new icon', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'icon_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'icon_title' => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
@@ -478,42 +477,42 @@ Epsilon_Customizer::add_field( 'portum_icons', array(
  * features
  */
 Epsilon_Customizer::add_field( 'portum_features', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_features_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Features', 'portum' ),
-	'button_label' => esc_html__( 'Add new feature', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_features_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Features', 'portum' ),
+	'button_label'      => esc_html__( 'Add new feature', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'feature_title',
 	),
-	'fields'       => array(
-		'features_bg_color'          => array(
+	'fields'            => array(
+		'features_bg_color'   => array(
 			'label'   => esc_html__( 'Background Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '',
 		),
-		'feature_title'              => array(
+		'feature_title'       => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Business',
 		),
-		'feature_description'        => array(
+		'feature_description' => array(
 			'label'             => esc_html__( 'Description', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => 'Consultance',
 		),
-		'feature_icon'               => array(
+		'feature_icon'        => array(
 			'label'   => esc_html__( 'Icon', 'portum' ),
 			'type'    => 'epsilon-icon-picker',
 			'default' => 'fa fa-500px',
 			'groups'  => array( 'general' ),
 		),
-		'feature_icon_color'         => array(
+		'feature_icon_color'  => array(
 			'label'   => esc_html__( 'Icon Color', 'portum' ),
 			'type'    => 'epsilon-color-picker',
 			'default' => '#FFF',
@@ -525,18 +524,18 @@ Epsilon_Customizer::add_field( 'portum_features', array(
  * Portfolio Items
  */
 Epsilon_Customizer::add_field( 'portum_portfolio', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_portfolio_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Portfolio Items', 'portum' ),
-	'button_label' => esc_html__( 'Add new items', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_portfolio_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Portfolio Items', 'portum' ),
+	'button_label'      => esc_html__( 'Add new items', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'portfolio_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'portfolio_title'       => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
@@ -567,18 +566,18 @@ Epsilon_Customizer::add_field( 'portum_portfolio', array(
  * Counter boxes
  */
 Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_counters_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Counter Items', 'portum' ),
-	'button_label' => esc_html__( 'Add new items', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_counters_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Counter Items', 'portum' ),
+	'button_label'      => esc_html__( 'Add new items', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'counter_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'counter_title'        => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
@@ -630,18 +629,18 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
  * Progress bars
  */
 Epsilon_Customizer::add_field( 'portum_progress_bars', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_progress_bars_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Progress Bars', 'portum' ),
-	'button_label' => esc_html__( 'Add new items', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_progress_bars_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Progress Bars', 'portum' ),
+	'button_label'      => esc_html__( 'Add new items', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'progress_bar_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'progress_bar_type'  => array(
 			'label'   => esc_html__( 'Type', 'portum' ),
 			'type'    => 'select',
@@ -673,18 +672,18 @@ Epsilon_Customizer::add_field( 'portum_progress_bars', array(
  * Pie charts bars
  */
 Epsilon_Customizer::add_field( 'portum_pie_charts', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_piecharts_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Pie Charts', 'portum' ),
-	'button_label' => esc_html__( 'Add new items', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_piecharts_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Pie Charts', 'portum' ),
+	'button_label'      => esc_html__( 'Add new items', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'piechart_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'piechart_title'     => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
@@ -745,18 +744,18 @@ Epsilon_Customizer::add_field( 'portum_pie_charts', array(
  * Client logos
  */
 Epsilon_Customizer::add_field( 'portum_clients', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_clientlists_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Client Logos', 'portum' ),
-	'button_label' => esc_html__( 'Add new items', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_clientlists_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Client Logos', 'portum' ),
+	'button_label'      => esc_html__( 'Add new items', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'client_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'client_title' => array(
 			'label'             => esc_html__( 'Title', 'portum' ),
 			'type'              => 'text',
@@ -780,18 +779,18 @@ Epsilon_Customizer::add_field( 'portum_clients', array(
  * Team Members
  */
 Epsilon_Customizer::add_field( 'portum_team_members', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_team_members_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Team Members', 'portum' ),
-	'button_label' => esc_html__( 'Add new member', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_team_members_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Team Members', 'portum' ),
+	'button_label'      => esc_html__( 'Add new member', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'member_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'member_title'            => array(
 			'label'             => esc_html__( 'Name', 'portum' ),
 			'type'              => 'text',
@@ -835,18 +834,18 @@ Epsilon_Customizer::add_field( 'portum_team_members', array(
  * Price boxes
  */
 Epsilon_Customizer::add_field( 'portum_price_boxes', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_pricing_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Price Boxes', 'portum' ),
-	'button_label' => esc_html__( 'Add new price box', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_pricing_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Price Boxes', 'portum' ),
+	'button_label'      => esc_html__( 'Add new price box', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'price_box_title',
 	),
-	'fields'       => array(
+	'fields'            => array(
 		'price_box_featured'     => array(
 			'type'    => 'epsilon-toggle',
 			'label'   => esc_html__( 'Featured State', 'portum' ),
@@ -893,13 +892,13 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 			'default'           => '<ul><li><span>10GB</span> Disk Space</li><li><span>Free</span> DDoS Protection</li><li><span>Free</span> Daily Backups</li><li>Managed Hosting</li></ul>',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_button_label'    => array(
+		'price_box_button_label' => array(
 			'label'             => esc_html__( 'Button Text', 'portum' ),
 			'type'              => 'text',
 			'default'           => __( 'Purchase', 'portum' ),
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'price_box_button_url'         => array(
+		'price_box_button_url'   => array(
 			'label'             => esc_html__( 'Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',
@@ -909,49 +908,49 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 ) );
 
 Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
-	'type'         => 'epsilon-repeater',
-	'selective_refresh'   => true,
-	'transport'           => 'postMessage',
-	'section'      => 'portum_advanced_slides_section',
-	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
-	'label'        => esc_html__( 'Slides', 'portum' ),
-	'button_label' => esc_html__( 'Add new slides', 'portum' ),
-	'row_label'    => array(
+	'type'              => 'epsilon-repeater',
+	'section'           => 'portum_advanced_slides_section',
+	'save_as_meta'      => Epsilon_Content_Backup::get_instance()->setting_page,
+	'label'             => esc_html__( 'Slides', 'portum' ),
+	'button_label'      => esc_html__( 'Add new slides', 'portum' ),
+	'selective_refresh' => true,
+	'transport'         => 'postMessage',
+	'row_label'         => array(
 		'type'  => 'field',
 		'field' => 'slide_title',
 	),
-	'fields'       => array(
-		'slide_title'                                 => array(
+	'fields'            => array(
+		'slide_title'               => array(
 			'label'             => esc_html__( 'Slide title', 'portum' ),
 			'description'       => esc_html__( 'Slide title. Use it to add an eye-catching Call To Action.', 'portum' ),
 			'type'              => 'text',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'From zero to hero along with you.', 'portum' ),
 		),
-		'slide_title_color'                           => array(
+		'slide_title_color'         => array(
 			'label'             => esc_html__( 'Slide Title Color', 'portum' ),
 			'type'              => 'epsilon-color-picker',
 			'default'           => '#FFF',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_title_size'                            => array(
+		'slide_title_size'          => array(
 			'label'   => esc_html__( 'Slide Title Font Size', 'portum' ),
 			'type'    => 'epsilon-slider',
-			'default' => 48,
+			'default' => 16,
 			'choices' => array(
 				'min'  => 1,
 				'max'  => 126,
 				'step' => 1,
 			),
 		),
-		'slide_description'                           => array(
+		'slide_description'         => array(
 			'label'             => esc_html__( 'Slide description', 'portum' ),
 			'description'       => esc_html__( 'Slide description. Use it to accompany to your Call To Action message.', 'portum' ),
 			'type'              => 'textarea',
 			'sanitize_callback' => 'wp_kses_post',
 			'default'           => esc_html__( 'We believe there\'s no other theme like Portum.', 'portum' ),
 		),
-		'slide_description_size'                      => array(
+		'slide_description_size'    => array(
 			'label'   => esc_html__( 'Slide Description Font Size', 'portum' ),
 			'type'    => 'epsilon-slider',
 			'default' => 16,
@@ -961,13 +960,13 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 				'step' => 1,
 			),
 		),
-		'slide_description_color'                     => array(
+		'slide_description_color'   => array(
 			'label'             => esc_html__( 'Slide Description Color', 'portum' ),
 			'type'              => 'epsilon-color-picker',
 			'default'           => '#FFF',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_content_width'                         => array(
+		'slide_content_width'       => array(
 			'label'       => esc_html__( 'Slide Content Width', 'portum' ),
 			'description' => esc_html__( 'Value increments in %. Minimum is 25%.', 'portum' ),
 			'type'        => 'epsilon-slider',
@@ -978,7 +977,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 				'step' => 5,
 			),
 		),
-		'slide_alignment'                             => array(
+		'slide_alignment'           => array(
 			'type'      => 'epsilon-button-group',
 			'label'     => __( 'Slide Content Horizontal Alignment', 'epsilon-framework' ),
 			'group'     => 'layout',
@@ -999,7 +998,7 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			),
 			'default'   => 'center',
 		),
-		'slide_vertical_alignment'                    => array(
+		'slide_vertical_alignment'  => array(
 			'type'      => 'epsilon-button-group',
 			'label'     => __( 'Slide Content Vertical Alignment', 'epsilon-framework' ),
 			'group'     => 'layout',
@@ -1020,37 +1019,37 @@ Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 			),
 			'default'   => 'alignmiddle',
 		),
-		'slide_background_color'                      => array(
+		'slide_background_color'    => array(
 			'label'      => esc_html__( 'Slide Overlay Color', 'portum' ),
 			'type'       => 'epsilon-color-picker',
 			'mode'       => 'rgba',
 			'defaultVal' => '#f9f9fa',
 			'default'    => 'rgba(0,0,0,.1)',
 		),
-		'slide_background'                            => array(
+		'slide_background'          => array(
 			'label' => esc_html__( 'Background image', 'portum' ),
 			'type'  => 'epsilon-image',
 			'size'  => 'portum-main-slider',
 		),
-		'slide_cta_primary_label'                     => array(
+		'slide_cta_primary_label'   => array(
 			'label'             => esc_html__( 'Primary Button Text', 'portum' ),
 			'type'              => 'text',
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_primary_url'                       => array(
+		'slide_cta_primary_url'     => array(
 			'label'             => esc_html__( 'Primary Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_secondary_label'                   => array(
+		'slide_cta_secondary_label' => array(
 			'label'             => esc_html__( 'Secondary Button Text', 'portum' ),
 			'type'              => 'text',
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
 		),
-		'slide_cta_secondary_url'                     => array(
+		'slide_cta_secondary_url'   => array(
 			'label'             => esc_html__( 'Secondary Button URL', 'portum' ),
 			'type'              => 'text',
 			'default'           => '#',

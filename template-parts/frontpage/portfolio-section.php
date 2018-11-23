@@ -96,7 +96,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 }
 // end layout stuff
 ?>
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="portfolio">
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<?php Portum_Helper::generate_inline_css( $fields['portfolio_section_unique_id'], 'portfolio', $fields ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>

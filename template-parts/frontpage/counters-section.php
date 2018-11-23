@@ -58,7 +58,7 @@ $item_class = 'col-sm-' . ( 12 / absint( $fields['counters_column_group'] ) );
 wp_enqueue_script( 'odometer' );
 ?>
 
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="counters">
 	<?php Portum_Helper::generate_inline_css( $fields['counters_section_unique_id'], 'counters', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'counters' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>

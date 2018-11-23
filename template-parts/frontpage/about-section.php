@@ -43,7 +43,7 @@ if ( 'left' == $fields['about_row_title_align'] || 'right' == $fields['about_row
 
 //end layout stuff
 ?>
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="about">
 	<?php Portum_Helper::generate_inline_css( $fields['about_section_unique_id'], 'about', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'about' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>

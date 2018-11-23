@@ -53,7 +53,7 @@ if ( 'left' == $fields['newsletter_row_title_align'] || 'right' == $fields['news
 //end layout stuff
 ?>
 
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="newsletter">
 	<?php Portum_Helper::generate_inline_css( $fields['newsletter_section_unique_id'], 'newsletter', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'newsletter' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>

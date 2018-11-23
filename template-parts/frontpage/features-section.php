@@ -51,7 +51,7 @@ foreach ( $fields['features'] as $key => $feature ) {
 
 ?>
 
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="features">
 	<?php Portum_Helper::generate_inline_css( $fields['features_section_unique_id'], 'features', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'features' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>

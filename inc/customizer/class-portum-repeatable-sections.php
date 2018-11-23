@@ -26,6 +26,7 @@ class Portum_Repeatable_Sections {
 	 * Portum_Repeatable_Sections constructor.
 	 */
 	public function __construct() {
+		define( 'EPSILON_REPEATABLE_SECTIONS_CLASS', 'Portum_Repeatable_Sections' );
 		$this->collect_sections();
 	}
 
