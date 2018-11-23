@@ -36,7 +36,8 @@ Epsilon_Customizer::add_field( 'portum_typography_upsell', array(
 
 Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'type'          => 'epsilon-typography',
-	'transport'     => 'postMessage',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'       => 'portum_typography_section',
 	'label'         => esc_html__( 'Global theme font', 'portum' ),
 	'description'   => esc_html__( 'The font that will be applied to the entire theme. ', 'portum' ),
@@ -87,6 +88,8 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
  */
 Epsilon_Customizer::add_field( 'portum_blog_layout', array(
 	'type'        => 'select',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Blog Layout', 'portum' ),
 	'description' => esc_html__( 'Select the layout that will be used for the blog.', 'portum' ),
 	'section'     => 'header_image',
@@ -141,6 +144,8 @@ Epsilon_Customizer::add_field( 'portum_header_upsell', array(
 
 Epsilon_Customizer::add_field( 'portum_header_layout', array(
 	'type'        => 'select',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Header Layout', 'portum' ),
 	'description' => esc_html__( 'Select the type of header you want to use.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -154,6 +159,8 @@ Epsilon_Customizer::add_field( 'portum_header_layout', array(
 
 Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 	'type'        => 'epsilon-toggle',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Sticky Header', 'portum' ),
 	'description' => esc_html__( 'This will make the header stick to the top of the page.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -162,6 +169,8 @@ Epsilon_Customizer::add_field( 'portum_header_sticky', array(
 
 Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 	'type'        => 'epsilon-toggle',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Set header over content', 'portum' ),
 	'description' => esc_html__( 'This will set header over slider, using colors you can make the header transparent.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -171,6 +180,8 @@ Epsilon_Customizer::add_field( 'portum_header_over_content', array(
 
 Epsilon_Customizer::add_field( 'portum_header_shadow', array(
 	'type'        => 'epsilon-toggle',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'label'       => esc_html__( 'Header shadow', 'portum' ),
 	'description' => esc_html__( 'This will add or remove header shadow.', 'portum' ),
 	'section'     => 'portum_header_section',
@@ -190,6 +201,8 @@ Epsilon_Customizer::add_field( 'portum_enable_go_top', array(
  */
 Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	'type'     => 'epsilon-layouts',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'  => 'portum_footer_section',
 	'priority' => 0,
 	'layouts'  => array(
@@ -222,18 +235,6 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	'min_span' => 2,
 	'label'    => esc_html__( 'Footer Columns', 'portum' ),
 ) );
-/**
- * Google Api KEY
- */
-Epsilon_Customizer::add_field( 'portum_google_api_key', array(
-	'type'              => 'text',
-	'section'           => 'portum_misc_section',
-	'sanitize_callback' => 'sanitize_text_field',
-	'label'             => esc_html__( 'Google API KEY', 'portum' ),
-	/* Translators: Explanation re. Google Maps API Key billing requirements */
-	'description'       => sprintf( __( 'You need to make sure you have enabled billing on your Google account, otherwise your Google Maps API Key will not work.
-	This is a recent change Google introduced and not related to the theme itself. Please use <a href="%s" target="_blank">this link to get your API key</a>', 'portum' ), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ) ),
-) );
 
 
 /**
@@ -241,6 +242,8 @@ Epsilon_Customizer::add_field( 'portum_google_api_key', array(
  */
 Epsilon_Customizer::add_field( 'portum_contact_section', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_contact_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Contact Columns', 'portum' ),
@@ -280,6 +283,8 @@ Epsilon_Customizer::add_field( 'portum_contact_section', array(
  */
 Epsilon_Customizer::add_field( 'portum_accordion', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_accordion_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'General Information', 'portum' ),
@@ -312,6 +317,8 @@ Epsilon_Customizer::add_field( 'portum_accordion', array(
  */
 Epsilon_Customizer::add_field( 'portum_schedule', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_schedule_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Schedule', 'portum' ),
@@ -343,6 +350,8 @@ Epsilon_Customizer::add_field( 'portum_schedule', array(
  */
 Epsilon_Customizer::add_field( 'portum_testimonials', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_testimonials_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Testimonials', 'portum' ),
@@ -386,6 +395,8 @@ Epsilon_Customizer::add_field( 'portum_testimonials', array(
  */
 Epsilon_Customizer::add_field( 'portum_services', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_services_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Services', 'portum' ),
@@ -432,6 +443,8 @@ Epsilon_Customizer::add_field( 'portum_services', array(
  */
 Epsilon_Customizer::add_field( 'portum_icons', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_iconboxes_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Icons', 'portum' ),
@@ -466,6 +479,8 @@ Epsilon_Customizer::add_field( 'portum_icons', array(
  */
 Epsilon_Customizer::add_field( 'portum_features', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_features_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Features', 'portum' ),
@@ -511,6 +526,8 @@ Epsilon_Customizer::add_field( 'portum_features', array(
  */
 Epsilon_Customizer::add_field( 'portum_portfolio', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_portfolio_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Portfolio Items', 'portum' ),
@@ -551,6 +568,8 @@ Epsilon_Customizer::add_field( 'portum_portfolio', array(
  */
 Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_counters_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Counter Items', 'portum' ),
@@ -612,6 +631,8 @@ Epsilon_Customizer::add_field( 'portum_counter_boxes', array(
  */
 Epsilon_Customizer::add_field( 'portum_progress_bars', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_progress_bars_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Progress Bars', 'portum' ),
@@ -653,6 +674,8 @@ Epsilon_Customizer::add_field( 'portum_progress_bars', array(
  */
 Epsilon_Customizer::add_field( 'portum_pie_charts', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_piecharts_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Pie Charts', 'portum' ),
@@ -723,6 +746,8 @@ Epsilon_Customizer::add_field( 'portum_pie_charts', array(
  */
 Epsilon_Customizer::add_field( 'portum_clients', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_clientlists_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Client Logos', 'portum' ),
@@ -756,6 +781,8 @@ Epsilon_Customizer::add_field( 'portum_clients', array(
  */
 Epsilon_Customizer::add_field( 'portum_team_members', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_team_members_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Team Members', 'portum' ),
@@ -809,6 +836,8 @@ Epsilon_Customizer::add_field( 'portum_team_members', array(
  */
 Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_pricing_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Price Boxes', 'portum' ),
@@ -881,6 +910,8 @@ Epsilon_Customizer::add_field( 'portum_price_boxes', array(
 
 Epsilon_Customizer::add_field( 'portum_advanced_slides', array(
 	'type'         => 'epsilon-repeater',
+	'selective_refresh'   => true,
+	'transport'           => 'postMessage',
 	'section'      => 'portum_advanced_slides_section',
 	'save_as_meta' => Epsilon_Content_Backup::get_instance()->setting_page,
 	'label'        => esc_html__( 'Slides', 'portum' ),
