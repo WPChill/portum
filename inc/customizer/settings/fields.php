@@ -30,7 +30,7 @@ Epsilon_Customizer::add_field( 'portum_typography_upsell', array(
 	'button_text'        => esc_html__( 'See comparison', 'portum' ),
 	'second_button_url'  => '#',
 	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-	'separator'          => 'or',
+	'separator'          => esc_html__( 'or', 'portum' ),
 ) );
 
 
@@ -116,7 +116,7 @@ Epsilon_Customizer::add_field( 'portum_blog_upsell', array(
 	'button_text'        => esc_html__( 'Lite VS PRO', 'portum' ),
 	'second_button_url'  => '#',
 	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-	'separator'          => 'or',
+	'separator'          => esc_html__( 'or', 'portum' ),
 ) );
 
 Epsilon_Customizer::add_field( 'portum_header_upsell', array(
@@ -136,7 +136,7 @@ Epsilon_Customizer::add_field( 'portum_header_upsell', array(
 	'button_text'        => esc_html__( 'Lite VS PRO', 'portum' ),
 	'second_button_url'  => '#',
 	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-	'separator'          => 'or',
+	'separator'          => esc_html__( 'or', 'portum' ),
 ) );
 
 Epsilon_Customizer::add_field( 'portum_header_layout', array(

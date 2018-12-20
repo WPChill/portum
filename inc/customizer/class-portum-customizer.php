@@ -83,6 +83,7 @@ class Portum_Customizer {
 		 */
  		$wp_customize->add_setting( 'portum_logo_sticky' , array(
 			'default' => '',
+			'sanitize_callback' => 'sanitize_text_field',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
@@ -99,7 +100,7 @@ class Portum_Customizer {
 				'flex_width'  => true,
 				'flex_height' => true,
 			)
-		)); 
+		));
 
 		if ( ! isset( $wp_customize->selective_refresh ) ) {
 			return;

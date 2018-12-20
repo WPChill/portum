@@ -212,7 +212,7 @@ class Repeatable_Section_Newsletter extends Repeatable_Section {
 			'newsletter_background_position'    => array(
 				'id'          => 'newsletter_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
-				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
+				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framework' ),
 				'default'     => 'center',
 				'type'        => 'select',
 				'group'       => 'background',

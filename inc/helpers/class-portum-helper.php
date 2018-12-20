@@ -361,7 +361,7 @@ class Portum_Helper {
 
 		?>
 			<div class="ewf-section__upsell-label">
-				<i class="fa fa-exclamation"></i><?php esc_html_e('Only in Pro'); ?>
+				<i class="fa fa-exclamation"></i><?php esc_html_e('Only in Pro', 'portum' ); ?>
 			</div>
 		<?php
 

@@ -217,7 +217,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 			'counters_background_position'    => array(
 				'id'          => 'counters_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
-				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
+				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framework' ),
 				'default'     => 'center',
 				'type'        => 'select',
 				'group'       => 'background',
@@ -355,7 +355,7 @@ class Repeatable_Section_Counters extends Repeatable_Section {
 				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
 				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
 				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
-				'separator'          => esc_html__( 'or' ),
+				'separator'          => esc_html__( 'or', 'portum' ),
 			),
 			'counters_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),

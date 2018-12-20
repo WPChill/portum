@@ -226,7 +226,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_schedule_section',
 		'args' => array(
-			'title'    => esc_html__( 'Schedule', 'medzone' ),
+			'title'    => esc_html__( 'Schedule', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
 			'priority' => 11,
 			'type'     => 'epsilon-section-doubled',
@@ -235,7 +235,7 @@ $sections = array(
 	array(
 		'id'   => 'portum_accordion_section',
 		'args' => array(
-			'title'    => esc_html__( 'Accordion / FAQ', 'medzone' ),
+			'title'    => esc_html__( 'Accordion / FAQ', 'portum' ),
 			'panel'    => 'portum_panel_section_content',
 			'priority' => 12,
 			'type'     => 'epsilon-section-doubled',

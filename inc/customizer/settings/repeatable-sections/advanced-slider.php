@@ -108,7 +108,7 @@ class Repeatable_Section_Advanced_Slider extends Repeatable_Section {
 				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
 				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
 				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
-				'separator'          => esc_html__( 'or' ),
+				'separator'          => esc_html__( 'or', 'portum' ),
 			),
 			'slider_advanced_grouping' => array(
 				'label'       => esc_html__( 'Filter shown slides', 'portum' ),
@@ -142,7 +142,7 @@ class Repeatable_Section_Advanced_Slider extends Repeatable_Section {
 				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
 				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
 				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
-				'separator'          => esc_html__( 'or' ),
+				'separator'          => esc_html__( 'or', 'portum' ),
 			),
 		);
 	}

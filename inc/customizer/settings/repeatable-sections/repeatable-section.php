@@ -100,7 +100,7 @@ abstract class Repeatable_Section {
 	public function create_margin_fields() {
 		return array(
 			$this->id . '_margins_device_setter' => array(
-				'label'   => esc_html__( 'Section margins' ),
+				'label'   => esc_html__( 'Section margins', 'epsilon-framework' ),
 				'type'    => 'select',
 				'group'   => 'layout',
 				'choices' => array(
@@ -145,7 +145,7 @@ abstract class Repeatable_Section {
 	public function create_padding_fields() {
 		return array(
 			$this->id . '_paddings_device_setter' => array(
-				'label'   => esc_html__( 'Section paddings' ),
+				'label'   => esc_html__( 'Section paddings', 'epsilon-framework' ),
 				'type'    => 'select',
 				'group'   => 'layout',
 				'choices' => array(

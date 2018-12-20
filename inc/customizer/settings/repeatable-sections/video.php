@@ -213,7 +213,7 @@ class Repeatable_Section_Video extends Repeatable_Section {
 			'video_background_position'    => array(
 				'id'          => 'video_background_position',
 				'label'       => esc_html__( 'Background Position', 'epsilon-framework' ),
-				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framwework' ),
+				'description' => esc_html__( 'We recommend using Center. Experiment with the options to see what works best for you.', 'epsilon-framework' ),
 				'default'     => 'center',
 				'type'        => 'select',
 				'group'       => 'background',
