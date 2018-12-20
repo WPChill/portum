@@ -16,7 +16,7 @@ if ( get_theme_mod( 'portum_enable_copyright', true ) || has_nav_menu( 'copyrigh
 					<div id="footer-bottom-widget-area-1" class="col-sm-6 ol-xs-12">
 						<?php
 						// Translators: %s is a link.
-						echo sprintf( 'Theme by: <a href="%s" target="_blank">Colorlib</a>. All rights reserved &copy %s.', esc_url( 'https://colorlib.com/' ), date( 'Y' ) );
+						echo sprintf( __( 'Theme by: Macho Themes. All rights reserved &copy %s.', 'portum'), date( 'Y' ) );
 						?>
 					</div><!-- end .col -->
 				<?php endif; ?>

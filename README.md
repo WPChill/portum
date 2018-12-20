@@ -10,20 +10,20 @@ Portum
 
 ### License
 
-Portum WordPress theme, Copyright (C) 2018 https://colorlib.com/ 
+Portum WordPress theme, Copyright (C) 2018 https://www.machothemes.com/
 Portum WordPress theme is licensed under the GPL3.
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License. The exceptions to this license are as follows:
 
 #### Vendors
 Slick
-	-- Copyright Ken Wheeler    
+	-- Copyright Ken Wheeler
 	-- Licensed under the MIT license. (https://github.com/kenwheeler/slick/blob/master/LICENSE)
 
 Font Awesome
 	-- Copyright Font Awesome by Dave Gandy - http://fontawesome.io
 	-- License: MIT License (http://opensource.org/licenses/mit-license.html)
-	
+
 Selectize
 	-- Copyright (c) 2013 Brian Reavis & contributors
 	-- Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,17 +39,17 @@ SuperFish
 Hover Intent
 	-- Copyright (c) 2007 - 2014 Brian Cherne.
 	-- available for use under the MIT License  http://cherne.net/brian/resources/jquery.hoverIntent.html
-    
+
 #### Fonts
 
 Google Fonts
 
 	-- License: SIL OFL 1.1
 	-- URL: http://scripts.sil.org/OFL
-    
+
 #### Images
 
-##### Portum - Original 
+##### Portum - Original
 
 - 00_header_01  https://pixabay.com/en/nurse-medicine-doctor-hospital-2019420/
 - 01_our impact  https://pixabay.com/en/blood-pressure-pressure-gauge-1006790/
@@ -72,7 +72,7 @@ Google Fonts
 - about section (title: seo friendly // title: fresh & clean use same image) - https://unsplash.com/photos/KXGkNQKwgj8/info
 - services section (title: email marketing made easy) - https://unsplash.com/photos/SRjZtxsK3Os/info
 
-##### Portum - Material 
+##### Portum - Material
 - slide 1 - https://pixabay.com/en/backround-pattern-texture-dimension-1209772/
 - slide 2 - https://pixabay.com/en/arches-bridge-concrete-structure-1866598/
 - Portfolio Section 1 - https://pixabay.com/en/typography-sentence-black-white-791192/
@@ -85,9 +85,9 @@ Google Fonts
 - portfolio section - https://pixabay.com/en/pink-lifestyle-headphones-keyboard-2569355/
 - portfolio section - https://pixabay.com/en/books-magazine-pen-eyeglasses-2569052/
 - about me section - https://pixabay.com/en/apple-apple-devices-simply-mockup-1868496/
-- team section - 
+- team section -
 
-##### Portum - One 
+##### Portum - One
 - Hero section - https://pixabay.com/en/abstract-architecture-building-1851115/
 - Our Expertise Section (background image) - https://pixabay.com/en/abstract-architecture-background-21901/
 - Portfolio Section image 1 - https://pixabay.com/en/laptop-technology-computer-business-3244483/
@@ -101,4 +101,4 @@ Google Fonts
 
 ##### Portum - Freelancer
 - Hero: https://pixabay.com/en/tattoos-adult-body-art-couple-girl-1867535/
-- portfolio images: personal creation, released under GPLv3 
+- portfolio images: personal creation, released under GPLv3
