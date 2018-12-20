@@ -86,7 +86,7 @@ class Portum_Dashboard_Setup {
 		}
 
 		if ( empty( $this->notice ) ) {
-			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/colorlib-logo-dark.png" class="epsilon-author-logo" />';
+			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/machothemes-logo.png" class="epsilon-author-logo" />';
 
 
 			/* Translators: Notice Title */
@@ -189,7 +189,7 @@ class Portum_Dashboard_Setup {
 				'title'    => __( 'Almost ready', 'portum' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://colorlib.com">Colorlib</a>.', 'portum' ),
+						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://machothemes.com">Macho Themes</a>.', 'portum' ),
 					),
 				),
 				'progress' => __( 'Finished', 'portum' ),
