@@ -46,15 +46,6 @@ class Repeatable_Section_Features extends Repeatable_Section {
 	}
 
 	/**
-	 * Upsell
-	 */
-	public function set_upsell() {
-		$this->upsell      = true;
-		$this->upsell_url  = 'https://www.machothemes.com/portum-pro/';
-		$this->upsell_text = 'Get PRO';
-	}
-
-	/**
 	 * Creates groups
 	 */
 	public function create_groups() {

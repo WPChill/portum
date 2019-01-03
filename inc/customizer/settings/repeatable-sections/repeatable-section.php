@@ -72,7 +72,6 @@ abstract class Repeatable_Section {
 		$this->set_image();
 		$this->set_title();
 		$this->set_description();
-		$this->set_upsell();
 		$this->set_integrations();
 	}
 
@@ -218,12 +217,6 @@ abstract class Repeatable_Section {
 	 * Sets description
 	 */
 	public function set_description() {
-	}
-
-	/**
-	 * Sets upsell
-	 */
-	public function set_upsell() {
 	}
 
 	/**

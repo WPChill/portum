@@ -7,13 +7,9 @@
  * @package Portum
  */
 
-if ( ! is_customize_preview() && ! defined( 'EPSILON_FRAMEWORK_PRO_VERSION' ) ) {
-	return;
-}
-
-$frontpage            = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
-$fields               = $frontpage->sections[ $section_id ];
-$grouping             = array(
+$frontpage          = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
+$fields             = $frontpage->sections[ $section_id ];
+$grouping           = array(
 	'values'   => $fields['iconboxes_grouping'],
 	'group_by' => 'icon_title',
 );
@@ -30,9 +26,10 @@ $parent_attr = array(
 		'section-iconboxes',
 		'section',
 		'ewf-section',
-		$fields['iconbox_section_visibility'],
+		'contrast',
 	),
 );
+
 
 /**
  * Layout stuff
@@ -45,7 +42,6 @@ $item_spacing  = 'ewf-item__spacing-' . ( isset( $fields['iconboxes_column_spaci
 $item_class        = 'col-sm-' . ( 12 / absint( $fields['iconboxes_column_group'] ) );
 $item_effect_style = ( ! empty( $fields['iconboxes_item_style'] ) ? esc_attr( $fields['iconboxes_item_style'] ) : 'ewf-item__no-effect' );
 
-
 /**
  * Item Style
  */
@@ -53,12 +49,12 @@ $item_element_class = 'icon-' . $fields['icon_position'];
 $item_style         = array();
 // end layout stuff
 ?>
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="iconboxes">
+
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $fields['iconboxes_section_unique_id'], 'iconboxes', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'iconboxes' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<?php Portum_Helper::render_upsell_label(); ?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'iconboxes', $fields ) ); ?>">
 

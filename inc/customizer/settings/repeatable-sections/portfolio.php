@@ -366,24 +366,76 @@ class Repeatable_Section_Portfolio extends Repeatable_Section {
 				'default'     => true,
 				'condition'   => array( 'portfolio_description_below', false ),
 			),
-			'portfolio_upsell'                 => array(
-				'type'               => 'epsilon-upsell',
-				'label'              => esc_html__( 'Powerful PRO features', 'portum' ),
-				'features'           => array(
-					array(
-						'option' => esc_html__( 'Turn section into a carousel', 'portum' ),
-						'help'   => esc_html__( 'Combine layout options with the possibility of turning this section into a carousel one with the purchase of PRO version. ', 'portum' ),
-					),
-					array(
-						'option' => esc_html__( 'Change zoom icon on hover', 'portum' ),
-						'help'   => esc_html__( 'In the PRO version you can change (or choose to not show at all) the zoom icon on hover.', 'portum' ),
-					),
+			'portfolio_image_show_zoom_icon' => array(
+				'label'       => esc_html__( 'Show zoom icon on hover', 'portum' ),
+				'description' => esc_html__( 'Toggling this to ON will display the zoom icon on hover.', 'portum' ),
+				'type'        => 'epsilon-toggle',
+				'default'     => true,
+			),
+			'portfolio_slider'               => array(
+				'label'   => esc_html__( 'Turn into a carousel', 'portum' ),
+				'type'    => 'epsilon-toggle',
+				'default' => false,
+			),
+			'portfolio_slider_autostart'     => array(
+				'label'     => esc_html__( 'Autostart', 'portum' ),
+				'type'      => 'epsilon-toggle',
+				'default'   => true,
+				'condition' => array( 'portfolio_slider', true ),
+			),
+			'portfolio_slider_infinite'      => array(
+				'label'     => esc_html__( 'Infinite slides', 'portum' ),
+				'type'      => 'epsilon-toggle',
+				'default'   => true,
+				'condition' => array( 'portfolio_slider', true ),
+			),
+			'portfolio_slider_pager'         => array(
+				'label'     => esc_html__( 'Navigation Dots', 'portum' ),
+				'type'      => 'epsilon-toggle',
+				'default'   => true,
+				'condition' => array( 'portfolio_slider', true ),
+			),
+			'portfolio_slider_arrows'        => array(
+				'label'     => esc_html__( 'Navigation Arrows', 'portum' ),
+				'type'      => 'epsilon-toggle',
+				'default'   => true,
+				'condition' => array( 'portfolio_slider', true ),
+			),
+			'portfolio_slider_speed'         => array(
+				'label'       => esc_html__( 'Speed', 'portum' ),
+				'description' => esc_html__( 'Carousel speed', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 500,
+				'choices'     => array(
+					'min'  => 300,
+					'max'  => 2000,
+					'step' => 100,
 				),
-				'button_text'        => esc_html__( 'See more', 'portum' ),
-				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
-				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
-				'separator'          => esc_html__( 'or', 'portum' ),
+				'condition'   => array( 'portfolio_slider', true ),
+			),
+			'portfolio_slides_shown'         => array(
+				'label'       => esc_html__( 'No. of slides to show', 'portum' ),
+				'description' => esc_html__( 'Total number of items to show at a time. ', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 6,
+				'choices'     => array(
+					'min'  => 1,
+					'max'  => 12,
+					'step' => 1,
+				),
+				'condition'   => array( 'portfolio_slider', true ),
+			),
+			'portfolio_slides_scrolled'      => array(
+				'label'       => esc_html__( 'No. of slides to scroll ', 'portum' ),
+				'description' => esc_html__( 'Number of items to scroll at a time. For hero sliders, this is kept at 1 slide at a time.', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 1,
+				'choices'     => array(
+					'min'  => 1,
+					'max'  => 6,
+					'step' => 1,
+				),
+				'condition'   => array( 'portfolio_slider', true ),
 			),
 			'portfolio_repeater_field'         => array(
 				'type'    => 'hidden',

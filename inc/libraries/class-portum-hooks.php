@@ -49,7 +49,12 @@ class Portum_Hooks {
 
 		// Template hooks
 		require_once get_template_directory() . '/inc/template-functions.php';
-		add_action( 'portum_header', 'portum_classic_header', 10 );
+		add_action( 'portum_header', 'portum_header', 10 );
+
+		// Customizer hooks
+		add_action( 'customize_register', array( $this, 'add_button_controls' ), 100 );
+		add_action( 'customize_register', array( $this, 'add_icon_controls' ), 100 );
+		add_filter( 'portum_section_collection', array( $this, 'enhance_sections' ) );
 	}
 
 	/**
@@ -158,4 +163,74 @@ class Portum_Hooks {
 
 		return array_merge( $sizes, $custom_sizes );
 	}
+
+	/**
+	 * Adds controls in the customizer for button size, radius, colors etc.
+	 */
+	public function add_button_controls( $wp_customize ) {
+
+ 		$slide = $wp_customize->get_control( 'portum_advanced_slides' );
+		$button_controls = Portum_Helper::generate_button_controls( 'slide_cta_primary', __( 'Primary Button', 'portum' ) );
+		$slide->fields = Portum_Helper::array_insert_after( $slide->fields, 'slide_cta_primary_url', $button_controls );
+		$button_controls = Portum_Helper::generate_button_controls( 'slide_cta_secondary', __( 'Secondary Button', 'portum' ) );
+		$slide->fields = Portum_Helper::array_insert_after( $slide->fields, 'slide_cta_secondary_url', $button_controls );
+
+ 	 	$price_box = $wp_customize->get_control( 'portum_price_boxes' );
+		$button_controls = Portum_Helper::generate_button_controls( 'price_box_button', __( 'Button', 'portum' ) );
+		$price_box->fields = Portum_Helper::array_insert_after( $price_box->fields, 'price_box_button_url', $button_controls );
+	}
+
+	/**
+	 * Adds controls in the customizer for icon colors, radius, size etc.
+	 */
+	public function add_icon_controls( $wp_customize ) {
+
+		$counter_box = $wp_customize->get_control( 'portum_counter_boxes' );
+		$icon_controls = Portum_Helper::generate_icon_controls( 'counter_icon', __( 'Icon', 'portum' ), array( 'counter_icon_display', true ) );
+		$counter_box->fields = Portum_Helper::array_insert_after( $counter_box->fields, 'counter_icon_color', $icon_controls );
+
+ 		$feature = $wp_customize->get_control( 'portum_features' );
+		$icon_controls = Portum_Helper::generate_icon_controls( 'feature_icon', __( 'Icon', 'portum' ) );
+		$feature->fields = Portum_Helper::array_insert_after( $feature->fields, 'feature_icon_color', $icon_controls );
+
+		$price_box = $wp_customize->get_control( 'portum_price_boxes' );
+		$icon_controls = Portum_Helper::generate_icon_controls( 'price_box_icon', __( 'Icon', 'portum' ), array( 'price_box_icon_display', true ) );
+		$price_box->fields = Portum_Helper::array_insert_after( $price_box->fields, 'price_box_icon_color', $icon_controls );
+
+		$service = $wp_customize->get_control( 'portum_services' );
+		$icon_controls = Portum_Helper::generate_icon_controls( 'service_icon', __( 'Icon', 'portum' ) );
+		$service->fields = Portum_Helper::array_insert_after( $service->fields, 'service_icon_color', $icon_controls );
+
+		$icon_box = $wp_customize->get_control( 'portum_icons' );
+		$icon_controls = Portum_Helper::generate_icon_controls( 'icon', __( 'Icon', 'portum' ) );
+		$icon_box->fields = Portum_Helper::array_insert_after( $icon_box->fields, 'icon_color', $icon_controls );
+	}
+
+		/**
+	 * Enhances sections
+	 */
+	public function enhance_sections( $sections ) {
+
+		// adds button style controls to appropriate sections.
+		$button_controls = Portum_Helper::generate_button_controls( 'about_button_primary', __( 'Primary button', 'portum' ) );
+		$sections['about']['fields'] = Portum_Helper::array_insert_after( $sections['about']['fields'], 'about_button_primary_url', $button_controls );
+
+		$button_controls = Portum_Helper::generate_button_controls( 'blog_button', __( 'Button', 'portum' ) );
+		$sections['blog']['fields'] = Portum_Helper::array_insert_after( $sections['blog']['fields'], 'blog_button_label', $button_controls );
+
+		$button_controls = Portum_Helper::generate_button_controls( 'cta_button_primary', __( 'Primary button', 'portum' ) );
+		$sections['cta']['fields'] = Portum_Helper::array_insert_after( $sections['cta']['fields'], 'cta_button_primary_url', $button_controls );
+
+		$button_controls = Portum_Helper::generate_button_controls( 'cta_button_secondary', __( 'Secondary button', 'portum' ) );
+		$sections['cta']['fields'] = Portum_Helper::array_insert_after( $sections['cta']['fields'], 'cta_button_secondary_url', $button_controls );
+
+		$button_controls = Portum_Helper::generate_button_controls( 'instagram_button_primary', __( 'Primary button', 'portum' ) );
+		$sections['instagram']['fields'] = Portum_Helper::array_insert_after( $sections['instagram']['fields'], 'instagram_button_primary_url', $button_controls );
+
+		$button_controls = Portum_Helper::generate_button_controls( 'openhours_button_primary', __( 'Button', 'portum' ) );
+		$sections['openhours']['fields'] = Portum_Helper::array_insert_after( $sections['openhours']['fields'], 'openhours_button_primary_url', $button_controls );
+
+		return $sections;
+	}
+
 }

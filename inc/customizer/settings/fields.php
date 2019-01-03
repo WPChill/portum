@@ -10,29 +10,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * Typography section options
- */
-Epsilon_Customizer::add_field( 'portum_typography_upsell', array(
-	'type'               => 'epsilon-upsell',
-	'transport'          => 'postMessage',
-	'section'            => 'portum_typography_section',
-	'label'              => esc_html__( 'Get more control', 'portum' ),
-	'options'            => array(
-		esc_html__( 'More Typography Controls', 'portum' ),
-		esc_html__( 'Advanced Typography Controls', 'portum' ),
-	),
-	'requirements'       => array(
-		esc_html__( 'In the PRO version of Portum, you can control headings (h1-h6), site paragraphs & footer font styles', 'portum' ),
-		esc_html__( 'Control letter spacing, font-size & line-heights with the PRO version.', 'portum' ),
-	),
-	'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=portum-welcome&tab=features' ),
-	'button_text'        => esc_html__( 'See comparison', 'portum' ),
-	'second_button_url'  => '#',
-	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-	'separator'          => esc_html__( 'or', 'portum' ),
-) );
-
 
 Epsilon_Customizer::add_field( 'portum_typography_global', array(
 	'type'          => 'epsilon-typography',
@@ -81,6 +58,56 @@ Epsilon_Customizer::add_field( 'portum_typography_navigation', array(
 	),
 ) );
 
+Epsilon_Customizer::add_field( 'portum_typography_headline_subtitle', array(
+	'type'          => 'epsilon-typography',
+	'transport'     => 'postMessage',
+	'section'       => 'portum_typography_section',
+	'label'         => esc_html__( 'Section title', 'portum' ),
+	'stylesheet'    => 'portum-main',
+	'choices'       => array(
+		'font-family',
+		'font-weight',
+		'font-style',
+		'letter-spacing',
+	),
+	'selectors'     => array(
+		'.headline h3',
+	),
+	'font_defaults' => array(
+		'font-family'    => 'default_font',
+		'font-weight'    => '',
+		'font-style'     => '',
+		'font-size'      => '32',
+		'line-height'    => '40',
+		'letter-spacing' => '0',
+	),
+) );
+
+Epsilon_Customizer::add_field( 'portum_typography_headline_title', array(
+	'type'          => 'epsilon-typography',
+	'transport'     => 'postMessage',
+	'section'       => 'portum_typography_section',
+	'label'         => esc_html__( 'Section subtitle', 'portum' ),
+	'stylesheet'    => 'portum-main',
+	'choices'       => array(
+		'font-family',
+		'font-weight',
+		'font-style',
+		'letter-spacing',
+	),
+	'selectors'     => array(
+		'.headline span:not(.dashicons)',
+	),
+	'font_defaults' => array(
+		'font-family'    => 'default_font',
+		'font-weight'    => 'on',
+		'font-style'     => '',
+		'font-size'      => '14',
+		'line-height'    => '21',
+		'letter-spacing' => '0',
+	),
+) );
+
 
 /**
  * Blog section options
@@ -99,44 +126,60 @@ Epsilon_Customizer::add_field( 'portum_blog_layout', array(
 	),
 ) );
 
-Epsilon_Customizer::add_field( 'portum_blog_upsell', array(
-	'type'               => 'epsilon-upsell',
-	'transport'          => 'postMessage',
-	'section'            => 'header_image',
-	'label'              => esc_html__( 'More blog controls', 'portum' ),
-	'options'            => array(
-		esc_html__( 'Post meta controls', 'portum' ),
-		esc_html__( 'Author Box', 'portum' ),
-	),
-	'requirements'       => array(
-		esc_html__( 'Toggle the display of post meta: date, author, categories, tags, comments.', 'portum' ),
-		esc_html__( 'Toggle the display of the author box', 'portum' ),
-	),
-	'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=portum-welcome&tab=features' ),
-	'button_text'        => esc_html__( 'Lite VS PRO', 'portum' ),
-	'second_button_url'  => '#',
-	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-	'separator'          => esc_html__( 'or', 'portum' ),
+Epsilon_Customizer::add_field( 'portum_show_single_post_categories', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Categories', 'portum' ),
+	'description' => esc_html__( 'This will disable the categories displayed at the beginning of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
 ) );
 
-Epsilon_Customizer::add_field( 'portum_header_upsell', array(
-	'type'               => 'epsilon-upsell',
-	'transport'          => 'postMessage',
-	'section'            => 'portum_header_section',
-	'label'              => esc_html__( 'More header controls', 'portum' ),
-	'options'            => array(
-		esc_html__( 'Fullwidth Header Menu', 'portum' ),
-		esc_html__( '2 more header layouts', 'portum' ),
-	),
-	'requirements'       => array(
-		esc_html__( 'This will make your header stretch to the full-width of your screen.', 'portum' ),
-		esc_html__( 'In the PRO version of Portum you will have 2 more header layout : Fixed left side & Off Canvas Menu', 'portum' ),
-	),
-	'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=portum-welcome&tab=features' ),
-	'button_text'        => esc_html__( 'Lite VS PRO', 'portum' ),
-	'second_button_url'  => '#',
-	'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-	'separator'          => esc_html__( 'or', 'portum' ),
+Epsilon_Customizer::add_field( 'portum_show_single_post_excerpt', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Excerpt', 'portum' ),
+	'description' => esc_html__( 'This will disable the excerpt displayed at the beginning of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_author', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Author', 'portum' ),
+	'description' => esc_html__( 'This will disable the author being displayed.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_date', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Date', 'portum' ),
+	'description' => esc_html__( 'This will disable the post date being displayed.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_comments', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Comments', 'portum' ),
+	'description' => esc_html__( 'This will disable the comments number being displayed at the beginning of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_show_single_post_tags', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Post Meta: Tags', 'portum' ),
+	'description' => esc_html__( 'This will disable the tags zone at the end of the post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_enable_author_box', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Author Box', 'portum' ),
+	'description' => esc_html__( 'Toggle the display of the author box, at the end of each post.', 'portum' ),
+	'section'     => 'header_image',
+	'default'     => true,
 ) );
 
 Epsilon_Customizer::add_field( 'portum_header_layout', array(
@@ -147,8 +190,8 @@ Epsilon_Customizer::add_field( 'portum_header_layout', array(
 	'default'     => 'portum-classic',
 	'choices'     => array(
 		'portum-classic'   => esc_html__( 'Classic position', 'portum' ),
-		'portum-sidebar'   => esc_html__( '[PRO] Fixed left side', 'portum' ),
-		'portum-offcanvas' => esc_html__( '[PRO] Off Canvas Menu', 'portum' ),
+		'portum-sidebar'   => esc_html__( 'Fixed left side', 'portum' ),
+		'portum-offcanvas' => esc_html__( 'Off Canvas Menu', 'portum' ),
 	),
 ) );
 
@@ -183,6 +226,14 @@ Epsilon_Customizer::add_field( 'portum_enable_go_top', array(
 	'description' => esc_html__( 'Toggle the display of the go to top button.', 'portum' ),
 	'section'     => 'portum_header_section',
 	'default'     => true,
+) );
+
+Epsilon_Customizer::add_field( 'portum_header_width', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Fullwidth Header Menu', 'portum' ),
+	'description' => esc_html__( 'Toggling this to on will make your header stretch to the full-width of your screen.', 'portum' ),
+	'section'     => 'portum_header_section',
+	'default'     => false,
 ) );
 
 /**
@@ -221,6 +272,14 @@ Epsilon_Customizer::add_field( 'portum_footer_columns', array(
 	),
 	'min_span' => 2,
 	'label'    => esc_html__( 'Footer Columns', 'portum' ),
+) );
+
+Epsilon_Customizer::add_field( 'portum_footer_width', array(
+	'type'        => 'epsilon-toggle',
+	'label'       => esc_html__( 'Fullwidth Footer Area', 'portum' ),
+	'description' => esc_html__( 'Toggling this to on will make your footer stretch to the full-width of your screen.', 'portum' ),
+	'section'     => 'portum_footer_section',
+	'default'     => false,
 ) );
 /**
  * Google Api KEY

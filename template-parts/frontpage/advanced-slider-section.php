@@ -23,18 +23,18 @@ $fields['slider_controls']  = (boolean) json_decode( strtolower( $fields['slider
 wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );
 ?>
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="slider">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 
 	<div class="ewf-advanced-slider <?php echo 'ewf-section-' . $fields['advanced-slider_section_visibility']; ?> ewf-slider"
-	     data-slider-speed="500"
+	     data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>"
 	     data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>"
-	     data-slides-shown="1"
-	     data-slides-scrolled="1"
+	     data-slides-shown="<?php echo $fields['slider_slides_shown'] ? esc_attr( $fields['slider_slides_shown'] ) : '1'; ?>"
+	     data-slides-scrolled="<?php echo $fields['slider_slides_scrolled'] ? esc_attr( $fields['slider_slides_scrolled'] ) : '1'; ?>"
 	     data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
 
-		<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
+		<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'advanced-slider' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 
 		<ul class="ewf-slider__slides">
 			<?php foreach ( $fields['slides'] as $slide ) { ?>
@@ -42,7 +42,7 @@ wp_enqueue_style( 'slick' );
 				<?php
 				$style         = array(
 					'background-image' => ! empty( $slide['slide_background'] ) ? $slide['slide_background'] : '',
-					'height'           => '60vh',
+					'height'           => ( ! empty( $fields['slider_height'] ) ? esc_attr( $fields['slider_height'] ) : '30' ) . 'vh;',
 				);
 				$css           = 'style="';
 				$style         = array_filter( $style );

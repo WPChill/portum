@@ -7,10 +7,6 @@
  * @package Portum
  */
 
-if ( ! is_customize_preview() && ! defined( 'EPSILON_FRAMEWORK_PRO_VERSION' ) ) {
-	return;
-}
-
 $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields    = $frontpage->sections[ $section_id ];
 
@@ -19,14 +15,9 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'newsletter', Portum_Re
 if ( empty( $fields['newsletter_section_unique_id'] ) ) {
 	$fields['newsletter_section_unique_id'] = Portum_Helper::generate_section_id( 'newsletter' );
 }
-$parent_attr = array(
-	'id' => array( $fields['newsletter_section_unique_id'] ),
-	'class' => array(
-		'section-newsletter',
-		'section',
-		'ewf-section',
-		'ewf-section-' . $fields['newsletter_section_visibility'],
-	),
+$parent_attr    = array(
+	'id'    => array( $fields['newsletter_section_unique_id'] ),
+	'class' => array( 'section-newsletter', 'section', 'ewf-section', 'ewf-section-' . $fields['newsletter_section_visibility'] ),
 );
 
 /**
@@ -51,14 +42,14 @@ if ( 'left' == $fields['newsletter_row_title_align'] || 'right' == $fields['news
 }
 
 //end layout stuff
+
 ?>
 
-<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>" data-customizer-section-string-id="newsletter">
+<section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
 	<?php Portum_Helper::generate_inline_css( $fields['newsletter_section_unique_id'], 'newsletter', $fields ); ?>
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'newsletter' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<?php Portum_Helper::render_upsell_label(); ?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'newsletter', $fields ) ); ?>">
 

@@ -353,20 +353,6 @@ class Portum_Helper {
 		<?php
 	}
 
-	public static function render_upsell_label() {
-
-		if( ! is_customize_preview() ) {
-			return;
-		}
-
-		?>
-			<div class="ewf-section__upsell-label">
-				<i class="fa fa-exclamation"></i><?php esc_html_e('Only in Pro', 'portum' ); ?>
-			</div>
-		<?php
-
-	}
-
 	/**
 	 * Generates the section title properly formatted
 	 *
@@ -483,6 +469,142 @@ class Portum_Helper {
 		}
 
 		return $array;
+	}
+
+
+	public function generate_button_controls( $button_id, $button_name, $condition = true ) {
+
+		return array(
+			$button_id . '_size'             => array(
+				'label'   => sprintf( esc_html__( '%s Size', 'portum' ), $button_name ),
+				'type'    => 'select',
+				'default' => 'ewf-btn--huge',
+				'choices' => array(
+					'ewf-btn--huge'   => __( 'Huge', 'portum' ),
+					'ewf-btn--medium' => __( 'Medium', 'portum' ),
+					'ewf-btn--small'  => __( 'Small', 'portum' ),
+				),
+				'condition' => $condition,
+			),
+			$button_id . '_radius'           => array(
+				'label'   => sprintf( esc_html__( '%s Radius', 'portum' ), $button_name ),
+				'type'    => 'epsilon-slider',
+				'default' => 32, //the default border radius of buttons is: 32px
+				'choices' => array(
+					'min'  => 0,
+					'max'  => 50,
+					'step' => 1,
+				),
+				'condition' => $condition,
+			),
+			$button_id . '_background_color' => array(
+				'label'             => sprintf( esc_html__( '%s Background Color', 'portum' ), $button_name ),
+				'type'              => 'epsilon-color-picker',
+				'mode'              => 'rgba',
+				'default'           => get_theme_mod( 'epsilon_accent_color', '#0962ea' ),  //the default bg color of buttons is the accent color #1
+				'condition'         => $condition,
+			),
+			$button_id . '_text_color'       => array(
+				'label'             => sprintf( esc_html__( '%s Text Color', 'portum' ), $button_name ),
+				'type'              => 'epsilon-color-picker',
+				'mode'              => 'rgba',
+				'default'           => '#ffffff', //the default text color of buttons is: #fff
+				'condition'         => $condition,
+			),
+			$button_id . '_border_color'     => array(
+				'label'             => sprintf( esc_html__( '%s Border Color', 'portum' ), $button_name ),
+				'type'              => 'epsilon-color-picker',
+				'mode'              => 'rgba',
+				'default'           => 'transparent', //the default border color of buttons is: transparent
+				'condition'         => $condition,
+			),
+		);
+	}
+
+
+	public function generate_icon_controls( $icon_id, $icon_name, $condition = true ) {
+
+		$controls =  array(
+			$icon_id . '_background_color'     => array(
+				'label'   => sprintf( esc_html__( '%s Background Color', 'portum' ), $icon_name ),
+				'type'    => 'epsilon-color-picker',
+				'default' => '', // by default, icons have no background color.
+				'condition' => $condition,
+			),
+			$icon_id . '_border_color'  => array(
+				'label'   => sprintf( esc_html__( '%s Border Color', 'portum' ), $icon_name ),
+				'type'    => 'epsilon-color-picker',
+				'default' => '', // by default, icons have border color: inherit.
+				'condition' => $condition,
+			),
+			$icon_id . '_size'             => array(
+				'label'   => sprintf( esc_html__( '%s Size', 'portum' ), $icon_name ),
+				'description' => esc_html__( 'Value in pixels.', 'portum' ),
+				'type'      => 'epsilon-slider',
+				'default'   => 36,  //the default size of icons is: 36px
+				'choices'   => array(
+					'min'  => 20,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'condition' => $condition,
+			),
+			$icon_id . '_border_size'   => array(
+				'label'   => sprintf( esc_html__( '%s Border Size', 'portum' ), $icon_name ),
+				'description' => esc_html__( 'Value in pixels.', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 0, // the default icon border width is: 0px
+				'choices'     => array(
+					'min'  => 0,
+					'max'  => 10,
+					'step' => 1,
+				),
+				'condition' => $condition,
+			),
+			$icon_id . '_padding'   => array(
+				'label'   => sprintf( esc_html__( '%s Padding', 'portum' ), $icon_name ),
+				'description' => esc_html__( 'Value in pixels.', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 0, // the default icon padding is: 0px
+				'choices'     => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'condition' => $condition,
+			),
+			$icon_id . '_radius'   => array(
+				'label'   => sprintf( esc_html__( '%s Border Radius', 'portum' ), $icon_name ),
+				'description' => esc_html__( 'Value in pixels.', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 0, // the default icon border radius is: 0px
+				'choices'     => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'condition' => $condition,
+			),
+		);
+
+		return $controls;
+	}
+
+	/**
+	 * Insert a value or key/value pair after a specific key in an array.  If key doesn't exist, value is appended
+	 * to the end of the array.
+	 *
+	 * @param array $array
+	 * @param string $key
+	 * @param array $new
+	 *
+	 * @return array
+	 */
+	public function array_insert_after( array $array, $key, array $new ) {
+		$keys  = array_keys( $array );
+		$index = array_search( $key, $keys );
+		$pos   = false === $index ? count( $array ) : $index + 1;
+		return array_merge( array_slice( $array, 0, $pos ), $new, array_slice( $array, $pos ) );
 	}
 
 	/**

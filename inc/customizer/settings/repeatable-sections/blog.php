@@ -363,39 +363,52 @@ class Repeatable_Section_Blog extends Repeatable_Section {
 					'ewf-item__border',
 				),
 			),
-			'blog_upsell'            => array(
-				'type'               => 'epsilon-upsell',
-				'label'              => esc_html__( 'More Blog Section Controls', 'portum' ),
-				'features'           => array(
-					array(
-						'option' => esc_html__( 'Blog Post count', 'portum' ),
-						'help'   => esc_html__( 'Choose to display as many blog posts at once you want.', 'portum' ),
-					),
-					array(
-						'option' => esc_html__( 'Blog Post Excerpt Count', 'portum' ),
-						'help'   => esc_html__( 'Control excerpt count. Drag to 0 to hide it completely.', 'portum' ),
-					),
-					array(
-						'option' => esc_html__( 'Control Blog Post Meta', 'portum' ),
-						'help'   => esc_html__( 'Decide if you want to show: blog post date, author or comment number', 'portum' ),
-					),
-					array(
-						'option' => esc_html__( 'Show/hide featured image', 'portum' ),
-					),
-					array(
-						'option' => esc_html__( 'Show read more button', 'portum' ),
-						'help'   => esc_html__( 'Display a button you can link to your blogs\'s archive.', 'portum' ),
-					),
-					array(
-						'option' => esc_html__( 'Button Controls', 'portum' ),
-						'help'   => esc_html__( 'Control the size, radius, background color, text color, border color of buttons.', 'portum' ),
-					),
+			'blog_post_count'              => array(
+				'label'       => esc_html__( 'Post Count', 'portum' ),
+				'description' => esc_html__( 'Only posts with featured image are loaded', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 3,
+				'choices'     => array(
+					'min' => 1,
+					'max' => 10,
 				),
-				'button_text'        => esc_html__( 'See more', 'portum' ),
-				'button_url'         => esc_url( 'https://www.machothemes.com/portum-pro/#comparison-table' ),
-				'second_button_text' => esc_html__( 'Get PRO', 'portum' ),
-				'second_button_url'  => esc_url( 'https://www.machothemes.com/portum-pro/' ),
-				'separator'          => esc_html__( 'or', 'portum' ),
+			),
+			'blog_post_word_count'         => array(
+				'label'       => esc_html__( 'Post Excerpt Word Count', 'portum' ),
+				'description' => esc_html__( 'You can control the word count of the post excerpt from here. ', 'portum' ),
+				'type'        => 'epsilon-slider',
+				'default'     => 30,
+				'choices'     => array(
+					'min'  => 0,
+					'max'  => 150,
+					'step' => 5,
+				),
+			),
+			'blog_show_date'               => array(
+				'label'   => esc_html__( 'Show Post Date Meta', 'portum' ),
+				'type'    => 'epsilon-toggle',
+				'default' => true,
+			),
+			'blog_show_author'             => array(
+				'label'   => esc_html__( 'Show Post Author Meta', 'portum' ),
+				'type'    => 'epsilon-toggle',
+				'default' => true,
+			),
+			'blog_show_comments'           => array(
+				'label'   => esc_html__( 'Show Post Comments Meta', 'portum' ),
+				'type'    => 'epsilon-toggle',
+				'default' => true,
+			),
+			'blog_show_thumbnail'          => array(
+				'label'   => esc_html__( 'Show Post Thumbnail Meta', 'portum' ),
+				'type'    => 'epsilon-toggle',
+				'default' => true,
+			),
+			'blog_button_label'            => array(
+				'label'             => esc_html__( 'Read More Label', 'portum' ),
+				'type'              => 'text',
+				'default'           => '',
+				'sanitize_callback' => 'wp_kses_post',
 			),
 			'blog_section_unique_id' => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),

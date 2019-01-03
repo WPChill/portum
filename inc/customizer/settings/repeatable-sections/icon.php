@@ -35,7 +35,7 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 * Description
 	 */
 	public function set_description() {
-		$this->description = esc_html__( 'You can test-drive this section and see how it would look like on your site.', 'portum' );
+		$this->description = esc_html__( 'Adds an icon section.', 'portum' );
 	}
 
 	/**
@@ -43,15 +43,6 @@ class Repeatable_Section_Icon_Boxes extends Repeatable_Section {
 	 */
 	public function set_image() {
 		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-clients.png' );
-	}
-
-	/**
-	 * Upsell
-	 */
-	public function set_upsell() {
-		$this->upsell      = true;
-		$this->upsell_url = 'https://www.machothemes.com/portum-pro/';
-		$this->upsell_text = 'See PRO';
 	}
 
 	/**

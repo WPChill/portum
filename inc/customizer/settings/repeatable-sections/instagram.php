@@ -34,7 +34,7 @@ class Repeatable_Section_Instagram extends Repeatable_Section {
 	 * Description
 	 */
 	public function set_description() {
-		$this->description = esc_html__( 'You can test-drive this section and see how it would look like on your site.', 'portum' );
+		$this->description = esc_html__( 'Add an instagram feed to your site.', 'portum' );
 	}
 
 	/**
@@ -42,15 +42,6 @@ class Repeatable_Section_Instagram extends Repeatable_Section {
 	 */
 	public function set_image() {
 		$this->image = esc_url( get_template_directory_uri() . '/assets/images/sections/ewf-icon-section-instagram.jpg' );
-	}
-
-	/**
-	 * Upsell
-	 */
-	public function set_upsell() {
-		$this->upsell = true;
-		$this->upsell_url = '#';
-		$this->upsell_text = 'See PRO';
 	}
 
 	/**

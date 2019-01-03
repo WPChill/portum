@@ -62,7 +62,6 @@ if ( 'left' == $fields['openhours_row_title_align'] || 'right' == $fields['openh
 	<?php echo wp_kses( Epsilon_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'openhours' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php $attr_helper->generate_color_overlay(); ?>
-		<?php Portum_Helper::render_upsell_label(); ?>
 		<div class="ewf-section__content">
 			<div class="<?php echo esc_attr( Portum_Helper::container_class( 'openhours', $fields ) ); ?>">
 
