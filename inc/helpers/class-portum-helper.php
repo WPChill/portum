@@ -472,7 +472,7 @@ class Portum_Helper {
 	}
 
 
-	public function generate_button_controls( $button_id, $button_name, $condition = true ) {
+	public static function generate_button_controls( $button_id, $button_name, $condition = true ) {
 
 		return array(
 			$button_id . '_size'             => array(
@@ -522,7 +522,7 @@ class Portum_Helper {
 	}
 
 
-	public function generate_icon_controls( $icon_id, $icon_name, $condition = true ) {
+	public static function generate_icon_controls( $icon_id, $icon_name, $condition = true ) {
 
 		$controls =  array(
 			$icon_id . '_background_color'     => array(
@@ -600,7 +600,7 @@ class Portum_Helper {
 	 *
 	 * @return array
 	 */
-	public function array_insert_after( array $array, $key, array $new ) {
+	public static function array_insert_after( array $array, $key, array $new ) {
 		$keys  = array_keys( $array );
 		$index = array_search( $key, $keys );
 		$pos   = false === $index ? count( $array ) : $index + 1;
