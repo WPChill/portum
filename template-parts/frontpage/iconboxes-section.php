@@ -10,7 +10,7 @@
 $frontpage          = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' . get_the_ID(), get_the_ID() );
 $fields             = $frontpage->sections[ $section_id ];
 $grouping           = array(
-	'values'   => $fields['iconboxes_grouping'],
+	'values'   => isset( $fields['iconboxes_grouping'] ) ? $fields['iconboxes_grouping'] : 0,
 	'group_by' => 'icon_title',
 );
 $fields['iconboxes'] = $frontpage->get_repeater_field( 'portum_icons', array(), $grouping );
