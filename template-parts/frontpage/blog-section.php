@@ -102,7 +102,7 @@ $item_container_class[] = 'col-sm-4';
 						</div><!--/.header class column -->
 					<?php } ?>
 
-					<div class="<?php echo esc_attr( $content_class ); ?>">
+					<div class="row">
 						<?php while ( $query->have_posts() ) { ?>
 							<?php $counter++; ?>
 							<?php $query->the_post(); ?>
