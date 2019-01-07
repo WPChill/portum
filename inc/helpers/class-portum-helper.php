@@ -712,6 +712,7 @@ class Portum_Helper {
 				$css[] = 'background-color:' . esc_attr( $fields[ $key . '_background_color' ] ) . ';';
 				break;
 			case 'bgimage':
+			default:
 				if ( empty( $fields[ $key . '_background_image' ] ) ) {
 					continue;
 				}
