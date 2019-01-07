@@ -219,6 +219,20 @@ class Portum_Repeatable_Sections {
 	}
 
 	/**
+	 * Repeatable html section
+	 *
+	 * @return array
+	 */
+	private function repeatable_html() {
+
+	 	require_once dirname( __FILE__ ) . '/settings/repeatable-sections/html.php';
+
+ 		$section = new Repeatable_Section_HTML;
+
+		return $section();
+	}
+
+	/**
 	 * Repeatable openhours section
 	 *
 	 * @return array
