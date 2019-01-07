@@ -19,6 +19,9 @@ $fields['slider_autostart']  = (boolean) json_decode( strtolower( $fields['slide
 $fields['slider_infinite']  = (boolean) json_decode( strtolower( $fields['slider_infinite'] ) );
 $fields['slider_pager']  = (boolean) json_decode( strtolower( $fields['slider_pager'] ) );
 $fields['slider_controls']  = (boolean) json_decode( strtolower( $fields['slider_controls'] ) );
+$fields['slider_slides_shown']  = isset( $fields['slider_slides_shown'] ) ? $fields['slider_slides_shown'] : 1;
+$fields['slider_slides_scrolled']  = isset( $fields['slider_slides_scrolled'] ) ? $fields['slider_slides_scrolled'] : 1;
+$fields['slider_height']  = isset( $fields['slider_height'] ) ? $fields['slider_height'] : 50;
 
 wp_enqueue_script( 'slick' );
 wp_enqueue_style( 'slick' );
@@ -28,8 +31,8 @@ wp_enqueue_style( 'slick' );
 	<div class="ewf-advanced-slider <?php echo 'ewf-section-' . $fields['advanced-slider_section_visibility']; ?> ewf-slider"
 	     data-slider-speed="<?php echo ! empty( $fields['slider_speed'] ) ? absint( $fields['slider_speed'] ) : '500'; ?>"
 	     data-slider-autoplay="<?php echo $fields['slider_autostart'] ? 'true' : 'false'; ?>"
-	     data-slides-shown="<?php echo isset( $fields['slider_slides_shown'] ) ? esc_attr( $fields['slider_slides_shown'] ) : '1'; ?>"
-	     data-slides-scrolled="<?php echo $fields['slider_slides_scrolled'] ? esc_attr( $fields['slider_slides_scrolled'] ) : '1'; ?>"
+	     data-slides-shown="<?php echo esc_attr( $fields['slider_slides_shown'] ); ?>"
+	     data-slides-scrolled="<?php echo esc_attr( $fields['slider_slides_scrolled'] ); ?>"
 	     data-slider-loop="<?php echo $fields['slider_infinite'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-pager="<?php echo $fields['slider_pager'] ? 'true' : 'false'; ?>"
 	     data-slider-enable-controls="<?php echo $fields['slider_controls'] ? 'true' : 'false'; ?>">
@@ -42,7 +45,7 @@ wp_enqueue_style( 'slick' );
 				<?php
 				$style         = array(
 					'background-image' => ! empty( $slide['slide_background'] ) ? $slide['slide_background'] : '',
-					'height'           => ( ! empty( $fields['slider_height'] ) ? esc_attr( $fields['slider_height'] ) : '30' ) . 'vh;',
+					'height'           => esc_attr( $fields['slider_height'] ) . 'vh;',
 				);
 				$css           = 'style="';
 				$style         = array_filter( $style );
