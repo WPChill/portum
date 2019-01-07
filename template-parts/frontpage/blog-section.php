@@ -11,7 +11,7 @@ $frontpage = Epsilon_Page_Generator::get_instance( 'portum_frontpage_sections_' 
 $fields    = $frontpage->sections[ $section_id ];
 
 $args  = array(
-	'posts_per_page' => $fields['blog_post_count'],
+	'posts_per_page' => isset( $fields['blog_post_count'] ) ? $fields['blog_post_count'] : get_option( 'posts_per_page' ),
 );
 $query = new WP_Query( $args );
 
@@ -19,6 +19,13 @@ $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'blog', Portum_Repeatab
 if ( empty( $fields['blog_section_unique_id'] ) ) {
 	$fields['blog_section_unique_id'] = Portum_Helper::generate_section_id( 'blog' );
 }
+
+$fields['blog_show_thumbnail']  = isset($fields['blog_show_thumbnail']) ? (boolean) json_decode( strtolower( $fields['blog_show_thumbnail'] ) ) : true;
+$fields['blog_show_date']  = isset($fields['blog_show_date']) ? (boolean) json_decode( strtolower( $fields['blog_show_date'] ) ) : true;
+$fields['blog_show_author']  = isset($fields['blog_show_author']) ? (boolean) json_decode( strtolower( $fields['blog_show_author'] ) ) : true;
+$fields['blog_show_comments']  = isset($fields['blog_show_comments']) ? (boolean) json_decode( strtolower( $fields['blog_show_comments'] ) ) : true;
+$fields['blog_post_word_count']  = isset($fields['blog_post_word_count']) ? $fields['blog_post_word_count'] : 30;
+
 
 $parent_attr = array(
 	'id'    => array( $fields['blog_section_unique_id'] ),
