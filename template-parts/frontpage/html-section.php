@@ -53,8 +53,8 @@ if ( 'left' == $fields['html_row_title_align'] || 'right' == $fields['html_row_t
 						<div class="<?php echo esc_attr( $header_class ); ?>">
 							<div class="ewf-section-text">
 								<?php echo wp_kses_post( Portum_Helper::generate_section_title( $fields['html_subtitle'], $fields['html_title'] ) ); ?>
-								<?php echo wpautop( wp_kses_post( $fields['html_code'] ) ); ?>
-								<?php //Portum_Helper::render_button( $fields, 'html_button_primary' ); ?>
+								<?php echo wp_kses_post( $fields['html_code'] ); ?>
+								<style><?php echo wp_kses_post( preg_replace('/\s+/', '', $fields['html_code_css'])); ?></style>
 							</div><!--/.ewf-section-text-->
 						</div><!--/.col-md-->
 					<?php } // end if _subtitle, _title // ?>

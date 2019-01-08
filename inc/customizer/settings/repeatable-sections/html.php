@@ -326,10 +326,18 @@ class Repeatable_Section_HTML extends Repeatable_Section {
 				'default'           => wp_kses_post( 'html' ),
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'html_code'                 => array(
+		 	'html_code'                 => array(
 				'label'             => esc_html__( 'HTML code', 'portum' ),
-				'type'              => 'epsilon-text-editor',
+				'type'              => 'epsilon-code-editor',
 				'default'           => '',
+				'mode'              => 'html',
+				'sanitize_callback' => 'wp_kses_post',
+			),
+			'html_code_css'                 => array(
+				'label'             => esc_html__( 'CSS code', 'portum' ),
+				'type'              => 'epsilon-code-editor',
+				'default'           => '',
+				'mode'              => 'css',
 				'sanitize_callback' => 'wp_kses_post',
 			),
 			'html_section_unique_id'    => array(
