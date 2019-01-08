@@ -86,7 +86,7 @@ class Portum_Dashboard_Setup {
 		}
 
 		if ( empty( $this->notice ) ) {
-			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/macho-themes-logo.png" class="epsilon-author-logo" />';
+			$this->notice .= '<img src="' . esc_url( get_template_directory_uri() ) . '/inc/libraries/epsilon-theme-dashboard/assets/images/machothemes-logo.png" class="epsilon-author-logo" />';
 
 
 			/* Translators: Notice Title */
@@ -101,7 +101,7 @@ class Portum_Dashboard_Setup {
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice( array(
 			'id'      => 'notification_testing',
-			'type'    => 'notice epsilon-big',
+			'type'    => 'notice epsilon-big epsilon-framework-notice--dark',
 			'message' => $this->notice,
 		) );
 	}
