@@ -210,7 +210,7 @@ class Portum_Dashboard_Setup {
 	 */
 	public function get_plugins( $integrated = false ) {
 		$arr = array(
-			'contact-form-7' => array(
+			'contact-form-7'          => array(
 				'integration' => true,
 				'recommended' => false,
 			),
@@ -220,6 +220,10 @@ class Portum_Dashboard_Setup {
 				'recommended' => true,
 			),
 			'simple-author-box'        => array(
+				'integration' => false,
+				'recommended' => true,
+			),
+			'optimole-wp'              => array(
 				'integration' => false,
 				'recommended' => true,
 			),
