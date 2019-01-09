@@ -41,6 +41,10 @@ $fields['portfolio_slider_pager']  = (boolean) json_decode( strtolower( $fields[
 $fields['portfolio_slider_arrows']  = (boolean) json_decode( strtolower( $fields['portfolio_slider_arrows'] ) );
 
 $attr_helper = new Epsilon_Section_Attr_Helper( $fields, 'portfolio', Portum_Repeatable_Sections::get_instance() );
+if ( empty( $fields['portfolio_section_unique_id'] ) ) {
+	$fields['portfolio_section_unique_id'] = Portum_Helper::generate_section_id( 'portfolio' );
+}
+
 $parent_attr = array(
 	'id'    => ! empty( $fields['portfolio_section_unique_id'] ) ? array( $fields['portfolio_section_unique_id'] ) : array(),
 	'class' => array(
@@ -114,6 +118,7 @@ if ( 'ewf-item__border' != $fields['item_style'] ) {
 ?>
 
 <section data-customizer-section-id="portum_repeatable_section" data-section="<?php echo esc_attr( $section_id ); ?>">
+	<?php Portum_Helper::generate_inline_css( $fields['portfolio_section_unique_id'], 'portfolio', $fields ); ?>
 	<?php echo wp_kses( Portum_Helper::generate_pencil( 'Portum_Repeatable_Sections', 'portfolio' ), Epsilon_Helper::allowed_kses_pencil() ); ?>
 	<div <?php $attr_helper->generate_attributes( $parent_attr ); ?>>
 		<?php
