@@ -313,17 +313,17 @@ class Portum_Dashboard_Setup {
 				'type'    => 'info',
 				'content' => array(
 					array(
-						'title'     => esc_html__( 'Step 1 - Recommended actions', 'portum' ),
+						'title'     => esc_html__( 'Recommended actions', 'portum' ),
 						'paragraph' => esc_html__( 'We compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.', 'portum' ),
 						'action'    => '<a href="' . esc_url( admin_url() . '?page=epsilon-onboarding' ) . '" class="button button-primary">' . __( 'Launch wizard', 'portum' ) . '</a>',
 					),
 					array(
-						'title'     => esc_html__( 'Step 2 - Check our documentation', 'portum' ),
+						'title'     => esc_html__( 'Check our documentation', 'portum' ),
 						'paragraph' => esc_html__( 'Even if you are a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'portum' ),
 						'action'    => '<a target="_blank" href="http://docs.machothemes.com">' . __( 'Full documentation', 'portum' ) . '</a>',
 					),
 					array(
-						'title'     => esc_html__( 'Step 3 - Customize everything', 'portum' ),
+						'title'     => esc_html__( 'Customize everything', 'portum' ),
 						'paragraph' => esc_html__( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'portum' ),
 						'action'    => '<a target="_blank" href="' . esc_url( admin_url() . 'customize.php' ) . '" class="button button-primary">' . esc_html__( 'Go to Customizer', 'portum' ) . '</a>',
 					),
