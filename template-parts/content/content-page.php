@@ -16,11 +16,6 @@ if ( isset( $section_id ) ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
 		<div class="col-sm-12">
-			<div class="post-header">
-				<h4 class="post-title">
-					<?php echo esc_html( get_the_title() ); ?>
-				</h4><!-- end .post-title -->
-			</div><!-- .post-header -->
 
 			<div class="post-content">
 				<?php
@@ -39,46 +34,6 @@ if ( isset( $section_id ) ) {
 
 			</div><!-- .post-content -->
 
-			<div class="post-footer">
-				<div class="post-meta">
-					<?php if ( isset( $section_id ) ) { ?>
-
-						<?php if ( $fields['content_page_date'] ) { ?>
-							<a class="posted-on" href="#"><?php echo get_the_date(); ?></a>
-						<?php } ?>
-
-						<?php
-						if ( $fields['content_page_author'] ) {
-							Portum_Helper::posted_on( 'author' );
-						}
-						if ( $fields['content_page_comments'] ) {
-							Portum_Helper::posted_on( 'comments' );
-						}
-						if ( $fields['content_page_categories'] ) {
-							Portum_Helper::posted_on( 'category' );
-						}
-						if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
-							Portum_Helper::posted_on( 'tags' );
-						}
-						?>
-
-					<?php } else { ?>
-						<a class="posted-on" href="#"><?php echo get_the_date(); ?></a>
-
-						<?php
-						Portum_Helper::posted_on( 'author' );
-						Portum_Helper::posted_on( 'comments' );
-						Portum_Helper::posted_on( 'category' );
-						if ( get_theme_mod( 'portum_show_single_post_tags', true ) ) {
-							Portum_Helper::posted_on( 'tags' );
-						}
-						?>
-
-					<?php } ?>
-				</div><!-- .post-meta -->
-			</div><!-- .post-footer -->
 		</div>
 	</div>
 </article>
-
-<?php the_post_navigation(); ?>
