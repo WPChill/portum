@@ -333,13 +333,6 @@ class Repeatable_Section_HTML extends Repeatable_Section {
 				'mode'              => 'text/html',
 				'sanitize_callback' => 'wp_kses_post',
 			),
-			'html_code_css'                 => array(
-				'label'             => esc_html__( 'CSS code', 'portum' ),
-				'type'              => 'epsilon-code-editor',
-				'default'           => '',
-				'mode'              => 'text/css',
-				'sanitize_callback' => 'wp_kses_post',
-			),
 			'html_section_unique_id'    => array(
 				'label'             => esc_html__( 'Section ID', 'portum' ),
 				'type'              => 'text',
